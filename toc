@@ -1,0 +1,18 @@
+{:navgroup: .navgroup}
+{:topicgroup: .topicgroup}
+
+{: .toc subcollection="cloud-databases" audience="service" href="/docs/services/cloud-databases/index.html" path="services/cloud-databases"}
+IBM Cloud Databases
+
+	{: .navgroup id="learn"}
+	index.md
+	version-policy.md
+
+	{: .navgroup id="howto"}
+	k8-tutorial.md
+
+	{: .navgroup id="reference"}
+	[Cloud Databases CLI plugin](/databases-cli-plugin/cloud-databases-cli-cdb-reference)
+	[Cloud Databases API](https://cloud.ibm.com/apidocs/cloud-databases-api)
+	reference-iam.md
+	{: .navgroup-end}
