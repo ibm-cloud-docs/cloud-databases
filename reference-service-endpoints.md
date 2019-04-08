@@ -48,4 +48,12 @@ For more information, see the [Provisioning](/docs/services/cloud-databases?topi
 
 Once you have provisioned a deployment, it is possible to change your public/private service endpoints configuration, with the exception of {{site.data.keyword.databases-for-mongodb}}. In the _Settings_ tab of your deployment's dashboard there is a card for _Service Endpoints_. You can toggle which types of connections are available to your deployment.
 
+Changing the type of endpoints available on your deployment does not cause any downtime from a database perspective, however, if you disable an endpoint that is currently being used by you or your applications, those connections are dropped.
+
 ## Credentials for Private Endpoints
+
+Once a credential is created, it gets a set of connection strings. By default, those connection strings are for connecting over a public endpoint. If you are using private endpoints, you can specify that connection stings containing the private endpoint be generated instead.
+
+If you only have private endpoints on your deployments, then all new credentials have private endpoints in the connection strings.
+
+The use of either public or private endpoints by specific users is not enforced. (maybe it is?)
