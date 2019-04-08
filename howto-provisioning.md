@@ -24,12 +24,12 @@ You can visit the provision a deployment by visiting the service's catalog page 
 
 Deployment Type|Catalog Page|Service ID
 ----------|-----|-----------
-Databases for etcd|[Link]()|`databases-for-etcd`
-Databases for Elasticsearch|[Link]()|`databases-for-elasticsearch`
-Databases for MongoDB|[Link]()|`databases-for-mongodb`
-Databases for PostgreSQL|[Link]()|`databases-for-postgresql`
-Databases for Redis|[Link]()|`databases-for-redis`
-Messages for RabbitMQ|[Link]()|`messages-for-rabbitmq`
+Databases for Elasticsearch|[Link](https://cloud.ibm.com/catalog/services/databases-for-elasticsearch)|`databases-for-elasticsearch`
+Databases for etcd|[Link](https://cloud.ibm.com/catalog/services/databases-for-etcd)|`databases-for-etcd`
+Databases for MongoDB|[Link](https://cloud.ibm.com/catalog/services/databases-for-mongodb)|`databases-for-mongodb`
+Databases for PostgreSQL|[Link](https://cloud.ibm.com/catalog/services/databases-for-postgresql)|`databases-for-postgresql`
+Databases for Redis|[Link](https://cloud.ibm.com/catalog/services/databases-for-redis)|`databases-for-redis`
+Messages for RabbitMQ|[Link](https://cloud.ibm.com/catalog/services/messages-for-rabbitmq)|`messages-for-rabbitmq`
 {: caption="Table 1.{{site.data.keyword.databases-for}} deployments" caption-side="top"}
 
 ## Using the catalog

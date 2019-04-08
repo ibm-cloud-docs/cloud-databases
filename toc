@@ -18,5 +18,6 @@ IBM Cloud Databases
 	{: .navgroup id="reference"}
 	[Cloud Databases CLI plugin](/databases-cli-plugin/cloud-databases-cli-cdb-reference)
 	[Cloud Databases API](https://cloud.ibm.com/apidocs/cloud-databases-api)
+	reference-service-endpoints.md
 	reference-iam.md
 	{: .navgroup-end}
