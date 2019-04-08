@@ -8,9 +8,11 @@ IBM Cloud Databases
 	index.md
 	version-policy.md
 	k8-tutorial.md
+	{: .navgroup-end}
 
 	{: .navgroup id="howto"}
 	howto-whitelists.md
+	{: .navgroup-end}
 
 	{: .navgroup id="reference"}
 	[Cloud Databases CLI plugin](/databases-cli-plugin/cloud-databases-cli-cdb-reference)
