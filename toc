@@ -11,6 +11,7 @@ IBM Cloud Databases
 	{: .navgroup-end}
 
 	{: .navgroup id="howto"}
+	howto-provisioning.md
 	howto-whitelists.md
 	{: .navgroup-end}
 
