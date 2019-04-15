@@ -15,7 +15,7 @@ subcollection: cloud-databases
 {:pre: .pre}
 {:tip: .tip}
 
-## Using IP Whitelists
+# Using IP Whitelists
 {: #whitelisting}
 
 If you want to restrict access to your databases, you can whitelist specific IP addresses or ranges of IP addresses on your deployment. When you create a whitelist, only IP addresses that match the whitelist or are in the range of IP addresses in the whitelist can connect to your deployment. Whitelists can be enabled for both public endpoints and private endpoints. When no IP addresses are in the whitelist, the whitelist is disabled and the deployment accepts connections from any IP address.

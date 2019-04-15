@@ -20,4 +20,5 @@ IBM Cloud Databases
 	[Cloud Databases API](https://cloud.ibm.com/apidocs/cloud-databases-api)
 	reference-service-endpoints.md
 	reference-iam.md
+	reference-logging.md
 	{: .navgroup-end}
