@@ -44,7 +44,20 @@ The *Description* can be any user-significant text for identifying the whitelist
 
 ## Setting a Whitelist through the CLI
 
-The {{site.data.keyword.databases-for}} CLI Plug-in offers a set of commands for managing whitelists. Use the [`cdb deployment-whitelist-add`]((/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference#deployment-whitelist-add)) to add a whitelist and [`cdb deployment-whitelist-list`](/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference#deployment-whitelist-list) to view the current whitelist.
+The {{site.data.keyword.databases-for}} CLI Plug-in offers a set of commands for managing whitelists. Use [`cdb deployment-whitelist-add`]((/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference#deployment-whitelist-add)) to add a whitelist. For example,
+```
+ibmcloud cdb deployment-whitelist-add example-deployment 198.51.100.1 "Whitelisted for testing"
+```
+for a single IP address and 
+```
+ibmcloud cdb deployment-whitelist-add example-deployment 198.51.100.0/24 "Testing range is now open" 
+```
+for an IP range.
+
+Use [`cdb deployment-whitelist-list`](/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference#deployment-whitelist-list) to view the current whitelist. For example,
+```
+ibmcloud cdb deployment-whitelist-list <deployment name or CRN>
+```
 
 More information is on the {{site.data.keyword.databases-for}} CLI Plug-in [reference page](/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference).
 
