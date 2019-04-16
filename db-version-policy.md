@@ -36,7 +36,8 @@ Database|Versioning Schema|Major Versions
 ----------|---------|----------
 Elasticsearch|major versions are the first number in a release.version.maintenance version number|2, 5, 6
 etcd|major versions are the first number in a major.minor.patch version number|2, 3
-PostgreSQL*|major version is defined by the first number in the version number| 9.5, 9.6,10
+MongoDB|major versions are the first number in a major.minor.maintenance version number|2, 3, 4.
+PostgreSQL*|major version is defined by the first number in the version number| 9.5, 9.6, 10
 Redis|major versions are the first number in a major.minor.patch version number|2, 3, 4
 RabbitMQ|major versions are the first number in a major.minor.patch version number|2, 3
 {: caption="Table 1. Major versions for {{site.data.keyword.databases-for}}" caption-side="top"}

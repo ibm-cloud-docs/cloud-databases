@@ -6,7 +6,7 @@ IBM Cloud Databases
 
 	{: .navgroup id="learn"}
 	index.md
-	version-policy.md
+	db-version-policy.md
 	k8-tutorial.md
 	{: .navgroup-end}
 
