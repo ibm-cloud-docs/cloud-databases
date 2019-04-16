@@ -21,4 +21,5 @@ IBM Cloud Databases
 	reference-service-endpoints.md
 	reference-iam.md
 	reference-logging.md
+	reference-key-protect.md
 	{: .navgroup-end}
