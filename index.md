@@ -18,7 +18,7 @@ subcollection: cloud-databases
 # About {{site.data.keyword.databases-for}}
 {: #about}
 
-{{site.data.keyword.cloud_notm}} {{site.data.keyword.databases-for}} are managed databases (and a messaging queue) services that is hosted in the {{site.data.keyword.cloud_notm}} and integrated with other {{site.data.keyword.cloud_notm}} services. 
+{{site.data.keyword.cloud_notm}} Databases are managed databases (and a messaging queue) that are hosted in {{site.data.keyword.cloud_notm}} and integrated with other {{site.data.keyword.cloud_notm}} services. 
 {:shortdesc}
 
 {{site.data.keyword.databases-for}} cover the following services:

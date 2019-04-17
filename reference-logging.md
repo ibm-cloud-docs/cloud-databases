@@ -36,7 +36,7 @@ London | Dallas
 
 ## Provisioning {{site.data.keyword.la_full_notm}}
 
-Log information from your databases is automatically forwarded to {{site.data.keyword.la_full_notm}}, but in order to access it you have to [provision an {{site.data.keyword.la_full_notm}} service](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-provision) in your {{site.data.keyword.cloud_notm}} account and [configure the service to receive {{site.data.keyword.cloud_notm}} service logs](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-config_svc_logs).
+Log information from your databases is automatically forwarded to {{site.data.keyword.la_full_notm}}, but in order to access it you have to [provision a Log Analysis service](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-provision) in your {{site.data.keyword.cloud_notm}} account and [configure the service to receive {{site.data.keyword.cloud_notm}} service logs](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-config_svc_logs).
 
 This setting enables logs from **ALL** {{site.data.keyword.cloud_notm}} services on your account that have {{site.data.keyword.la_full_notm}} integration to send logs to your {{site.data.keyword.la_full_notm}} service. [A list of the integrated services is available](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-cloud_services#cloud_services).
 {: .tip}
@@ -45,7 +45,7 @@ This setting enables logs from **ALL** {{site.data.keyword.cloud_notm}} services
 
 ### HIPAA 
 
-{{site.data.keyword.la_full_notm}} does not currently offer a HIPAA-compliant plan for the service. Also, use caution when configuring the platform service logs, since this could impact other services which require HIPAA compliance.
+{{site.data.keyword.la_full_notm}} does not currently offer a HIPAA-compliant plan for the service. Also, use caution when you configure the platform service logs, since this setting can impact other services that require HIPAA compliance.
 
 ## Using {{site.data.keyword.la_full_notm}}
 
@@ -67,7 +67,7 @@ The expanded view has some handy, color-coded fields to help you parse your logs
 
 {{site.data.keyword.la_full_notm}} offers [searching](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-view_logs#view_logs_step6), [filtering](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-view_logs#view_logs_step5) to help you navigate your logs.
 
-[Export](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-export#export) and [archiving](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-archiving#archiving) is available so you can customize retention (and cost) for your use-case.
+[Export](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-export#export) and [archiving](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-archiving#archiving) are available so you can customize retention (and cost) for your use-case.
 
 To set up logging alerts, see [Working with Alerts](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-alerts#alerts)
 
@@ -75,4 +75,4 @@ For more information on features offered by {{site.data.keyword.la_full_notm}}, 
 
 ## Internal Log Retention
 
-Database logs for all {{site.data.keyword.databases-for}} deployments are kept internally for 30 days and then purged. If your {{site.data.keyword.la_full_notm}} plan is for a shorter period, logs will only be accessible by you for the length of your plan. Regardless of the plan that you choose, all database logs are deleted after 30 days.
+Database logs for all {{site.data.keyword.databases-for}} deployments are kept internally for 30 days and then purged. If your {{site.data.keyword.la_full_notm}} plan is for a shorter period, logs are only accessible by you for the length of your plan. Regardless of the plan that you choose, all database logs are deleted after 30 days.

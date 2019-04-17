@@ -20,7 +20,7 @@ subcollection: cloud-databases
 
 To create an {{site.data.keyword.cloud}} Databases deployment, you need to create an {{site.data.keyword.cloud_notm}} service instance. The service type is determined by the service ID and you need to specify the appropriate service ID when you create a new {{site.data.keyword.databases-for}} deployment.
 
-You can visit the provision a deployment by visiting the service's catalog page or by specifying the service ID to the command-line, to the API, or to Terraform.
+You can visit the provision a deployment by visiting the service's catalog page or by specifying the service ID to the command line, to the API, or to Terraform.
 
 Deployment Type|Catalog Page|Service ID
 ----------|-----|-----------
@@ -36,7 +36,7 @@ Messages for RabbitMQ|[Link](https://cloud.ibm.com/catalog/services/messages-for
 
 When you create the deployment from the catalog, you need to specify the following parameters.
 
-1. **The service name** - The name can be any string and is the name that is used on the web and in the command-line to identify the new deployment.
+1. **The service name** - The name can be any string and is the name that is used on the web and in the command line to identify the new deployment.
 2. **The region** - The region in which the deployment resides.
 3. **The database version** - The major version of the database to be created within the deployment. The latest minor version is always be used automatically. 
 
@@ -45,7 +45,7 @@ Users can optionally set:
 1. **The resource group** - If you are organizing your services into [resource groups](/docs/resources?topic=resources-bp_resourcegroups), you can specify the resource group in this field. Otherwise, you can leave it at default.
 2. **Disk encryption** - Optionally, a Key Protect instance can be selected if the user has Key Protect configured. If it is configured, once the service is selected, a disk encryption key can be selected from the Key Protect service. By default, Key Protect is not used and the deployment automatically creates and manages its own disk encryption key.
 3. **Initial resource allocation** - Specify initial memory and disk sizes for your databases. The minimum sizes of memory and disk are selected by default. 
-4. **Endpoints** - You can configure the types [Service Endpoints](/docs/services/cloud-databases?topic=cloud-databases-service-endpoints) supported on your deployment. Its default is that connections to your deployment can be made from the public network.
+4. **Endpoints** - You can configure the types [Service Endpoints](/docs/services/cloud-databases?topic=cloud-databases-service-endpoints) on your deployment. Its default is that connections to your deployment can be made from the public network.
 
 Once you select the appropriate settings, click **Create** to start the provisioning process off.
 
@@ -53,11 +53,11 @@ The database takes some time to deploy. The user is navigated back to the {{site
 
 ## Using the Command-Line
 
-The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your terminal or command-line. For more information, see [Download and install {{site.data.keyword.cloud_notm}} CLI](/docs/cli/reference/ibmcloud?topic=cloud-cli-install-ibmcloud-cli).
+The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your terminal or command line. For more information, see [Download and install {{site.data.keyword.cloud_notm}} CLI](/docs/cli/reference/ibmcloud?topic=cloud-cli-install-ibmcloud-cli).
 
-To create a  {{site.data.keyword.databases-for}}deployment, you use the CLI to request a service instance with the service ID of the database (or messaging queue) you want to provision.
+To create a  {{site.data.keyword.databases-for}} deployment, you use the CLI to request a service instance with the service ID of the database (or messaging queue) you want to provision.
 
-The command template is:
+The command template is
 
 ```
 ibmcloud resource service-instance-create <service-name> <service-id> <service-plan-id> <region>
@@ -123,8 +123,7 @@ More information on the Resource Controller API is found in its [API Reference](
 
 If you use [Terraform](https://www.terraform.io/) to manage your infrastructure, the [{{site.data.keyword.cloud_notm}} provider for Terraform](https://ibm-cloud.github.io/tf-ibm-docs/) supports provisioning {{site.data.keyword.databases-for-elasticsearch}}. 
 
-Example configuration:
-
+Example configuration -
 ```
 data "ibm_resource_group" "group" {
   name = "default"

@@ -44,7 +44,7 @@ The *Description* can be any user-significant text for identifying the whitelist
 
 ## Setting a Whitelist through the CLI
 
-The {{site.data.keyword.databases-for}} CLI Plug-in offers a set of commands for managing whitelists. Use [`cdb deployment-whitelist-add`]((/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference#deployment-whitelist-add)) to add a whitelist. For example,
+The {{site.data.keyword.databases-for}} CLI Plug-in offers a set of commands for managing whitelists. Use [`cdb deployment-whitelist-add`](/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference#deployment-whitelist-add) to add a whitelist. For example,
 ```
 ibmcloud cdb deployment-whitelist-add example-deployment 198.51.100.1 "Whitelisted for testing"
 ```
@@ -69,4 +69,4 @@ More information is in the [API Reference](https://cloud.ibm.com/apidocs/cloud-d
 
 ## Removal
 
-From the UI remove an IP address or netmask from the Whitelist by clicking *Remove*. You can also use CLI command is `cdb deployment-whitelist-delete` or send a `DELETE` request to the API endpoint. When all entries on the whitelist are removed, the whitelist is disabled and all IP addresses are accepted by your deployment.
+From the UI, remove an IP address or netmask from the Whitelist by clicking *Remove*. You can also use CLI command is `cdb deployment-whitelist-delete` or send a `DELETE` request to the API endpoint. When all entries on the whitelist are removed, the whitelist is disabled and all IP addresses are accepted by your deployment.
