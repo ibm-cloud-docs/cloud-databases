@@ -19,8 +19,20 @@ subcollection: cloud-databases
 
 {{site.data.keyword.databases-for}} are integrated with [{{site.data.keyword.la_full}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-about), so you can view database logs.
 
-Currently, {{site.data.keyword.la_full_notm}} integration is only available for {{site.data.keyword.databases-for}} deployments in the `us-south` region.
-{: .tip}
+Currently, cloud databases deployments (except deployments in `eu-de`) forward logs to the Log Analysis service in `us-south`. In the future, Log Analysis will be supported in more regions and your deployment's region and your Log Analysis region will match. Once Log Analysis is available in a region, logs will no longer be sent to `us-south`. You will have to create another logging instance in the same region as your deployment to continue seeing its logs.
+
+Refer to the table to see where logs for deployments in different regions are available.
+
+Deployment Region|Log Analysis Region
+----------|-----------
+Oslo | Dallas
+Tokyo | Dallas
+Sydney | Dallas
+Frankfurt | N/A
+Dallas | Dallas
+Washington | Dallas
+London | Dallas
+{: caption="Table 1. Log Analysis regions" caption-side="top"}
 
 ## Provisioning {{site.data.keyword.la_full_notm}}
 
