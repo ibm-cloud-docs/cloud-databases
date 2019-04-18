@@ -1,7 +1,7 @@
 ---
 Copyright:
   years: 2018, 2019
-lastupdated: "2019-01-31"
+lastupdated: "2019-04-19"
 ---
 
 {:new_window: target="_blank"}
@@ -28,10 +28,10 @@ At the beginning of the period, we seek to contact users affected by the depreca
 
 During the six-month transition window, users are able to initiate an upgrade to a supported major version. Existing customers instances will continue to run as normal.
 
-Restoration of existing databases into new deployments of the deprecated major version is possible during the 30 day deprecation, although we recommend upgrading to a non-deprecated major version as soon as possible.
+Restoration of existing databases into new deployments of the deprecated major version is possible during the 30-day deprecation, although we recommend upgrading to a non-deprecated major version as soon as possible.
 {: .tip}
 
-At the end of the six-month window, we will remove access to databases running a deprecated version and take a backup. The backup is available to be restored into a new supported database version.
+At the end of the six-month window, we remove access to databases running a deprecated version and take a backup. The backup is available to be restored into a new supported database version.
 
 ## Major versions defined
 
