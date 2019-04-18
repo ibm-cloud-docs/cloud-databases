@@ -10,8 +10,6 @@ Databases for PostgreSQL
 Databases for Redis
 Messages for RabbitMQ
 
-Please use issues / pull requests in this repo for any changes or problems in the Databases for Elasticsearch documentation.
-
 ## Contacts for this repo
 
 - [The Compose Devcom Team](https://github.ibm.com/orgs/Bluemix-Docs/teams/compose-devcom)
@@ -20,9 +18,7 @@ Please use issues / pull requests in this repo for any changes or problems in th
 
 The output from these docs is available on the IBM Cloud staging server: 
 
-- [About IBM Cloud Databases for Elasticsearch](https://test.cloud.ibm.com/docs/services/cloud-databases?topic=cloud-databases-about#about)
-
-NB: these docs are only available by direct link.
+- [About IBM Cloud Databases](https://test.cloud.ibm.com/docs/services/cloud-databases?topic=cloud-databases-about#about)
 
 ## Questions
 
