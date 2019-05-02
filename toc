@@ -6,7 +6,6 @@ IBM Cloud Databases
 
 	{: .navgroup id="learn"}
 	index.md
-	db-version-policy.md
 	k8-tutorial.md
 	{: .navgroup-end}
 
@@ -18,6 +17,7 @@ IBM Cloud Databases
 	{: .navgroup id="reference"}
 	[Cloud Databases CLI plugin](/databases-cli-plugin/cloud-databases-cli-cdb-reference)
 	[Cloud Databases API](https://cloud.ibm.com/apidocs/cloud-databases-api)
+	db-version-policy.md
 	reference-service-endpoints.md
 	reference-iam.md
 	reference-logging.md
