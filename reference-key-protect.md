@@ -17,7 +17,7 @@ subcollection: cloud-databases
 # Key Protect Integration
 {: #key-protect}
 
-The data you store in {{site.data.keyword.cloud}} Databases are encrypted by default by using randomly generated keys. If you need to control the encryption keys, you can use [{{site.data.keyword.keymanagementservicelong_notm}}](/docs/services/key-protect?topic=key-protect-about) to create, add, and manage encryption keys. Then, you can associate those keys with your {{site.data.keyword.databases-for}} deployment to encrypt your databases.
+The data you store in {{site.data.keyword.cloud}} Databases are encrypted by default by using randomly generated keys. If you need to control the encryption keys, you can use [{{site.data.keyword.keymanagementservicelong_notm}}](/docs/services/key-protect?topic=key-protect-about) to create, add, and manage encryption keys. Then, you can associate those [keys](/docs/services/key-protect?topic=key-protect-view-keys) with your {{site.data.keyword.databases-for}} deployment to encrypt your databases.
 
 To get started, you need [{{site.data.keyword.keymanagementserviceshort}}](https://{DomainName}/catalog/services/key-protect) provisioned on your {{site.data.keyword.cloud_notm}} account.
 
