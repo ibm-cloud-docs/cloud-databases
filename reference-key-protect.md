@@ -45,7 +45,7 @@ Authorize {{site.data.keyword.keymanagementserviceshort}} for use with {{site.da
 Once you have granted your {{site.data.keyword.databases-for}} deployments permission to use your keys, you supply the [key name or CRN](/docs/services/key-protect?topic=key-protect-view-keys) when provisioning a deployment. The deployment uses your encryption key to encrypt your data.
 
 If provisioning a deployment through the CLI or API, the key protect key needs to be identified by its full CRN, not just its ID. A key protect CRN is in the format `crn:v1:<...>:key:<id>`.
-{. tip}
+{: .tip}
 
 ## Removing keys and deleting your data
 
