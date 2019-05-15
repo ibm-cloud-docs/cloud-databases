@@ -146,8 +146,8 @@ More information about this specific {{site.data.keyword.cloud_notm}} provider c
 
 ## List of Additional Parameters
 
-* `backup_id`- A CRN of a backup resource to restore from. The backup must have been created by a database deployment with the same service ID. The backup is loaded after provisioning and the new deployment starts up that uses that data. A backup CRN is in the format `crn:v1:<...>:backup:<uuid>`. If omitted, the database is provisioned empty. This parameter cannot be set with a **version** parameter
-* `version` - The version of the database to be provisioned. If omitted, the database is created with the most recent major and minor version. This parameter cannot be set with a **backup_id** parameter.
+* `backup_id`- A CRN of a backup resource to restore from. The backup must have been created by a database deployment with the same service ID. The backup is loaded after provisioning and the new deployment starts up that uses that data. A backup CRN is in the format `crn:v1:<...>:backup:<uuid>`. If omitted, the database is provisioned empty.
+* `version` - The version of the database to be provisioned. If omitted, the database is created with the most recent major and minor version.
 * `key_protect_key` - The CRN of a [Key Protect key](/docs/services/key-protect?topic=key-protect-view-keys), which is then used for disk encryption. A key protect CRN is in the format `crn:v1:<...>:key:<id>`.
 * `members_memory_allocation_mb` -  Total amount of memory to be shared between the database members within the database. For example, if the value is "6144" then the two database members get 6 GB of RAM between them, giving 2 GB of RAM per member. If omitted, the default value is used; "3072".
 * `members_disk_allocation_mb` - Total amount of disk to be shared between the database members within the database. For example, if the value is "30720" then the  database members get 30 GB of disk between them, giving 10 GB of disk per member. If omitted, the default value is used; "3072".
