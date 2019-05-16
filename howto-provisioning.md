@@ -121,7 +121,7 @@ More information on the Resource Controller API is found in its [API Reference](
 
 ## Provisioning with Terraform
 
-If you use [Terraform](https://www.terraform.io/) to manage your infrastructure, the [{{site.data.keyword.cloud_notm}} provider for Terraform](https://ibm-cloud.github.io/tf-ibm-docs/) supports provisioning {{site.data.keyword.databases-for-elasticsearch}}. 
+If you use [Terraform](/docs/terraform?topic=terraform-about) to manage your infrastructure, the [{{site.data.keyword.cloud_notm}} provider for Terraform](/docs/terraform?topic=terraform-getting-started) supports provisioning {{site.data.keyword.databases-for-elasticsearch}}. 
 
 Example configuration -
 ```
@@ -142,7 +142,7 @@ The `name`, `location`, `service`, and `plan` fields are all required. The `reso
 
 You can send any needed [additional parameters](#list-of-additional-parameters) in the `parameters` field as a JSON object.
 
-More information about this specific {{site.data.keyword.cloud_notm}} provider configuration is available under the [Cloud Foundry Resources, `resource_instance`](https://ibm-cloud.github.io/tf-ibm-docs/v0.14.0/r/resource_instance.html) documentation.
+More information about this specific {{site.data.keyword.cloud_notm}} provider configuration is available in the [github](https://ibm-cloud.github.io/tf-ibm-docs/v0.16.1/d/database.html) documentation.
 
 ## List of Additional Parameters
 
