@@ -103,7 +103,7 @@ Once the branch has been cloned, you can select the appropriate directory for th
       ibmcloud ks cluster-service-bind <your_cluster_name> default <your_database_deployment>
       ```
 
-11. Verify that the Kubernetes secret was create in your cluster namespace. Kubernetes uses secrets to store confidential information like the IBM Cloud Identity and Access Management (IAM) API key and the URL that the container uses to gain access. Running the following command, you get the API key for accessing the instance of your deployment that's provisioned in your account.
+11. Verify that the Kubernetes secret was created in your cluster namespace. Kubernetes uses secrets to store confidential information like the IBM Cloud Identity and Access Management (IAM) API key and the URL that the container uses to gain access. Running the following command, you get the API key for accessing the instance of your deployment that's provisioned in your account.
 
       ```shell
       kubectl get secrets --namespace=default
@@ -122,6 +122,9 @@ Once the branch has been cloned, you can select the appropriate directory for th
 14. Build and push the application's Docker image to your IBM Cloud Container Registry. Give the container a name.
 
     ```shell
+    ibmcloud cr build -t <region>.icr.io/<namespace>/<container_name> .
+
+
     ibmcloud cr build -t registry.<your-region>.bluemix.net/<namespace>/<container_name> .
     ```
 
@@ -135,7 +138,7 @@ Once the branch has been cloned, you can select the appropriate directory for th
 
     ```shell
     REPOSITORY                                TAG      DIGEST         NAMESPACE   CREATED       SIZE    SECURITY STATUS
-    registry.ng.bluemix.net/mynamespace/container_name latest   81c3959ea657   mynamespace 4 hours ago   28 MB   No Issues
+    <region>.icr.io/mynamespace/container_name latest   81c3959ea657   mynamespace 4 hours ago   28 MB   No Issues
     ```
 
 15. Update the Kubernetes deployment configuration file `clouddb-deployment.yaml`.
@@ -143,7 +146,7 @@ Once the branch has been cloned, you can select the appropriate directory for th
     Change the `image` name to the repository name that you got from the previous step:
 
     ```yaml
-    image: "registry.<region>.bluemix.net/<namespace>/<container_name>" # Edit me
+    image: "<region>.icr.io/mynamespace/<container_name>" # Edit me
     ```
 
     Now, under `secretKeyRef`, change the name of `<db-secret-name>` to match the name of the secret that was created when you bound your database deployment to your Kubernetes cluster.
