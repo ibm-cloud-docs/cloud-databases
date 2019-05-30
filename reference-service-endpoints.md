@@ -1,7 +1,7 @@
 ---
 Copyright:
   years: 2019
-lastupdated: "2019-04-08"
+lastupdated: "2019-05-30"
 
 subcollection: cloud-databases
 
@@ -54,7 +54,16 @@ For more information, see the [Provisioning](/docs/services/cloud-databases?topi
 
 ## Changing Service Endpoints
 
-Once you have a deployment, it is possible to change your public/private service endpoints configuration, with the exception of {{site.data.keyword.databases-for-mongodb}}. In the _Settings_ tab of your deployment's dashboard is a card for _Service Endpoints_. You can toggle which types of connections are available to your deployment.
+Once you have a deployment, it is possible to change your public/private service endpoints configuration, with the exception of {{site.data.keyword.databases-for-mongodb}}. 
+
+In the _Settings_ tab of your deployment's dashboard is a card for _Service Endpoints_. You can toggle which types of connections are available to your deployment.
+
+You can use the [`ibmcloud resource service-instance-update`](https://cloud.ibm.com/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_update) command in the CLI, specifying the endpoint with the `--service-endpoints` flag.
+```
+ibmcloud resource service-instance-update <service-name> --service-endpoints <endpoint-type>
+```
+
+Or you can use the [Resource Controller API](https://cloud.ibm.com/apidocs/resource-controller), with a `PATCH` request to the [/resource_instances/{id}](https://cloud.ibm.com/apidocs/resource-controller#update-a-resource-instance) endpoint.
 
 Changing the type of endpoints available on your deployment does not cause any downtime from a database perspective. However, if you disable an endpoint that is currently being used by you or your applications, those connections are dropped.
 

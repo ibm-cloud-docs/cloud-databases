@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-04-08"
+lastupdated: "2019-05-30"
 
 subcollection: cloud-databases
 
@@ -68,7 +68,7 @@ More information about this command, in general, is available in the [CLI refere
 In the specific case of creating a {{site.data.keyword.messages-for-rabbitmq}} deployment, set the service name (quote any name with spaces in it). Then, set `messages-for-rabbitmq` as the service ID. Enter `standard` for the service plan ID and `us-south` (or your region) for the region.
 
 ```
-ibmcloud resource service-instance-create example-es messages-for-rabbitmq standard us-south
+ibmcloud resource service-instance-create my-example-queue messages-for-rabbitmq standard us-south
 ```
 
 When the command is run, provisioning the database deployment begins. The database takes some time to deploy. You can check on its progress on your {{site.data.keyword.cloud_notm}} Dashboard. You can also run:
@@ -79,7 +79,9 @@ ibmcloud resource service-instance <service-name>
 
 This command reports the current state of the service instance.
 
-### Additional parameters
+### Additional flags and parameters
+
+The `--service-endpoints` flag allows you to specify which types [Service Endpoints](/docs/services/cloud-databases?topic=cloud-databases-service-endpoints) on your deployment. Its default is that connections to your deployment can be made from the public network.
 
 The `service-instance-create` command supports a `-p` flag, which allows [additional parameters](#list-of-additional-parameters) to be passed to the provisioning process. The parameters are in JSON format. Some parameters values are CRNs (Cloud Resource Name), which uniquely identifies a resource in the cloud. All parameter names and values are passed as strings.
 
