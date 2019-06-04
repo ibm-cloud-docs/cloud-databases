@@ -37,13 +37,14 @@ Once the branch has been cloned, you can select the appropriate directory for th
 
     The IBM Cloud CLI tool enables you to communicate with IBM Cloud from your terminal or command line.
 
-3. Install the {{site.data.keyword.containershort_notm}} CLI plugin.
+3. Install the {{site.data.keyword.containershort_notm}} CLI plugin and the Container Registry CLI plugin
 
       ```shell
-      ibmcloud plugin install container-service -r Bluemix
+      ibmcloud plugin install container-service
+      ibmcloud plugin install container-registry 
       ```
 
-      To verify it's installation, run:
+      To verify their installation, run:
 
       ```shell
       ibmcloud plugin list
@@ -101,6 +102,18 @@ Once the branch has been cloned, you can select the appropriate directory for th
 
       ```shell
       ibmcloud ks cluster-service-bind <your_cluster_name> default <your_database_deployment>
+      ```
+
+      Note: If your database uses both [public and private endpoints](/docs/services/cloud-databases?topic=cloud-databases-service-endpoints), your public endpoint will be used by default. Therefore, if you want to select the private endpoint, first you will need to create a service key for your database so Kubernetes can use it when binding to the database. You can set up a service key, for example, that we'll call example-private-key using the command:
+
+      ```
+      ibmcloud resource service-key-create example-private-key Administrator --instance-name <your_database_deployment> --service-endpoint private  
+      ```
+      
+      The role that we've selected for this key is Administrator with our database deployment, and we make sure that the private service endpoint is selected --service-endpoint private. After that, you'll bind the database to the Kubernetes cluster through the private endpoint using the command:
+
+      ```
+      ibmcloud ks cluster-service-bind <your_cluster_name> default <your_database_deployment> --key example-private-key
       ```
 
 11. Verify that the Kubernetes secret was created in your cluster namespace. Kubernetes uses secrets to store confidential information like the IBM Cloud Identity and Access Management (IAM) API key and the URL that the container uses to gain access. Running the following command, you get the API key for accessing the instance of your deployment that's provisioned in your account.
