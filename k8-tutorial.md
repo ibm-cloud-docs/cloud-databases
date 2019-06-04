@@ -48,6 +48,13 @@ Once the branch has been cloned, you can select the appropriate directory for th
 
       ```shell
       ibmcloud plugin list
+
+      Listing installed plug-ins...
+
+      Plugin Name                            Version   Status
+      cloud-databases                        0.6.0
+      container-registry                     0.1.382
+      container-service/kubernetes-service   0.3.34
       ```
 
 4. [Download and install the Kubernetes CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
