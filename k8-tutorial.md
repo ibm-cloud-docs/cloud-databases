@@ -52,7 +52,6 @@ Once the branch has been cloned, you can select the appropriate directory for th
       Listing installed plug-ins...
 
       Plugin Name                            Version   Status
-      cloud-databases                        0.6.0
       container-registry                     0.1.382
       container-service/kubernetes-service   0.3.34
       ```
@@ -143,9 +142,6 @@ Once the branch has been cloned, you can select the appropriate directory for th
 
     ```shell
     ibmcloud cr build -t <region>.icr.io/<namespace>/<container_name> .
-
-
-    ibmcloud cr build -t registry.<your-region>.bluemix.net/<namespace>/<container_name> .
     ```
 
     After it's built, you can view the image in container registry by using
