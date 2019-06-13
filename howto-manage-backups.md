@@ -60,23 +60,37 @@ The new service instance is automatically named "postgres-restore-[timestamp]", 
 
 ### Restoring a Backup in the CLI
 
-The Resource Controller supports provisioning  of database deployments, and provisioning and restoring are the responsibility of the Resource Controller CLI. Use the [`resource service-instance-create`]() command.
+The Resource Controller supports provisioning of database deployments, and provisioning and restoring are the responsibility of the Resource Controller CLI. Use the [`resource service-instance-create`](/docs/cli?topic=cloud-cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_create) command.
 
 ```
 ibmcloud resource service-instance-create <SERVICE_INSTANCE_NAME> <service-id> <region> -p '{"backup_id":"BACKUP_ID"}'
 ```
 
-Change the value of `SERVICE_INSTANCE_NAME` to the name you want for your new deployment, `region` is where you want the service to be located, and `BACKUP_ID` is the backup you want to restore.
+Change the value of `SERVICE_INSTANCE_NAME` to the name you want for your new deployment. The `region` is where you want the new deployment to be located, which can be a different region from the source deployment. Cross-region restores are supported. `BACKUP_ID` is the backup you want to restore.
 
 A pre-formatted command for a specific backup is available in detailed view of the backup on the _Backups_ tab of the service dashboard.
 {: .tip}
 
 ### Restoring a Backup through the API
 
+The Resource Controller supports provisioning of database deployments, and provisioning and restoring are the responsibility of the Resource Controller API. You need to complete [the necessary steps to use the resource controller API](/docs/services/databases-for-elasticsearch?topic=cloud-databases-provisioning#provisioning-through-the-resource-controller-api) before you can use it to restore from a backup. 
 
+Once you have all the information, the create request is a `POST` to the [`/resource_instances`](https://{DomainName}/apidocs/resource-controller#create-provision-a-new-resource-instance) endpoint.
 
-### Major Version Upgrades and Cross-Region Restores
-
+```
+curl -X POST \
+  https://resource-controller.cloud.ibm.com/v2/resource_instances \
+  -H 'Authorization: Bearer <>' \
+  -H 'Content-Type: application/json' \
+    -d '{
+    "name": "<SERVICE_INSTANCE_NAME>",
+    "target": "<region>",
+    "resource_group": "<your-resource-group>",
+    "resource_plan_id": "<service-id>"
+    "backup_id":"<BACKUP_ID>"
+  }'
+```
+The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are all required, and `BACKUP_ID` is the backup you want to restore. The `target` is the region where you want the new deployment to be located, which can be a different region from the source deployment. Cross-region restores are supported.
 
 ## Backups and Restoration
 
