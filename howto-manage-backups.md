@@ -92,6 +92,12 @@ curl -X POST \
 ```
 The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are all required, and `BACKUP_ID` is the backup you want to restore. The `target` is the region where you want the new deployment to be located, which can be a different region from the source deployment. Cross-region restores are supported.
 
+### Major Version Upgrades
+
+Upgrading is handled through restoring your data from a backup into a new deployment with the latest major version. You upgrade to the latest version of the database available on {{site.data.keyword.cloud}}. You can find the latest version from the catalog page, from the cloud databases cli plugin command [`ibmcloud cdb deployables-show`](/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference#deployables-show), or from the cloud databases API [`/deployables`](https://cloud.ibm.com/apidocs/cloud-databases-api#get-all-deployable-databases) endpoint.
+
+In the CLI and API, you also supply the `version` parameter with the `backup_id` parameter in the JSON object.
+
 ## Backups and Restoration
 
 * {{site.data.keyword.cloud_notm}} Databases is not responsible for restoration, timeliness, or validity of said backups.
