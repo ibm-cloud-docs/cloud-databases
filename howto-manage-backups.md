@@ -19,7 +19,10 @@ subcollection: cloud-databases
 
 {{site.data.keyword.databases-for-postgresql_full}} backups are accessible from the _Backups_ tab of your service dashboard. 
 
-Daily and on-demand backups are available for 30 days. Backups cannot be deleted. If you delete your deployment backups are deleted automatically after their 30-day retention period. 
+- Backups are available for 30 days. 
+- Backups cannot be deleted. 
+- If you delete your deployment, its backups are deleted automatically.
+- Scheduling of the daily backup is not configurable.
 
 ## Backups in the UI
 
@@ -48,9 +51,12 @@ For backups information in the {{site.data.keyword.databases-for}} API, use the 
 
 ## Taking an On-demand Backup
 
-On-demand backups are useful if you plan to make major changes to your deployment like scaling or removing databases, tables, collections, etc. Each deployment only has the most recent on-demand backup available. Taking a new on-demand backup will overwrite the previous on-demand backup of that deployment.
+On-demand backups are useful if you plan to make major changes to your deployment like scaling or removing databases, tables, collections, etc. It can also be useful if you need to backup on a schedule. On-demand backups are kept for 30 days. 
 
-To create a manual backup, follow the steps to view existing backups, then click Back up now. A message is displayed that a backup is in progress, and a 'pending' backup is added to the list of available backups.
+Deployments come with free backup storage equal to their total disk space. If your backup storage utilization is greater than that, each gigabyte is charged at an overage $0.03/month. Backups are compressed, so even if you use on-demand backups, most deployments will not ever go over the allotted credit.
+{: .tip}
+
+To create a manual backup, follow the steps to view existing backups, then click **Back up now**. A message is displayed that a backup is in progress, and a on-demand backup is added to the list of available backups.
 
 In the CLI, you trigger an on-demand backup with the [`cdb deployment-backup-now`](/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference#deployment-backup-now) command.
 ```
