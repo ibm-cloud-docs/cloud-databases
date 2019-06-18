@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-06-12"
+lastupdated: "2019-06-17"
 
 subcollection: cloud-databases
 
@@ -21,11 +21,15 @@ subcollection: cloud-databases
 
 Daily and on-demand backups are available for 30 days. Backups cannot be deleted. If you delete your deployment backups are deleted automatically after their 30-day retention period. 
 
+## Backups in the UI
+
 Each backup is labeled with its type, and when the backup was taken. Click the timestamp to change it's format between elapsed time, local time, and UTC. Click the backup to reveal information for that specific backup, including its full ID. For restore options, there is a  button to restore the backup or a pre-formatted CLI command. 
+
+## Backups in the CLI
 
 You can also access the list of backups and individual backup information from the {{site.data.keyword.databases-for}} CLI plugin and the {{site.data.keyword.databases-for}} API.
 
-Use the `cdb deployment-backups-list` command to view the list of all available backups for your deployment. To get the details about a specific backup, use `cdb backup-show` command.
+Use the [`cdb deployment-backups-list`](/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference#deployment-backups-list) command to view the list of all available backups for your deployment. To get the details about a specific backup, use [`cdb backup-show`](/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference#backup-show) command.
 
 For example, to view the backups for a deployment named "example-deployment", use the following command.
 
@@ -38,18 +42,28 @@ To see the details of one of the backups from the list, take the ID from the `ID
 ```
 ibmcloud cdb backup-show crn:v1:staging:public:databases-for-postgresql:us-south:a/6284014dd5b487c87a716f48aeeaf99f:3b4537bf-a585-4594-8262-2b1e24e2701e:backup:a3364821-d061-413f-a0df-6ba0e2951566
 ```
+## Backups in the API
 
-In the {{site.data.keyword.databases-for}} API, use the [`/backups`](https://{DomainName}/apidocs/cloud-databases-api#get-information-about-a-backup) endpoint.
+For backups information in the {{site.data.keyword.databases-for}} API, use the [`/deployments/{id}/backups`](https://cloud.ibm.com/apidocs/cloud-databases-api#get-currently-available-backups-from-a-deployment) endpoint to list the deployment's backups. Use the [`/backups/{backup_id}`](https://{DomainName}/apidocs/cloud-databases-api#get-information-about-a-backup) endpoint to get information about a specific backup.
 
+## Taking an On-demand Backup
 
+On-demand backups are useful if you plan to make major changes to your deployment like scaling or removing databases, tables, collections, etc. Each deployment only has the most recent on-demand backup available. Taking a new on-demand backup will overwrite the previous on-demand backup of that deployment.
 
+To create a manual backup, follow the steps to view existing backups, then click Back up now. A message is displayed that a backup is in progress, and a 'pending' backup is added to the list of available backups.
 
+In the CLI, you trigger an on-demand backup with the [`cdb deployment-backup-now`](/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference#deployment-backup-now) command.
+```
+ibmcloud cdb deployment-backup-now example-deployment
+```
+
+In the API, sending a POST to the [`/deployments/{id}/backups`](https://cloud.ibm.com/apidocs/cloud-databases-api#initiate-an-on-demand-backup) endpoint triggers an on-demand backup.
 
 ## Restoring a Backup
 
 Backups are restored to a new deployment. The new deployment is auto-sized to the same disk and memory allocation as the source deployment at the time of the backup you are restoring from. After the new deployment finishes provisioning, your data in the backup file is restored into the new deployment.
 
-## Restoring a Backup in the UI
+### Restoring a Backup in the UI
 
 To restore a backup to a new service instance,
 
@@ -91,12 +105,6 @@ curl -X POST \
   }'
 ```
 The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are all required, and `BACKUP_ID` is the backup you want to restore. The `target` is the region where you want the new deployment to be located, which can be a different region from the source deployment. Cross-region restores are supported.
-
-### Major Version Upgrades
-
-Upgrading is handled through restoring your data from a backup into a new deployment with the latest major version. You upgrade to the latest version of the database available on {{site.data.keyword.cloud}}. You can find the latest version from the catalog page, from the cloud databases cli plugin command [`ibmcloud cdb deployables-show`](/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference#deployables-show), or from the cloud databases API [`/deployables`](https://cloud.ibm.com/apidocs/cloud-databases-api#get-all-deployable-databases) endpoint.
-
-In the CLI and API, you also supply the `version` parameter with the `backup_id` parameter in the JSON object.
 
 ## Backups and Restoration
 
