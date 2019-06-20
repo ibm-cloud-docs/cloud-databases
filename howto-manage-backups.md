@@ -74,9 +74,9 @@ Backups are restored to a new deployment. The new deployment is auto-sized to th
 To restore a backup to a new service instance,
 
 1. Click in the corresponding row to expand the options for the backup you want to restore.
-2. Click the **Restore** button.  A message is displayed that a restore from backup has started. Clicking on **Your new instance is available now.** will take you to your _Resources List_.
-
-The new service instance is automatically named "postgres-restore-[timestamp]", and appears on your {{site.data.keyword.cloud_notm}} dashboard when provisioning starts.
+2. Click the **Restore** button.
+3. Use the Dialog box to select from some available options. The new deployment is automatically named `<name>-restore-[timestamp]`, but you can rename it. You can also select the region where the new deployment is located. Cross-region restores are supported.
+4. Click the **Restore** button. A "restore from backup started" message appears. Clicking on **Your new instance is available now.** will take you to your _Resources List_.
 
 ### Restoring a Backup in the CLI
 
