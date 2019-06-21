@@ -86,7 +86,7 @@ The Resource Controller supports provisioning of database deployments, and provi
 ibmcloud resource service-instance-create <SERVICE_INSTANCE_NAME> <service-id> <region> -p '{"backup_id":"BACKUP_ID"}'
 ```
 
-Change the value of `SERVICE_INSTANCE_NAME` to the name you want for your new deployment. The `region` is where you want the new deployment to be located, which can be a different region from the source deployment. Cross-region restores are supported. `BACKUP_ID` is the backup you want to restore.
+Change the value of `SERVICE_INSTANCE_NAME` to the name you want for your new deployment. The `service-id` is the type of deployment, such as `databases-for-postgresql` or `messages-for-rabbitmq`. The `region` is where you want the new deployment to be located, which can be a different region from the source deployment. Cross-region restores are supported. `BACKUP_ID` is the backup you want to restore.
 
 A pre-formatted command for a specific backup is available in detailed view of the backup on the _Backups_ tab of the service dashboard.
 {: .tip}
