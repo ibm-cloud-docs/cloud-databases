@@ -17,7 +17,7 @@ subcollection: cloud-databases
 # Managing Backups
 {: #dashboard-backups}
 
-{{site.data.keyword.databases-for-postgresql_full}} backups are accessible from the _Backups_ tab of your service dashboard. 
+Backups for {{site.data.keyword.databases-for}} deployments are accessible from the _Backups_ tab of your deployment's dashboard. 
 
 - Backups are available for 30 days. 
 - Backups cannot be deleted. 
