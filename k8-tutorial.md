@@ -21,7 +21,7 @@ Each git branch of the [repository](https://github.com/IBM-Cloud/clouddatabases-
 
 ## Trying out the sample applications
 
-Clone the repository of the language that you want to use. For instance, you can clone the **Node** repository by selecting the **Node** branch. Then click **Clone or download** to get the URL you'll need to clone using SSH or HTTPS. In your terminal the command looks like
+Clone the repository of the language that you want to use. For instance, you can clone the **Node** repository by selecting the **Node** branch. Then click **Clone or download** to get the URL you'll need to clone using SSH or HTTPS. In your terminal, the command looks like
 
 ```shell
 git clone -b node git@github.com:IBM-Cloud/clouddatabases-helloworld-kubernetes-examples.git
@@ -110,13 +110,13 @@ Once the branch has been cloned, you can select the appropriate directory for th
       ibmcloud ks cluster-service-bind <your_cluster_name> default <your_database_deployment>
       ```
 
-      Note: If your database uses both [public and private endpoints](/docs/services/cloud-databases?topic=cloud-databases-service-endpoints), your public endpoint will be used by default. Therefore, if you want to select the private endpoint, first you will need to create a service key for your database so Kubernetes can use it when binding to the database. You can set up a service key, for example, that we'll call example-private-key using the command:
+      Note: If your database uses both [public and private endpoints](/docs/services/cloud-databases?topic=cloud-databases-service-endpoints), your public endpoint is used by default. Therefore, if you want to select the private endpoint, first you need to create a service key for your database so Kubernetes can use it when binding to the database. You set up a service key using the command:
 
       ```
-      ibmcloud resource service-key-create example-private-key Administrator --instance-name <your_database_deployment> --service-endpoint private  
+      ibmcloud resource service-key-create <your-private-key> Administrator --instance-name <your_database_deployment> --service-endpoint private  
       ```
       
-      The role that we've selected for this key is Administrator with our database deployment, and we make sure that the private service endpoint is selected --service-endpoint private. After that, you'll bind the database to the Kubernetes cluster through the private endpoint using the command:
+      This key has the `Administrator` role on the database deployment, and the private service endpoint is selected with `--service-endpoint private`. After that, you bind the database to the Kubernetes cluster through the private endpoint by using the command:
 
       ```
       ibmcloud ks cluster-service-bind <your_cluster_name> default <your_database_deployment> --key example-private-key
@@ -188,7 +188,7 @@ Once the branch has been cloned, you can select the appropriate directory for th
     ibmcloud ks workers <cluster_name>
     ```
 
-    The result will be something like:
+    The result is something like:
 
     ```shell
     ID                                                 Public IP        Private IP      Machine Type   State    Status   Zone    Version

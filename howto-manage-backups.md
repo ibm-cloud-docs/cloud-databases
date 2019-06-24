@@ -17,8 +17,9 @@ subcollection: cloud-databases
 # Managing Backups
 {: #dashboard-backups}
 
-Backups for {{site.data.keyword.databases-for}} deployments are accessible from the _Backups_ tab of your deployment's dashboard. 
+Backups for {{site.data.keyword.databases-for}} deployments are accessible from the _Backups_ tab of your deployment's dashboard. Some general information about backups,
 
+- One backup is taken every day.
 - Backups are available for 30 days. 
 - Backups cannot be deleted. 
 - If you delete your deployment, its backups are deleted automatically.
@@ -26,7 +27,13 @@ Backups for {{site.data.keyword.databases-for}} deployments are accessible from 
 
 ## Backups in the UI
 
-Each backup is labeled with its type, and when the backup was taken. Click the timestamp to change it's format between elapsed time, local time, and UTC. Click the backup to reveal information for that specific backup, including its full ID. For restore options, there is a  button to restore the backup or a pre-formatted CLI command. 
+Each backup is labeled with its type, and when the backup was taken. Click the timestamp to change it's format between elapsed time, local time, and UTC. 
+
+![List of Backups on the Backups tab](images/backups-list.png)
+
+Click the backup to reveal information for that specific backup, including its full ID. For restore options, there is a  **Restore** button or a pre-formatted CLI command. 
+
+![Details of a Backup](images/backups-detail.png)
 
 ## Backups in the CLI
 
@@ -56,7 +63,7 @@ On-demand backups are useful if you plan to make major changes to your deploymen
 Deployments come with free backup storage equal to their total disk space. If your backup storage utilization is greater than that, each gigabyte is charged at an overage $0.03/month. Backups are compressed, so even if you use on-demand backups, most deployments will not ever go over the allotted credit.
 {: .tip}
 
-To create a manual backup, follow the steps to view existing backups, then click **Back up now**. A message is displayed that a backup is in progress, and a on-demand backup is added to the list of available backups.
+To create a manual backup in the UI, visit the _Backups_ tab of your deployment then click **Back up now**. A message is displayed that a backup is in progress, and a on-demand backup is added to the list of available backups.
 
 In the CLI, you trigger an on-demand backup with the [`cdb deployment-backup-now`](/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference#deployment-backup-now) command.
 ```
@@ -115,5 +122,5 @@ The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are al
 ## Backups and Restoration
 
 * {{site.data.keyword.cloud_notm}} Databases is not responsible for restoration, timeliness, or validity of said backups.
-* Actions that you take as a user can compromise the integrity of backups, such as under-allocating memory and disk. Users can monitor that backups were performed successfully via the API, and periodically restore a backup to ensure validity and integrity. Users can retrieve the most recent scheduled backup details from the IBM Cloud Databases plug-in: `ibmcloud cdb backups deploymentname -s -f`.
+* Actions that you take as a user can compromise the integrity of backups, such as under-allocating memory and disk. Users can monitor that backups were performed successfully via the API, and periodically restore a backup to ensure validity and integrity. Users can retrieve the most recent scheduled backup details from the [Cloud Databases CLI plug-in](#backups-in-the-cli) and the [Cloud Databases API](#backups-in-the-api).
 * As a managed service {{site.data.keyword.cloud_notm}} Databases monitors the state of your backups and can attempt to remediate when possible. If you encounter issues you cannot recover from, you can contact support for additional help.
