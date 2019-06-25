@@ -20,7 +20,7 @@ When you provision a {{site.data.keyword.databases-for}} deployment, you can cho
 
 **Preferred** - The recommended and default database version for all new deployments. Its the version of the database that is the most up-to-date and stable in regards to both database-level and service-level features.
 
-**Preview** - A preview database version is released for a limited time to try available functionality. Often it is the newest available version available from the database project maintainers in preparation for making it the "Preferred" version. While deployable, preview version are might not be suitable for production, as they are excluded from service-level agreements and support.
+**Preview** - A preview database version is released for a limited time to try available functionality. Often it is the newest available version available from the database project maintainers in preparation for making it the "Preferred" version. While deployable, preview version are might not be suitable for production, as they are excluded from service-level agreements and support. Also, there is no guarantee that a preview version becomes a production-level release. IBM reserves the right to ask a customer to delete a deployment that uses a preview version.
 
 **Deprecated** - Once a new database version becomes the "Preferred" version, the old version is marked as "Deprecated". Provisions and restores of deployments that run deprecated version are still available and deployments running a deprecated version continue to be supported. However, you are encouraged to upgrade to the new "Preferred" version of the database as deprecated versions are eventually removed from {{site.data.keyword.cloud_notm}} and are no longer provisionable, restorable, or supported. 
 
