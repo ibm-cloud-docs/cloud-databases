@@ -82,7 +82,7 @@ To restore a backup to a new service instance,
 
 1. Click in the corresponding row to expand the options for the backup you want to restore.
 2. Click the **Restore** button.
-3. Use the Dialog box to select from some available options. The new deployment is automatically named `<name>-restore-[timestamp]`, but you can rename it. You can also select the region where the new deployment is located. Cross-region restores are supported.
+3. Use the Dialog box to select from some available options. The new deployment is automatically named `<name>-restore-[timestamp]`, but you can rename it. You can also select the region where the new deployment is located. Cross-region restores are supported, with the exception of restoring a `eu-de` backup to another region.
 4. Click the **Restore** button. A "restore from backup started" message appears. Clicking on **Your new instance is available now.** will take you to your _Resources List_.
 
 ### Restoring a Backup in the CLI
@@ -93,7 +93,7 @@ The Resource Controller supports provisioning of database deployments, and provi
 ibmcloud resource service-instance-create <SERVICE_INSTANCE_NAME> <service-id> <region> -p '{"backup_id":"BACKUP_ID"}'
 ```
 
-Change the value of `SERVICE_INSTANCE_NAME` to the name you want for your new deployment. The `service-id` is the type of deployment, such as `databases-for-postgresql` or `messages-for-rabbitmq`. The `region` is where you want the new deployment to be located, which can be a different region from the source deployment. Cross-region restores are supported. `BACKUP_ID` is the backup you want to restore.
+Change the value of `SERVICE_INSTANCE_NAME` to the name you want for your new deployment. The `service-id` is the type of deployment, such as `databases-for-postgresql` or `messages-for-rabbitmq`. The `region` is where you want the new deployment to be located, which can be a different region from the source deployment. Cross-region restores are supported, with the exception of restoring a `eu-de` backup to another region. `BACKUP_ID` is the backup you want to restore.
 
 A pre-formatted command for a specific backup is available in detailed view of the backup on the _Backups_ tab of the service dashboard.
 {: .tip}
@@ -117,7 +117,7 @@ curl -X POST \
     "backup_id":"<BACKUP_ID>"
   }'
 ```
-The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are all required, and `BACKUP_ID` is the backup you want to restore. The `target` is the region where you want the new deployment to be located, which can be a different region from the source deployment. Cross-region restores are supported.
+The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are all required, and `BACKUP_ID` is the backup you want to restore. The `target` is the region where you want the new deployment to be located, which can be a different region from the source deployment. Cross-region restores are supported, with the exception of restoring a `eu-de` backup to another region.
 
 ## Backups and Restoration
 
