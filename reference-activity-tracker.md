@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019
-lastupdated: "2019-06-26"
+lastupdated: "2019-07-09"
 
 subcollection: cloud-databases
 
@@ -17,28 +17,27 @@ subcollection: cloud-databases
 # Activity Tracker Integration
 {: #activity-tracker}
 
-{{site.data.keyword.cloud_notm}} Databases deployments are integrated with  [Activity Tracker](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-activity_tracker_ov), so you can view service-level events.
+{{site.data.keyword.cloud_notm}} Databases deployments are integrated with Activity Tracker, so you can view service-level events. If your {{site.data.keyword.databases-for}} deployments are in the `us-south` region, you can get Activity Tracker events in [IBM Cloud Activity Tracker with LogDNA](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-about#about).
 
-In order to see the events, you need to [provision the Activity Tracker service](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-provision) from the [{{site.data.keyword.cloud_notm}}  catalog](https://{DomainName}/catalog/services/activity-tracker). Activity Tracker has a _Lite_ plan available at no additional cost.
+## Activity Tracker through LogDNA
 
-Some {{site.data.keyword.cloud_notm}} regions do not have the Activity Tracker service available. If you have a {{site.data.keyword.databases-for}} deployment in a region that is not supported, provision Activity Tracker in the region on the table.
+Once you provision the service, events will automatically be forwarded from all your {{site.data.keyword.databases-for}} deployments in the same region.
 
-Deployment Region|Monitoring Region|UI Link
-----------|-----------|-----------
-Dallas | Dallas | https://logging.ng.bluemix.net
-Frankfurt | Frankfurt | https://logging.eu-fra.bluemix.net
-Oslo | Frankfurt | https://logging.eu-fra.bluemix.net
-Tokyo | not supported | not supported
-Sydney | Sydney | https://logging.au-syd.bluemix.net
-US East | US South | https://logging.ng.bluemix.net
-London | Frankfurt | https://logging.eu-fra.bluemix.net
-{: caption="Table 1. Activity Tracker service regions" caption-side="top"}
+The service can be provisioned from [its catalog page](https://{DomainName}/catalog/services/ibm-cloud-activity-tracker-with-logdna) or from an existing [Observability Dashboard](https://cloud.ibm.com/observe/activitytracker).
 
-Once you have the Activity Tracker service, {{site.data.keyword.databases-for}} deployment events appear under _Account Logs_ from the _View Logs_ dropdown menu. 
+The Activity Tracker with LogDNA service has a lite plan that is free to use, but it only offers streaming events. To take advantage of the tagging, export, retention, and other features, you need to use one of the [paid plans](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-about#overview_pricing_plans).
+
+### Using the LogDNA Activity Tracker
+
+Once event activity is being forwarded to the service, each event can be expanded to a detailed view by clicking the arrow to the left of the timestamp.
+
+The LogDNA service offers [searching](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-view_logs#view_logs_step6), [filtering](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-view_logs#view_logs_step5), and [export](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-export#export) of events so you can customize retention for your use-case. 
+
+For more information on features offered by LogDNA, including integrating it with your other {{site.data.keyword.cloud_notm}} services, see [its full documentation](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-about#about).
 
 ## Event Fields
 
-A description of the common fields for an Activity Tracker event is on the [Activity Tracker event fields](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-at_event) page.
+A description of the common fields for an Activity Tracker event is on the [event fields](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-event) page.
 
 ## List of Events
 
@@ -57,18 +56,25 @@ Action|Description
 
 The `service_id` field indicates the type of {{site.data.keyword.databases-for}} deployment. For example, `databases-for-postgresql` or `messages-for-rabbitmq`.
 
-## Activity Tracker through LogDNA
+## Legacy Activity Tracker
 
-If your {{site.data.keyword.databases-for}} deployments are in the `us-south` region, you can also get Activity Tracker events in [IBM Cloud Activity Tracker with LogDNA](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-about#about). Once you provision the service, events will automatically be forwarded from all your {{site.data.keyword.databases-for}} deployments in the same region.
+{{site.data.keyword.cloud_notm}} Databases deployments are still integrated with  [Activity Tracker](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-activity_tracker_ov), although this service is in the process of being deprecated.
 
-The service can be provisioned from [its catalog page](https://{DomainName}/catalog/services/ibm-cloud-activity-tracker-with-logdna) or from an existing [Observability Dashboard](https://cloud.ibm.com/observe/activitytracker).
+If have already provisioned the Activity Tracker service, that service might still be running. New provisions of the service are no longer available.
 
-The Activity Tracker with LogDNA service has a lite plan that is free to use, but it only offers streaming events. To take advantage of the tagging, export, retention, and other features, you need to use one of the [paid plans](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-about#overview_pricing_plans).
+Some {{site.data.keyword.cloud_notm}} regions did not have the Activity Tracker service available. If you have a {{site.data.keyword.databases-for}} deployment in a region that is not supported, your Activity Tracker uses region on the table.
 
-### Using the LogDNA Activity Tracker
+Deployment Region|Monitoring Region|UI Link
+----------|-----------|-----------
+Dallas | Dallas | https://logging.ng.bluemix.net
+Frankfurt | Frankfurt | https://logging.eu-fra.bluemix.net
+Oslo | Frankfurt | https://logging.eu-fra.bluemix.net
+Tokyo | not supported | not supported
+Sydney | Sydney | https://logging.au-syd.bluemix.net
+US East | US South | https://logging.ng.bluemix.net
+London | Frankfurt | https://logging.eu-fra.bluemix.net
+{: caption="Table 1. Activity Tracker service regions" caption-side="top"}
 
-Once event activity is being forwarded to the service, each event can be expanded to a detailed view by clicking the arrow to the left of the timestamp.
+{{site.data.keyword.databases-for}} deployment events appear under _Account Logs_ from the _View Logs_ dropdown menu. 
 
-The LogDNA service offers [searching](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-view_logs#view_logs_step6), [filtering](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-view_logs#view_logs_step5), and [export](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-export#export) of events so you can customize retention for your use-case. 
-
-For more information on features offered by LogDNA, including integrating it with your other {{site.data.keyword.cloud_notm}} services, see [its full documentation](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-about#about).
+A description of the common fields for an Activity Tracker event is on the [Activity Tracker event fields](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-at_event) page.
