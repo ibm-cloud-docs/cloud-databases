@@ -19,7 +19,7 @@ subcollection: cloud-databases
 
 {{site.data.keyword.databases-for}} are integrated with [{{site.data.keyword.la_full}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-about), so you can view database logs.
 
-Currently, {{site.data.keyword.la_full_notm}} integration is only available for {{site.data.keyword.databases-for}} deployments in the `us-south` region.
+Currently, {{site.data.keyword.la_full_notm}} integration is available for {{site.data.keyword.databases-for}} deployments in the `us-south`, `jp-tok`, and `eu-gb` regions.
 {: .tip}
 
 ## Provisioning {{site.data.keyword.la_full_notm}}
