@@ -56,7 +56,7 @@ The database takes some time to deploy. The user is navigated back to the {{site
 
 The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your terminal or command line. For more information, see [Download and install {{site.data.keyword.cloud_notm}} CLI](/docs/cli/reference/ibmcloud?topic=cloud-cli-install-ibmcloud-cli).
 
-To create a  {{site.data.keyword.databases-for}} deployment, you use the CLI to request a service instance with the service ID of the database (or messaging queue) you want to provision.
+To create a {{site.data.keyword.databases-for}} deployment, you use the CLI to request a service instance with the service ID of the database (or messaging queue) you want to provision.
 
 The command template is
 
@@ -124,7 +124,7 @@ More information on the Resource Controller API is found in its [API Reference](
 
 ## Provisioning with Terraform
 
-If you use [Terraform](/docs/terraform?topic=terraform-about) to manage your infrastructure, the [{{site.data.keyword.cloud_notm}} provider for Terraform](/docs/terraform?topic=terraform-getting-started) supports provisioning {{site.data.keyword.databases-for-elasticsearch}}. 
+If you use [Terraform](/docs/terraform?topic=terraform-about) to manage your infrastructure, the [{{site.data.keyword.cloud_notm}} provider for Terraform](/docs/terraform?topic=terraform-getting-started) supports provisioning {{site.data.keyword.databases-for}} deployments. 
 
 Example configuration -
 ```
