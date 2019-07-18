@@ -19,7 +19,7 @@ subcollection: cloud-databases
 
 {{site.data.keyword.databases-for}} are integrated with [{{site.data.keyword.la_full}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-about), so you can view database logs.
 
-Currently, {{site.data.keyword.la_full_notm}} integration is available for {{site.data.keyword.databases-for}} deployments in the `us-south`, `jp-tok`, and `eu-gb` regions.
+Currently, {{site.data.keyword.la_full_notm}} integration is available for {{site.data.keyword.databases-for}} deployments in the `us-south`, `jp-tok`, and `eu-gb` regions. Logs from your deployments appear in a Log Analysis instance in the same region. If you have deployments in multiple regions you have to set up Log Analysis in multiple regions.
 {: .tip}
 
 ## Provisioning {{site.data.keyword.la_full_notm}}
