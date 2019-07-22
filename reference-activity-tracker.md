@@ -17,10 +17,9 @@ subcollection: cloud-databases
 # Activity Tracker Integration
 {: #activity-tracker}
 
-{{site.data.keyword.cloud_notm}} Databases deployments are integrated with Activity Tracker, so you can view service-level events. If your {{site.data.keyword.databases-for}} deployments are in the `us-south`,`jp-tok`, or `eu-gb` regions, you can get Activity Tracker events in [IBM Cloud Activity Tracker with LogDNA](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-about#about).
+{{site.data.keyword.cloud_notm}} Databases deployments are integrated with Activity Tracker events in [IBM Cloud Activity Tracker with LogDNA](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-about#about), so you can view service-level events.
 
-Events from your deployments appear in an Activity Tracker instance in the same region. If you have deployments in multiple regions you have to set up Activity Tracker in multiple regions.
-{: .tip}
+Currently, Activity Tracker with LogDNA integration is available for {{site.data.keyword.databases-for}} deployments in the `us-south`, `jp-tok`, `eu-gb`, and `osl01` regions. Events from your deployments appear in an Activity Tracker instance in the same region, with the exception of `osl01`. Deployments in `osl01` have their events forwarded to `eu-gb`. If you have deployments in multiple regions you have to set up the Activity Tracker in multiple regions. 
 
 ## Activity Tracker through LogDNA
 
