@@ -20,6 +20,9 @@ subcollection: cloud-databases
 
 Access to {{site.data.keyword.cloud}} Databases service instances for users in your account is controlled by {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). Every user that accesses {{site.data.keyword.databases-for}} in your account must be assigned an access policy with an IAM user role defined. That policy determines what actions the user can perform within the context of the service or instance you select. The allowable actions are customized and defined by the {{site.data.keyword.cloud_notm}} service as operations that are allowed to be performed on the service. The actions are then mapped to IAM user roles.
 
+IAM is only integrated with high-level service access and not with database-level users and privileges. Database access is governed by the standard access controls provided by the database. IAM does not control database users.
+{: .tip}
+
 Policies enable access to be granted at different levels. Some of the options include: 
 * Access across all instances of the service in your account
 * Access to an individual service instance in your account
