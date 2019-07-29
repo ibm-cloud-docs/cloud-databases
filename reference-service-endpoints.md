@@ -19,7 +19,7 @@ subcollection: cloud-databases
 
 All {{site.data.keyword.databases-for}} deployments offer integration with [{{site.data.keyword.cloud_notm}} Service Endpoints](/docs/services/service-endpoint?topic=service-endpoint-about#about). It gives you the ability to enable connections to your deployments from the public internet and over the {{site.data.keyword.cloud_notm}} private network.
 
-Service Endpoints are only available in {{site.data.keyword.cloud_notm}} Multi-Zone Regions. If your deployments are in `Oslo 01`, you aren't able to use private endpoints since it is a Single-Zone Region. Deployments in all other regions are able to use Service Endpoints.
+Service Endpoints are available in all {{site.data.keyword.cloud_notm}} Multi-Zone Regions and some Single-Zone Regions. If your deployments are in `Oslo 01` or `Chennai 01` you aren't able to use private endpoints. Deployments in all other regions are able to use Service Endpoints.
 {: .tip}
 
 ## Public Endpoints

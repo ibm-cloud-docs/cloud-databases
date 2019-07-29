@@ -19,7 +19,22 @@ subcollection: cloud-databases
 
 {{site.data.keyword.cloud_notm}} Databases deployments are integrated with Activity Tracker events in [IBM Cloud Activity Tracker with LogDNA](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-about#about), so you can view service-level events.
 
-Currently, Activity Tracker with LogDNA integration is available for {{site.data.keyword.databases-for}} deployments in the `us-south`, `jp-tok`, `eu-gb`, and `osl01` regions. Events from your deployments appear in an Activity Tracker instance in the same region, with the exception of `osl01`. Deployments in `osl01` have their events forwarded to `eu-gb`. If you have deployments in multiple regions you have to set up the Activity Tracker in multiple regions. 
+Currently, Activity Tracker with LogDNA integration is available for {{site.data.keyword.databases-for}} deployments according to the following table. 
+
+Deployment Region | Activity Tracker Region 
+----------|-----------
+`us-south` | `us-south`
+`jp-tok` | `jp-tok`
+`eu-gb` | `eu-gb`
+`osl01` | `eu-gb`
+`seo01` | `jp-tok`
+`che01` | `jp-tok`
+`us-east` | Not Available
+`au-syd` | Not Available
+`eu-de` | Not Available
+{: caption="Table 1. Activity Tracker regions" caption-side="top"}
+
+Events from your deployments appear in an Activity Tracker instance in the same region, with the exception of `osl01`, `seo01`, and `che01`. Deployments in `osl01` have their events forwarded to `eu-gb`. Deployments in `seo01` and `che01` have their events forwarded to `jp-tok`. If you have deployments in multiple regions you have to set up the Activity Tracker in multiple regions. 
 
 ## Activity Tracker through LogDNA
 
@@ -54,7 +69,7 @@ Action|Description
 `<service_id>.backup.restore`|A restore from backup was created. If the attempted restore failed, a "-failure" flag is included in the message.
 `<service_id>.resources.scale`|A scaling operation was performed. If the scaling operation failed, a "-failure" flag is included in the message.
 `<service_id>.whitelisted-ips-list.update`|The whitelist was modified. A "-failure" flag is included in the message if the attempt to modify the whitelist failed.
-{: caption="Table 1. List of Events and Event Descriptions" caption-side="top"}
+{: caption="Table 2. List of Events and Event Descriptions" caption-side="top"}
 
 The `service_id` field indicates the type of {{site.data.keyword.databases-for}} deployment. For example, `databases-for-postgresql` or `messages-for-rabbitmq`.
 
@@ -75,7 +90,7 @@ Tokyo | not supported | not supported
 Sydney | Sydney | https://logging.au-syd.bluemix.net
 US East | US South | https://logging.ng.bluemix.net
 London | Frankfurt | https://logging.eu-fra.bluemix.net
-{: caption="Table 1. Activity Tracker service regions" caption-side="top"}
+{: caption="Table 3. Activity Tracker service regions" caption-side="top"}
 
 {{site.data.keyword.databases-for}} deployment events appear under _Account Logs_ from the _View Logs_ dropdown menu. 
 
