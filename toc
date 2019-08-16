@@ -7,6 +7,7 @@ IBM Cloud Databases
 	{: .navgroup id="learn"}
 	index.md
 	k8-tutorial.md
+	cf-tutorial.md
 	{: .navgroup-end}
 
 	{: .navgroup id="howto"}
