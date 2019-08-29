@@ -20,7 +20,7 @@ subcollection: cloud-databases
 
 To create an {{site.data.keyword.cloud}} Databases deployment, you need to create an {{site.data.keyword.cloud_notm}} service instance. The service type is determined by the service ID and you need to specify the appropriate service ID when you create a new {{site.data.keyword.databases-for}} deployment.
 
-You can visit the provision a deployment by visiting the service's catalog page or by specifying the service ID to the command line, to the API, or to Terraform.
+You can provision a deployment by visiting the service's catalog page or by specifying the service ID to the command line, to the API, or to Terraform.
 
 Deployment Type|Catalog Page|Service ID
 ----------|-----|-----------
