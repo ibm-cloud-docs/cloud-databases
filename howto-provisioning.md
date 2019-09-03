@@ -64,7 +64,7 @@ The command template is
 ibmcloud resource service-instance-create <service-name> <service-id> <service-plan-id> <region>
 ```
 
-More information about this command, in general, is available in the [CLI reference for resource groups](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_resource_service_instance_create).
+More information about this command, in general, is available in the [CLI reference for resource groups](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_create).
 
 For example, if you want to provision a {{site.data.keyword.messages-for-rabbitmq}} deployment, set the service name as the name you want for your deployment. Then, set `messages-for-rabbitmq` as the service ID. Enter `standard` for the service plan ID and `us-south` (or your region) for the region.
 

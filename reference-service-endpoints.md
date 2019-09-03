@@ -19,7 +19,7 @@ subcollection: cloud-databases
 
 All {{site.data.keyword.databases-for}} deployments offer integration with [{{site.data.keyword.cloud_notm}} Service Endpoints](/docs/services/service-endpoint?topic=service-endpoint-about#about). It gives you the ability to enable connections to your deployments from the public internet and over the {{site.data.keyword.cloud_notm}} private network.
 
-Service Endpoints are available in all {{site.data.keyword.cloud_notm}} Multi-Zone Regions and some Single-Zone Regions. If your deployments are in `Oslo 01` or `Chennai 01` you aren't able to use private endpoints. Deployments in all other regions are able to use Service Endpoints.
+Service Endpoints are available in all {{site.data.keyword.cloud_notm}} Multi-Zone Regions and some Single-Zone Regions. If your deployments are in `Osl01` or `Che01`, you aren't able to use private endpoints. Deployments in all other regions are able to use Service Endpoints.
 {: .tip}
 
 ## Public Endpoints
@@ -56,7 +56,7 @@ For more information, see the [Provisioning](/docs/services/cloud-databases?topi
 
 Once you have a deployment, it is possible to change your public/private service endpoints configuration, with the exception of {{site.data.keyword.databases-for-mongodb}}. 
 
-In the _Settings_ tab of your deployment's dashboard is a card for _Service Endpoints_. You can toggle which types of connections are available to your deployment.
+In the _Settings_ tab of your deployment's dashboard, there is a card for _Service Endpoints_. You can toggle which types of connections are available to your deployment.
 
 You can use the [`ibmcloud resource service-instance-update`](https://cloud.ibm.com/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_update) command in the CLI, specifying the endpoint with the `--service-endpoints` flag.
 ```
@@ -65,7 +65,7 @@ ibmcloud resource service-instance-update <service-name> --service-endpoints <en
 
 Or you can use the [Resource Controller API](https://cloud.ibm.com/apidocs/resource-controller), with a `PATCH` request to the [/resource_instances/{id}](https://cloud.ibm.com/apidocs/resource-controller#update-a-resource-instance) endpoint.
 
-Changing the type of endpoints available on your deployment does not cause any downtime from a database perspective. However, if you disable an endpoint that is currently being used by you or your applications, those connections are dropped.
+Changing the type of endpoints available on your deployment does not cause any downtime from a database perspective. However, if you disable an endpoint that is being used by you or your applications, those connections are dropped.
 
 ## Credentials for Private Endpoints
 

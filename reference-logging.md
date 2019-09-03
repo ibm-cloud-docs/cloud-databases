@@ -34,7 +34,7 @@ Deployment Region | Log Analysis Region
 `au-syd` | Not Available
 {: caption="Table 1. Log Analysis regions" caption-side="top"}
 
-Logs from your deployments appear in a Log Analysis instance in the same region, with the exception of `osl01`, `seo01`, and `che01`. Deployments in `osl01` have their logs forwarded to `eu-gb`. Deployments in `seo01` and `che01` have their logs forwarded to `jp-tok`. If you have deployments in multiple regions you have to set up Log Analysis in multiple regions. 
+Logs from your deployments appear in a Log Analysis instance in the same region, with the exception of `osl01`, `seo01`, and `che01`. Deployments in `osl01` have their logs forwarded to `eu-gb`. Deployments in `seo01` and `che01` have their logs forwarded to `jp-tok`. If you have deployments in multiple regions, you have to set up Log Analysis in multiple regions. 
 
 ## Provisioning {{site.data.keyword.la_full_notm}}
 

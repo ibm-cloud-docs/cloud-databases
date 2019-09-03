@@ -28,7 +28,7 @@ Backups for {{site.data.keyword.databases-for}} deployments are accessible from 
 
 ## Backups in the UI
 
-Each backup is labeled with its type, and when the backup was taken. Click the timestamp to change it's format between elapsed time, local time, and UTC. 
+Each backup is labeled with its type, and when the backup was taken. Click the timestamp to change its format between elapsed time, local time, and UTC. 
 
 ![List of Backups on the Backups tab](images/backups-list.png)
 
@@ -59,12 +59,12 @@ For backups information in the {{site.data.keyword.databases-for}} API, use the 
 
 ## Taking an On-demand Backup
 
-On-demand backups are useful if you plan to make major changes to your deployment like scaling or removing databases, tables, collections, etc. It can also be useful if you need to backup on a schedule. On-demand backups are kept for 30 days. 
+On-demand backups are useful if you plan to make major changes to your deployment like scaling or removing databases, tables, collections. It can also be useful if you need to backup on a schedule. On-demand backups are kept for 30 days. 
 
 Deployments come with free backup storage equal to their total disk space. If your backup storage utilization is greater than that, each gigabyte is charged at an overage $0.03/month. Backups are compressed, so even if you use on-demand backups, most deployments will not ever go over the allotted credit.
 {: .tip}
 
-To create a manual backup in the UI, visit the _Backups_ tab of your deployment then click **Back up now**. A message is displayed that a backup is in progress, and a on-demand backup is added to the list of available backups.
+To create a manual backup in the UI, visit the _Backups_ tab of your deployment then click **Back up now**. A message is displayed that a backup is in progress, and an on-demand backup is added to the list of available backups.
 
 In the CLI, you trigger an on-demand backup with the [`cdb deployment-backup-now`](/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference#deployment-backup-now) command.
 ```
@@ -81,10 +81,10 @@ Backups are restored to a new deployment. The new deployment is auto-sized to th
 
 To restore a backup to a new service instance,
 
-1. Click in the corresponding row to expand the options for the backup you want to restore.
+1. Click in the corresponding row to expand the options for the backup that you want to restore.
 2. Click the **Restore** button.
 3. Use the Dialog box to select from some available options. The new deployment is automatically named `<name>-restore-[timestamp]`, but you can rename it. You can also select the region where the new deployment is located. Cross-region restores are supported, with the exception of restoring a `eu-de` backup to another region.
-4. Click the **Restore** button. A "restore from backup started" message appears. Clicking on **Your new instance is available now.** will take you to your _Resources List_.
+4. Click the **Restore** button. A "restore from backup started" message appears. Clicking on **Your new instance is available now.** takes you to your _Resources List_.
 
 ### Restoring a Backup in the CLI
 
@@ -124,4 +124,4 @@ The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are al
 
 * {{site.data.keyword.cloud_notm}} Databases is not responsible for restoration, timeliness, or validity of said backups.
 * Actions that you take as a user can compromise the integrity of backups, such as under-allocating memory and disk. Users can monitor that backups were performed successfully via the API, and periodically restore a backup to ensure validity and integrity. Users can retrieve the most recent scheduled backup details from the [Cloud Databases CLI plug-in](#backups-in-the-cli) and the [Cloud Databases API](#backups-in-the-api).
-* As a managed service {{site.data.keyword.cloud_notm}} Databases monitors the state of your backups and can attempt to remediate when possible. If you encounter issues you cannot recover from, you can contact support for additional help.
+* As a managed service, {{site.data.keyword.cloud_notm}} Databases monitors the state of your backups and can attempt to remediate when possible. If you encounter issues you cannot recover from, you can contact support for additional help.

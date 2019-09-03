@@ -34,11 +34,11 @@ Deployment Region | Activity Tracker Region
 `au-syd` | Not Available
 {: caption="Table 1. Activity Tracker regions" caption-side="top"}
 
-Events from your deployments appear in an Activity Tracker instance in the same region, with the exception of `osl01`, `seo01`, and `che01`. Deployments in `osl01` have their events forwarded to `eu-gb`. Deployments in `seo01` and `che01` have their events forwarded to `jp-tok`. If you have deployments in multiple regions you have to set up the Activity Tracker in multiple regions. 
+Events from your deployments appear in an Activity Tracker instance in the same region, with the exception of `osl01`, `seo01`, and `che01`. Deployments in `osl01` have their events forwarded to `eu-gb`. Deployments in `seo01` and `che01` have their events forwarded to `jp-tok`. If you have deployments in multiple regions, you have to set up the Activity Tracker in multiple regions. 
 
 ## Activity Tracker through LogDNA
 
-Once you provision the service, events will automatically be forwarded from all your {{site.data.keyword.databases-for}} deployments in the same region.
+Once you provision the service, events are automatically forwarded from all your {{site.data.keyword.databases-for}} deployments in the same region.
 
 The service can be provisioned from [its catalog page](https://{DomainName}/catalog/services/ibm-cloud-activity-tracker-with-logdna) or from an existing [Observability Dashboard](https://cloud.ibm.com/observe/activitytracker).
 
@@ -75,9 +75,7 @@ The `service_id` field indicates the type of {{site.data.keyword.databases-for}}
 
 ## Legacy Activity Tracker
 
-{{site.data.keyword.cloud_notm}} Databases deployments are still integrated with  [Activity Tracker](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-activity_tracker_ov), although this service is in the process of being deprecated.
-
-If have already provisioned the Activity Tracker service, that service might still be running. New provisions of the service are no longer available.
+{{site.data.keyword.cloud_notm}} Databases deployments are still integrated with  [Activity Tracker](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-activity_tracker_ov), although this service is being deprecated. New provisions of the service are no longer available. If you have already provisioned the Activity Tracker service, that service is being deprecated with an end of service date of September 30, 2019.
 
 Some {{site.data.keyword.cloud_notm}} regions did not have the Activity Tracker service available. If you have a {{site.data.keyword.databases-for}} deployment in a region that is not supported, your Activity Tracker uses region on the table.
 
@@ -86,7 +84,7 @@ Deployment Region|Monitoring Region|UI Link
 Dallas | Dallas | https://logging.ng.bluemix.net
 Frankfurt | Frankfurt | https://logging.eu-fra.bluemix.net
 Oslo | Frankfurt | https://logging.eu-fra.bluemix.net
-Tokyo | not supported | not supported
+Tokyo | Not supported | Not supported
 Sydney | Sydney | https://logging.au-syd.bluemix.net
 US East | US South | https://logging.ng.bluemix.net
 London | Frankfurt | https://logging.eu-fra.bluemix.net

@@ -18,7 +18,7 @@ subcollection: cloud-databases
 # Tutorial - Connecting a Cloud Foundry Application
 {: #tutorial-cf-app}
 
-This tutorial uses a [sample app](https://github.com/IBM-Cloud/clouddatabases-helloworld-cloudfoundry-examples) to demonstrate how to connect a Cloud Foundry application in {{site.data.keyword.cloud_notm}} to an {{site.data.keyword.databases-for}} deployment. The application creates, reads from, and writes to a database that uses data that is supplied through the app's web interface.
+This tutorial uses a [sample app](https://github.com/IBM-Cloud/clouddatabases-helloworld-cloudfoundry-examples) to demonstrate how to connect a Cloud Foundry application in {{site.data.keyword.cloud_notm}} to a {{site.data.keyword.databases-for}} deployment. The application creates, reads from, and writes to a database that uses data that is supplied through the app's web interface.
 
 Each git branch of the [repository](https://github.com/IBM-Cloud/clouddatabases-helloworld-cloudfoundry-examples) corresponds to samples in a particular programming language. For example, when you click on **Branch** there is a **Node** branch, where all examples are written in JavaScript using Node.js. The files in each folder correspond to either a database or a message queue. 
 
@@ -30,11 +30,11 @@ Clone the repository of the language that you want to use. For instance, you can
 git clone -b node git@github.com:IBM-Cloud/clouddatabases-helloworld-cloudfoundry-examples.git
 ```
 
-Once the branch has been cloned, you can select the appropriate directory for the database you want to try out. Each database has its own copy of these instructions on how to provision and deploy a database or message queue and an application on {{site.data.keyword.containerlong_notm}}.
+Once the branch is cloned, you can select the appropriate directory for the database you want to try out. Each database has its own copy of these instructions on how to provision and deploy a database or message queue and an application on {{site.data.keyword.containerlong_notm}}.
 
 ## Installing the app dependencies
 
-Use npm to install dependencies. From your terminal, change the directory to where the sample app is located and install the dependencies listed in the `package.json` file.
+Use npm to install dependencies. From your terminal, change the directory to where the sample app is located and install the dependencies that are listed in the `package.json` file.
   ```
   npm install
   ```
@@ -47,17 +47,17 @@ Use npm to install dependencies. From your terminal, change the directory to whe
 
     The IBM Cloud CLI tool enables you to communicate with IBM Cloud from your terminal or command line.
 
-3. Connect to IBM Cloud in the command line tool and follow the prompts to log in.
+3. Connect to IBM Cloud in the command-line tool and follow the prompts to log in.
 
     ```shell
     ibmcloud login
     ```
 
-    **Note:** If you have a federated user ID, use the `ibmcloud login --sso` command to log in with your single sign on ID.
+    **Note:** If you have a federated user ID, use the `ibmcloud login --sso` command to log in with your single sign-on ID.
 
  ## Creating a database deployment
 
-The database can be created from the command line using the `ibmcloud resource service-instance-create` command. The command takes a service instance name, a service name, plan name, and location. The service name is one of the {{site.data.keyword.databases-for}} services, `databases-for-elasticsearch`, `databases-for-etcd`, `databases-for-mongodb`, `databases-for-postgresql`, `databases-for-redis`, or `messages-for-rabbitmq`.
+The database can be created from the command line by using the `ibmcloud resource service-instance-create` command. The command takes a service instance name, a service name, plan name, and location. The service name is one of the {{site.data.keyword.databases-for}} services, `databases-for-elasticsearch`, `databases-for-etcd`, `databases-for-mongodb`, `databases-for-postgresql`, `databases-for-redis`, or `messages-for-rabbitmq`.
 ```shell
 ibmcloud resource service-instance-create <your_deployment_name> <service_name> standard <region>
 ```
@@ -96,13 +96,13 @@ ibmcloud resource service-alias-create example-deployment --instance-name exampl
       - example-deployment
   ```
 
-1. Change the `name` value. The value you choose will be the name of the app as it appears in your Resource List. 
+1. Change the `name` value. The value that you choose will be the name of the app as it appears in your Resource List. 
 
 2. Change the `route` value to something unique. The route that you choose determines the subdomain of your application's URL:  `<route>.{region}.cf.appdomain.cloud`. Be sure the `{region}` matches where your application is deployed.
 
 3. Update the `service` value in `manifest.yml` to match the name of your deployment's Cloud Foundry alias.
 
-4. Push the app to IBM Cloud. When you push the app it will automatically be bound to the service.
+4. Push the app to IBM Cloud. When you push the app, it will automatically be bound to the service.
 ```shell
 ibmcloud cf push
 ```
@@ -114,7 +114,7 @@ The code for connecting to the deployment and reading from and updating the data
 
 | File | Description |
 | ---- | ----------- |
-|**server**|Establishes a connection to the Redis database using credentials from VCAP_ENV and handles create and read operations on the database. |
+|**server**|Establishes a connection to the database by using credentials from VCAP_ENV and handles create and read operations on the database. |
 |**main.js**|Handles user input for a PUT command and parses the results of a GET command to output the contents of the database.|
 
 The app uses a PUT and a GET operation:
