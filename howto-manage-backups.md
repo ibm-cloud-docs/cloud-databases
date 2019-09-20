@@ -2,9 +2,9 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-06-17"
+lastupdated: "2019-09-17"
 
-subcollection: cloud-databases
+subcollection: cloud-databases, backups
 
 ---
 
@@ -26,13 +26,16 @@ Backups for {{site.data.keyword.databases-for}} deployments are accessible from 
 - Scheduling of the daily backup is not configurable.
 - Backups are cross-regionally durable. Backups are stored across multiple regions, and are restorable to other regions.
 
+{{site.data.keyword.databases-for-postgresql}} deployments maintain a continuous incremental backup for the last 7 days. You can use [Point-in-time Recovery](/docs/services/databases-for-postgresql?topic=databases-for-postgresql-pitr) to restore your deployment to anytime in that 7 day period.
+{: .tip}
+
 ## Backups in the UI
 
-Each backup is labeled with its type, and when the backup was taken. Click the timestamp to change its format between elapsed time, local time, and UTC. 
+The backup types have their respective tabs, either _On-demand_ or _Automatic_. Each backup is listed with its type and when the backup was taken. Click the timestamp to change its format between elapsed time, local time, and UTC. 
 
 ![List of Backups on the Backups tab](images/backups-list.png)
 
-Click the backup to reveal information for that specific backup, including its full ID. For restore options, there is a  **Restore** button or a pre-formatted CLI command. 
+Click the backup to reveal information for that specific backup, including its full ID. For restore options, there is a **Restore** button or a pre-formatted CLI command. 
 
 ![Details of a Backup](images/backups-detail.png)
 
@@ -48,7 +51,7 @@ For example, to view the backups for a deployment named "example-deployment", us
 ibmcloud cdb deployment-backups-list example-deployment
 ```
 
-To see the details of one of the backups from the list, take the ID from the `ID` field of the `deployment-backups-list` command's response and use it with the `backup-show` command.
+To see the details of one of the backups from the list, take the ID from the `ID` field of the `deployment-backups-list` response and use it with the `backup-show` command.
 
 ```
 ibmcloud cdb backup-show crn:v1:staging:public:databases-for-postgresql:us-south:a/6284014dd5b487c87a716f48aeeaf99f:3b4537bf-a585-4594-8262-2b1e24e2701e:backup:a3364821-d061-413f-a0df-6ba0e2951566
