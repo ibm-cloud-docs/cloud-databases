@@ -2,7 +2,7 @@
 
 Copyright:
   years: 2019
-lastupdated: "2019-07-26"
+lastupdated: "2019-09-12"
 
 keywords: cloud databases
 
@@ -48,6 +48,35 @@ Once provisioned, the Monitoring service under **Cloud Foundry Services** in you
 By default, the monitoring service displays information that is related to services you have set-up under your Domain, Account, Organization, and Space. {{site.data.keyword.databases-for}} deployments send metrics that are scoped to the Account level. Click on your account in the upper-left and select "account" from the _Domain_ drop-down menu.
 
 ![IBM Cloud Monitoring Dashboard](images/monitoring-dashboard.png)
+
+### User Access to Monitoring
+
+Some users experience authorization issues when trying to access account level metrics in their IBM Monitoring instance. Non-account owners see the error message
+
+```
+{
+  "errors": [
+    {
+      "code": "BXNMSAL18E",
+      "message": "Subject 'user@ibm.com' is not authorized to perform this action"
+    }
+  ]
+}
+```
+
+Owners need to go to [`Manage -> Access (IAM) -> Users`](https://cloud.ibm.com/iam/users). Click the user you need to grant access to Monitoring. Then click on 'Access policies' followed by the 'Assign access' button.
+
+![Assign Access to a user on your account](images/monitoring-assign-access.png)
+
+The Monitoring Service is a Cloud Foundry service, you need to grant access by going through the **Assign access to resources** button.
+
+![Assign Access to Resources button](images/monitoring-access-buttons.png)
+
+Which leads to a screen that allows you to grant access for different services on your account to a user.
+
+![Granting Access to Monitoring to a user](images/monitoring-grant-access.png)
+
+'Services: Monitoring' and the shown 'Roles' must be selected. 'Region' and 'Service Instance' can be set for the Monitoring instance you need users to access.
 
 ## Configuring a Grafana Graph
 
