@@ -62,13 +62,15 @@ The table lists the events that get sent to Activity Tracker from {{site.data.ke
 
 Action|Description
 -------|-------
-`<service_id>.backup.create`|A backup of your deployment was created. If the backup failed, a "-failure" flag is included in the message.
+`<service_id>.backup-ondemand.create`|An on-demand backup of your deployment was created. If the backup failed, a "-failure" flag is included in the message.
+`<service_id>.backup-scheduled.create`|A scheduled backup of your deployment was created. If the backup failed, a "-failure" flag is included in the message.
 `<service_id>.user-password.update`|A user's password was updated. A "-failure" flag is included in the message if the attempt to update a user's password failed.
 `<service_id>.user.create`|A user was created. A "-failure" flag is included in the message if the attempt to create a user failed.
 `<service_id>.user.delete`|A user was deleted. A "-failure" flag is included in the message if the attempt to delete a user failed.
 `<service_id>.backup.restore`|A restore from backup was created. If the attempted restore failed, a "-failure" flag is included in the message.
 `<service_id>.resources.scale`|A scaling operation was performed. If the scaling operation failed, a "-failure" flag is included in the message.
 `<service_id>.whitelisted-ips-list.update`|The whitelist was modified. A "-failure" flag is included in the message if the attempt to modify the whitelist failed.
+`<service_id>.serviceendpoints.update`|A change has been made to the service endpoints configuration. If the operation failed, a "-failure" flag is included in the message.
 {: caption="Table 2. List of Events and Event Descriptions" caption-side="top"}
 
 The `service_id` field indicates the type of {{site.data.keyword.databases-for}} deployment. For example, `databases-for-postgresql` or `messages-for-rabbitmq`.
