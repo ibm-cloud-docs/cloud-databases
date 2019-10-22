@@ -26,7 +26,7 @@ Backups for {{site.data.keyword.databases-for}} deployments are accessible from 
 - Scheduling of the daily backup is not configurable.
 - Backups are cross-regionally durable. Backups are stored across multiple regions, and are restorable to other regions.
 
-{{site.data.keyword.databases-for-postgresql}} deployments maintain a continuous incremental backup for the last 7 days. You can use [Point-in-time Recovery](/docs/services/databases-for-postgresql?topic=databases-for-postgresql-pitr) to restore your deployment to anytime in that 7 day period.
+If you are using {{site.data.keyword.databases-for-postgresql}}, those deployments maintain a continuous incremental backup for the last 7 days. You can use [Point-in-time Recovery](/docs/services/databases-for-postgresql?topic=databases-for-postgresql-pitr) to restore your deployment to anytime in that 7 day period.
 {: .tip}
 
 ## Backups in the UI
