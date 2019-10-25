@@ -45,12 +45,12 @@ At the end of the transition window, deprecated major versions cannot be deploye
 
 Database|Versioning Schema|Major Versions
 ----------|---------|----------
-Elasticsearch|Major versions are the first number in a `release.version.maintenance` version number.|2, 5, 6
-etcd|Major versions are the first number in a `major.minor.patch` version number.|2, 3
-MongoDB|Major versions are the first number in a `major.minor.maintenance` version number.|2, 3, 4
-PostgreSQL*|Major version is defined by the first number in the version number.| 9.5, 9.6, 10
-Redis|Major versions are the first number in a `major.minor.patch` version number.|2, 3, 4
-RabbitMQ|Major versions are the first number in a `major.minor.patch` version number.|2, 3
+Elasticsearch|Major versions are the first number in a `release.version.maintenance` version number.
+etcd|Major versions are the first number in a `major.minor.patch` version number.
+MongoDB|Major versions are the first number in a `major.minor.maintenance` version number.
+PostgreSQL*|Major version is defined by the first number in the version number.
+Redis|Major versions are the first number in a `major.minor.patch` version number.
+RabbitMQ|Major versions are the first number in a `major.minor.patch` version number.
 {: caption="Table 1. Major versions for {{site.data.keyword.databases-for}}" caption-side="top"}
 
 
