@@ -29,9 +29,9 @@ The UI for managing whitelists is on the _Settings_ tab of your _Deployment Over
 
 ### IP addresses
 
-The *IP* field can take a single complete IPv4 address or IPv6 address with or without a netmask. Without a netmask, incoming connections must come from exactly that IP address. 
+The *IP* field can take a single complete IPv4 address with or without a netmask. Without a netmask, incoming connections must come from exactly that IP address. 
 
-Although the *IP* field allows for IPv6, no deployments are currently available to IPv6 networking and so these addresses cannot be filtered on.
+IPv6 is not currently supported.
 {: tip}
 
 ### Netmasks
