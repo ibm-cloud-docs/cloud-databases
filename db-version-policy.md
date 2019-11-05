@@ -43,8 +43,8 @@ At the end of the transition window, deprecated major versions cannot be deploye
 
 ## Major versions defined
 
-Database|Versioning Schema|Major Versions
-----------|---------|----------
+Database|Versioning Schema
+----------|---------
 Elasticsearch|Major versions are the first number in a `release.version.maintenance` version number.
 etcd|Major versions are the first number in a `major.minor.patch` version number.
 MongoDB|Major versions are the first number in a `major.minor.maintenance` version number.

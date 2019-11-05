@@ -25,25 +25,22 @@ Monitoring for {{site.data.keyword.databases-for}} deployments is provided throu
 
 ## Configuring IBM Cloud Monitoring
 
-[Provision the Monitoring service](/docs/services/cloud-monitoring/how-to?topic=cloud-monitoring-provision) from the [{{site.data.keyword.cloud_notm}}  catalog](https://cloud.ibm.com/catalog/services/monitoring). Monitoring has a _Lite_ plan available at no additional cost.
+Monitoring access is split by region, and you access your deployments' monitoring from region-specific URLs. Use the following table to access your deployments' monitoring in the region where the deployment resides.
 
-Some IBM Cloud regions do not have the monitoring service available. If you have {{site.data.keyword.databases-for}} deployment in a region that is not supported by monitoring, provision monitoring in the region on the table.
-
-Deployment Region|Monitoring Region|UI Link
+Deployment Region|Monitoring Region|Monitoring Link
 ----------|-----------|-----------
 Oslo | Frankfurt | https://metrics.eu-de.bluemix.net
-Tokyo | Sydney | https://metrics.au-syd.bluemix.net/
-Sydney | Sydney | https://metrics.au-syd.bluemix.net/
+Tokyo | Sydney | https://metrics.au-syd.bluemix.net
+Sydney | Sydney | https://metrics.au-syd.bluemix.net
 Frankfurt | Frankfurt | https://metrics.eu-de.bluemix.net
-Dallas | Dallas | https://metrics.ng.bluemix.net/
-Washington | Dallas | https://metrics.ng.bluemix.net/
+Dallas | Dallas | https://metrics.ng.bluemix.net
+Washington | Dallas | https://metrics.ng.bluemix.net
 London | London | https://metrics.eu-gb.bluemix.net
-Seoul | Sydney | https://metrics.au-syd.bluemix.net/
-Chennai | Sydney | https://metrics.au-syd.bluemix.net/
+Seoul | Sydney | https://metrics.au-syd.bluemix.net
+Chennai | Sydney | https://metrics.au-syd.bluemix.net
 {: caption="Table 1. Monitoring service regions" caption-side="top"}
 
-
-Once provisioned, the Monitoring service under **Cloud Foundry Services** in your **Resource List**. You can access your Monitoring Dashboard by opening the service, or by using a direct link. The direct link depends on what region the monitoring service is in.
+If you aren't currently logged into your IBM Cloud account when accessing the links, it asks you to log in.
 
 By default, the monitoring service displays information that is related to services you have set-up under your Domain, Account, Organization, and Space. {{site.data.keyword.databases-for}} deployments send metrics that are scoped to the Account level. Click on your account in the upper-left and select "account" from the _Domain_ drop-down menu.
 
