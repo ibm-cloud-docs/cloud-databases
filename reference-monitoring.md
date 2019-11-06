@@ -2,7 +2,7 @@
 
 Copyright:
   years: 2019
-lastupdated: "2019-09-12"
+lastupdated: "2019-11-05"
 
 keywords: cloud databases
 
