@@ -73,7 +73,7 @@ The expanded view has some handy, color-coded fields to help you parse your logs
 
 To set up logging alerts, see [Working with Alerts](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-alerts#alerts)
 
-For more information on features offered by {{site.data.keyword.la_full_notm}}, including integrating it with your other {{site.data.keyword.cloud_notm}} services, see [its full documentation](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-about#about).
+For more information on features offered by {{site.data.keyword.la_full_notm}}, including integrating it with your other {{site.data.keyword.cloud_notm}} services, see [its full documentation](/docs/services/Log-Analysis-with-LogDNA).
 
 ## Internal Log Retention
 
