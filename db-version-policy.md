@@ -22,7 +22,7 @@ When you provision a {{site.data.keyword.databases-for}} deployment, you can cho
 
 **Preview** - A preview database version is released for a limited time to try available functionality. Often it is the newest available version available from the database project maintainers in preparation for making it the "Preferred" version. While deployable, preview versions are not suitable for production, as they are excluded from service-level agreements and support. Also, there is no guarantee that a preview version becomes a production-level release. IBM reserves the right to ask a customer to delete a deployment that uses a preview version.
 
-**Deprecated** - Once a new database version becomes the "Preferred" version, the old version is marked as "Deprecated". Provisions and restores of deployments that run a deprecated version are still available and deployments that are running a deprecated version continue to be supported. However, you are encouraged to upgrade to the new "Preferred" version of the database as deprecated versions are eventually removed from {{site.data.keyword.cloud_notm}} and are no longer provisionable, restorable, or supported. 
+**Deprecated** - Old versions and versions nearing their end-of-life dates are marked as "Deprecated". Provisions and restores of deployments that run a deprecated version are still available and deployments that are running a deprecated version continue to be supported. However, you are encouraged to upgrade to the new "Preferred" version of the database as deprecated versions are eventually removed from {{site.data.keyword.cloud_notm}} and are no longer provisionable, restorable, or supported. 
 
 **Untagged** - Untagged database versions are fully supported and deployable versions. They are usually slightly older than the current preferred version, but they are still supported by the database project maintainers. They will continue to be supported on {{site.data.keyword.databases-for}} deployments until their deprecation is announced.
 
@@ -34,7 +34,7 @@ If a database version is deprecated or marked end of life by the open source pro
 
 When a major version is deprecated, a six-month transition window is opened for current users of the deprecated version.
 
-At the beginning of the period, we seek to contact users affected by the deprecation. During the six month transition window, users are able to initiate an upgrade to a supported major version. Existing deployments will continue to run as normal.
+At the beginning of the period, we seek to contact users affected by the deprecation. During the six-month transition window, users are able to initiate an upgrade to a supported major version. Existing deployments will continue to run as normal.
 
 Restoration of existing databases into new deployments of the deprecated major version is available during the six month deprecation, although we recommend upgrading to a non-deprecated major version as soon as possible.
 {: .tip}

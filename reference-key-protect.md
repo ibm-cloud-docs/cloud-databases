@@ -17,7 +17,7 @@ subcollection: cloud-databases
 # Key Protect Integration
 {: #key-protect}
 
-The data that you store in {{site.data.keyword.cloud}} Databases are encrypted by default by using randomly generated keys. If you need to control the encryption keys, you can use [{{site.data.keyword.keymanagementservicelong_notm}}](/docs/services/key-protect?topic=key-protect-about) to create, add, and manage encryption keys. Then, you can associate those keys with your {{site.data.keyword.databases-for}} deployment to encrypt your databases.
+The data that you store in {{site.data.keyword.cloud}} Databases is encrypted by default by using randomly generated keys. If you need to control the encryption keys, you can use [{{site.data.keyword.keymanagementservicelong_notm}}](/docs/services/key-protect?topic=key-protect-about) to create, add, and manage encryption keys. Then, you can associate those keys with your {{site.data.keyword.databases-for}} deployment to encrypt your databases.
 
 To get started, you need [{{site.data.keyword.keymanagementserviceshort}}](https://{DomainName}/catalog/services/key-protect) provisioned on your {{site.data.keyword.cloud_notm}} account.
 
@@ -42,7 +42,7 @@ Authorize {{site.data.keyword.keymanagementserviceshort}} for use with {{site.da
 
 ## Using the Key Protect Key
 
-Once you have granted your {{site.data.keyword.databases-for}} deployments permission to use your keys, you supply the [key name or CRN](/docs/services/key-protect?topic=key-protect-view-keys) when provisioning a deployment. The deployment uses your encryption key to encrypt your data.
+Once you grant your {{site.data.keyword.databases-for}} deployments permission to use your keys, you supply the [key name or CRN](/docs/services/key-protect?topic=key-protect-view-keys) when you provision a deployment. The deployment uses your encryption key to encrypt your data.
 
 If you provision a deployment through the CLI or API, the key protect key needs to be identified by its full CRN, not just its ID. A key protect CRN is in the format `crn:v1:<...>:key:<id>`.
 {: .tip}

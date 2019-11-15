@@ -40,9 +40,9 @@ Seoul | Sydney | https://metrics.au-syd.bluemix.net
 Chennai | Sydney | https://metrics.au-syd.bluemix.net
 {: caption="Table 1. Monitoring service regions" caption-side="top"}
 
-If you aren't currently logged into your IBM Cloud account when accessing the links, it asks you to log in.
+If you aren't currently logged in to your IBM Cloud account when accessing the links, it asks you to log in.
 
-By default, the monitoring service displays information that is related to services you have set-up under your Domain, Account, Organization, and Space. {{site.data.keyword.databases-for}} deployments send metrics that are scoped to the Account level. Click on your account in the upper-left and select "account" from the _Domain_ drop-down menu.
+By default, the monitoring service displays information that is related to services you have under your Domain, Account, Organization, and Space. {{site.data.keyword.databases-for}} deployments send metrics that are scoped to the Account level. Click your account name in the upper-left and select "account" from the _Domain_ drop-down menu.
 
 ![IBM Cloud Monitoring Dashboard](images/monitoring-dashboard.png)
 
@@ -61,7 +61,7 @@ Some users experience authorization issues when trying to access account level m
 }
 ```
 
-Owners need to go to [`Manage -> Access (IAM) -> Users`](https://cloud.ibm.com/iam/users). Click the user you need to grant access to Monitoring. Then click on 'Access policies' followed by the 'Assign access' button.
+Owners need to go to [`Manage -> Access (IAM) -> Users`](https://cloud.ibm.com/iam/users). Click the user you need to grant access to Monitoring. Then click 'Access policies' followed by the 'Assign access' button.
 
 ![Assign Access to a user on your account](images/monitoring-assign-access.png)
 
@@ -81,7 +81,7 @@ To display the usage metrics for your deployment, create a new dashboard.
 
 ![Creating a new dashboard](images/monitoring-dashboard-new.png)
 
-Select the format for your information. Click on _Panel Title_ and _Edit_. A configuration section appears and you configure the metrics that you want to display from the _Metrics_ tab.
+Select the format for your information. Click _Panel Title_ and _Edit_. A configuration section appears and you configure the metrics that you want to display from the _Metrics_ tab.
 
 ![Editing the new Graph](images/monitoring-edit-graph.png)
 
@@ -111,7 +111,7 @@ Once the graph is configured, click the _Save_ icon and give it a name. It appea
 
 ## Configuring Alerts
 
-Once you have a graph with the metrics that you want to monitor, you can set up alerts to notify you under certain conditions. A complete set-up guide to configuring alerts is on the [Configuring alerts in Grafana](/docs/services/cloud-monitoring/how-to?topic=cloud-monitoring-config_alerts_grafana) page from the Monitoring documentation. Step 1 and Step 2 have you open Grafana and set up a Notification Channel for your alert. Step 3 "Define a Metric" is the configuration of a Graph, such as the example memory resource graph in the previous screenshot. Step 4 defines the alert. For example, an alert for memory usage above 180 MiB is shown.
+Once you have a graph with the metrics that you want to monitor, you can set up alerts to notify you under certain conditions. For example, an alert for memory usage above 180 MiB is shown.
 
 ![Defining an Alert](images/monitoring-alert.png)
 

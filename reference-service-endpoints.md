@@ -17,7 +17,7 @@ subcollection: cloud-databases
 # Service Endpoints Integration
 {: #service-endpoints}
 
-All {{site.data.keyword.databases-for}} deployments offer integration with [{{site.data.keyword.cloud_notm}} Service Endpoints](/docs/services/service-endpoint?topic=service-endpoint-about#about). It gives you the ability to enable connections to your deployments from the public internet and over the {{site.data.keyword.cloud_notm}} private network.
+All {{site.data.keyword.databases-for}} deployments offer integration with [{{site.data.keyword.cloud_notm}} Service Endpoints](/docs/resources?topic=resources-service-endpoints#about). It gives you the ability to enable connections to your deployments from the public internet and over the {{site.data.keyword.cloud_notm}} Private network.
 
 Service Endpoints are available in all {{site.data.keyword.cloud_notm}} Multi-Zone Regions and some Single-Zone Regions. If your deployments are in `Osl01` or `Che01`, you aren't able to use private endpoints. Deployments in all other regions are able to use Service Endpoints.
 {: .tip}
@@ -28,13 +28,13 @@ Public endpoints provide a connection to your deployment on the public network. 
 
 ## Private Endpoints
 
-A deployment with a service endpoint on the private network gets an endpoint that is not accessible from the public internet. All traffic is routed to hardware dedicated to {{site.data.keyword.databases-for}} deployments and remains on the {{site.data.keyword.cloud_notm}} private network. Once your environment has access to the {{site.data.keyword.cloud_notm}} private network, an internet connection is not required to connect to your deployment.
+A deployment with a service endpoint on the private network gets an endpoint that is not accessible from the public internet. All traffic is routed to hardware dedicated to {{site.data.keyword.databases-for}} deployments and remains on the {{site.data.keyword.cloud_notm}} Private network. Once your environment has access to the {{site.data.keyword.cloud_notm}} Private network, an internet connection is not required to connect to your deployment.
 
 ## Enabling Service Endpoints
 
-If you only wish to use connections over the public internet, you do not have to enable Service Endpoints on your {{site.data.keyword.cloud_notm}} account. If you want to enable private networking on your deployments, you need to follow the instructions in the Service Endpoint documentation under [Enabling your account for using Service Endpoints using IBM Cloud CLI](/docs/services/service-endpoint?topic=service-endpoint-getting-started#cs_cli_install_steps).
+If you want to use connections over the public internet, you do not have to enable Service Endpoints on your {{site.data.keyword.cloud_notm}} account. If you want to enable private networking on your deployments, you need to follow the instructions in the Service Endpoint documentation under [Setting up service endpoints](/docs/resources?topic=resources-private-network-endpoints#cs_cli_install_steps).
 
-Currently, enabling Service Endpoints on your account is a manual step that is handled by support ticket. Once you have completed the [request](/docs/services/service-endpoint?topic=service-endpoint-getting-started#cs_cli_install_steps), you can check on the status of the ticket by going to your [Support](https://cloud.ibm.com/unifiedsupport/cases/manage) page on {{site.data.keyword.cloud_notm}}
+Currently, enabling Service Endpoints on your account is a manual step that is handled by support ticket. Once you completed the [request](/docs/resources?topic=resources-private-network-endpoints#cs_cli_install_steps), you can check on the status of the ticket by going to your [Support](https://cloud.ibm.com/unifiedsupport/cases/manage) page on {{site.data.keyword.cloud_notm}}
 
 ## Provisioning with Service Endpoints
 
@@ -71,7 +71,7 @@ Changing the type of endpoints available on your deployment does not cause any d
 
 You can use either public or private connection strings with any set of credentials you make on your deployment. By default, the connection strings for a set of credentials are filled with strings for connecting over a public endpoint. If you are using private endpoints, you can specify connection strings that contain the private endpoint be generated instead. 
 
-When creating credentials in _Service Credentials_, use the either `{ "service-endpoints": "public" }` or `{ "service-endpoints": "private" }` parameters to specify which endpoint gets filled into the connection strings. 
+When you create credentials in _Service Credentials_, use the either the `{ "service-endpoints": "public" }` or the `{ "service-endpoints": "private" }` parameter to specify which endpoint gets filled into the connection strings. 
 
 In the API, you can use the [`/deployments/{id}/users/{userid}/connections/{endpoint_type}`](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026) to retrieve connection strings for both public or private endpoints.
 
