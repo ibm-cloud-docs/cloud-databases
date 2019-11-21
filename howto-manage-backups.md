@@ -75,6 +75,9 @@ In the API, sending a POST to the [`/deployments/{id}/backups`](https://cloud.ib
 
 Backups are restored to a new deployment. The new deployment is auto-sized to the same disk and memory allocation as the source deployment at the time of the backup you are restoring from. After the new deployment finishes provisioning, your data in the backup file is restored into the new deployment.
 
+It is very important that you do not delete the source deployment while the backup is restoring. You must wait until the new deployment is provisioned and the backup is restored before deleting the old deployment. Deleting a deployment also deletes its backups so not only will the restore fail, you may not be able to recover the backup either.
+{: .tip}
+
 ### Restoring a Backup in the UI
 
 To restore a backup to a new service instance,
