@@ -20,7 +20,6 @@ IBM Cloud Databases
 	[Cloud Databases CLI plugin](/databases-cli-plugin/cloud-databases-cli-cdb-reference)
 	[Cloud Databases API](https://cloud.ibm.com/apidocs/cloud-databases-api)
 	db-version-policy.md
-	reference-responsibilities.md
 	reference-service-endpoints.md
 	reference-iam.md
 	reference-logging.md
