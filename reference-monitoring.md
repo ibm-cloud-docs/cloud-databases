@@ -2,7 +2,7 @@
 
 Copyright:
   years: 2019
-lastupdated: "2019-11-05"
+lastupdated: "2019-11-15"
 
 keywords: cloud databases
 
@@ -21,7 +21,7 @@ subcollection: cloud-databases
 # Monitoring Integration
 {: #monitoring}
 
-Monitoring for {{site.data.keyword.databases-for}} deployments is provided through integration with the {{site.data.keyword.cloud}} Monitoring service. Your deployments forward information about disk space and memory usage so that you can effectively monitor your disk space and memory usage. If your deployment outgrows its allocated resources, you can scale up to keep it running smoothly.
+Monitoring for {{site.data.keyword.databases-for}} deployments is provided through integration with the {{site.data.keyword.cloud}} Monitoring service. Your deployments forward information about disk space and memory usage. If you have provisioned or scaled your deployment to use dedicated CPU cores, there is also a metric for CPU usage as a percent of total CPU available. If your deployment outgrows its allocated resources, you can scale up to keep it running smoothly.
 
 ## Configuring IBM Cloud Monitoring
 
@@ -97,15 +97,19 @@ After the region field is an ID field. The ID corresponds to the last part of yo
 
 then the ID in the field is `ef400bd3-cb95-486e-b54c-18dae5477801`.
 
-The next field contains a list of the data members of your deployment. You can customize the graph to show all of the members or just one. The next field is _usage_, the only type of metrics available for {{site.data.keyword.databases-for}}. The last field lists what metrics you can add to be displayed to the graph. You can add all of them or only one of them. 
+The next field contains a list of the data members of your deployment. You can customize the graph to show all of the members or just one. The next field is _usage_, and the last field lists what metrics you can add to be displayed to the graph.
 
-The final setting to configure is the _Axes_. Click the _Axes_ tab. You can uncheck the _Right Y_ axis, and then set the _Left Y_ axis units to _"data (IEC)"_, _bytes_. 
+The final setting to configure is the _Axes_. Click the _Axes_ tab. For memory and disk usage, you can uncheck the _Right Y_ axis, and then set the _Left Y_ axis units to _"data (IEC)"_, _bytes_. For CPU usage (if you have dedicated cores), set it to _"percent (0.0-1.0)"_.
 
 ![Setting the Axes](images/monitoring-set-axes.png)
 
-The example graph shows the memory usage for all data members of a {{site.data.keyword.databases-for-redis}} deployment.
+The first example graph shows the memory usage for all data members of a {{site.data.keyword.databases-for-redis}} deployment.
 
-![An example graph that shows memory usage for a deployment](images/monitoring-example-graph.png)
+![An example graph that shows memory usage for a deployment](images/monitoring-example-graph1.png)
+
+The second example graph shows the CPU usage for all data members of a {{site.data.keyword.databases-for-mongodb}} deployment.
+
+![An example graph that shows CPU usage for a deployment](images/monitoring-example-graph2.png)
 
 Once the graph is configured, click the _Save_ icon and give it a name. It appears in your list of dashboards.
 
