@@ -6,14 +6,14 @@ IBM Cloud Databases
 
 	{: .navgroup id="learn"}
 	index.md
-	k8-tutorial.md
-	cf-tutorial.md
 	{: .navgroup-end}
 
 	{: .navgroup id="howto"}
 	howto-provisioning.md
 	howto-manage-backups.md
 	howto-whitelists.md
+	k8-tutorial.md
+	cf-tutorial.md
 	{: .navgroup-end}
 
 	{: .navgroup id="reference"}
