@@ -61,7 +61,7 @@ To create a {{site.data.keyword.databases-for}} deployment, you use the CLI to r
 The command template is
 
 ```
-ibmcloud resource service-instance-create <service-name> <service-id> <service-plan-id> <region>
+ibmcloud resource service-instance-create <service-name> <service-id> <service-plan-id> <region> <--service-endpoints SERVICE_ENDPOINTS_TYPE>
 ```
 
 More information about this command, in general, is available in the [CLI reference for resource groups](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_create).
@@ -82,7 +82,7 @@ This command reports the current state of the service instance.
 
 ### Additional flags and parameters
 
-The `--service-endpoints` flag allows you to specify which types [Service Endpoints](/docs/services/cloud-databases?topic=cloud-databases-service-endpoints) on your deployment. Its default is that connections to your deployment can be made from the public network.
+The `--service-endpoints` flag allows you to specify which types [Service Endpoints](/docs/services/cloud-databases?topic=cloud-databases-service-endpoints) on your deployment. Its default is that connections to your deployment can be made from the public network. Possible values are 'public', 'private', 'public-and-private'.
 
 The `service-instance-create` command supports a `-p` flag, which allows [additional parameters](#list-of-additional-parameters) to be passed to the provisioning process. The parameters are in JSON format. Some parameters values are CRNs (Cloud Resource Name), which uniquely identifies a resource in the cloud. All parameter names and values are passed as strings.
 
@@ -155,4 +155,4 @@ More information about this specific {{site.data.keyword.cloud_notm}} provider c
 * `members_memory_allocation_mb` -  Total amount of memory to be shared between the database members within the database. For example, if the value is "6144", and there are three database members, then the deployment gets 6 GB of RAM total, giving 2 GB of RAM per member. If omitted, the default value is used for the database type is used.
 * `members_disk_allocation_mb` - Total amount of disk to be shared between the database members within the database. For example, if the value is "30720", and there are three members, then the deployment gets 30 GB of disk total, giving 10 GB of disk per member. If omitted, the default value for the database type is used.
 * ` members_cpu_allocation_count` - Enables and allocates the number of specified dedicated cores to your deployment. For example, to use two dedicated cores per member, use `"members_cpu_allocation_count":"2"`. If omitted, the default value "Shared CPU" uses compute resources on shared hosts.
-* `service-endpoints` - Selects the types [Service Endpoints](/docs/services/cloud-databases?topic=cloud-databases-service-endpoints) supported on your deployment. Options are `public`, `private`, or `public-and-private`. If omitted, the default is `public`.
+* `service-endpoints` - Selects the types [Service Endpoints](/docs/services/cloud-databases?topic=cloud-databases-service-endpoints) supported on your deployment. Options are `public`, `private`, or `public-and-private`. If omitted, the default is `public`. Note that in the CLI, `service-endpoints` is a flag, and not a parameter.

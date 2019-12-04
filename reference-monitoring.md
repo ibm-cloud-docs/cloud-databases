@@ -23,6 +23,9 @@ subcollection: cloud-databases
 
 Monitoring for {{site.data.keyword.databases-for}} deployments is provided through integration with the {{site.data.keyword.cloud}} Monitoring service. Your deployments forward information about disk space and memory usage. If you have provisioned or scaled your deployment to use dedicated CPU cores, there is also a metric for CPU usage as a percent of total CPU available. If your deployment outgrows its allocated resources, you can scale up to keep it running smoothly.
 
+Additional metrics vary by database type. For available metrics by database, see the [Available Metrics](#available-metrics).
+{: .tip} 
+
 ## Configuring IBM Cloud Monitoring
 
 Monitoring access is split by region, and you access your deployments' monitoring from region-specific URLs. Use the following table to access your deployments' monitoring in the region where the deployment resides.
@@ -123,13 +126,34 @@ Be sure to click the _Save_ icon to save the alert.
 
 ## Available Metrics
 
-The table describes all the available metrics for {{site.data.keyword.databases-for}} deployments.
+The tables describe all the available metrics for {{site.data.keyword.databases-for}} deployments.
 
-Metric | Description
-----------|-----------
-`disk-total-bytes` | Represents the total amount of disk available to your deployment.
-`disk-used-bytes` | How much disk your deployment is using.
-`memory-limit-bytes` | The maximum amount of memory available to your deployment. 
-`memory-used-bytes` | How much memory your deployment is using.
-{: caption="Table 2.{{site.data.keyword.databases-for}} metrics " caption-side="top"}
+### All {{site.data.keyword.databases-for}} deployments
+
+Metric | Description | Left Y Axis 
+----------|-----------|---------- 
+`disk-total-bytes` | Represents the total amount of disk available to your deployment. | `data (IEC)`, `bytes`
+`disk-used-bytes` | How much disk your deployment is using. | `data (IEC)`, `bytes`
+`memory-limit-bytes` | The maximum amount of memory available to your deployment. | `data (IEC)`, `bytes`
+`memory-used-bytes` | How much memory your deployment is using. | `data (IEC)`, `bytes`
+`cpu-used-percent` | How much CPU is used as a percentage of total CPU available. Only for deployments that have dedicated CPU. | `percent (0.0-1.0)`
+{: caption="Table 2.{{site.data.keyword.databases-for}} metrics" caption-side="top"}
+
+### {{site.data.keyword.databases-for-elasticsearch}} deployments
+
+Metric | Description | Left Y Axis 
+----------|-----------|---------
+`usage.jvm-heap-percent` | How much JVM heap is used as a percentage of total JVM heap is available. | `percent (0.0-1.0)`
+`cluster.unassigned-shards-total` | Number of unassigned shards. | default
+`cluster.status` | A number derived from the `status` value of the [`/_cluster/health` endpoint](https://www.elastic.co/guide/en/elasticsearch/reference/current/cluster-health.html). Possible Values: 'green' = 1.0, 'yellow' = 0.5, 'red' = 0, ERROR = -1 | default
+{: caption="Table 3.{{site.data.keyword.databases-for-elasticsearch}} metrics" caption-side="top"}
+
+### {{site.data.keyword.databases-for-mongodb}} deployments
+
+Metric | Description | Left Y Axis 
+----------|----------|---------
+`usage.page-faults` | The number of times per second that MongoDB had to request data from disk. Scale RAM to reduce the number of disk requests. | default
+`usage.connections` | The number of connections to the database. | default
+`cluster.status` | An integer between 0 and 10 that represents the [replica state](https://docs.mongodb.com/manual/reference/replica-states/) of the current member. | default
+{: caption="Table 4.{{site.data.keyword.databases-for-mongodb}} metrics" caption-side="top"}
 
