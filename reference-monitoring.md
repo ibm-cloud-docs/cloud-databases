@@ -157,3 +157,12 @@ Metric | Description | Left Y Axis
 `cluster.status` | An integer between 0 and 10 that represents the [replica state](https://docs.mongodb.com/manual/reference/replica-states/) of the current member. | default
 {: caption="Table 4.{{site.data.keyword.databases-for-mongodb}} metrics" caption-side="top"}
 
+### {{site.data.keyword.databases-for-postgresql}} deployments
+
+Metric | Description | Left Y Axis 
+----------|----------|---------
+`cluster.total-connections` | The total number of [PostgreSQL connections](/docs/services/databases-for-postgresql?topic=databases-for-postgresql-managing-connections) being used. | default
+`cluster.replication-lag-bytes` | How far behind a [PostgreSQL read-only replica](/docs/services/databases-for-postgresql?topic=databases-for-postgresql-read-only-replicas) is, in bytes | `data (IEC)`, `bytes`
+{: caption="Table 5.{{site.data.keyword.databases-for-postgresql}} metrics" caption-side="top"}
+
+
