@@ -73,7 +73,7 @@ From the UI, remove an IP address or netmask from the Whitelist by clicking *Rem
 
 ## Whitelisting {{site.data.keyword.databases-for}} in your Environment
 
-If you use whitelisting to control connections in your environment, you can use the lists below to whitelist {site.data.keyword.databases-for}} deployments. You should whitelist all of the subnet ranges for the _entire_ region that your deployments live in.
+If you use whitelisting to control connections in your environment, you can use the lists below to whitelist {{site.data.keyword.databases-for}} deployments. You should whitelist all of the subnet ranges for the _entire_ region that your deployments live in.
 
 ### `che01` List
 Subnet | Location
