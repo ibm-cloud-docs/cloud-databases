@@ -47,7 +47,7 @@ Database|Versioning Schema
 ----------|---------
 Elasticsearch|Major versions are the first number in a `release.version.maintenance` version number.
 etcd|Major versions are the first number in a `major.minor.patch` version number.
-MongoDB|Major versions are the first number in a `major.minor.maintenance` version number.
+MongoDB|Major versions are the first two numbers in a `major.x.patch` version number. In cases where `x` is even, it is a stable release suitable for production. Even `x` versions are the only ones available on {{site.data.keyword.databases-for}}.
 PostgreSQL*|Major version is defined by the first number in the version number.
 Redis|Major versions are the first number in a `major.minor.patch` version number.
 RabbitMQ|Major versions are the first number in a `major.minor.patch` version number.
