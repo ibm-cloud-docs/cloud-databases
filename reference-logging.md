@@ -51,9 +51,9 @@ This setting enables logs from **ALL** {{site.data.keyword.cloud_notm}} services
 
 ## Using {{site.data.keyword.la_full_notm}}
 
-Once logs are being live-streamed, each log can be expanded to a detailed view by clicking the arrow to the left of the timestamp.
+You can access {{site.data.keyword.la_full}} through the _Observability_ tab of your deployment's _Manage_ page. The **Manage Log Analysis** button links to the main list of all Log Analysis instances in your IBM Cloud account. Select the instance where you set your database logs to be forwarded. Click **View LogDNA** to view the logs.
 
-The expanded view has some handy, color-coded fields to help you parse your logs. 
+Each log line can be expanded to a detailed view by clicking the arrow to the left of the timestamp. The expanded view has some handy, color-coded fields to help you parse your logs. 
 
 - _Line Identifiers_
     - `Source` - the region the logs are being sent from

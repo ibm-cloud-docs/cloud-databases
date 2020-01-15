@@ -28,7 +28,7 @@ Additional metrics vary by database type. For available metrics by database, see
 
 ## Configuring IBM Cloud Monitoring
 
-Monitoring access is split by region, and you access your deployments' monitoring from region-specific URLs. Use the following table to access your deployments' monitoring in the region where the deployment resides.
+You can access Monitoring through the _Observability_ tab of your deployment's _Manage_ page.  Click **Manage Monitoring Service** to view the Monitoring Dashboard. Under the hood, Monitoring access is split by region, and you can also access your deployments' monitoring from region-specific URLs. Use the following table to access your deployments' monitoring in the region where the deployment resides.
 
 Deployment Region|Monitoring Region|Monitoring Link
 ----------|-----------|-----------
