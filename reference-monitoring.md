@@ -21,7 +21,7 @@ subcollection: cloud-databases
 # Monitoring Integration
 {: #monitoring}
 
-Monitoring for {{site.data.keyword.databases-for}} deployments is provided through integration with the {{site.data.keyword.cloud}} Monitoring service. Your deployments forward information about disk space and memory usage. If you have provisioned or scaled your deployment to use dedicated CPU cores, there is also a metric for CPU usage as a percent of total CPU available. If your deployment outgrows its allocated resources, you can scale up to keep it running smoothly.
+Monitoring for {{site.data.keyword.databases-for}} deployments is provided through integration with the {{site.data.keyword.cloud}} Monitoring service. Your deployments forward information about memory, disk space, and disk I/O utilization. If you have provisioned or scaled your deployment to use dedicated CPU cores, there is also a metric for CPU usage as a percent of total CPU available. If your deployment outgrows its allocated resources, you can scale up to keep it running smoothly.
 
 Additional metrics vary by database type. For available metrics by database, see the [Available Metrics](#available-metrics).
 {: .tip} 
@@ -137,6 +137,8 @@ Metric | Description | Left Y Axis
 `memory-limit-bytes` | The maximum amount of memory available to your deployment. | `data (IEC)`, `bytes`
 `memory-used-bytes` | How much memory your deployment is using. | `data (IEC)`, `bytes`
 `cpu-used-percent` | How much CPU is used as a percentage of total CPU available. Only for deployments that have dedicated CPU. | `percent (0.0-1.0)`
+`io-utilization-percent-average-<x>m` | How much disk I/O has been used over `x` minutes as a percentage of total disk I/O available. | `percent (0.0-1.0)`
+`iops-read-write-total` | How many input-output operations per second your deployment is performing. | default
 {: caption="Table 2.{{site.data.keyword.databases-for}} metrics" caption-side="top"}
 
 ### {{site.data.keyword.databases-for-elasticsearch}} deployments
