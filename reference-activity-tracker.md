@@ -73,6 +73,7 @@ Action|Description
 `<service_id>.resources.scale`|A scaling operation was performed. If the scaling operation failed, a "-failure" flag is included in the message.
 `<service_id>.whitelisted-ips-list.update`|The whitelist was modified. A "-failure" flag is included in the message if the attempt to modify the whitelist failed.
 `<service_id>.serviceendpoints.update`|A change has been made to the service endpoints configuration. If the operation failed, a "-failure" flag is included in the message.
+`<service_id>.autoscaling.update`|An autoscaling operation was performed. If the autoscaling operation failed, a "-failure" flag is included in the message.
 {: caption="Table 2. List of Events and Event Descriptions" caption-side="top"}
 
 The `service_id` field indicates the type of {{site.data.keyword.databases-for}} deployment. For example, `databases-for-postgresql` or `messages-for-rabbitmq`.
