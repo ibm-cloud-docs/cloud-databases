@@ -1,9 +1,9 @@
 ---
 Copyright:
-  years: 2019
-lastupdated: "2019-05-30"
+  years: 2019, 2020
+lastupdated: "2020-02-04"
 
-subcollection: cloud-databases
+subcollection: cloud-databases, service endpoints, private endpoints, private networking
 
 ---
 
@@ -19,7 +19,7 @@ subcollection: cloud-databases
 
 All {{site.data.keyword.databases-for}} deployments offer integration with [{{site.data.keyword.cloud_notm}} Service Endpoints](/docs/resources?topic=resources-service-endpoints#about). It gives you the ability to enable connections to your deployments from the public internet and over the {{site.data.keyword.cloud_notm}} Private network.
 
-Service Endpoints are available in all {{site.data.keyword.cloud_notm}} Multi-Zone Regions and some Single-Zone Regions. If your deployments are in `Osl01` or `Che01`, you aren't able to use private endpoints. Deployments in all other regions are able to use Service Endpoints.
+Service Endpoints are available in all {{site.data.keyword.cloud_notm}} Multi-Zone Regions and some Single-Zone Regions. If your deployments are in `Osl01`, you aren't able to use private endpoints. Deployments in all other regions are able to use Service Endpoints.
 {: .tip}
 
 ## Public Endpoints
