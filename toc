@@ -6,6 +6,7 @@ IBM Cloud Databases
 
 	{: .navgroup id="learn"}
 	index.md
+	learn-size-guidance.md
 	{: .navgroup-end}
 
 	{: .navgroup id="howto"}
