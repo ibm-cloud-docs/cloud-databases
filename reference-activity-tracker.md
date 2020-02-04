@@ -31,7 +31,7 @@ Deployment Region | Activity Tracker Region
 `che01` | `jp-tok`
 `eu-de` | `eu-de`
 `au-syd` | `au-syd`
-`us-east` | Not Available
+`us-east` | `us-east`
 {: caption="Table 1. Activity Tracker regions" caption-side="top"}
 
 Events from your deployments appear in an Activity Tracker instance in the same region, with the exception of `osl01`, `seo01`, and `che01`. Deployments in `osl01` have their events forwarded to `eu-gb`. Deployments in `seo01` and `che01` have their events forwarded to `jp-tok`. If you have deployments in multiple regions, you have to set up the Activity Tracker in multiple regions. 
