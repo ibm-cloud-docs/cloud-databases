@@ -73,7 +73,9 @@ In the API, sending a POST to the [`/deployments/{id}/backups`](https://cloud.ib
 
 ## Restoring a Backup
 
-Backups are restored to a new deployment. The new deployment is auto-sized to the same disk and memory allocation as the source deployment at the time of the backup you are restoring from. After the new deployment finishes provisioning, your data in the backup file is restored into the new deployment.
+Backups are restored to a new deployment. After the new deployment finishes provisioning, your data in the backup file is restored into the new deployment.
+
+By default the new deployment is auto-sized to the same disk and memory allocation as the source deployment at the time of the backup you are restoring from. If you need to adjust the resources allocated to the new deployment, use the optional fields in the UI, CLI, or API to resize the new deployment. Be sure to allocate enough for your data and workload, if the deployment is not given enough resources the restore will fail.
 
 It is very important that you do not delete the source deployment while the backup is restoring. You must wait until the new deployment is provisioned and the backup is restored before deleting the old deployment. Deleting a deployment also deletes its backups so not only will the restore fail, you may not be able to recover the backup either.
 {: .tip}
@@ -84,7 +86,10 @@ To restore a backup to a new service instance,
 
 1. Click in the corresponding row to expand the options for the backup that you want to restore.
 2. Click the **Restore** button.
-3. Use the dialog box to select from some available options. The new deployment is automatically named `<name>-restore-[timestamp]`, but you can rename it. You can also select the region where the new deployment is located. Cross-region restores are supported, with the exception of restoring a `eu-de` backup to another region.
+3. Use the dialog box to select from some available options. 
+  - The new deployment is automatically named `<name>-restore-[timestamp]`, but you can rename it. 
+  - You can also select the region where the new deployment is located. Cross-region restores are supported, with the exception of restoring a `eu-de` backup to another region.
+  - You can choose the initial resource allocation, either to expand or shrink the resources on the new deployment. You can also enable or disable dedicated cores.
 4. Click the **Restore** button. A "restore from backup started" message appears. Clicking on **Your new instance is available now.** takes you to your _Resources List_.
 
 ### Restoring a Backup in the CLI
@@ -96,6 +101,12 @@ ibmcloud resource service-instance-create <SERVICE_INSTANCE_NAME> <service-id> s
 ```
 
 Change the value of `SERVICE_INSTANCE_NAME` to the name you want for your new deployment. The `service-id` is the type of deployment, such as `databases-for-postgresql` or `messages-for-rabbitmq`. The `region` is where you want the new deployment to be located, which can be a different region from the source deployment. Cross-region restores are supported, with the exception of restoring a `eu-de` backup to another region. `BACKUP_ID` is the backup that you want to restore.
+
+Optional parameters are available when restoring through the CLI. Use them if you need to customize resources, or use a Key Protect key for BYOK encryption on the new deployment.
+```
+ibmcloud resource service-instance-create <SERVICE_INSTANCE_NAME> <service-id> standard <region> -p
+'{"backup_id":"BACKUP_ID","key_protect_key":"KEY_PROTECT_KEY_CRN", "members_disk_allocation_mb":"DESIRED_DISK_IN_MB", "members_memory_allocation_mb":"DESIRED_MEMORY_IN_MB", "members_cpu_allocation_count":"NUMBER_OF_CORES"}'
+```
 
 A pre-formatted command for a specific backup is available in detailed view of the backup on the _Backups_ tab of your deployment dashboard.
 {: .tip}
@@ -120,6 +131,8 @@ curl -X POST \
   }'
 ```
 The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are all required, and `BACKUP_ID` is the backup you want to restore. The `target` is the region where you want the new deployment to be located, which can be a different region from the source deployment. Cross-region restores are supported, with the exception of restoring a `eu-de` backup to another region.
+
+If you need to adjust resources or use a Key Protect key, add the optional parameters `key_protect_key`, `members_disk_allocation_mb`, `members_memory_allocation_mb`, and/or `members_cpu_allocation_count`, and their desired values to the body of the request.
 
 ## Backups and Restoration
 
