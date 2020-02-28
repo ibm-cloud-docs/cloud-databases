@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="cloud-databases" audience="service" href="/docs/services/cloud-databases/index.html" path="services/cloud-databases"}
+{: .toc subcollection="cloud-databases" audience="service" href="/docs/cloud-databases?topic=cloud-databases-about" path="cloud-databases"}
 IBM Cloud Databases
 
 	{: .navgroup id="learn"}
