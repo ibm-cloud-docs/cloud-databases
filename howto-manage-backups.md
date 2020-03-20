@@ -126,11 +126,13 @@ curl -X POST \
     "name": "<SERVICE_INSTANCE_NAME>",
     "target": "<region>",
     "resource_group": "<your-resource-group>",
-    "resource_plan_id": "<service-id>"
-    "backup_id":"<BACKUP_ID>"
+    "resource_plan_id": "<service-id>",
+    "parameters":{
+      "backup_id": "<backup_id>"
+    }
   }'
 ```
-The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are all required, and `BACKUP_ID` is the backup you want to restore. The `target` is the region where you want the new deployment to be located, which can be a different region from the source deployment. Cross-region restores are supported, with the exception of restoring a `eu-de` backup to another region.
+The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are all required, and `backup_id` is the backup you want to restore. The `target` is the region where you want the new deployment to be located, which can be a different region from the source deployment. Cross-region restores are supported, with the exception of restoring a `eu-de` backup to another region.
 
 If you need to adjust resources or use a Key Protect key, add the optional parameters `key_protect_key`, `members_disk_allocation_mb`, `members_memory_allocation_mb`, and/or `members_cpu_allocation_count`, and their desired values to the body of the request.
 
