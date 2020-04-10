@@ -43,7 +43,7 @@ When you create the deployment from the catalog, you need to specify the followi
 Users can optionally set:
 
 1. **The resource group** - If you are organizing your services into [resource groups](/docs/resources?topic=resources-bp_resourcegroups), you can specify the resource group in this field. Otherwise, you can leave it at default.
-2. **Disk encryption** - A Key Protect instance and key can be selected if the user has their own Key Protect instance. If you do not use your own key, the deployment automatically creates and manages its own disk encryption key.
+2. **Key Protect instance and disk encryption key** - If you use Key Protect, an instance and key can be selected to encrypt the deployment's disk. If you do not use your own key, the deployment automatically creates and manages its own disk encryption key.
 3. **Initial resource allocation** - Specify initial memory and disk sizes for your databases. The minimum sizes of memory and disk are selected by default. 
 4. **CPU allocation** - Choose dedicated compute resources for your deployment. With dedicated cores, your resource group is given a single-tenant host with a guaranteed minimum reserve of cpu shares. Your deployments are then allocated the number of CPUs you specify. The default `Shared CPU` uses compute resources on shared hosts.
 5. **Endpoints** - You can configure the types [Service Endpoints](/docs/services/cloud-databases?topic=cloud-databases-service-endpoints) on your deployment. The default is that connections to your deployment can be made from the public network.
