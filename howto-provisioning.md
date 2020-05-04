@@ -126,16 +126,6 @@ More information on the Resource Controller API is found in its [API Reference](
 
 If you use Terraform to manage your infrastructure, the [{{site.data.keyword.cloud_notm}} provider for Terraform](/docs/terraform?topic=terraform-getting-started) supports provisioning {{site.data.keyword.databases-for}} deployments. A sample Terraform configuration file is on the [Cloud Databases resources](/docs/terraform?topic=terraform-databases-resources) documentation page.
 
-The following parameters are all required
-- `name` - The name for your deployment. 
-- `location` - The region where you want your deployment.
-- `service` - The service ID, ex. `databases-for-elasticsearch`, `databases-for-etcd`, `databases-for-mongodb`, `databases-for-postgresql`, `databases-for-redis`, or `messages-for-rabbitmq`.
-- `plan` - The plan type of the service, which for Cloud Databases services is `standard`.
-
-The `resource_group_id` is not required, and it uses the default resource group if not supplied.
-
-You can send any needed [additional parameters](#list-of-additional-parameters) in the `parameters` field as a JSON object.
-
 ## List of Additional Parameters
 
 * `backup_id`- A CRN of a backup resource to restore from. The backup must have been created by a database deployment with the same service ID. The backup is loaded after provisioning and the new deployment starts up that uses that data. A backup CRN is in the format `crn:v1:<...>:backup:<uuid>`. If omitted, the database is provisioned empty.
