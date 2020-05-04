@@ -129,7 +129,7 @@ If you use Terraform to manage your infrastructure, the [{{site.data.keyword.clo
 The following parameters are all required
 - `name` - The name for your deployment. 
 - `location` - The region where you want your deployment.
-- `service` - The specific database service, ex. `databases-for-elasticsearch`, `databases-for-etcd`, `databases-for-mongodb`, `databases-for-postgresql`, `databases-for-redis`, or `messages-for-rabbitmq`.
+- `service` - The service ID, ex. `databases-for-elasticsearch`, `databases-for-etcd`, `databases-for-mongodb`, `databases-for-postgresql`, `databases-for-redis`, or `messages-for-rabbitmq`.
 - `plan` - The plan type of the service, which for Cloud Databases services is `standard`.
 
 The `resource_group_id` is not required, and it uses the default resource group if not supplied.
