@@ -18,7 +18,7 @@ subcollection: cloud-databases, bring you own key, byok, cryptoshredding
 # Key Protect Integration
 {: #key-protect}
 
-The data that you store in {{site.data.keyword.cloud}} Databases is encrypted by default by using randomly generated keys. If you need to control the encryption keys, you can use [{{site.data.keyword.keymanagementservicelong_notm}}](/docs/key-protect?topic=key-protect-integrate-services) to create, add, and manage encryption keys. Then, you can associate those keys with your {{site.data.keyword.databases-for}} deployment to encrypt your databases.
+The data that you store in {{site.data.keyword.cloud}} Databases is encrypted by default by using randomly generated keys. If you need to control the encryption keys, you can Bring Your Own Key (BYOK) through [{{site.data.keyword.keymanagementservicelong_notm}}](/docs/key-protect?topic=key-protect-integrate-services), and  use one of your own keys to encrypt your databases.
 
 To get started, you need [{{site.data.keyword.keymanagementserviceshort}}](https://{DomainName}/catalog/key-protect) provisioned on your {{site.data.keyword.cloud_notm}} account.
 
@@ -65,7 +65,7 @@ If you use Key Protect, you can also designate a key to encrypt the Cloud-Object
 
 Things to Note - 
 - BYOK for backups is only available in US regions `us-south` and `us-east`.
-- Keys for backups are not region-locked, but only keys in the `us-south` are durable to region failures. Use a key from `us-south` to ensure that your backups are available even in the event of a region failure.
+- Keys for backups are not region-locked, but only keys in the `us-south` are durable to region failures. Use a key from `us-south`, regardless of where your deployment is, to ensure that your backups are available even in the event of a region failure.
 
 In order to enable your deployment to use the Key Protect key, you need to [Enable authorization to be delegated](/docs/iam?topic=iam-serviceauth) when granting the service authorizations. Then, when you provision your deployment through the CLI with the `backup_encryption_key_crn` parameter,
 ```
@@ -88,6 +88,7 @@ curl -X POST \
     "resource_plan_id": "databases-for-x-standard",
     "backup_encryption_key_crn": "crn:v1:<...>:key:<id>"
   }'
+```
 
 After you have enabled delegation and provisioned your deployment, two entries appear in your _Authorizations_ in IAM. One is the entry for the deployment which lists its status as delegator. It is "User Created".
 
