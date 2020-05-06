@@ -65,8 +65,7 @@ If you use Key Protect, you can also designate a key to encrypt the Cloud-Object
 
 Things to Note - 
 - BYOK for backups is only available in US regions `us-south` and `us-east`.
-- Keys for Backups keys are not region-locked. You can use a key from any region, to encrypt the backups of your deployment in `us-south` or `us-east`.
-- While backups are normally cross-region and thus resilient to regional failures, Key Protect keys are not. If the region that hosts your key for backups goes down, then you lose access to your backups. Choose a deployment and a key that are in different regions so that a single region failure does not take out both your deployment and your backups.
+- Keys for backups are not region-locked, but only keys in the `us-south` are durable to region failures. Use a key from `us-south` to ensure that your backups are available even in the event of a region failure.
 
 In order to enable your deployment to use the Key Protect key, you need to [Enable authorization to be delegated](/docs/iam?topic=iam-serviceauth) when granting the service authorizations. Then, when you provision your deployment through the CLI with the `backup_encryption_key_crn` parameter,
 ```
