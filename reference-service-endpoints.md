@@ -46,6 +46,9 @@ To configure your deployment's endpoints on provision, use the _Endpoints_ field
 ### Provisioning from the CLI and API
 
 Service Endpoints are enabled through an optional parameter when you provision through the CLI and API. Provisioning is handled by the Resource Controller, and you pass the `service-endpoints` parameter one of the options `public`, `private`, or `public-and-private`. 
+```
+ibmcloud resource service-instance-create <service-name> --service-endpoints <endpoint-type>
+```
 
 For more information, see the [Provisioning](/docs/cloud-databases?topic=cloud-databases-provisioning) page.
 
