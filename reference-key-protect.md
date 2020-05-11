@@ -143,6 +143,10 @@ Role | Source | Target | Type
 Reader | Cloud Object Storage service | Key Protect Service | created by `<cloud-databases-crn>`
 {: caption="Table 2. Example Key Protect Authorization for COS from Cloud Databases " caption-side="top"}
 
+### Removing Keys
+
 IAM/Key Protect does not stop you from removing the policy between the key and Cloud Object Storage (the second example), but doing so can make your backups unrestorable. To prevent this, if you delete the COS policy that governs the ability of Cloud Databases to use the key for COS, the policy will be recreated to continue backing up your deployment.
 
-If you want to remove the policy (and effectively cryptoshred your backups), you should remove the Cloud Databases delegator authorization (the first example), which revokes Cloud Databases ability to use the key for COS.
+If you want to remove the policy (and effectively cryptoshred your backups), you should remove both the Cloud Databases delegator authorization (the first example) **and** the Cloud Object Storage authorization (the second example), which revokes Cloud Databases ability to use the key for COS.
+
+Be very careful when removing keys and authorizations. If you have multiple deployments that use the same keys and COS buckets it is possible to inadvertently destroy backups to **all** of those deployments, instead of just individual deployments.
