@@ -21,7 +21,7 @@ subcollection: database logs
 {{site.data.keyword.databases-for}} are integrated with [{{site.data.keyword.la_full}}](/docs/Log-Analysis-with-LogDNA), so you can view database logs.
 
 This document covers the integration of Log Analysis with Cloud Databases, which includes {{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-etcd}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-redis}}, and {{site.data.keyword.messages-for-rabbitmq}}.
-{. :note}
+{: .note}
 
 Currently, {{site.data.keyword.la_full_notm}} integration is available for {{site.data.keyword.databases-for}} deployments according to the following table.
 
