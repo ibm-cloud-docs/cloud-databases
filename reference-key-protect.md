@@ -53,7 +53,7 @@ Once you grant your {{site.data.keyword.databases-for}} deployments permission t
 
 If provisioning from the catalog page, select the Key Protect instance and key from the dropdown menus.
 
-In the CLI, use the `disk-encryption-key` parameter in the parameters JSON object.
+In the CLI, use the `disk_encryption_key_crn` parameter in the parameters JSON object.
 ```
 ibmcloud resource service-instance-create example-database <service-name> standard us-south \
 -p \ '{
@@ -96,7 +96,7 @@ If you use Key Protect, you can also designate a key to encrypt the Cloud-Object
 
 Things to Note - 
 - BYOK for backups is only available in US regions `us-south` and `us-east`.
-- Keys for backups are not region-locked, but only keys in the `us-south` are durable to region failures. Use a key from `us-south`, regardless of where your deployment is, to ensure that your backups are available even in the event of a region failure.
+- Only keys in the `us-south` are durable to region failures. You have to use a key from `us-south`, regardless of where your deployment is, to ensure that your backups are available even in the event of a region failure.
 
 ### Granting the delegation authorization
 
@@ -106,7 +106,7 @@ In order to enable your deployment to use the Key Protect key, you need to [Enab
 
 Once the appropriate authorization and delegation is granted, you  you supply the [key name or CRN](/docs/key-protect?topic=key-protect-view-keys) when you provision a deployment.
 
-In the CLI, use the `disk-encryption-key` parameter in the parameters JSON object.
+In the CLI, use the `backup_encryption_key_crn` parameter in the parameters JSON object.
 ```
 ibmcloud resource service-instance-create example-database <service-name> standard us-south \
 -p \ '{
@@ -114,7 +114,7 @@ ibmcloud resource service-instance-create example-database <service-name> standa
 }'
 ```
 
-In the API, use the `disk-encryption-key` parameter in the body of the request.
+In the API, use the `backup_encryption_key_crn` parameter in the body of the request.
 ```
 curl -X POST \
   https://resource-controller.cloud.ibm.com/v2/resource_instances \
