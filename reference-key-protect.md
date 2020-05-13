@@ -147,6 +147,13 @@ Reader | Cloud Object Storage service | Key Protect Service | created by `<cloud
 
 IAM/Key Protect does not stop you from removing the policy between the key and Cloud Object Storage (the second example), but doing so can make your backups unrestorable. To prevent this, if you delete the COS policy that governs the ability of Cloud Databases to use the key for COS, the policy will be recreated to continue backing up your deployment.
 
-If you want to remove the policy (and effectively cryptoshred your backups), you should remove both the Cloud Databases delegator authorization (the first example) **and** the Cloud Object Storage authorization (the second example), which revokes Cloud Databases ability to use the key for COS.
+Be very careful when removing keys and authorizations. If you have multiple deployments that use the same keys it is possible to inadvertently destroy backups to **all** of those deployments by revoking the delegation authorization. If at all possible you should not use the same key for multiple deployment's backups.
 
-Be very careful when removing keys and authorizations. If you have multiple deployments that use the same keys and COS buckets it is possible to inadvertently destroy backups to **all** of those deployments, instead of just individual deployments.
+If you want to shred the backups, you can delete the key. COS takes care of making sure the storage is un-readable and un-writeable. But any other deployments using that key for backups will have all their backups fail.
+
+If you do require that the same key be used for multiple deployment's backups removing keys and authorizations can have the following side effects.
+- If you delete just the Cloud Object Storage authorization (as seen in Table 2), then not only is the deployment shown as the creator affected, but any deployments that also use the same key are also affected. Those deployments can see temporary backup failures until the policy is automatically re-created. There should be no lasting effects, except for missing backups.
+- If you delete just Cloud Databases delegator authorization, which is created by you the user (as seen in Table 1), nothing immediately breaks, because the second authorization is still in place. However, if the  Cloud Object Storage authorization is ever removed, it cannot be recreated, and can lead to multiple deployments that use the same key losing the ability to backup.
+- If you delete both the Cloud Object Storage authorization **AND** the Cloud Databases delegator authorization, all deployments that use the same key will immediately not have the ability to backup and the correct authorizations will not be able to be recreated, effectively destroying the backups for all deployments that use that key.
+
+Please use caution if you reuse keys.
