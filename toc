@@ -12,7 +12,7 @@ IBM Cloud Databases
 	{: .navgroup id="howto"}
 	howto-provisioning.md
 	howto-manage-backups.md
-	howto-whitelists.md
+	howto-allowlists.md
 
 	{: .topicgroup}
 	Tutorials
