@@ -2,7 +2,7 @@
 
 Copyright:
   years: 2019, 2020
-lastupdated: "2020-07-30"
+lastupdated: "2020-08-3"
 
 subcollection: cloud-databases, allowlist, ip addresses, blocklist
 
@@ -23,7 +23,7 @@ If you want to restrict access to your databases, you can allowlist specific IP 
 
 If you use allowlisting in your environment, you can allowlist our services using the list of subnets for each region.
 
-We have updated documentation to reflect changes in terminology from `whitelist` to `allowlist`. You will encounter continued references to this former terminolgy while we work to implement these deeper changes to code and commands. 
+We have updated documentation to reflect changes in terminology from `whitelist` to `allowlist`. You will encounter continued references to this former terminolgy while we work to implement these deeper changes to code, API, and CLI commands. 
 {: .note}
 
 ## Using IP allowlisting on your Deployment
