@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2020
-lastupdated: "2020-08-04"
+lastupdated: "2020-08-05"
 
 subcollection: cloud-databases, bring you own key, byok, cryptoshredding
 
@@ -90,6 +90,7 @@ Key Protect offers manual and automatic [key rotation](https://cloud.ibm.com/doc
 If you delete a deployment that is protected with a Key Protect key, the deployment remains registered against the key for the duration of the soft-deletion period (up to 9 days). If you need to delete the key in the soft-deletion period, you have to [force delete](/docs/key-protect?topic=key-protect-delete-keys) the key. After the soft-deletion period the key can be deleted without the force. You can check the [association between the key and your deployment](/docs/key-protect?topic=key-protect-view-protected-resources) to determine when you can delete the key.
 
 ## Cryptoshredding
+{ #cryptoshredding}
 
 Cryptoshredding is a destructive action. Once the key is deleted your data is unrecoverable.
 {: .important}
