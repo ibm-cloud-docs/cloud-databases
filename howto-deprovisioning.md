@@ -4,9 +4,9 @@ copyright:
   years: 2020
 lastupdated: "2020-08-10"
 
-keywords: deprovision cloud databases, databases with terraform, deprovisioning parameters, delete
-
 subcollection: cloud-databases
+
+keywords: deprovision cloud databases, databases with terraform, deprovisioning parameters, delete
 
 ---
 
