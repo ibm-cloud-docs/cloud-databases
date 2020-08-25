@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-10"
+lastupdated: "2020-08-25"
 
 subcollection: cloud-databases
 
@@ -51,7 +51,7 @@ Cryptoshredding is a destructive action. When the key is deleted, your data is u
 
 ## Backups Removal
 
-Backups cannot be manually deleted. However, if you delete your deployment, its backups are deleted automatically. 
+Backups cannot be manually deleted. However, if you delete your deployment its backups are deleted automatically. 
 
 ## Reenabling from a soft delete
 {: #reclamation}
