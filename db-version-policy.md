@@ -55,8 +55,8 @@ Redis|Major versions are the first number in a `major.minor.patch` version numbe
 RabbitMQ|Major versions are the first two numbers in a `major.x.patch` version number.| v3.7, September 2021
 {: caption="Table 1. Major versions for {{site.data.keyword.databases-for}}" caption-side="top"}
 
-
-* There was a change of versioning scheme for PostgreSQL after version 9.6. Before and including version 9.6, a PostgreSQL major version was defined by the first two numbers in the version.
+*There was a change of versioning scheme for PostgreSQL after version 9.6. Before and including version 9.6, a PostgreSQL major version was defined by the first two numbers in the version.
+{: .note}
 
 ## Minor versions
 
