@@ -19,10 +19,6 @@ keywords: HA for cloud-databases, DR for cloud-databases, high availability for 
 {:tip: .tip}
 {:download: .download}
 
-```
-_Name your file `ha-dr.md` and include it in the **How To** nav group in your `toc` file._
-```
-
 # Understanding high availability and disaster recovery for {{site.data.keyword.cloud}} Databases
 {: #ha-dr}
 
@@ -34,10 +30,9 @@ This document covers all the {{site.data.keyword.cloud}} Databases, which includ
 
 All {{site.data.keyword.cloud}} Databases general availability (GA) offerings conform to the {{site.data.keyword.cloud_notm}} [SLA terms](/docs/overview?topic=overview-slas). 
 
-
 The {{site.data.keyword.cloud}} Databases are GA services that are offered in _Chenai, Dallas, Frankfurt, London, Oslo, Sydney, Tokyo, and Washington_. Each location has three different data centers for redundancy. 
 
-{{site.data.keyword.cloud}} Databases are deployed in a multi-zone region (for example, us-south, us-east, eu-fra) where the platform is designed to be resilient to the failure of any one zone in the region.
+{{site.data.keyword.cloud}} Databases are deployed in a multi-zone region (for example, us-south, us-east, eu-de) where the platform is designed to be resilient to the failure of any one zone in the region.
 
 See [How do I ensure zero downtime?](/docs/overview?topic=overview-zero-downtime#zero-downtime) to learn more about the high availability and disaster recovery standards in {{site.data.keyword.Bluemix_notm}}. You can also find information about [Service Level Agreements](/docs/overview?topic=overview-zero-downtime#SLAs).  
 
@@ -66,7 +61,7 @@ The data in your primary node is automatically replicated to secondary nodes (re
 
 ## Manual cross-region backups
 
-To protect your data across more than one region against the disaster scenario where the entire region fails, you need to define your own cross-region backup policy. To create cross-region data redundancy, you need to have regular backups of your complete databases from your service instance in a region. When the region is unavailable, you can provision a new service instance in another available region to restore your database manually. 
+To protect your data across more than one region against the disaster scenario where the entire region fails, you need to define your own cross-region backup policy. To create cross-region data redundancy, you need to have regular backups of your complete databases from your service instance in a region (with the exception of replicating data into or outside of `eu-de`). When the region is unavailable, you can provision a new service instance in another available region to restore your database manually. 
 
 Time of restoration varies, depending on the size of your data and network condition. For your reference, it takes about 45 minutes to restore data of 10G from Poughkeepsie to a service instance deployed in Dallas. Therefore, to minimize the impact of region-wide failures, you need to plan ahead, for example, by having a service instance in a second region as a cold standby.
 

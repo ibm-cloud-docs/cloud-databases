@@ -54,16 +54,21 @@ The {{site.data.keyword.databases-for}} CLI Plug-in offers a set of commands for
 ```
 ibmcloud cdb deployment-whitelist-add example-deployment 198.51.100.1 "Allowlisted for testing"
 ```
+{: .pre}
+
 for a single IP address and 
 ```
 ibmcloud cdb deployment-whitelist-add example-deployment 198.51.100.0/24 "Testing range is now open" 
 ```
+{: .pre}
+
 for an IP range.
 
 Use [`cdb deployment-whitelist-list`](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-allowlist-list) to view the current allowlist. For example,
 ```
 ibmcloud cdb deployment-whitelist-list <deployment name or CRN>
 ```
+{: .pre}
 
 More information is on the {{site.data.keyword.databases-for}} CLI Plug-in [reference page](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference).
 

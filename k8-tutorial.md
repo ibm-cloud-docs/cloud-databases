@@ -141,7 +141,7 @@ Once the branch has been cloned, you can select the appropriate directory for th
 
 11. Verify that the Kubernetes secret was created in your cluster namespace. Kubernetes uses secrets to store confidential information like the IBM Cloud Identity and Access Management (IAM) API key and the URL that the container uses to gain access. Running the following commands to first Set the cluster as the context for this session and then get the API key for accessing the instance of your deployment that's provisioned in your account.
 
-      ```shel
+      ```shell
       ibmcloud ks cluster config --cluster <cluster_name_or_ID>
       ```
       {: .pre}
@@ -170,7 +170,6 @@ then
     {: .pre}
 
     After it's built, you can view the image in container registry by using
-
     ```shell
     ibmcloud cr images
     ```

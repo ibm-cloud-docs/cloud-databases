@@ -42,7 +42,6 @@ The region IDs and associated domain names are shown in the following table.
 `osl01`	| `osl01.icr.io`	| `private.osl01.icr.io`	| Oslo
 `us-east`	| `us-east.icr.io`	| `private.us-east.icr.io` | Washington
 `us-south`	| `us.icr.io`	| `private.us.icr.io`	| Dallas
-
 {: caption="Table 1. Domain names for local regions for {{site.data.keyword.databases-for}}" caption-side="top"}
 
 ## Targeting a local region
@@ -61,8 +60,7 @@ ibmcloud cr region-set eu-gb
 ```
 {: .pre}
 
-Log in to the registry by running the `ibmcloud cr login` command.
 
 ## Allowlists and IP subnet ranges
 
-Review the [full list of regional subnets](/docs/cloud-databases?topic=cloud-databases-allowlisting#allowlisting-cloud-databases-in-your-environment) and associated locations to ensure your allowlists are configured appropriately. 
+Review the [full list of regional subnets](/docs/cloud-databases?topic=cloud-databases-allowlisting#allowlisting-cloud-databases-in-your-environment) and associated locations to ensure your allowlists are configured with the appropriate subnet ranges. 
