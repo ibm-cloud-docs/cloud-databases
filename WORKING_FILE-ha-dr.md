@@ -4,9 +4,9 @@ copyright:
   years: 2018, 2020
 lastupdated: "2020-08-31"
 
-keywords: HA for cloud-databases, DR for cloud-databases, high availability for cloud-databases, disaster recovery for cloud-databases, failover for cloud-databases
-
 subcollection: cloud-databases
+
+keywords: HA for cloud-databases, DR for cloud-databases, high availability for cloud-databases, disaster recovery for cloud-databases, failover for cloud-databases
 
 ---
 
@@ -44,7 +44,7 @@ See [How do I ensure zero downtime?](/docs/overview?topic=overview-zero-downtime
 ----------
 ----------
 
-Your data is backed up to cross-regional object storage instances, but steps must be taken to make those backups restorable after regional failure. The purpose of the regional policy is to make backups from the failed region available for you to restore - not to automatically recover database instances from the failed region.
+Your data is backed up to cross-regional object storage instances, but steps must be taken to make those backups restorable after regional failure. The purpose of the regional policy is to make backups from the failed region available for you to restore - not to automatically recover database instances from the failed region.  
 
 In the case of a failure, the {{site.data.keyword.cloud}} Databases team will take the neccessary steps to restore service access. Once service is restored, you will be instructed to locate and restore backups of any database instances that you need access to during the outage. You may then restore databases from the failed region to a region of your choice. You will be responsible for selecting and restoring appropriate backup(s) as needed to regain access to your database instances. 
 
@@ -53,7 +53,7 @@ In the case of a failure, the {{site.data.keyword.cloud}} Databases team will ta
 
 High Availability (HA) means providing the best possible continuous data availability after hardware failure to avoid impact on operations. Disaster Recovery (DR) means the ability to make all the data available on an alternative system as quickly as possible after a severe or extensive hardware failure.
 
-{{site.data.keyword.cloud}} Databases provides automatic in-region data redundancy and failover by default. The services are offered in Multi-Zone regions (Dallas, Frankfurt, and Sydney), each with three availability zones for redundancy.
+{{site.data.keyword.cloud}} Databases provides automatic in-region data redundancy and failover by default. The services are offered in Multi-Zone [regions](/docs/cloud-databases?topic=cloud-databases-regions) each with three availability zones for redundancy.
 
 To prepare for the disaster scenario where the entire region fails (broken network, for example) and the service in that region becomes unavailable, you need to define your own cross-region backup policy to restore your data in another available region. 
 

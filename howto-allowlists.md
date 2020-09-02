@@ -78,8 +78,9 @@ More information is in the [API Reference](https://cloud.ibm.com/apidocs/cloud-d
 From the UI, remove an IP address or netmask from the allowlist by clicking *Remove*. You can also use CLI command is `cdb deployment-whitelist-delete` or send a `DELETE` request to the API endpoint. When all entries on the allowlist are removed, the allowlist is disabled and all IP addresses are accepted by your deployment.
 
 ## Allowlisting {{site.data.keyword.databases-for}} in your Environment
+{: #allowlist-ips}
 
-If you use allowlisting to control connections in your environment, you can use the lists below to allowlist {{site.data.keyword.databases-for}} deployments. You should allowlist all of the subnet ranges for the _entire_ region that your deployments live in.
+If you use allowlisting to control connections in your environment, you can use the lists below to allowlist {{site.data.keyword.databases-for}} deployments. You should allowlist all of the subnet ranges for the _entire_  [region](/docs/cloud-databases?topic=cloud-databases-regions) that your deployments live in.
 
 ### `che01` List
 Subnet | Location
