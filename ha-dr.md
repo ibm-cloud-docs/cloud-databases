@@ -19,7 +19,7 @@ keywords: HA for cloud-databases, DR for cloud-databases, high availability for 
 {:tip: .tip}
 {:download: .download}
 
-# Understanding high availability and disaster recovery for {{site.data.keyword.cloud}} Databases
+# Understanding high availability and disaster recovery for {{site.data.keyword.databases-for}}
 {: #ha-dr}
 
 {{site.data.keyword.cloud}} Databases use global load balancing to ensure a redundant, highly available platform is available for you to host your workloads and applications.
