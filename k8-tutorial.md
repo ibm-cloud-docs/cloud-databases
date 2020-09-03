@@ -21,7 +21,7 @@ Each git branch of the examples repository corresponds to samples in a particula
 
 ## Trying out the sample applications
 
-Clone the repository of the language that you want to use. For instance, you can clone the **Node** repository by selecting the **Node** branch. Then click **Clone or download** to get the URL you'll need to clone using SSH or HTTPS. In your terminal, the command looks like
+Clone the repository of the language that you want to use. For instance, you can clone the **Node** repository by selecting the **Node** branch. Then click **Clone or download** to get the URL you'll need to clone using SSH or HTTPS. In your terminal, the command looks like:
 
 ```shell
 git clone -b node git@github.com:IBM-Cloud/clouddatabases-helloworld-kubernetes-examples.git

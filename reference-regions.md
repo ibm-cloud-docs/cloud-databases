@@ -4,7 +4,7 @@ copyright:
   years: 2020
 lastupdated: "2020-09-01"
 
-keywords: regions for cloud-databases, ibmcloud, 
+keywords: regions for cloud-databases, ibmcloud, cluster, zone, domains
 
 subcollection: cloud-databases
 
@@ -27,7 +27,7 @@ subcollection: cloud-databases
 
 ## Local regions
 
-A local region is a geographic area that is accessed by a dedicated endpoint. The domain names are available in the console and the CLI.
+A local region is a geographic area that is accessed by a dedicated endpoint. The domain names are available in the console and the CLI. 
 
 The region IDs and associated domain names are shown in the following table.
 
@@ -64,3 +64,4 @@ ibmcloud cr region-set eu-gb
 ## Allowlists and IP subnet ranges
 
 Review the [full list of regional subnets](/docs/cloud-databases?topic=cloud-databases-allowlisting#allowlisting-cloud-databases-in-your-environment) and associated locations to ensure your allowlists are configured with the appropriate subnet ranges. 
+
