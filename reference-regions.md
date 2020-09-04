@@ -27,9 +27,8 @@ subcollection: cloud-databases
 
 ## Local regions
 
-A local region is a geographic area that is accessed by a dedicated endpoint. The domain names are available in the console and the CLI. 
-
-The region IDs and associated domain names are shown in the following table.
+A local region is a geographic area that is accessed by a dedicated [endpoint](/docs/cloud-databases?topic=cloud-databases-service-endpoints). 
+The region IDs and associated locations are shown in the following table.
 
 |Local region ID | Location |
 |--------|--------|
@@ -42,7 +41,7 @@ The region IDs and associated domain names are shown in the following table.
 | `osl01`	| Oslo |
 | `us-east`	| Washington |
 | `us-south`	| Dallas |
-{: caption="Table 1. Domain names for local regions for {{site.data.keyword.databases-for}}" caption-side="top"}
+{: caption="Table 1. IDs and locations of local regions for {{site.data.keyword.databases-for}}" caption-side="top"}
 
 ## Targeting a local region
 
