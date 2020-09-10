@@ -195,7 +195,7 @@ Examples:
 
 ## Provisioning the IBM Cloud Databases Deployment  
 
-You can provision an IBM Cloud Databases deployment using the [IBM Cloud Catalog](https://cloud.ibm.com/catalog?category=databases) or the [IBM Cloud CLI](/docs/cli/reference/ibmcloud?topic=cloud-cli-install-ibmcloud-cli). The catalog does not provide as much granularity when selecting the resources for your deployment, so this example uses the python script from step 3 and use the IBM Cloud CLI to provision the deployment.
+You can provision an IBM Cloud Databases deployment using the [IBM Cloud Catalog](https://cloud.ibm.com/catalog?category=databases) or the [IBM Cloud CLI](/docs/cli?topic=cli-install-ibmcloud-cli). The catalog does not provide as much granularity when selecting the resources for your deployment, so this example uses the python script from step 3 and use the IBM Cloud CLI to provision the deployment.
 
 The syntax for provisioning an deployment using the IBM Cloud CLI looks like
 ```bash
@@ -231,7 +231,7 @@ So for the example PostgreSQL, the total allocations are
 
 ## Monitoring the IBM Cloud Databases Deployment
 
-You now have an IBM Cloud Databases deployment that approximates the resource allocation of your Compose deployment. To determine whether you need more resources, take a look at monitoring your databases. Monitoring for {{site.data.keyword.databases-for}} deployments is provided through integration with the [{{site.data.keyword.cloud}} Monitoring](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-monitoring) service. With it you can monitor the memory, disk, disk I/O utilization, and CPU usage of each of your deployments. 
+You now have an IBM Cloud Databases deployment that approximates the resource allocation of your Compose deployment. To determine whether you need more resources, take a look at monitoring your databases. Monitoring for {{site.data.keyword.databases-for}} deployments is provided through integration with the [{{site.data.keyword.cloud}} Monitoring](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-getting-started) service. With it you can monitor the memory, disk, disk I/O utilization, and CPU usage of each of your deployments. 
 
 Deployments can be both manually scaled to your usage, or configured to autoscale under certain resource conditions.
 If you find that you’re using too much CPU, you can allocate more. Likewise, if you find that you’re running out of disk space, allocate a little more.  You can use our increment suggestions or use your own allocations. 

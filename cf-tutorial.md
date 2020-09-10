@@ -43,7 +43,7 @@ Use npm to install dependencies. From your terminal, change the directory to whe
 
 1. If you do not already have an IBM Cloud account, [sign up here](https://cloud.ibm.com/registration/)
 
-2. [Download and install IBM Cloud CLI](/docs/cli/reference/ibmcloud?topic=cloud-cli-install-ibmcloud-cli)
+2. [Download and install IBM Cloud CLI](/docs/cli?topic=cli-install-ibmcloud-cli)
 
     The IBM Cloud CLI tool enables you to communicate with IBM Cloud from your terminal or command line.
 

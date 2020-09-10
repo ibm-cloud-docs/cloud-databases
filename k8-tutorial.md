@@ -40,7 +40,7 @@ Once the branch has been cloned, you can select the appropriate directory for th
 
 1. If you do not already have an IBM Cloud account, [sign up here](https://cloud.ibm.com/registration/)
 
-2. [Download and install IBM Cloud CLI](/docs/cli/reference/ibmcloud?topic=cloud-cli-install-ibmcloud-cli)
+2. [Download and install IBM Cloud CLI](/docs/cli?topic=cli-install-ibmcloud-cli)
 
     The IBM Cloud CLI tool enables you to communicate with IBM Cloud from your terminal or command line.
 
@@ -118,7 +118,7 @@ Once the branch has been cloned, you can select the appropriate directory for th
 
       For this example, we're using the `default` resource group.
 
-9. Create your own private image repository in [IBM Cloud Container Registry](/docs/Registry?topic=registry-registry_overview) to store your application's Docker image. Since we want the images to be private, we need to create a namespace, which creates a unique URL to your image repository.  
+9. Create your own private image repository in [IBM Cloud Container Registry](/docs/Registry?topic=Registry-getting-started) to store your application's Docker image. Since we want the images to be private, we need to create a namespace, which creates a unique URL to your image repository.  
 
       ```shell
       ibmcloud cr namespace-add <your_namespace>

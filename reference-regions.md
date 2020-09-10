@@ -21,7 +21,7 @@ subcollection: cloud-databases
 
 # Working with regions in {{site.data.keyword.databases-for}}   
 {: #regions}
-
+ 
 {{site.data.keyword.cloud}} Databases are available in several regions. All deployments are scoped to the specific regional cluster with which you are currently working. For example, namespaces, images, quota settings, and plan settings must all be managed separately for each regional deployment.
 {: shortdesc}
 

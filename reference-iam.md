@@ -19,14 +19,14 @@ subcollection: cloud-databases
 # Identity and Access Management Integration
 {: #iam}
 
-Access to {{site.data.keyword.cloud}} Databases service instances for users in your account is controlled by {{site.data.keyword.cloud_notm}} [Identity and Access Management (IAM)](/docs/iam?topic=iam-getstarted). 
+Access to {{site.data.keyword.cloud}} Databases service instances for users in your account is controlled by {{site.data.keyword.cloud_notm}} [Identity and Access Management (IAM)](/docs/account?topic=account-access-getstarted). 
 
 This document covers the integration of IAM with Cloud Databases, which includes {{site.data.keyword.databases-for-cassandra}},{{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-enterprisedb}}, {{site.data.keyword.databases-for-etcd}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-redis}}, and {{site.data.keyword.messages-for-rabbitmq}}.
 {: .note}
 
 IAM is only integrated with high-level service access, which governs privileges and operations available in the Cloud Databases API and the Cloud Databases CLI plugin. It does not govern database-level users and privileges. Database access is governed by the standard access controls provided by the database. IAM does not control database users.
 
-For information about assigning user roles in {{site.data.keyword.cloud_notm}}, see [Managing IAM access](/docs/iam?topic=iam-iammanidaccser).
+For information about assigning user roles in {{site.data.keyword.cloud_notm}}, see [Managing IAM access](/docs/account?topic=account-assign-access-resources).
 
 The following table provides a general overview of actions that are mapped to service management roles. Service management roles enable users to perform tasks on service resources at the service level, for example assign user access for the service, create or delete service IDs, create instances, and bind instances to applications.
 

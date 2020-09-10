@@ -109,7 +109,7 @@ Things to Note -
 
 ### Granting the delegation authorization
 
-In order to enable your deployment to use the Key Protect key, you need to [Enable authorization to be delegated](/docs/iam?topic=iam-serviceauth) when granting the service authorizations. If the delegation authorization is not present before provisioning your deployment with a key, the provision fails.
+In order to enable your deployment to use the Key Protect key, you need to [Enable authorization to be delegated](/docs/account?topic=account-serviceauth) when granting the service authorizations. If the delegation authorization is not present before provisioning your deployment with a key, the provision fails.
 
 ### Using the Key at Provision
 
