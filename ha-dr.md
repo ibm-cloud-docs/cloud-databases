@@ -28,24 +28,24 @@ keywords: HA for cloud-databases, DR for cloud-databases, high availability for 
 This document covers all the {{site.data.keyword.cloud}} Databases, which include {{site.data.keyword.databases-for-cassandra}}, {{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-enterprisedb}}, {{site.data.keyword.databases-for-etcd}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-redis}}, and {{site.data.keyword.messages-for-rabbitmq}}.
 {: .note}
 
---------
-Specifically, the service MUST clearly state/document:
+-------- 
+Specifically, the service MUST clearly state/document: 
 
-1) If the service replicates the data (and where)
+1) If the service replicates the data (and where) 
    
-Each {{site.data.keyword.cloud}} Databases service instance is a highly available product. The data is replicated on one or more servers making the data highly available during normal operations. In the case of a complete zone failure, your data is still accessible on  other fully functioning servers, as the {{site.data.keyword.cloud}} Databases servers are setup in separate zones. In addition, the data is backed up and pushed to Object Storage on a daily schedule and per clients' requests. In the case of a complete region failure, all of the database servers will not be accessible, but the backup data will remain accessible. You can access this backup and restore into a new region and new service instance.
+Each {{site.data.keyword.cloud}} Databases service instance is a highly available product. The data is replicated on one or more servers making the data highly available during normal operations. In the case of a complete zone failure, your data is still accessible on  other fully functioning servers, as the {{site.data.keyword.cloud}} Databases servers are setup in separate zones. In addition, the data is backed up and pushed to Object Storage on a daily schedule and per clients' requests. In the case of a complete region failure, all of the database servers will not be accessible, but the backup data will remain accessible. You can access this backup and restore into a new region and new service instance. 
 
-1) If the Clients need to replicate the data (and how)
-You do not need to replicate the data manually. You do, however, have to restore your old service's backup into a new service and region.
+1) If the Clients need to replicate the data (and how) 
+You do not need to replicate the data manually. You do, however, have to restore your old service's backup into a new service and region. 
 
-3) What data are backed-up /replicated (and by who)
-Your entire service instance is snapshotted and backed up daily by the {{site.data.keyword.cloud}} Databases platform. Furthermore, you can initiate a backup manually whenever you want. {{site.data.keyword.cloud}} Databases can then use the latest backup for the restoration into a new service instance into a new region. Again, this restoration process is initiated by you.
+3) What data are backed-up /replicated (and by who) 
+Your entire service instance is snapshotted and backed up daily by the {{site.data.keyword.cloud}} Databases platform. Furthermore, you can initiate a backup manually whenever you want. {{site.data.keyword.cloud}} Databases can then use the latest backup for the restoration into a new service instance into a new region. Again, this restoration process is initiated by you. 
 
-4) If IBM Cloud replicates the service (and where)
-No.
+4) If IBM Cloud replicates the service (and where) 
+No. 
 
-5) If the Clients need to replicate the service (and how).
-You do need to initiate the restoration of a backup of a failed service into a new service in a new region.  
+5) If the Clients need to replicate the service (and how). 
+You do need to initiate the restoration of a backup of a failed service into a new service in a new region.   
 --------
 
 
