@@ -62,5 +62,5 @@ ibmcloud target -r eu-gb
 
 ## Allowlists and IP subnet ranges
 
-Review the [full list of regional subnets](/docs/cloud-databases?topic=cloud-databases-allowlisting#allowlisting-cloud-databases-in-your-environment) and associated locations to ensure your allowlists are configured with the appropriate subnet ranges. 
+Review the [full list of regional subnets](/docs/cloud-databases?topic=cloud-databases-allowlisting#allowlisting-cloud-databases-in-your-environment) and associated locations to ensure that your allowlists are configured with the appropriate subnet ranges. 
 

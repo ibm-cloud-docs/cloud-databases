@@ -56,7 +56,7 @@ Once you select the appropriate settings, click **Create** to start the provisio
 
 ## Using the Command-Line
 
-The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your terminal or command line. For more information, see [Download and install {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli).
+The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your console or command line. For more information, see [Download and install {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli).
 
 To create a {{site.data.keyword.databases-for}} deployment, you use the CLI to request a service instance with the service ID of the database (or messaging queue) you want to provision.
 
@@ -82,14 +82,14 @@ The `--service-endpoints` flag allows you to specify which types [Service Endpoi
 ibmcloud resource service-instance-create <service-name> --service-endpoints <endpoint-type>
 ```
 
-The `service-instance-create` command supports a `-p` flag, which allows [additional parameters](#list-of-additional-parameters) to be passed to the provisioning process. The parameters are in JSON format. Some parameters values are CRNs (Cloud Resource Name), which uniquely identifies a resource in the cloud. All parameter names and values are passed as strings.
+The `service-instance-create` command supports a `-p` flag, which allows [more parameters](#list-of-additional-parameters) to be passed to the provisioning process. The parameters are in JSON format. Some parameters values are CRNs (Cloud Resource Name), which uniquely identifies a resource in the cloud. All parameter names and values are passed as strings.
 
 For example, if a database is being provisioned from a particular backup and the new database deployment needs a total of 6 GB of memory across two members, then the command to provision 3 GB per member looks like:
 
 ```
 ibmcloud resource service-instance-create example-database <service-name> standard us-south \
 -p \ '{
-  "backup_id": "crn:v1:bluemix:public:databases-for:us-south:a/54e8ffe85dcedf470db5b5ee6ac4a8d8:1b8f53db-fc2d-4e24-8470-f82b15c71717:backup:06392e97-df90-46d8-98e8-cb67e9e0a8e6",
+  "backup_id": "crn:v1:blue:public:databases-for:us-south:a/54e8ffe85dcedf470db5b5ee6ac4a8d8:1b8f53db-fc2d-4e24-8470-f82b15c71717:backup:06392e97-df90-46d8-98e8-cb67e9e0a8e6",
   "members_memory_allocation_mb": "3072"
 }'
 ```
@@ -111,12 +111,12 @@ curl -X POST \
   -H 'Content-Type: application/json' \
     -d '{
     "name": "my-instance",
-    "target": "bluemix-us-south",
+    "target": "blue-us-south",
     "resource_group": "5g9f447903254bb58972a2f3f5a4c711",
     "resource_plan_id": "databases-for-redis-standard"
   }'
 ```
-The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are all required. If needed, you can send [additional parameters](#list-of-additional-parameters) in the request body.
+The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are all required. If needed, you can send [more parameters](#list-of-additional-parameters) in the request body.
 
 More information on the Resource Controller API is found in its [API Reference](https://{DomainName}/apidocs/resource-controller#create-provision-a-new-resource-instance).
 
@@ -133,5 +133,5 @@ If you use Terraform to manage your infrastructure, the [{{site.data.keyword.clo
 * `members_memory_allocation_mb` -  Total amount of memory to be shared between the database members within the database. For example, if the value is "6144", and there are three database members, then the deployment gets 6 GB of RAM total, giving 2 GB of RAM per member. If omitted, the default value is used for the database type is used.
 * `members_disk_allocation_mb` - Total amount of disk to be shared between the database members within the database. For example, if the value is "30720", and there are three members, then the deployment gets 30 GB of disk total, giving 10 GB of disk per member. If omitted, the default value for the database type is used.
 * `members_cpu_allocation_count` - Enables and allocates the number of specified dedicated cores to your deployment. For example, to use two dedicated cores per member, use `"members_cpu_allocation_count":"2"`. If omitted, the default value "Shared CPU" uses compute resources on shared hosts.
-* `service-endpoints` - Selects the types [Service Endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints) supported on your deployment. Options are `public`, `private`, or `public-and-private`. If omitted, the default is `public`. Note that in the CLI, `service-endpoints` is a flag, and not a parameter.
+* `service-endpoints` - Selects the types [Service Endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints) supported on your deployment. Options are `public`, `private`, or `public-and-private`. If omitted, the default is `public`. Note in the CLI, `service-endpoints` is a flag, and not a parameter.
 * `{"remote_leader_id": "crn:v1:..."}` - parameter only for {site.data.keyword.databases-for-postgresql_full}} or {{site.data.keyword.databases-for-enterprisedb_full}}. Details on using this parameter for provisioning read-only replicas can be found in the corresponding `Configuring Read-only Replicas` sections of the [PostgreSQL](/docs/databases-for-postgresql?topic=databases-for-postgresql-read-only-replicas) and [EnterpriseDB](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-read-only-replicas) documentation. 

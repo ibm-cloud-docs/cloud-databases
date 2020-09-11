@@ -33,13 +33,13 @@ Public endpoints provide a connection to your deployment on the public network. 
 
 ## Private Endpoints
 
-A deployment with a service endpoint on the private network gets an endpoint that is not accessible from the public internet. All traffic is routed to hardware dedicated to {{site.data.keyword.databases-for}} deployments and remains on the {{site.data.keyword.cloud_notm}} Private network. All traffic to and from this endpoint is free and unmetered as long as the traffic remains in {{site.data.keyword.cloud_notm}}.  Once your environment has access to the {{site.data.keyword.cloud_notm}} Private network, an internet connection is not required to connect to your deployment.
+A deployment with a service endpoint on the private network gets an endpoint that is not accessible from the public internet. All traffic is routed to hardware dedicated to {{site.data.keyword.databases-for}} deployments and remains on the {{site.data.keyword.cloud_notm}} Private network. All traffic to and from this endpoint is free and unmetered on the condition that the traffic remains in {{site.data.keyword.cloud_notm}}. After your environment has access to the {{site.data.keyword.cloud_notm}} Private network, an internet connection is not required to connect to your deployment.
 
 ## Enabling Service Endpoints
 
 If you want to use connections over the public internet, you do not have to enable Service Endpoints on your {{site.data.keyword.cloud_notm}} account. If you want to enable private networking on your deployments, you need to follow the instructions in the Service Endpoint documentation under [Setting up service endpoints](/docs/account?topic=account-vrf-service-endpoint#cs_cli_install_steps).
 
-Currently, enabling Service Endpoints on your account is a manual step that is handled by support ticket. Once you completed the [request](/docs/account?topic=account-vrf-service-endpoint#cs_cli_install_steps), you can check on the status of the ticket by going to your [Support](https://cloud.ibm.com/unifiedsupport/cases/manage) page on {{site.data.keyword.cloud_notm}}
+Currently, enabling Service Endpoints on your account is a manual step that is handled by support ticket. After you complete the [request](/docs/account?topic=account-vrf-service-endpoint#cs_cli_install_steps), you can check on the status of the ticket by going to your [Support](https://cloud.ibm.com/unifiedsupport/cases/manage) page on {{site.data.keyword.cloud_notm}}
 
 ## Provisioning with Service Endpoints
 
@@ -62,7 +62,7 @@ For more information, see the [Provisioning](/docs/cloud-databases?topic=cloud-d
 
 ## Changing Service Endpoints
 
-Once you have a deployment, it is possible to change your public/private service endpoints configuration, with the exception of {{site.data.keyword.databases-for-mongodb}}. 
+After you have a deployment, it is possible to change your public and private service endpoints configuration, except for {{site.data.keyword.databases-for-mongodb}}. 
 
 In the _Settings_ tab of your deployment's dashboard, there is a card for _Service Endpoints_. You can toggle which types of connections are available to your deployment.
 
@@ -79,7 +79,7 @@ Changing the type of endpoints available on your deployment does not cause any d
 
 You can use either public or private connection strings with any set of credentials you make on your deployment. By default, the connection strings for a set of credentials are filled with strings for connecting over a public endpoint. If you are using private endpoints, you can specify connection strings that contain the private endpoint be generated instead. 
 
-When you create credentials in _Service Credentials_, use the either the `{ "service-endpoints": "public" }` or the `{ "service-endpoints": "private" }` parameter to specify which endpoint gets filled into the connection strings. 
+When you create credentials in _Service Credentials_, use either the `{ "service-endpoints": "public" }` or the `{ "service-endpoints": "private" }` parameter to specify which endpoint gets filled into the connection strings. 
 
 In the API, you can use the [`/deployments/{id}/users/{userid}/connections/{endpoint_type}`](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026) to retrieve connection strings for both public or private endpoints.
 
@@ -90,9 +90,9 @@ If you only have private endpoints on your deployments, then all new credentials
 
 {{site.data.keyword.cloud}} Databases offer both private and public cloud service endpoints. If you want to run your application or access the end point from a browser that is not on the private network, you must take these additional steps: 
   
-* Ensure your Cloud IaaS / SL account is [enabled for private endpoints](https://cloud.ibm.com/docs/account?topic=account-service-endpoints-overview).
+* Ensure your Cloud IaaS or SL account is [enabled for private endpoints](https://cloud.ibm.com/docs/account?topic=account-service-endpoints-overview).
 * Create a virtual machine (VSI) that runs Linux
 * Configure a user account with SSH access
 * From your workstation, run `ssh -D 2345 user@vsi-host` This starts an SSH session and open a SOCKS proxy on port 2345 that forwards all traffic through the VSI
 * Configure your browser or application to use a SOCKS5 proxy on `localhost:2345`
-* Run your application or open the desired private-endpoint in your browser (for example, a management UI).
+* Run your application or open the preferred private-endpoint in your browser (for example, a management UI).

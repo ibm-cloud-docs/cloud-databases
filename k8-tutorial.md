@@ -17,11 +17,11 @@ lastupdated: "2020-08-04"
 
 The [{{site.data.keyword.databases-for}} "Hello World" Kubernetes examples](https://github.com/IBM-Cloud/clouddatabases-helloworld-kubernetes-examples) repository holds sample {{site.data.keyword.cloud}} applications that show you how to connect to a {{site.data.keyword.databases-for}} deployment to an {{site.data.keyword.containerlong_notm}} application written in a various programming languages.  
 
-Each git branch of the examples repository corresponds to samples in a particular programming language. For example, when you click on **Branch** there is a **Node** branch, where all examples are written in JavaScript using Node.js. The files in each folder correspond to either a database or a message queue.  
+Each Git branch of the examples repository corresponds to samples in a particular programming language. For example, when you click **Branch**,a **Node** branch exists where all examples are written in JavaScript that uses Node.js. The files in each folder correspond to either a database or a message queue.  
 
 ## Trying out the sample applications
 
-Clone the repository of the language that you want to use. For instance, you can clone the **Node** repository by selecting the **Node** branch. Then click **Clone or download** to get the URL you'll need to clone using SSH or HTTPS. In your terminal, the command looks like:
+Clone the repository of the language that you want to use. For instance, you can clone the **Node** repository by selecting the **Node** branch. Then, click **Clone or download** to get the URL you need to clone by using SSH or HTTPS. In your console, the command looks like:
 
 ```shell
 git clone -b node git@github.com:IBM-Cloud/clouddatabases-helloworld-kubernetes-examples.git
@@ -34,7 +34,7 @@ git clone -b node https://github.com/IBM-Cloud/clouddatabases-helloworld-kuberne
 ```
 {: .pre}
 
-Once the branch has been cloned, you can select the appropriate directory for the database you want to try out. Each database has its own copy of these instructions on how to provision and deploy a database or message queue and an application on {{site.data.keyword.containerlong_notm}}.
+Once the branch is cloned, select the appropriate directory for the database you want to try out. Each database has its own copy of these instructions on how to provision and deploy a database or message queue and an application on {{site.data.keyword.containerlong_notm}}.
 
 ## Running on IBM Cloud
 
@@ -42,9 +42,9 @@ Once the branch has been cloned, you can select the appropriate directory for th
 
 2. [Download and install IBM Cloud CLI](/docs/cli?topic=cli-install-ibmcloud-cli)
 
-    The IBM Cloud CLI tool enables you to communicate with IBM Cloud from your terminal or command line.
+    The IBM Cloud CLI tool enables you to communicate with IBM Cloud from your console or command line.
 
-3. Install the {{site.data.keyword.containershort_notm}} CLI plugin and the Container Registry CLI plugin
+3. Install the {{site.data.keyword.containershort_notm}} CLI plug-in and the Container Registry CLI plug-in
 
       ```shell
       ibmcloud plugin install container-service
@@ -71,7 +71,7 @@ Once the branch has been cloned, you can select the appropriate directory for th
 
       Follow the instructions for downloading and installing the Kubernetes CLI for the platform you're using.
 
-5. Connect to IBM Cloud in the command line tool and follow the prompts to log in.
+5. Connect to IBM Cloud in the command-line tool and follow the prompts to log in.
 
       ```shell
       ibmcloud login
@@ -84,10 +84,10 @@ Once the branch has been cloned, you can select the appropriate directory for th
 
 6. Create your database deployment.
 
-    Please note this process will create a standard database instance in the service you specify that will incur additional charges in your selected plan. 
+    Note that this process creates a standard database instance in the service you specify that incurs additional charges in your selected plan. 
     {: .note}
 
-    The database can be created from the command line using the `ibmcloud resource service-instance-create` command. The command takes a service instance name, a service name, plan name, and location. 
+    The database can be created from the command line by using the `ibmcloud resource service-instance-create` command. The command takes a service instance name, a service name, plan name, and location. 
     
     The service name is one of the {{site.data.keyword.databases-for}} services, `databases-for-datastax`, `databases-for-elasticsearch`, `databases-for-enterprisedb`, `databases-for-etcd`, `databases-for-mongodb`, `databases-for-postgresql`, `databases-for-redis`, or `messages-for-rabbitmq`.
 
@@ -103,7 +103,7 @@ Once the branch has been cloned, you can select the appropriate directory for th
 
 ## Configuring the Kubernetes App
 
-7. [Create an IBM Cloud Kubernetes Service](/docs/containers?topic=containers-getting-started#getting-started). Choose the location and resource group that you want to set up your cluster in. Select the cluster type that you want to use. This example only requires the lite plan, which comes with 1 worker node.
+7. [Create an IBM Cloud Kubernetes Service](/docs/containers?topic=containers-getting-started#getting-started). Choose the location and resource group that you want to set up your cluster in. Select the cluster type that you want to use. This example only requires the lite plan, which comes with one worker node.
 
       Once a cluster is provisioned, you are given a list of steps to follow to access your cluster and set the environment variables under the _Access_ tab. You are also able to verify that your deployment is provisioned and running normally.
 
@@ -131,7 +131,7 @@ Once the branch has been cloned, you can select the appropriate directory for th
       ```
       {: .pre}
 
-      Note: the "default" namespace refers to the Kubernetes instance and not the user created image store namespace. Likewise, if your database uses both [public and private endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints), your public endpoint is used by default. Therefore, if you want to select the private endpoint, first you need to create a service key for your database so Kubernetes can use it when binding to the database. You set up a service key using the command:
+      Note: the "default" namespace refers to the Kubernetes instance and not the user created image store namespace. Likewise, if your database uses both [public and private endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints), your public endpoint is used by default. Therefore, if you want to select the private endpoint, first you need to create a service key for your database so Kubernetes can use it when binding to the database. You set up a service key by using the command:
 
       ```
       ibmcloud resource service-key-create <your-private-key> --instance-name <your_database_deployment> --service-endpoint private  
@@ -159,14 +159,14 @@ then
 
     **Note**: save the name of the secret that was generated when you bound `your_database_name` to your Kubernetes service.
 
-12. If you haven't already, clone the app in one of the available languages to your local environment from your terminal by using the following command
+12. If you haven't already, clone the app in one of the available languages to your local environment from your console by using the following command
 
       ```shell
       git clone -b <language> git@github.com:IBM-Cloud/clouddatabases-helloworld-kubernetes-examples.git
       ```
       {: .pre}
 
-13. `cd` into this newly created directory, and `cd` into the database folder. The code for connecting to the service, and reading from and updating the database can be found in `server.js`. See [Code Structure](#code-structure) and the code comments for information on the app's functions. There's also a `public` directory, which contains the html, style sheets, and JavaScript for the web app. But, to get the application to work, we first need to push the Docker image of this application to our IBM Cloud Container Registry.
+13. `cd` into this newly created directory, and `cd` into the database folder. The code for connecting to the service, and reading from and updating the database can be found in `server.js`. See [Code Structure](#code-structures) and the code comments for information on the app's functions. There's also a `public` directory, which contains the html, stylesheets, and JavaScript for the web app. But, to get the application to work, we first need to push the Docker image of this application to our IBM Cloud Container Registry.
 
 14. Build and push the application's Docker image to your IBM Cloud Container Registry. Specify the appropriate [region](/docs/cloud-databases?topic=cloud-databases-regions) and give the container a name.
 
@@ -205,7 +205,7 @@ then
     ```
     {: .pre}
 
-    As for the `service` configuration at the bottom of the file, [`nodePort`](/docs/containers?topic=containers-nodeport) indicates the port that the application can be accessed from. You have ports in the  range from 30000 - 32767 that you can use, but we chose 30081. As for the TCP port, it's set to 8080, which is the port that the Node.js application runs on in the container.
+    As for the `service` configuration at the bottom of the file, [`nodePort`](/docs/containers?topic=containers-nodeport) indicates the port that the application can be accessed from. You have ports in the range 30000 - 32767 that you can use, but we chose 30081. As for the TCP port, it's set to 8080, which is the port that the Node.js application runs on in the container.
 
 ## Deploying your Kubernetes App
 
@@ -235,6 +235,7 @@ then
 The clouddatabases-helloworld app displays the contents of an _examples_ database. To demonstrate that the app is connected to your service, add some words to the database. The words are displayed as you add them, with the most recently added words displayed first.
 
 ## Code Structure
+{: #code-structures}
 
 | File | Description |
 | ---- | ----------- |

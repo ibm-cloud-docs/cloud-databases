@@ -40,11 +40,11 @@ Deployment Region | Activity Tracker Region
 `us-east` | `us-east`
 {: caption="Table 1. Activity Tracker regions" caption-side="top"}
 
-Events from your deployments appear in an Activity Tracker instance in the same region, with the exception of `osl01`, `seo01`, and `che01`. Deployments in `osl01` have their events forwarded to `eu-gb`. Deployments in `seo01` and `che01` have their events forwarded to `jp-tok`. If you have deployments in multiple regions, you have to set up the Activity Tracker in multiple regions. 
+Events from your deployments appear in an Activity Tracker instance in the same region, except for `osl01`, `seo01`, and `che01`. Deployments in `osl01` have their events forwarded to `eu-gb`. Deployments in `seo01` and `che01` have their events forwarded to `jp-tok`. If you have deployments in multiple regions, you must set up the Activity Tracker in multiple regions. 
 
 ## Activity Tracker through LogDNA
 
-Once you provision the service, events are automatically forwarded from all your {{site.data.keyword.databases-for}} deployments in the same region.
+When you provision the service, events are automatically forwarded from all your {{site.data.keyword.databases-for}} deployments in the same region.
 
 The service can be provisioned from [its catalog page](https://{DomainName}/catalog/ibm-cloud-activity-tracker-with-logdna) or from an existing [Observability Dashboard](https://cloud.ibm.com/observe/activitytracker).
 
@@ -76,7 +76,7 @@ Action|Description
 `<service_id>.backup.restore`|A restore from backup was created. If the attempted restore failed, a "-failure" flag is included in the message.
 `<service_id>.resources.scale`|A scaling operation was performed. If the scaling operation failed, a "-failure" flag is included in the message.
 `<service_id>.whitelisted-ips-list.update`|The allowlist was modified. A "-failure" flag is included in the message if the attempt to modify the allowlist failed.
-`<service_id>.serviceendpoints.update`|A change has been made to the service endpoints configuration. If the operation failed, a "-failure" flag is included in the message.
+`<service_id>.serviceendpoints.update`|A change was made to the service endpoints configuration. If the operation failed, a "-failure" flag is included in the message.
 `<service_id>.autoscaling.update`|An autoscaling configuration change or an autoscaling operation was performed. If an autoscaling operation was performed the message includes `autoscale resources for instance <deployment-id>`. If the autoscaling operation or configuration change failed, a "-failure" flag is included in the message.
 {: caption="Table 2. List of Events and Event Descriptions" caption-side="top"}
 

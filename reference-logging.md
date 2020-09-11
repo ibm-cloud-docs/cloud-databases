@@ -40,16 +40,16 @@ Deployment Region | Log Analysis Region
 `us-east` | `us-east`
 {: caption="Table 1. Log Analysis regions" caption-side="top"}
 
-Logs from your deployments appear in a Log Analysis instance in the same region, except for `osl01`, `seo01`, and `che01`. Deployments in `osl01` have their logs forwarded to `eu-gb`. Deployments in `seo01` and `che01` have their logs forwarded to `jp-tok`. If you have deployments in multiple regions, you have to set up Log Analysis in multiple regions. 
+Logs from your deployments appear in a Log Analysis instance in the same region, except for `osl01`, `seo01`, and `che01`. Deployments in `osl01` have their logs forwarded to `eu-gb`. Deployments in `seo01` and `che01` have their logs forwarded to `jp-tok`. If you have deployments in multiple regions, you must set up Log Analysis in multiple regions. 
 
 ## Provisioning {{site.data.keyword.la_full_notm}}
 
-Log information from your databases is automatically forwarded to {{site.data.keyword.la_full_notm}}, but in order to access it you have to [provision a Log Analysis service](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNAprovision) in your {{site.data.keyword.cloud_notm}} account and [configure the service to receive {{site.data.keyword.cloud_notm}} service logs](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNAconfig_svc_logs).
+Log information from your databases is automatically forwarded to {{site.data.keyword.la_full_notm}}, but to access it you must [provision a Log Analysis service](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNAprovision) in your {{site.data.keyword.cloud_notm}} account and [configure the service to receive {{site.data.keyword.cloud_notm}} service logs](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNAconfig_svc_logs).
 
 This setting enables logs from **ALL** {{site.data.keyword.cloud_notm}} services on your account that have {{site.data.keyword.la_full_notm}} integration to send logs to your {{site.data.keyword.la_full_notm}} service. [A list of the integrated services is available](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNAcloud_services#cloud_services).
 {: .tip}
 
-{{site.data.keyword.la_full_notm}} has a lite plan that is free to use, but it only offers streaming events. To take advantage of the tagging, export, retention, and other features, you need to use one of the [paid plans](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNAservice_plans).
+{{site.data.keyword.la_full_notm}} has a lite plan that is free to use, but it offers only streaming events. To take advantage of the tagging, export, retention, and other features, you need to use one of the [paid plans](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNAservice_plans).
 
 ### HIPAA 
 
