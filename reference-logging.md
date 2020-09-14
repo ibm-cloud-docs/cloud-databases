@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2020
-lastupdated: "2020-08-04"
+lastupdated: "2020-09-14"
 
 subcollection: cloud-databases
 
@@ -34,13 +34,16 @@ Deployment Region | Log Analysis Region
 `eu-gb` | `eu-gb`
 `osl01` | `eu-gb`
 `seo01` | `jp-tok`
-`che01` | `jp-tok`
+`che01` | `che01`
 `eu-de` | `eu-de`
 `au-syd` | `au-syd`
 `us-east` | `us-east`
 {: caption="Table 1. Log Analysis regions" caption-side="top"}
 
-Logs from your deployments appear in a Log Analysis instance in the same region, except for `osl01`, `seo01`, and `che01`. Deployments in `osl01` have their logs forwarded to `eu-gb`. Deployments in `seo01` and `che01` have their logs forwarded to `jp-tok`. If you have deployments in multiple regions, you must set up Log Analysis in multiple regions. 
+Logs from your deployments appear in a Log Analysis instance in the same region, except for `osl01`, and `seo01`. Deployments in `osl01` have their logs forwarded to `eu-gb`. Deployments in `seo01` have their logs forwarded to `jp-tok`. If you have deployments in multiple regions, you must set up Log Analysis in multiple regions. 
+
+After September 15th, {{site.data.keyword.databases-for}} in the Chennai region will begin sending Platform logs from our databases to the Logging with LogDNA services in Chennai rather than Tokyo. This is to ensure database logs for Chennai remain in the Chennai region.
+{: .note}
 
 ## Provisioning {{site.data.keyword.la_full_notm}}
 
