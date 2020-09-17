@@ -42,7 +42,7 @@ Furthermore, you can initiate a backup manually whenever you want. {{site.data.k
 
 ## Service replication 
 
-{{site.data.keyword.cloud}} Databases does not replicate the service instance. You need to initiate the restoration of a backup of a failed service into a new service in a new region. The restoration process will require you to create a new instance in the event of a complete regional failure following the normal service create guidelines. 
+{{site.data.keyword.cloud}} Databases does not replicate the service instance. You need to initiate the restoration of a backup of a failed service into a new service in a new region. The restoration process will require you to create a new instance in the event of a complete regional failure following the normal service create guidelines. You are not required to restore into a new region for single zone failures. The {{site.data.keyword.cloud}} Databases will fix  single zone failures in place.
 
 
 ## High availability and disaster recovery
