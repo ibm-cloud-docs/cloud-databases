@@ -25,7 +25,7 @@ keywords: HA for cloud-databases, DR for cloud-databases, high availability for 
 {{site.data.keyword.cloud}} Databases use global load balancing to ensure a redundant, highly available platform is available for you to host your workloads and applications.
 {: shortdesc}
 
-This document covers all the {{site.data.keyword.cloud}} Databases, which include {{site.data.keyword.databases-for-cassandra}}, {{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-enterprisedb}}, {{site.data.keyword.databases-for-etcd}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-redis}}, and {{site.data.keyword.messages-for-rabbitmq}}.
+This document covers all the {{site.data.keyword.cloud}} Databases, which include {{site.data.keyword.databases-for-cassandra}}, {{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-enterprisedb}}, {{site.data.keyword.databases-for-etcd}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-redis}}, and {{site.data.keyword.messages-for-rabbitmq}}. 
 {: .note}
 
 ## Data Replication 
@@ -38,11 +38,11 @@ Your entire service instance data is snapshotted and backed up daily by the {{si
 ### Manual data replication  
 You do not need to replicate the data manually. You do, however, have to restore your old service's backup into a new service and region. 
 
-Furthermore, you can initiate a backup manually whenever you want. {{site.data.keyword.cloud}} Databases can then use the latest backup for the restoration into a new service instance into a new region. This restoration process is initiated by you. 
+Furthermore, you can initiate a backup manually whenever you want. {{site.data.keyword.cloud}} Databases can then use the latest backup for the restoration into a new service instance into a new region. This restoration process is initiated by you in coordination with the {{site.data.keyword.cloud}} Databases team.
 
 ## Service replication 
 
-{{site.data.keyword.cloud}} Databases does not replicate the service instance. You need to initiate the restoration of a backup of a failed service into a new service in a new region. The restoration process will require you to create a new instance in the event of a complete regional failure following the normal service create guidelines. You are not required to restore into a new region for single zone failures. The {{site.data.keyword.cloud}} Databases will fix  single zone failures in place.
+{{site.data.keyword.cloud}} Databases does not replicate the service instance. You need to initiate the restoration of a backup of a failed service into a new service in a new region. The restoration process will require you to create a new instance in the event of a complete regional failure following the normal service create guidelines. You are not required to restore into a new region for single zone failures. The {{site.data.keyword.cloud}} Databases team will fix  single zone failures in place.
 
 
 ## High availability and disaster recovery
