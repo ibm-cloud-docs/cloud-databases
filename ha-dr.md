@@ -30,14 +30,18 @@ This document covers all the {{site.data.keyword.cloud}} Databases, which includ
 
 ## Data Replication 
   
-Each {{site.data.keyword.cloud}} Databases service instance is a highly available product. The data is replicated on one or more servers making the data highly available during normal operations. In the case of a complete zone failure, your data is still accessible on other fully functioning servers, as the {{site.data.keyword.cloud}} Databases servers are setup in separate zones. In addition, the data is backed up and pushed to Object Storage on a daily schedule and per clients' requests. In the case of a complete region failure, all of the database servers will not be accessible, but the backup data will remain accessible. You can access this backup and restore into a new region and new service instance. 
+Each {{site.data.keyword.cloud}} Databases service instance is a highly available product. The data is replicated on one or more servers making the data highly available during normal operations. For example, multi-zone regions deploy to three difference data centers, while single-zone regions deploy to three different hosts.
+
+In the case of a complete zone failure, your data is still accessible on other fully functioning servers, as the {{site.data.keyword.cloud}} Databases servers are setup in separate zones. 
+
+In addition, the data is backed up stored in [cross-region Cloud Object Storage buckets](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-geo). In the case of a complete region failure, the database servers in the region may not be accessible, but the backup data will remain accessible. You can access this backup and restore into a new region and new service instance. 
 
 ### What data are backed-up /replicated (and by whom) 
 Your entire service instance data is snapshotted and backed up daily by the {{site.data.keyword.cloud}} Databases platform. 
 
 ### Manual data replication  
 You do not need to replicate the data manually. You do, however, have to restore your old service's backup into a new service and region. 
-
+ 
 Furthermore, you can initiate a backup manually whenever you want. {{site.data.keyword.cloud}} Databases can then use the latest backup for the restoration into a new service instance into a new region. This restoration process is initiated by you in coordination with the {{site.data.keyword.cloud}} Databases team.
 
 ## Service replication 
@@ -55,5 +59,14 @@ The {{site.data.keyword.cloud}} Databases are GA services that are offered in _C
 
 {{site.data.keyword.cloud}} Databases are deployed in either a multi-zone region (for example, Dallas, Frankfurt, London, Sydney, Tokyo, and Washington), or a single zone region (for eaxmple, Oslo, Seoul, and Chennai). 
 
+Each {{site.data.keyword.cloud}} Databases service has its own particular methods for ensuring high availability. 
+
+- In the event of a single zone outage, refer to the {{site.data.keyword.cloud}} Databases' high availability documentation for details on failover and recovery specific to your deployment. 
+
+- In the event of a full region outage, IBM will recover the {{site.data.keyword.cloud}} Databases services in another region so that you can create a new instance deployment and initiate recovery from an instance's available backups into another region.
+
+- In both cases it is your responsibility to create a new servcie instance in which to restore to once the {{site.data.keyword.cloud}} Databases services have been restored. 
+
 See [How do I ensure zero downtime?](/docs/overview?topic=overview-zero-downtime#zero-downtime) to learn more about the high availability and disaster recovery standards in {{site.data.keyword.Bluemix_notm}}. You can also find information about [Service Level Agreements](/docs/overview?topic=overview-zero-downtime#SLAs).  
+
 
