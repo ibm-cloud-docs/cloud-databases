@@ -63,9 +63,9 @@ Each {{site.data.keyword.cloud}} Databases service has its own particular method
 
 - In the event of a single zone outage, refer to the {{site.data.keyword.cloud}} Databases' high availability documentation for details on failover and recovery specific to your deployment. 
 
-- In the event of a full region outage, IBM will recover the {{site.data.keyword.cloud}} Databases services in another region so that you can create a new instance deployment and initiate recovery from an instance's available backups into another region.
+- In the event of a full region outage, IBM will recover the {{site.data.keyword.cloud}} Databases platform in another region so that you can create a new instance deployment and initiate recovery from an instance's available backups into another region.
 
-- In both cases it is your responsibility to create a new servcie instance in which to restore to once the {{site.data.keyword.cloud}} Databases services have been restored. 
+- In both cases it is your responsibility to create a new servcie instance in which to restore to once the {{site.data.keyword.cloud}} Databases platform has been restored. 
 
 See [How do I ensure zero downtime?](/docs/overview?topic=overview-zero-downtime#zero-downtime) to learn more about the high availability and disaster recovery standards in {{site.data.keyword.Bluemix_notm}}. You can also find information about [Service Level Agreements](/docs/overview?topic=overview-zero-downtime#SLAs).  
 
