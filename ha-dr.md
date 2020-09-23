@@ -30,7 +30,7 @@ This document covers all the {{site.data.keyword.cloud}} Databases, which includ
 - In multi-zone regions, database members are distributed across different data centers, or zones.  
 - In single-zone regions, database members are distributed across different hosts.
 
-In the case of a hardware failure or a single zone failure in a multi-zone region, your data is still accessible as it is replicated onto other fully functioning database servers. Such issues will be addressed by {{site.data.keyword.cloud}} Specialists in place. 
+In the case of a single zone failure in a multi-zone region or a hardware failure in any region, your data is still accessible as it is replicated onto other fully functioning database servers. Such issues will be addressed by {{site.data.keyword.cloud}} Specialists in place. 
 
 You may consult your {{site.data.keyword.databases-for}} documentation for more details on how your specific database replicates data among each of its members.
 
@@ -54,4 +54,6 @@ Several minutes of database unavailability or connection interruptions are not e
 See [How do I ensure zero downtime?](/docs/overview?topic=overview-zero-downtime#zero-downtime) to learn more about the high availability and disaster recovery standards in {{site.data.keyword.cloud_notm}}.
 
 All {{site.data.keyword.cloud}} Databases general availability (GA) offerings conform to the {{site.data.keyword.cloud}} [Service Level Agreement](/docs/overview?topic=overview-slas) (SLA) terms.
+
+For more information on your responsibilities, see the [Responsibilities for Cloud Databases](/docs/cloud-databases?topic=cloud-databases-responsibilities-cloud-databases) page.
 
