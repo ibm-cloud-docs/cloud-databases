@@ -30,23 +30,15 @@ This document covers all the {{site.data.keyword.cloud}} Databases, which includ
 
 ## Data Replication 
   
-Each {{site.data.keyword.cloud}} Databases service instance is a highly available product. The data is replicated on one or more servers making the data highly available during normal operations. For example, multi-zone regions deploy to three difference data centers, while single-zone regions deploy to three different hosts.
+Each {{site.data.keyword.cloud}} Databases service instance is a highly available product. The data is replicated on one or more servers making the data highly available during normal operations. For example, multi-zone regions deploy to three different data centers, while single-zone regions deploy to three different hosts.
 
-In the case of a complete zone failure, your data is still accessible on other fully functioning servers, as the {{site.data.keyword.cloud}} Databases servers are setup in separate zones. 
+Your data is snapshotted and backed up daily by the {{site.data.keyword.cloud}} Databases platform and stored in [cross-region Cloud Object Storage buckets](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-geo). 
 
-In addition, the data is backed up stored in [cross-region Cloud Object Storage buckets](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-geo). In the case of a complete region failure, the database servers in the region may not be accessible, but the backup data will remain accessible. You can access this backup and restore into a new region and new service instance. 
-
-### What data are backed-up /replicated (and by whom) 
-Your entire service instance data is snapshotted and backed up daily by the {{site.data.keyword.cloud}} Databases platform. 
-
-### Manual data replication  
-You do not need to replicate the data manually. You do, however, have to restore your old service's backup into a new service and region. 
- 
-Furthermore, you can initiate a backup manually whenever you want. {{site.data.keyword.cloud}} Databases can then use the latest backup for the restoration into a new service instance into a new region. This restoration process is initiated by you in coordination with the {{site.data.keyword.cloud}} Databases team.
+In the case of a complete region failure, the database servers in the region may not be accessible, but the backup data will remain available. You can select this backup and restore into a new region and new service instance. You do not need to replicate the data manually. You do, however, have to restore your old service's backup into a new service and region. This restoration process is initiated by you in coordination with the {{site.data.keyword.cloud}} Databases team.
 
 ## Service replication 
 
-{{site.data.keyword.cloud}} Databases does not replicate the service instance. You need to initiate the restoration of a backup of a failed service into a new service in a new region. The restoration process will require you to create a new instance in the event of a complete regional failure following the normal service create guidelines. You are not required to restore into a new region for single zone failures. The {{site.data.keyword.cloud}} Databases team will fix  single zone failures in place.
+{{site.data.keyword.cloud}} Databases does not replicate the service instance. You need to initiate the restoration of a backup of a failed service into a new service in an available region. The restoration process will require you to create a new instance in the event of a complete regional failure following the normal service create guidelines. You are not required to restore into a new region for single zone failures. The {{site.data.keyword.cloud}} Databases team will fix  single zone failures in place.
 
 
 ## High availability and disaster recovery
@@ -68,5 +60,4 @@ Each {{site.data.keyword.cloud}} Databases service has its own particular method
 - In both cases it is your responsibility to create a new servcie instance in which to restore to once the {{site.data.keyword.cloud}} Databases platform has been restored. 
 
 See [How do I ensure zero downtime?](/docs/overview?topic=overview-zero-downtime#zero-downtime) to learn more about the high availability and disaster recovery standards in {{site.data.keyword.Bluemix_notm}}. You can also find information about [Service Level Agreements](/docs/overview?topic=overview-zero-downtime#SLAs).  
-
 
