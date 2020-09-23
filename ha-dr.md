@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-14"
+lastupdated: "2020-09-25"
 
 subcollection: cloud-databases
 
@@ -22,42 +22,33 @@ keywords: HA for cloud-databases, DR for cloud-databases, high availability for 
 # Understanding high availability and disaster recovery for {{site.data.keyword.databases-for}}
 {: #ha-dr}
 
-{{site.data.keyword.cloud}} Databases use global load balancing to ensure a redundant, highly available platform is available for you to host your workloads and applications.
-{: shortdesc}
+{{site.data.keyword.cloud}} Databases are deployed in either a multi-zone region (for example, Dallas, Frankfurt, London, Sydney, Tokyo, and Washington), or a single zone region (for eaxmple, Oslo, Seoul, and Chennai).  Each instance is deployed in a highly-available configuration.  That is, data is replicated by each database onto one or more servers making the data highly available during normal operations.
 
-This document covers all the {{site.data.keyword.cloud}} Databases, which include {{site.data.keyword.databases-for-cassandra}}, {{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-enterprisedb}}, {{site.data.keyword.databases-for-etcd}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-redis}}, and {{site.data.keyword.messages-for-rabbitmq}}. 
-{: .note}
+- In multi-zone regions, database members are distributed across different data centers, or zones.  
+- In single-zone regions, database members are distributed across different hosts.
 
-## Data Replication 
-  
-Each {{site.data.keyword.cloud}} Databases service instance is a highly available product. The data is replicated on one or more servers making the data highly available during normal operations. For example, multi-zone regions deploy to three different data centers, while single-zone regions deploy to three different hosts.
+In the case of a hardware failure or a single zone failure in a multi-zone region, your data is still accessible as it is replicated onto other fully functioning database servers. Such issues will be addressed by {{site.data.keyword.cloud}} Specialists in place. 
 
-Your data is snapshotted and backed up daily by the {{site.data.keyword.cloud}} Databases platform and stored in [cross-region Cloud Object Storage buckets](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-geo). 
+You may consult your {{site.data.keyword.databases-for}} documentation for more details on how your specific database replicates data among each of its members.
 
-In the case of a complete region failure, the database servers in the region may not be accessible, but the backup data will remain available. You can select this backup and restore into a new region and new service instance. You do not need to replicate the data manually. You do, however, have to restore your old service's backup into a new service and region. This restoration process is initiated by you in coordination with the {{site.data.keyword.cloud}} Databases team.
+In addition to the high-availability configuration, your data is snapshotted and backed up daily by the {{site.data.keyword.cloud}} Databases platform and stored in [cross-region Cloud Object Storage buckets](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-geo). 
 
-## Service replication 
+In the case of a complete region failure, the database servers in the region may not be accessible, but the backup data will remain available. You can initiate a restore from these backups into an available region from the service management console. Consult your {{site.data.keyword.databases-for}} backups page for additional details. 
 
-{{site.data.keyword.cloud}} Databases does not replicate the service instance. You need to initiate the restoration of a backup of a failed service into a new service in an available region. The restoration process will require you to create a new instance in the event of a complete regional failure following the normal service create guidelines. You are not required to restore into a new region for single zone failures. The {{site.data.keyword.cloud}} Databases team will fix  single zone failures in place.
+It is your responsibility to create a new service instance in which to restore to once the {{site.data.keyword.cloud}} Databases platform has been restored. You are also responsible for testing the validity and restore time of your backups. For more information on your responsibilities, see [Disaster recovery](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-responsibilities-cloud-databases#disaster-recovery-responsibilities) in the `Responsibilities for Cloud Databases` page.
 
+## Application-level high availability
 
-## High availability and disaster recovery
+Applications that communicate over networks and cloud services are subject to transient connection failures. You want to design your applications to retry connections when errors are caused by a temporary loss in connectivity to your deployment or to {{site.data.keyword.cloud_notm}}.
 
-High Availability (HA) means providing the best possible continuous data availability after hardware failure to avoid impact on operations. Disaster Recovery (DR) means the ability to make all the data available on an alternative system as quickly as possible after a severe or extensive hardware failure.
+Because {{site.data.keyword.databases-for}} is a managed service, regular updates and database maintenance occurs as part of normal operations. This can occasionally cause short intervals where your database is unavailable.
 
-All {{site.data.keyword.cloud}} Databases general availability (GA) offerings conform to the {{site.data.keyword.cloud_notm}} [SLA terms](/docs/overview?topic=overview-slas). 
+Your applications have to be designed to handle temporary interruptions to the database, implement error handling for failed database commands, and implement retry logic to recover from a temporary interruption.
 
-The {{site.data.keyword.cloud}} Databases are GA services that are offered in _Chennai, Dallas, Frankfurt, London, Oslo, Seoul, Sydney, Tokyo, and Washington_. 
+Several minutes of database unavailability or connection interruptions are not expected. Open a [support ticket](https://cloud.ibm.com/unifiedsupport/cases/add) with details if you have time periods longer than a minute with no connectivity so we can investigate.
 
-{{site.data.keyword.cloud}} Databases are deployed in either a multi-zone region (for example, Dallas, Frankfurt, London, Sydney, Tokyo, and Washington), or a single zone region (for eaxmple, Oslo, Seoul, and Chennai). 
+## SLAs
+See [How do I ensure zero downtime?](/docs/overview?topic=overview-zero-downtime#zero-downtime) to learn more about the high availability and disaster recovery standards in {{site.data.keyword.cloud_notm}}.
 
-Each {{site.data.keyword.cloud}} Databases service has its own particular methods for ensuring high availability. 
-
-- In the event of a single zone outage, refer to the {{site.data.keyword.cloud}} Databases' high availability documentation for details on failover and recovery specific to your deployment. 
-
-- In the event of a full region outage, IBM will recover the {{site.data.keyword.cloud}} Databases platform in another region so that you can create a new instance deployment and initiate recovery from an instance's available backups into another region.
-
-- In both cases it is your responsibility to create a new servcie instance in which to restore to once the {{site.data.keyword.cloud}} Databases platform has been restored. 
-
-See [How do I ensure zero downtime?](/docs/overview?topic=overview-zero-downtime#zero-downtime) to learn more about the high availability and disaster recovery standards in {{site.data.keyword.Bluemix_notm}}. You can also find information about [Service Level Agreements](/docs/overview?topic=overview-zero-downtime#SLAs).  
+All {{site.data.keyword.cloud}} Databases general availability (GA) offerings conform to the {{site.data.keyword.cloud}} [Service Level Agreement](/docs/overview?topic=overview-slas) (SLA) terms.
 
