@@ -25,7 +25,7 @@ keywords: HA for cloud-databases, DR for cloud-databases, high availability for 
 This document covers all the {{site.data.keyword.cloud}} Databases, which include {{site.data.keyword.databases-for-cassandra}}, {{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-enterprisedb}}, {{site.data.keyword.databases-for-etcd}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-redis}}, and {{site.data.keyword.messages-for-rabbitmq}}. 
 {: .note}
 
-{{site.data.keyword.cloud}} Databases are deployed in either a multi-zone region (for example, Dallas, Frankfurt, London, Sydney, Tokyo, and Washington), or a single zone region (for eaxmple, Oslo, Seoul, and Chennai).  Each instance is deployed in a highly-available configuration.  That is, data is replicated by each database onto one or more servers making the data highly available during normal operations.
+{{site.data.keyword.cloud}} Databases instances are deployed in either a multi-zone region (for example, Dallas, Frankfurt, London, Sydney, Tokyo, and Washington), or a single zone region (for eaxmple, Oslo, Seoul, and Chennai).  Each instance is deployed in a highly-available configuration.  That is, data is replicated by each database onto one or more servers making the data highly available during normal operations.
 
 - In multi-zone regions, database members are distributed across different data centers, or zones.  
 - In single-zone regions, database members are distributed across different hosts.
@@ -38,7 +38,7 @@ In addition to the high-availability configuration, your data is snapshotted and
 
 In the case of a complete region failure, the database servers in the region may not be accessible, but the backup data will remain available. You can initiate a restore from these backups into an available region from the service management console. Consult your {{site.data.keyword.databases-for}} backups page for additional details. 
 
-It is your responsibility to create a new service instance in which to restore to once the {{site.data.keyword.cloud}} Databases platform has been restored. You are also responsible for testing the validity and restore time of your backups. For more information on your responsibilities, see [Disaster recovery](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-responsibilities-cloud-databases#disaster-recovery-responsibilities) in the `Responsibilities for Cloud Databases` page.
+It is your responsibility to [create a new service instance](/docs/cloud-databases?topic=provisioning) in which to restore to once the {{site.data.keyword.cloud}} Databases platform has been restored. You are also responsible for testing the validity and restore time of your backups. For more information on your responsibilities, see [Disaster recovery](/docs/cloud-databases?topic=cloud-databases-responsibilities-cloud-databases#disaster-recovery-responsibilities) in the *Responsibilities for Cloud Databases* page.
 
 ## Application-level high availability
 
@@ -49,6 +49,8 @@ Because {{site.data.keyword.databases-for}} is a managed service, regular update
 Your applications have to be designed to handle temporary interruptions to the database, implement error handling for failed database commands, and implement retry logic to recover from a temporary interruption.
 
 Several minutes of database unavailability or connection interruptions are not expected. Open a [support ticket](https://cloud.ibm.com/unifiedsupport/cases/add) with details if you have time periods longer than a minute with no connectivity so we can investigate.
+
+If you have deployments in more than one region, you have to provision Sysdig and enable platform metrics in each region. For more information on enabling Sysdig, see your {{site.data.keyword.databases-for}} deployment's *Monitoring with Sysdig* page
 
 ## SLAs
 See [How do I ensure zero downtime?](/docs/overview?topic=overview-zero-downtime#zero-downtime) to learn more about the high availability and disaster recovery standards in {{site.data.keyword.cloud_notm}}.
