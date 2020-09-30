@@ -27,12 +27,13 @@ subcollection: cloud-databases
 2. Determine the best method for your initial set-up, including [Terraform, API, CLI, or UI methods](/docs/cloud-databases?topic=cloud-databases-provisioning).
 3. If you require the ability to manage the key, you must `Bring Your Own encryption Key` (BYOK) when creating your database. This can’t be changed after provisioning your instance.
 4. Make sure that IAM access policies and resource groups are set up correctly for your business protocols.
+5. Ensure your account is [VRF-enabled] (https://cloud.ibm.com/docs/account?topic=account-vrf-service-endpoint#before-service-endpoint-enablement)
 
 
 ## Best Practices
 
 1. Create a database with the required disk, RAM, and virtual CPUs. While these scaling parameters can be changed after the initial provisioning, disks cannot be scaled down. 
-2. If you would like Hypervisor level isolation, or if you want to improve the database performance, ensure your [database CPU allocation](/docs/cloud-databases?topic=cloud-databases-provisioning#using-the-catalog) is provisioned to use `dedicated cores`.
+2. If you would like Hypervisor level isolation, or if you want to isolate the database from any possible "noisy-neighbor" impact, ensure your [database CPU allocation](/docs/cloud-databases?topic=cloud-databases-provisioning#using-the-catalog) is provisioned to use `dedicated cores`.
 3. Add users
 4. Change the `Admin` Password
 5. Optional step for PostgreSQL only: set up and validate [read-only replicas](/docs/databases-for-postgresql?topic=databases-for-postgresql-read-only-replicas)
@@ -42,16 +43,17 @@ subcollection: cloud-databases
    {: .note}
 7. Set up LogDNA, AT, and Sysdig for monitoring
    1. If available, turn on granular in-database auditing (only available for PostgreSQL and Mongo Enterprise)
-8. Set Alerts on:
-   1. a. Sysdig - capacity threshold
+8. At minimum, set alerts on:
+   1. a. Sysdig - disk utilization is greater than 80% of provisioned capacity
    2. b. Activity Tracker with LogDNA audit events in for control plane actions, such as ip whitelisting, scaling, initiating a backup
    3. c. Logging with LogDNA - any particular database-specific logs through logdna or in-database audit logs from PostgreSQL or MongoDB Enterprise
 9. Set up [IP Allowlisting](/docs/cloud-databases?topic=cloud-databases-allowlisting) for your instance
 10. Set [Private Endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints#private-endpoints) if the application runs in IBM Cloud. You might also choose to disable public endpoints (highly recommended if no connection is expected from outside IBM Cloud)
-11. 12. Connect to application with TLS
-13. Thoroughly load test, and then, load test again.
-14. Validate the application's reconnect logic; for many high-volume applications, retry is not enough and you must reconnect.
-15. Set up development and testing environments as separate instances, then work through this checklist again. You may or may not want to use dedicated cores for these test environments. Not using dedicated cores helps to keep costs lower. 
-16. Complete [Disaster Recovery](/docs/cloud-databases?topic=cloud-databases-ha-dr) testing. Test restoring your application to a different IBM Cloud region. Ensure you are able to connect to a "restored" database with new connection details.
+11. Connect to application with TLS
+12. Thoroughly load test, and then, load test again.
+13. Validate the application's reconnect logic; for many high-volume applications, retry is not enough and you must reconnect.
+14. Set up development and testing environments as separate instances, then work through this checklist again. You may or may not want to use dedicated cores for these test environments. Not using dedicated cores helps to keep costs lower. 
+15. Complete [Disaster Recovery](/docs/cloud-databases?topic=cloud-databases-ha-dr) testing. Test restoring your application to a different IBM Cloud region. Ensure you are able to connect to a "restored" database with new connection details.
+    1. Ensure your are able to acheive your desired Recovery Point Objective (RPO) and Recovery Time Objective (RTO) 
 
 
