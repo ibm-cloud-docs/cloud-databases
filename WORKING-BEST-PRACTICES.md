@@ -26,7 +26,7 @@ subcollection: cloud-databases
 1. Ensure you complete your data modeling and architectural reviews to ensure cloud-native best practices.
 2. Determine the best method for your initial set-up, including [Terraform, API, CLI, or UI methods](/docs/cloud-databases?topic=cloud-databases-provisioning).
 3. If you require the ability to manage the key, you must `Bring Your Own encryption Key` (BYOK) when creating your database. This can’t be changed after provisioning your instance.
-4. Make sure that IAM access policies and resource groups are set up correctly for your business protocols.
+4. Make sure that [IAM access policies and resource groups](https://cloud.ibm.com/docs/account?topic=account-iamoverview) are set up correctly for your business protocols.
 5. Ensure your account is [VRF-enabled](https://cloud.ibm.com/docs/account?topic=account-vrf-service-endpoint#before-service-endpoint-enablement)
 
 
