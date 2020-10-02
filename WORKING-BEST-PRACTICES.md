@@ -43,7 +43,7 @@ subcollection: cloud-databases
    {: .note}
 7. Set up monitoring with Sysdig, AT, and LogDNA. At minimum, set alerts on:
    * [Sysdig](/docs/Monitoring-with-Sysdig) - disk usage is greater than 80% of provisioned capacity
-   * [Activity Tracker with LogDNA](/docs/cloud-databases?topic=cloud-databases-activity-tracker) audit events in for control plane actions, such as ip whitelisting, scaling, initiating a backup
+   * [Activity Tracker with LogDNA](/docs/cloud-databases?topic=cloud-databases-activity-tracker) audit events in for control plane actions, such as ip allowlisting, scaling, initiating a backup
    * [Logging with LogDNA](/docs/cloud-databases?topic=cloud-databases-logging) - any particular database-specific logs.
    * If available, turn on granular in-database auditing (only available for {{site.data.keyword.databases-for-postgresql}} and {{site.data.keyword.databases-for-mongodb}} Enterprise Edition).
 8. Set up [IP Allowlisting](/docs/cloud-databases?topic=cloud-databases-allowlisting) for your instance
