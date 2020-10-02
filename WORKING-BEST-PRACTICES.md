@@ -37,8 +37,8 @@ subcollection: cloud-databases
 3. Add users
 4. Change the `Admin` Password
 5. _Optional step for {{site.data.keyword.databases-for-postgresql}} only_: set up and validate [read-only replicas](/docs/databases-for-postgresql?topic=databases-for-postgresql-read-only-replicas)
-6. Set up Auto-Scaling policies if desired. 
-   * The recommended disk space reflects the minimum amounts that are needed, but note that disk capacity cannot be scaled down without a backup and restore. RAM and virtual CPUs (vCPUs) can scale up and down. Likewise, auto-scaling can scale memory but cannot scale due to memory use, which can approach 100% for databases.
+6. Set up Auto-Scaling policies if wanted. 
+   * The recommended disk space reflects the minimum amounts that are needed, but note that disk capacity cannot be scaled down without a backup and restore. RAM and virtual CPUs (vCPUs) can scale up and down. Likewise, auto-scaling can scale memory but cannot scale due to memory use, which during normal use can approach 100% for databases.
    See the Auto-scaling documentation of your {{site.data.keyword.databases-for}} instance for more information on capabilities.  
    {: .note}
 7. Set up monitoring with Sysdig, AT, and LogDNA. At minimum, set alerts on:
