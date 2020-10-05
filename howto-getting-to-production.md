@@ -1,9 +1,9 @@
 ---
 copyright:
   years: 2020
-lastupdated: "2020-09-30"
+lastupdated: "2020-10-06"
 
-keywords: guidance, recommendations, best practice, 
+keywords: guidance, recommendations, best practices, initial steps
 
 subcollection: cloud-databases
 
