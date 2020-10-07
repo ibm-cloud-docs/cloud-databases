@@ -23,9 +23,9 @@ subcollection: cloud-databases
 
 ## Prework
 
-1. Complete your data modeling and architectural reviews to ensure cloud-native alignment. If you need help with data modeling and architecture, contact the [IBM Garage] (https://cloud.ibm.com/catalog/services/consult-with-ibm-garage) 
+1. Complete your data modeling and architectural reviews to ensure cloud-native alignment. If you need help with data modeling and architecture, contact the [IBM Garage](https://cloud.ibm.com/catalog/services/consult-with-ibm-garage) 
 2. Determine the best method for your initial setup, including [Terraform, API, CLI, or UI methods](/docs/cloud-databases?topic=cloud-databases-provisioning).
-3. If you require the ability to manage your database's encryption key for data-at-rest, you must `Bring Your Own encryption Key` (BYOK) when creating your database. This setup can’t be changed after your instance is provisioned.
+3. If you require the ability to manage your database's encryption key for data-at-rest, you must [Bring Your Own encryption Key (BYOK)](/docs/cloud-databases?topic=cloud-databases-key-protect) when creating your database. This setup can’t be changed after your instance is provisioned.
 4. Make sure that [IAM access policies and resource groups](/docs/account?topic=account-iamoverview) are set up correctly for your business protocols.
 5. Ensure that your account is [VRF-enabled](/docs/account?topic=account-vrf-service-endpoint#before-service-endpoint-enablement)
 
@@ -38,12 +38,11 @@ subcollection: cloud-databases
 4. Change the `Admin` Password
 5. _Optional step for {{site.data.keyword.databases-for-postgresql}} only_: set up and validate [read-only replicas](/docs/databases-for-postgresql?topic=databases-for-postgresql-read-only-replicas)
 6. Set up Auto-Scaling policies if appropriate. 
-   * The recommended disk space reflects the minimum amounts that are needed, but note that disk capacity cannot be scaled down without a backup and restore. RAM and virtual CPUs (vCPUs) can scale up and down. Likewise, auto-scaling can scale memory but cannot scale due to memory use, which during normal use can approach 100% for databases.
+   * Note: Default Auto-Scaling logic is the suggested baseline. Tune these parameters to your budget and use case. The recommended disk space reflects the minimum amounts that are needed, but note that disk capacity cannot be scaled down without a backup and restore. RAM and virtual CPUs (vCPUs) can scale up and down. Likewise, auto-scaling can scale memory but cannot scale due to memory use, which during normal use can approach 100% for databases.
    For more information on Auto-scaling capabilities, see the related documentation for your {{site.data.keyword.databases-for}} instance.  
-   {: .note}
 7. Set up monitoring with Sysdig, AT, and LogDNA. At minimum, set alerts on:
    * [Sysdig](/docs/Monitoring-with-Sysdig) - when disk usage is greater than 80% of provisioned capacity
-   * [Activity Tracker with LogDNA](/docs/cloud-databases?topic=cloud-databases-activity-tracker) audit events for control plane actions, such as ip allowlist updates, scaling, initiating a backup
+   * [Activity Tracker with LogDNA](/docs/cloud-databases?topic=cloud-databases-activity-tracker) audit events for control plane actions, such as IP allowlist updates, scaling, initiating a backup
    * [Logging with LogDNA](/docs/cloud-databases?topic=cloud-databases-logging) - any particular database-specific logs.
    * If available, turn on granular in-database auditing (only available for {{site.data.keyword.databases-for-postgresql}} and {{site.data.keyword.databases-for-mongodb}} Enterprise Edition).
 8. Set up an [IP allowlist](/docs/cloud-databases?topic=cloud-databases-allowlisting) for your instance
