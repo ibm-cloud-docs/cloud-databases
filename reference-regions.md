@@ -4,7 +4,7 @@ copyright:
   years: 2020
 lastupdated: "2020-09-01"
 
-keywords: regions for cloud-databases, ibmcloud, cluster, zone, domains
+keywords: regions for cloud-databases, ibmcloud, cluster, zone
 
 subcollection: cloud-databases
 
