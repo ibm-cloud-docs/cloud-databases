@@ -23,9 +23,9 @@ subcollection: cloud-databases
 
 ## Prework
 
-1. Complete your data modeling and architectural reviews to ensure cloud-native alignment.
+1. Complete your data modeling and architectural reviews to ensure cloud-native alignment. If you need help with that, contact the [IBM Garage] (https://cloud.ibm.com/catalog/services/consult-with-ibm-garage)
 2. Determine the best method for your initial setup, including [Terraform, API, CLI, or UI methods](/docs/cloud-databases?topic=cloud-databases-provisioning).
-3. If you require the ability to manage the key, you must `Bring Your Own encryption Key` (BYOK) when creating your database. This setup can’t be changed after your instance is provisioned.
+3. If you require the ability to manage your database's encryption key for data-at-rest, you must `Bring Your Own encryption Key` (BYOK) when creating your database. This setup can’t be changed after your instance is provisioned.
 4. Make sure that [IAM access policies and resource groups](/docs/account?topic=account-iamoverview) are set up correctly for your business protocols.
 5. Ensure that your account is [VRF-enabled](/docs/account?topic=account-vrf-service-endpoint#before-service-endpoint-enablement)
 
