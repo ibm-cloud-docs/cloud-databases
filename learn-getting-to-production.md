@@ -28,6 +28,7 @@ subcollection: cloud-databases
 3. If you require the ability to manage your database's encryption key for data-at-rest, you must [Bring Your Own encryption Key (BYOK)](/docs/cloud-databases?topic=cloud-databases-key-protect) when creating your database. This setup can’t be changed after your instance is provisioned.
 4. Make sure that [IAM access policies and resource groups](/docs/account?topic=account-iamoverview) are set up correctly for your business protocols.
 5. Ensure that your account is [VRF-enabled](/docs/account?topic=account-vrf-service-endpoint#before-service-endpoint-enablement)
+6. Understand your databases high availability model. This is covered in the "High-Availability" section of each database's documenation. 
 
 
 ## Sample "Getting to production" checklist
@@ -41,15 +42,15 @@ subcollection: cloud-databases
    * Note: Default Auto-Scaling logic is the suggested baseline. Tune these parameters to your budget and use case. The recommended disk space reflects the minimum amounts that are needed, but note that disk capacity cannot be scaled down without a backup and restore. RAM and virtual CPUs (vCPUs) can scale up and down. Likewise, auto-scaling can scale memory but cannot scale due to memory use, which during normal use can approach 100% for databases.
    For more information on Auto-scaling capabilities, see the related documentation for your {{site.data.keyword.databases-for}} instance.  
 7. Set up monitoring with Sysdig, AT, and LogDNA. At minimum, set alerts on:
-   * [Sysdig](/docs/Monitoring-with-Sysdig) - when disk usage is greater than 80% of provisioned capacity
-   * [Activity Tracker with LogDNA](/docs/cloud-databases?topic=cloud-databases-activity-tracker) audit events for control plane actions, such as IP allowlist updates, scaling, initiating a backup
-   * [Logging with LogDNA](/docs/cloud-databases?topic=cloud-databases-logging) - any particular database-specific logs.
+   * [Sysdig](/docs/Monitoring-with-Sysdig) - when disk usage is greater than 80% of provisioned capacity. We encourage you to use, understand, and alert on all provided metrics like disk I/O or CPU usage. 
+   * [Activity Tracker with LogDNA](/docs/cloud-databases?topic=cloud-databases-activity-tracker) audit events for control plane actions, such as IP allowlist updates, scaling, or failed backups.
+   * [Logging with LogDNA](/docs/cloud-databases?topic=cloud-databases-logging) - any particular database-specific logs. 
    * If available, turn on granular in-database auditing (only available for {{site.data.keyword.databases-for-postgresql}} and {{site.data.keyword.databases-for-mongodb}} Enterprise Edition).
 8. Set up an [IP allowlist](/docs/cloud-databases?topic=cloud-databases-allowlisting) for your instance
 9. Set [Private Endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints#private-endpoints) if the application runs in IBM Cloud. You might also choose to disable public endpoints (highly recommended if no connection is expected from outside IBM Cloud)
 10. Connect to your application by using TLS.
 11. Thoroughly load test, and then load test again.
-12. Validate the application's reconnect logic; for many high-volume applications, retry is not enough and you must reconnect.
+12. Validate the application's reconnect logic; for some applications retry is not enough and you must reconnect.
 13. Set up development and testing environments as separate instances, then work through this checklist again. Depending on your requirements, you might not want to use dedicated cores for these test environments. Not using dedicated cores helps to keep costs lower. 
 14. Complete [Disaster Recovery](/docs/cloud-databases?topic=cloud-databases-ha-dr) testing. Test restoring your application to a different IBM Cloud region. Ensure you are able to connect to a "restored" database with new connection details.
     * Ensure you are able to achieve your Recovery Point Objective (RPO) and Recovery Time Objective (RTO) 
