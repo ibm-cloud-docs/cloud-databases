@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020
-lastupdated: "2020-10-06"
+lastupdated: "2020-10-12"
 
 keywords: guidance, recommendations, best practices, initial steps, setup
 
@@ -55,4 +55,6 @@ subcollection: cloud-databases
 14. Complete [Disaster Recovery](/docs/cloud-databases?topic=cloud-databases-ha-dr) testing. Test restoring your application to a different IBM Cloud region. Ensure you are able to connect to a "restored" database with new connection details.
     * Ensure you are able to achieve your Recovery Point Objective (RPO) and Recovery Time Objective (RTO) 
 
+To resolve a database's UUID, use the command `ibmcloud resource search <UUID>`. Other useful CLI commands are: `ibmcloud cdb about` and `ibmcloud cdb cxn`. For more information, see the [CLI plug-in reference documentation](/docs/cloud-databases?topic=databases-cli-plugin-cdb-reference).
+{: .tip}
 
