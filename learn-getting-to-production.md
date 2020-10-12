@@ -28,7 +28,7 @@ subcollection: cloud-databases
 3. If you require the ability to manage your database's encryption key for data-at-rest, you must [Bring Your Own encryption Key (BYOK)](/docs/cloud-databases?topic=cloud-databases-key-protect) when creating your database. This setup can’t be changed after your instance is provisioned.
 4. Make sure that [IAM access policies and resource groups](/docs/account?topic=account-iamoverview) are set up correctly for your business protocols.
 5. Ensure that your account is [VRF-enabled](/docs/account?topic=account-vrf-service-endpoint#before-service-endpoint-enablement)
-6. Understand your databases high availability model. This is covered in the "High-Availability" section of each database's documenation. 
+6. Understand your databases high availability model. This is covered in the "High-Availability" section of each database's documentation. 
 
 
 ## Sample "Getting to production" checklist
@@ -48,7 +48,7 @@ subcollection: cloud-databases
    * If available, turn on granular in-database auditing (only available for {{site.data.keyword.databases-for-postgresql}} and {{site.data.keyword.databases-for-mongodb}} Enterprise Edition).
 8. Set up an [IP allowlist](/docs/cloud-databases?topic=cloud-databases-allowlisting) for your instance
 9. Set [Private Endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints#private-endpoints) if the application runs in IBM Cloud. You might also choose to disable public endpoints (highly recommended if no connection is expected from outside IBM Cloud)
-10. Connect to your application by using TLS.
+10. Make sure that your application uses TLS when connecting to the database.
 11. Thoroughly load test, and then load test again.
 12. Validate the application's reconnect logic; for some applications retry is not enough and you must reconnect.
 13. Set up development and testing environments as separate instances, then work through this checklist again. Depending on your requirements, you might not want to use dedicated cores for these test environments. Not using dedicated cores helps to keep costs lower. 
