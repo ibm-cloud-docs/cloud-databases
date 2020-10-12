@@ -34,7 +34,7 @@ subcollection: cloud-databases
 ## Sample "Getting to production" checklist
 
 1. Create a database with the required disk, RAM, and virtual CPUs. While these scaling parameters can be changed after the initial provisioning, disks cannot be scaled down. 
-2. If you would like hypervisor level isolation, or if you want to guarentee an amount of vCPUs to your database, ensure that your [database CPU allocation](/docs/cloud-databases?topic=cloud-databases-provisioning#using-the-catalog) is provisioned to use `dedicated cores`.
+2. If you would like hypervisor level isolation, or if you want to guarantee an amount of vCPUs to your database, ensure that your [database CPU allocation](/docs/cloud-databases?topic=cloud-databases-provisioning#using-the-catalog) is provisioned to use `dedicated cores`.
 3. Add users. (See the related documentation for your {{site.data.keyword.databases-for}} instance.)
 4. Change the `Admin` Password
 5. _Optional step for {{site.data.keyword.databases-for-postgresql}} only_: set up and validate [read-only replicas](/docs/databases-for-postgresql?topic=databases-for-postgresql-read-only-replicas)
@@ -47,10 +47,10 @@ subcollection: cloud-databases
    * [Logging with LogDNA](/docs/cloud-databases?topic=cloud-databases-logging) - any particular database-specific logs. 
    * If available, turn on granular in-database auditing (only available for {{site.data.keyword.databases-for-postgresql}} and {{site.data.keyword.databases-for-mongodb}} Enterprise Edition).
 8. Set up an [IP allowlist](/docs/cloud-databases?topic=cloud-databases-allowlisting) for your instance
-9. Set [Private Endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints#private-endpoints. You might also choose to disable public endpoints (highly recommended if no connection is expected from outside IBM Cloud)
-10. Make sure that your application uses TLS when connecting to the database. Insecure connections to Cloud Databases are not allowed.
+9. Set [Private Endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints#private-endpoints). You might also choose to disable public endpoints (highly recommended if no connection is expected from outside IBM Cloud)
+10. Make sure that your application uses TLS when connecting to the database. Insecure connections to {{site.data.keyword.databases-for}} are not allowed.
 11. Thoroughly load test, and then load test again.
-12. Validate the application's reconnect logic; for some applications retry is not enough and you must reconnect. Check out this article, ["Unresponsive Redis Service"](https://developer.ibm.com/articles/error-detection-and-handling-with-redis/) for an example of implementation. 
+12. Validate the application's reconnect logic; for some applications retry is not enough and you must reconnect. Review this article, ["Unresponsive Redis Service"](https://developer.ibm.com/articles/error-detection-and-handling-with-redis/) for an example of implementation on {{site.data.keyword.databases-for-redis_full}}. 
 13. Set up development and testing environments as separate instances, then work through this checklist again. Depending on your requirements, you might not want to use dedicated cores for these test environments. Not using dedicated cores helps to keep costs lower. 
 14. Complete [Disaster Recovery](/docs/cloud-databases?topic=cloud-databases-ha-dr) testing. Test restoring your application to a different IBM Cloud region. Ensure you are able to connect to a "restored" database with new connection details.
     * Understand your Recovery Point Objective (RPO) and Recovery Time Objective (RTO) requirements and ensure that you can meet them with your database's configuration
