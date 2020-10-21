@@ -44,7 +44,7 @@ Review the following sections for the specific responsibilities for you and for 
 
 | Task | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |----------|-----------------------|--------|
-|Scaling| {{site.data.keyword.databases-for}} is responsible for scaling infrastructure to meet customer requests. | The Customer is responsible for choosing, monitoring, and scaling disk, memory, and CPU core allocation for their deployments by using the UI or API. |
+|Scaling| {{site.data.keyword.databases-for}} is responsible for scaling infrastructure to meet customer requests. | The Customer is responsible for choosing, monitoring, and scaling disk, memory, and CPU core allocation for their deployments by using the UI or API. If a database deployment runs out of disk space, it may go down and have to be restored from backup |
 |Major version upgrades| {{site.data.keyword.databases-for}} is responsible for providing availability and tools for database major version upgrades. | The Customer is responsible for running major database version upgrades. |
 {: caption="Table 2. Responsibilities for change management" caption-side="top"}
 
