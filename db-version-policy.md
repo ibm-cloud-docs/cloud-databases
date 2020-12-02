@@ -1,7 +1,7 @@
 ---
 Copyright:
-  years: 2018, 2019, 2020
-lastupdated: "2020-08-04"
+  years: 2018, 2020
+lastupdated: "2020-12-02"
 ---
 
 {:new_window: target="_blank"}
