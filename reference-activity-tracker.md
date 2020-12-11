@@ -56,7 +56,7 @@ You can access Activity Tracker with LogDNA through the _Observability_ tab of y
 
 Once event activity is being forwarded to the service, each event can be expanded to a detailed view by clicking the arrow to the left of the timestamp.
 
-When reviewing Activity Tracker logs, you will see denies that include the `dry_run` tag. These denies are marked with a `true` or `false` value. Tags with `dry_run: true` indicate it was likely an automated attempt to determine support of that event without triggering that event to occur. Tags with `dry_run: false` should be further investigated.
+When reviewing Activity Tracker logs, you will see denies that include the `dry_run` tag. These denies are marked with a `true` or `false` value. Tags with `dry_run: false` indicate a normal attempt to execute an action. Tags with `dry_run: true` indicate an attempt to determine support of that event without triggering any action to occur. Such `dry_run` attempts can occur as the service instance management console determines the features to which a logged in user has access.
 {: .note}
 
 The LogDNA service offers [searching](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNAview_logs#view_logs_step6), [filtering](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-view_logs#view_logs_step5), and [export](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-export#export) of events so you can customize retention for your use-case. You can also use it to configure [alerts](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-alerts).
