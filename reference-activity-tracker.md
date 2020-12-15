@@ -61,11 +61,11 @@ When reviewing Activity Tracker logs, you will see `denies` that include the `dr
 - Events with `dry_run: true` indicate an attempt to determine support for an action without triggering that action to occur. Such `dry_run` attempts can occur as the service instance management console determines the features to which a logged in user has access.
 
 
-The LogDNA service offers [searching](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNAview_logs#view_logs_step6), [filtering](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-view_logs#view_logs_step5), and [export](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-export#export) of events so you can customize retention for your use-case. You can also use it to configure [alerts](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-alerts).
+The LogDNA service offers [searching](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-view_logs#view_logs_step6), [filtering](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-view_logs#view_logs_step5), and [export](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-export) of events so you can customize retention for your use-case. You can also use it to configure [alerts](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-alerts).
 
 ## Event Fields
 
-A description of the common fields for an Activity Tracker event is on the [event fields](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-event) page.
+A description of the common fields for an Activity Tracker event is on the [event fields](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-event) page.
 
 ## List of Events
 
