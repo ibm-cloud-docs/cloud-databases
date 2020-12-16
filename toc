@@ -34,4 +34,5 @@ IBM Cloud Databases
 	reference-logging.md
 	reference-activity-tracker.md
 	reference-key-protect.md
+	reference-hpcs.md
 	{: .navgroup-end}
