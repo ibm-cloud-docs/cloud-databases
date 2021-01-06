@@ -33,7 +33,7 @@ This document covers all the Cloud Databases, that include {{site.data.keyword.d
 ### Before you begin
 
 - You need to have an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/registration){:new_window}.
-- And an {{site.data.keyword.databases-for-}} deployment. You can [provision](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-provisioning) one from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/services/). Give your deployment a memorable name that appears in your account's Resource List.
+- And an {{site.data.keyword.databases-for}} deployment. You can [provision](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-provisioning) one from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/services/). Give your deployment a memorable name that appears in your account's Resource List.
 
 ### Setting up your VPE
 
@@ -45,10 +45,10 @@ This document covers all the Cloud Databases, that include {{site.data.keyword.d
    2. Use this information when you're creating [generation 2 virtual server instances](/docs/vpc?topic=vpc-creating-virtual-servers).
 
 
-3. Make sure your {{site.data.keyword.databases-for-}} deployment's [private endpoint is enabled](/docs/cloud-databases?topic=cloud-databases-service-endpoints).
+3. Make sure your {{site.data.keyword.databases-for}} deployment's [private endpoint is enabled](/docs/cloud-databases?topic=cloud-databases-service-endpoints).
 
 
-4. In the {{site.data.keyword.cloud_notm}} console, click the Menu icon and select -> VPC Infrastructure -> Network -> Virtual private endpoint gateways. Create a VPE for your {{site.data.keyword.databases-for-}} instances with the [following instruction](/docs/vpc?topic=vpc-about-vpe). 
+4. In the {{site.data.keyword.cloud_notm}} console, click the Menu icon and select -> VPC Infrastructure -> Network -> Virtual private endpoint gateways. Create a VPE for your {{site.data.keyword.databases-for}} instances with the [following instruction](/docs/vpc?topic=vpc-about-vpe). 
 
 
 5. After you create your VPE, it might take a few minutes for the new VPE and pDNS to complete the process and begin working for your VPC. Completion is confirmed when you see an IP address set in the [details view](/docs/vpc?topic=vpc-vpe-viewing-details-of-an-endpoint-gateway) of the VPE. 
@@ -56,7 +56,7 @@ This document covers all the Cloud Databases, that include {{site.data.keyword.d
 
 6. To make sure pDNS is functioning for your VPE, `ssh` into your VSI and run `nslookup <instance_hostname>`. For example:
     ```
-    root@tq-test-vpc-vsi:~# nslookup host-0.private.databases.appdomain.cloud
+    root@test-vpc-vsi:~# nslookup host-0.private.databases.appdomain.cloud
     Server:		127.0.0.53
     Address:	127.0.0.53#53
     Non-authoritative answer:
@@ -64,7 +64,7 @@ This document covers all the Cloud Databases, that include {{site.data.keyword.d
     Address: 10.240.64.6
     ```
     ```
-    root@tq-test-vpc-vsi:~# nslookup host-1.private.databases.appdomain.cloud
+    root@test-vpc-vsi:~# nslookup host-1.private.databases.appdomain.cloud
     Server:		127.0.0.53
     Address:	127.0.0.53#53
     Non-authoritative answer:
@@ -72,7 +72,7 @@ This document covers all the Cloud Databases, that include {{site.data.keyword.d
     Address: 10.240.64.6
     ```
     ```
-    root@tq-test-vpc-vsi:~# nslookup host-2.private.databases.appdomain.cloud
+    root@test-vpc-vsi:~# nslookup host-2.private.databases.appdomain.cloud
     Server:		127.0.0.53
     Address:	127.0.0.53#53
     Non-authoritative answer:
