@@ -51,10 +51,10 @@ This document covers all the Cloud Databases, that include {{site.data.keyword.d
 4. In the {{site.data.keyword.cloud_notm}} console, click the Menu icon and select -> VPC Infrastructure -> Network -> Virtual private endpoint gateways. Create a VPE for your {{site.data.keyword.databases-for-}} instances with the [following instruction](/docs/vpc?topic=vpc-about-vpe). 
 
 
-5. After you create one VPE, it might take a few minutes for the new VPE to complete the process and begin working for your VPC. Completion is confirmed when you see an IP address set in the [details view](/docs/vpc?topic=vpc-vpe-viewing-details-of-an-endpoint-gateway) of the VPE. 
+5. After you create your VPE, it might take a few minutes for the new VPE and pDNS to complete the process and begin working for your VPC. Completion is confirmed when you see an IP address set in the [details view](/docs/vpc?topic=vpc-vpe-viewing-details-of-an-endpoint-gateway) of the VPE. 
 
 
-6. To make sure pDNS is functioning for your VPE, ssh into your VSI, and run `nslookup <instance_hostname>`. For example:
+6. To make sure pDNS is functioning for your VPE, `ssh` into your VSI and run `nslookup <instance_hostname>`. For example:
     ```
     root@tq-test-vpc-vsi:~# nslookup host-0.private.databases.appdomain.cloud
     Server:		127.0.0.53
