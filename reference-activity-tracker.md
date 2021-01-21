@@ -83,7 +83,7 @@ Action|Description
 `<service_id>.whitelisted-ips-list.update`|The allowlist was modified. A "-failure" flag is included in the message if the attempt to modify the allowlist failed.
 `<service_id>.serviceendpoints.update`|A change was made to the service endpoints configuration. If the operation failed, a "-failure" flag is included in the message.
 `<service_id>.autoscaling.update`|An autoscaling configuration change or an autoscaling operation was performed. If an autoscaling operation was performed the message includes `autoscale resources for instance <deployment-id>`. If the autoscaling operation or configuration change failed, a "-failure" flag is included in the message.
-`{service}.volumes.update`|An activity was performed on the encryption key that is used by the database, such as rotation or shredding. Details of the action are in the event.
+`<service_id>.volumes.update`|An activity was performed on the encryption key that is used by the database, such as rotation or shredding. Details of the action are in the event.
 {: caption="Table 2. List of Events and Event Descriptions" caption-side="top"}
 
 The `service_id` field indicates the type of {{site.data.keyword.databases-for}} deployment. For example, `databases-for-postgresql` or `messages-for-rabbitmq`.
