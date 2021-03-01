@@ -127,10 +127,11 @@ Once the branch is cloned, select the appropriate directory for the database you
    ```shell
    ibmcloud cr namespace-add <your_namespace>
    ```
+   {: pre}
 
 10. Add the Cloud Databases deployment to your cluster.
 
-   ```
+   ```shell
    ibmcloud ks cluster service bind --cluster <your_cluster_name> --namespace default --service <your_database_deployment>
    ```
    {: pre}
@@ -146,7 +147,7 @@ Once the branch is cloned, select the appropriate directory for the database you
       
    The private service endpoint is selected with `--service-endpoint private`. After that, you bind the database to the Kubernetes cluster through the private endpoint by using the command:
 
-   ```
+   ```shell
    ibmcloud ks cluster service bind <your_cluster_name> default <your_database_deployment> --key example-private-key
    ```
    {: pre}
