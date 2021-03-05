@@ -33,10 +33,10 @@ IBM Cloud Databases
 	reference-activity-tracker.md
 	
 	{: .topicgroup}
-	Connecting over Private Network
+	Connecting over Private Networks
 		howto-vpes.md
 		reference-service-endpoints.md
-		
+
 	reference-key-protect.md
 	reference-hpcs.md
 	{: .navgroup-end}
