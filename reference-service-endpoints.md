@@ -20,7 +20,7 @@ keywords: service endpoints, private endpoints, private networking, vpe, virtual
 # Service Endpoints Integration
 {: #service-endpoints}
 
-All {{site.data.keyword.databases-for}} deployments offer integration with [{{site.data.keyword.cloud_notm}} Service Endpoints](/docs/account?topic=account-service-endpoints-overview#about). It gives you the ability to enable connections to your deployments from the public internet and over the {{site.data.keyword.cloud_notm}} Private network.
+All {{site.data.keyword.databases-for}} deployments offer integration with [{{site.data.keyword.cloud_notm}} Service Endpoints](/docs/account?topic=account-service-endpoints-overview). It gives you the ability to enable connections to your deployments from the public internet and over the {{site.data.keyword.cloud_notm}} Private network.
 
 Service Endpoints are available in all {{site.data.keyword.cloud_notm}} Multi-Zone Regions and some Single-Zone Regions. If your deployments are in `Osl01`, you aren't able to use private endpoints. Deployments in all other regions are able to use Service Endpoints.
 
@@ -37,9 +37,9 @@ A deployment with a service endpoint on the private network gets an endpoint tha
 
 ## Enabling Service Endpoints
 
-If you want to use connections over the public internet, you do not have to enable Service Endpoints on your {{site.data.keyword.cloud_notm}} account. If you want to enable private networking on your deployments, you need to follow the instructions in the Service Endpoint documentation under [Setting up service endpoints](/docs/account?topic=account-vrf-service-endpoint#cs_cli_install_steps).
+If you want to use connections over the public internet, you do not have to enable Service Endpoints on your {{site.data.keyword.cloud_notm}} account. If you want to enable private networking on your deployments, you need to follow the instructions in the Service Endpoint documentation under [Enabling VRF and service endpoints](/docs/account?topic=account-vrf-service-endpoint).
 
-Currently, enabling Service Endpoints on your account is a manual step that is handled by support ticket. After you complete the [request](/docs/account?topic=account-vrf-service-endpoint#cs_cli_install_steps), you can check on the status of the ticket by going to your [Support](https://cloud.ibm.com/unifiedsupport/cases/manage) page on {{site.data.keyword.cloud_notm}}
+Currently, enabling Service Endpoints on your account is a manual step that is handled by support ticket. After you complete the [request](/docs/account?topic=account-vrf-service-endpoint#service-endpoint), you can check on the status of the ticket by going to your [Support](https://cloud.ibm.com/unifiedsupport/cases/manage) page on {{site.data.keyword.cloud_notm}}
 
 ## Provisioning with Service Endpoints
 
