@@ -102,7 +102,7 @@ Once the branch is cloned, select the appropriate directory for the database you
    ```
    {: pre}
 
-   Remember the database deployment name. Find your [region identifier here](/docs/cloud-databases?topic=cloud-databases-regions).
+   Remember the database deployment name. Find your [region identifier here](/docs/cloud-databases?topic=cloud-databases-allowlisting#allowlist-ips).
    {: tip}
 
 ## Configuring the Kubernetes App

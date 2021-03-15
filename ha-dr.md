@@ -38,7 +38,7 @@ In addition to the high-availability configuration, your data is snapshotted and
 
 In the case of a complete region failure, the database servers in the region may not be accessible, but the backup data will remain available. You can initiate a restore from these backups into an available region from the service management console. Consult your {{site.data.keyword.databases-for}} backups page for additional details. 
 
-It is your responsibility to [create a new service instance](/docs/cloud-databases?topic=provisioning) in which to restore to once the {{site.data.keyword.cloud}} Databases platform has been restored. You are also responsible for testing the validity and restore time of your backups. For more information on your responsibilities, see [Disaster recovery](/docs/cloud-databases?topic=cloud-databases-responsibilities-cloud-databases#disaster-recovery-responsibilities) in the *Responsibilities for Cloud Databases* page.
+It is your responsibility to [create a new service instance](/docs/cloud-databases?topic=cloud-databases-provisioning) in which to restore to once the {{site.data.keyword.cloud}} Databases platform has been restored. You are also responsible for testing the validity and restore time of your backups. For more information on your responsibilities, see [Disaster recovery](/docs/cloud-databases?topic=cloud-databases-responsibilities-cloud-databases#disaster-recovery-responsibilities) in the *Responsibilities for Cloud Databases* page.
 
 ## Application-level high availability
 
