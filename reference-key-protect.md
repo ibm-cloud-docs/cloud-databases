@@ -33,6 +33,7 @@ To get started, you need [{{site.data.keyword.keymanagementserviceshort}}](https
 Navigate to your instance of {{site.data.keyword.keymanagementserviceshort}} and [generate or enter a key](/docs/key-protect?topic=key-protect-getting-started-tutorial).
 
 ## Granting service authorization
+{: #granting-serviice-auth}
 
 Authorize {{site.data.keyword.keymanagementserviceshort}} for use with {{site.data.keyword.databases-for}} deployments:
 
@@ -84,15 +85,17 @@ If you provision a deployment through the CLI or API, the key protect key needs 
 {: .tip}
 
 ## Key Rotation
+{: #keyrotation}
 
 Key Protect offers manual and automatic [key rotation](https://cloud.ibm.com/docs/key-protect?topic=key-protect-rotate-keys) and key rotation is supported by Cloud Databases deployments. When you rotate a key, the process initiates a _Syncing KMS state_ task, and your deployment is reencrypted with the new key. The task is displayed on the _Tasks_ pane on your deployment's _Overview_ and the associated Key Protect and Cloud Databases events are sent to Activity Tracker.
 
 ## Deleting the Deployment
+{: #deleting-deployment}
 
 If you delete a deployment that is protected with a Key Protect key, the deployment remains registered against the key during the soft-deletion period (up to 9 days). If you need to delete the key in the soft-deletion period, you must [force delete](/docs/key-protect?topic=key-protect-delete-keys) the key. After the soft-deletion period, the key can be deleted without the force. You can check the [association between the key and your deployment](/docs/key-protect?topic=key-protect-view-protected-resources) to determine when you can delete the key.
 
 ## Cryptoshredding
-{: #cryptoshredding}
+{: #crypto-shredding}
 
 Cryptoshredding is a destructive action. When the key is deleted, your data is unrecoverable.
 {: .important}
