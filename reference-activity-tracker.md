@@ -40,7 +40,7 @@ Deployment Region | Activity Tracker Region
 `us-east` | `us-east`
 {: caption="Table 1. Activity Tracker regions" caption-side="top"}
 
-Events from your deployments appear in an Activity Tracker instance in the same region, except for `osl01` and `seo01`. Deployments in `osl01` have their events forwarded to `eu-gb`. Deployments in `seo01` have their events forwarded to `jp-tok`. If you have deployments in multiple regions, you must set up the Activity Tracker in multiple regions. 
+Events from your deployments appear in an Activity Tracker instance in the same region, except for `osl01` and `seo01`. Deployments in `osl01` have events forwarded to `eu-gb`. Deployments in `seo01` have events forwarded to `jp-tok`. If you have deployments in multiple regions, you must set up the Activity Tracker in multiple regions. 
 
 ## Activity Tracker through LogDNA
 

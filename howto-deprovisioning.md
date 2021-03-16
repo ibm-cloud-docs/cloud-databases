@@ -37,7 +37,7 @@ By using the CLI, you can delete your existing {{site.data.keyword.cloud}} Datab
 ```
 ibmcloud resource service-instance-delete my-service-instance
 ```
-[: .pre]
+{: .pre}
 
 Using the command `ibmcloud resource reclamation-delete` deletes a reclaimed resource so that the resource can no longer be restored.
 {: .note}

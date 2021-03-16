@@ -20,7 +20,7 @@ keywords: database logs, platform logs,
 # Log Analysis Integration
 {: #logging}
 
-{{site.data.keyword.databases-for}} are integrated with [{{site.data.keyword.la_full}}](/docs/Log-Analysis-with-LogDNA), so you can view database platfom logs.
+{{site.data.keyword.databases-for}} are integrated with [{{site.data.keyword.la_full}}](/docs/Log-Analysis-with-LogDNA), so you can view database platform logs.
 
 This document covers the integration of Log Analysis with Cloud Databases, which includes {{site.data.keyword.databases-for-cassandra}},{{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-enterprisedb}}, {{site.data.keyword.databases-for-etcd}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-redis}}, and {{site.data.keyword.messages-for-rabbitmq}}.
 {: .note}
@@ -42,7 +42,7 @@ Deployment Region | Log Analysis Region
 
 Platform logs from your deployments appear in a Log Analysis instance in the same region, except for `osl01`, and `seo01`. Deployments in `osl01` have their logs forwarded to `eu-gb`. Deployments in `seo01` have their logs forwarded to `jp-tok`. If you have deployments in multiple regions, you must set up Log Analysis in multiple regions. 
 
-After September 15th 2020, IBM {{site.data.keyword.databases-for}} in the Chennai region will begin sending Platform logs from our databases to the Logging with LogDNA services in Chennai rather than Tokyo. This is to ensure database logs for Chennai remain in the Chennai region.
+After September 15th 2020, IBM {{site.data.keyword.databases-for}} in the Chennai region will begin sending Platform logs from our databases to the Logging with LogDNA services in Chennai rather than Tokyo. This is to ensure that database logs for Chennai remain in the Chennai region.
 {: .note}
 
 ## Provisioning {{site.data.keyword.la_full_notm}}
@@ -56,7 +56,7 @@ This setting enables platform logs from **ALL** {{site.data.keyword.cloud_notm}}
 
 ### HIPAA 
 
-{{site.data.keyword.la_full_notm}} offers a HIPAA-compliant plan for the service. Fore more information, please see the {{site.data.keyword.la_full_notm}} documentation on [Provisioning a HIPAA Compliance instance](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-provision_hipaa).
+{{site.data.keyword.la_full_notm}} offers a HIPAA-compliant plan for the service. For more information, see the {{site.data.keyword.la_full_notm}} documentation on [Provisioning a HIPAA Compliance instance](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-provision_hipaa).
 
 Use caution when configuring the platform service logs, since this setting can impact other services that require HIPAA compliance.
 

@@ -18,7 +18,7 @@ When you provision a {{site.data.keyword.databases-for}} deployment, you can cho
 
 ## Version Tags
 
-**Preferred** - The recommended and default database version for all new deployments. It's the version of the database that is the most up-to-date and stable with regard to both database-level and service-level features.
+**Preferred** - The recommended and default database version for all new deployments. It's the version of the database that is the most up-to-date and stable regarding both database-level and service-level features.
 
 **Preview** - A preview database version is released for a limited time to try available functions. Often it is the newest available version available from the database project maintainers in preparation for making it the "Preferred" version. While deployable, preview versions are not suitable for production, as they are excluded from service-level agreements and support. Also, there is no guarantee that a preview version becomes a production-level release. IBM reserves the right to ask a customer to delete a deployment that uses a preview version.
 
@@ -41,7 +41,7 @@ Restoration of existing databases into new deployments of the deprecated major v
 
 At the end of the transition window, deprecated major versions cannot be deployed on {site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}}. A backup of the deployment is taken and access to databases that are running a deprecated version is removed or automatically upgraded to the next major version. See table 1 for which databases are upgraded or removed. Regardless, the backup is available to be restored into a new supported database version.
 
-If no action is taken, we will attempt to upgrade the database in-place to the next major version as per our Database Versioning Policy. This may result in compatibility issues with your apps or the in-place upgrade, on rare occasions, may fail impacting your availability. In the case of a failure, the database will be disabled and you will need to restore from backup. We recommend self-migrating prior to the end of support date.
+If no action is taken, we attempt to upgrade the database in-place to the next major version according to our Database Versioning Policy. This can result in compatibility issues with your apps or the in-place upgrade, on rare occasions, can fail impacting your availability. If a failure occurs, the database is disabled and you need to restore from backup. We recommend self-migrating before the end of support date.
 {: .note}
 
 ## Major versions defined
