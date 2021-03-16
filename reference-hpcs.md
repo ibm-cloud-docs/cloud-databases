@@ -79,16 +79,16 @@ curl -X POST \
   }'
 ```
 
-If you provision a deployment through the CLI or API, the HPCS key needs to be identified by its full CRN, not just its ID. A HPCS CRN is in the format `crn:v1:<...>:key:<id>`.
+If you provision a deployment through the CLI or API, the HPCS key needs to be identified by its full CRN, not just its ID. An HPCS CRN is in the format `crn:v1:<...>:key:<id>`.
 {: .tip}
 
 ## Key Rotation
 
-HPCS offers manual and automatic [key rotation](/docs/hs-crypto?topic=hs-crypto-set-rotation-policy) and key rotation is supported by Cloud Databases deployments. When you rotate a key, the process initiates a _Syncing KMS state_ task, and your deployment is reencrypted with the new key. The task is displayed on the _Tasks_ pane on your deployment's _Overview_ and the associated HPCS and Cloud Databases events are sent to Activity Tracker.
+HPCS offers manual and automatic [key rotation](/docs/hs-crypto?topic=hs-crypto-set-rotation-policy) and key rotation is supported by Cloud Databases deployments. When you rotate a key, the process initiates a _Syncing KMS state_ task, and your deployment is reencrypted with the new key. The task is displayed on the _Tasks_ panel on your deployment's _Overview_ and the associated HPCS and Cloud Databases events are sent to Activity Tracker.
 
 ## Deleting the Deployment
 
-If you delete a deployment that is protected with a HPCS key, the deployment remains registered against the key during the soft-deletion period (up to 9 days). If you need to delete the key in the soft-deletion period, you must [force delete](/docs/hs-crypto?topic=hs-crypto-delete-keys) the key. After the soft-deletion period, the key can be deleted without the force. You can check the [association between the key and your deployment](/docs/hs-crypto?topic=hs-crypto-view-key-details) to determine when you can delete the key.
+If you delete a deployment that is protected with an HPCS key, the deployment remains registered against the key during the soft-deletion period (up to 9 days). If you need to delete the key in the soft-deletion period, you must [force delete](/docs/hs-crypto?topic=hs-crypto-delete-keys) the key. After the soft-deletion period, the key can be deleted without the force. You can check the [association between the key and your deployment](/docs/hs-crypto?topic=hs-crypto-view-key-details) to determine when you can delete the key.
 
 ## Cryptoshredding
 {: #cryptoshredding}
@@ -96,6 +96,6 @@ If you delete a deployment that is protected with a HPCS key, the deployment rem
 Cryptoshredding is a destructive action. When the key is deleted, your data is unrecoverable.
 {: .important}
 
-{{site.data.keyword.hscrypto}} allows you to [initiate a force delete](/docs/hs-crypto?topic=hs-crypto-delete-keys) of a key that is in use by {{site.data.keyword.cloud}} services, including your {{site.data.keyword.databases-for}} deployments. This action is called cryptoshredding. Deleting a key that is in use on your deployment locks the disks that contain your data and disables your deployment. You are still able to access the UI and some metadata such as security settings in the UI, CLI, and API but you are not able to access any of the databases or data that is contained within them. Key deletion is [sent to the LogDNA Activity Tracker](/docs/hs-crypto?topic=hs-crypto-at-events) as `hs-crypto.secrets.delete`.
+{{site.data.keyword.hscrypto}} enables [initiation of a force delete](/docs/hs-crypto?topic=hs-crypto-delete-keys) of a key that is in use by {{site.data.keyword.cloud}} services, including your {{site.data.keyword.databases-for}} deployments. This action is called cryptoshredding. Deleting a key that is in use on your deployment locks the disks that contain your data and disables your deployment. You are still able to access the UI and some metadata such as security settings in the UI, CLI, and API but you are not able to access any of the databases or data that is contained within them. Key deletion is [sent to the LogDNA Activity Tracker](/docs/hs-crypto?topic=hs-crypto-at-events) as `hs-crypto.secrets.delete`.
 
 

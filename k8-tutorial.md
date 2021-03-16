@@ -178,7 +178,7 @@ Once the branch is cloned, select the appropriate directory for the database you
 
 13. `cd` into this newly created directory, and `cd` into the database folder. The code for connecting to the service, and reading from and updating the database can be found in `server.js`. See [Code Structure](#code-structures) and the code comments for information on the app's functions. There's also a `public` directory, which contains the html, stylesheets, and JavaScript for the web app. But, to get the application to work, we first need to push the Docker image of this application to our {{site.data.keyword.registryshort_notm}}.
 
-14. Build and push the application's Docker image to your {{site.data.keyword.registryshort_notm}}. Specify the appropriate [region](/docs/cloud-databases?topic=cloud-databases-regions) and give the container a name.
+14. Build and push the application's Docker image to your {{site.data.keyword.registryshort_notm}}. Specify the appropriate region and give the container a name.
 
    ```shell
    ibmcloud cr build -t <region>.icr.io/<namespace>/<container_name> .

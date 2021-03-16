@@ -25,7 +25,7 @@ If you want to restrict access to your databases, you can allowlist specific IP 
 
 If you use allowlists in your environment, you can allowlist our services by using the list of subnets for each region.
 
-We updated documentation to reflect changes in terminology from `whitelist` to `allowlist`. You will encounter continued references to this former terminology while we work to implement these deeper changes to code, API, and CLI commands. 
+We updated documentation to reflect changes in terminology from `whitelist` to `allowlist`. You might encounter continued references to this former terminology while we work to implement these deeper changes to code, API, and CLI commands. 
 {: .note}
 
 ## Using IP allowlists on your Deployment
