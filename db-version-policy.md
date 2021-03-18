@@ -39,9 +39,9 @@ At the beginning of the period, we seek to contact users affected by the depreca
 Restoration of existing databases into new deployments of the deprecated major version is available during the six-month deprecation, although we recommend upgrading to a non-deprecated major version as soon as possible.
 {: .tip}
 
-At the end of the transition window, deprecated major versions cannot be deployed on {site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}}. A backup of the deployment is taken and access to databases that are running a deprecated version is removed or automatically upgraded to the next major version. See table 1 for which databases are upgraded or removed. Regardless, the backup is available to be restored into a new supported database version.
+At the end of the transition window, deprecated major versions cannot be deployed on {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}}. A backup of the deployment is taken and access to databases that are running a deprecated version is removed or automatically upgraded to the next major version. See table 1 for which databases are upgraded or removed. Regardless, the backup is available to be restored into a new supported database version.
 
-If no action is taken, we attempt to upgrade the database in-place to the next major version according to our Database Versioning Policy. This can result in compatibility issues with your apps or the in-place upgrade, on rare occasions, can fail impacting your availability. If a failure occurs, the database is disabled and you need to restore from backup. We recommend self-migrating before the end of support date.
+If you take no action this can result in compatibility issues with your apps when IBM performs an automatic in-place upgrade. On rare occasions, this can fail, impacting your availability. If a failure occurs, the database is disabled and you need to restore from backup. We recommend self-migrating before the end of support date.
 {: .note}
 
 ## Major versions defined
