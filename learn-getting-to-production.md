@@ -29,6 +29,7 @@ subcollection: cloud-databases
 4. Make sure that [IAM access policies and resource groups](/docs/account?topic=account-iamoverview) are set up correctly for your business protocols.
 5. Ensure that your account is [VRF-enabled](/docs/account?topic=account-vrf-service-endpoint#before-service-endpoint-enablement)
 6. Understand your databases high availability model. This is covered in the "High-Availability" section of each database's documentation. 
+7. Enroll in [IBM Cloud notifications](https://cloud.ibm.com/docs/account?topic=account-email-prefs), specifically the "Resource Activity" notification to ensure you receive messages about your Cloud Databases. We send direct notifications to you when your database version is approaching end of life. In addition, you may bookmark our [Database Version Lifecycle policy](/docs/cloud-databases?topic=cloud-databases-versioning-policy), which is kept up to date with end of life dates and resources for all databases.
 
 
 ## Sample "Getting to production" checklist
