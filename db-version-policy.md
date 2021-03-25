@@ -49,7 +49,7 @@ If you take no action this can result in compatibility issues with your apps whe
 Database | Versioning Schema | Next Known End of Life Version and Date | End of Life procedure |
 --------- | --------- | --------- | --------- |
 DataStax | Major versions are the first number in a `major.minor.patch` version number. | v6.7, unplanned | Backup taken and access removed|  
-Elasticsearch | Major versions are the first number in a `release.version.maintenance` version number. | v6.x, [April 2021](https://www.ibm.com/cloud/blog/announcements/databases-for-mongodb-36-end-of-life-in-april-2021) | Backup taken and access removed|  
+Elasticsearch | Major versions are the first number in a `release.version.maintenance` version number. | v6.x, [April 2021](https://www.ibm.com/cloud/blog/announcements/databases-for-elasticsearch-6-end-of-life) | Backup taken and access removed|  
 EnterpriseDB | Major version is defined by the first number in the version number. | v12, December 2024 | Backup taken and access removed|  
 etcd | Major versions are the first number in a `major.minor.patch` version number. | v3.3, unplanned | Backup taken and access removed|  
 MongoDB | Major versions are the first two numbers in a `major.x.patch` version number. In cases where `x` is even, it is a stable release suitable for production. Even `x` versions are the only ones available on Cloud Databases. | v3.6, [April 2021](https://www.ibm.com/cloud/blog/announcements/databases-for-mongodb-36-end-of-life-in-april-2021) | Automatically upgraded in place to next Major version|
