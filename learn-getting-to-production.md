@@ -42,7 +42,7 @@ subcollection: cloud-databases
 6. Set up Auto-Scaling policies if appropriate. 
    * Note: Default Auto-Scaling logic is the suggested baseline. Tune these parameters to your budget and use case. The recommended disk space reflects the minimum amounts that are needed, but note that disk capacity cannot be scaled down without a backup and restore. RAM and virtual CPUs (vCPUs) can scale up and down. Memory auto-scaling works based on disk I/O usage to optimize page cache performance. Databases will not auto-scale when in-use memory approaches 100%; this is often the desired state.
    For more information on Auto-scaling capabilities, see the related documentation for your {{site.data.keyword.databases-for}} instance.  
-7. Set up monitoring with {{site.data.keyword.monitoringlong}}, {{site.data.keyword.at_full}}, and {{site.data.keyword.loganalysisfull}}. At minimum, set alerts on:
+7. Set up monitoring with {{site.data.keyword.monitoringfull}}, {{site.data.keyword.at_full}}, and {{site.data.keyword.loganalysisfull}}. At minimum, set alerts on:
    * [{{site.data.keyword.monitoringlong_notm}}](/docs/Monitoring-with-Sysdig) - when disk usage is greater than 80% of provisioned capacity (we encourage you to use Auto-Scaling for disk capacity). We also encourage you to use, understand, and alert on all provided metrics like disk I/O or CPU usage. 
    * [{{site.data.keyword.at_full_notm}}](/docs/cloud-databases?topic=cloud-databases-activity-tracker) audit events for control plane actions, such as IP allowlist updates, scaling, or failed backups.
    * [{{site.data.keyword.loganalysisfull_notm}}](/docs/cloud-databases?topic=cloud-databases-logging) - any particular database-specific logs. 
