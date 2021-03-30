@@ -50,7 +50,7 @@ Your applications must be designed to handle temporary interruptions to the data
 
 Several minutes of database unavailability or connection interruptions are not expected. Open a [support ticket](https://cloud.ibm.com/unifiedsupport/cases/add) with details if you have time periods longer than a minute with no connectivity so we can investigate.
 
-If you have deployments in more than one region, you must provision Sysdig and enable platform metrics in each region. For more information on enabling Sysdig, see your {{site.data.keyword.databases-for}} deployment's *Monitoring with Sysdig* page
+If you have deployments in more than one region, you must provision {{site.data.keyword.monitoringlong}} and enable platform metrics in each region. For more information on enabling {{site.data.keyword.monitoringlong_notm}}, see your {{site.data.keyword.databases-for}} deployment's *{{site.data.keyword.monitoringlong_notm}}* page
 
 ## SLAs
 See [How do I ensure zero downtime?](/docs/overview?topic=overview-zero-downtime#zero-downtime) to learn more about the high availability and disaster recovery standards in {{site.data.keyword.cloud_notm}}.
