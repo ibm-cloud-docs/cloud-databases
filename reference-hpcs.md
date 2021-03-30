@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2020
-lastupdated: "2020-12-16"
+  years: 2020, 2021
+lastupdated: "2021-03-30"
 
 keywords: bring your own key, byok, cryptoshredding, hpcs, hyper protect crypto services
 
@@ -96,6 +96,6 @@ If you delete a deployment that is protected with an HPCS key, the deployment re
 Cryptoshredding is a destructive action. When the key is deleted, your data is unrecoverable.
 {: .important}
 
-{{site.data.keyword.hscrypto}} enables [initiation of a force delete](/docs/hs-crypto?topic=hs-crypto-delete-keys) of a key that is in use by {{site.data.keyword.cloud}} services, including your {{site.data.keyword.databases-for}} deployments. This action is called cryptoshredding. Deleting a key that is in use on your deployment locks the disks that contain your data and disables your deployment. You are still able to access the UI and some metadata such as security settings in the UI, CLI, and API but you are not able to access any of the databases or data that is contained within them. Key deletion is [sent to the LogDNA Activity Tracker](/docs/hs-crypto?topic=hs-crypto-at-events) as `hs-crypto.secrets.delete`.
+{{site.data.keyword.hscrypto}} enables [initiation of a force delete](/docs/hs-crypto?topic=hs-crypto-delete-keys) of a key that is in use by {{site.data.keyword.cloud}} services, including your {{site.data.keyword.databases-for}} deployments. This action is called cryptoshredding. Deleting a key that is in use on your deployment locks the disks that contain your data and disables your deployment. You are still able to access the UI and some metadata such as security settings in the UI, CLI, and API but you are not able to access any of the databases or data that is contained within them. Key deletion is [sent to the {{site.data.keyword.at_short}}](/docs/hs-crypto?topic=hs-crypto-at-events) as `hs-crypto.secrets.delete`.
 
 
