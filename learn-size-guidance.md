@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2020
-lastupdated: "2020-01-28"
+  years: 2021
+lastupdated: "2021-03-30"
 
 keywords: Compose, cloud databases, migrating, disk size, memory size, CPU size, resources
 

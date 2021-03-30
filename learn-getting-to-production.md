@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2020
-lastupdated: "2020-10-12"
+  years: 2020, 2021
+lastupdated: "2021-03-30"
 
 keywords: guidance, recommendations, best practices, initial steps, setup
 
