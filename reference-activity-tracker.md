@@ -20,7 +20,7 @@ keywords: events, auditing
 # Activity Tracker Integration
 {: #activity-tracker}
 
-{{site.data.keyword.cloud_notm}} Databases deployments are integrated with Activity Tracker events in [{{site.data.keyword.at_full}}](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started), so you can view service-level events.
+{{site.data.keyword.cloud_notm}} Databases deployments are integrated with Activity Tracker events in [{{site.data.keyword.at_full}}](/docs/activity-tracker?topic=activity-tracker-getting-started), so you can view service-level events.
 
 This document covers the integration of Activity Tracker with Cloud Databases, which includes {{site.data.keyword.databases-for-cassandra}}, {{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-enterprisedb}}, {{site.data.keyword.databases-for-etcd}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-redis}}, and {{site.data.keyword.messages-for-rabbitmq}}.
 {: .note}
@@ -46,9 +46,9 @@ Events from your deployments appear in an Activity Tracker instance in the same 
 
 When you provision the service, events are automatically forwarded from all your {{site.data.keyword.databases-for}} deployments in the same region.
 
-The service can be provisioned from [its catalog page](https://{DomainName}/catalog/ibm-cloud-activity-tracker-with-logdna) or from an existing [Observability Dashboard](https://cloud.ibm.com/observe/activitytracker).
+The service can be provisioned from [its catalog page](/catalog/ibm-cloud-activity-tracker) or from an existing [Observability Dashboard](https://cloud.ibm.com/observe/activitytracker).
 
-The {{site.data.keyword.at_short}} service has a lite plan that is free to use, but it only offers streaming events. To take advantage of the tagging, export, retention, and other features, you need to use one of the [paid plans](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-service_plan).
+The {{site.data.keyword.at_short}} service has a lite plan that is free to use, but it only offers streaming events. To take advantage of the tagging, export, retention, and other features, you need to use one of the [paid plans](/docs/activity-tracker?topic=activity-tracker-service_plan).
 
 ### Using the Activity Tracker
 
@@ -61,11 +61,11 @@ When reviewing Activity Tracker logs, you see `denies` that include the `dry_run
 - Events with `dry_run: true` indicate an attempt to determine support for an action without triggering that action to occur. Such `dry_run` attempts can occur as the service instance management console determines the features to which a logged in user has access.
 
 
-The {{site.data.keyword.at_short}} service offers [searching](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-view_events#view_events_step2), [filtering](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-view_events#view_events_step3), and [export](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-export) of events so you can customize retention for your use-case. You can also use it to configure [alerts](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-alerts).
+The {{site.data.keyword.at_short}} service offers [searching](/docs/activity-tracker?topic=activity-tracker-view_events#view_events_step2), [filtering](/docs/activity-tracker?topic=activity-tracker-view_events#view_events_step3), and [export](/docs/activity-tracker?topic=activity-tracker-export) of events so you can customize retention for your use-case. You can also use it to configure [alerts](/docs/activity-tracker?topic=activity-tracker-alerts).
 
 ## Event Fields
 
-A description of the common fields for an {{site.data.keyword.at_short}} event is on the [event fields](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-event) page.
+A description of the common fields for an {{site.data.keyword.at_short}} event is on the [event fields](/docs/activity-tracker?topic=activity-tracker-event) page.
 
 ## List of Events
 

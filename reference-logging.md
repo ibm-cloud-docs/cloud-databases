@@ -20,7 +20,7 @@ keywords: database logs, platform logs,
 # Log Analysis Integration
 {: #logging}
 
-{{site.data.keyword.databases-for}} are integrated with [{{site.data.keyword.loganalysisfull}}](/docs/Log-Analysis-with-LogDNA), so you can view database platform logs.
+{{site.data.keyword.databases-for}} are integrated with [{{site.data.keyword.loganalysisfull}}](/docs/log-analysis), so you can view database platform logs.
 
 This document covers the integration of {{site.data.keyword.loganalysisshort}} with Cloud Databases, which includes {{site.data.keyword.databases-for-cassandra}},{{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-enterprisedb}}, {{site.data.keyword.databases-for-etcd}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-redis}}, and {{site.data.keyword.messages-for-rabbitmq}}.
 {: .note}
@@ -47,16 +47,16 @@ After September 15th 2020, IBM {{site.data.keyword.databases-for}} in the Chenna
 
 ## Provisioning {{site.data.keyword.loganalysisfull}}
 
-Platform log information from your databases is automatically forwarded to {{site.data.keyword.la_full_notm}}, but to access it you must enable platform logging by [provisioning a {{site.data.keyword.loganalysisshort}} service](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-provision) in your {{site.data.keyword.cloud_notm}} account and [configuring the service to receive {{site.data.keyword.cloud_notm}} platform logs](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-config_svc_logs).
+Platform log information from your databases is automatically forwarded to {{site.data.keyword.la_full_notm}}, but to access it you must enable platform logging by [provisioning a {{site.data.keyword.loganalysisshort}} service](/docs/log-analysis?topic=log-analysis-provision) in your {{site.data.keyword.cloud_notm}} account and [configuring the service to receive {{site.data.keyword.cloud_notm}} platform logs](/docs/log-analysis?topic=log-analysis-config_svc_logs).
 
-This setting enables platform logs from **ALL** {{site.data.keyword.cloud_notm}} services on your account that have {{site.data.keyword.la_full_notm}} integration to send logs to your {{site.data.keyword.la_full_notm}} service. [A list of the integrated services is available](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-cloud_services#cloud_services).
+This setting enables platform logs from **ALL** {{site.data.keyword.cloud_notm}} services on your account that have {{site.data.keyword.la_full_notm}} integration to send logs to your {{site.data.keyword.la_full_notm}} service. [A list of the integrated services is available](/docs/log-analysis?topic=log-analysis-cloud_services#cloud_services).
 {: .tip}
 
-{{site.data.keyword.la_full_notm}} has a lite plan that is free to use, but it offers only streaming events. To take advantage of the tagging, export, retention, and other features, you need to use one of the [paid plans](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-service_plans).
+{{site.data.keyword.la_full_notm}} has a lite plan that is free to use, but it offers only streaming events. To take advantage of the tagging, export, retention, and other features, you need to use one of the [paid plans](/docs/log-analysis?topic=log-analysis-service_plans).
 
 ### HIPAA 
 
-{{site.data.keyword.la_full_notm}} offers a HIPAA-compliant plan for the service. For more information, see the {{site.data.keyword.la_full_notm}} documentation on [Provisioning a HIPAA Compliance instance](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-provision_hipaa).
+{{site.data.keyword.la_full_notm}} offers a HIPAA-compliant plan for the service. For more information, see the {{site.data.keyword.la_full_notm}} documentation on [Provisioning a HIPAA Compliance instance](/docs/log-analysis?topic=log-analysis-provision_hipaa).
 
 Use caution when configuring the platform service logs, since this setting can impact other services that require HIPAA compliance.
 
@@ -78,13 +78,13 @@ Each log line can be expanded to a detailed view by clicking the arrow to the le
     - `member` - the member ID for which node in the cluster generated the log
     - `CRN` - the full deployment ID of your deployment.
 
-{{site.data.keyword.loganalysisshort}} offers [searching](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-view_logs#view_logs_step6), [filtering](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-view_logs#view_logs_step5) to help you navigate your logs.
+{{site.data.keyword.loganalysisshort}} offers [searching](/docs/log-analysis?topic=log-analysis-view_logs#view_logs_step6), [filtering](/docs/log-analysis?topic=log-analysis-view_logs#view_logs_step5) to help you navigate your logs.
 
-[Export](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-export#export) and [archiving](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-archiving#archiving) are available so you can customize retention (and cost) for your use-case.
+[Export](/docs/log-analysis?topic=log-analysis-export#export) and [archiving](/docs/log-analysis?topic=log-analysis-archiving#archiving) are available so you can customize retention (and cost) for your use-case.
 
-To set up logging alerts, see [Working with Alerts](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-alerts#alerts)
+To set up logging alerts, see [Working with Alerts](/docs/log-analysis?topic=log-analysis-alerts#alerts)
 
-For more information on features offered by {{site.data.keyword.loganalysisfull}}, including integrating it with your other {{site.data.keyword.cloud_notm}} services, see [its full documentation](/docs/Log-Analysis-with-LogDNA).
+For more information on features offered by {{site.data.keyword.loganalysisfull}}, including integrating it with your other {{site.data.keyword.cloud_notm}} services, see [its full documentation](/docs/log-analysis).
 
 ## Internal Log Retention
 
