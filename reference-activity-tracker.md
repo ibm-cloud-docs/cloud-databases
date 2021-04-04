@@ -40,7 +40,7 @@ Deployment Region | Activity Tracker Region
 `us-east` | `us-east`
 {: caption="Table 1. Activity Tracker regions" caption-side="top"}
 
-Events from your deployments appear in an Activity Tracker instance in the same region, except for `osl01` and `seo01`. Deployments in `osl01` have events forwarded to `eu-gb`. Deployments in `seo01` have events forwarded to `jp-tok`. If you have deployments in multiple regions, you must set up the Activity Tracker in multiple regions. 
+Events from your deployments appear in an Activity Tracker instance in the same region, except for `osl01` and `seo01`. Deployments in `osl01` have events that are forwarded to `eu-gb`. Deployments in `seo01` have events that are forwarded to `jp-tok`. If you have deployments in multiple regions, you must set up the Activity Tracker in multiple regions. 
 
 ## Activity Tracker
 
@@ -56,7 +56,7 @@ You can access {{site.data.keyword.at_short}} through the _Observability_ tab of
 
 Once event activity is being forwarded to the service, each event can be expanded to a detailed view by clicking the arrow to the left of the timestamp.
 
-When reviewing Activity Tracker logs, you see `denies` that include the `dry_run` tag. These denies are marked with a `true` or `false` value. 
+When reviewing Activity Tracker logs, you see `denies` that include the `dry_run` tag. These `denies` are marked with a `true` or `false` value. 
 - Events with `dry_run: false` indicate an attempt to run an action. 
 - Events with `dry_run: true` indicate an attempt to determine support for an action without triggering that action to occur. Such `dry_run` attempts can occur as the service instance management console determines the features to which a logged in user has access.
 
@@ -83,7 +83,7 @@ Action|Description
 `<service_id>.resources.scale`|A scaling operation was performed. If the scaling operation failed, a "-failure" flag is included in the message.
 `<service_id>.whitelisted-ips-list.update`|The allowlist was modified. A "-failure" flag is included in the message if the attempt to modify the allowlist failed.
 `<service_id>.serviceendpoints.update`|A change was made to the service endpoints configuration. If the operation failed, a "-failure" flag is included in the message.
-`<service_id>.autoscaling.update`|An autoscaling configuration change or an autoscaling operation was performed. If an autoscaling operation was performed the message includes `autoscale resources for instance <deployment-id>`. If the autoscaling operation or configuration change failed, a "-failure" flag is included in the message.
+`<service_id>.autoscaling.update`|An autoscaling configuration change or an autoscaling operation was performed. If an autoscaling operation was performed the message includes `autoscale resources for instance <deployment-id>`. If the autoscaling operation or the configuration change failed, a "-failure" flag is included in the message.
 `<service_id>.volumes.update`|An activity was performed on the encryption key that is used by the database, such as rotation or shredding. Details of the action are in the event.
 {: caption="Table 2. List of Events and Event Descriptions" caption-side="top"}
 
