@@ -68,8 +68,9 @@ The {{site.data.keyword.at_short}} service offers [searching](/docs/activity-tra
 A description of the common fields for an {{site.data.keyword.at_short}} event is on the [event fields](/docs/activity-tracker?topic=activity-tracker-event) page.
 
 ## List of Events
+{: #list-of-events}
 
-The table lists the events that get sent to {{site.data.keyword.at_short}} from {{site.data.keyword.databases-for}} deployments.
+The table lists the events that are sent to {{site.data.keyword.at_short}} from {{site.data.keyword.databases-for}} deployments.
 
 Action|Description
 -------|-------
