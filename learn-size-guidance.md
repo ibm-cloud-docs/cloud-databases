@@ -231,7 +231,7 @@ So for the example PostgreSQL, the total allocations are
 
 ## Monitoring the IBM Cloud Databases Deployment
 
-You now have an IBM Cloud Databases deployment that approximates the resource allocation of your Compose deployment. To determine whether you need more resources, look at monitoring your databases. Monitoring for {{site.data.keyword.databases-for}} deployments is provided through integration with the [{{site.data.keyword.monitoringfull}}](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-getting-started) service. With it you can monitor the memory, disk, disk I/O utilization, and CPU usage of each of your deployments. 
+You now have an IBM Cloud Databases deployment that approximates the resource allocation of your Compose deployment. To determine whether you need more resources, look at monitoring your databases. Monitoring for {{site.data.keyword.databases-for}} deployments is provided through integration with the [{{site.data.keyword.monitoringfull}}](/docs/monitoring?topic=monitoring-getting-started) service. With it you can monitor the memory, disk, disk I/O utilization, and CPU usage of each of your deployments. 
 
 Deployments can be both manually scaled to your usage, or configured to autoscale under certain resource conditions.
 If you find that you’re using too much CPU, you can allocate more. Likewise, if you find that you’re running out of disk space, allocate a little more. You can use our increment suggestions or use your own allocations. 
