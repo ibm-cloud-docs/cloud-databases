@@ -1,7 +1,7 @@
 ---
 Copyright:
   years: 2021
-lastupdated: "2021-01-12"
+lastupdated: "2021-04-13"
 
 subcollection: cloud-databases
 
@@ -29,7 +29,7 @@ This document covers all the IBM Cloud Databases that includes {{site.data.keywo
 
 ## Using Virtual Private Endpoints
 {: #using-vpes}
-Virtual Private Endpoints (VPEs) are generally available in all regions except US South and US East. VPE availability in US South and US East is expected shortly. 
+Virtual Private Endpoints (VPEs) are generally available in all regions. 
 {: .note}
 ### Before you begin
 
