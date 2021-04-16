@@ -3,7 +3,7 @@ copyright:
   years: 2021
 lastupdated: "2021-04-15"
 
-keywords: security and compliance for cloud databases, security for cloud databases, compliance for cloud databases,
+keywords: security and compliance for cloud databases, security for cloud databases, compliance for cloud databases, enterprisedb, redis, etcd, elasticsearch, postresgql, datastax, mongodb, rabbitmq, mysql
 
 subcollection: cloud-databases
 
