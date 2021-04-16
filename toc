@@ -18,6 +18,10 @@ IBM Cloud Databases
 	ha-dr.md
 
 	{: .topicgroup}
+	Enhancing security
+		manage-scc.md
+
+	{: .topicgroup}
 	Tutorials
 		k8-tutorial.md
 		cf-tutorial.md
