@@ -58,8 +58,7 @@ Backups cannot be manually deleted. However, if you delete your deployment, its 
 
 You are able to discover available soft deleted instances by using the {{site.data.keyword.cloud_notm}} CLI [`ibmcloud resource reclamations`](https://cloud.ibm.com/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_reclamations) command.
 
-You can then "undelete", recover, or reclaim an available soft deleted instance by using the {{site.data.keyword.cloud_notm}} CLI [`ibmcloud resource reclamation-restore`](https://cloud.ibm.com/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_reclamation_restore) command.
-
+You can then "undelete", recover, or reclaim an available soft deleted instance by using the {{site.data.keyword.cloud_notm}} CLI [`ibmcloud resource reclamation-restore`](https://cloud.ibm.com/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_reclamation_restore) command:
 ```
 ibmcloud resource reclamation-restore resource_ID
 ```
