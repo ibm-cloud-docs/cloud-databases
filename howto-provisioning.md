@@ -33,8 +33,9 @@ Databases for etcd|[Link](https://cloud.ibm.com/catalog/services/databases-for-e
 Databases for MongoDB|[Link](https://cloud.ibm.com/catalog/services/databases-for-mongodb)|`databases-for-mongodb`
 Databases for PostgreSQL|[Link](https://cloud.ibm.com/catalog/services/databases-for-postgresql)|`databases-for-postgresql`
 Databases for Redis|[Link](https://cloud.ibm.com/catalog/services/databases-for-redis)|`databases-for-redis`
+Databases for MySQL|[Link](#)|`databases-for-mysql`
 Messages for RabbitMQ|[Link](https://cloud.ibm.com/catalog/services/messages-for-rabbitmq)|`messages-for-rabbitmq`
-{: caption="Table 1.{{site.data.keyword.databases-for}} deployments" caption-side="top"}
+{: caption="Table 1. {{site.data.keyword.databases-for}} deployments" caption-side="top"}
 
 ## Using the catalog
 
