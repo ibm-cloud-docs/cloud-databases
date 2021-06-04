@@ -38,6 +38,7 @@ Deployment Region | Log Analysis Region
 `eu-de` | `eu-de`
 `au-syd` | `au-syd`
 `us-east` | `us-east`
+`ca-tor` | `ca-tor`
 {: caption="Table 1. Log Analysis regions" caption-side="top"}
 
 Platform logs from your deployments appear in a Log Analysis instance in the same region, except for `osl01`, and `seo01`. Deployments in `osl01` have their logs forwarded to `eu-gb`. Deployments in `seo01` have their logs forwarded to `jp-tok`. If you have deployments in multiple regions, you must set up Log Analysis in multiple regions. 
