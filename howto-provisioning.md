@@ -33,7 +33,7 @@ Databases for etcd|[Link](https://cloud.ibm.com/catalog/services/databases-for-e
 Databases for MongoDB|[Link](https://cloud.ibm.com/catalog/services/databases-for-mongodb)|`databases-for-mongodb`
 Databases for PostgreSQL|[Link](https://cloud.ibm.com/catalog/services/databases-for-postgresql)|`databases-for-postgresql`
 Databases for Redis|[Link](https://cloud.ibm.com/catalog/services/databases-for-redis)|`databases-for-redis`
-Databases for MySQL|[Link](#)|`databases-for-mysql`
+Databases for MySQL|[Link](https://cloud.ibm.com/catalog/services/databases-for-mysql)|`databases-for-mysql`
 Messages for RabbitMQ|[Link](https://cloud.ibm.com/catalog/services/messages-for-rabbitmq)|`messages-for-rabbitmq`
 {: caption="Table 1. {{site.data.keyword.databases-for}} deployments" caption-side="top"}
 
@@ -61,10 +61,10 @@ The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate wit
 
 To create a {{site.data.keyword.databases-for}} deployment, you use the CLI to request a service instance with the service ID of the database (or messaging queue) you want to provision.
 
-The command template is
+The command template is:
 
 ```
-ibmcloud resource service-instance-create <service-name> <service-id> <service-plan-id> <region> <--service-endpoints SERVICE_ENDPOINTS_TYPE>
+ibmcloud resource service-instance-create <service-name> <service-id> <service-plan-id> <region> --service-endpoints <SERVICE_ENDPOINTS_TYPE>
 ```
 
 More information about this command, in general, is available in the [CLI reference for resource groups](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_create).
@@ -78,19 +78,19 @@ This command reports the current state of the service instance.
 
 ### Additional flags and parameters
 
-The `--service-endpoints` flag allows you to specify which types [Service Endpoints](/docs/services/cloud-databases?topic=cloud-databases-service-endpoints) on your deployment. Its default is that connections to your deployment can be made from the public network. Possible values are 'public', 'private', 'public-and-private'. If the flag is omitted, the default is public endpoints.
+The `--service-endpoints` flag allows you to enable connections to your deployments from the public internet and over the IBM Cloud Private network, using [Service Endpoints](/docs/services/cloud-databases?topic=cloud-databases-service-endpoints). By default, connections to your deployment can be made from the public network. Possible values are 'public', 'private', 'public-and-private'. If the flag is omitted, the default is public endpoints.
 ```
 ibmcloud resource service-instance-create <service-name> --service-endpoints <endpoint-type>
 ```
 
-The `service-instance-create` command supports a `-p` flag, which allows [more parameters](#list-of-additional-parameters) to be passed to the provisioning process. The parameters are in JSON format. Some parameters values are CRNs (Cloud Resource Name), which uniquely identifies a resource in the cloud. All parameter names and values are passed as strings.
+The `service-instance-create` command supports a `-p` flag, which allows JSON-formatted [parameters](#list-of-additional-parameters) to be passed to the provisioning process. Some parameters values are CRNs (Cloud Resource Name), which uniquely identify a resource in the cloud. All parameter names and values are passed as strings.
 
-For example, if a database is being provisioned from a particular backup and the new database deployment needs a total of 6 GB of memory across two members, then the command to provision 3 GB per member looks like:
+For example, if a database is being provisioned from a particular backup and the new database deployment needs a total of 9 GB of memory across three members, then the command to provision 3 GB per member looks like:
 
 ```
 ibmcloud resource service-instance-create example-database <service-name> standard us-south \
 -p \ '{
-  "backup_id": "crn:v1:blue:public:databases-for:us-south:a/54e8ffe85dcedf470db5b5ee6ac4a8d8:1b8f53db-fc2d-4e24-8470-f82b15c71717:backup:06392e97-df90-46d8-98e8-cb67e9e0a8e6",
+  "backup_id": "crn:v1:blue:public:databases-for-mysql:us-south:a/54e8ffe85dcedf470db5b5ee6ac4a8d8:1b8f53db-fc2d-4e24-8470-f82b15c71717:backup:06392e97-df90-46d8-98e8-cb67e9e0a8e6",
   "members_memory_allocation_mb": "3072"
 }'
 ```
@@ -101,7 +101,7 @@ You can provision new deployments by using the Resource Controller API. However,
 
 1. [Obtain an IAM token from your API token](https://{DomainName}/apidocs/resource-controller#authentication).
 2. You need to know the ID of the resource group that you would like to deploy to. This information is available through the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_groups). You can find a list of resource groups with `ibmcloud resource groups` and the ID of a resource group with `ibmcloud resource group`. 
-3. You need to know the region that you would like to deploy to.
+3. You need to know the region to which you would like to deploy.
 
 Once you have all the information, the create request is a `POST` to the `https://resource-controller.cloud.ibm.com/v2/resource_instances` endpoint.
 
@@ -135,4 +135,3 @@ If you use Terraform to manage your infrastructure, the [{{site.data.keyword.clo
 * `members_disk_allocation_mb` - Total amount of disk to be shared between the database members within the database. For example, if the value is "30720", and there are three members, then the deployment gets 30 GB of disk total, giving 10 GB of disk per member. If omitted, the default value for the database type is used.
 * `members_cpu_allocation_count` - Enables and allocates the number of specified dedicated cores to your deployment. For example, to use two dedicated cores per member, use `"members_cpu_allocation_count":"2"`. If omitted, the default value "Shared CPU" uses compute resources on shared hosts.
 * `service-endpoints` - Selects the types [Service Endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints) supported on your deployment. Options are `public`, `private`, or `public-and-private`. If omitted, the default is `public`. Note in the CLI, `service-endpoints` is a flag, and not a parameter.
-* `{"remote_leader_id": "crn:v1:..."}` - parameter only for {site.data.keyword.databases-for-postgresql_full}} or {{site.data.keyword.databases-for-enterprisedb_full}}. Details on using this parameter for provisioning read-only replicas can be found in the corresponding `Configuring Read-only Replicas` sections of the [PostgreSQL](/docs/databases-for-postgresql?topic=databases-for-postgresql-read-only-replicas) and [EnterpriseDB](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-read-only-replicas) documentation. 
