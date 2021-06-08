@@ -30,7 +30,7 @@ keywords: deprovision cloud databases, databases with terraform, deprovisioning 
 ## Deleting your Deployment in the User Interface 
 To delete your deployment instance from the Resource list section dashboard of the IBM Cloud dashboard, select your deployment. Next, by using the stacked three-dot menu icon ( ![Stacked three dots icon](images/stacked-three-dots.png) ), choose `Delete` from the drop list. 
 
-![List of service instances on the Resource List](images/softdelete-ui-instance.png)
+![List of service instances on the Resource List](images/softdelete-ui-instance-mysql.png)
 
 ## Deleting your Deployment by using the CLI
 By using the CLI, you can delete your existing {{site.data.keyword.cloud}} Databases instance with the [`ibmcloud resource service-instance-delete`](https://cloud.ibm.com/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_delete) command:
@@ -41,6 +41,16 @@ ibmcloud resource service-instance-delete my-service-instance
 
 Using the command `ibmcloud resource reclamation-delete` deletes a reclaimed resource so that the resource can no longer be restored.
 {: .note}
+
+## Deleting your database using DROP DATABASE Statement
+DROP DATABASE drops all tables in the database and deletes the database. 
+
+```
+DROP {DATABASE | SCHEMA} [IF EXISTS] db_name
+```
+{: .pre}
+
+Refer to [MySQL's documentation](https://dev.mysql.com/doc/refman/5.7/en/drop-database.html) for further support. 
 
 ## Cryptoshredding keys
 
