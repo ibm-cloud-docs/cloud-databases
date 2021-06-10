@@ -43,14 +43,12 @@ Using the command `ibmcloud resource reclamation-delete` deletes a reclaimed res
 {: .note}
 
 ## Deleting your database using DROP DATABASE Statement
-DROP DATABASE drops all tables in the database and deletes the database. 
+[`DROP DATABASE`](https://dev.mysql.com/doc/refman/5.7/en/drop-database.html) drops all tables in the database and deletes the database. 
 
 ```
 DROP {DATABASE | SCHEMA} [IF EXISTS] db_name
 ```
 {: .pre}
-
-Refer to [MySQL's documentation](https://dev.mysql.com/doc/refman/5.7/en/drop-database.html) for further support. 
 
 ## Cryptoshredding keys
 
