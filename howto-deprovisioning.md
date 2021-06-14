@@ -42,11 +42,20 @@ ibmcloud resource service-instance-delete my-service-instance
 Using the command `ibmcloud resource reclamation-delete` deletes a reclaimed resource so that the resource can no longer be restored.
 {: .note}
 
-## Deleting your database using DROP DATABASE Statement
+## Deleting your database using DROP DATABASE Statement 
 [`DROP DATABASE`](https://dev.mysql.com/doc/refman/5.7/en/drop-database.html) drops all tables in the database and deletes the database. 
 
 ```
 DROP {DATABASE | SCHEMA} [IF EXISTS] db_name
+```
+{: .pre}
+
+## Deleting your database using `mysqladmin`
+You can also drop databases with [`mysqladmin`, a MySQL Server Administration Program](https://dev.mysql.com/doc/refman/5.7/en/mysqladmin.html).
+Invoke `mysqladmin` like this: 
+
+```
+mysqladmin [options] command [command-arg] [command [command-arg]] ...
 ```
 {: .pre}
 
