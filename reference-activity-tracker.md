@@ -64,6 +64,9 @@ When reviewing Activity Tracker logs, you see `denies` that include the `dry_run
 
 The {{site.data.keyword.at_short}} service offers [searching](/docs/activity-tracker?topic=activity-tracker-view_events#view_events_step2), [filtering](/docs/activity-tracker?topic=activity-tracker-view_events#view_events_step3), and [export](/docs/activity-tracker?topic=activity-tracker-export) of events so you can customize retention for your use-case. You can also use it to configure [alerts](/docs/activity-tracker?topic=activity-tracker-alerts).
 
+We recommend alerting on database lifecycle events such failed backups. For example, you can create that Activity Tracker alert by filtering audit events to `outcome:failure action:"<service_id>.backup-scheduled.create"` and then following the alert configuration instructions. 
+{: .tip}
+
 ## Event Fields
 
 A description of the common fields for an {{site.data.keyword.at_short}} event is on the [event fields](/docs/activity-tracker?topic=activity-tracker-event) page.
