@@ -34,7 +34,7 @@ If a single zone failure in a multi-zone region or a hardware failure in any reg
 
 You can consult your {{site.data.keyword.databases-for}} documentation for more details on how your specific database replicates data among each of its members.
 
-In addition to the high-availability configuration, your data is snapshotted and backed up daily by the {{site.data.keyword.cloud}} Databases platform and stored in [cross-region Cloud Object Storage buckets](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-geo). 
+In addition to the high-availability configuration, for deployments in IBM Cloud Multi-Zone Regions, your data is snapshotted and backed up daily by the {{site.data.keyword.cloud}} Databases platform and stored in [cross-region Cloud Object Storage buckets](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-geo). For most IBM Cloud Single-Zone Regions, your data is backup locally in [Single Zone Cloud Object Storage buckets](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-zonee).
 
 If a complete region failure occurs, the database servers in the region might not be accessible, but the backup data remains available. You can initiate a restore from these backups into an available region from the service management console. Consult your {{site.data.keyword.databases-for}} backups page for more details. 
 
