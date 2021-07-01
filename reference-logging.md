@@ -39,10 +39,10 @@ Deployment Region | Log Analysis Region
 `au-syd` | `au-syd`
 `us-east` | `us-east`
 `ca-tor` | `ca-tor`
-`jp-osa` | `jp-osa`
+`jp-osa` | `jp-tok`
 {: caption="Table 1. Log Analysis regions" caption-side="top"}
 
-Platform logs from your deployments appear in a Log Analysis instance in the same region, except for `osl01`, and `seo01`. Deployments in `osl01` have their logs forwarded to `eu-gb`. Deployments in `seo01` have their logs forwarded to `jp-tok`. If you have deployments in multiple regions, you must set up Log Analysis in multiple regions. 
+Platform logs from your deployments appear in a Log Analysis instance in the same region, except for `osl01`,`seo01`, and `jp-osa`. Deployments in `osl01` have their logs forwarded to `eu-gb`. Deployments in `seo01` have their logs forwarded to `jp-tok`. Deployments in `jp-osa` have their logs forwarded to `jp-tok`. If you have deployments in multiple regions, you must set up Log Analysis in multiple regions. 
 
 After September 15th 2020, IBM {{site.data.keyword.databases-for}} in the Chennai region will begin sending Platform logs from our databases to the {{site.data.keyword.loganalysisshort}} services in Chennai rather than Tokyo. This is to ensure that database logs for Chennai remain in the Chennai region.
 {: .note}
