@@ -156,6 +156,7 @@ If you need to adjust resources or use a Key Protect key, add any of the optiona
 
 ## Backup Locations
 Backup location differs per database region. You should ensure the backup region location matches your data location requirements.
+
 | Database Region | Backup Region |
 |----------|---------|
 | Dallas | US Cross Regional Object Storage |
