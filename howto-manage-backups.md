@@ -157,17 +157,18 @@ If you need to adjust resources or use a Key Protect key, add any of the optiona
 ## Backup Locations
 Backup location differs per database region. You should ensure the backup region location matches your data location requirements.
 | Database Region | Backup Region |
-|---|---|
-| Dallas | US Cross Regional Object Storage 
-| Washington D.C. | US Cross Regional Object Storage
-| London |	EU Cross Regional Object Storage
-| Frankfurt |	EU Cross Regional Object Storage
-|Tokyo	| AP Cross Regional Object Storage
-|Osaka	| AP Cross Regional Object Storage
-|Sydney	| AP Cross Regional Object Storage
-|Toronto |	Montreal Object Storage
-|Oslo	| Oslo Object Storage
-|Chennai |	Chennai Object Storage
-| Seoul |	Seoul Object Storage
+|----------|---------|
+| Dallas | US Cross Regional Object Storage |
+| Washington D.C. | US Cross Regional Object Storage |
+| London |	EU Cross Regional Object Storage |
+| Frankfurt |	EU Cross Regional Object Storage |
+| Tokyo	| AP Cross Regional Object Storage |
+| Osaka	| AP Cross Regional Object Storage |
+| Sydney	| AP Cross Regional Object Storage |
+| Toronto |	Montreal Object Storage |
+| Oslo	| Oslo Object Storage |
+| Chennai |	Chennai Object Storage |
+| Seoul |	Seoul Object Storage |
+{: caption="Table 1. Database and Backup Regions" caption-side="bottom"}
 
 For more details about {{site.data.keyword.databases-for}} Object Storage locations, please review the location's [documentation](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-geo).
