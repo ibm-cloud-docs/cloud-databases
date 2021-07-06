@@ -153,3 +153,21 @@ If you need to adjust resources or use a Key Protect key, add any of the optiona
 * {{site.data.keyword.cloud_notm}} Databases are not responsible for restoration, timeliness, or validity of said backups.
 * Actions that you take as a user can compromise the integrity of backups, such as under-allocating memory and disk. Users can monitor that backups were performed successfully via the API, and periodically restore a backup to ensure validity and integrity. Users can retrieve the most recent scheduled backup details from the [Cloud Databases CLI plug-in](#backups-in-the-cli) and the [Cloud Databases API](#backups-in-the-api).
 * As a managed service, {{site.data.keyword.cloud_notm}} Databases monitors the state of your backups and can attempt to remediate when possible. If you encounter issues you cannot recover from, you can contact support for more help.
+
+## Backup Locations
+Backup location differs per database region. You should ensure the backup region location matches your data location requirements.
+| Database Region | Backup Region |
+|---|---|
+| Dallas | US Cross Regional Object Storage 
+| Washington D.C. | US Cross Regional Object Storage
+| London |	EU Cross Regional Object Storage
+| Frankfurt |	EU Cross Regional Object Storage
+|Tokyo	| AP Cross Regional Object Storage
+|Osaka	| AP Cross Regional Object Storage
+|Sydney	| AP Cross Regional Object Storage
+|Toronto |	Montreal Object Storage
+|Oslo	| Oslo Object Storage
+|Chennai |	Chennai Object Storage
+| Seoul |	Seoul Object Storage
+
+For more details about {{site.data.keyword.databases-for}} Object Storage locations, please review the location's [documentation](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-geo).
