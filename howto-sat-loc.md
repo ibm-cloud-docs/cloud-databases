@@ -117,7 +117,7 @@ Begin by configuring IAM Authorizations:
 - Choose the **Authorizations** tab from the left hand menu.
 - Click the **create** button to create an authorization that will allow a service instance access to another service instance.
     - The source service is the service that is granted access to the target service. The roles you select define the level of access for this service. The target service is the service you are granting permission to be accessed by the source service based on the assigned roles.
-    - In the **Source Service** field, select **Databases for PostgreSQL**.
+    - In the **Source Service** field, select **Databases for < DATABASE TYPE >**. 
     - In the **Target Service** field, select **Satellite**.
     - Select all options:
         - **Satellite Cluster Creator**
@@ -127,7 +127,7 @@ Begin by configuring IAM Authorizations:
 
 ## Step 3: Provisioning ICD Satellite Deployment
 
-Once you have prepared your satellite location and granted service authorization, you can provision your ICD Satellite Deployment by selecting the Satellite location you have created in the **Location** dropdown of the provisioning page.  For thorough documentation of the provisioning process, see the relevant provisioning documentation for your ICD Satellite deployment. For example, for PostgreSQL, refer to [Provisioning](/docs/databases-for-postgresql?topic=cloud-databases-provisioning) here. Once you have created a new service instance, this instance will appear in the IBM Cloud `Resource List` as `Provisioned`.
+Once you have prepared your satellite location and granted service authorization, you can provision your ICD Satellite Deployment by selecting the Satellite location you have created in the **Location** dropdown of the provisioning page. For thorough documentation of the provisioning process, see the relevant [Provisioning documentation](/docs/cloud-databases?topic=cloud-databases-provisioning) for your ICD Satellite deployment. Once you have created a new service instance, this instance will appear in the IBM Cloud `Resource List` as `Provisioned`.
 
 When you deploy the first database service instance, a service cluster will automatically be deployed into your Satellite location. The deployment of the service cluster can take up to one hour.
 
