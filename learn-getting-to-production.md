@@ -43,7 +43,7 @@ subcollection: cloud-databases
    For more information on Auto-scaling capabilities, see the related documentation for your {{site.data.keyword.databases-for}} instance.  
 6. Set up monitoring with {{site.data.keyword.monitoringfull}}, {{site.data.keyword.at_full}}, and {{site.data.keyword.loganalysisfull}}. At minimum, set alerts on:
    * [{{site.data.keyword.monitoringlong_notm}}](/docs/monitoring) - when disk usage is greater than 80% of provisioned capacity (we encourage you to use Auto-Scaling for disk capacity). We also encourage you to use, understand, and alert on all provided metrics like disk I/O or CPU usage. 
-   * [{{site.data.keyword.at_full_notm}}](/docs/cloud-databases?topic=cloud-databases-activity-tracker) audit events for control plane actions such as failed backups, IP allowlist updates, and autoscaling.  
+   * [{{site.data.keyword.at_full_notm}}](/docs/cloud-databases?topic=cloud-databases-activity-tracker) audit events for control plane actions, such as failed backups, IP allowlist updates, and autoscaling.  
    * [{{site.data.keyword.loganalysisfull_notm}}](/docs/cloud-databases?topic=cloud-databases-logging) - any particular database-specific logs you wish to be notified about, such as slow query logs. 
    * If available, turn on granular in-database auditing (only available for {{site.data.keyword.databases-for-postgresql}} and {{site.data.keyword.databases-for-mongodb}} Enterprise Edition).
 7. Set up an [IP allowlist](/docs/cloud-databases?topic=cloud-databases-allowlisting) for your instance
