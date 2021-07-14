@@ -150,19 +150,16 @@ Refer to [AWS EBS IBM Cloud Satellite documentation](/docs/satellite?topic=satel
 {: .note}
 
 First, obtain your `ROKS-Service-cluster-ID` by entering the following command into the IBM Cloud CLI:
-
 ```
 ic sat service ls  --location <location name/location id >
 ```
-The output of the command will include the the Cluster ID of the newly created Satellite service cluster. Use the Cluster ID as input parameter for --service-cluster-id in the following command.
 {: pre}
 
-See the example below for an AWS Satellite location storage assignment
-
+The output of the command will include the Cluster ID of the newly created Satellite service cluster. Use the Cluster ID as input parameter for `--service-cluster-id` in the following AWS Satellite location storage assignment command:
 ```
 ibmcloud sat storage assignment create  \\
     --name "ebs-assignment"  \\
     --service-cluster-id <ROKS-Service-cluster-ID>  \\
     --config 'aws-ebs-config-storage-testing-1'
 ```
-After storage assignment has been created, allow up to 30 minutes for the database instance to be ready for usage.
+After the storage assignment has been created, allow up to 30 minutes for the database instance to be ready for usage.
