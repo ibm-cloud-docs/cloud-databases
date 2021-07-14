@@ -155,7 +155,9 @@ ic sat service ls  --location <location name/location id >
 ```
 {: pre}
 
-The output of the command will include the Cluster ID of the newly created Satellite service cluster. Use the Cluster ID as input parameter for `--service-cluster-id` in the following AWS Satellite location storage assignment command:
+The output of the command will include the Cluster ID of the newly created Satellite service cluster. 
+
+Use the Cluster ID as an input parameter for `--service-cluster-id` in the following AWS Satellite location storage assignment command:
 ```
 ibmcloud sat storage assignment create  \\
     --name "ebs-assignment"  \\
