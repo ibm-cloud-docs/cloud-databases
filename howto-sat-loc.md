@@ -151,7 +151,7 @@ Refer to [AWS EBS IBM Cloud Satellite documentation](/docs/satellite?topic=satel
 
 First, obtain your `ROKS-Service-cluster-ID` by entering the following command into the IBM Cloud CLI:
 ```
-ic sat service ls  --location <location name/location id >
+ic sat service ls  --location <location name/location id>
 ```
 {: pre}
 
