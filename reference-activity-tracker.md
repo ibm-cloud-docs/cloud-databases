@@ -76,19 +76,19 @@ A description of the common fields for an {{site.data.keyword.at_short}} event i
 
 The table lists the events that are sent to {{site.data.keyword.at_short}} from {{site.data.keyword.databases-for}} deployments.
 
-Action|Description
--------|-------
-`<service_id>.backup-ondemand.create`|An on-demand backup of your deployment was created. If the backup failed, a "-failure" flag is included in the message.
-`<service_id>.backup-scheduled.create`|A scheduled backup of your deployment was created. If the backup failed, a "-failure" flag is included in the message.
-`<service_id>.user-password.update`|A user's password was updated. A "-failure" flag is included in the message if the attempt to update a user's password failed.
-`<service_id>.user.create`|A user was created. A "-failure" flag is included in the message if the attempt to create a user failed.
-`<service_id>.user.delete`|A user was deleted. A "-failure" flag is included in the message if the attempt to delete a user failed.
-`<service_id>.backup.restore`|A restore from backup was created. If the attempted restore failed, a "-failure" flag is included in the message.
-`<service_id>.resources.scale`|A scaling operation was performed. If the scaling operation failed, a "-failure" flag is included in the message.
-`<service_id>.whitelisted-ips-list.update`|The allowlist was modified. A "-failure" flag is included in the message if the attempt to modify the allowlist failed.
-`<service_id>.serviceendpoints.update`|A change was made to the service endpoints configuration. If the operation failed, a "-failure" flag is included in the message.
-`<service_id>.autoscaling.update`|An autoscaling configuration change or an autoscaling operation was performed. If an autoscaling operation was performed the message includes `autoscale resources for instance <deployment-id>`. If the autoscaling operation or the configuration change failed, a "-failure" flag is included in the message.
-`<service_id>.volumes.update`|An activity was performed on the encryption key that is used by the database, such as rotation or shredding. Details of the action are in the event.
+Action Name | Legacy Action name | Description
+-------|-------|-------
+| |`<service_id>.backup-ondemand.create`| An on-demand backup of your deployment was created. If the backup failed, a "-failure" flag is included in the message.
+| | `<service_id>.backup-scheduled.create`| A scheduled backup of your deployment was created. If the backup failed, a "-failure" flag is included in the message.
+| |`<service_id>.user-password.update`| A user's password was updated. A "-failure" flag is included in the message if the attempt to update a user's password failed.
+| |`<service_id>.user.create`|A user was created. A "-failure" flag is included in the message if the attempt to create a user failed.
+| |`<service_id>.user.delete`|A user was deleted. A "-failure" flag is included in the message if the attempt to delete a user failed.
+| |`<service_id>.backup.restore`|A restore from backup was created. If the attempted restore failed, a "-failure" flag is included in the message.
+| |`<service_id>.resources.scale`|A scaling operation was performed. If the scaling operation failed, a "-failure" flag is included in the message.
+| |`<service_id>.whitelisted-ips-list.update`|The allowlist was modified. A "-failure" flag is included in the message if the attempt to modify the allowlist failed.
+| |`<service_id>.serviceendpoints.update`|A change was made to the service endpoints configuration. If the operation failed, a "-failure" flag is included in the message.
+| |`<service_id>.autoscaling.update`|An autoscaling configuration change or an autoscaling operation was performed. If an autoscaling operation was performed the message includes `autoscale resources for instance <deployment-id>`. If the autoscaling operation or the configuration change failed, a "-failure" flag is included in the message.
+| |`<service_id>.volumes.update`|An activity was performed on the encryption key that is used by the database, such as rotation or shredding. Details of the action are in the event.
 {: caption="Table 2. List of Events and Event Descriptions" caption-side="top"}
 
 The `service_id` field indicates the type of {{site.data.keyword.databases-for}} deployment. For example, `databases-for-postgresql` or `messages-for-rabbitmq`.
