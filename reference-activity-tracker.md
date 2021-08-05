@@ -76,7 +76,7 @@ A description of the common fields for an {{site.data.keyword.at_short}} event i
 
 The table lists the events that are sent to {{site.data.keyword.at_short}} from {{site.data.keyword.databases-for}} deployments.
 
-To enhance the user experience for operational monitoring, a new auditing message format has been released and the legacy format for events that are submitted to your Activity Tracker instances will be deprecated. Deprecated events, and their analogous new events, are listed here. We ask that you update any alerting or tooling that relies on the text strings of the deprecated events to the new event format.
+A new auditing message format has been released and the legacy format for events that are submitted to your Activity Tracker instances will be deprecated. Deprecated events, and their analogous new events, are listed in the table. You should update any alerting or tooling that relies on the text strings of the deprecated events to the new event format.
 {: .note}
 
 Action Name | Legacy Action name | Description
