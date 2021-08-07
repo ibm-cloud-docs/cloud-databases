@@ -79,7 +79,7 @@ The table lists the events that are sent to {{site.data.keyword.at_short}} from 
 A new auditing message format has been released and the legacy format for events that are submitted to your Activity Tracker instances will be deprecated. Deprecated events, and their analogous new events, are listed in the table. You should update any alerting or tooling that relies on the text strings of the deprecated events to the new event format.
 {: .note}
 
-Action Name | Legacy Action name | Description
+Action Name | Legacy Action name | Description |
 -------|-------|-------
 | `<service_id>.deployment-backup.create`|`<service_id>.backup-ondemand.create`| An on-demand backup of your deployment was created. If the backup failed, a "-failure" flag is included in the message.
 |`<service_id>.deployment-backup.create`| `<service_id>.backup-scheduled.create`| A scheduled backup of your deployment was created. If the backup failed, a "-failure" flag is included in the message.
