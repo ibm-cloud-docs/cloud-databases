@@ -82,7 +82,7 @@ A new auditing message format has been released and the legacy format for events
 Action Name | Legacy Action name | Description
 -------|-------|-------
 | `<service_id>.deployment-backup.create`|`<service_id>.backup-ondemand.create`| An on-demand backup of your deployment was created. If the backup failed, a "-failure" flag is included in the message.
-|`<service_id>.deployment-backup.create`| `<service_id>.backup-scheduled.create`| A scheduled backup of your deployment was created. If the backup failed, a "-failure" flag is included in the message.
+|<service_id>.deployment-backup-scheduled.create| `<service_id>.backup-scheduled.create`| A scheduled backup of your deployment was created. If the backup failed, a "-failure" flag is included in the message.
 |`<service_id>.deployment-user.update`|`<service_id>.user-password.update`| A user's password was updated. A "-failure" flag is included in the message if the attempt to update a user's password failed.
 |`<service_id>.deployment-user.create`|`<service_id>.user.create`|A user was created. A "-failure" flag is included in the message if the attempt to create a user failed.
 |`<service_id>.deployment-user.delete`|`<service_id>.user.delete`|A user was deleted. A "-failure" flag is included in the message if the attempt to delete a user failed.
