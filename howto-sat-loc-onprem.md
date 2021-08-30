@@ -47,11 +47,44 @@ completion-time: 15m
 # Setting up On-Premises Location
 {: #satellite-on-prem}
 
-Follow the steps below to set up IBM Cloud™ Databases (ICD) enabled by IBM Cloud Satellite in an on-premises location.
+Before deploying the ICD enabled by IBM Cloud Satellite service, you should prepare your Satellite location. Follow the steps below to set up IBM Cloud™ Databases (ICD) enabled by IBM Cloud Satellite in an on-premises location.
 
 ## Step 1: Prepare a Satellite location for IBM Cloud™ Databases
 
-Before deploying the ICD enabled by IBM Cloud Satellite service, you should prepare your Satellite location.
+### Set up NetApp ONTAP-SAN storage
+
+To set up your NetApp ONTAP-SAN storage, refer to [Setting up NetApp storage templates(/docs/satellite?topic=satellite-config-storage-netapp).
+
+### Deploy your NetApp ONTAP-SAN Block driver
+
+To get a list of NetApp-supported templates, use the following command:
+
+```
+$ibmcloud sat storage templates | grep "NetApp Ontap"
+```
+
+### Create a storage configuration based on your NetApp back end
+
+- Operator configuration:
+```
+	$ibmcloud sat storage config create --location 'c4eaklgw081aagbsebn0' --name 'netapp-trident-new-vpc-location'  --template-name 'netapp-trident' --template-version '20.07'
+```
+
+- San configuration:
+```
+	$ibmcloud sat storage config create --location 'c4eaklgw081aagbsebn0' --name 'netapp-san-new-vpc-location'  --template-name 'netapp-ontap-san' --template-version '20.07' --param "dataLIF=169.60.138.171" --param "managementLIF=169.60.138.169" --param  "svm=svmICD" --param "username=admin" --param 'password=Net@pp#1!' --param "limitVolumeSize=1100Gi"
+```
+
+### Create Assignments
+
+Use the following commands:
+```
+	$ibmcloud sat storage assignment create --name "trident-assignment-new-vpc-location" --service-cluster-id 'c4h1jumw0l39p75gutgg' --config 'netapp-trident-new-vpc-location'
+```
+
+```
+	$ibmcloud sat storage assignment create --name "san-assignment-new-vpc-location" --service-cluster-id 'c4h1jumw0l39p75gutgg' --config 'netapp-san-new-vpc-location' 
+```
 
 ### Attach additional hosts to the Satellite location
 
