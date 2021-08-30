@@ -17,6 +17,7 @@ IBM Cloud Databases
 	howto-sat-loc.md
 		howto-sat-loc-aws.md
 		howto-sat-loc-onprem.md
+		
 	howto-deprovisioning.md
 	howto-manage-backups.md
 	howto-allowlists.md
