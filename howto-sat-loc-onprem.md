@@ -62,6 +62,8 @@ To get a list of NetApp-supported templates, use the following command:
 ```
 $ibmcloud sat storage templates | grep "NetApp Ontap"
 ```
+{: .pre}
+
 
 ### Create a storage configuration based on your NetApp back end
 
@@ -96,35 +98,9 @@ Attach to your Satellite location:
 - six type **32x128** hosts
     - on AWS choose six hosts of type **AWS m5d.8xlarge**
 
-### Create a Satellite block storage configuration
-
-To set up your Satellite location using AWS, you should configure your block storage using [Amazon Elastic Block Storage (EBS)](/docs/satellite?topic=satellite-config-storage-ebs).
-
-- To create a block storage configuration for your Satellite location, refer to [Creating an AWS EBS storage configuration](/docs/satellite?topic=satellite-config-storage-ebs).
-
-- See below for an EBS storage configuration code example. For a full list of steps, consult the above documentation.
-
-```
-ibmcloud sat storage config create  \\
-  --name 'aws-ebs-config-storage-testing-1' \\
-  --template-name 'aws-ebs-csi-driver' \\
-  --template-version '0.9.14' \\
-  --location '${LOCATION_ID}' \\
-  -p "aws-access-key=${SAT_EBS_ADMIN_KEY_ID}" \\
-  -p "aws-secret-access-key=${SAT_EBS_ADMIN_KEY}"
-```
-
 ### Enable public endpoints on the Satellite Control Plane
 
 In order to provide database management, ICD enabled by IBM Cloud Satellite requires you to enable public endpoints on the Satellite control plane.
-
-First, retrieve your public endpoints from your AWS portal for the control plane hosts.
-Then, using the IP's from your AWS portal, enter the following command:
-
-```
-ibmcloud sat location dns register --location <location> --ip <public-ip1> --ip <public-ip2> --ip <public-ip3>
-
-```
 
 For more information on accessing clusters, refer to [Accessing clusters from the public network](/docs/openshift?topic=openshift-access_cluster#sat_public_access).
 
@@ -164,9 +140,6 @@ When the service cluster is available in your Satellite location, the next step 
 
 Note that the first database you provision into a location will remain "Provision In Progress" until this step has been completed.
 {: .important}
-
-Refer to [AWS EBS IBM Cloud Satellite documentation](/docs/satellite?topic=satellite-config-storage-ebs) for more information regarding AWS EBS.
-{: .note}
 
 First, obtain your `ROKS-Service-cluster-ID` by entering the following command into the IBM Cloud CLI:
 ```
