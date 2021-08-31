@@ -64,7 +64,6 @@ $ibmcloud sat storage templates | grep "NetApp Ontap"
 ```
 {: .pre}
 
-
 ### Create a storage configuration based on your NetApp back end
 
 - Operator configuration:
