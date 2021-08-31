@@ -44,18 +44,28 @@ completion-time: 15m
 {:cli: .ph data-hd-interface='cli'}
 {:api: .ph data-hd-interface='api'}
 
-# Setting up On-Premises Location
+# Setting up On-Premises Location with NetApp ONTAP-SAN storage
 {: #satellite-on-prem}
 
 Before deploying the ICD enabled by IBM Cloud Satellite service, you should prepare your Satellite location. Follow the steps below to set up IBM Cloud™ Databases (ICD) enabled by IBM Cloud Satellite in an on-premises location.
 
-## Step 1: Prepare a Satellite location for IBM Cloud™ Databases
+## Step 1: Prepare an on-premises Satellite location for IBM Cloud™ Databases
 
-### Set up NetApp ONTAP-SAN storage
+### Attach additional hosts to the Satellite location
+
+These additional attached worker nodes are used to create a service cluster into which the database instances will later be deployed.
+Attach to your Satellite location:
+
+- three type **8x32** hosts
+- three type **32x128** hosts
+
+### Create an on-prem Satellite block storage configuration for NetAPP ONTAP-SAN block storage
+
+#### Set up NetApp ONTAP-SAN storage
 
 To set up your NetApp ONTAP-SAN storage, refer to [Setting up NetApp storage templates(/docs/satellite?topic=satellite-config-storage-netapp).
 
-### Deploy your NetApp ONTAP-SAN Block driver
+#### Deploy your NetApp ONTAP-SAN Block driver
 
 To get a list of NetApp-supported templates, use the following command:
 
@@ -64,7 +74,8 @@ $ibmcloud sat storage templates | grep "NetApp Ontap"
 ```
 {: .pre}
 
-### Create a storage configuration based on your NetApp back end
+
+#### Create a storage configuration based on your NetApp back end
 
 - Operator configuration:
 ```
@@ -76,26 +87,6 @@ $ibmcloud sat storage templates | grep "NetApp Ontap"
 	$ibmcloud sat storage config create --location 'c4eaklgw081aagbsebn0' --name 'netapp-san-new-vpc-location'  --template-name 'netapp-ontap-san' --template-version '20.07' --param "dataLIF=169.60.138.171" --param "managementLIF=169.60.138.169" --param  "svm=svmICD" --param "username=admin" --param 'password=Net@pp#1!' --param "limitVolumeSize=1100Gi"
 ```
 
-### Create Assignments
-
-Use the following commands:
-```
-	$ibmcloud sat storage assignment create --name "trident-assignment-new-vpc-location" --service-cluster-id 'c4h1jumw0l39p75gutgg' --config 'netapp-trident-new-vpc-location'
-```
-
-```
-	$ibmcloud sat storage assignment create --name "san-assignment-new-vpc-location" --service-cluster-id 'c4h1jumw0l39p75gutgg' --config 'netapp-san-new-vpc-location' 
-```
-
-### Attach additional hosts to the Satellite location
-
-These additional attached worker nodes are used to create a service cluster into which the database instances will later be deployed.
-Attach to your Satellite location:
-
-- three type **8x32** hosts
-    - on AWS, choose three hosts of type **AWS m5d.2xlarge**
-- six type **32x128** hosts
-    - on AWS choose six hosts of type **AWS m5d.8xlarge**
 
 ### Enable public endpoints on the Satellite Control Plane
 
@@ -148,11 +139,13 @@ ic sat service ls  --location <location name/location id>
 
 The output of the command will include the Cluster ID of the newly created Satellite service cluster. 
 
-Use the Cluster ID as an input parameter for `--service-cluster-id` in the following AWS Satellite location storage assignment command:
+Use the Cluster ID as an input parameter for `--service-cluster-id` in the following AWS Satellite location storage assignment commands:
+Use the following commands:
 ```
-ibmcloud sat storage assignment create  \\
-    --name "ebs-assignment"  \\
-    --service-cluster-id <ROKS-Service-cluster-ID>  \\
-    --config 'aws-ebs-config-storage-testing-1'
+	$ibmcloud sat storage assignment create --name "trident-assignment-new-vpc-location" --service-cluster-id 'c4h1jumw0l39p75gutgg' --config 'netapp-trident-new-vpc-location'
+```
+
+```
+	$ibmcloud sat storage assignment create --name "san-assignment-new-vpc-location" --service-cluster-id 'c4h1jumw0l39p75gutgg' --config 'netapp-san-new-vpc-location' 
 ```
 After the storage assignment has been created, allow up to 30 minutes for the database instance to be ready for usage.
