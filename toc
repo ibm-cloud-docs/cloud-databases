@@ -11,8 +11,12 @@ IBM Cloud Databases
 	{: .navgroup-end}
 
 	{: .navgroup id="howto"}
-	howto-provisioning.md
-	howto-sat-loc.md
+	{: .topicgroup}
+	IBM Cloud™ Databases (ICD) enabled by IBM Cloud Satellite
+		howto-sat-loc.md
+		howto-sat-loc-aws.md
+		howto-sat-loc-onprem.md
+		
 	howto-deprovisioning.md
 	howto-manage-backups.md
 	howto-allowlists.md
