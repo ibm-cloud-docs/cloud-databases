@@ -47,9 +47,9 @@ completion-time: 15m
 # Setting up Amazon Web Services Location
 {: #satellite-aws}
 
-Follow the steps below to set up IBM Cloud™ Databases (ICD) enabled by IBM Cloud Satellite in an on-premises location.
+Follow the steps below to set up IBM Cloud Databases (ICD) enabled by IBM Cloud Satellite in an on-premises location.
 
-## Step 1: Prepare a Satellite location for IBM Cloud™ Databases
+## Step 1: Prepare a Satellite location for IBM Cloud Databases
 
 Before deploying the ICD enabled by IBM Cloud Satellite service, you should prepare your Satellite location.
 
