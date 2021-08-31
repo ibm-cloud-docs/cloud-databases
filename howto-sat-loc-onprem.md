@@ -63,7 +63,7 @@ Attach to your Satellite location:
 
 #### Set up NetApp ONTAP-SAN storage
 
-To set up your NetApp ONTAP-SAN storage, refer to [Setting up NetApp storage templates](/docs/satellite?topic=satellite-config-storage-netapp).
+To set up your NetApp ONTAP-SAN storage (20.07), refer to [Setting up NetApp storage templates](/docs/satellite?topic=satellite-config-storage-netapp).
 
 #### Deploy your NetApp ONTAP-SAN Block driver
 
@@ -79,12 +79,26 @@ $ibmcloud sat storage templates | grep "NetApp Ontap"
 
 - Operator configuration:
 ```
-	$ibmcloud sat storage config create --location 'c4eaklgw081aagbsebn0' --name 'netapp-trident-new-vpc-location'  --template-name 'netapp-trident' --template-version '20.07'
+	$ibmcloud sat storage config create 
+	  --location ${LOCATION_ID} 
+	  --name ${OPERATORCONFIGNAME}  
+	  --template-name 'netapp-trident' 
+	  --template-version '20.07'
 ```
 
-- San configuration:
+- SAN configuration:
 ```
-	$ibmcloud sat storage config create --location 'c4eaklgw081aagbsebn0' --name 'netapp-san-new-vpc-location'  --template-name 'netapp-ontap-san' --template-version '20.07' --param "dataLIF=169.60.138.171" --param "managementLIF=169.60.138.169" --param  "svm=svmICD" --param "username=admin" --param 'password=Net@pp#1!' --param "limitVolumeSize=1100Gi"
+	$ibmcloud sat storage config create 
+	  --location ${LOCATION_ID} 
+	  --name ${SANCONFIGNAME}  
+	  --template-name 'netapp-ontap-san' 
+	  --template-version '20.07' 
+	  --param "dataLIF=${DATALIF}" 
+	  --param "managementLIF=${MGMLIF}"
+	  --param "svm=${SVM}" 
+	  --param "username=${USERNAME}" 
+	  --param "password=${PASSWORD}"
+	  --param "limitVolumeSize=1100Gi"
 ```
 
 
@@ -142,10 +156,16 @@ The output of the command will include the Cluster ID of the newly created Satel
 Use the Cluster ID as an input parameter for `--service-cluster-id` in the following AWS Satellite location storage assignment commands:
 Use the following commands:
 ```
-	$ibmcloud sat storage assignment create --name "trident-assignment-new-vpc-location" --service-cluster-id 'c4h1jumw0l39p75gutgg' --config 'netapp-trident-new-vpc-location'
+	$ibmcloud sat storage assignment create 
+	  --name ${OPERATORASSIGNMENTNAME} 
+	  --service-cluster-id ${SERVICECLUSTERID} 
+	  --config ${OPERATORCONFIGNAME} 
 ```
 
 ```
-	$ibmcloud sat storage assignment create --name "san-assignment-new-vpc-location" --service-cluster-id 'c4h1jumw0l39p75gutgg' --config 'netapp-san-new-vpc-location' 
+        $ibmcloud sat storage assignment create 
+	  --name ${SANASSIGNMENTNAME} 
+	  --service-cluster-id ${SERVICECLUSTERID} 
+	  --config ${SANCONFIGNAME}
 ```
 After the storage assignment has been created, allow up to 30 minutes for the database instance to be ready for usage.
