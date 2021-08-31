@@ -63,7 +63,7 @@ Attach to your Satellite location:
 
 #### Set up NetApp ONTAP-SAN storage
 
-To set up your NetApp ONTAP-SAN storage, refer to [Setting up NetApp storage templates(/docs/satellite?topic=satellite-config-storage-netapp).
+To set up your NetApp ONTAP-SAN storage, refer to [Setting up NetApp storage templates](/docs/satellite?topic=satellite-config-storage-netapp).
 
 #### Deploy your NetApp ONTAP-SAN Block driver
 
