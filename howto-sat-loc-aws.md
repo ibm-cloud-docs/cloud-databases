@@ -60,8 +60,8 @@ Attach to your Satellite location:
 
 - three type **8x32** hosts
     - on AWS, choose three hosts of type **AWS m5d.2xlarge**
-- six type **32x128** hosts
-    - on AWS choose six hosts of type **AWS m5d.8xlarge**
+- three type **32x128** hosts
+    - on AWS choose three hosts of type **AWS m5d.8xlarge**
 
 ### Create a Satellite block storage configuration
 
