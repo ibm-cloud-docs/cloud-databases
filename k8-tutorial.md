@@ -258,9 +258,9 @@ The clouddatabases-helloworld app displays the contents of an _examples_ databas
 The app uses a PUT and a GET operation:
 
 - PUT
-  - Takes user input from main.js.
-  - Adds the user input to the database.
+    - Takes user input from main.js.
+    - Adds the user input to the database.
 
 - GET
-  - Retrieves the contents of the database.
-  - Returns the response of the database command to main.js.
+    - Retrieves the contents of the database.
+    - Returns the response of the database command to main.js.
