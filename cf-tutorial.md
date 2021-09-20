@@ -35,7 +35,7 @@ Once the branch is cloned, you can select the appropriate directory for the data
 ## Installing the app dependencies
 
 Use `npm` to install dependencies. From your console, change the directory to where the sample app is located and install the dependencies that are listed in the `package.json` file.
-  ```
+  ```bash
   npm install
   ```
 
@@ -67,17 +67,17 @@ Remember the database deployment name.
 
 ## Creating a Cloud Foundry alias for the deployment
 
-1. Target the correct IBM Cloud Cloud Foundry org and space, and choose where you are going to push the application code to.
+- Target the correct IBM Cloud Cloud Foundry org and space, and choose where you are going to push the application code to.
 ```shell
 ibmcloud target --cf
 ```
 
-2. Create a Cloud Foundry alias for your database deployment.
+- Create a Cloud Foundry alias for your database deployment.
 ```shell
 ibmcloud resource service-alias-create alias-name --instance-name instance-name
 ```
 
-Cloud Foundry uses the alias to represent the database deployment as a Cloud Foundry service. The alias name can be the same as the database service instance name. So, for an "example-deployment" database the command is
+- Cloud Foundry uses the alias to represent the database deployment as a Cloud Foundry service. The alias name can be the same as the database service instance name. So, for an "example-deployment" database the command is
 ```shell
 ibmcloud resource service-alias-create example-deployment --instance-name example-deployment
 ```
@@ -85,7 +85,7 @@ ibmcloud resource service-alias-create example-deployment --instance-name exampl
 ## Configuring the app with Cloud Foundry
 
 `cd` into the application's directory.  For now, the only file you need to update is the application manifest.
-  ```
+  ```bash
   ---
   applications:
   - name:    example-helloworld
