@@ -63,14 +63,14 @@ To create a {{site.data.keyword.databases-for}} deployment, you use the CLI to r
 
 The command template is:
 
-```
+```bash
 ibmcloud resource service-instance-create <service-name> <service-id> <service-plan-id> <region> --service-endpoints <SERVICE_ENDPOINTS_TYPE>
 ```
 
 More information about this command, in general, is available in the [CLI reference for resource groups](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_create).
 
 When the command is run, provisioning the database deployment begins. The database takes some time to deploy. You can check on its progress on your {{site.data.keyword.cloud_notm}} Dashboard. You can also run:
-```
+```bash
 ibmcloud resource service-instance <service-name>
 ```
 
@@ -79,7 +79,7 @@ This command reports the current state of the service instance.
 ### Additional flags and parameters
 
 The `--service-endpoints` flag allows you to enable connections to your deployments from the public internet and over the IBM Cloud Private network, using [Service Endpoints](/docs/services/cloud-databases?topic=cloud-databases-service-endpoints). By default, connections to your deployment can be made from the public network. Possible values are 'public', 'private', 'public-and-private'. If the flag is omitted, the default is public endpoints.
-```
+```bash
 ibmcloud resource service-instance-create <service-name> --service-endpoints <endpoint-type>
 ```
 
@@ -87,7 +87,7 @@ The `service-instance-create` command supports a `-p` flag, which allows JSON-fo
 
 For example, if a database is being provisioned from a particular backup and the new database deployment needs a total of 9 GB of memory across three members, then the command to provision 3 GB per member looks like:
 
-```
+```bash
 ibmcloud resource service-instance-create example-database <service-name> standard us-south \
 -p \ '{
   "backup_id": "crn:v1:blue:public:databases-for-mysql:us-south:a/54e8ffe85dcedf470db5b5ee6ac4a8d8:1b8f53db-fc2d-4e24-8470-f82b15c71717:backup:06392e97-df90-46d8-98e8-cb67e9e0a8e6",
@@ -105,7 +105,7 @@ You can provision new deployments by using the Resource Controller API. However,
 
 Once you have all the information, the create request is a `POST` to the `https://resource-controller.cloud.ibm.com/v2/resource_instances` endpoint.
 
-```
+```curl
 curl -X POST \
   https://resource-controller.cloud.ibm.com/v2/resource_instances \
   -H 'Authorization: Bearer <>' \

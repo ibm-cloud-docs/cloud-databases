@@ -51,13 +51,13 @@ IPv6 is not currently supported.
 ### Setting an allowlist through the CLI
 
 The {{site.data.keyword.databases-for}} CLI plug-in offers a set of commands for managing allowlists. Use [`cdb deployment-whitelist-add`](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-allowlist-add) to add an allowlist. For example,
-```
+```bash
 ibmcloud cdb deployment-whitelist-add example-deployment 198.51.100.1 "Allowlisted for testing"
 ```
 {: .pre}
 
 for a single IP address and 
-```
+```bash
 ibmcloud cdb deployment-whitelist-add example-deployment 198.51.100.0/24 "Testing range is now open" 
 ```
 {: .pre}
@@ -65,7 +65,7 @@ ibmcloud cdb deployment-whitelist-add example-deployment 198.51.100.0/24 "Testin
 for an IP range.
 
 Use [`cdb deployment-whitelist-list`](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-allowlist-list) to view the current allowlist. For example,
-```
+```bash
 ibmcloud cdb deployment-whitelist-list <deployment name or CRN>
 ```
 {: .pre}

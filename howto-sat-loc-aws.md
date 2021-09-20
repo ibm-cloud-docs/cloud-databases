@@ -1,4 +1,3 @@
-
 ---
 
 copyright:
@@ -71,7 +70,7 @@ To set up your Satellite location using AWS, you should configure your block sto
 
 - See below for an EBS storage configuration code example. For a full list of steps, consult the above documentation.
 
-```
+```bash
 ibmcloud sat storage config create  \\
   --name 'aws-ebs-config-storage-testing-1' \\
   --template-name 'aws-ebs-csi-driver' \\
@@ -88,7 +87,7 @@ In order to provide database management, ICD enabled by IBM Cloud Satellite requ
 First, retrieve your public endpoints from your AWS portal for the control plane hosts.
 Then, using the IP's from your AWS portal, enter the following command:
 
-```
+```bash
 ibmcloud sat location dns register --location <location> --ip <public-ip1> --ip <public-ip2> --ip <public-ip3>
 
 ```
@@ -136,7 +135,7 @@ Refer to [AWS EBS IBM Cloud Satellite documentation](/docs/satellite?topic=satel
 {: .note}
 
 First, obtain your `ROKS-Service-cluster-ID` by entering the following command into the IBM Cloud CLI:
-```
+```bash
 ic sat service ls  --location <location name/location id>
 ```
 {: pre}
@@ -144,7 +143,7 @@ ic sat service ls  --location <location name/location id>
 The output of the command will include the Cluster ID of the newly created Satellite service cluster. 
 
 Use the Cluster ID as an input parameter for `--service-cluster-id` in the following AWS Satellite location storage assignment command:
-```
+```bash
 ibmcloud sat storage assignment create  \\
     --name "ebs-assignment"  \\
     --service-cluster-id <ROKS-Service-cluster-ID>  \\

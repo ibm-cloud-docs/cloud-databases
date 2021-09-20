@@ -34,7 +34,7 @@ To delete your deployment instance from the Resource list section dashboard of t
 
 ## Deleting your Deployment by using the CLI
 By using the CLI, you can delete your existing {{site.data.keyword.cloud}} Databases instance with the [`ibmcloud resource service-instance-delete`](https://cloud.ibm.com/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_delete) command:
-```
+```bash
 ibmcloud resource service-instance-delete my-service-instance
 ```
 {: .pre}
@@ -45,7 +45,7 @@ Using the command `ibmcloud resource reclamation-delete` deletes a reclaimed res
 ## Deleting your database using DROP DATABASE Statement 
 [`DROP DATABASE`](https://dev.mysql.com/doc/refman/5.7/en/drop-database.html) drops all tables in the database and deletes the database. 
 
-```
+```bash
 DROP {DATABASE | SCHEMA} [IF EXISTS] db_name
 ```
 {: .pre}
@@ -54,7 +54,7 @@ DROP {DATABASE | SCHEMA} [IF EXISTS] db_name
 You can also drop databases with [`mysqladmin`, a MySQL Server Administration Program](https://dev.mysql.com/doc/refman/5.7/en/mysqladmin.html).
 Invoke `mysqladmin` like this: 
 
-```
+```bash
 mysqladmin [options] command [command-arg] [command [command-arg]] ...
 ```
 {: .pre}
@@ -76,7 +76,7 @@ Backups cannot be manually deleted. However, if you delete your deployment, its 
 You are able to discover available soft deleted instances by using the {{site.data.keyword.cloud_notm}} CLI [`ibmcloud resource reclamations`](https://cloud.ibm.com/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_reclamations) command.
 
 You can then "undelete", recover, or reclaim an available soft deleted instance by using the {{site.data.keyword.cloud_notm}} CLI [`ibmcloud resource reclamation-restore`](https://cloud.ibm.com/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_reclamation_restore) command:
-```
+```bash
 ibmcloud resource reclamation-restore resource_ID
 ```
 {: .pre}
