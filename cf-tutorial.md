@@ -35,9 +35,9 @@ Once the branch is cloned, you can select the appropriate directory for the data
 ## Installing the app dependencies
 
 Use `npm` to install dependencies. From your console, change the directory to where the sample app is located and install the dependencies that are listed in the `package.json` file.
-  ```bash
-  npm install
-  ```
+```bash
+npm install
+```
 
 ## Connecting to IBM Cloud
 
@@ -45,15 +45,15 @@ Use `npm` to install dependencies. From your console, change the directory to wh
 
 2. [Download and install IBM Cloud CLI](/docs/cli?topic=cli-install-ibmcloud-cli)
 
-    The IBM Cloud CLI tool enables you to communicate with IBM Cloud from your console or command line.
+The IBM Cloud CLI tool enables you to communicate with IBM Cloud from your console or command line.
 
 3. Connect to IBM Cloud in the command-line tool and follow the prompts to log in.
 
-    ```shell
-    ibmcloud login
-    ```
+```shell
+ibmcloud login
+```
 
-    **Note:** If you have a federated user ID, use the `ibmcloud login --sso` command to log in with your single sign-on ID.
+**Note:** If you have a federated user ID, use the `ibmcloud login --sso` command to log in with your single sign-on ID.
 
 ## Creating a database deployment
 
@@ -85,16 +85,16 @@ ibmcloud resource service-alias-create example-deployment --instance-name exampl
 ## Configuring the app with Cloud Foundry
 
 `cd` into the application's directory.  For now, the only file you need to update is the application manifest.
-  ```bash
-  ---
-  applications:
-  - name:    example-helloworld
-    routes:
-    - route: example-helloworld.us-south.cf.appdomain.cloud
-    memory:  128M
-    services:
-      - example-deployment
-  ```
+```bash
+---
+applications:
+- name:    example-helloworld
+  routes:
+  - route: example-helloworld.us-south.cf.appdomain.cloud
+  memory:  128M
+  services:
+    - example-deployment
+```
 
 1. Change the `name` value. The value that you choose is set as the name of the app as it appears in your Resource List. 
 
@@ -120,9 +120,9 @@ The code for connecting to the deployment and reading from and updating the data
 The app uses a PUT and a GET operation:
 
 - PUT
-  - Takes user input from main.js.
-  - Adds the user input to the database.
+   - Takes user input from main.js.
+   - Adds the user input to the database.
 
 - GET
-  - Retrieves the contents of the database.
-  - Returns the response of the database command to main.js.
+   - Retrieves the contents of the database.
+   - Returns the response of the database command to main.js.
