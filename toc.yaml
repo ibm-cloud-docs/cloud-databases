@@ -1,0 +1,63 @@
+#  Name your file `toc.yaml`
+#  Make sure you include all nav file coding requirements, as defined in https://test.cloud.ibm.com/docs/writing?topic=writing-code-nav
+#  Anything with a fully qualified URL with `http` or `https` will get an external link icon added to the nav entry
+---
+toc:
+  properties:
+    subcollection: cloud-databases
+    version: 2
+    category: database
+    audience: service
+    href: /docs/cloud-databases?topic=cloud-databases-about
+    path: cloud-databases
+    label: IBM Cloud Databases
+  entries: 
+  - navgroup: 
+      id: learn
+      topics:
+      - index.md
+      - learn-size-guidance.md
+      - learn-getting-to-production.md
+
+  - navgroup: 
+      id: howto
+      topics: 
+      - howto-provisioning.md
+      - topicgroup: 
+          label: IBM Cloud Databases (ICD) enabled by IBM Cloud Satellite
+          topics: 
+          - howto-sat-loc.md
+          - howto-sat-loc-aws.md
+          - howto-sat-loc-onprem.md
+      - howto-deprovisioning.md
+      - howto-manage-backups.md
+      - howto-allowlists.md
+      - ha-dr.md
+      - topicgroup: 
+          label: Enhancing security
+          topics: 
+          - manage-scc.md
+      - topicgroup: 
+          label: Tutorials
+          topics: 
+          - k8-tutorial.md
+          - cf-tutorial.md
+  - navgroup: 
+      id: reference
+      topics: 
+      - /databases-cli-plugin/databases-cli-plugin-cdb-reference
+      - link:
+          label: Cloud Databases API
+          href: https://cloud.ibm.com/apidocs/cloud-databases-api
+      - db-version-policy.md
+      - reference-responsibilities.md
+      - reference-iam.md
+      - reference-logging.md
+      - reference-activity-tracker.md
+      - topicgroup: 
+          label: Connecting over Private Networks
+          topics: 
+          - howto-vpes.md
+          - reference-service-endpoints.md
+      - reference-key-protect.md
+      - reference-hpcs.md
