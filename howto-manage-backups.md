@@ -26,7 +26,7 @@ Backups for {{site.data.keyword.databases-for}} deployments are accessible from 
 - Backups cannot be deleted. 
 - If you delete your deployment, its backups are deleted automatically.
 - Scheduling of the daily backup is not configurable.
-- Backups are cross-regionally durable. Backups are stored across multiple regions, and are restorable to other regions, except for `eu-de`, which cannot cross regional boundaries.
+- Backups are restorable to other regions, except for `eu-de`, which cannot cross regional boundaries.
 - Backup storage is encrypted. If you need to manage the encryption keys, you can do so with the [Key Protect integration](/docs/cloud-databases?topic=cloud-databases-key-protect#byok-for-backups). Otherwise, they are encrypted with a key that is automatically generated for your deployment.
 - Backups are also restorable across accounts, but only by using the API and only if the user that is running the restore has access to both the source and destination accounts. 
 
@@ -46,14 +46,14 @@ Use the [`cdb deployment-backups-list`](/docs/databases-cli-plugin?topic=databas
 
 For example, to view the backups for a deployment named "example-deployment", use the following command.
 
-```
+```bash
 ibmcloud cdb deployment-backups-list example-deployment
 ```
 {: .pre}
 
 To see the details of one of the backups from the list, take the ID from the `ID` field of the `deployment-backups-list` response and use it with the `backup-show` command.
 
-```
+```bash
 ibmcloud cdb backup-show crn:v1:staging:public:cloud-databases:us-south:a/6284014dd5b487c87a716f48aeeaf99f:3b4537bf-a585-4594-8262-2b1e24e2701e:backup:a3364821-d061-413f-a0df-6ba0e2951566
 ```
 {: .pre}
@@ -72,7 +72,7 @@ Deployments come with free backup storage equal to their total disk space. If yo
 To create a manual backup in the UI, go to the _Backups_ tab of your deployment then click **Back up now**. A message is displayed that a backup is in progress, and an on-demand backup is added to the list of available backups.
 
 In the CLI, you trigger an on-demand backup with the [`cdb deployment-backup-now`](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-backup-now) command.
-```
+```shell
 ibmcloud cdb deployment-backup-now example-deployment
 ```
 {: .pre}
@@ -95,16 +95,16 @@ To restore a backup to a new service instance,
 1. Click in the corresponding row to expand the options for the backup that you want to restore.
 2. Click the **Restore** button.
 3. Use the dialog box to select from some available options. 
-  - The new deployment is automatically named `<name>-restore-[timestamp]`, but you can rename it. 
-  - You can also select the region where the new deployment is located. Cross-region restores are supported, except for restoring into or out of the `eu-de` region.
-  - You can choose the initial resource allocation, either to expand or shrink the resources on the new deployment. You can also enable or disable dedicated cores.
+    - The new deployment is automatically named `<name>-restore-[timestamp]`, but you can rename it. 
+    - You can also select the region where the new deployment is located. Cross-region restores are supported, except for restoring into or out of the `eu-de` region.
+    - You can choose the initial resource allocation, either to expand or shrink the resources on the new deployment. You can also enable or disable dedicated cores.
 4. Click the **Restore** button. A "restore from backup started" message appears. Clicking **Your new instance is available now.** takes you to your _Resources List_.
 
 ### Restoring a backup in the CLI
 
 The Resource Controller supports provisioning of database deployments, and provisioning and restoring are the responsibility of the Resource Controller CLI. Use the [`resource service-instance-create`](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_create) command.
 
-```
+```bash
 ibmcloud resource service-instance-create <SERVICE_INSTANCE_NAME> <service-id> standard <region> -p '{"backup_id":"BACKUP_ID"}'
 ```
 {: .pre}
@@ -112,7 +112,7 @@ ibmcloud resource service-instance-create <SERVICE_INSTANCE_NAME> <service-id> s
 Change the value of `SERVICE_INSTANCE_NAME` to the name you want for your new deployment. The `service-id` is the type of deployment, such as `databases-for-postgresql` or `messages-for-rabbitmq`. The `region` is where you want the new deployment to be located, which can be a different region from the source deployment. Cross-region restores are supported, except for restoring to or from `eu-de` by using another region. `BACKUP_ID` is the backup that you want to restore.
 
 Optional parameters are available when restoring through the CLI. Use them if you need to customize resources, or use a Key Protect key for BYOK encryption on the new deployment.
-```
+```bash
 ibmcloud resource service-instance-create <SERVICE_INSTANCE_NAME> <service-id> standard <region> -p
 '{"backup_id":"BACKUP_ID","key_protect_key":"KEY_PROTECT_KEY_CRN", "members_disk_allocation_mb":"DESIRED_DISK_IN_MB", "members_memory_allocation_mb":"DESIRED_MEMORY_IN_MB", "members_cpu_allocation_count":"NUMBER_OF_CORES"}'
 ```
@@ -127,7 +127,7 @@ The Resource Controller supports provisioning of database deployments, and provi
 
 When you have all the information, the create request is a `POST` to the [`/resource_instances`](https://{DomainName}/apidocs/resource-controller#create-provision-a-new-resource-instance) endpoint.
 
-```
+```bash
 curl -X POST \
   https://resource-controller.cloud.ibm.com/v2/resource_instances \
   -H 'Authorization: Bearer <>' \
@@ -167,10 +167,8 @@ Backup location differs per database region. You should ensure the backup region
 | Osaka	| AP Cross Regional Object Storage |
 | Sydney	| AP Cross Regional Object Storage |
 | Toronto |	Montreal Object Storage |
-| Oslo	| Oslo Object Storage |
 | Chennai |	Chennai Object Storage |
 | Seoul |	Seoul Object Storage |
 {: caption="Table 1. Database and Backup Regions" caption-side="bottom"}
 
 For more details about {{site.data.keyword.databases-for}} Object Storage locations, please review the location's [documentation](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-geo).
-
