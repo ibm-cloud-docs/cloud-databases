@@ -130,15 +130,6 @@ Subnet | Location
 158.176.122.239\29 | London 6
 158.176.124.223\29 | London 6
 
-### `osl01` List
-Subnet | Location
--- | --
-169.51.81.255\27 | Oslo 1
-169.51.85.159\28 | Oslo 1
-169.51.91.63\26 | Oslo 1
-169.51.66.7\29 | Oslo 1
-169.51.68.151\29 | Oslo 1
-
 ### `seo01` List
 Subnet | Location
 -- | --

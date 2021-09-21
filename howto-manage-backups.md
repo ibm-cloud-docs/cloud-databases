@@ -167,7 +167,6 @@ Backup location differs per database region. You should ensure the backup region
 | Osaka	| AP Cross Regional Object Storage |
 | Sydney	| AP Cross Regional Object Storage |
 | Toronto |	Montreal Object Storage |
-| Oslo	| Oslo Object Storage |
 | Chennai |	Chennai Object Storage |
 | Seoul |	Seoul Object Storage |
 {: caption="Table 1. Database and Backup Regions" caption-side="bottom"}
