@@ -45,9 +45,7 @@ Once the branch is cloned, select the appropriate directory for the database you
 
 1. If you do not already have an {{site.data.keyword.cloud_notm}} account, [sign up here](https://cloud.ibm.com/registration/)
 
-2. [Download and install {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli)
-
-The {{site.data.keyword.cloud_notm}} CLI tool enables you to communicate with {{site.data.keyword.cloud_notm}} from your console or command line.
+2. [Download and install {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli). The {{site.data.keyword.cloud_notm}} CLI tool enables you to communicate with {{site.data.keyword.cloud_notm}} from your console or command line.
 
 3. Install the {{site.data.keyword.containershort_notm}} CLI plug-in and the Container Registry CLI plug-in
 
