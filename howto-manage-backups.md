@@ -72,7 +72,7 @@ Deployments come with free backup storage equal to their total disk space. If yo
 To create a manual backup in the UI, go to the _Backups_ tab of your deployment then click **Back up now**. A message is displayed that a backup is in progress, and an on-demand backup is added to the list of available backups.
 
 In the CLI, you trigger an on-demand backup with the [`cdb deployment-backup-now`](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-backup-now) command.
-```
+```shell
 ibmcloud cdb deployment-backup-now example-deployment
 ```
 {: .pre}

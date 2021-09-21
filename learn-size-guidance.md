@@ -64,7 +64,7 @@ The response looks something like
 {"id":"5aaa501edra466001a1bf6c1","name":"spicy-mongodb-22"}
 ```
 
-With the deployment IDs, you can extract the RAM and storage that is allocated to each data member of a deployment by using the [`/deployments/<deployment id>/scalings`]() endpoint. For example, the request for the `spicy-mongodb-22` deployment is
+With the deployment IDs, you can extract the RAM and storage that is allocated to each data member of a deployment by using the `/deployments/<deployment id>/scalings` endpoint. For example, the request for the `spicy-mongodb-22` deployment is
 ```curl
 curl -s -X GET -H "Authorization: Bearer $token" \ 
     -H "Content-Type: application/json" \ 

@@ -35,7 +35,7 @@ Clone the repository of the language that you want to use. For instance, you can
 
 Or for [cloning by using HTTPS](https://docs.github.com/en/github/using-git/which-remote-url-should-i-use#cloning-with-https-urls-recommended):
 
-   ```
+   ```shell
    git clone -b node https://github.com/IBM-Cloud/clouddatabases-helloworld-kubernetes-examples.git
    ```
    {: pre}
@@ -63,7 +63,7 @@ Or for [cloning by using HTTPS](https://docs.github.com/en/github/using-git/whic
    ```
    {: pre}
 
-   ```
+   ```shell
    Listing installed plug-ins...
 
    Plugin Name                            Version   Status
@@ -137,7 +137,7 @@ Remember the database deployment name. Find your [region identifier here](/docs/
    The "default" namespace refers to the Kubernetes instance and not the user created image store namespace. Likewise, if your database uses both [public and private endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints), your public endpoint is used by default. Therefore, if you want to select the private endpoint, first you need to create a service key for your database so Kubernetes can use it when binding to the database. You set up a service key by using the command:
    {: note}
 
-   ```
+   ```shell
    ibmcloud resource service-key-create <your-private-key> --instance-name    <your_database_deployment> --service-endpoint private  
    ```
    {: pre}
@@ -188,6 +188,7 @@ Remember the database deployment name. Find your [region identifier here](/docs/
    ibmcloud cr images
    ```
    {: pre}
+   
    You get something like the following response
 
    ```shell

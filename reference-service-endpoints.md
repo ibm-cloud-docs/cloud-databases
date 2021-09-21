@@ -51,7 +51,7 @@ To configure your deployment's endpoints on provision, use the _Endpoints_ field
 ### Provisioning from the CLI and API
 
 Service Endpoints are enabled through an optional parameter when you provision through the CLI and API. Provisioning is handled by the Resource Controller, and you pass the `service-endpoints` parameter one of the options `public`, `private`, or `public-and-private`. 
-```
+```shell
 ibmcloud resource service-instance-create <service-name> --service-endpoints <endpoint-type>
 ```
 
@@ -67,7 +67,7 @@ After you have a deployment, it is possible to change your public and private se
 In the _Overview_ tab of your deployment's dashboard, go to the _Endpoints_ section. You can toggle which types of connections are available to your deployment.
 
 You can use the [`ibmcloud resource service-instance-update`](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_update) command in the CLI, specifying the endpoint with the `--service-endpoints` flag.
-```
+```shell
 ibmcloud resource service-instance-update <service-name> --service-endpoints <endpoint-type>
 ```
 
