@@ -49,41 +49,41 @@ Once the branch is cloned, select the appropriate directory for the database you
 
 3. Install the {{site.data.keyword.containershort_notm}} CLI plug-in and the Container Registry CLI plug-in
 
-```shell
-ibmcloud plugin install container-service
-ibmcloud plugin install container-registry 
-```
-{: pre}
+   ```shell
+   ibmcloud plugin install container-service
+   ibmcloud plugin install container-registry 
+   ```
+   {: pre}
 
-To verify their installation, run:
+   To verify their installation, run:
 
-```shell
-ibmcloud plugin list
-```
-{: pre}
+   ```shell
+   ibmcloud plugin list
+   ```
+   {: pre}
 
-```
-Listing installed plug-ins...
+   ```
+   Listing installed plug-ins...
 
-Plugin Name                            Version   Status
-container-registry                     0.1.382
-container-service/kubernetes-service   0.3.34
-```
-{: screen}
+   Plugin Name                            Version   Status
+   container-registry                     0.1.382
+   container-service/kubernetes-service   0.3.34
+   ```
+   {: screen}
 
 4. [Download and install the Kubernetes CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 
-Follow the instructions for downloading and installing the Kubernetes CLI for the platform you're using.
+   Follow the instructions for downloading and installing the Kubernetes CLI for the platform you're using.
 
 5. Connect to {{site.data.keyword.cloud_notm}} in the command-line tool and follow the prompts to log in.
 
-```shell
-ibmcloud login
-```
-{: pre}
+   ```shell
+   ibmcloud login
+   ```
+   {: pre}
 
-If you have a federated user ID, use the `ibmcloud login --sso` command tolog in with your single sign-on ID.
-{: note}
+   If you have a federated user ID, use the `ibmcloud login --sso` command tolog in with your single sign-on ID.
+   {: note}
 
 ## Creating your database
 
@@ -110,44 +110,43 @@ ibmcloud resource service-instance-create <your_deployment_name> <service_name> 
 
 2. Make sure that you are targeting the correct {{site.data.keyword.cloud_notm}} resource group of your {{site.data.keyword.containershort_notm}}.
 
-Use the following command to target your cluster resource group if your resource group is other than `default`.
+   Use the following command to target your cluster resource group if your resource    group is other than `default`.
 
-```shell
-ibmcloud target -g <resource_group_name>
-```
-{: pre}
+   ```shell
+   ibmcloud target -g <resource_group_name>
+   ```
+   {: pre}
 
-For this example, we're using the `default` resource group.
+   For this example, we're using the `default` resource group.
 
 3. Create your own private image repository in [{{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-getting-started) to store your application's Docker image. Since we want the images to be private, we need to create a namespace, which creates a unique URL to your image repository.  
 
-```shell
-ibmcloud cr namespace-add <your_namespace>
-```
-{: pre}
+   ```shell
+   ibmcloud cr namespace-add <your_namespace>
+   ```
+   {: pre}
 
 4. Add the Cloud Databases deployment to your cluster.
 
-```shell
-ibmcloud ks cluster service bind --cluster <your_cluster_name> --namespace default --service <your_database_deployment>
-```
-{: pre}
+   ```shell
+   ibmcloud ks cluster service bind --cluster <your_cluster_name> --namespace default    --service <your_database_deployment>
+   ```
+   {: pre}
 
-The "default" namespace refers to the Kubernetes instance and not the user created image store namespace. Likewise, if your database uses both [public and private endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints), your public endpoint is used by default. Therefore, if you want to select the private endpoint, first you need to create a service key for your database so Kubernetes can use it when binding to the database. You set up a service key by using the command:
-{: note}
+   The "default" namespace refers to the Kubernetes instance and not the user created image store namespace. Likewise, if your database uses both [public and private endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints), your public endpoint is used by default. Therefore, if you want to select the private endpoint, first you need to create a service key for your database so Kubernetes can use it when binding to the database. You set up a service key by using the command:
+   {: note}
 
-```
-ibmcloud resource service-key-create <your-private-key> --instance-name <your_database_deployment> --service-endpoint private  
-```
-{: pre}
-{: note}
+   ```
+   ibmcloud resource service-key-create <your-private-key> --instance-name    <your_database_deployment> --service-endpoint private  
+   ```
+   {: pre}
       
-The private service endpoint is selected with `--service-endpoint private`. After that, you bind the database to the Kubernetes cluster through the private endpoint by using the command:
+   The private service endpoint is selected with `--service-endpoint private`. After that, you bind the database to the Kubernetes cluster through the private endpoint by using the command:
 
-```shell
-ibmcloud ks cluster service bind <your_cluster_name> default <your_database_deployment> --key example-private-key
-```
-{: pre}
+   ```shell
+   ibmcloud ks cluster service bind <your_cluster_name> default    <your_database_deployment> --key example-private-key
+   ```
+   {: pre}
 
 5. Verify that the Kubernetes secret was created in your cluster namespace. Kubernetes uses secrets to store confidential information like the {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IAM) API key and the URL that the container uses to gain access. Running the following commands to first Set the cluster as the context for this session and then get the API key for accessing the instance of your deployment that's provisioned in your account.
 
