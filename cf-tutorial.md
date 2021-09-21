@@ -45,7 +45,7 @@ npm install
 
 2. [Download and install IBM Cloud CLI](/docs/cli?topic=cli-install-ibmcloud-cli)
 
-The IBM Cloud CLI tool enables you to communicate with IBM Cloud from your console or command line.
+   The IBM Cloud CLI tool enables you to communicate with IBM Cloud from your console or command line.
 
 3. Connect to IBM Cloud in the command-line tool and follow the prompts to log in.
 
@@ -67,20 +67,20 @@ Remember the database deployment name.
 
 ## Creating a Cloud Foundry alias for the deployment
 
-- Target the correct IBM Cloud Cloud Foundry org and space, and choose where you are going to push the application code to.
-```shell
-ibmcloud target --cf
-```
+1. Target the correct IBM Cloud Cloud Foundry org and space, and choose where you are going to push the application code to.
+   ```shell
+   ibmcloud target --cf
+   ```
 
-- Create a Cloud Foundry alias for your database deployment.
+2. Create a Cloud Foundry alias for your database deployment.
 ```shell
 ibmcloud resource service-alias-create alias-name --instance-name instance-name
 ```
 
-- Cloud Foundry uses the alias to represent the database deployment as a Cloud Foundry service. The alias name can be the same as the database service instance name. So, for an "example-deployment" database the command is
-```shell
-ibmcloud resource service-alias-create example-deployment --instance-name example-deployment
-```
+3. Cloud Foundry uses the alias to represent the database deployment as a Cloud Foundry service. The alias name can be the same as the database service instance name. So, for an "example-deployment" database the command is
+   ```shell
+   ibmcloud resource service-alias-create example-deployment --instance-name example-deployment
+   ```
 
 ## Configuring the app with Cloud Foundry
 
