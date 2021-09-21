@@ -57,7 +57,7 @@ After you grant your {{site.data.keyword.databases-for}} deployments permission 
 If provisioning from the catalog page, select the HPCS instance and key from the dropdown menus.
 
 In the CLI, use the `disk_encryption_key_crn` parameter in the parameters JSON object.
-```
+```bash
 ibmcloud resource service-instance-create example-database <service-name> standard us-south \
 -p \ '{
   "disk_encryption_key_crn": "crn:v1:<...>:key:<id>"
@@ -65,7 +65,7 @@ ibmcloud resource service-instance-create example-database <service-name> standa
 ```
 
 In the API, use the `disk-encryption-key` parameter in the body of the request.
-```
+```curl
 curl -X POST \
   https://resource-controller.cloud.ibm.com/v2/resource_instances \
   -H 'Authorization: Bearer <>' \

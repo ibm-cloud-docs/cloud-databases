@@ -180,70 +180,69 @@ Once the branch is cloned, select the appropriate directory for the database you
 
 14. Build and push the application's Docker image to your {{site.data.keyword.registryshort_notm}}. Specify the appropriate region and give the container a name.
 
-   ```shell
-   ibmcloud cr build -t <region>.icr.io/<namespace>/<container_name> .
-   ```
-   {: pre}
+```shell
+ibmcloud cr build -t <region>.icr.io/<namespace>/<container_name> .
+```
+{: pre}
 
-   After it's built, you can view the image in container registry by using
+After it's built, you can view the image in container registry by using
 
-   ```shell
-   ibmcloud cr images
-   ```
-   {: pre}
+```shell
+ibmcloud cr images
+```
+{: pre}
+You get something like the following response
 
-   You get something like the following response
-
-   ```shell
-   REPOSITORY                                TAG      DIGEST         NAMESPACE   CREATED       SIZE    SECURITY STATUS
-   <region>.icr.io/mynamespace/container_name latest   81c3959ea657   mynamespace 4 hours ago   28 MB   No Issues
-   ```
-   {: screen}
+```shell
+REPOSITORY                                TAG      DIGEST        NAMESPACE   CREATED       SIZE    SECURITY STATUS
+<region>.icr.io/mynamespace/container_name latest   81c3959ea657  mynamespace 4 hours ago   28 MB   No Issues
+```
+{: screen}
 
 15. Update the Kubernetes deployment configuration file `clouddb-deployment.yaml`.
 
-   Change the `image` name to the repository name that you got from the previous step:
+Change the `image` name to the repository name that you got from the previous step:
 
-   ```yaml
-   image: "<region>.icr.io/mynamespace/<container_name>" # Edit me
-   ```
-   {: pre}
+```yaml
+image: "<region>.icr.io/mynamespace/<container_name>" # Edit me
+```
+{: pre}
 
-   Now, under `secretKeyRef`, change the name of `<db-secret-name>` to match the name of the secret that was created when you bound your database deployment to your Kubernetes cluster.
+Now, under `secretKeyRef`, change the name of `<db-secret-name>` to match the name of the secret that was created when you bound your database deployment to your Kubernetes cluster.
 
-   ```yaml
-   secretKeyRef:
-     name: <db-secret-name> # Edit me
-   ```
-   {: pre}
+```yaml
+secretKeyRef:
+   name: <db-secret-name> # Edit me
+```
+{: pre}
 
-   As for the `service` configuration at the bottom of the file, [`nodePort`](/docs/containers?topic=containers-nodeport) indicates the port that the application can be accessed from. You have ports in the range 30000 - 32767 that you can use, but we chose 30081. As for the TCP port, it's set to 8080, which is the port that the Node.js application runs on in the container.
+As for the `service` configuration at the bottom of the file, [`nodePort`](/docs/containers?topic=containers-nodeport) indicates the port that the application can be accessed from. You have ports in the range 30000 - 32767 that you can use, but we chose 30081. As for the TCP port, it's set to 8080, which is the port that the Node.js application runs on in the container.
 
 ## Deploying your Kubernetes App
 
 16. Deploy the application to {{site.data.keyword.containershort_notm}}. When you deploy the application, it is automatically bound to your Kubernetes cluster.
 
-   ```shell
-   kubectl apply -f clouddb-deployment.yaml
-   ```
-   {: pre}
+```shell
+kubectl apply -f clouddb-deployment.yaml
+```
+{: pre}
 
 17. Get the IP for the application.
 
-   ```shell
-   ibmcloud ks workers -c <cluster_name>
-   ```
-   {: pre}
+```shell
+ibmcloud ks workers -c <cluster_name>
+```
+{: pre}
 
-   The result is something like:
+The result is something like:
 
-   ```shell
-   ID                                                 Public IP        Private IP      Machine Type   State    Status   Zone    Version
-   kube-hou02-pa1a59e9fd92f44af9b4147a27a31db5c4-w1   199.199.99.999   10.76.202.188   free           normal   Ready    hou02   1.10.11_1536
-   ```
-   {: screen}
+```shell
+ID                                                 Public IP        PrivateIP      Machine Type   State    Status   Zone    Version
+kube-hou02-pa1a59e9fd92f44af9b4147a27a31db5c4-w1   199.199.99.999   10.76202.188   free           normal   Ready    hou02   1.10.11_1536
+```
+{: screen}
 
-   Now you can access the application from the Public IP from port 30082.
+Now you can access the application from the Public IP from port 30082.
 
 The clouddatabases-helloworld app displays the contents of an _examples_ database. To demonstrate that the app is connected to your service, add some words to the database. The words are displayed as you add them, with the most recently added words displayed first.
 
@@ -258,9 +257,9 @@ The clouddatabases-helloworld app displays the contents of an _examples_ databas
 The app uses a PUT and a GET operation:
 
 - PUT
-    - Takes user input from main.js.
-    - Adds the user input to the database.
+   - Takes user input from main.js.
+   - Adds the user input to the database.
 
 - GET
-    - Retrieves the contents of the database.
-    - Returns the response of the database command to main.js.
+   - Retrieves the contents of the database.
+   - Returns the response of the database command to main.js.

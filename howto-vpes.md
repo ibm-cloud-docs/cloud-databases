@@ -29,8 +29,10 @@ This document covers all the IBM Cloud Databases that includes {{site.data.keywo
 
 ## Using Virtual Private Endpoints
 {: #using-vpes}
+
 Virtual Private Endpoints (VPEs) are generally available in all regions. 
 {: .note}
+
 ### Before you begin
 
 - You need to have an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/registration){: new_window}.
@@ -51,36 +53,36 @@ Virtual Private Endpoints (VPEs) are generally available in all regions.
 5. After you create your VPE, it might take a few minutes for the new VPE and pDNS to complete the process and begin working for your VPC. Completion is confirmed when you see an IP address set in the [details view](/docs/vpc?topic=vpc-vpe-viewing-details-of-an-endpoint-gateway) of the VPE. 
 
 6. To make sure pDNS is functioning for your VPE, `ssh` into your VSI and run `nslookup <instance_hostname>`. The following example shows the output from running `nslookup` on instance hostnames of `host-0.private.databases.appdomain.cloud`, `host-1.private.databases.appdomain.cloud`, and `host-2.private.databases.appdomain.cloud`:
-    ```
-    root@test-vpc-vsi:~# nslookup host-0.private.databases.appdomain.cloud
-    Server:		127.0.0.53
-    Address:	127.0.0.53#53
-    Non-authoritative answer:
-    Name:	host-0.private.databases.appdomain.cloud
-    Address: 10.240.64.6
-    ```
-    ```
-    root@test-vpc-vsi:~# nslookup host-1.private.databases.appdomain.cloud
-    Server:		127.0.0.53
-    Address:	127.0.0.53#53
-    Non-authoritative answer:
-    Name:	host-1.private.databases.appdomain.cloud
-    Address: 10.240.64.6
-    ```
-    ```
-    root@test-vpc-vsi:~# nslookup host-2.private.databases.appdomain.cloud
-    Server:		127.0.0.53
-    Address:	127.0.0.53#53
-    Non-authoritative answer:
-    Name:	host-2.private.databases.appdomain.cloud
-    Address: 10.240.64.6    < ---- your VPE IP address
-    ```
+```bash
+root@test-vpc-vsi:~# nslookup host-0.private.databases.appdomain.cloud
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+Non-authoritative answer:
+Name:	host-0.private.databases.appdomain.cloud
+Address: 10.240.64.6
+```
+```bash
+root@test-vpc-vsi:~# nslookup host-1.private.databases.appdomain.cloud
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+Non-authoritative answer:
+Name:	host-1.private.databases.appdomain.cloud
+Address: 10.240.64.6
+```
+```bash
+root@test-vpc-vsi:~# nslookup host-2.private.databases.appdomain.cloud
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+Non-authoritative answer:
+Name:	host-2.private.databases.appdomain.cloud
+Address: 10.240.64.6    < ---- your VPE IP address
+```
 
 7. You can now use your instance in the VSI. For example, 
 
-    ```
-    $ mongo -u $USERNAME -p $PASSWORD --tls --tlsCAFile /root/ca --authenticationDatabase admin --host replset/host-0.private.databases.appdomain.cloud:30066,host-1.private.databases.appdomain.cloud:30066,host-2.private.databases.appdomain.cloud:30066
-    ```
+```bash
+$ mongo -u $USERNAME -p $PASSWORD --tls --tlsCAFile /root/c--authenticationDatabase admin --host replset/host-0.private.databaseappdomain.cloud:30066,host-1.private.databases.appdomain.cloud:30066,host-private.databases.appdomain.cloud:30066
+```
 
  
 ### More resources
