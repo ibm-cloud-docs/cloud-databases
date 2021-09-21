@@ -77,7 +77,7 @@ Remember the database deployment name.
 ibmcloud resource service-alias-create alias-name --instance-name instance-name
 ```
 
-3. Cloud Foundry uses the alias to represent the database deployment as a Cloud Foundry service. The alias name can be the same as the database service instance name. So, for an "example-deployment" database the command is
+3. Cloud Foundry uses the alias to represent the database deployment as a Cloud Foundry service. The alias name can be the same as the database service instance name. So, for an   `example-deployment` database the command is as follows:
    ```shell
    ibmcloud resource service-alias-create example-deployment --instance-name example-deployment
    ```
