@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2020
-lastupdated: "2020-08-04"
+lastupdated: "2020-09-20"
 
 subcollection: cloud-databases
 
@@ -35,9 +35,9 @@ Once the branch is cloned, you can select the appropriate directory for the data
 ## Installing the app dependencies
 
 Use `npm` to install dependencies. From your console, change the directory to where the sample app is located and install the dependencies that are listed in the `package.json` file.
-  ```
-  npm install
-  ```
+```bash
+npm install
+```
 
 ## Connecting to IBM Cloud
 
@@ -45,19 +45,19 @@ Use `npm` to install dependencies. From your console, change the directory to wh
 
 2. [Download and install IBM Cloud CLI](/docs/cli?topic=cli-install-ibmcloud-cli)
 
-    The IBM Cloud CLI tool enables you to communicate with IBM Cloud from your console or command line.
+   The IBM Cloud CLI tool enables you to communicate with IBM Cloud from your console or command line.
 
 3. Connect to IBM Cloud in the command-line tool and follow the prompts to log in.
 
-    ```shell
-    ibmcloud login
-    ```
+```shell
+ibmcloud login
+```
 
-    **Note:** If you have a federated user ID, use the `ibmcloud login --sso` command to log in with your single sign-on ID.
+**Note:** If you have a federated user ID, use the `ibmcloud login --sso` command to log in with your single sign-on ID.
 
- ## Creating a database deployment
+## Creating a database deployment
 
-The database can be created from the command line by using the `ibmcloud resource service-instance-create` command. The command takes a service instance name, a service name, plan name, and location. The service name is one of the {{site.data.keyword.databases-for}} services, `databases-for-datastax`,`databases-for-elasticsearch`, `databases-for-enterprisedb`, `databases-for-etcd`, `databases-for-mongodb`, `databases-for-postgresql`, `databases-for-redis`, or `messages-for-rabbitmq`.
+The database can be created from the command line by using the `ibmcloud resource service-instance-create` command. The command takes a service instance name, a service name, plan name, and location. The service name is one of the {{site.data.keyword.databases-for}} services, `databases-for-datastax`,`databases-for-elasticsearch`, `databases-for-enterprisedb`, `databases-for-etcd`, `databases-for-mongodb`, `databases-for-postgresql`, `databases-for-redis`, `messages-for-rabbitmq`, or `databases-for-mysql`.
 ```shell
 ibmcloud resource service-instance-create <your_deployment_name> <service_name> standard <region>
 ```
@@ -68,33 +68,33 @@ Remember the database deployment name.
 ## Creating a Cloud Foundry alias for the deployment
 
 1. Target the correct IBM Cloud Cloud Foundry org and space, and choose where you are going to push the application code to.
-```shell
-ibmcloud target --cf
-```
+   ```shell
+   ibmcloud target --cf
+   ```
 
 2. Create a Cloud Foundry alias for your database deployment.
 ```shell
 ibmcloud resource service-alias-create alias-name --instance-name instance-name
 ```
 
-Cloud Foundry uses the alias to represent the database deployment as a Cloud Foundry service. The alias name can be the same as the database service instance name. So, for an "example-deployment" database the command is
-```shell
-ibmcloud resource service-alias-create example-deployment --instance-name example-deployment
-```
+3. Cloud Foundry uses the alias to represent the database deployment as a Cloud Foundry service. The alias name can be the same as the database service instance name. So, for an   `example-deployment` database the command is as follows:
+   ```shell
+   ibmcloud resource service-alias-create example-deployment --instance-name example-deployment
+   ```
 
 ## Configuring the app with Cloud Foundry
 
 `cd` into the application's directory.  For now, the only file you need to update is the application manifest.
-  ```
-  ---
-  applications:
-  - name:    example-helloworld
-    routes:
-    - route: example-helloworld.us-south.cf.appdomain.cloud
-    memory:  128M
-    services:
-      - example-deployment
-  ```
+```bash
+---
+applications:
+- name:    example-helloworld
+  routes:
+  - route: example-helloworld.us-south.cf.appdomain.cloud
+  memory:  128M
+  services:
+    - example-deployment
+```
 
 1. Change the `name` value. The value that you choose is set as the name of the app as it appears in your Resource List. 
 
@@ -120,9 +120,9 @@ The code for connecting to the deployment and reading from and updating the data
 The app uses a PUT and a GET operation:
 
 - PUT
-  - Takes user input from main.js.
-  - Adds the user input to the database.
+   - Takes user input from main.js.
+   - Adds the user input to the database.
 
 - GET
-  - Retrieves the contents of the database.
-  - Returns the response of the database command to main.js.
+   - Retrieves the contents of the database.
+   - Returns the response of the database command to main.js.
