@@ -28,18 +28,19 @@ Each Git branch of the examples repository corresponds to samples in a particula
 
 Clone the repository of the language that you want to use. For instance, you can clone the **Node** repository by selecting the **Node** branch. Then, click **Clone or download** to get the URL you need to clone by using SSH or HTTPS. In your console, the command looks like:
 
-```shell
-git clone -b node git@github.com:IBM-Cloud/clouddatabases-helloworld-kubernetes-examples.git
-```
-{: pre}
+   ```shell
+   git clone -b node git@github.com:IBM-Cloud/clouddatabases-helloworld-kubernetes-examples.git
+   ```
+   {: pre}
 
 Or for [cloning by using HTTPS](https://docs.github.com/en/github/using-git/which-remote-url-should-i-use#cloning-with-https-urls-recommended):
-```
-git clone -b node https://github.com/IBM-Cloud/clouddatabases-helloworld-kubernetes-examples.git
-```
-{: pre}
 
-Once the branch is cloned, select the appropriate directory for the database you want to try out. Each database has its own copy of these instructions on how to provision and deploy a database or message queue and an application on {{site.data.keyword.containerlong_notm}}.
+   ```
+   git clone -b node https://github.com/IBM-Cloud/clouddatabases-helloworld-kubernetes-examples.git
+   ```
+   {: pre}
+
+   Once the branch is cloned, select the appropriate directory for the database you want to try out. Each database has its own copy of these instructions on how to provision and deploy a database or message queue and an application on {{site.data.keyword.containerlong_notm}}.
 
 ## Running on {{site.data.keyword.cloud_notm}}
 
@@ -87,21 +88,21 @@ Once the branch is cloned, select the appropriate directory for the database you
 
 ## Creating your database
 
-- Create your database deployment.
+1. Create your database deployment.
 
-This process creates a standard database instance in the service you specify that incurs additional charges in your selected plan.
-{: note}
+   This process creates a standard database instance in the service you specify that incurs additional charges in your selected plan.
+   {: note}
 
-- The database can be created from the command line by using the `ibmcloud resource service-instance-create` command. The command takes a service instance name, a service name, plan name, and location. 
+2. The database can be created from the command line by using the `ibmcloud resource service-instance-create` command. The command takes a service instance name, a service name, plan name, and location. 
     
-- The service name is one of the {{site.data.keyword.databases-for}} services, `databases-for-datastax`, `databases-for-elasticsearch`, `databases-for-enterprisedb`, `databases-for-etcd`, `databases-for-mongodb`, `databases-for-postgresql`, `databases-for-redis`, `messages-for-rabbitmq`, or `databases-for-mysql`.
+3. The service name is one of the {{site.data.keyword.databases-for}} services, `databases-for-datastax`, `databases-for-elasticsearch`, `databases-for-enterprisedb`, `databases-for-etcd`, `databases-for-mongodb`, `databases-for-postgresql`, `databases-for-redis`, `messages-for-rabbitmq`, or `databases-for-mysql`.
    
-```shell
-ibmcloud resource service-instance-create <your_deployment_name> <service_name> standard <region>
-```
-{: pre}
+   ```shell
+   ibmcloud resource service-instance-create <your_deployment_name> <service_name> standard <region>
+   ```
+   {: pre}
 
-- Remember the database deployment name. Find your [region identifier here](/docs/cloud-databases?topic=cloud-databases-allowlisting#allowlist-ips).
+Remember the database deployment name. Find your [region identifier here](/docs/cloud-databases?topic=cloud-databases-allowlisting#allowlist-ips).
 {: tip}
 
 ## Configuring the Kubernetes App
@@ -150,97 +151,97 @@ ibmcloud resource service-instance-create <your_deployment_name> <service_name> 
 
 5. Verify that the Kubernetes secret was created in your cluster namespace. Kubernetes uses secrets to store confidential information like the {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IAM) API key and the URL that the container uses to gain access. Running the following commands to first Set the cluster as the context for this session and then get the API key for accessing the instance of your deployment that's provisioned in your account.
 
-```shell
-ibmcloud ks cluster config --cluster <cluster_name_or_ID>
-```
-{: pre}
+   ```shell
+   ibmcloud ks cluster config --cluster <cluster_name_or_ID>
+   ```
+   {: pre}
 
-then
+   then
 
-```shell
-kubectl get secrets --namespace=default
-```
-{: pre}
+   ```shell
+   kubectl get secrets --namespace=default
+   ```
+   {: pre}
 
-Save the name of the secret that was generated when you bound `your_database_name` to your Kubernetes service.
-{: note}
+   Save the name of the secret that was generated when you bound `your_database_name` to your Kubernetes service.
+   {: note}
 
 6. If you haven't already, clone the app in one of the available languages to your local environment from your console by using the following command
 
-```shell
-git clone -b <language> git@github.com:IBM-Cloud/clouddatabases-helloworld-kubernetes-examples.git
-```
-{: pre}
+   ```shell
+   git clone -b <language> git@github.com:IBM-Cloud/clouddatabases-helloworld-kubernetes-examples.git
+   ```
+   {: pre}
 
 7. `cd` into this newly created directory, and `cd` into the database folder. The code for connecting to the service, and reading from and updating the database can be found in `server.js`. See [Code Structure](#code-structures) and the code comments for information on the app's functions. There's also a `public` directory, which contains the html, stylesheets, and JavaScript for the web app. But, to get the application to work, we first need to push the Docker image of this application to our {{site.data.keyword.registryshort_notm}}.
 
 8. Build and push the application's Docker image to your {{site.data.keyword.registryshort_notm}}. Specify the appropriate region and give the container a name.
 
-```shell
-ibmcloud cr build -t <region>.icr.io/<namespace>/<container_name> .
-```
-{: pre}
+   ```shell
+   ibmcloud cr build -t <region>.icr.io/<namespace>/<container_name> .
+   ```
+   {: pre}
 
-After it's built, you can view the image in container registry by using
+   After it's built, you can view the image in container registry by using
 
-```shell
-ibmcloud cr images
-```
-{: pre}
-You get something like the following response
+   ```shell
+   ibmcloud cr images
+   ```
+   {: pre}
+   You get something like the following response
 
-```shell
-REPOSITORY                                TAG      DIGEST        NAMESPACE   CREATED       SIZE    SECURITY STATUS
-<region>.icr.io/mynamespace/container_name latest   81c3959ea657  mynamespace 4 hours ago   28 MB   No Issues
-```
-{: screen}
+   ```shell
+   REPOSITORY                                TAG      DIGEST        NAMESPACE   CREATED       SIZE    SECURITY STATUS
+   <region>.icr.io/mynamespace/container_name latest   81c3959ea657  mynamespace 4 hours ago   28 MB   No Issues
+   ```
+   {: screen}
 
 9. Update the Kubernetes deployment configuration file `clouddb-deployment.yaml`.
 
-Change the `image` name to the repository name that you got from the previous step:
+   Change the `image` name to the repository name that you got from the previous step:
 
-```yaml
-image: "<region>.icr.io/mynamespace/<container_name>" # Edit me
-```
-{: pre}
+   ```yaml
+   image: "<region>.icr.io/mynamespace/<container_name>" # Edit me
+   ```
+   {: pre}
 
-Now, under `secretKeyRef`, change the name of `<db-secret-name>` to match the name of the secret that was created when you bound your database deployment to your Kubernetes cluster.
+   Now, under `secretKeyRef`, change the name of `<db-secret-name>` to match the name of the secret that was created when you bound your database deployment to your Kubernetes    cluster.
 
-```yaml
-secretKeyRef:
-   name: <db-secret-name> # Edit me
-```
-{: pre}
+   ```yaml
+   secretKeyRef:
+      name: <db-secret-name> # Edit me
+   ```
+   {: pre}
 
-As for the `service` configuration at the bottom of the file, [`nodePort`](/docs/containers?topic=containers-nodeport) indicates the port that the application can be accessed from. You have ports in the range 30000 - 32767 that you can use, but we chose 30081. As for the TCP port, it's set to 8080, which is the port that the Node.js application runs on in the container.
+   As for the `service` configuration at the bottom of the file, [`nodePort`](/docs/containers?topic=containers-nodeport) indicates the port that the application can be accessed from. You have ports in the range 30000 - 32767 that you can use, but we chose 30081. As for the TCP port, it's set to 8080, which is the port the Node.js application runs on in the container.
 
 ## Deploying your Kubernetes App
 
 1. Deploy the application to {{site.data.keyword.containershort_notm}}. When you deploy the application, it is automatically bound to your Kubernetes cluster.
 
-```shell
-kubectl apply -f clouddb-deployment.yaml
-```
-{: pre}
+   ```shell
+   kubectl apply -f clouddb-deployment.yaml
+   ```
+   {: pre}
 
 2. Get the IP for the application.
 
-```shell
-ibmcloud ks workers -c <cluster_name>
-```
-{: pre}
+   ```shell
+   ibmcloud ks workers -c <cluster_name>
+   ```
+   {: pre}
 
-The result is something like:
+   The result is something like:
 
-```shell
-ID                                                 Public IP        PrivateIP      Machine Type   State    Status   Zone    Version
-kube-hou02-pa1a59e9fd92f44af9b4147a27a31db5c4-w1   199.199.99.999   10.76202.188   free           normal   Ready    hou02   1.10.11_1536
-```
-{: screen}
+   ```shell
+   ID                                                 Public IP        PrivateIP      Machine Type   State    Status   Zone    Version
+   kube-hou02-pa1a59e9fd92f44af9b4147a27a31db5c4-w1   199.199.99.999   10.76202.188   free           normal   Ready    hou02   1.10.11_1536
+   ```
+   {: screen}
 
-Now you can access the application from the Public IP from port 30082.
+   Now you can access the application from the Public IP from port 30082.
 
-The clouddatabases-helloworld app displays the contents of an _examples_ database. To demonstrate that the app is connected to your service, add some words to the database. The words are displayed as you add them, with the most recently added words displayed first.
+   The clouddatabases-helloworld app displays the contents of an _examples_ database. To demonstrate that the app is connected to your service, add some words to the database. The words are displayed as you add them, with the most recently added words displayed first.
 
 ## Code Structure
 {: #code-structures}
