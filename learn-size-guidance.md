@@ -64,7 +64,7 @@ The response looks something like
 {"id":"5aaa501edra466001a1bf6c1","name":"spicy-mongodb-22"}
 ```
 
-With the deployment IDs, you can extract the RAM and storage that is allocated to each data member of a deployment by using the [`/deployments/<deployment id>/scalings`]() endpoint. For example, the request for the `spicy-mongodb-22` deployment is
+With the deployment IDs, you can extract the RAM and storage that is allocated to each data member of a deployment by using the `/deployments/<deployment id>/scalings` endpoint. For example, the request for the `spicy-mongodb-22` deployment is
 ```curl
 curl -s -X GET -H "Authorization: Bearer $token" \ 
     -H "Content-Type: application/json" \ 
@@ -203,7 +203,7 @@ ibmcloud resource service-instance-create <name> databases-for-postgresql standa
 ```
 
 Assume that you have 510 MB of RAM and 5 GB of storage that is allocated to a Compose for PostgreSQL deployment and you want to provision a Databases for PostgreSQL database. The estimation function in the previous section accepts the per-member allocation in MB for your Compose deployment as returned by the API in Step 1.  So, using 510 MB RAM into the estimation function yields 
-```
+```bash
 >>> estimate(510, “postgresql”) Per-Member: 
     RAM: 1 GB, CPUs: 3, disk: 128 GB 
 Total Allocation: 
@@ -213,7 +213,7 @@ The recommendation is to provision an IBM Cloud Databases deployment with 1 GB o
 
 The IBM Cloud CLI requires you to send the total resource allocation for the IBM Cloud 
 Databases deployment in the provision request.  So use numbers from the "Total Allocation" and plug them into the IBM Cloud CLI command
-``` 
+```bash
 ibmcloud resource service-instance-create <name> databases-for-postgresql standard <region> -p '{"members_memory_allocation_mb": "2048", "members_disk_allocation_mb": "262144", "members_cpu_allocation_count": "6" }' 
 ```
 
