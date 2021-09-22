@@ -1,4 +1,3 @@
-
 ---
 
 copyright:
@@ -69,7 +68,7 @@ To set up your NetApp ONTAP-SAN storage (20.07), refer to [Setting up NetApp sto
 
 To get a list of NetApp-supported templates, use the following command:
 
-```
+```bash
 $ibmcloud sat storage templates | grep "NetApp Ontap"
 ```
 {: .pre}
@@ -78,7 +77,7 @@ $ibmcloud sat storage templates | grep "NetApp Ontap"
 #### Create a storage configuration based on your NetApp back end
 
 - Operator configuration:
-```
+```bash
 	$ibmcloud sat storage config create 
 	  --location ${LOCATION_ID} 
 	  --name ${OPERATORCONFIGNAME}  
@@ -87,7 +86,7 @@ $ibmcloud sat storage templates | grep "NetApp Ontap"
 ```
 
 - SAN configuration:
-```
+```bash
 	$ibmcloud sat storage config create 
 	  --location ${LOCATION_ID} 
 	  --name ${SANCONFIGNAME}  
@@ -146,7 +145,7 @@ Note that the first database you provision into a location will remain "Provisio
 {: .important}
 
 First, obtain your `ROKS-Service-cluster-ID` by entering the following command into the IBM Cloud CLI:
-```
+```bash
 ic sat service ls  --location <location name/location id>
 ```
 {: pre}
@@ -155,14 +154,14 @@ The output of the command will include the Cluster ID of the newly created Satel
 
 Use the Cluster ID as an input parameter for `--service-cluster-id` in the following AWS Satellite location storage assignment commands:
 Use the following commands:
-```
+```bash
 	$ibmcloud sat storage assignment create 
 	  --name ${OPERATORASSIGNMENTNAME} 
 	  --service-cluster-id ${SERVICECLUSTERID} 
 	  --config ${OPERATORCONFIGNAME} 
 ```
 
-```
+```bash
         $ibmcloud sat storage assignment create 
 	  --name ${SANASSIGNMENTNAME} 
 	  --service-cluster-id ${SERVICECLUSTERID} 
