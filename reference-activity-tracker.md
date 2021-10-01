@@ -31,6 +31,7 @@ Deployment Region | Activity Tracker Region
 ----------|-----------
 `us-south` | `us-south`
 `jp-tok` | `jp-tok`
+`jp-osa` | `jp-tok`
 `eu-gb` | `eu-gb`
 `seo01` | `jp-tok`
 `che01` | `che01`
@@ -40,7 +41,7 @@ Deployment Region | Activity Tracker Region
 `ca-tor` | `ca-tor`
 {: caption="Table 1. Activity Tracker regions" caption-side="top"}
 
-Events from your deployments appear in an Activity Tracker instance in the same region, except for `seo01`. Deployments in `seo01` have events that are forwarded to `jp-tok`. If you have deployments in multiple regions, you must set up the Activity Tracker in multiple regions. 
+Events from your deployments appear in an Activity Tracker instance in the same region, except for `seo01` and `jp-osa`. Deployments in `seo01` have events that are forwarded to `jp-tok` and `jp-osa` is forwarded to `jp-tok`. If you have deployments in multiple regions, you must set up the Activity Tracker in multiple regions. 
 
 ## Activity Tracker
 
