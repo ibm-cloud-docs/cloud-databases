@@ -1,7 +1,7 @@
 ---
 
 copyright:
-years: 2021
+  years: 2021
 lastupdated: "2021-08-30"
 
 keywords: IBM Cloud, databases, Satellite, ICD
@@ -10,6 +10,7 @@ subcollection: cloud-databases
 
 content-type: tutorial
 completion-time: 15m
+services: cloud-databases, satellite
 
 ---
 
@@ -45,10 +46,14 @@ completion-time: 15m
 
 # Setting up Amazon Web Services Location
 {: #satellite-aws}
+{: toc-content-type="tutorial"}
+{: toc-completion-time="15m"}
+{: toc-services="cloud-databases, satellite"}
 
 Follow the steps below to set up IBM Cloud™ Databases (ICD) enabled by IBM Cloud Satellite in an on-premises location.
 
-## Step 1: Prepare a Satellite location for IBM Cloud™ Databases
+## Prepare a Satellite location for IBM Cloud™ Databases
+{: step}
 
 Before deploying the ICD enabled by IBM Cloud Satellite service, you should prepare your Satellite location.
 
@@ -79,6 +84,7 @@ ibmcloud sat storage config create  \\
   -p "aws-access-key=${SAT_EBS_ADMIN_KEY_ID}" \\
   -p "aws-secret-access-key=${SAT_EBS_ADMIN_KEY}"
 ```
+{: pre}
 
 ### Enable public endpoints on the Satellite Control Plane
 
@@ -91,10 +97,12 @@ Then, using the IP's from your AWS portal, enter the following command:
 ibmcloud sat location dns register --location <location> --ip <public-ip1> --ip <public-ip2> --ip <public-ip3>
 
 ```
+{: pre}
 
 For more information on accessing clusters, refer to [Accessing clusters from the public network](/docs/openshift?topic=openshift-access_cluster#sat_public_access).
 
-## Step 2: Grant a service authorization
+## Grant a service authorization
+{: step}
 
 Begin by configuring IAM Authorizations:
 
@@ -110,7 +118,8 @@ Begin by configuring IAM Authorizations:
         - **Satellite Link Source Access Controller**
     - Then **Authorize**.
 
-## Step 3: Provisioning ICD Satellite Deployment
+## Provisioning ICD Satellite Deployment
+{: step}
 
 Once you have prepared your satellite location and granted service authorization, you can provision your ICD Satellite Deployment by selecting the Satellite location you have created in the **Location** dropdown of the provisioning page. For thorough documentation of the provisioning process, see the relevant [Provisioning documentation](/docs/cloud-databases?topic=cloud-databases-provisioning) for your ICD Satellite deployment. Once you have created a new service instance, this instance will appear in the IBM Cloud `Resource List` as `Provisioned`.
 
@@ -129,12 +138,13 @@ Once the service cluster is created, you must create a storage assignment manual
 When the service cluster is available in your Satellite location, the next step is to create a Satellite storage assignment. This will allow the service cluster to create volumes on the previously configured storage.
 
 Note that the first database you provision into a location will remain "Provision In Progress" until this step has been completed.
-{: .important}
+{: important}
 
 Refer to [AWS EBS IBM Cloud Satellite documentation](/docs/satellite?topic=satellite-config-storage-ebs) for more information regarding AWS EBS.
-{: .note}
+{: note}
 
 First, obtain your `ROKS-Service-cluster-ID` by entering the following command into the IBM Cloud CLI:
+
 ```bash
 ic sat service ls  --location <location name/location id>
 ```
@@ -143,10 +153,13 @@ ic sat service ls  --location <location name/location id>
 The output of the command will include the Cluster ID of the newly created Satellite service cluster. 
 
 Use the Cluster ID as an input parameter for `--service-cluster-id` in the following AWS Satellite location storage assignment command:
+
 ```bash
 ibmcloud sat storage assignment create  \\
     --name "ebs-assignment"  \\
     --service-cluster-id <ROKS-Service-cluster-ID>  \\
     --config 'aws-ebs-config-storage-testing-1'
 ```
+{: pre}
+
 After the storage assignment has been created, allow up to 30 minutes for the database instance to be ready for usage.

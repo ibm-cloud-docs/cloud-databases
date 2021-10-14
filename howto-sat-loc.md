@@ -1,15 +1,12 @@
 ---
 
 copyright:
-years: 2021
+  years: 2021
 lastupdated: "2021-08-30"
 
 keywords: IBM Cloud, databases, Satellite, ICD
 
 subcollection: cloud-databases
-
-content-type: tutorial
-completion-time: 15m
 
 ---
 
