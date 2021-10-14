@@ -169,6 +169,7 @@ Backup location differs per database region. You should ensure the backup region
 | Toronto |	Montreal Object Storage |
 | Chennai |	Chennai Object Storage |
 | Seoul |	Seoul Object Storage |
+| Sao Paolo | Sao Paolo Object Storage |
 {: caption="Table 1. Database and Backup Regions" caption-side="bottom"}
 
 For more details about {{site.data.keyword.databases-for}} Object Storage locations, please review the location's [documentation](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-geo).
