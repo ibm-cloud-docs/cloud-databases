@@ -45,7 +45,6 @@ services: cloud-databases, satellite
 {:api: .ph data-hd-interface='api'}
 
 # Setting up On-Premises Location with NetApp ONTAP-SAN storage
-
 {: #satellite-on-prem}
 {: toc-content-type="tutorial"}
 {: toc-completion-time="15m"}
