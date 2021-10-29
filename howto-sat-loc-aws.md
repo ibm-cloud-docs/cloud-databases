@@ -4,7 +4,7 @@ copyright:
   years: 2021
 lastupdated: "2021-10-14"
 
-keywords: IBM Cloud, databases, Satellite, ICD
+keywords: IBM Cloud, databases, ICD
 
 subcollection: cloud-databases
 
