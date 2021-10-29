@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-30"
+lastupdated: "2021-10-28"
 
-keywords: IBM Cloud, databases, Satellite, ICD
+keywords: IBM Cloud, databases, ICD
 
 subcollection: cloud-databases
 
@@ -45,6 +45,7 @@ services: cloud-databases, satellite
 {:api: .ph data-hd-interface='api'}
 
 # Setting up On-Premises Location with NetApp ONTAP-SAN storage
+
 {: #satellite-on-prem}
 {: toc-content-type="tutorial"}
 {: toc-completion-time="15m"}
@@ -53,6 +54,7 @@ services: cloud-databases, satellite
 Before deploying the ICD enabled by IBM Cloud Satellite service, you should prepare your Satellite location. Follow the steps below to set up IBM Cloud™ Databases (ICD) enabled by IBM Cloud Satellite in an on-premises location.
 
 ## Prepare an on-premises Satellite location for IBM Cloud Databases
+
 {: step}
 
 ### Attach additional hosts to the Satellite location
