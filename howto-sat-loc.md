@@ -2,9 +2,9 @@
 
 copyright:
 years: 2021
-lastupdated: "2021-08-30"
+lastupdated: "2021-10-28"
 
-keywords: IBM Cloud, databases, Satellite, ICD
+keywords: IBM Cloud, databases, ICD
 
 subcollection: cloud-databases
 
@@ -56,7 +56,7 @@ ICD enabled by IBM Cloud Satellite supports {{site.data.keyword.databases-for-et
 Before proceeding, you should refer to the [Satellite Usage requirements](/docs/satellite?topic=satellite-requirements).
 {: .tip}
 
-## Before you begin:
+## Before you begin
 
 - Be sure you have set up the [IBM Cloud command-line interface (CLI)](/docs/satellite?topic=satellite-setup-cli), the plug-in for Satellite commands, and other related CLIs.
 - If you have not already created a Satellite location, see [Setting up Satellite locations](/docs/satellite?topic=satellite-locations). We recommend following the steps in the [Manually creating Satellite locations](/docs/satellite?topic=satellite-locations#location-create) documentation.
