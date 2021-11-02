@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-21"
+lastupdated: "2021-11-02"
 
 subcollection: cloud-databases
 
@@ -41,6 +41,7 @@ If a complete region failure occurs, the database servers in the region might no
 It is your responsibility to [create a new service instance](/docs/cloud-databases?topic=cloud-databases-provisioning) in which to restore to when the {{site.data.keyword.cloud}} Databases platform has been restored. You are also responsible for testing the validity and restore time of your backups. For more information on your responsibilities, see [Disaster recovery](/docs/cloud-databases?topic=cloud-databases-responsibilities-cloud-databases#disaster-recovery-responsibilities) in the *Responsibilities for Cloud Databases* page.
 
 ## Application-level high availability
+{: #application-ha}
 
 Applications that communicate over networks and cloud services are subject to transient connection failures. You want to design your applications to retry connections when errors are caused by a temporary loss in connectivity to your deployment or to {{site.data.keyword.cloud_notm}}.
 
@@ -53,6 +54,8 @@ Several minutes of database unavailability or connection interruptions are not e
 If you have deployments in more than one region, you must provision {{site.data.keyword.monitoringlong}} and enable platform metrics in each region. For more information on enabling {{site.data.keyword.monitoringlong_notm}}, see your {{site.data.keyword.databases-for}} deployment's *{{site.data.keyword.monitoringlong_notm}}* page
 
 ## SLAs
+{: #sla}
+
 See [How do I ensure zero downtime?](/docs/overview?topic=overview-zero-downtime#zero-downtime) to learn more about the high availability and disaster recovery standards in {{site.data.keyword.cloud_notm}}.
 
 All {{site.data.keyword.cloud}} Databases general availability (GA) offerings conform to the {{site.data.keyword.cloud}} [Service Level Agreement](/docs/overview?topic=overview-slas) (SLA) terms.
