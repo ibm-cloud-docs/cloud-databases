@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2020
-lastupdated: "2020-09-20"
+lastupdated: "2020-11-02"
 
 subcollection: cloud-databases
 
@@ -23,6 +23,7 @@ This tutorial uses a [sample app](https://github.com/IBM-Cloud/clouddatabases-he
 Each Git branch of the [repository](https://github.com/IBM-Cloud/clouddatabases-helloworld-cloudfoundry-examples) corresponds to samples in a particular programming language. For example, when you click **Branch** you see a **Node** branch, where all examples are written in JavaScript that uses Node.js. The files in each folder correspond to either a database or a message queue. 
 
 ## Cloning the Hello World sample app from GitHub
+{: #clone-sample-app}
 
 Clone the repository of the language that you want to use. For instance, you can clone the **Node** repository by selecting the **Node** branch. Then, click **Clone or download** to get the URL you need to clone by using SSH or HTTPS. In your console, the command looks like
 
@@ -33,6 +34,7 @@ git clone -b node git@github.com:IBM-Cloud/clouddatabases-helloworld-cloudfoundr
 Once the branch is cloned, you can select the appropriate directory for the database you want to try out. Each database has its own copy of these instructions on how to provision and deploy a database or message queue and an application on {{site.data.keyword.containerlong_notm}}.
 
 ## Installing the app dependencies
+{: #install-app-dependencies}
 
 Use `npm` to install dependencies. From your console, change the directory to where the sample app is located and install the dependencies that are listed in the `package.json` file.
 ```bash
@@ -40,6 +42,7 @@ npm install
 ```
 
 ## Connecting to IBM Cloud
+{: #connect-ibm-cloud}
 
 1. If you do not already have an IBM Cloud account, [sign up here](https://cloud.ibm.com/registration/)
 
@@ -56,6 +59,7 @@ ibmcloud login
 **Note:** If you have a federated user ID, use the `ibmcloud login --sso` command to log in with your single sign-on ID.
 
 ## Creating a database deployment
+{: #create-database-deployment}
 
 The database can be created from the command line by using the `ibmcloud resource service-instance-create` command. The command takes a service instance name, a service name, plan name, and location. The service name is one of the {{site.data.keyword.databases-for}} services, `databases-for-datastax`,`databases-for-elasticsearch`, `databases-for-enterprisedb`, `databases-for-etcd`, `databases-for-mongodb`, `databases-for-postgresql`, `databases-for-redis`, `messages-for-rabbitmq`, or `databases-for-mysql`.
 ```shell
@@ -66,6 +70,7 @@ Remember the database deployment name.
 {: .tip}
 
 ## Creating a Cloud Foundry alias for the deployment
+{: #create-cloud-foundry-alias}
 
 1. Target the correct IBM Cloud Cloud Foundry org and space, and choose where you are going to push the application code to.
    ```shell
@@ -83,6 +88,7 @@ Remember the database deployment name.
    ```
 
 ## Configuring the app with Cloud Foundry
+{: #configure-app}
 
 `cd` into the application's directory.  For now, the only file you need to update is the application manifest.
 ```bash
@@ -103,12 +109,14 @@ applications:
 3. Update the `service` value in `manifest.yml` to match the name of your deployment's Cloud Foundry alias.
 
 4. Push the app to IBM Cloud. When you push the app, it is automatically bound to the service.
+
 ```shell
 ibmcloud cf push
 ```
 Your application is now running at host you entered as the value for the `route` in `manifest.yml`.
 
 ## Code Structuring
+{: #code-structure}
 
 The code for connecting to the deployment and reading from and updating the database can be found in the `server` file. There's also `template` and `static` directories, which contain the html, stylesheets and JavaScript for the web app.
 
@@ -116,6 +124,7 @@ The code for connecting to the deployment and reading from and updating the data
 | ---- | ----------- |
 |**server**|Establishes a connection to the database by using credentials from VCAP_ENV and handles create and read operations on the database. |
 |**main.js**|Handles user input for a PUT command and parses the results of a GET command to output the contents of the database.|
+{: caption="Table 1. server and main.js info" caption-side="bottom"}
 
 The app uses a PUT and a GET operation:
 
