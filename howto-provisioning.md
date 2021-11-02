@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-08-04"
+lastupdated: "2021-11-02"
 
 keywords: provision cloud databases, databases with terraform, provisioning parameters
 
@@ -38,6 +38,7 @@ Messages for RabbitMQ|[Link](https://cloud.ibm.com/catalog/services/messages-for
 {: caption="Table 1. {{site.data.keyword.databases-for}} deployments" caption-side="top"}
 
 ## Using the catalog
+{: #catalog}
 
 When you create the deployment from the catalog, you need to specify the following parameters.
 
@@ -56,6 +57,7 @@ Users can optionally set:
 Once you select the appropriate settings, click **Create** to start the provisioning process. 
 
 ## Using the Command-Line
+{: #use-cli}
 
 The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your console or command line. For more information, see [Download and install {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli).
 
@@ -77,6 +79,7 @@ ibmcloud resource service-instance <service-name>
 This command reports the current state of the service instance.
 
 ### Additional flags and parameters
+{: #flags-params}
 
 The `--service-endpoints` flag allows you to enable connections to your deployments from the public internet and over the IBM Cloud Private network, using [Service Endpoints](/docs/services/cloud-databases?topic=cloud-databases-service-endpoints). By default, connections to your deployment can be made from the public network. Possible values are 'public', 'private', 'public-and-private'. If the flag is omitted, the default is public endpoints.
 ```bash
@@ -96,6 +99,7 @@ ibmcloud resource service-instance-create example-database <service-name> standa
 ```
 
 ## Provisioning through the Resource Controller API
+{: #provision-controller-api}
 
 You can provision new deployments by using the Resource Controller API. However, in order to use the Resource Controller API, you need some additional preparation.
 
@@ -122,10 +126,12 @@ The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are al
 More information on the Resource Controller API is found in its [API Reference](https://{DomainName}/apidocs/resource-controller#create-provision-a-new-resource-instance).
 
 ## Provisioning with Terraform
+{: #provisioning-terraform}
 
 If you use Terraform to manage your infrastructure, the [{{site.data.keyword.cloud_notm}} provider for Terraform](/docs/terraform?topic=terraform-getting-started) supports provisioning {{site.data.keyword.databases-for}} deployments. A sample Terraform configuration file is on the [Cloud Databases resources](/docs/terraform?topic=terraform-databases-resources) documentation page.
 
 ## List of Additional Parameters
+{: #provisioning-parameters}
 
 * `backup_id`- A CRN of a backup resource to restore from. The backup must have been created by a database deployment with the same service ID. The backup is loaded after provisioning and the new deployment starts up that uses that data. A backup CRN is in the format `crn:v1:<...>:backup:<uuid>`. If omitted, the database is provisioned empty.
 * `version` - The version of the database to be provisioned. If omitted, the database is created with the most recent major and minor version.
