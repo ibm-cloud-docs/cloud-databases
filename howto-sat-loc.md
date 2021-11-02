@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-10-29"
+lastupdated: "2021-11-02"
 
 keywords: IBM Cloud, databases, ICD
 
@@ -54,6 +54,7 @@ Before proceeding, you should refer to the [Satellite Usage requirements](/docs/
 {: .tip}
 
 ## Before you begin
+{: #before-begin}
 
 - Be sure you have set up the [IBM Cloud command-line interface (CLI)](/docs/satellite?topic=satellite-setup-cli), the plug-in for Satellite commands, and other related CLIs.
 - If you have not already created a Satellite location, see [Setting up Satellite locations](/docs/satellite?topic=satellite-locations). We recommend following the steps in the [Manually creating Satellite locations](/docs/satellite?topic=satellite-locations#location-create) documentation.
