@@ -10,7 +10,6 @@ subcollection: cloud-databases
 
 content-type: tutorial
 completion-time: 15m
-services: cloud-databases, satellite
 
 ---
 
