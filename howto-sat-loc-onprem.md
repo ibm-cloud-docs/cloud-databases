@@ -1,8 +1,8 @@
 ---
 
 copyright:
-years: 2021
-lastupdated: "2021-10-28"
+  years: 2021
+lastupdated: "2021-11-02"
 
 keywords: IBM Cloud, databases, ICD
 
@@ -45,12 +45,17 @@ completion-time: 15m
 
 # Setting up On-Premises Location with NetApp ONTAP-SAN storage
 {: #satellite-on-prem}
+{: toc-content-type="tutorial"}
+{: toc-completion-time="15m"}
 
 Before deploying the ICD enabled by IBM Cloud Satellite service, you should prepare your Satellite location. Follow the steps below to set up IBM Cloud™ Databases (ICD) enabled by IBM Cloud Satellite in an on-premises location.
 
-## Step 1: Prepare an on-premises Satellite location for IBM Cloud™ Databases
+## Prepare an on-premises Satellite location for IBM Cloud Databases
+{: #prepare-satellite-onprem}
+{: step}
 
 ### Attach additional hosts to the Satellite location
+{: #attach-hosts}
 
 These additional attached worker nodes are used to create a service cluster into which the database instances will later be deployed.
 Attach to your Satellite location:
@@ -59,35 +64,40 @@ Attach to your Satellite location:
 - three type **32x128** hosts
 
 ### Create an on-prem Satellite block storage configuration for NetAPP ONTAP-SAN block storage
+{: #block-storage-config}
 
 #### Set up NetApp ONTAP-SAN storage
+{: #set-up-netapp}
 
 To set up your NetApp ONTAP-SAN storage (20.07), refer to [Setting up NetApp storage templates](/docs/satellite?topic=satellite-config-storage-netapp).
 
 #### Deploy your NetApp ONTAP-SAN Block driver
+{: #deploy-netapp}
 
 To get a list of NetApp-supported templates, use the following command:
 
 ```bash
-$ibmcloud sat storage templates | grep "NetApp Ontap"
+ibmcloud sat storage templates | grep "NetApp Ontap"
 ```
-{: .pre}
+{: pre}
 
 
 #### Create a storage configuration based on your NetApp back end
+{: #storage-config}
 
 - Operator configuration:
-```bash
-	$ibmcloud sat storage config create 
+    ```bash
+	ibmcloud sat storage config create 
 	  --location ${LOCATION_ID} 
 	  --name ${OPERATORCONFIGNAME}  
 	  --template-name 'netapp-trident' 
 	  --template-version '20.07'
-```
+    ```
+	{: pre}
 
 - SAN configuration:
-```bash
-	$ibmcloud sat storage config create 
+    ```bash
+	ibmcloud sat storage config create 
 	  --location ${LOCATION_ID} 
 	  --name ${SANCONFIGNAME}  
 	  --template-name 'netapp-ontap-san' 
@@ -98,16 +108,20 @@ $ibmcloud sat storage templates | grep "NetApp Ontap"
 	  --param "username=${USERNAME}" 
 	  --param "password=${PASSWORD}"
 	  --param "limitVolumeSize=1100Gi"
-```
+    ```
+    {: pre}
 
 
 ### Enable public endpoints on the Satellite Control Plane
+{: #public-endpoints}
 
 In order to provide database management, ICD enabled by IBM Cloud Satellite requires you to enable public endpoints on the Satellite control plane.
 
 For more information on accessing clusters, refer to [Accessing clusters from the public network](/docs/openshift?topic=openshift-access_cluster#sat_public_access).
 
-## Step 2: Grant a service authorization
+## Grant a service authorization
+{: #grant-service-auth}
+{: step}
 
 Begin by configuring IAM Authorizations:
 
@@ -123,7 +137,9 @@ Begin by configuring IAM Authorizations:
         - **Satellite Link Source Access Controller**
     - Then **Authorize**.
 
-## Step 3: Provisioning ICD Satellite Deployment
+## Provisioning ICD Satellite Deployment
+{: #provision-satellite-deployment}
+{: step}
 
 Once you have prepared your satellite location and granted service authorization, you can provision your ICD Satellite Deployment by selecting the Satellite location you have created in the **Location** dropdown of the provisioning page. For thorough documentation of the provisioning process, see the relevant [Provisioning documentation](/docs/cloud-databases?topic=cloud-databases-provisioning) for your ICD Satellite deployment. Once you have created a new service instance, this instance will appear in the IBM Cloud `Resource List` as `Provisioned`.
 
@@ -135,9 +151,11 @@ You can verify in the IBM Cloud UI whether the service cluster is already create
 - Select **Services**
 
 Once the service cluster is created, you must create a storage assignment manually (see next step) **before** the database instance will be started. Subsequent database service instances will provision more quickly since those will land on the same service cluster.
-{: .important}
+{: important}
 
-## Step 4: Create a Storage Assignment
+## Create a Storage Assignment
+{: #create-storage-assignment}
+{: step}
 
 When the service cluster is available in your Satellite location, the next step is to create a Satellite storage assignment. This will allow the service cluster to create volumes on the previously configured storage.
 
@@ -153,18 +171,21 @@ ic sat service ls  --location <location name/location id>
 The output of the command will include the Cluster ID of the newly created Satellite service cluster. 
 
 Use the Cluster ID as an input parameter for `--service-cluster-id` in the following AWS Satellite location storage assignment commands:
-Use the following commands:
-```bash
-	$ibmcloud sat storage assignment create 
-	  --name ${OPERATORASSIGNMENTNAME} 
-	  --service-cluster-id ${SERVICECLUSTERID} 
-	  --config ${OPERATORCONFIGNAME} 
-```
 
 ```bash
-        $ibmcloud sat storage assignment create 
-	  --name ${SANASSIGNMENTNAME} 
-	  --service-cluster-id ${SERVICECLUSTERID} 
-	  --config ${SANCONFIGNAME}
+ibmcloud sat storage assignment create 
+	--name ${OPERATORASSIGNMENTNAME} 
+	--service-cluster-id ${SERVICECLUSTERID} 
+	--config ${OPERATORCONFIGNAME} 
 ```
+{: pre}
+
+```bash
+ibmcloud sat storage assignment create 
+	--name ${SANASSIGNMENTNAME} 
+	--service-cluster-id ${SERVICECLUSTERID} 
+	--config ${SANCONFIGNAME}
+```
+{: pre}
+
 After the storage assignment has been created, allow up to 30 minutes for the database instance to be ready for usage.
