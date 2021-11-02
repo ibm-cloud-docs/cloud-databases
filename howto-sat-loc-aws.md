@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-10-29"
+lastupdated: "2021-11-02"
 
 keywords: IBM Cloud, databases, ICD
 
@@ -51,11 +51,13 @@ completion-time: 15m
 Follow the steps below to set up IBM Cloud™ Databases (ICD) enabled by IBM Cloud Satellite in an on-premises location.
 
 ## Prepare a Satellite location for IBM Cloud™ Databases
+{: #prepare-satellite-location}
 {: step}
 
 Before deploying the ICD enabled by IBM Cloud Satellite service, you should prepare your Satellite location.
 
 ### Attach additional hosts to the Satellite location
+{: #attach-additional-hosts}
 
 These additional attached worker nodes are used to create a service cluster into which the database instances will later be deployed.
 Attach to your Satellite location:
@@ -66,6 +68,7 @@ Attach to your Satellite location:
     - on AWS choose three hosts of type **AWS m5d.8xlarge**
 
 ### Create a Satellite block storage configuration
+{: #satellite-blockstorage-config}
 
 To set up your Satellite location using AWS, you should configure your block storage using [Amazon Elastic Block Storage (EBS)](/docs/satellite?topic=satellite-config-storage-ebs).
 
@@ -85,6 +88,7 @@ ibmcloud sat storage config create  \\
 {: pre}
 
 ### Enable public endpoints on the Satellite Control Plane
+{: #satellite-control-plane}
 
 In order to provide database management, ICD enabled by IBM Cloud Satellite requires you to enable public endpoints on the Satellite control plane.
 
@@ -101,6 +105,7 @@ For more information on accessing clusters, refer to [Accessing clusters from th
 
 ## Grant a service authorization
 {: step}
+{: #service-authorization}
 
 Begin by configuring IAM Authorizations:
 
@@ -118,6 +123,7 @@ Begin by configuring IAM Authorizations:
 
 ## Provisioning ICD Satellite Deployment
 {: step}
+{: #provision-deployment}
 
 Once you have prepared your satellite location and granted service authorization, you can provision your ICD Satellite Deployment by selecting the Satellite location you have created in the **Location** dropdown of the provisioning page. For thorough documentation of the provisioning process, see the relevant [Provisioning documentation](/docs/cloud-databases?topic=cloud-databases-provisioning) for your ICD Satellite deployment. Once you have created a new service instance, this instance will appear in the IBM Cloud `Resource List` as `Provisioned`.
 
@@ -131,7 +137,8 @@ You can verify in the IBM Cloud UI whether the service cluster is already create
 Once the service cluster is created, you must create a storage assignment manually (see next step) **before** the database instance will be started. Subsequent database service instances will provision more quickly since those will land on the same service cluster.
 {: .important}
 
-## Step 4: Create a Storage Assignment
+## Create a Storage Assignment
+{: #create-storage-assignment}
 
 When the service cluster is available in your Satellite location, the next step is to create a Satellite storage assignment. This will allow the service cluster to create volumes on the previously configured storage.
 
