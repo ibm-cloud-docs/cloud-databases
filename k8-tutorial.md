@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2021
-lastupdated: "2021-09-22"
+lastupdated: "2021-11-02"
 
 keywords: kubernetes, tutorial, setup
 
@@ -25,6 +25,7 @@ The [{{site.data.keyword.databases-for}} "Hello World" Kubernetes examples](http
 Each Git branch of the examples repository corresponds to samples in a particular programming language. For example, when you click **Branch**, a **Node** branch exists where all examples are written in JavaScript that uses Node.js. The files in each folder correspond to either a database or a message queue.  
 
 ## Trying out the sample applications
+{: #sample-apps}
 
 Clone the repository of the language that you want to use. For instance, you can clone the **Node** repository by selecting the **Node** branch. Then, click **Clone or download** to get the URL you need to clone by using SSH or HTTPS. In your console, the command looks like:
 
@@ -43,6 +44,7 @@ Or for [cloning by using HTTPS](https://docs.github.com/en/github/using-git/whic
    Once the branch is cloned, select the appropriate directory for the database you want to try out. Each database has its own copy of these instructions on how to provision and deploy a database or message queue and an application on {{site.data.keyword.containerlong_notm}}.
 
 ## Running on {{site.data.keyword.cloud_notm}}
+{: #running-on-cloud}
 
 1. If you do not already have an {{site.data.keyword.cloud_notm}} account, [sign up here](https://cloud.ibm.com/registration/)
 
@@ -87,6 +89,7 @@ Or for [cloning by using HTTPS](https://docs.github.com/en/github/using-git/whic
    {: note}
 
 ## Creating your database
+{: #create-database}
 
 1. Create your database deployment.
 
@@ -106,6 +109,7 @@ Remember the database deployment name. Find your [region identifier here](/docs/
 {: tip}
 
 ## Configuring the Kubernetes App
+{: #config-kubernetes}
 
 1. [Create an {{site.data.keyword.containershort_notm}}](/docs/containers?topic=containers-getting-started#getting-started). Choose the location and resource group that you want to set up your cluster in. Select the cluster type that you want to use. This example only requires the lite plan, which comes with one worker node. Once a cluster is provisioned, you are given a list of steps to follow to access your cluster and set the environment variables under the _Access_ tab. You are also able to verify that your deployment is provisioned and running normally.
 
@@ -217,6 +221,7 @@ Remember the database deployment name. Find your [region identifier here](/docs/
    As for the `service` configuration at the bottom of the file, [`nodePort`](/docs/containers?topic=containers-nodeport) indicates the port that the application can be accessed from. You have ports in the range 30000 - 32767 that you can use, but we chose 30081. As for the TCP port, it's set to 8080, which is the port the Node.js application runs on in the container.
 
 ## Deploying your Kubernetes App
+{: #deploy-kubernetes}
 
 1. Deploy the application to {{site.data.keyword.containershort_notm}}. When you deploy the application, it is automatically bound to your Kubernetes cluster.
 
@@ -251,6 +256,7 @@ Remember the database deployment name. Find your [region identifier here](/docs/
 | ---- | ----------- |
 |**server.js**|Establishes a connection to the database by using credentials from BINDING (the name we created in the Kubernetes deployment file to expose the credentials) and handles create and read operations on the database. |
 |**main.js**|Handles user input for a PUT command and parses the results of a GET command to output the contents of the database.|
+{: caption="Table 1. Code structure" caption-side="bottom"}
 
 The app uses a PUT and a GET operation:
 
