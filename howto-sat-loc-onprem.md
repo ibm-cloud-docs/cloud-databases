@@ -47,7 +47,6 @@ completion-time: 15m
 {: #satellite-on-prem}
 {: toc-content-type="tutorial"}
 {: toc-completion-time="15m"}
-{: toc-services="cloud-databases, satellite"}
 
 Before deploying the ICD enabled by IBM Cloud Satellite service, you should prepare your Satellite location. Follow the steps below to set up IBM Cloud™ Databases (ICD) enabled by IBM Cloud Satellite in an on-premises location.
 
