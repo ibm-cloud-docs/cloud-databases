@@ -1,7 +1,7 @@
 ---
-Copyright:
+copyright:
   years: 2021
-lastupdated: "2021-04-13"
+lastupdated: "2021-11-02"
 
 subcollection: cloud-databases
 
@@ -9,7 +9,7 @@ keywords: pDNS, private endpoints, private networking, vpe, virtual private endp
 
 ---
 
-{:new_window: target="_blank"}
+{:external: .external target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
@@ -34,11 +34,13 @@ Virtual Private Endpoints (VPEs) are generally available in all regions.
 {: .note}
 
 ### Before you begin
+{: #vpes-before-begin}
 
-- You need to have an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/registration){: new_window}.
+- You need to have an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/registration){: .external}
 - And an {{site.data.keyword.databases-for}} deployment. You can [provision](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-provisioning) one from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/services/). Give your deployment a memorable name that appears in your account's Resource List.
 
 ### Setting up your VPE
+{: #vpes-setup}
 
 1. Create an {{site.data.keyword.vpc_full}}. Follow the `Getting started` [instructions here](/docs/vpc?topic=vpc-getting-started). 
 
@@ -81,12 +83,12 @@ Virtual Private Endpoints (VPEs) are generally available in all regions.
 7. You can now use your instance in the VSI. For example, 
 
    ```bash
-   $ mongo -u $USERNAME -p $PASSWORD --tls --tlsCAFile /root/   c--authenticationDatabase admin --host replset/host-0.private.databaseappdomain.   cloud:30066,host-1.private.databases.appdomain.cloud:30066,host-private.   databases.appdomain.cloud:30066
+   mongo -u $USERNAME -p $PASSWORD --tls --tlsCAFile /root/   c--authenticationDatabase admin --host replset/host-0.private.databaseappdomain.   cloud:30066,host-1.private.databases.appdomain.cloud:30066,host-private.   databases.appdomain.cloud:30066
    ```
 
 ### More resources
+{: #vpes-resources}
 
 - [Planning for virtual private endpoint gateways](/docs/vpc?topic=vpc-planning-considerations)
 - [Creating an endpoint gateway](/docs/vpc?topic=vpc-ordering-endpoint-gateway)
 - For further assistance, see the [FAQs for virtual private endpoints here](/docs/vpc?topic=vpc-faqs-vpe), and the `Troubleshooting VPE gateways` documentation that includes [how to fix communications issues here](/docs/vpc?topic=vpc-troubleshoot-cannot-communicate). 
-
