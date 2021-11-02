@@ -1,7 +1,7 @@
 ---
-Copyright:
+copyright:
   years: 2018, 2021
-lastupdated: "2021-09-20"
+lastupdated: "2021-11-02"
 ---
 
 {:new_window: target="_blank"}
@@ -17,6 +17,7 @@ lastupdated: "2021-09-20"
 When you provision a {{site.data.keyword.databases-for}} deployment, you can choose from the versions currently available on {{site.data.keyword.cloud_notm}}. You can find the latest versions from the [catalog pages](https://cloud.ibm.com/catalog?category=databases), from the cloud databases cli plug-in command [`ibmcloud cdb deployables-show`](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployables-show), or from the cloud databases API [`/deployables`](https://cloud.ibm.com/apidocs/cloud-databases-api#get-all-deployable-databases) endpoint.
 
 ## Version Tags
+{: #version-tags}
 
 **Preferred** - The recommended and default database version for all new deployments. It's the version of the database that is the most up-to-date and stable regarding both database-level and service-level features.
 
@@ -27,6 +28,7 @@ When you provision a {{site.data.keyword.databases-for}} deployment, you can cho
 **Untagged** - Untagged database versions are fully supported and deployable versions. They are usually slightly older than the current preferred version, but they are still supported by the database project maintainers. They continue to be supported on {{site.data.keyword.databases-for}} deployments until their deprecation is announced.
 
 ## Deprecation of Major Versions
+{: #version-deprecation}
 
 {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} tries to support a major version of a database for 3 years from its release. 
 
@@ -45,6 +47,7 @@ If you take no action this can result in compatibility issues with your apps whe
 {: .note}
 
 ## Major versions defined
+{: #version-definitions}
 
 Database | Versioning Schema | Next Known End of Life Version and Date | End of Life procedure |
 --------- | --------- | --------- | --------- |
@@ -62,5 +65,6 @@ RabbitMQ | Major versions are the first two numbers in a `major.x.patch` versi
 {: .note}
 
 ## Minor versions
+{: #minor-versions}
 
 {{site.data.keyword.cloud_notm}} is committed to providing secure, up-to-date versions of databases. As updates are released by database project maintainers, they are tested, evaluated, and released to {{site.data.keyword.databases-for}} deployments. Your deployment's minor version and patch updates are handled automatically and are not user configurable. 
