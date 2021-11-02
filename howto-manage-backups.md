@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-26"
+lastupdated: "2021-11-02"
 
 subcollection: cloud-databases
 
@@ -31,14 +31,16 @@ Backups for {{site.data.keyword.databases-for}} deployments are accessible from 
 - Backups are also restorable across accounts, but only by using the API and only if the user that is running the restore has access to both the source and destination accounts. 
 
 ## Backups in the UI
+{: #backup-ui}
 
 The backup types have their respective tabs, either _On-demand_ or _Automatic_. Each backup is listed with its type and when the backup was taken. Click the timestamp to change its format between elapsed time, local time, and Coordinated Universal Time (UTC). 
 
-![List of backups on the Backups tab](images/backups-list.png)
+![List of backups on the Backups tab](images/backups-list.png){: caption="Figure 1. List of backups on the Backups tab" caption-side="bottom"}
 
 Click the backup to reveal information for that specific backup, including its full ID. For restore options, there is a **Restore** button or a pre-formatted CLI command. 
 
 ## Backups in the CLI
+{: #backup-ui-cli}
 
 You can also access the list of backups and individual backup information from the {{site.data.keyword.databases-for}} CLI plug-in and the {{site.data.keyword.databases-for}} API.
 
@@ -59,10 +61,12 @@ ibmcloud cdb backup-show crn:v1:staging:public:cloud-databases:us-south:a/628401
 {: .pre}
 
 ## Backups in the API
+{: #backup-ui-api}
 
 For backups information in the {{site.data.keyword.databases-for}} API, use the [`/deployments/{id}/backups`](https://cloud.ibm.com/apidocs/cloud-databases-api#get-currently-available-backups-from-a-deployment) endpoint to list the deployment's backups. Use the [`/backups/{backup_id}`](https://{DomainName}/apidocs/cloud-databases-api#get-information-about-a-backup) endpoint to get information about a specific backup.
 
 ## Taking an on-demand backup
+{: #ondemand-backup}
 
 On-demand backups are useful if you plan to make major changes to your deployment like scaling or removing databases, tables, collections. It can also be useful if you need to back up on a schedule. On-demand backups are kept for 30 days. 
 
@@ -80,6 +84,7 @@ ibmcloud cdb deployment-backup-now example-deployment
 In the API, sending a POST to the [`/deployments/{id}/backups`](https://cloud.ibm.com/apidocs/cloud-databases-api#initiate-an-on-demand-backup) endpoint triggers an on-demand backup.
 
 ## Restoring a backup
+{: #restore-backup}
 
 Backups are restored to a new deployment. After the new deployment finishes provisioning, your data in the backup file is restored into the new deployment.
 
@@ -89,6 +94,7 @@ It is important that you do not delete the source deployment while the backup is
 {: .tip}
 
 ### Restoring a backup in the UI
+{: #restore-backup-ui}
 
 To restore a backup to a new service instance,
 
@@ -101,6 +107,7 @@ To restore a backup to a new service instance,
 4. Click the **Restore** button. A "restore from backup started" message appears. Clicking **Your new instance is available now.** takes you to your _Resources List_.
 
 ### Restoring a backup in the CLI
+{: #restore-backup-cli}
 
 The Resource Controller supports provisioning of database deployments, and provisioning and restoring are the responsibility of the Resource Controller CLI. Use the [`resource service-instance-create`](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_create) command.
 
@@ -122,6 +129,7 @@ A pre-formatted command for a specific backup is available in detailed view of t
 {: .tip}
 
 ### Restoring a backup through the API
+{: #restore-backup-api}
 
 The Resource Controller supports provisioning of database deployments, and provisioning and restoring are the responsibility of the Resource Controller API. You need to complete [the necessary steps to use the resource controller API](/docs/cloud-databases?topic=cloud-databases-provisioning#provisioning-through-the-resource-controller-api) before you can use it to restore from a backup. 
 
@@ -149,12 +157,15 @@ The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are al
 If you need to adjust resources or use a Key Protect key, add any of the optional parameters `key_protect_key`, `members_disk_allocation_mb`, `members_memory_allocation_mb`, and `members_cpu_allocation_count`, and their preferred values to the body of the request.
 
 ## Backups and Restoration
+{: #backup-restoration}
 
 * {{site.data.keyword.cloud_notm}} Databases are not responsible for restoration, timeliness, or validity of said backups.
 * Actions that you take as a user can compromise the integrity of backups, such as under-allocating memory and disk. Users can monitor that backups were performed successfully via the API, and periodically restore a backup to ensure validity and integrity. Users can retrieve the most recent scheduled backup details from the [Cloud Databases CLI plug-in](#backups-in-the-cli) and the [Cloud Databases API](#backups-in-the-api).
 * As a managed service, {{site.data.keyword.cloud_notm}} Databases monitors the state of your backups and can attempt to remediate when possible. If you encounter issues you cannot recover from, you can contact support for more help.
 
 ## Backup Locations
+{: #backup-locations}
+
 Backup location differs per database region. You should ensure the backup region location matches your data location requirements.
 
 | Database Region | Backup Region |
