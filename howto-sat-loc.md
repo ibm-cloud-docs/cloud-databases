@@ -1,8 +1,8 @@
 ---
 
 copyright:
-years: 2021
-lastupdated: "2021-10-28"
+  years: 2021
+lastupdated: "2021-11-02"
 
 keywords: IBM Cloud, databases, ICD
 
@@ -45,6 +45,8 @@ completion-time: 15m
 
 # Getting Started
 {: #satellite-get-started}
+{: toc-content-type="tutorial"}
+{: toc-completion-time="15m"}
 
 With IBM Cloud™ Databases (ICD) enabled by IBM Cloud Satellite, you can deploy ICD instances into a Satellite location. The ICD service will then install an ICD Satellite service cluster in your Satellite location into which your database instances will be deployed.
 ICD enabled by IBM Cloud Satellite supports Satellite locations on [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws) and [on-premises](/docs/cloud-databases?topic=cloud-databases-satellite-on-prem). 
@@ -57,6 +59,7 @@ Before proceeding, you should refer to the [Satellite Usage requirements](/docs/
 {: .tip}
 
 ## Before you begin
+{: #before-begin}
 
 - Be sure you have set up the [IBM Cloud command-line interface (CLI)](/docs/satellite?topic=satellite-setup-cli), the plug-in for Satellite commands, and other related CLIs.
 - If you have not already created a Satellite location, see [Setting up Satellite locations](/docs/satellite?topic=satellite-locations). We recommend following the steps in the [Manually creating Satellite locations](/docs/satellite?topic=satellite-locations#location-create) documentation.
