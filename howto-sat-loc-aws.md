@@ -47,7 +47,6 @@ completion-time: 15m
 {: #satellite-aws}
 {: toc-content-type="tutorial"}
 {: toc-completion-time="15m"}
-{: toc-services="cloud-databases, satellite"}
 
 Follow the steps below to set up IBM Cloud™ Databases (ICD) enabled by IBM Cloud Satellite in an on-premises location.
 
