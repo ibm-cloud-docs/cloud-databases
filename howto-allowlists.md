@@ -1,8 +1,8 @@
 ---
 
-Copyright:
+copyright:
   years: 2019, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-11-02"
 
 subcollection: cloud-databases
 
@@ -29,6 +29,7 @@ We updated documentation to reflect changes in terminology from `whitelist` to `
 {: .note}
 
 ## Using IP allowlists on your Deployment
+{: #ip-allowlist} 
 
 When you create an allowlist, only IP addresses that match the allowlist or are in the range of IP addresses in the allowlist can connect to your deployment. Allowlists can be enabled for both public endpoints and private endpoints. When no IP addresses are in the allowlist, the allowlist is unavailable and the deployment accepts connections from any IP address.
 
@@ -36,10 +37,11 @@ Even if not explicitly allowlisted, {{site.data.keyword.cloud_notm}} management 
 {: .tip}
 
 ### Setting an allowlist
+{: #set-allowlist} 
 
 The UI for managing allowlists is on the _Settings_ tab of your _Deployment Overview_.
 
-![Allowlist UI](images/settings-allowlist-ip.png)
+![Allowlist UI](images/settings-allowlist-ip.png){: caption="Figure 1. Deployment Overview tab" caption-side="bottom"}
 
 **IP addresses** - The *IP* field can take a single complete IPv4 address with or without a netmask. Without a netmask, incoming connections must come from exactly that IP address. To allow a connection from a specified range of IP addresses, use a netmask. The IP address must be fully specified. That means entering, for example, 192.168.1.0/24 rather than 192.168.1/24.
 
@@ -49,6 +51,7 @@ IPv6 is not currently supported.
 **Description** - The *Description* can be any user-significant text for identifying the allowlist entry - a customer name, project identifier, or employee number, for example. The description field is required.
 
 ### Setting an allowlist through the CLI
+{: #set-allowlist-cli} 
 
 The {{site.data.keyword.databases-for}} CLI plug-in offers a set of commands for managing allowlists. Use [`cdb deployment-whitelist-add`](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-allowlist-add) to add an allowlist. For example,
 ```bash
@@ -73,12 +76,14 @@ ibmcloud cdb deployment-whitelist-list <deployment name or CRN>
 More information is on the {{site.data.keyword.databases-for}} CLI plug-in [reference page](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference).
 
 ### Setting an allowlist through the API
+{: #set-allowlist-api} 
 
 To use the {{site.data.keyword.databases-for}} API to manage your allowlist with the [`/deployments/{id}/whitelists/`](https://cloud.ibm.com/apidocs/cloud-databases-api#retrieve-the-allowlisted-addresses-and-ranges-for-) endpoint. You can retrieve the current allowlist, add entries to the allowlist, and also bulk upload IP addresses to the allowlist from the API. 
 
 More information is in the [API Reference](https://cloud.ibm.com/apidocs/cloud-databases-api)
 
-### Removal
+### Removing an allowlist
+{: #remove-allowlist} 
 
 From the UI, remove an IP address or netmask from the allowlist by clicking *Remove*. You can also use CLI command is `cdb deployment-whitelist-delete` or send a `DELETE` request to the API endpoint. When all entries on the allowlist are removed, the allowlist is unavailable and all IP addresses are accepted by your deployment.
 
@@ -88,6 +93,8 @@ From the UI, remove an IP address or netmask from the allowlist by clicking *Rem
 If you use allowlists to control connections in your environment, you can use the following IP lists to allowlist {{site.data.keyword.databases-for}} deployments. You should allowlist all of the subnet ranges for the _entire_ region that your deployments live in.
 
 ### `che01` List
+{: #che01-list} 
+
 Subnet | Location
 -- | --
 169.38.95.127\27 | Chennai 1
@@ -97,6 +104,8 @@ Subnet | Location
 169.38.105.79\29 | Chennai 1
 
 ### `eu-gb` List
+{: #eu-gb-list} 
+
 Subnet | Location
 -- | --
 158.175.64.95\28 | London 4
@@ -131,6 +140,8 @@ Subnet | Location
 158.176.124.223\29 | London 6
 
 ### `seo01` List
+{: #seo01-list} 
+
 Subnet | Location
 -- | --
 169.56.80.143\28 | Seoul 1
@@ -140,6 +151,8 @@ Subnet | Location
 169.56.164.71\29 | Seoul 1
 
 ### `au-syd` List
+{: #au-syd-list} 
+
 Subnet | Location
 -- | --
 168.1.13.127\26 | Sydney 1
@@ -162,6 +175,8 @@ Subnet | Location
 135.90.68.39\29 | Sydney 5
 
 ### `jp-tok` List
+{: #jp-tok-list} 
+
 Subnet | Location
 -- | --
 161.202.140.191\27 | Tokyo 2
@@ -184,6 +199,8 @@ Subnet | Location
 165.192.71.239\29 | Tokyo 5
 
 ### `jp-osa` List
+{: #jp-osa-list} 
+
 Subnet | Location
 -- | --
 163.68.68.127\28 | Osaka 21
@@ -200,6 +217,8 @@ Subnet | Location
 163.73.67.231\29 | Osaka 23 
 
 ### `us-east` List
+{: #us-east-list} 
+
 Subnet | Location
 -- | --
 52.116.78.127\25 | Washington 4
@@ -234,6 +253,8 @@ Subnet | Location
 169.62.6.87\29 | Washington 7
 
 ### `eu-de` List
+{: #eu-de-list} 
+
 Subnet | Location
 -- | --
 158.177.41.255\24 | Frankfurt 2
@@ -279,6 +300,8 @@ Subnet | Location
 149.81.142.47\29 | Frankfurt 5
 
 ### `us-south` List
+{: #us-south-list} 
+
 Subnet | Location
 -- | --
 52.116.167.255\24 | Dallas 10
