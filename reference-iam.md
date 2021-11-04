@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2020-08-04"
+lastupdated: "2021-11-03"
 
 subcollection: cloud-databases
 
@@ -39,13 +39,15 @@ Administrator | As an administrator, you can perform all platform actions, inclu
 {: caption="Table 1. IAM user roles and actions" caption-side="top"}
 
 ## Actions for {{site.data.keyword.databases-for}} API
+{: #actions}
 
 Access to certain API endpoints and requests is governed by role. The following lists the access policy for each role for {{site.data.keyword.cloud}} Databases. 
 
 ### Viewer 
+{: #viewer}
 
 The allowed actions for the Viewer role.
-```
+```bash
 GET /v4/ibm/deployables
 Read Deployables
 ---
@@ -102,9 +104,10 @@ Read Allowlisted IP Addresses
 ```
 
 ### Operator and Editor
+{: #operator}
 
 The Operator and Editor roles are functionally the same for {{site.data.keyword.databases-for}}. This list contains allowed actions for the Operator and the Editor roles.
-```
+```bash
 GET /v4/ibm/deployables
 Read Deployables
 ---
@@ -203,9 +206,10 @@ Create elasticsearch file sync
 ```
 
 ### Administrator
+{: #admin}
 
 The allowed actions for the Administrator role.
-```
+```bash
 GET /v4/ibm/deployables
 Read Deployables
 ---
