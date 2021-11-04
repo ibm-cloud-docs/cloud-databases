@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-30"
+lastupdated: "2021-11-03"
 
 keywords: guidance, recommendations, best practices, initial steps, setup
 
@@ -22,6 +22,7 @@ subcollection: cloud-databases
 {: #best-practices}
 
 ## Prework
+{: #before-starting}
 
 1. Complete your data modeling and architectural reviews to ensure cloud-native alignment. If you need help with data modeling and architecture, contact the [IBM Garage](https://cloud.ibm.com/catalog/services/consult-with-ibm-garage) 
 2. Determine the best method for your initial setup, including [Terraform, API, CLI, or UI methods](/docs/cloud-databases?topic=cloud-databases-provisioning).
@@ -33,6 +34,7 @@ subcollection: cloud-databases
 
 
 ## Sample "Getting to production" checklist
+{: #sample-checklist}
 
 1. Create a database with the required disk, RAM, and virtual CPUs. While these scaling parameters can be changed after the initial provisioning, disks cannot be scaled down. 
 2. If you would like hypervisor level isolation, or if you want to guarantee an amount of vCPUs to your database, ensure that your [database CPU allocation](/docs/cloud-databases?topic=cloud-databases-provisioning#using-the-catalog) is provisioned to use `dedicated cores`.
@@ -40,6 +42,7 @@ subcollection: cloud-databases
 4. Change the `Admin` Password
 5. Set up Auto-Scaling policies if appropriate. 
    * Note: Default Auto-Scaling logic is the suggested baseline. Tune these parameters to your budget and use case. The recommended disk space reflects the minimum amounts that are needed, but note that disk capacity cannot be scaled down without a backup and restore. RAM and virtual CPUs (vCPUs) can scale up and down. Memory auto-scaling works based on disk I/O usage to optimize page cache performance. Databases will not auto-scale when in-use memory approaches 100%; this is often the desired state.
+   
    For more information on Auto-scaling capabilities, see the related documentation for your {{site.data.keyword.databases-for}} instance.  
 6. Set up monitoring with {{site.data.keyword.monitoringfull}}, {{site.data.keyword.at_full}}, and {{site.data.keyword.loganalysisfull}}. At minimum, set alerts on:
    * [{{site.data.keyword.monitoringlong_notm}}](/docs/monitoring) - when disk usage is greater than 80% of provisioned capacity (we encourage you to use Auto-Scaling for disk capacity). We also encourage you to use, understand, and alert on all provided metrics like disk I/O or CPU usage. 
