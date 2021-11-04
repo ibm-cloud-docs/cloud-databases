@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2021
-lastupdated: "2021-03-30"
+lastupdated: "2021-11-03"
 
 keywords: Compose, cloud databases, migrating, disk size, memory size, CPU size, resources
 
@@ -22,24 +22,26 @@ subcollection: cloud-databases
 If your database deployments are currently on Compose, the following information helps determine the starting allocation for RAM, disk, and CPUs needed for new deployments on IBM Cloud Databases. For convenience, step 3 includes a Python function where you can feed the RAM in MB and it writes the per-member and total allocation recommendations for your IBM Cloud Databases deployment. 
 
 ## Create a Compose API Token 
+{: #compose-api-token} 
 
 You can use the [Compose API](https://apidocs.compose.com/) to obtain the total amount of RAM and storage that is allocated to each deployment.
 
 In order to use the Compose API, you need to create a unique API token for your account. Select **Account** from the Compose UI then click the **API Tokens** button. 
 
-![The Scale Resources Pane in _Settings_](images/size-guidance-compose-api-token.png)
+![The Scale Resources Pane in _Settings_](images/size-guidance-compose-api-token.png){: caption="Figure 1. The Scale Resources Pane" caption-side="bottom"}
 
 You are taken to the API tokens page. On the right, enter the name of your API token and click the “Create” button. 
 
-![The Scale Resources Pane in _Settings_](images/size-guidance-create-api-token.png)
+![The Scale Resources Pane in _Settings_](images/size-guidance-create-api-token.png){: caption="Figure 2. The Scale Resources Pane" caption-side="bottom"}
 
 When presented with your API token, make sure you save it.
 
-![The Scale Resources Pane in _Settings_](images/size-guidance-personal-api-tokens.png)
+![The Scale Resources Pane in _Settings_](images/size-guidance-personal-api-tokens.png){: caption="Figure 3. The Scale Resources Pane" caption-side="bottom"}
 
 You can revoke API tokens anytime and create new ones.
 
 ## Determine the Current Memory and Storage Size of your Compose Deployments 
+{: #current-memory} 
 
 With your API token, you can now use the Compose API. A list of all the API endpoints is available in the [Compose API reference](https://apidocs.compose.com/v1.0/reference).
 
@@ -132,6 +134,7 @@ done
 ```
 
 ## Map the Compose deployment's Resources to IBM Cloud Databases
+{: #map-deployment} 
 
 Determining how much Disk, IOPS, and CPU breaks down to how much storage you require and how your database is being used (for example, does it have many I/O operations?). Memory resource allocation is similar between Compose and IBM Cloud Databases.
 
@@ -194,6 +197,7 @@ Examples:
     ```
 
 ## Provisioning the IBM Cloud Databases Deployment  
+{: #provision} 
 
 You can provision an IBM Cloud Databases deployment by using the [IBM Cloud catalog](https://cloud.ibm.com/catalog?category=databases) or the [IBM Cloud CLI](/docs/cli?topic=cli-install-ibmcloud-cli). The catalog does not provide as much granularity when selecting the resources for your deployment, so this example uses the Python script from step 3 and use the IBM Cloud CLI to provision the deployment.
 
@@ -230,6 +234,7 @@ So for the example PostgreSQL, the total allocations are
 - `total_cpu = 2 * 3 = 6`
 
 ## Monitoring the IBM Cloud Databases Deployment
+{: #monitor} 
 
 You now have an IBM Cloud Databases deployment that approximates the resource allocation of your Compose deployment. To determine whether you need more resources, look at monitoring your databases. Monitoring for {{site.data.keyword.databases-for}} deployments is provided through integration with the [{{site.data.keyword.monitoringfull}}](/docs/monitoring?topic=monitoring-getting-started) service. With it you can monitor the memory, disk, disk I/O utilization, and CPU usage of each of your deployments. 
 
