@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-11-03"
 
 subcollection: cloud-databases
 
@@ -18,7 +18,7 @@ keywords: events, auditing
 {:tip: .tip}
 
 # Activity Tracker Integration
-{: #activity-tracker}
+{: #activity-tracker-integration}
 
 {{site.data.keyword.cloud_notm}} Databases deployments are integrated with Activity Tracker events in [{{site.data.keyword.at_full}}](/docs/activity-tracker?topic=activity-tracker-getting-started), so you can view service-level events.
 
@@ -44,6 +44,7 @@ Deployment Region | Activity Tracker Region
 Events from your deployments appear in an Activity Tracker instance in the same region, except in the cases of `seo01` and `jp-osa`. Events for deployments in `seo01` are forwarded to `jp-tok` while `jp-osa` events are forwarded to `jp-tok`. If you have deployments in multiple regions, you must set up the Activity Tracker in multiple regions. 
 
 ## Activity Tracker
+{: #activity-tracker}
 
 When you provision the service, events are automatically forwarded from all your {{site.data.keyword.databases-for}} deployments in the same region.
 
@@ -52,6 +53,7 @@ The service can be provisioned from [its catalog page](/catalog/ibm-cloud-activi
 The {{site.data.keyword.at_short}} service has a lite plan that is free to use, but it only offers streaming events. To take advantage of the tagging, export, retention, and other features, you need to use one of the [paid plans](/docs/activity-tracker?topic=activity-tracker-service_plan).
 
 ### Using the Activity Tracker
+{: #using-activity-tracker}
 
 You can access {{site.data.keyword.at_short}} through the _Observability_ tab of your deployment's _Manage_ page. The **Manage Activity Tracker** button links to the main list of all {{site.data.keyword.at_short}} instances in your IBM Cloud account. Select the instance where you set your database logs to be forwarded. Click **View Activity Tracker** to view the events.
 
@@ -68,6 +70,7 @@ We recommend alerting on database lifecycle events such failed backups. For exam
 {: .tip}
 
 ## Event Fields
+{: #event-fields}
 
 A description of the common fields for an {{site.data.keyword.at_short}} event is on the [event fields](/docs/activity-tracker?topic=activity-tracker-event) page.
 
