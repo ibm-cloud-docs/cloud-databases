@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2021
-lastupdated: "2021-09-02"
+lastupdated: "2021-11-03"
 
 subcollection: cloud-databases
 
@@ -47,6 +47,7 @@ After September 15th 2020, IBM {{site.data.keyword.databases-for}} in the Chenna
 {: .note}
 
 ## Provisioning {{site.data.keyword.loganalysisfull}}
+{: #provisioning}
 
 Platform log information from your databases is automatically forwarded to {{site.data.keyword.la_full_notm}}, but to access it you must enable platform logging by [provisioning a {{site.data.keyword.loganalysisshort}} service](/docs/log-analysis?topic=log-analysis-provision) in your {{site.data.keyword.cloud_notm}} account and [configuring the service to receive {{site.data.keyword.cloud_notm}} platform logs](/docs/log-analysis?topic=log-analysis-config_svc_logs).
 
@@ -56,12 +57,14 @@ This setting enables platform logs from **ALL** {{site.data.keyword.cloud_notm}}
 {{site.data.keyword.la_full_notm}} has a lite plan that is free to use, but it offers only streaming events. To take advantage of the tagging, export, retention, and other features, you need to use one of the [paid plans](/docs/log-analysis?topic=log-analysis-service_plans).
 
 ### HIPAA 
+{: #hipaa}
 
 {{site.data.keyword.la_full_notm}} offers a HIPAA-compliant plan for the service. For more information, see the {{site.data.keyword.la_full_notm}} documentation on [Provisioning a HIPAA Compliance instance](/docs/log-analysis?topic=log-analysis-provision_hipaa).
 
 Use caution when configuring the platform service logs, since this setting can impact other services that require HIPAA compliance.
 
 ## Using {{site.data.keyword.loganalysisfull}}
+{: #using}
 
 You can access {{site.data.keyword.loganalysisshort}} through the _Observability_ tab of your deployment's _Manage_ page. The **Manage Log Analysis** button links to the main list of all {{site.data.keyword.loganalysisshort}} instances in your IBM Cloud account. Select the instance where you set your database platform logs to be forwarded. Click **View Log Analysis** to view the logs.
 
@@ -88,5 +91,6 @@ To set up logging alerts, see [Working with Alerts](/docs/log-analysis?topic=log
 For more information on features offered by {{site.data.keyword.loganalysisfull}}, including integrating it with your other {{site.data.keyword.cloud_notm}} services, see [its full documentation](/docs/log-analysis).
 
 ## Internal Log Retention
+{: #internal-logging}
 
 Database platform logs for all {{site.data.keyword.databases-for}} deployments are kept internally for 30 days and then purged. If your {{site.data.keyword.loganalysisshort}} plan is for a shorter period, logs are only accessible by you for the length of your plan. Regardless of the plan that you choose, all database logs are deleted after 30 days.
