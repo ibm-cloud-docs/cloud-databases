@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2020
-lastupdated: "2020-08-05"
+lastupdated: "2021-11-03"
 
 subcollection: cloud-databases
 
@@ -29,6 +29,7 @@ This document covers the integration of Key Protect with Cloud Databases, which 
 To get started, you need [{{site.data.keyword.keymanagementserviceshort}}](https://{DomainName}/catalog/key-protect) provisioned on your {{site.data.keyword.cloud_notm}} account.
 
 ## Creating or adding a key in {{site.data.keyword.keymanagementserviceshort}}
+{: #key-create}
 
 Go to your instance of {{site.data.keyword.keymanagementserviceshort}} and [generate or enter a key](/docs/key-protect?topic=key-protect-getting-started-tutorial).
 
@@ -53,6 +54,7 @@ Authorize {{site.data.keyword.keymanagementserviceshort}} for use with {{site.da
 If the service authorization is not present before provisioning your deployment with a key, the provision fails.
 
 ## Using the Key Protect Key
+{: #key-using}
 
 After you grant your {{site.data.keyword.databases-for}} deployments permission to use your keys, you supply the [key name or CRN](/docs/key-protect?topic=key-protect-view-keys) when you provision a deployment. The deployment uses your encryption key to encrypt your data.
 
@@ -103,6 +105,7 @@ Cryptoshredding is a destructive action. When the key is deleted, your data is u
 {{site.data.keyword.keymanagementserviceshort}} allows you to [initiate a force delete](/docs/key-protect?topic=key-protect-delete-keys) of a key that is in use by {{site.data.keyword.cloud}} services, including your {{site.data.keyword.databases-for}} deployments. This action is called cryptoshredding. Deleting a key that is in use on your deployment locks the disks that contain your data and disables your deployment. You are still able to access the UI and some metadata such as security settings in the UI, CLI, and API but you are not able to access any of the databases or data that is contained within them. Key deletion is [sent to the {{site.data.keyword.at_short}}](/docs/key-protect?topic=key-protect-at-events) as `kms.secrets.delete`.
 
 ## BYOK for backups
+{: #key-byok}
 
 If you use Key Protect, you can also designate a key to encrypt the Cloud Object Storage disk that holds your deployment's backups.
 
@@ -111,10 +114,12 @@ Things to Note -
 - Only keys in the `us-south` are durable to region failures. You must use a key from `us-south`, regardless of where your deployment is, to ensure that your backups are available even if a region failure occurs.
 
 ### Granting the delegation authorization
+{: #grant-auth}
 
 In order to enable your deployment to use the Key Protect key, you need to [Enable authorization to be delegated](/docs/account?topic=account-serviceauth) when granting the service authorizations. If the delegation authorization is not present before provisioning your deployment with a key, the provision fails.
 
 ### Using the Key at Provision
+{: #key-provision}
 
 After the appropriate authorization and delegation is granted, you supply the [key name or CRN](/docs/key-protect?topic=key-protect-view-keys) when you provision a deployment.
 
@@ -156,6 +161,7 @@ Reader | Cloud Object Storage service | Key Protect Service | Created by `<cloud
 {: caption="Table 2. Example Key Protect Authorization for COS from Cloud Databases " caption-side="top"}
 
 ### Removing Keys
+{: #key-remove}
 
 IAM/Key Protect does not stop you from removing the policy between the key and Cloud Object Storage (the second example), but doing so can make your backups unrestorable. To prevent this, if you delete the Cloud Object Storage policy that governs the ability of Cloud Databases to use the key for Cloud Object Storage, the policy is re-created to continue backing up your deployment.
 
