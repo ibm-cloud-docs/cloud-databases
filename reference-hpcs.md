@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-30"
+lastupdated: "2021-11-03"
 
 keywords: bring your own key, byok, cryptoshredding, hpcs, hyper protect crypto services
 
@@ -29,10 +29,12 @@ This document covers the integration of {{site.data.keyword.hscrypto}} (HPCS) wi
 To get started, you need [{{site.data.keyword.hscrypto}}](/catalog/services/hyper-protect-crypto-services) provisioned on your {{site.data.keyword.cloud_notm}} account. 
 
 ## Creating or adding a key in {{site.data.keyword.hscrypto}}
+{: #create-key}
 
 Navigate to your instance of {{site.data.keyword.hscrypto}} and [generate or enter a key](/docs/hs-crypto?topic=hs-crypto-get-started).
 
 ## Granting service authorization
+{: #grant-auth}
 
 Authorize {{site.data.keyword.hscrypto}} for use with {{site.data.keyword.databases-for}} deployments:
 
@@ -51,6 +53,7 @@ Authorize {{site.data.keyword.hscrypto}} for use with {{site.data.keyword.databa
 If the service authorization is not present before provisioning your deployment with a key, the provision fails.
 
 ## Using the HPCS Key
+{: #use-hpcs}
 
 After you grant your {{site.data.keyword.databases-for}} deployments permission to use your keys, you supply the [key name or CRN](/docs/hs-crypto?topic=hs-crypto-view-keys) when you provision a deployment. The deployment uses your encryption key to encrypt your data.
 
@@ -83,10 +86,12 @@ If you provision a deployment through the CLI or API, the HPCS key needs to be i
 {: .tip}
 
 ## Key Rotation
+{: #hpcs-rotation}
 
 HPCS offers manual and automatic [key rotation](/docs/hs-crypto?topic=hs-crypto-set-rotation-policy) and key rotation is supported by Cloud Databases deployments. When you rotate a key, the process initiates a _Syncing KMS state_ task, and your deployment is reencrypted with the new key. The task is displayed on the _Tasks_ panel on your deployment's _Overview_ and the associated HPCS and Cloud Databases events are sent to Activity Tracker.
 
 ## Deleting the Deployment
+{: #delete-deployment}
 
 If you delete a deployment that is protected with an HPCS key, the deployment remains registered against the key during the soft-deletion period (up to 9 days). If you need to delete the key in the soft-deletion period, you must [force delete](/docs/hs-crypto?topic=hs-crypto-delete-keys) the key. After the soft-deletion period, the key can be deleted without the force. You can check the [association between the key and your deployment](/docs/hs-crypto?topic=hs-crypto-view-key-details) to determine when you can delete the key.
 
