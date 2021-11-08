@@ -27,7 +27,7 @@ keywords: deprovision cloud databases, databases with terraform, deprovisioning 
 {{site.data.keyword.cloud_notm}} keeps the deployment in the "soft delete" state for 3 days before it issues a "delete". The soft delete state addresses use cases when you accidentally delete an instance. You can re-enable an existing soft-deleted instance on your own.
 
 ## Deleting your Deployment in the User Interface 
-{: #delete-deployment}
+{: #delete-deployment-ui}
 
 To delete your deployment instance from the Resource list section dashboard of the IBM Cloud dashboard, select your deployment. Next, by using the stacked three-dot menu icon ( ![Stacked three dots icon](images/stacked-three-dots.png) ), choose `Delete` from the drop list. 
 
