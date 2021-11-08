@@ -47,7 +47,7 @@ After September 15th 2020, IBM {{site.data.keyword.databases-for}} in the Chenna
 {: .note}
 
 ## Provisioning {{site.data.keyword.loganalysisfull}}
-{: #provisioning}
+{: #provisioning-logging}
 
 Platform log information from your databases is automatically forwarded to {{site.data.keyword.la_full_notm}}, but to access it you must enable platform logging by [provisioning a {{site.data.keyword.loganalysisshort}} service](/docs/log-analysis?topic=log-analysis-provision) in your {{site.data.keyword.cloud_notm}} account and [configuring the service to receive {{site.data.keyword.cloud_notm}} platform logs](/docs/log-analysis?topic=log-analysis-config_svc_logs).
 
