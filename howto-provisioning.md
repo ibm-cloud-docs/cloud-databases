@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2021-11-02"
+lastupdated: "2021-11-08"
 
 keywords: provision cloud databases, databases with terraform, provisioning parameters
 
