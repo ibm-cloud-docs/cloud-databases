@@ -154,7 +154,7 @@ Once the service cluster is created, you must create a storage assignment manual
 {: important}
 
 ## Create a Storage Assignment
-{: #create-storage-assignment}
+{: #create-storage-assignment-onprem}
 {: step}
 
 When the service cluster is available in your Satellite location, the next step is to create a Satellite storage assignment. This will allow the service cluster to create volumes on the previously configured storage.
