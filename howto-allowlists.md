@@ -221,36 +221,36 @@ Subnet | Location
 
 Subnet | Location
 -- | --
-52.116.78.127/25 | Washington 4
-52.116.115.255/24 | Washington 4
-169.47.179.63/26 | Washington 4
-169.63.72.175/28 | Washington 4
-169.63.121.159/27 | Washington 4
-169.63.86.31/29 | Washington 4
-169.63.111.119/29 | Washington 4
+52.116.78.0/25 | Washington 4
+52.116.115.0/24 | Washington 4
+169.47.179.0/26 | Washington 4
+169.63.72.160/28 | Washington 4
+169.63.121.128/27 | Washington 4
+169.63.86.24/29 | Washington 4
+169.63.111.112/29 | Washington 4
 169.63.121.55/29 | Washington 4
-169.63.121.63/29 | Washington 4
-169.63.125.223/29 | Washington 4
-169.59.138.255/24 | Washington 6
-169.63.128.191/27 | Washington 6
-169.63.135.191/28 | Washington 6
-169.63.139.255/26 | Washington 6
-169.63.172.127/25 | Washington 6
-169.60.89.7/29 | Washington 6
-169.60.95.151/29 | Washington 6
-169.63.129.119/29 | Washington 6
-169.63.141.239/29 | Washington 6
-169.63.149.199/29 | Washington 6
-52.117.104.255/24 | Washington 7
-169.61.123.95/28 | Washington 7
-169.62.42.63/27 | Washington 7
-169.62.54.191/26 | Washington 7
-169.62.60.127/25 | Washington 7
-52.117.76.47/29 | Washington 7
-169.61.113.39/29 | Washington 7
-169.61.113.47/29 | Washington 7
-169.61.122.159/29 | Washington 7
-169.62.6.87/29 | Washington 7
+169.63.121.48/29 | Washington 4
+169.63.125.216/29 | Washington 4
+169.59.138.0/24 | Washington 6
+169.63.128.160/27 | Washington 6
+169.63.135.176/28 | Washington 6
+169.63.139.192/26 | Washington 6
+169.63.172.0/25 | Washington 6
+169.60.89.0/29 | Washington 6
+169.60.95.144/29 | Washington 6
+169.63.129.112/29 | Washington 6
+169.63.141.232/29 | Washington 6
+169.63.149.192/29 | Washington 6
+52.117.104.0/24 | Washington 7
+169.61.123.80/28 | Washington 7
+169.62.42.32/27 | Washington 7
+169.62.54.128/26 | Washington 7
+169.62.60.0/25 | Washington 7
+52.117.76.40/29 | Washington 7
+169.61.113.32/29 | Washington 7
+169.61.113.40/29 | Washington 7
+169.61.122.152/29 | Washington 7
+169.62.6.80/29 | Washington 7
 
 ### `eu-de` List
 {: #eu-de-list} 
