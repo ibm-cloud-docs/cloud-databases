@@ -39,6 +39,7 @@ Deployment Region | Log Analysis Region
 `us-east` | `us-east`
 `ca-tor` | `ca-tor`
 `jp-osa` | `jp-tok` 
+`br-sao` | `br-sao`
 
 
 {: caption="Table 1. Log Analysis regions" caption-side="top"}
