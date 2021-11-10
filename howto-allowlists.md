@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-04"
+lastupdated: "2021-11-10"
 
 subcollection: cloud-databases
 
@@ -10,7 +10,6 @@ keywords: allowlist, ip addresses, blocklist, whitelist
 
 ---
 
-{:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
