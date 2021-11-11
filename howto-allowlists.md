@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-10"
+lastupdated: "2021-11-11"
 
 subcollection: cloud-databases
 
@@ -171,7 +171,7 @@ Subnet | Location
 135.90.83.0/26 | Sydney 5
 135.90.67.24/29 | Sydney 5
 135.90.67.128/29 | Sydney 5
-135.90.67.128/29 | Sydney 5
+135.90.68.32/29 | Sydney 5
 
 ### `jp-tok` List
 {: #jp-tok-list} 
@@ -227,7 +227,6 @@ Subnet | Location
 169.63.121.128/27 | Washington 4
 169.63.86.24/29 | Washington 4
 169.63.111.112/29 | Washington 4
-169.63.121.55/29 | Washington 4
 169.63.121.48/29 | Washington 4
 169.63.125.216/29 | Washington 4
 169.59.138.0/24 | Washington 6
@@ -237,6 +236,7 @@ Subnet | Location
 169.63.172.0/25 | Washington 6
 169.60.89.0/29 | Washington 6
 169.60.95.144/29 | Washington 6
+169.63.121.56/29 | Washington 6
 169.63.129.112/29 | Washington 6
 169.63.141.232/29 | Washington 6
 169.63.149.192/29 | Washington 6
