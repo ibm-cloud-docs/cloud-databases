@@ -35,4 +35,4 @@ To identify your impacted resources, take advantage of special offers, or learn 
 To avoid any disruption to your service, please complete the following steps to migrate your resources from your current data center to your new location: 
 
 - Restore your backup into a new database, in a new region. See [Managing backups](/docs/cloud-databases?topic=cloud-databases-dashboard-backups){: .external} for more information.
-- For an {{site.data.keyword.databases-for-postgresql_full}} or {{site.data.keyword.databases-for-mysql_full}} deployment, you can deploy [Read Replicas](/docs/databases-for-postgresql?topic=databases-for-postgresql-read-only-replicas){: .external} into a new region and turn that Read Replica into a standalone database.
+- For an {{site.data.keyword.databases-for-postgresql_full}} deployment, you can deploy [Read Replicas](/docs/databases-for-postgresql?topic=databases-for-postgresql-read-only-replicas){: .external} into a new region and turn that Read Replica into a standalone database.
