@@ -20,9 +20,9 @@ keywords: migrating cloud-databases, data center cloud-databases
 {{site.data.keyword.cloud}}'s investments in data center infrastructure includes rolling out newer data centers and multizone regions (MZRs) and closing older data centers that are unsuitable for upgrading. 
 
 For a current list of data centers, see [Locations for resource deployment
-](/docs/overview?topic=overview-locations){: .external}. 
+](/docs/overview?topic=overview-locations){: external}. 
 
-For information regarding data centers that are closing, see [Data center closures](/docs/get-support?topic=get-support-dc-closure)
+For information regarding data centers that are closing, see [Data center closures](/docs/get-support?topic=get-support-dc-closure){: external}.
 
 ## Migrating your resources
 {: #migrating-your-resources}
@@ -35,4 +35,4 @@ To identify your impacted resources, take advantage of special offers, or learn 
 To avoid any disruption to your service, please complete the following steps to migrate your resources from your current data center to your new location: 
 
 - Restore your backup into a new database, in a new region. See [Managing backups](/docs/cloud-databases?topic=cloud-databases-dashboard-backups){: .external} for more information.
-- For a {{site.data.keyword.databases-for-postgresql_full}} or {{site.data.keyword.databases-for-mysql_full}} deployment, you can deploy [Read Replicas](/docs/databases-for-postgresql?topic=databases-for-postgresql-read-only-replicas){: .external} into a new region and turn that Read Replica into a standalone database.
+- For an {{site.data.keyword.databases-for-postgresql_full}} or {{site.data.keyword.databases-for-mysql_full}} deployment, you can deploy [Read Replicas](/docs/databases-for-postgresql?topic=databases-for-postgresql-read-only-replicas){: .external} into a new region and turn that Read Replica into a standalone database.
