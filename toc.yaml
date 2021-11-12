@@ -18,7 +18,6 @@ toc:
       - index.md
       - learn-size-guidance.md
       - learn-getting-to-production.md
-
   - navgroup: 
       id: howto
       topics: 
@@ -33,6 +32,7 @@ toc:
       - howto-manage-backups.md
       - howto-allowlists.md
       - ha-dr.md
+      - closures.md
       - topicgroup: 
           label: Enhancing security
           topics: 
