@@ -2,6 +2,11 @@
 copyright:
   years: 2018, 2021
 lastupdated: "2021-11-02"
+
+subcollection: cloud-databases
+
+keywords: version for cloud-databases
+
 ---
 
 {:external: .external target="_blank"}
