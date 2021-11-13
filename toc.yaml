@@ -33,6 +33,7 @@ toc:
       - howto-manage-backups.md
       - howto-allowlists.md
       - ha-dr.md
+      - closures.md
       - topicgroup: 
           label: Enhancing security
           topics: 
