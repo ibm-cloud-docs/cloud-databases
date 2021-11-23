@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2021
-lastupdated: "2021-04-15"
+lastupdated: "2021-11-23"
 
 keywords: security and compliance for cloud databases, security for cloud databases, compliance for cloud databases, enterprisedb, redis, etcd, elasticsearch, postresgql, datastax, mongodb, rabbitmq, mysql
 
@@ -37,8 +37,7 @@ To start monitoring your resources, check out [Getting started with {{site.data.
 ### Available goals for {{site.data.keyword.databases-for}}
 {: #cloud-databases-available-goals}
 
-* **Check whether {{site.data.keyword.databases-for}} is enabled with IBM-managed or customer-managed encryption.** All {{site.data.keyword.databases-for}} instances are automatically encrypted at rest with IBM-managed keys, for customer-managed encryption keys review the [following documentation](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-key-protect.). 
+* **Check whether {{site.data.keyword.databases-for}} is enabled with IBM-managed or customer-managed encryption.** All {{site.data.keyword.databases-for}} instances are automatically encrypted at rest with IBM-managed keys, for customer-managed encryption keys review the [following documentation.](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-key-protect)
 * **Check whether {{site.data.keyword.databases-for}} is accessible only through HTTPS.** All {{site.data.keyword.databases-for}} connections use TLS/SSL encryption for data in transit. The current supported version of this encryption is TLS 1.2. 
-* **Check whether {{site.data.keyword.databases-for}} is accessible only by using private endpoints.** Customers can disable public endpoints at provision time. For more information see [Service Endpoints Integration](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-service-endpoints)
-* **Check whether D{{site.data.keyword.databases-for}} network access is restricted to a specific IP range.** To learn more about how to check or achieve this goal, review our [allowlisting documentation](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-allowlisting)
-
+* **Check whether {{site.data.keyword.databases-for}} is accessible only by using private endpoints.** Customers can disable public endpoints at provision time. For more information see [Service Endpoints Integration.](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-service-endpoints)
+* **Check whether D{{site.data.keyword.databases-for}} network access is restricted to a specific IP range.** To learn more about how to check or achieve this goal, review our [allowlisting documentation.](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-allowlisting)
