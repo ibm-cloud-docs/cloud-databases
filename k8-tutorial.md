@@ -96,11 +96,15 @@ Or for [cloning by using HTTPS](https://docs.github.com/en/github/using-git/whic
    This process creates a standard database instance in the service you specify that incurs additional charges in your selected plan.
    {: note}
 
-<INSERT RESOURCE GROUP STARTING INFO HERE>
+1. Before creating your database instance, you must target a resource group, using the following command:
 
-2. The database can be created from the command line by using the `ibmcloud resource service-instance-create` command. The command takes a service instance name, a service name, plan name, and location. 
+   ```shell
+   ibmcloud target -g RESOURCE_GROUP
+   ```
+
+1. The database can be created from the command line by using the `ibmcloud resource service-instance-create` command. The command takes a service instance name, a service name, plan name, and location. 
     
-3. The service name is one of the {{site.data.keyword.databases-for}} services, `databases-for-datastax`, `databases-for-elasticsearch`, `databases-for-enterprisedb`, `databases-for-etcd`, `databases-for-mongodb`, `databases-for-postgresql`, `databases-for-redis`, `messages-for-rabbitmq`, or `databases-for-mysql`.
+1. The service name is one of the {{site.data.keyword.databases-for}} services, `databases-for-datastax`, `databases-for-elasticsearch`, `databases-for-enterprisedb`, `databases-for-etcd`, `databases-for-mongodb`, `databases-for-postgresql`, `databases-for-redis`, `messages-for-rabbitmq`, or `databases-for-mysql`.
    
    ```shell
    ibmcloud resource service-instance-create <your_deployment_name> <service_name> standard <region>
