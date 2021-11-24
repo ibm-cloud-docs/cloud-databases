@@ -87,22 +87,6 @@ ibmcloud sat storage config create  \\
 ```
 {: pre}
 
-### Enable public endpoints on the Satellite Control Plane
-{: #satellite-control-plane}
-
-In order to provide database management, ICD enabled by IBM Cloud Satellite requires you to enable public endpoints on the Satellite control plane.
-
-First, retrieve your public endpoints from your AWS portal for the control plane hosts.
-Then, using the IP's from your AWS portal, enter the following command:
-
-```bash
-ibmcloud sat location dns register --location <location> --ip <public-ip1> --ip <public-ip2> --ip <public-ip3>
-
-```
-{: pre}
-
-For more information on accessing clusters, refer to [Accessing clusters from the public network](/docs/openshift?topic=openshift-access_cluster#sat_public_access).
-
 ## Grant a service authorization
 {: step}
 {: #service-authorization}

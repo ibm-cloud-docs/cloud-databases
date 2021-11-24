@@ -111,14 +111,6 @@ ibmcloud sat storage templates | grep "NetApp Ontap"
     ```
     {: pre}
 
-
-### Enable public endpoints on the Satellite Control Plane
-{: #public-endpoints}
-
-In order to provide database management, ICD enabled by IBM Cloud Satellite requires you to enable public endpoints on the Satellite control plane.
-
-For more information on accessing clusters, refer to [Accessing clusters from the public network](/docs/openshift?topic=openshift-access_cluster#sat_public_access).
-
 ## Grant a service authorization
 {: #grant-service-auth}
 {: step}
