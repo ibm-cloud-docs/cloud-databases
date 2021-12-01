@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2021-11-08"
+lastupdated: "2021-11-30"
 
 keywords: provision cloud databases, databases with terraform, provisioning parameters
 
@@ -86,7 +86,7 @@ The `--service-endpoints` flag allows you to enable connections to your deployme
 ibmcloud resource service-instance-create <service-name> --service-endpoints <endpoint-type>
 ```
 
-The `service-instance-create` command supports a `-p` flag, which allows JSON-formatted [parameters](#list-of-additional-parameters) to be passed to the provisioning process. Some parameters values are CRNs (Cloud Resource Name), which uniquely identify a resource in the cloud. All parameter names and values are passed as strings.
+The `service-instance-create` command supports a `-p` flag, which allows JSON-formatted [parameters](#list-of-additional-parameters) to be passed to the provisioning process. Some parameter values are CRNs (Cloud Resource Name), which uniquely identify a resource in the cloud. All parameter names and values are passed as strings.
 
 For example, if a database is being provisioned from a particular backup and the new database deployment needs a total of 9 GB of memory across three members, then the command to provision 3 GB per member looks like:
 
