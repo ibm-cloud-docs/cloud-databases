@@ -117,18 +117,18 @@ Remember the database deployment name. Find your [region identifier here](/docs/
 ## Configuring the Kubernetes App
 {: #config-kubernetes}
 
-1. [Create an {{site.data.keyword.containershort_notm}}](/docs/containers?topic=containers-getting-started#getting-started). Choose the location and resource group that you want to set up your cluster in. Select the cluster type that you want to use. This example only requires the lite plan, which comes with one worker node. Once a cluster is provisioned, you are given a list of steps to follow to access your cluster and set the environment variables under the _Access_ tab. You are also able to verify that your deployment is provisioned and running normally.
+1. [Create a {{site.data.keyword.containershort_notm}}](/docs/containers?topic=containers-getting-started#getting-started). Choose the location and resource group in which you'd like to set up your cluster. Select the cluster type that you want to use. This example only requires the lite plan, which comes with one worker node. Once a cluster is provisioned, you are given a list of steps to access your cluster and set the environment variables under the _Access_ tab. You are also able to verify that your deployment is provisioned and running normally.
 
 2. Make sure that you are targeting the correct {{site.data.keyword.cloud_notm}} resource group of your {{site.data.keyword.containershort_notm}}.
 
-   Use the following command to target your cluster resource group if your resource    group is other than `default`.
+   If your resource group is named anything other than `default`, use the following command to target your cluster resource group:
 
    ```shell
    ibmcloud target -g <resource_group_name>
    ```
    {: pre}
 
-   For this example, we're using the `default` resource group.
+   This example uses the `default` resource group.
 
 3. Create your own private image repository in [{{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-getting-started) to store your application's Docker image. Since we want the images to be private, we need to create a namespace, which creates a unique URL to your image repository.  
 
