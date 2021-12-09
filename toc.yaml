@@ -40,6 +40,7 @@ toc:
       - topicgroup: 
           label: Tutorials
           topics: 
+          - howto-tutorials.md
           - k8-tutorial.md
           - cf-tutorial.md
   - navgroup: 
