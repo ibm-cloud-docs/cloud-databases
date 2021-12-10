@@ -46,12 +46,12 @@ To avoid the installation of these tools, you can also use the [{{site.data.keyw
 For a detailed tutorial on moving a VM based app to a Kubernetes cluster by using Kubernetes Service, check out [Moving a VM based app to Kubernetes
 ](/docs/solution-tutorials?topic=solution-tutorials-vm-to-containers-and-kubernetes). This tutorial walks you through storing app pod data in an {{site.data.keyword.databases-for}} service, allowing {{site.data.keyword.databases-for}} to easily configure and manage your database-as-a-service (DBaaS) with built-in backups and scaling.
 
-## Modern web application using MEAN stack
+### Modern web application using MEAN stack
 {: #tutorial-solutions-mean-stack}
 
 Using [Databases For MongoDB](/docs/databases-for-mongodb), [create a Modern web application using MEAN stack](/docs/solution-tutorials?topic=solution-tutorials-mean-stack). You will learn how to run a MEAN starter locally, create and use a managed database-as-a-service (DBasS), deploy the app to IBM Cloud, and scale the database resources.
 
-## Scale workloads in shared and dedicated VPC environments
+### Scale workloads in shared and dedicated VPC environments
 {: #tutorial-solutions-vpc-enviro}
 
 Use [Databases For PostgreSQL](/docs/databases-for-postgresql) to set up isolated workloads in a shared (multi-tenant) environment and a dedicated (single-tenant) environment in the [Scale workloads in shared and dedicated VPC environments](/docs/solution-tutorials?topic=solution-tutorials-vpc-scaling-dedicated-compute) tutorial.
