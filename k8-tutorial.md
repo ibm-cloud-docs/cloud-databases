@@ -24,13 +24,6 @@ The [{{site.data.keyword.databases-for}} "Hello World" Kubernetes examples](http
 
 Each Git branch of the examples repository corresponds to samples in a particular programming language. For example, when you click **Branch**, a **Node** branch exists where all examples are written in JavaScript that uses Node.js. The files in each folder correspond to either a database or a message queue.  
 
-## IBM Solution Tutorials Terraform Tutorial
-{: #tutorial-solutions-terraform-app}
-
-For a detailed tutorial on creating and maintaining your databases using {{site.data.keyword.cloud_notm}} CLI and [Terraform](https://www.terraform.io/), check out [Plan, create and update deployment environments
-](/docs/solution-tutorials?topic=solution-tutorials-plan-create-update-deployments) on the [IBM solution tutorials](/docs/solution-tutorials?topic=solution-tutorials-tutorials) page.
-
-
 ## Trying out the sample applications
 {: #sample-apps}
 
