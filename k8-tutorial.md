@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-02"
+lastupdated: "2021-12-14"
 
 keywords: kubernetes, tutorial, setup
 
