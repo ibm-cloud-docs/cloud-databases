@@ -17,7 +17,7 @@ subcollection: cloud-databases
 {:note: .note}
 
 
-# Connect a {{site.data.keyword.databases-for}} deployment to an {{site.data.keyword.cloud_notm}} {{site.data.keyword.containerlong_notm}} Service application
+# Connect a {{site.data.keyword.databases-for}} deployment to an {{site.data.keyword.containerlong_notm}} application
 {: #tutorial-k8s-app}
 
 The [{{site.data.keyword.databases-for}} "Hello World" Kubernetes examples](https://github.com/IBM-Cloud/clouddatabases-helloworld-kubernetes-examples) repository holds sample {{site.data.keyword.cloud}} applications, written in a various programming languages, that detail how to connect a {{site.data.keyword.databases-for}} deployment to an {{site.data.keyword.containerlong_notm}} application.  
