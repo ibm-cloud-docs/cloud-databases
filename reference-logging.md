@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-10"
+lastupdated: "2021-12-15"
 
 subcollection: cloud-databases
 
@@ -40,6 +40,7 @@ Deployment Region | Log Analysis Region
 `ca-tor` | `ca-tor`
 `jp-osa` | `jp-tok` 
 `br-sao` | `br-sao`
+`par01` | `eu-de`
 {: caption="Table 1. Log Analysis regions" caption-side="top"}
 
 Platform logs from your deployments appear in a Log Analysis instance in the same region, except for `seo01` and `jp-osa`. Deployments in `seo01` have their logs forwarded to `jp-tok`. Deployments in `jp-osa` have their logs forwarded to `jp-tok`. If you have deployments in multiple regions, you must set up Log Analysis in multiple regions.  

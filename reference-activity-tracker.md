@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-03"
+lastupdated: "2021-12-15"
 
 subcollection: cloud-databases
 
@@ -39,6 +39,7 @@ Deployment Region | Activity Tracker Region
 `au-syd` | `au-syd`
 `us-east` | `us-east`
 `ca-tor` | `ca-tor`
+`par01` | `eu-de`
 {: caption="Table 1. Activity Tracker regions" caption-side="top"}
 
 Events from your deployments appear in an Activity Tracker instance in the same region, except in the cases of `seo01` and `jp-osa`. Events for deployments in `seo01` are forwarded to `jp-tok` while `jp-osa` events are forwarded to `jp-tok`. If you have deployments in multiple regions, you must set up the Activity Tracker in multiple regions. 
