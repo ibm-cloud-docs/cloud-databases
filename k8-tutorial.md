@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2021
-lastupdated: "2021-12-08"
+lastupdated: "2021-12-15"
 
 keywords: kubernetes, tutorial, setup
 
@@ -17,10 +17,10 @@ subcollection: cloud-databases
 {:note: .note}
 
 
-# An example {{site.data.keyword.containershort_notm}} Application
+# Connect a {{site.data.keyword.databases-for}} deployment to an {{site.data.keyword.cloud_notm}} {{site.data.keyword.containerlong_notm}} Service application
 {: #tutorial-k8s-app}
 
-The [{{site.data.keyword.databases-for}} "Hello World" Kubernetes examples](https://github.com/IBM-Cloud/clouddatabases-helloworld-kubernetes-examples) repository holds sample {{site.data.keyword.cloud}} applications that show you how to connect to a {{site.data.keyword.databases-for}} deployment to an {{site.data.keyword.containerlong_notm}} application written in a various programming languages.  
+The [{{site.data.keyword.databases-for}} "Hello World" Kubernetes examples](https://github.com/IBM-Cloud/clouddatabases-helloworld-kubernetes-examples) repository holds sample {{site.data.keyword.cloud}} applications, written in a various programming languages, that detail how to connect a {{site.data.keyword.databases-for}} deployment to an {{site.data.keyword.containerlong_notm}} application.  
 
 Each Git branch of the examples repository corresponds to samples in a particular programming language. For example, when you click **Branch**, a **Node** branch exists where all examples are written in JavaScript that uses Node.js. The files in each folder correspond to either a database or a message queue.  
 
