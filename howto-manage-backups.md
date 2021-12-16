@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-09"
+lastupdated: "2021-12-15"
 
 subcollection: cloud-databases
 
@@ -26,7 +26,7 @@ Backups for {{site.data.keyword.databases-for}} deployments are accessible from 
 - Backups cannot be deleted. 
 - If you delete your deployment, its backups are deleted automatically.
 - Scheduling of the daily backup is not configurable.
-- Backups are restorable to other regions, except for `eu-de`, which cannot cross regional boundaries.
+- Backups are restorable to other regions, except for `eu-de` and `par-01`, which can only restore backups between each other (e.g., `par-01` backups can be restored to `eu-de`, and vice versa).
 - Backup storage is encrypted. If you need to manage the encryption keys, you can do so with the [Key Protect integration](/docs/cloud-databases?topic=cloud-databases-key-protect#byok-for-backups). Otherwise, they are encrypted with a key that is automatically generated for your deployment.
 - Backups are also restorable across accounts, but only by using the API and only if the user that is running the restore has access to both the source and destination accounts. 
 
