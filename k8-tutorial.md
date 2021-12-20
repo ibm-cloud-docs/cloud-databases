@@ -20,37 +20,38 @@ subcollection: cloud-databases
 # Connect a {{site.data.keyword.databases-for}} deployment to an {{site.data.keyword.containerlong_notm}} application
 {: #tutorial-k8s-app}
 
-The [{{site.data.keyword.databases-for}} "Hello World" Kubernetes examples](https://github.com/IBM-Cloud/clouddatabases-helloworld-kubernetes-examples) repository holds sample {{site.data.keyword.cloud}} applications, written in a various programming languages, that detail how to connect a {{site.data.keyword.databases-for}} deployment to an {{site.data.keyword.containerlong_notm}} application.  
+The [{{site.data.keyword.databases-for}} "Hello World" Kubernetes examples](https://github.com/IBM-Cloud/clouddatabases-helloworld-kubernetes-examples) repository holds sample {{site.data.keyword.cloud}} applications, written in various programming languages, that detail how to connect a {{site.data.keyword.databases-for}} deployment to an {{site.data.keyword.containerlong_notm}} application.  
 
-Each Git branch of the examples repository corresponds to samples in a particular programming language, either JavaScript using Node.js, or python. The files in each folder correspond to either a database or a message queue.  
+Each Git branch of the examples repository corresponds to samples in a particular programming language, either JavaScript using Node.js, or python. The files in each folder correspond either to a database or a message queue.
+{:shortdesc: .shortdesc}  
 
 ## Trying out the sample applications
 {: #sample-apps}
 
-Clone the repository of the language that you want to use. For instance, you can clone the **Node** repository by selecting the **Node** branch. Then, click **Clone or download** to get the URL you need to clone by using SSH or HTTPS. In your console, the command looks like:
+Clone the respective repo you wish to use. For instance, you can clone the **Node** repository by selecting the **Node** branch. Then, click **Clone or download** to get the URL you need to clone by using SSH or HTTPS. This command looks like:
 
    ```shell
    git clone -b node git@github.com:IBM-Cloud/clouddatabases-helloworld-kubernetes-examples.git
    ```
    {: pre}
 
-Or for [cloning by using HTTPS](https://docs.github.com/en/github/using-git/which-remote-url-should-i-use#cloning-with-https-urls-recommended):
+Or, [clone by using HTTPS](https://docs.github.com/en/github/using-git/which-remote-url-should-i-use#cloning-with-https-urls-recommended):
 
    ```shell
    git clone -b node https://github.com/IBM-Cloud/clouddatabases-helloworld-kubernetes-examples.git
    ```
    {: pre}
 
-   Once the branch is cloned, select the appropriate directory for the database you want to try out. Each database has its own copy of these instructions on how to provision and deploy a database or message queue and an application on {{site.data.keyword.containerlong_notm}}.
+   Once the branch is cloned, select the appropriate directory for the database you wishto try. Each database has its own copy of these instructions on how to provision and deploy a database or message queue and an application on {{site.data.keyword.containerlong_notm}}.
 
 ## Running on {{site.data.keyword.cloud_notm}}
 {: #running-on-cloud}
 
-1. If you do not already have an {{site.data.keyword.cloud_notm}} account, [sign up here](https://cloud.ibm.com/registration/)
+1. If you do not already have an {{site.data.keyword.cloud_notm}} account, [sign up here.](https://cloud.ibm.com/registration/)
 
-2. [Download and install {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli). The {{site.data.keyword.cloud_notm}} CLI tool enables you to communicate with {{site.data.keyword.cloud_notm}} from your console or command line.
+1. [Download and install {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli). The {{site.data.keyword.cloud_notm}} CLI tool enables you to communicate with {{site.data.keyword.cloud_notm}} from your console or command line.
 
-3. Install the {{site.data.keyword.containershort_notm}} CLI plug-in and the Container Registry CLI plug-in
+1. Install the {{site.data.keyword.containershort_notm}} CLI plug-in and the Container Registry CLI plug-in
 
    ```shell
    ibmcloud plugin install container-service
@@ -65,6 +66,7 @@ Or for [cloning by using HTTPS](https://docs.github.com/en/github/using-git/whic
    ```
    {: pre}
 
+   You will receive a response like this:
    ```shell
    Listing installed plug-ins...
 
@@ -74,18 +76,18 @@ Or for [cloning by using HTTPS](https://docs.github.com/en/github/using-git/whic
    ```
    {: screen}
 
-4. [Download and install the Kubernetes CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
+1. [Download and install the Kubernetes CLI.](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 
    Follow the instructions for downloading and installing the Kubernetes CLI for the platform you're using.
 
-5. Connect to {{site.data.keyword.cloud_notm}} in the command-line tool and follow the prompts to log in.
+1. Connect to {{site.data.keyword.cloud_notm}} in the command-line tool and follow the prompts to log in.
 
    ```shell
    ibmcloud login
    ```
    {: pre}
 
-   If you have a federated user ID, use the `ibmcloud login --sso` command tolog in with your single sign-on ID.
+   If you have a federated user ID, use the `ibmcloud login --sso` command to log in with your single sign-on ID.
    {: note}
 
 ## Creating your database
