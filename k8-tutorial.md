@@ -93,10 +93,8 @@ Or, [clone by using HTTPS](https://docs.github.com/en/github/using-git/which-rem
 ## Creating your database
 {: #create-database}
 
-1. Create your database deployment.
-
-   This process creates a standard database instance in the service you specify that incurs additional charges in your selected plan.
-   {: note}
+This process creates a standard database instance in the service you specify that may incur additional charges in your selected plan.
+{: note}
 
 1. Before creating your database instance, you must target a resource group, using the following command:
 
