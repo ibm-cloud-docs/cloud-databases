@@ -102,6 +102,9 @@ This process creates a standard database instance in the service you specify tha
    ibmcloud target -g RESOURCE_GROUP
    ```
 
+For more information on working with resource groups, see [Working with resources and resource groups (ibmcloud resource).](/docs/cli?topic=cli-ibmcloud_commands_resource)
+{: tip}
+
 1. The database can be created from the command line by using the `ibmcloud resource service-instance-create` command. The command takes a service instance name, a service name, plan name, and location. 
     
 1. The service name is one of the {{site.data.keyword.databases-for}} services, `databases-for-datastax`, `databases-for-elasticsearch`, `databases-for-enterprisedb`, `databases-for-etcd`, `databases-for-mongodb`, `databases-for-postgresql`, `databases-for-redis`, `messages-for-rabbitmq`, or `databases-for-mysql`.
