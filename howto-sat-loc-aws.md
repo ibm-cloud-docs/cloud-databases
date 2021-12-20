@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-11-24"
+lastupdated: "2021-12-20"
 
 keywords: IBM Cloud, databases, ICD
 
@@ -150,5 +150,8 @@ ibmcloud sat storage assignment create  \\
     --config 'aws-ebs-config-storage-testing-1'
 ```
 {: pre}
+
+Assigning a storage configuration to a service cluster will autogenerate a `--name` and any user-provided name will be ignored.
+{: note}
 
 After the storage assignment has been created, allow up to 30 minutes for the database instance to be ready for usage.
