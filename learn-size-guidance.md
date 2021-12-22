@@ -19,8 +19,10 @@ subcollection: cloud-databases
 # RAM, Disk, and CPU Sizing from Compose to IBM Cloud Databases
 {: #compose-icd-sizing} 
 
-If your database deployments are currently on Compose, the following information helps determine the starting allocation for RAM, disk, and CPUs needed for new deployments on IBM Cloud Databases. For convenience, step 3 includes a Python function where you can feed the RAM in MB and it writes the per-member and total allocation recommendations for your IBM Cloud Databases deployment. 
+If your database deployments are currently on Compose, the following information helps determine the starting allocation for RAM, disk, and CPUs needed for new deployments on IBM {{site.data.keyword.databases-for}}. For your convenience, [step 3]({: #map-deployment}) includes a Python function that writes the per-member and total allocation recommendations for your IBM {{site.data.keyword.databases-for}} deployment, based on your RAM input.
 
+The steps outlined below are intended for [Compose.com](https://compose.com/) clients. Instructions for clients transitioning from Compose on IBM Cloud are forthcoming.
+{: .note}
 
 ## Create a Compose API Token 
 {: #compose-api-token} 
@@ -29,15 +31,15 @@ You can use the [Compose API](https://apidocs.compose.com/) to obtain the total 
 
 In order to use the Compose API, you need to create a unique API token for your account. Select **Account** from the Compose UI then click the **API Tokens** button. 
 
-![The Scale Resources Pane in _Settings_](images/size-guidance-compose-api-token.png){: caption="Figure 1. The Scale Resources Pane" caption-side="bottom"}
+![The Scale Resources Pane in Settings](images/size-guidance-compose-api-token.png){: caption="Figure 1. The Scale Resources Pane" caption-side="bottom"}
 
 You are taken to the API tokens page. On the right, enter the name of your API token and click the “Create” button. 
 
-![The Scale Resources Pane in _Settings_](images/size-guidance-create-api-token.png){: caption="Figure 2. The Scale Resources Pane" caption-side="bottom"}
+![The Scale Resources Pane in Settings](images/size-guidance-create-api-token.png){: caption="Figure 2. The Scale Resources Pane" caption-side="bottom"}
 
 When presented with your API token, make sure you save it.
 
-![The Scale Resources Pane in _Settings_](images/size-guidance-personal-api-tokens.png){: caption="Figure 3. The Scale Resources Pane" caption-side="bottom"}
+![The Scale Resources Pane in Settings](images/size-guidance-personal-api-tokens.png){: caption="Figure 3. The Scale Resources Pane" caption-side="bottom"}
 
 You can revoke API tokens anytime and create new ones.
 
