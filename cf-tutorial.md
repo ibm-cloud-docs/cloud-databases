@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2020
-lastupdated: "2020-11-02"
+lastupdated: "2020-12-22"
 
 subcollection: cloud-databases
 
@@ -56,7 +56,8 @@ npm install
 ibmcloud login
 ```
 
-**Note:** If you have a federated user ID, use the `ibmcloud login --sso` command to log in with your single sign-on ID.
+If you have a federated user ID, use the `ibmcloud login --sso` command to log in with your single sign-on ID. 
+{: .note}
 
 ## Creating a database deployment
 {: #create-database-deployment}

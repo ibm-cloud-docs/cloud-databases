@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2021
-lastupdated: "2021-11-03"
+lastupdated: "2021-12-22"
 
 keywords: Compose, cloud databases, migrating, disk size, memory size, CPU size, resources
 
@@ -20,6 +20,7 @@ subcollection: cloud-databases
 {: #compose-icd-sizing} 
 
 If your database deployments are currently on Compose, the following information helps determine the starting allocation for RAM, disk, and CPUs needed for new deployments on IBM Cloud Databases. For convenience, step 3 includes a Python function where you can feed the RAM in MB and it writes the per-member and total allocation recommendations for your IBM Cloud Databases deployment. 
+
 
 ## Create a Compose API Token 
 {: #compose-api-token} 
