@@ -19,7 +19,7 @@ subcollection: cloud-databases
 # RAM, Disk, and CPU Sizing from Compose to IBM Cloud Databases
 {: #compose-icd-sizing} 
 
-If your database deployments are currently on Compose, the following information helps determine the starting allocation for RAM, disk, and CPUs needed for new deployments on IBM {{site.data.keyword.databases-for}}. For your convenience, [step 3]({: #map-deployment}) includes a Python function that writes the per-member and total allocation recommendations for your IBM {{site.data.keyword.databases-for}} deployment, based on your RAM input.
+If your database deployments are currently on Compose, the following information helps determine the starting allocation for RAM, disk, and CPUs needed for new deployments on IBM {{site.data.keyword.databases-for}}. For your convenience, [step 3](#map-deployment) includes a Python function that writes the per-member and total allocation recommendations for your IBM {{site.data.keyword.databases-for}} deployment, based on your RAM input.
 
 The steps outlined below are intended for [Compose.com](https://compose.com/) clients. Instructions for clients transitioning from Compose on IBM Cloud are forthcoming.
 {: .note}
