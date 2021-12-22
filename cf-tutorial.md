@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2020
-lastupdated: "2020-12-22"
+lastupdated: "2021-12-22"
 
 subcollection: cloud-databases
 
