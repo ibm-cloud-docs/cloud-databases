@@ -298,49 +298,72 @@ Washington DC 07  |   169.62.6.87/29	    |  169.62.6.80
 ### `eu-de` List
 {: #eu-de-list} 
 
-Subnet | Location
--- | --
-158.177.41.0/24 | Frankfurt 2
-158.177.77.32/27 | Frankfurt 2
-158.177.87.128/25 | Frankfurt 2
-158.177.155.0/26 | Frankfurt 2
-158.177.241.0/24 | Frankfurt 2
-158.177.110.104/29 | Frankfurt 2
-158.177.221.168/29 | Frankfurt 2
-159.122.97.16/29 | Frankfurt 2
-159.122.97.40/29 | Frankfurt 2
-159.122.108.208/29 | Frankfurt 2
-159.122.108.216/29 | Frankfurt 2
-169.50.10.8/29 | Frankfurt 2
-169.50.15.24/29 | Frankfurt 2
-169.50.53.240/29 | Frankfurt 2
-161.156.95.192/27 | Frankfurt 4
-161.156.97.0/26 | Frankfurt 4
-161.156.131.128/25 | Frankfurt 4
-161.156.152.0/24 | Frankfurt 4
-161.156.69.128/29 | Frankfurt 4
-161.156.69.136/29 | Frankfurt 4
-161.156.107.152/29 | Frankfurt 4
-161.156.111.48/29 | Frankfurt 4
-161.156.111.72/29 | Frankfurt 4
-161.156.122.232/29 | Frankfurt 4
-161.156.132.96/29 | Frankfurt 4
-161.156.148.208/29 | Frankfurt 4
-161.156.157.128/29 | Frankfurt 4
-149.81.73.144/28 | Frankfurt 5
-149.81.80.224/27 | Frankfurt 5
-149.81.114.0/26 | Frankfurt 5
-149.81.132.0/25 | Frankfurt 5
-149.81.139.0/24 | Frankfurt 5
-149.81.77.200/29 | Frankfurt 5
-149.81.79.176/29 | Frankfurt 5
-149.81.83.208/29 | Frankfurt 5
-149.81.84.96/29 | Frankfurt 5
-149.81.87.136/29 | Frankfurt 5
-149.81.98.160/29 | Frankfurt 5
-149.81.100.200/29 | Frankfurt 5
-149.81.101.112/29 | Frankfurt 5
-149.81.142.40/29 | Frankfurt 5
+Location | Region | Data center | Subnet | First IP
+-- | -- | -- | -- | --
+Frankfurt |  eu-de | fra02    |     158.177.41.255/24  |   158.177.41.0       
+Frankfurt |  eu-de | fra02    |     158.177.56.255/24  |   158.177.56.0     
+Frankfurt |  eu-de | fra02    |     158.177.61.255/24  |   158.177.61.0     
+Frankfurt |  eu-de | fra02    |      158.177.77.63/27  |   158.177.77.32     
+Frankfurt |  eu-de | fra02    |     158.177.87.255/25  |   158.177.87.128     
+Frankfurt |  eu-de | fra02    |     158.177.155.63/26  |   158.177.155.0     
+Frankfurt |  eu-de | fra02    |     158.177.241.255/24 |   158.177.241.0     
+Frankfurt |  eu-de | fra02    |     158.177.110.111/29 |   158.177.110.104     
+Frankfurt |  eu-de | fra02    |     158.177.221.175/29 |   158.177.221.168     
+Frankfurt |  eu-de | fra02    |      159.122.97.23/29  |   159.122.97.16     
+Frankfurt |  eu-de | fra02    |      159.122.97.47/29  |   159.122.97.40     
+Frankfurt |  eu-de | fra02    |     159.122.108.215/29 |   159.122.108.208     
+Frankfurt |  eu-de | fra02    |     159.122.108.223/29 |   159.122.108.216     
+Frankfurt |  eu-de | fra02    |      169.50.10.15/29   |   169.50.10.8     
+Frankfurt |  eu-de | fra02    |      169.50.13.207/29  |   169.50.13.200     
+Frankfurt |  eu-de | fra02    |      169.50.15.31/29   |   169.50.15.24     
+Frankfurt |  eu-de | fra02    |      169.50.15.191/29  |   169.50.15.184     
+Frankfurt |  eu-de | fra02    |      169.50.35.111/29  |   169.50.35.104     
+Frankfurt |  eu-de | fra02    |      169.50.35.239/29  |   169.50.35.232     
+Frankfurt |  eu-de | fra02    |      169.50.53.247/29  |   169.50.53.240     
+Frankfurt |  eu-de | fra02    |      169.50.54.23/29   |   169.50.54.16     
+Frankfurt |  eu-de | fra04    |      161.156.2.255/24  |   161.156.2.0     
+Frankfurt |  eu-de | fra04    |     161.156.25.255/24  |   161.156.25.0     
+Frankfurt |  eu-de | fra04    |     161.156.51.255/24  |   161.156.51.0     
+Frankfurt |  eu-de | fra04    |     161.156.95.223/27  |   161.156.95.192     
+Frankfurt |  eu-de | fra04    |      161.156.97.63/26  |   161.156.97.0     
+Frankfurt |  eu-de | fra04    |     161.156.131.255/25 |   161.156.131.128     
+Frankfurt |  eu-de | fra04    |     161.156.152.255/24 |   161.156.152.0     
+Frankfurt |  eu-de | fra04    |      161.156.1.79/29   |   161.156.1.72     
+Frankfurt |  eu-de | fra04    |      161.156.8.47/29   |   161.156.8.40     
+Frankfurt |  eu-de | fra04    |     161.156.67.247/29  |   161.156.67.240     
+Frankfurt |  eu-de | fra04    |     161.156.69.135/29  |   161.156.69.128     
+Frankfurt |  eu-de | fra04    |     161.156.69.143/29  |   161.156.69.136     
+Frankfurt |  eu-de | fra04    |     161.156.107.159/29 |   161.156.107.152     
+Frankfurt |  eu-de | fra04    |     161.156.111.55/29  |   161.156.111.48     
+Frankfurt |  eu-de | fra04    |     161.156.111.79/29  |   161.156.111.72     
+Frankfurt |  eu-de | fra04    |     161.156.122.239/29 |   161.156.122.232     
+Frankfurt |  eu-de | fra04    |     161.156.132.103/29 |   161.156.132.96     
+Frankfurt |  eu-de | fra04    |     161.156.148.215/29 |   161.156.148.208     
+Frankfurt |  eu-de | fra04    |     161.156.157.135/29 |   161.156.157.128     
+Frankfurt |  eu-de | fra04    |     161.156.177.183/29 |   161.156.177.176     
+Frankfurt |  eu-de | fra04    |     161.156.185.31/29  |   161.156.185.24     
+Frankfurt |  eu-de | fra05    |      149.81.73.159/28  |   149.81.73.144     
+Frankfurt |  eu-de | fra05    |      149.81.80.255/27  |   149.81.80.224     
+Frankfurt |  eu-de | fra05    |      149.81.114.63/26  |   149.81.114.0     
+Frankfurt |  eu-de | fra05    |     149.81.132.127/25  |   149.81.132.0     
+Frankfurt |  eu-de | fra05    |     149.81.139.255/24  |   149.81.139.0     
+Frankfurt |  eu-de | fra05    |     149.81.150.255/24  |   149.81.150.0     
+Frankfurt |  eu-de | fra05    |     149.81.183.255/24  |   149.81.183.0     
+Frankfurt |  eu-de | fra05    |     149.81.208.255/24  |   149.81.208.0     
+Frankfurt |  eu-de | fra05    |      149.81.77.207/29  |   149.81.77.200     
+Frankfurt |  eu-de | fra05    |      149.81.79.183/29  |   149.81.79.176     
+Frankfurt |  eu-de | fra05    |      149.81.83.215/29  |   149.81.83.208     
+Frankfurt |  eu-de | fra05    |      149.81.84.103/29  |   149.81.84.96     
+Frankfurt |  eu-de | fra05    |      149.81.87.143/29  |   149.81.87.136     
+Frankfurt |  eu-de | fra05    |      149.81.87.151/29  |   149.81.87.144     
+Frankfurt |  eu-de | fra05    |      149.81.98.167/29  |   149.81.98.160     
+Frankfurt |  eu-de | fra05    |     149.81.100.207/29  |   149.81.100.200     
+Frankfurt |  eu-de | fra05    |     149.81.101.119/29  |   149.81.101.112     
+Frankfurt |  eu-de | fra05    |     149.81.106.239/29  |   149.81.106.232     
+Frankfurt |  eu-de | fra05    |      149.81.142.47/29  |   149.81.142.40     
+Frankfurt |  eu-de | fra05    |      149.81.148.79/29  |   149.81.148.72     
+Frankfurt |  eu-de | fra05    |     149.81.171.231/29  |   149.81.171.224     
+Frankfurt |  eu-de | fra05    |     149.81.180.207/29  |   149.81.180.200
 
 ### `us-south` List
 {: #us-south-list} 
