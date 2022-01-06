@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-11-02"
+lastupdated: "2022-01-06"
 
 keywords: IBM Cloud, databases, ICD
 
@@ -52,6 +52,14 @@ ICD enabled by IBM Cloud Satellite supports {{site.data.keyword.databases-for-et
 
 Before proceeding, you should refer to the [Satellite Usage requirements](/docs/satellite?topic=satellite-requirements).
 {: .tip}
+
+## IBM Cloud™ Databases (ICD) enabled by IBM Cloud Satellite services
+{: #satellite-services}
+
+Your ICD service cluster can operate multiple database instances, even with different database types. For instance, you may operate a {{site.data.keyword.databases-for-etcd}} and a {{site.data.keyword.databases-for-postgresql}} on the same service cluster. 
+
+The service cluster name is based on the first database instance, even if multiple instances exist. For example, if your service cluster has both a {{site.data.keyword.databases-for-etcd}} and a {{site.data.keyword.databases-for-postgresql}} on the same service cluster, the name will be based on your {{site.data.keyword.databases-for-etcd}} instance.
+{: .note}
 
 ## Before you begin
 {: #before-begin}
