@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-08-04"
+lastupdated: "2022-01-06"
 
 subcollection: cloud-databases
 
@@ -30,4 +30,4 @@ subcollection: cloud-databases
 - {{site.data.keyword.databases-for-postgresql}}
 - {{site.data.keyword.databases-for-redis}}
 - {{site.data.keyword.messages-for-rabbitmq}}
-
+- {{site.data.keyword.databases-for-mysql}}

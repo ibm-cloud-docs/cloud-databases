@@ -94,32 +94,32 @@ If you use allowlists to control connections in your environment, you can use th
 ### `in-che` List
 {: #che01-list} 
 
-Location | Subnet | First IP
--- | -- | --
-Chennai 01  |   69.38.95.127/27	  |  169.38.95.96	
-Chennai 01  |   69.38.121.159/28	|    169.38.121.144
-Chennai 01  |   69.38.132.127/25	|    169.38.132.0
-Chennai 01  |   69.38.136.255/26	|    169.38.136.192
-Chennai 01  |   69.38.73.151/29	  |  169.38.73.144
-Chennai 01  |   69.38.105.79/29	  |  169.38.105.72
+Location | Region | Data center | Subnet | First IP
+-- | -- | -- | -- | --
+Chennai  |  in-che |  CHE01 | 69.38.95.127/27   |  169.38.95.96	
+Chennai  |  in-che |  CHE01 | 69.38.121.159/28  |   169.38.121.144
+Chennai  |  in-che |  CHE01 | 69.38.132.127/25  |   169.38.132.0
+Chennai  |  in-che |  CHE01 | 69.38.136.255/26  |   169.38.136.192
+Chennai  |  in-che |  CHE01 | 69.38.73.151/29   |  169.38.73.144
+Chennai  |  in-che |  CHE01 | 69.38.105.79/29   |  169.38.105.72
 
 ### `ca-tor` List
 {: #ca-tor-list} 
 
-Location | Subnet | First IP
--- | -- | --
-Toronto 01  |   158.85.91.111/28	  |  158.85.91.96	
-Toronto 01  |   169.55.142.191/27	|  169.55.142.160	
-Toronto 01  |   158.85.95.183/29	  |  158.85.95.176	
-Toronto 01  |   169.55.130.215/29	|  169.55.130.208	
-Toronto 04  |   163.74.68.95/28	  |  163.74.68.80
-Toronto 04  |   163.74.69.159/27	  |  163.74.69.128	
-Toronto 04  |   163.74.68.55/29	  |  163.74.68.48
-Toronto 04  |   163.74.68.63/29	  |  163.74.68.56
-Toronto 05  |   163.75.67.111/28	  |  163.75.67.96	
-Toronto 05  |   163.75.68.95/27	  |  163.75.68.64
-Toronto 05  |   163.75.67.7/29	    |  163.75.67.0	
-Toronto 05  |   163.75.67.119/29	  |  163.75.67.112
+Location | Region | Data center | Subnet | First IP
+-- | -- | -- | -- | --
+Toronto  |   ca-tor | TOR01 | 158.85.91.111/28	  |  158.85.91.96	
+Toronto  |   ca-tor | TOR01 | 169.55.142.191/27	|  169.55.142.160	
+Toronto  |   ca-tor | TOR01 | 158.85.95.183/29	  |  158.85.95.176	
+Toronto  |   ca-tor | TOR01 | 169.55.130.215/29	|  169.55.130.208	
+Toronto  |   ca-tor | TOR04 | 163.74.68.95/28	  |  163.74.68.80
+Toronto  |   ca-tor | TOR04 | 163.74.69.159/27	  |  163.74.69.128	
+Toronto  |   ca-tor | TOR04 | 163.74.68.55/29	  |  163.74.68.48
+Toronto  |   ca-tor | TOR04 | 163.74.68.63/29	  |  163.74.68.56
+Toronto  |   ca-tor | TOR05 | 163.75.67.111/28	  |  163.75.67.96	
+Toronto  |   ca-tor | TOR05 | 163.75.68.95/27	  |  163.75.68.64
+Toronto  |   ca-tor | TOR05 | 163.75.67.7/29	    |  163.75.67.0	
+Toronto  |   ca-tor | TOR05 | 163.75.67.119/29	  |  163.75.67.112
 
 ### `eu-gb` List
 {: #eu-gb-list} 
