@@ -199,7 +199,7 @@ Sydney  | au-syd | SYD05 | 135.90.67.31/29	 |   135.90.67.24
 Sydney  | au-syd | SYD05 | 135.90.67.135/29	 |   135.90.67.128	
 Sydney  | au-syd | SYD05 | 135.90.68.39/29	 |   135.90.68.32
 
-### `jp-tok` List  |
+### `jp-tok` List
 {: #jp-tok-list} 
 
 Location | Region | Data center | Subnet | First IP
