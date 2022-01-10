@@ -52,7 +52,7 @@ The three type **8x32** hosts are for IBM Cloud™ Databases (ICD) enabled by IB
 
 As your service cluster grows, you might be required to add additional hosts. If required, add **32x128** hosts in increments of three (e.g., three type **8x32** hosts to six type **8x32** hosts, then nine type **8x32** hosts, and so on).
 
-# Service cluster removal
+## Service cluster removal
 {: #remove-service-cluster}
 
 Just as additional hosts are added as your data needs grow, as you downsize your service cluster, hosts will be automatically deleted when they are no longer needed.
