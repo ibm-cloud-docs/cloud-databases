@@ -44,16 +44,16 @@ subcollection: cloud-databases
 {: #satellite-get-started}
 
 With IBM Cloud™ Databases (ICD) enabled by IBM Cloud Satellite, you can deploy ICD instances into a Satellite location. (ICD) enabled by IBM Cloud Satellite currently supports the following ICD managed database services:
-- {{site.data.keyword.databases-for-etcd}}
-- {{site.data.keyword.databases-for-postgresql}}
-- {{site.data.keyword.databases-for-redis}}
-- {{site.data.keyword.messages-for-rabbitmq}}
+- [{{site.data.keyword.databases-for-etcd}}](/docs/databases-for-etcd)
+- [{{site.data.keyword.databases-for-postgresql}}](/docs/databases-for-postgresql)
+- [{{site.data.keyword.databases-for-redis}}](/docs/databases-for-redis)
+- [{{site.data.keyword.messages-for-rabbitmq}}](/docs/messages-for-rabbitmq)
 
- The ICD service will then install an ICD Satellite service cluster in your Satellite location into which your database instances will be deployed. 
+ Once your Satellite location instance is deployed, ICD will install an ICD Satellite service cluster in your Satellite location into which your database instances will be deployed. 
 
- Your ICD service cluster can operate multiple database instances, even with different database types. For instance, you may operate a {{site.data.keyword.databases-for-etcd}} and a {{site.data.keyword.databases-for-postgresql}} on the same service cluster. 
+ Your ICD service cluster can operate multiple database instances, even with different database types. For instance, you may operate a {{site.data.keyword.databases-for-etcd}} and a {{site.data.keyword.databases-for-postgresql}} instance on the same service cluster. 
 
-The service cluster name is based on the first database instance, even if multiple instances exist. For example, if your service cluster has both a {{site.data.keyword.databases-for-etcd}} and a {{site.data.keyword.databases-for-postgresql}} on the same service cluster, the name will be based on your {{site.data.keyword.databases-for-etcd}} instance.
+The service cluster name is based on the first database instance, even if multiple instances exist. For example, if your service cluster has both a {{site.data.keyword.databases-for-etcd}} and a {{site.data.keyword.databases-for-postgresql}} instance on the same service cluster, the name will be based on your {{site.data.keyword.databases-for-etcd}} instance.
 {: .note}
 
 ICD enabled by IBM Cloud Satellite supports Satellite locations on [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws) and [on-premises](/docs/cloud-databases?topic=cloud-databases-satellite-on-prem). 
