@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2022-01-06"
+lastupdated: "2022-01-10"
 
 keywords: IBM Cloud, databases, ICD
 
@@ -43,27 +43,26 @@ subcollection: cloud-databases
 # Getting Started
 {: #satellite-get-started}
 
-With IBM Cloud™ Databases (ICD) enabled by IBM Cloud Satellite, you can deploy ICD instances into a Satellite location. The ICD service will then install an ICD Satellite service cluster in your Satellite location into which your database instances will be deployed.
-ICD enabled by IBM Cloud Satellite supports Satellite locations on [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws) and [on-premises](/docs/cloud-databases?topic=cloud-databases-satellite-on-prem). 
-{: shortdesc}
+With IBM Cloud™ Databases (ICD) enabled by IBM Cloud Satellite, you can deploy ICD instances into a Satellite location. (ICD) enabled by IBM Cloud Satellite currently supports the following ICD managed database services:
+- {{site.data.keyword.databases-for-etcd}}
+- {{site.data.keyword.databases-for-postgresql}}
+- {{site.data.keyword.databases-for-redis}}
+- {{site.data.keyword.messages-for-rabbitmq}}
 
-ICD enabled by IBM Cloud Satellite supports {{site.data.keyword.databases-for-etcd}}, {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-redis}}, and {{site.data.keyword.messages-for-rabbitmq}}.
-{: .note}
+ The ICD service will then install an ICD Satellite service cluster in your Satellite location into which your database instances will be deployed. 
 
-Before proceeding, you should refer to the [Satellite Usage requirements](/docs/satellite?topic=satellite-requirements).
-{: .tip}
-
-## IBM Cloud™ Databases (ICD) enabled by IBM Cloud Satellite services
-{: #satellite-services}
-
-Your ICD service cluster can operate multiple database instances, even with different database types. For instance, you may operate a {{site.data.keyword.databases-for-etcd}} and a {{site.data.keyword.databases-for-postgresql}} on the same service cluster. 
+ Your ICD service cluster can operate multiple database instances, even with different database types. For instance, you may operate a {{site.data.keyword.databases-for-etcd}} and a {{site.data.keyword.databases-for-postgresql}} on the same service cluster. 
 
 The service cluster name is based on the first database instance, even if multiple instances exist. For example, if your service cluster has both a {{site.data.keyword.databases-for-etcd}} and a {{site.data.keyword.databases-for-postgresql}} on the same service cluster, the name will be based on your {{site.data.keyword.databases-for-etcd}} instance.
 {: .note}
 
+ICD enabled by IBM Cloud Satellite supports Satellite locations on [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws) and [on-premises](/docs/cloud-databases?topic=cloud-databases-satellite-on-prem). 
+{: shortdesc}
+
 ## Before you begin
 {: #before-begin}
 
+- Refer to the [Satellite Usage requirements](/docs/satellite?topic=satellite-requirements).
 - Be sure you have set up the [IBM Cloud command-line interface (CLI)](/docs/satellite?topic=satellite-setup-cli), the plug-in for Satellite commands, and other related CLIs.
 - If you have not already created a Satellite location, see [Setting up Satellite locations](/docs/satellite?topic=satellite-locations). We recommend following the steps in the [Manually creating Satellite locations](/docs/satellite?topic=satellite-locations#location-create) documentation.
     - For the management location, choose **Washington DC**. If creating your Satellite location on AWS, adjust the **host zones** to AWS-default zone names, for example: **us-east-1a**, **us-east-1b**, **us-east-1c**.
