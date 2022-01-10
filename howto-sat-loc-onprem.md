@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-11-24"
+lastupdated: "2022-01-10"
 
 keywords: IBM Cloud, databases, ICD
 
@@ -62,6 +62,9 @@ Attach to your Satellite location:
 
 - three type **8x32** hosts
 - three type **32x128** hosts
+
+The three type **8x32** hosts are for IBM Cloud™ Databases (ICD) enabled by IBM Cloud Satellite internal use, while the three type **32x128** hosts are for your use.
+{: note}
 
 ### Create an on-prem Satellite block storage configuration for NetAPP ONTAP-SAN block storage
 {: #block-storage-config}

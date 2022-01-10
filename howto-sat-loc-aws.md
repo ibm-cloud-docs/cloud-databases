@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-12-20"
+lastupdated: "2022-01-10"
 
 keywords: IBM Cloud, databases, ICD
 
@@ -66,6 +66,9 @@ Attach to your Satellite location:
     - on AWS, choose three hosts of type **AWS m5d.2xlarge**
 - three type **32x128** hosts
     - on AWS choose three hosts of type **AWS m5d.8xlarge**
+
+The three type **8x32** hosts are for IBM Cloud™ Databases (ICD) enabled by IBM Cloud Satellite internal use, while the three type **32x128** hosts are for your use.
+{: note}
 
 ### Create a Satellite block storage configuration
 {: #satellite-blockstorage-config}
