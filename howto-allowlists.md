@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2022-01-07"
+lastupdated: "2022-01-11"
 
 subcollection: cloud-databases
 
@@ -364,6 +364,13 @@ Frankfurt |  eu-de | fra05    |      149.81.142.47/29  |   149.81.142.40
 Frankfurt |  eu-de | fra05    |      149.81.148.79/29  |   149.81.148.72     
 Frankfurt |  eu-de | fra05    |     149.81.171.231/29  |   149.81.171.224     
 Frankfurt |  eu-de | fra05    |     149.81.180.207/29  |   149.81.180.200
+Paris |  eu-de | par01    |     159.8.70.111/28  |   	159.8.70.96
+Paris |  eu-de | par01    |     159.8.90.127/26 |   159.8.90.64	
+Paris |  eu-de | par01    |     159.8.114.127/27  |   159.8.114.96	
+Paris |  eu-de | par01    |     159.8.78.239/29 |   159.8.78.232
+Paris |  eu-de | par01    |     	159.8.94.95/29  |   159.8.94.88
+
+
 
 ### `us-south` List
 {: #us-south-list} 
