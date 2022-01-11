@@ -121,6 +121,24 @@ Toronto  |   ca-tor | TOR05 | 163.75.68.95/27	  |  163.75.68.64
 Toronto  |   ca-tor | TOR05 | 163.75.67.7/29	    |  163.75.67.0	
 Toronto  |   ca-tor | TOR05 | 163.75.67.119/29	  |  163.75.67.112
 
+### `br-sao` List
+{: #br-sao-list} 
+
+Location | Region | Data center | Subnet | First IP
+-- | -- | -- | -- | --
+Sao Paulo | br-sao	| sao01     |    169.57.154.239/28 |   169.57.154.224      
+Sao Paulo | br-sao	| sao01     |    169.57.225.127/27 |   169.57.225.96      
+Sao Paulo | br-sao	| sao01     |     169.57.167.95/29 |   169.57.167.88      
+Sao Paulo | br-sao	| sao01     |     169.57.199.23/29 |   169.57.199.16      
+Sao Paulo | br-sao	| sao04     |     163.107.67.63/28 |   163.107.67.48      
+Sao Paulo | br-sao	| sao04     |     163.107.69.63/27 |   163.107.69.32      
+Sao Paulo | br-sao	| sao04     |     163.107.68.87/29 |   163.107.68.80      
+Sao Paulo | br-sao	| sao04     |     163.107.68.95/29 |   163.107.68.88      
+Sao Paulo | br-sao	| sao05     |     163.109.68.95/27 |   163.109.68.64      
+Sao Paulo | br-sao	| sao05     |    163.109.68.175/28 |   163.109.68.160      
+Sao Paulo | br-sao	| sao05     |    163.109.65.119/29 |   163.109.65.112      
+Sao Paulo | br-sao	| sao05     |    163.109.65.127/29 | 163.109.65.120
+
 ### `eu-gb` List
 {: #eu-gb-list} 
 
