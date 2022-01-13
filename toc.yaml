@@ -44,6 +44,13 @@ toc:
           - howto-tutorials.md
           - k8-tutorial.md
           - cf-tutorial.md
+      - topicgroup: 
+          label: Logging and monitoring
+          topics: 
+          - reference-activity-tracker.md
+          - reference-logging.md
+          - cf-tutorial.md
+    
   - navgroup: 
       id: reference
       topics: 
@@ -54,8 +61,6 @@ toc:
       - db-version-policy.md
       - reference-responsibilities.md
       - reference-iam.md
-      - reference-logging.md
-      - reference-activity-tracker.md
       - topicgroup: 
           label: Connecting over Private Networks
           topics: 
