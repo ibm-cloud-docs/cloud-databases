@@ -50,7 +50,6 @@ toc:
           - reference-activity-tracker.md
           - reference-logging.md
           - cf-tutorial.md
-    
   - navgroup: 
       id: reference
       topics: 
