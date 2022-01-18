@@ -22,7 +22,7 @@ keywords: service endpoints, private endpoints, private networking, vpe, virtual
 
 All {{site.data.keyword.databases-for}} deployments offer integration with [{{site.data.keyword.cloud_notm}} Service Endpoints](/docs/account?topic=account-service-endpoints-overview). It gives you the ability to enable connections to your deployments from the public internet and over the {{site.data.keyword.cloud_notm}} Private network.
 
-Service Endpoints are available in all {{site.data.keyword.cloud_notm}} Multi-Zone Regions and some Single-Zone Regions. If your deployments are in `Osl01`, you aren't able to use private endpoints. Deployments in all other regions are able to use Service Endpoints.
+Service Endpoints are available in all {{site.data.keyword.cloud_notm}} Multi-Zone Regions and some Single-Zone Regions. Deployments in all other regions are able to use Service Endpoints.
 
 ## Public Endpoints
 {: #public-endpoints}
