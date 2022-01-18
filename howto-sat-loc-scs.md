@@ -50,7 +50,7 @@ As outlined in your initial ICD Satellite location deployment, your initial serv
 
 The three type **8x32** hosts are for IBM Cloud™ Databases (ICD) enabled by IBM Cloud Satellite internal use, while the three type **32x128** hosts are for your use.
 
-# Growing your service cluster
+## Growing your service cluster
 {: #icd-service-cluster-grow}
 
 As your service cluster grows, you might be required to add additional hosts. If required, add **32x128** hosts in increments of three (e.g., three type **8x32** hosts to six type **8x32** hosts, then nine type **8x32** hosts, and so on).
