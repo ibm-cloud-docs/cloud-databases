@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2022-01-18"
+lastupdated: "2022-01-19"
 
 subcollection: cloud-databases
 
@@ -181,7 +181,8 @@ London | eu-gb | LON06   |  158.176.131.15/29	 |   158.176.131.8
 ### `kr-seo` List
 {: #Seoul 1-list} 
 
-`SEO01` Data Center is scheduled to close on October 28, 2002. See [Data Center closures](/docs/get-support?topic=get-support-dc-closure) for more information, including recommended data centers to which you can migrate.
+`SEO01` Data Center is scheduled to close on October 28, 2002. See [Migrating resources to a different data center
+](/docs/cloud-databases?topic=cloud-databases-migrate-data-center) for more information, including recommended data centers to which you can migrate.
 {: .important}
 
 Location | Region | Data center | Subnet | First IP
