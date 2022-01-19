@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2021
-lastupdated: "2021-12-15"
+lastupdated: "2022-01-18"
 
 subcollection: cloud-databases
 
@@ -42,6 +42,9 @@ Deployment Region | Log Analysis Region
 `br-sao` | `br-sao`
 `par01` | `eu-de`
 {: caption="Table 1. Log Analysis regions" caption-side="top"}
+
+`SEO01` Data Center is scheduled to close on October 28, 2002. See [Data Center closures](/docs/get-support?topic=get-support-dc-closure) for more information, including recommended data centers to which you can migrate.
+{: .important}
 
 Platform logs from your deployments appear in a Log Analysis instance in the same region, except for `seo01` and `jp-osa`. Deployments in `seo01` have their logs forwarded to `jp-tok`. Deployments in `jp-osa` have their logs forwarded to `jp-tok`. If you have deployments in multiple regions, you must set up Log Analysis in multiple regions.  
 
