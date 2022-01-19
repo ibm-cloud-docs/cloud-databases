@@ -42,7 +42,8 @@ Deployment Region | Activity Tracker Region
 `par01` | `eu-de`
 {: caption="Table 1. Activity Tracker regions" caption-side="top"}
 
-`SEO01` Data Center is scheduled to close on October 28, 2002. See [Data Center closures](/docs/get-support?topic=get-support-dc-closure) for more information, including recommended data centers to which you can migrate.
+`SEO01` Data Center is scheduled to close on October 28, 2002. See [Migrating resources to a different data center
+](/docs/cloud-databases?topic=cloud-databases-migrate-data-center) for more information, including recommended data centers to which you can migrate.
 {: .important}
 
 Events from your deployments appear in an Activity Tracker instance in the same region, except in the cases of `seo01` and `jp-osa`. Events for deployments in `seo01` are forwarded to `jp-tok` while `jp-osa` events are forwarded to `jp-tok`. If you have deployments in multiple regions, you must set up the Activity Tracker in multiple regions. 
