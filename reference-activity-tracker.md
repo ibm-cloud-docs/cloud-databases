@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2021
-lastupdated: "2022-01-18"
+lastupdated: "2022-01-24"
 
 subcollection: cloud-databases
 
@@ -22,7 +22,7 @@ keywords: events, auditing
 
 {{site.data.keyword.cloud_notm}} Databases deployments are integrated with Activity Tracker events in [{{site.data.keyword.at_full}}](/docs/activity-tracker?topic=activity-tracker-getting-started), so you can view service-level events.
 
-This document covers the integration of Activity Tracker with Cloud Databases, which includes {{site.data.keyword.databases-for-cassandra}}, {{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-enterprisedb}}, {{site.data.keyword.databases-for-etcd}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-redis}}, and {{site.data.keyword.messages-for-rabbitmq}}.
+This document covers the integration of Activity Tracker with Cloud Databases, which includes {{site.data.keyword.databases-for-cassandra}}, {{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-enterprisedb}}, {{site.data.keyword.databases-for-etcd}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-redis}}, {{site.data.keyword.databases-for-mysql_full}}, and {{site.data.keyword.messages-for-rabbitmq}}.
 {: .note}
 
 Currently, {{site.data.keyword.at_short}} integration is available for {{site.data.keyword.databases-for}} deployments according to the following table. 

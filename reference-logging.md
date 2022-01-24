@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2021
-lastupdated: "2022-01-18"
+lastupdated: "2022-01-24"
 
 subcollection: cloud-databases
 
@@ -22,7 +22,7 @@ keywords: database logs, platform logs,
 
 {{site.data.keyword.databases-for}} are integrated with [{{site.data.keyword.loganalysisfull}}](/docs/log-analysis), so you can view database platform logs.
 
-This document covers the integration of {{site.data.keyword.loganalysisshort}} with Cloud Databases, which includes {{site.data.keyword.databases-for-cassandra}},{{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-enterprisedb}}, {{site.data.keyword.databases-for-etcd}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-redis}}, and {{site.data.keyword.messages-for-rabbitmq}}.
+This document covers the integration of {{site.data.keyword.loganalysisshort}} with Cloud Databases, which includes {{site.data.keyword.databases-for-cassandra}}, {{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-enterprisedb}}, {{site.data.keyword.databases-for-etcd}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-redis}}, {{site.data.keyword.databases-for-mysql_full}}, and {{site.data.keyword.messages-for-rabbitmq}}.
 {: .note}
 
 Currently, {{site.data.keyword.loganalysisfull}} integration is available for {{site.data.keyword.databases-for}} deployments according to the following table.
