@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2022-01-19"
+lastupdated: "2022-01-28"
 
 subcollection: cloud-databases
 
@@ -399,9 +399,9 @@ Paris |  eu-de | par01    |     	159.8.94.95/29  |   159.8.94.88
 
 Location | Region | Data center | Subnet | First IP
 -- | -- | -- | -- | --
-Dallas  | us-south	 | DAL10 |  2.116.167.255/24	  |  52.116.167.0
-Dallas  | us-south	 | DAL10 |  2.116.179.175/28	  |  52.116.179.160
-Dallas  | us-south	 | DAL10 |  2.116.190.63/26	  |  52.116.190.0	
+Dallas  | us-south	 | DAL10 |  52.116.167.255/24	  |  52.116.167.0
+Dallas  | us-south	 | DAL10 |  52.116.179.175/28	  |  52.116.179.160
+Dallas  | us-south	 | DAL10 |  52.116.190.63/26	  |  52.116.190.0	
 Dallas  | us-south	 | DAL10 |  52.117.150.127/25	|    52.117.150.0	
 Dallas  | us-south	 | DAL10 |  52.117.184.255/24	|    52.117.184.0	
 Dallas  | us-south	 | DAL10 |  52.118.10.255/24	  |  52.118.10.0
