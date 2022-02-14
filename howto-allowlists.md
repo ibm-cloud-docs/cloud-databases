@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2022-01-28"
+lastupdated: "2022-02-14"
 
 subcollection: cloud-databases
 
@@ -42,12 +42,18 @@ The UI for managing allowlists is on the _Settings_ tab of your _Deployment Over
 
 ![Allowlist UI](images/settings-allowlist-ip.png){: caption="Figure 1. Deployment Overview tab" caption-side="bottom"}
 
-**IP addresses** - The *IP* field can take a single complete IPv4 address with or without a netmask. Without a netmask, incoming connections must come from exactly that IP address. To allow a connection from a specified range of IP addresses, use a netmask. The IP address must be fully specified. That means entering, for example, 192.168.1.0/24 rather than 192.168.1/24.
+#### IP addresses 
+{: #set-allowlist-ip-addresses} 
+
+The _IP_ field can take a single complete IPv4 address with or without a netmask. Without a netmask, incoming connections must come from exactly that IP address. To allow a connection from a specified range of IP addresses, use a netmask. The IP address must be fully specified. That means entering, for example, 192.168.1.0/24 rather than 192.168.1/24.
 
 IPv6 is not currently supported.
 {: tip}
 
-**Description** - The *Description* can be any user-significant text for identifying the allowlist entry - a customer name, project identifier, or employee number, for example. The description field is required.
+#### Description
+{: #set-allowlist-desc} 
+
+The _Description_ can be any user-significant text for identifying the allowlist entry - a customer name, project identifier, or employee number, for example. The description field is required.
 
 ### Setting an allowlist through the CLI
 {: #set-allowlist-cli} 
@@ -84,7 +90,7 @@ More information is in the [API Reference](https://cloud.ibm.com/apidocs/cloud-d
 ### Removing an allowlist
 {: #remove-allowlist} 
 
-From the UI, remove an IP address or netmask from the allowlist by clicking *Remove*. You can also use CLI command is `cdb deployment-whitelist-delete` or send a `DELETE` request to the API endpoint. When all entries on the allowlist are removed, the allowlist is unavailable and all IP addresses are accepted by your deployment.
+From the UI, remove an IP address or netmask from the allowlist by clicking _Remove_. You can also use CLI command is `cdb deployment-whitelist-delete` or send a `DELETE` request to the API endpoint. When all entries on the allowlist are removed, the allowlist is unavailable and all IP addresses are accepted by your deployment.
 
 ## Allowlist {{site.data.keyword.databases-for}} in your Environment
 {: #allowlist-ips}
