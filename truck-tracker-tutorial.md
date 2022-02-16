@@ -16,7 +16,7 @@ subcollection: cloud-databases
 {:tip: .tip}
 {:note: .note}
 
-# Truck Tracker: An IoT Pattern Using IBM Cloud Services
+# Truck Tracker: An IoT Pattern Using OpenShift and other IBM Cloud Services
 {: #truck-tracker-ibmcloud}
 
 ## A use case on how to combine different IBM Cloud services to produce a variety of insights.
@@ -45,18 +45,24 @@ There may be other, yet unknown, uses for the data that require it to be accesse
 
 Event Streams can take in the data from the trucks (data producers) and then serve it to the various applications that will use it (data consumers).
 
-Finally, you will need to run your Truck Tracker service somewhere, and for that, we will use [IBM Cloud Code Engine](https://www.ibm.com/cloud/code-engine), a fully managed, serverless platform that runs your [containerized](https://www.ibm.com/cloud/learn/containerization) workloads, including web apps, [microservices](https://www.ibm.com/cloud/learn/microservices), event-driven functions or batch jobs. 
+This tutorial illustrates how you can deploy an application using Openshift and then connect it to a variety of IBM Cloud Databases to manage data and provide a variety of insights.
+
+**Truck Tracker** is a service that receives data from a fleet of trucks as they travel across the country. It could be any data (e.g., fuel consumption, driver details, ambient temperature or anything else that can be measured as you cruise). For the purposes of this tutorial, it will be the truck's ID and position (lat/long coordinates). **Truck Tracker** will receive data via [Event Streams] and make it available to a number of databases ([Cloudant]()  and [Redis]()). The application will also show you the current position of the trucks on a map.
 
 The fully-managed nature of all these services allows you to focus on developing your applications instead of having to worry about security, scaling, patching and all the other overhead that comes from deploying your own infrastructure.
+
+Finally, you will need to run your Truck Tracker service somewhere, and for that we will use [IBM Openshift](https://www.ibm.com/cloud/openshift), a fast and secure way to containerize and deploy enterprise workloads in Kubernetes clusters. We will provision an Openshift cluster, deploy our applications to it and make them available to the database services that need access to it. We will also make a public-facing application to view the positions of trucks on a map.
+
+
 
 ## The Solution
 {: #truck-tracker-solution}
 
 This is the high-level system that we are going to build:
 
-![The Truck Tracker Solution](images/truck-tracker-solution.jpeg){: caption="Figure 1. The Truck Tracker Solution" caption-side="bottom"}
+![The Truck Tracker Solution](images/TruckTrackerOS.jpeg){: caption="Figure 1. The Truck Tracker Solution" caption-side="bottom"}
 
-In a real-life scenario, your data generators (the truck's IoT devices) would have to find a way to communicate with the Event Streams application, probably using the MQTT protocol. We will simulate our trucks traveling around the country and sending data by using a script (producer.js) that will be generating a truck location every second by reading from a predefined set of lat/long pairs of a couple of "road trips" (LAToDallas.json and boulderToNYC.json) and feeding it into Event Streams. 
+In a real-life scenario, your data generators (the truck's IoT devices) would have to find a way to communicate with the Event Streams application, probably using the MQTT protocol. We will simulate our trucks traveling around the country and sending data by using a script (`producer.js`) that will be generating a truck location every second by reading from a predefined set of lat/long pairs of a couple of "road trips" (`LAToDallas.json` and `boulderToNYC.json`) and feeding it into Event Streams. 
 
 This tutorial should take you less than an hour to complete. It will not be entirely cost-free because some of the IBM services do not come with a free tier, but if you deprovision the services after completing it, you should not have to pay more than a few dollars.
 
@@ -70,7 +76,7 @@ Before you begin, it's a good idea to install some necessary productivity tools:
 - Make sure you have access to a Mac or Linux terminal.
 - [The Kubernetes CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl/) - a command line interface for running commands against Kubernetes clusters.
 - [Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli) - automates your resource provisioning
-- [Docker](https://docs.docker.com/engine/install/) We will be using Docker to create the images that will run your code in Code Engine — make sure you are logged into your Docker account
+- [Docker](https://docs.docker.com/engine/install/) We will be using Docker to create the images that will run your code inside your cluster — make sure you are logged into your Docker account
 - [jq](https://stedolan.github.io/jq/) - a lightweight and flexible command-line JSON processor
 - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) - a free and open source distributed version control system
 - [Node.js and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
@@ -85,8 +91,8 @@ Follow the steps [in this document](https://cloud.ibm.com/docs/account?topic=acc
 {: #truck-tracker-terraform-dir}
 
 ```shell
-git clone https://github.com/danmermel/trucktracker.git
-cd trucktracker/terraform
+git clone https://github.com/danmermel/trucktracker-on-openshift.git
+cd trucktracker-on-openshift/terraform
 ```
 
 Create a document called terraform.tfvars with the following fields: 
@@ -113,16 +119,19 @@ The Terraform folder contains a number of simple scripts:
 
 - main.tf tells Terraform to use the IBM Cloud.
 - variables.tf contains the variable definitions whose values will be populated from terraform.tfvars.
-- cloudant.tf creates a free tier Cloudant DB and some credentials that we will use later to access it.
+- cloudant.tf creates a standard Cloudant DB and some credentials that we will use later to access it.
 - redis.tf creates the Redis instance and some credentials that we will use later to access it.
 - eventstreams.tf creates the Event Streams instance and some credentials that we will use later to access it.
 - registry.tf creates the Container Registry that will hold your container images.
 - iam.tf creates the access key that is needed to interact with the Container Registry.
+- vpc.tf creates the VPC (Virtual Private Cloud) infrastructure that will be needed to deploy an OpenShift cluster. This includes a VPC, subnets and public gateways in three different availability zones.
+- cos.tf create a single Cloud Object Storage instance that is needed by OpenShift to manage the cluster.
+- openshift.tf creates a cluster of virtual machines inside your VPC, where you will deploy your applications.
 
-It will take several minutes for the databases and other resources to be ready, but you should now you have a Databases for Redis instance, a Cloudant database and an Event Streams instance in your account, as well as a Container Registry namespace for your container images. You can check by visiting the Resources section of your IBM Cloud account.
+It will take several minutes for the databases and other resources to be ready, but you should now have some VPC resources, a cluster of Virtual machines, a Databases for Redis instance, a Cloudant database and an Event Streams instance in your account, as well as a Container Registry namespace for your container images. You can check by visiting the Resources section of your IBM Cloud account.
 
-### Step 4: Create container images and deploy to Code Engine
-{: #truck-tracker-code-engine}
+### Step 4: Create container images and deploy to OpenShift
+{: #truck-tracker-open-shift}
 
 At this point, all your infrastructure is ready to receive data. Now we have to build the different modules that will produce and consume the data, as well as the application that will display the truck position on a map.
 
@@ -138,16 +147,37 @@ Go into the root of the project and type the following:
 ### Step 5: Watch your trucks truckin'
 {: #truck-tracker-trucking}
 
-The end of the script will output a URL — something like https://webserver.xyz1234.eu-gb.codeengine.appdomain.cloud.
+The end of the script will output a URL — something like https://some.thing.eu-gb.appdomain.cloud.
 
 If you visit that URL, you should be able to see a map of the US and, after a few seconds, several markers on the map that represent your trucks:
 
-![The Truck Tracker Solution](images/truck-map.jpeg){: caption="Figure 1. The Truck Tracker Solution" caption-side="bottom"}
+![The Truck Tracker Wide View](images/trucktrackerwide.png){: caption="Figure 1. All-Truck View" caption-side="bottom"}
 
 If you zoom in on one of these markers you will see it moving along the road. As the fleet manager, you now know where all your trucks are.
 
-### What Just Happened?
+![The Truck Tracker Zoom View](images/trucktrackerzoom.png){: caption="Figure 2. Single-Truck View" caption-side="bottom"}
+
+## What Just Happened?
 {: #truck-tracker-what-happened}
+
+### The build.sh script
+
+The `build.sh` script does a number of things:
+
+1. It builds a docker image for each of the services you need. The producer, consumers and web application are all in different folders. Each folder has its own simple Dockerfile file that is used by the script to create a container image, which is then uploaded to the IBM Container Registry.
+2. It creates a bunch of kubernetes secrets with all the credentials that are going to be needed to access the different IBM services (Cloudant, Redis and Event Streams).
+3. It deploys the application code (and the secretes) to the OpenShift cluster using the instructions contained in the `deployment.yml` script.
+
+### The deployment.yml script
+
+This script tells Openshift what to deploy to the machines in the  Openshift cluster. In our case this is:
+1. Data producers (`trucktrackerproducer*`). 
+2. Data consumers (`trucktrackerredisconsumer` and `trucktrackercloudantconsumer`)
+3. Web application (`trucktrackerweb`)
+
+In all cases, they pull an image from the container registry and get fed some environment variables with the credentials they requres to access external services.
+
+### The Truck Tracker system
 
 The Truck Tracker system is a set of simple Node.js scripts that use four main packages:
 
@@ -158,18 +188,12 @@ The Truck Tracker system is a set of simple Node.js scripts that use four main p
 
 There are five main files:
 
-1. server.js: This runs the web server and communicates with Redis. It is getting regular calls from the front end to the /data route. It connects to Redis, downloads an object with the ID and position of every truck and returns that to the front end.
-1. index.html: This is the one and only page of the front end application. When it loads, it shows a map of the US from the awesome Open Street Map service. Then it is on a five-second loop where it makes an HTTP request to the backend (server.js), retrieves all the trucks and their positions and loops through them to plot their latest position on the map. Each truck has a map marker whose lat/long gets updated with every cycle.
-1. producer.js: This takes in a location file and a truck IS from the script invocation and then loops through all the data points in the location file. Each data point is turned into a message with the truck ID and lat/long and posted once a second to Event Streams. For added fun, it picks a random starting point along the route and turns around and comes back when it reaches the end of the location file.
-1. cloudantConsumer.js: This script creates a trucktracker database in Cloudant if it does not already exist and then polls Event Streams at regular intervals for more data. When data comes in, it gets written in bulk to Cloudant.
-1. redisConsumer.js: This script polls Event Streams at regular intervals for data. When data comes in, it gets written into a Redis "hash" where the hash key is the truck ID and the value is the truck data (lat/long). This hash arrangement allows all the truck data to be pulled down by the server.js script in one go. The great thing is that if for some reason one of your consumers crashes, it will pick up where it left off without losing any data, because Event Streams knows the last data point it served to each consumer. Decoupling data-producing systems from data-consuming systems in this way is a good design practice that increases resilience and fault tolerance.
+1. `server.js`: This runs the web server and communicates with Redis. It is getting regular calls from the front end to the /data route. It connects to Redis, downloads an object with the ID and position of every truck and returns that to the front end.
+1. `index.html`: This is the one and only page of the front end application. When it loads, it shows a map of the US from the awesome [Open Street Map](https://www.openstreetmap.org/copyright) service. Then it is on a five-second loop where it makes an HTTP request to the backend (`server.js`), retrieves all the trucks and their positions and loops through them to plot their latest position on the map. Each truck has a map marker whose lat/long gets updated with every cycle.
+1. `producer.js`: This takes in a location file and a truck_id from the script invocation and then loops through all the data points in the location file. Each data point is turned into a message with the truck ID and lat/long and posted once a second to Event Streams. For added fun, it picks a random starting point along the route and turns around and comes back when it reaches the end of the location file.
+1. `cloudantConsumer.js`: This script creates a trucktracker database in Cloudant if it does not already exist and then polls Event Streams at regular intervals for more data. When data comes in, it gets written in bulk to Cloudant.
+1. `redisConsumer.js`: This script polls Event Streams at regular intervals for data. When data comes in, it gets written into a Redis "hash" where the hash key is the truck ID and the value is the truck data (lat/long). This hash arrangement allows all the truck data to be pulled down by the server.js script in one go. The great thing is that if for some reason one of your consumers crashes, it will pick up where it left off without losing any data, because Event Streams knows the last data point it served to each consumer. Decoupling data-producing systems from data-consuming systems in this way is a good design practice that increases resilience and fault tolerance.
 
-### The Docker Bit
-{: #truck-tracker-docker-bit}
-
-The producer, consumers and web application are all in different folders. Each folder has its own simple Dockerfile file that is used by the build.sh script to create a container image, which is then uploaded to the IBM Container Registry.
-
-The script then instructs Code Engine to pull these images in turn and run the workloads for you. 
 
 ### Summary
 {: #truck-tracker-summary}
