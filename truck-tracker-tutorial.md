@@ -6,6 +6,10 @@ lastupdated: "2022-02-16"
 keywords: IBM Cloud Databases, ICD, truck tracker, terraform, docker
 
 subcollection: cloud-databases
+
+content-type: tutorial
+account-plan: paid
+completion-time: 2h
 ---
 
 {:external: .external target="_blank"}
@@ -18,6 +22,8 @@ subcollection: cloud-databases
 
 # Truck Tracker: An IoT Pattern Using OpenShift and other IBM Cloud Services
 {: #truck-tracker-ibmcloud}
+{: toc-completion-time="2h"}
+{: toc-content-type="tutorial"}
 
 ## A use case on how to combine different IBM Cloud services to produce a variety of insights.
 {: #truck-tracker-use-case}
@@ -81,12 +87,14 @@ Before you begin, it's a good idea to install some necessary productivity tools:
 
 ### Step 1: Obtain an API key to deploy infrastructure to your account
 {: #truck-tracker-api-key}
+{: step}
 
 Follow the steps [in this document](https://cloud.ibm.com/docs/account?topic=account-userapikey&interface=ui#create_user_key) to create an API key and make a note of it for Step 2.
 
 
 ### Step 2: Clone the repo and cd into the Terraform directory
 {: #truck-tracker-terraform-dir}
+{: step}
 
 ```shell
 git clone https://github.com/danmermel/trucktracker-on-openshift.git
@@ -105,6 +113,7 @@ The terraform.tfvars document contains variables that you may want to keep secre
 
 ### Step 3: Create the infrastructure
 {: #truck-tracker-infra}
+{: step}
 
 TL;DR — run the Terraform script:
 
@@ -130,6 +139,7 @@ It will take several minutes for the databases and other resources to be ready, 
 
 ### Step 4: Create container images and deploy to OpenShift
 {: #truck-tracker-open-shift}
+{: step}
 
 At this point, all your infrastructure is ready to receive data. Now we have to build the different modules that will produce and consume the data, as well as the application that will display the truck position on a map.
 
@@ -144,6 +154,7 @@ Go into the root of the project and type the following:
 
 ### Step 5: Watch your trucks truckin'
 {: #truck-tracker-trucking}
+{: step}
 
 The end of the script will output a URL — something like "https:// some.thing.eu-gb.appdomain.cloud".
 
