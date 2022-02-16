@@ -45,13 +45,9 @@ There may be other, yet unknown, uses for the data that require it to be accesse
 
 Event Streams can take in the data from the trucks (data producers) and then serve it to the various applications that will use it (data consumers).
 
-This tutorial illustrates how you can deploy an application using Openshift and then connect it to a variety of IBM Cloud Databases to manage data and provide a variety of insights.
-
-**Truck Tracker** is a service that receives data from a fleet of trucks as they travel across the country. It could be any data (e.g., fuel consumption, driver details, ambient temperature or anything else that can be measured as you cruise). For the purposes of this tutorial, it will be the truck's ID and position (lat/long coordinates). **Truck Tracker** will receive data via [Event Streams] and make it available to a number of databases ([Cloudant]()  and [Redis]()). The application will also show you the current position of the trucks on a map.
-
 The fully-managed nature of all these services allows you to focus on developing your applications instead of having to worry about security, scaling, patching and all the other overhead that comes from deploying your own infrastructure.
 
-Finally, you will need to run your Truck Tracker service somewhere, and for that we will use [IBM Openshift](https://www.ibm.com/cloud/openshift), a fast and secure way to containerize and deploy enterprise workloads in Kubernetes clusters. We will provision an Openshift cluster, deploy our applications to it and make them available to the database services that need access to it. We will also make a public-facing application to view the positions of trucks on a map.
+Finally, you will need to run your Truck Tracker service somewhere, and for that we will use [IBM Openshift](https://www.ibm.com/cloud/openshift), a fast and secure way to containerize and deploy enterprise workloads in Kubernetes clusters. We will provision an Openshift cluster, deploy our applications to it and make them available to the database services that need access to it. We will also make a public-facing application to view the positions of trucks on a map. [Read more about Openshift](https://cloud.redhat.com/learn/what-is-openshift) 
 
 
 
@@ -71,8 +67,10 @@ This tutorial should take you less than an hour to complete. It will not be enti
 
 Before you begin, it's a good idea to install some necessary productivity tools:
 
-- An [IBM Cloud](https://cloud.ibm.com/login) pay-as-you-go account
-- The [{{site.data.keyword.databases-for}} CLI plug-in](https://cloud.ibm.com/docs/databases-cli-plugin) - the command line interface to interact with the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction). Also, make sure it is [logged in to your account.](https://cloud.ibm.com/docs/cli?topic=cli-getting-started#step4-configure-idt-env)
+- An [IBM Cloud](https://cloud.ibm.com/login) pay-as-you-go account (make sure it is [logged in to your account.](https://cloud.ibm.com/docs/cli?topic=cli-getting-started#step4-configure-idt-env))
+- The [IBM CLI](https://www.ibm.com/cloud/cli) - the command line interface to interact with the IBM API. You will need to make sure it has the following [plug-ins](https://cloud.ibm.com/docs/cli?topic=cli-plug-ins):
+  - openshift (oc)
+  - container registry (cr)
 - Make sure you have access to a Mac or Linux terminal.
 - [The Kubernetes CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl/) - a command line interface for running commands against Kubernetes clusters.
 - [Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli) - automates your resource provisioning
@@ -128,7 +126,7 @@ The Terraform folder contains a number of simple scripts:
 - cos.tf create a single Cloud Object Storage instance that is needed by OpenShift to manage the cluster.
 - openshift.tf creates a cluster of virtual machines inside your VPC, where you will deploy your applications.
 
-It will take several minutes for the databases and other resources to be ready, but you should now have some VPC resources, a cluster of Virtual machines, a Databases for Redis instance, a Cloudant database and an Event Streams instance in your account, as well as a Container Registry namespace for your container images. You can check by visiting the Resources section of your IBM Cloud account.
+It will take several minutes for the databases and other resources to be ready, but you should now have some VPC resources, a cluster of Virtual machines, a Databases for Redis instance, a Cloudant database and an Event Streams instance in your account, as well as a Container Registry namespace for your container images. You can check by visiting the [Resources section](https://cloud.ibm.com/resources) of your IBM Cloud account.
 
 ### Step 4: Create container images and deploy to OpenShift
 {: #truck-tracker-open-shift}
@@ -147,7 +145,7 @@ Go into the root of the project and type the following:
 ### Step 5: Watch your trucks truckin'
 {: #truck-tracker-trucking}
 
-The end of the script will output a URL — something like https://some.thing.eu-gb.appdomain.cloud.
+The end of the script will output a URL — something like "https:// some.thing.eu-gb.appdomain.cloud".
 
 If you visit that URL, you should be able to see a map of the US and, after a few seconds, several markers on the map that represent your trucks:
 
@@ -175,7 +173,7 @@ This script tells Openshift what to deploy to the machines in the  Openshift clu
 2. Data consumers (`trucktrackerredisconsumer` and `trucktrackercloudantconsumer`)
 3. Web application (`trucktrackerweb`)
 
-In all cases, they pull an image from the container registry and get fed some environment variables with the credentials they requres to access external services.
+In all cases, they pull an image from the container registry and get fed some environment variables with the credentials they require to access external services.
 
 ### The Truck Tracker system
 
@@ -207,6 +205,5 @@ If you followed this tutorial, remember to de-provision your infrastructure to s
 ```shell
 cd terraform/
 terraform destroy
-ibmcloud ce project delete --name trucktracker --hard
 ```
 If you want to take the next step in your developer journey, check out some of our [trial offers](https://www.ibm.com/products?types[0]=trial). 
