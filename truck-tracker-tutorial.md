@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2021
-lastupdated: "2022-02-16"
+lastupdated: "2022-02-17"
 
 keywords: IBM Cloud Databases, ICD, truck tracker, terraform, docker
 
