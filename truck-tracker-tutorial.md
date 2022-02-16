@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2021
-lastupdated: "2022-02-15"
+lastupdated: "2022-02-16"
 
 keywords: IBM Cloud Databases, ICD, truck tracker, terraform, docker
 
@@ -26,28 +26,28 @@ The Internet of Things (IoT) is a term used (and often misused) in all sorts of 
 
 All sorts of use cases are constantly emerging where Internet-connected devices generate data that can be used in many innovative ways.
 
-The trick then becomes being able to ingest that data and turn it into insights, and that normally requires multiple services and technologies working in tandem to produce the desired outcome.
+The trick then becomes ingesting that data and turning it into insights, which normally requires multiple services and technologies working in tandem to produce the desired outcome.
 
 ## Truck Tracker: One data point, multiple uses
 {: #truck-tracker-data-uses}
 
-For this tutorial, we will focus on one such use case to illustrate how you might combine different IBM Cloud services to produce a variety of insights.
+For this tutorial, we will focus on one such use case to illustrate how you might combine different {{site.data.keyword.cloud}} services to produce a variety of insights.
 
 Truck Tracker is a service that receives data from a fleet of trucks as they travel across the country. It could be any data (e.g., fuel consumption, driver details, ambient temperature or anything else that can be measured as you cruise). For the purposes of this post, it will be the truck's ID and position (lat/long coordinates). Truck Tracker will store the data in various data stores and also show you the current position of the trucks on a map.
 
-Some app users need this data to run analytics. For example, to find out how many miles the fleet has travelled in the last 24 hours or how much fuel it has consumed. For that, all data points can be stored in a reliable document store like [IBM Cloudant](https://www.ibm.com/cloud/cloudant) and searched and aggregated at will. IBM Cloudant is a fully managed, distributed database optimized for heavy workloads and fast-growing web and mobile apps. 
+Some app users need this data to run analytics. For example, to find out how many miles the fleet has travelled in the last 24 hours or how much fuel it has consumed. For that, all data points can be stored in a reliable document store like [{{site.data.keyword.cloudant}}](https://www.ibm.com/cloud/cloudant) and searched and aggregated at will. {{site.data.keyword.cloudant}} is a fully managed, distributed database optimized for heavy workloads and fast-growing web and mobile apps. 
 
 Other users might need to know where the trucks currently are. For this, you only need the last known position of each truck. In this case, [Redis](https://www.ibm.com/cloud/learn/redis) is a perfect solution — a fast key-value store where a key is the unique truck ID and the value is its last known position.
 
 [IBM Databases for Redis](https://www.ibm.com/cloud/databases-for-redis) is a fully managed in-memory data structure store that can be used as a database, cache and message broker. 
 
-There may be other, yet unknown, uses for the data that require it to be accessed or stored in different ways. So your trucks are flying around the country and data is pouring out of them. How do you make sure everyone gets the data they need? Enter [IBM Event Streams](https://www.ibm.com/cloud/event-streams), an event-streaming platform that helps you build smart apps that can react to events as they happen. It is a fully managed service built on open-source [Apache Kafka](https://www.ibm.com/cloud/learn/apache-kafka).
+There may be other, yet unknown, uses for the data that require it to be accessed or stored in different ways. So your trucks are flying around the country and data is pouring out of them. How do you make sure everyone gets the data they need? Enter [{{site.data.keyword.messagehub}}](https://www.ibm.com/cloud/event-streams), an event-streaming platform that helps you build smart apps that can react to events as they happen. It is a fully managed service built on open-source [Apache Kafka](https://www.ibm.com/cloud/learn/apache-kafka).
 
 Event Streams can take in the data from the trucks (data producers) and then serve it to the various applications that will use it (data consumers).
 
 The fully-managed nature of all these services allows you to focus on developing your applications instead of having to worry about security, scaling, patching and all the other overhead that comes from deploying your own infrastructure.
 
-Finally, you will need to run your Truck Tracker service somewhere, and for that we will use [IBM Openshift](https://www.ibm.com/cloud/openshift), a fast and secure way to containerize and deploy enterprise workloads in Kubernetes clusters. We will provision an Openshift cluster, deploy our applications to it and make them available to the database services that need access to it. We will also make a public-facing application to view the positions of trucks on a map. [Read more about Openshift](https://cloud.redhat.com/learn/what-is-openshift) 
+Finally, you will need to run your Truck Tracker service somewhere, and for that we will use [{{site.data.keyword.openshiftlong_notm}}](https://www.ibm.com/cloud/openshift), a fast and secure way to containerize and deploy enterprise workloads in Kubernetes clusters. We will provision an {{site.data.keyword.openshiftlong_notm}} cluster, deploy our applications to it and make them available to the database services that need access to it. We will also make a public-facing application to view the positions of trucks on a map. [Read more about {{site.data.keyword.openshiftlong_notm}}](https://cloud.redhat.com/learn/what-is-openshift) 
 
 
 
@@ -69,8 +69,8 @@ Before you begin, it's a good idea to install some necessary productivity tools:
 
 - An [IBM Cloud](https://cloud.ibm.com/login) pay-as-you-go account (make sure it is [logged in to your account.](https://cloud.ibm.com/docs/cli?topic=cli-getting-started#step4-configure-idt-env))
 - The [IBM CLI](https://www.ibm.com/cloud/cli) - the command line interface to interact with the IBM API. You will need to make sure it has the following [plug-ins](https://cloud.ibm.com/docs/cli?topic=cli-plug-ins):
-  - openshift (oc)
-  - container registry (cr)
+   - openshift (oc)
+   - container registry (cr)
 - Make sure you have access to a Mac or Linux terminal.
 - [The Kubernetes CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl/) - a command line interface for running commands against Kubernetes clusters.
 - [Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli) - automates your resource provisioning
@@ -159,14 +159,16 @@ If you zoom in on one of these markers you will see it moving along the road. As
 {: #truck-tracker-what-happened}
 
 ### The build.sh script
+{: #truck-tracker-buildsh-script}
 
 The `build.sh` script does a number of things:
 
 1. It builds a docker image for each of the services you need. The producer, consumers and web application are all in different folders. Each folder has its own simple Dockerfile file that is used by the script to create a container image, which is then uploaded to the IBM Container Registry.
-2. It creates a bunch of kubernetes secrets with all the credentials that are going to be needed to access the different IBM services (Cloudant, Redis and Event Streams).
-3. It deploys the application code (and the secretes) to the OpenShift cluster using the instructions contained in the `deployment.yml` script.
+2. It creates a bunch of kubernetes secrets with all the credentials that are going to be needed to access the different IBM services ({{site.data.keyword.cloudant}}, Redis and {{site.data.keyword.messagehub}}).
+3. It deploys the application code (and the secretes) to the {{site.data.keyword.openshiftlong_notm}} cluster using the instructions contained in the `deployment.yml` script.
 
 ### The deployment.yml script
+{: #truck-tracker-yml-script}
 
 This script tells Openshift what to deploy to the machines in the  Openshift cluster. In our case this is:
 1. Data producers (`trucktrackerproducer*`). 
@@ -176,10 +178,11 @@ This script tells Openshift what to deploy to the machines in the  Openshift clu
 In all cases, they pull an image from the container registry and get fed some environment variables with the credentials they require to access external services.
 
 ### The Truck Tracker system
+{: #truck-tracker-sys}
 
 The Truck Tracker system is a set of simple Node.js scripts that use four main packages:
 
-1. [@ibm-cloud/cloudant](https://github.com/IBM/cloudant-node-sdk) to connect to IBM Cloudant and read/write data.
+1. [@ibm-cloud/cloudant](https://github.com/IBM/cloudant-node-sdk) to connect to {{site.data.keyword.cloudant}} and read/write data.
 1. [Redis](https://www.npmjs.com/package/redis) to connect to the Redis instance and read/write data.
 1. [kafkajs](https://www.npmjs.com/package/kafkajs) to connect to the Event Streams instance.
 1. [Express](https://expressjs.com/) to enable a simple web server that allows interaction with the data.
