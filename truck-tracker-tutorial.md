@@ -28,13 +28,13 @@ completion-time: 2h
 ## Combining IBM Cloud services to produce a variety of insights.
 {: #truck-tracker-use-case}
 
-**Truck Tracker** is a service that receives data from a fleet of trucks as they travel across the country. It could be any data (e.g., fuel consumption, driver details, ambient temperature or anything else that can be measured as you cruise). For the purposes of this post, it will be the truck's ID and position (lat/long coordinates). Truck Tracker will store the data in various data stores and also show you the current position of the trucks on a map.
+**Truck Tracker** is a service that receives data from a fleet of trucks as they travel across the country. It could be any data (e.g., fuel consumption, driver details, ambient temperature, or anything else that can be measured as you cruise). For the purposes of this post, it will be the truck's ID and position (lat/long coordinates). Truck Tracker will store the data in various data stores and also show you the current position of the trucks on a map.
 
-Some app users need this data to run analytics. For example, to find out how many miles the fleet has travelled in the last 24 hours or how much fuel it has consumed. For that, all data points can be stored in a reliable document store like [{{site.data.keyword.cloudant}}](https://www.ibm.com/cloud/cloudant) and searched and aggregated at will. {{site.data.keyword.cloudant}} is a fully managed, distributed database optimized for heavy workloads and fast-growing web and mobile apps. 
+Some app users need this data to run analytics. For example, to find out how many miles the fleet has traveled in the last 24 hours or how much fuel it has consumed. For that, all data points can be stored in a reliable document store like [{{site.data.keyword.cloudant}}](https://www.ibm.com/cloud/cloudant), as well as searched and aggregated at will. {{site.data.keyword.cloudant}} is a fully managed, distributed database optimized for heavy workloads and fast-growing web and mobile apps. 
 
 Other users might need to know where the trucks currently are. For this, you only need the last known position of each truck. In this case, [Redis](https://www.ibm.com/cloud/learn/redis) is a perfect solution — a fast key-value store where a key is the unique truck ID and the value is its last known position.
 
-[IBM Databases for Redis](https://www.ibm.com/cloud/databases-for-redis) is a fully managed in-memory data structure store that can be used as a database, cache and message broker. 
+[{{site.data.keyword.databases-for-redis_full}}](https://www.ibm.com/cloud/databases-for-redis) is a fully managed in-memory data structure store that can be used as a database, cache and message broker. 
 
 There may be other, yet unknown, uses for the data that require it to be accessed or stored in different ways. 
 
@@ -42,7 +42,7 @@ So your trucks are flying around the country and data is pouring out of them. Ho
 
 Event Streams can take in the data from the trucks (data producers) and then serve it to the various applications that will use it (data consumers).
 
-Finally, you will need to run your Truck Tracker service somewhere, and for that we will use [{{site.data.keyword.openshiftlong_notm}}](https://www.ibm.com/cloud/openshift), a fast and secure way to containerize and deploy enterprise workloads in Kubernetes clusters. We will provision an {{site.data.keyword.openshiftlong_notm}} cluster, deploy our applications to it and make them available to the database services that need access to it. We will also make a public-facing application to view the positions of trucks on a map. [Read more about {{site.data.keyword.openshiftlong_notm}}](https://cloud.redhat.com/learn/what-is-openshift) 
+Finally, you will need to run your Truck Tracker service somewhere, and for that we will use [{{site.data.keyword.openshiftlong_notm}}](https://www.ibm.com/cloud/openshift), a fast and secure way to containerize and deploy enterprise workloads in Kubernetes clusters. We will provision an {{site.data.keyword.openshiftlong_notm}} cluster, deploy our applications to it and make them available to the database services that need access to it. We will also make a public-facing application to view the positions of trucks on a map. Read more about [{{site.data.keyword.openshiftlong_notm}}](https://cloud.redhat.com/learn/what-is-openshift) 
 
 
 
@@ -127,7 +127,7 @@ The Terraform folder contains a number of simple scripts:
 - `cos.tf` create a single Cloud Object Storage instance that is needed by OpenShift to manage the cluster.
 - `openshift.tf` creates a cluster of virtual machines inside your VPC, where you will deploy your applications.
 
-It will take several minutes for the databases and other resources to be ready, but you should now have some VPC resources, a cluster of virtual machines, a Databases for Redis instance, a Cloudant database and an Event Streams instance in your account, as well as a Container Registry namespace for your container images. You can check by visiting the [Resources section](https://cloud.ibm.com/resources) of your IBM Cloud account.
+It will take several minutes for the databases and other resources to be ready, but you should now have some VPC resources, a cluster of virtual machines, an {{site.data.keyword.databases-for-redis_full}} instance, a Cloudant database and an Event Streams instance in your account, as well as a Container Registry namespace for your container images. You can check by visiting the [Resources section](https://cloud.ibm.com/resources) of your IBM Cloud account.
 
 ### Step 4: Create container images and deploy to OpenShift
 {: #truck-tracker-open-shift}
@@ -148,9 +148,9 @@ Go into the root of the project and type the following:
 {: #truck-tracker-trucking}
 {: step}
 
-The end of the script will output a URL — something like "https:// some.thing.eu-gb.appdomain.cloud".
+The end of the script will output a URL — something like _https:// some.thing.eu-gb.appdomain.cloud_.
 
-If you visit that URL, you should be able to see a map of the US and, after a few seconds, several markers on the map that represent your trucks:
+If you visit the URL that has been generated, you should be able to see a map of the US and, after a few seconds, several markers on the map that represent your trucks:
 
 ![The Truck Tracker Wide View](images/trucktrackerwide.png){: caption="Figure 3. All-Truck View" caption-side="bottom"}
 
