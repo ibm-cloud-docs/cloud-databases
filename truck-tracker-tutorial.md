@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2021
-lastupdated: "2022-02-17"
+lastupdated: "2022-02-18"
 
 keywords: IBM Cloud Databases, ICD, truck tracker, terraform, docker
 
@@ -51,7 +51,7 @@ Finally, you will need to run your Truck Tracker service somewhere, and for that
 
 This is the high-level system that we are going to build:
 
-![The Truck Tracker Solution](images/truck-tracker-solution.png){: caption="Figure 1. The Truck Tracker Solution" caption-side="bottom"}
+![The Truck Tracker Solution](images/TruckTrackerOS.png){: caption="Figure 1. The Truck Tracker Solution" caption-side="bottom"}
 
 In a real-life scenario, your data generators (the truck's IoT devices) would have to find a way to communicate with the Event Streams application, probably using the MQTT protocol. We will simulate our trucks traveling around the country and sending data by using a script (`producer.js`) that will be generating a truck location every second by reading from a predefined set of lat/long pairs of a couple of "road trips" (`LAToDallas.json` and `boulderToNYC.json`) and feeding it into Event Streams. 
 
