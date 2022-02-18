@@ -19,21 +19,10 @@ subcollection: cloud-databases
 # Truck Tracker: An IoT Pattern Using OpenShift and other IBM Cloud Services
 {: #truck-tracker-ibmcloud}
 
-## A use case on how to combine different IBM Cloud services to produce a variety of insights.
+## Combining IBM Cloud services to produce a variety of insights.
 {: #truck-tracker-use-case}
 
-The Internet of Things (IoT) is a term used (and often misused) in all sorts of contexts. But its core idea — that more and more devices can be and are being put online, and that those devices can be great sources of information — is real and exciting.
-
-All sorts of use cases are constantly emerging where Internet-connected devices generate data that can be used in many innovative ways.
-
-The trick then becomes being able to ingest that data and turn it into insights, and that normally requires multiple services and technologies working in tandem to produce the desired outcome.
-
-## Truck Tracker: One data point, multiple uses
-{: #truck-tracker-data-uses}
-
-For this tutorial, we will focus on one such use case to illustrate how you might combine different IBM Cloud services to produce a variety of insights.
-
-Truck Tracker is a service that receives data from a fleet of trucks as they travel across the country. It could be any data (e.g., fuel consumption, driver details, ambient temperature or anything else that can be measured as you cruise). For the purposes of this post, it will be the truck's ID and position (lat/long coordinates). Truck Tracker will store the data in various data stores and also show you the current position of the trucks on a map.
+**Truck Tracker** is a service that receives data from a fleet of trucks as they travel across the country. It could be any data (e.g., fuel consumption, driver details, ambient temperature or anything else that can be measured as you cruise). For the purposes of this post, it will be the truck's ID and position (lat/long coordinates). Truck Tracker will store the data in various data stores and also show you the current position of the trucks on a map.
 
 Some app users need this data to run analytics. For example, to find out how many miles the fleet has travelled in the last 24 hours or how much fuel it has consumed. For that, all data points can be stored in a reliable document store like [IBM Cloudant](https://www.ibm.com/cloud/cloudant) and searched and aggregated at will. IBM Cloudant is a fully managed, distributed database optimized for heavy workloads and fast-growing web and mobile apps. 
 
@@ -41,17 +30,17 @@ Other users might need to know where the trucks currently are. For this, you onl
 
 [IBM Databases for Redis](https://www.ibm.com/cloud/databases-for-redis) is a fully managed in-memory data structure store that can be used as a database, cache and message broker. 
 
-There may be other, yet unknown, uses for the data that require it to be accessed or stored in different ways. So your trucks are flying around the country and data is pouring out of them. How do you make sure everyone gets the data they need? Enter [IBM Event Streams](https://www.ibm.com/cloud/event-streams), an event-streaming platform that helps you build smart apps that can react to events as they happen. It is a fully managed service built on open-source [Apache Kafka](https://www.ibm.com/cloud/learn/apache-kafka).
+There may be other, yet unknown, uses for the data that require it to be accessed or stored in different ways. 
+
+So your trucks are flying around the country and data is pouring out of them. How do you make sure everyone gets the data they need? Enter [IBM Event Streams](https://www.ibm.com/cloud/event-streams), an event-streaming platform that helps you build smart apps that can react to events as they happen. It is a fully managed service built on open-source [Apache Kafka](https://www.ibm.com/cloud/learn/apache-kafka).
 
 Event Streams can take in the data from the trucks (data producers) and then serve it to the various applications that will use it (data consumers).
-
-The fully-managed nature of all these services allows you to focus on developing your applications instead of having to worry about security, scaling, patching and all the other overhead that comes from deploying your own infrastructure.
 
 Finally, you will need to run your Truck Tracker service somewhere, and for that we will use [IBM Openshift](https://www.ibm.com/cloud/openshift), a fast and secure way to containerize and deploy enterprise workloads in Kubernetes clusters. We will provision an Openshift cluster, deploy our applications to it and make them available to the database services that need access to it. We will also make a public-facing application to view the positions of trucks on a map. [Read more about Openshift](https://cloud.redhat.com/learn/what-is-openshift) 
 
 
 
-## The Solution
+## What you will build
 {: #truck-tracker-solution}
 
 This is the high-level system that we are going to build:
@@ -60,9 +49,9 @@ This is the high-level system that we are going to build:
 
 In a real-life scenario, your data generators (the truck's IoT devices) would have to find a way to communicate with the Event Streams application, probably using the MQTT protocol. We will simulate our trucks traveling around the country and sending data by using a script (`producer.js`) that will be generating a truck location every second by reading from a predefined set of lat/long pairs of a couple of "road trips" (`LAToDallas.json` and `boulderToNYC.json`) and feeding it into Event Streams. 
 
-This tutorial should take you less than an hour to complete. It will not be entirely cost-free because some of the IBM services do not come with a free tier, but if you deprovision the services after completing it, you should not have to pay more than a few dollars.
+This tutorial should take you about an hour to complete. It will not be cost-free because some of the IBM services we will use do not come with a free tier, but if you deprovision the services after completing it, you should not have to pay more than a few dollars.
 
-## Getting productive 
+## What you will need 
 {: #truck-tracker-prod-tools}
 
 Before you begin, it's a good idea to install some necessary productivity tools:
@@ -79,6 +68,9 @@ Before you begin, it's a good idea to install some necessary productivity tools:
 - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) - a free and open source distributed version control system
 - [Node.js and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 
+## Step-by-step instructions 
+{: #truck-tracker-steps}
+
 ### Step 1: Obtain an API key to deploy infrastructure to your account
 {: #truck-tracker-api-key}
 
@@ -93,7 +85,7 @@ git clone https://github.com/danmermel/trucktracker-on-openshift.git
 cd trucktracker-on-openshift/terraform
 ```
 
-Create a document called terraform.tfvars with the following fields: 
+Create a document called `terraform.tfvars` with the following fields: 
 
 ```shell
 ibmcloud_api_key = "<your_api_key_from_step_1>"
@@ -101,7 +93,7 @@ region = "eu-gb"
 redis_password  = "<make_up_a_password>"
 ```
 
-The terraform.tfvars document contains variables that you may want to keep secret so it is ignored by the GitHub repository.
+The `terraform.tfvars` document contains variables that you may want to keep secret so it is ignored by the GitHub repository.
 
 ### Step 3: Create the infrastructure
 {: #truck-tracker-infra}
@@ -115,23 +107,23 @@ terraform apply --auto-approve
 
 The Terraform folder contains a number of simple scripts: 
 
-- main.tf tells Terraform to use the IBM Cloud.
-- variables.tf contains the variable definitions whose values will be populated from terraform.tfvars.
-- cloudant.tf creates a standard Cloudant DB and some credentials that we will use later to access it.
-- redis.tf creates the Redis instance and some credentials that we will use later to access it.
-- eventstreams.tf creates the Event Streams instance and some credentials that we will use later to access it.
-- registry.tf creates the Container Registry that will hold your container images.
-- iam.tf creates the access key that is needed to interact with the Container Registry.
-- vpc.tf creates the VPC (Virtual Private Cloud) infrastructure that will be needed to deploy an OpenShift cluster. This includes a VPC, subnets and public gateways in three different availability zones.
-- cos.tf create a single Cloud Object Storage instance that is needed by OpenShift to manage the cluster.
-- openshift.tf creates a cluster of virtual machines inside your VPC, where you will deploy your applications.
+- `main.tf` tells Terraform to use the IBM Cloud.
+- `variables.tf` contains the variable definitions whose values will be populated from terraform.tfvars.
+- `cloudant.tf` creates a standard Cloudant DB and some credentials that we will use later to access it.
+- `redis.tf` creates the Redis instance and some credentials that we will use later to access it.
+- `eventstreams.tf` creates the Event Streams instance and some credentials that we will use later to access it.
+- `registry.tf` creates the Container Registry that will hold your container images.
+- `iam.tf` creates the access key that is needed to interact with the Container Registry.
+- `vpc.tf` creates the VPC (Virtual Private Cloud) infrastructure that will be needed to deploy an OpenShift cluster. This includes a VPC, subnets and public gateways in three different availability zones.
+- `cos.tf` create a single Cloud Object Storage instance that is needed by OpenShift to manage the cluster.
+- `openshift.tf` creates a cluster of virtual machines inside your VPC, where you will deploy your applications.
 
-It will take several minutes for the databases and other resources to be ready, but you should now have some VPC resources, a cluster of Virtual machines, a Databases for Redis instance, a Cloudant database and an Event Streams instance in your account, as well as a Container Registry namespace for your container images. You can check by visiting the [Resources section](https://cloud.ibm.com/resources) of your IBM Cloud account.
+It will take several minutes for the databases and other resources to be ready, but you should now have some VPC resources, a cluster of virtual machines, a Databases for Redis instance, a Cloudant database and an Event Streams instance in your account, as well as a Container Registry namespace for your container images. You can check by visiting the [Resources section](https://cloud.ibm.com/resources) of your IBM Cloud account.
 
 ### Step 4: Create container images and deploy to OpenShift
 {: #truck-tracker-open-shift}
 
-At this point, all your infrastructure is ready to receive data. Now we have to build the different modules that will produce and consume the data, as well as the application that will display the truck position on a map.
+At this point, all your infrastructure is ready to receive data. Now we have to build and deploy the different modules that will produce and consume the data, as well as the application that will display the truck position on a map.
 
 Run the build script — but before you do, are you logged into the IBM Cloud CLI and Docker?
 
@@ -155,7 +147,7 @@ If you zoom in on one of these markers you will see it moving along the road. As
 
 ![The Truck Tracker Zoom View](images/trucktrackerzoom.png){: caption="Figure 2. Single-Truck View" caption-side="bottom"}
 
-## What Just Happened?
+## What you just did
 {: #truck-tracker-what-happened}
 
 ### The build.sh script
