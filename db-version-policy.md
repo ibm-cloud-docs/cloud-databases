@@ -56,14 +56,14 @@ If you take no action this can result in compatibility issues with your apps whe
 
 Database | Versioning Schema | Next Known End of Life Version and Date | End of Life procedure |
 --------- | --------- | --------- | --------- |
-DataStax | Major versions are the first number in a `major.minor.patch` version number. | v6.7, unplanned | Backup taken and access removed|  
+DataStax | Major versions are the first number in a `major.minor.patch` version number. | v6.7, [May 24th, 2022](https://www.ibm.com/cloud/blog/announcements/databases-for-datastax-6-7-end-of-life-in-may-2022) | Backup taken and access removed|  
 Elasticsearch | Major versions are the first number in a `release.version.maintenance` version number.| Backup taken and access removed|  
 EnterpriseDB | Major version is defined by the first number in the version number. | v12, December 2024 | Backup taken and access removed|  
 etcd | Major versions are the first number in a `major.minor.patch` version number. | v3.3, unplanned | Backup taken and access removed|  
 MongoDB | Major versions are the first two numbers in a `major.x.patch` version number. In cases where `x` is even, it is a stable release suitable for production. Even `x` versions are the only ones available on Cloud Databases. | v4.0, [April 26th 2022](https://www.ibm.com/cloud/blog/announcements/databases-for-mongodb-40-end-of-life-in-april-2022) | Automatically upgraded in place to next Major version|
 PostgreSQL* | Major version is defined by the first number in the version number. | v9.6, [November 11th 2021](https://www.postgresql.org/support/versioning/)| Backup taken and access removed|  
 Redis | Major versions are the first number in a `major.minor.patch` version number. | v4.0, [March 22nd 2022](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-databases-for-redis-4-end-of-life-in-march-2022) | Backup taken and access removed|  
-RabbitMQ | Major versions are the first two numbers in a `major.x.patch` version number. | v3.8, [July 22nd 2022](https://www.ibm.com/cloud/blog/announcements/messages-for-rabbitmq-38-end-of-life-in-july-2022) | Backup taken and access removed|  
+RabbitMQ | Major versions are the first two numbers in a `major.x.patch` version number. | v3.8, [July 12nd 2022](https://www.ibm.com/cloud/blog/announcements/messages-for-rabbitmq-38-end-of-life-in-july-2022) | Backup taken and access removed|  
 {: caption="Table 1. Major versions for {{site.data.keyword.databases-for}}" caption-side="top"}
 
 *There was a change of versioning schema for PostgreSQL after version 9.6. Before and including version 9.6, a PostgreSQL major version was defined by the first two numbers in the version.
