@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2021
-lastupdated: "2022-01-18"
+lastupdated: "2022-03-01"
 
 subcollection: cloud-databases
 
@@ -33,6 +33,9 @@ Public endpoints provide a connection to your deployment on the public network. 
 {: #private-endpoints}
 
 A deployment with a service endpoint on the private network gets an endpoint that is not accessible from the public internet. All traffic is routed to hardware dedicated to {{site.data.keyword.databases-for}} deployments and remains on the {{site.data.keyword.cloud_notm}} Private network. All traffic to and from this endpoint is free and unmetered on the condition that the traffic remains in {{site.data.keyword.cloud_notm}}. After your environment has access to the {{site.data.keyword.cloud_notm}} Private network, an internet connection is not required to connect to your deployment.
+
+A MongoDB deployment cannot support both [public and private endpoints simultaneously](https://cloud.ibm.com/docs/databases-for-mongodb?topic=cloud-databases-service-endpoints#provisioning-with-service-endpoints). This cannot be changed after provisioning.
+{: .important}
 
 ## Enabling Service Endpoints
 {: #-enabling-service-endpoints}
