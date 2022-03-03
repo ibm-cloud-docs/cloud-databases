@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2021
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-03"
 
 keywords: IBM Cloud Databases, ICD, truck tracker, terraform, docker
 
@@ -89,8 +89,8 @@ Follow the steps [in this document](https://cloud.ibm.com/docs/account?topic=acc
 {: step}
 
 ```shell
-git clone https://github.com/danmermel/trucktracker-on-openshift.git
-cd trucktracker-on-openshift/terraform
+git clone https://github.com/IBM-Cloud/truck-tracker.git
+cd truck-tracker/terraform
 ```
 
 Create a document called `terraform.tfvars` with the following fields: 
