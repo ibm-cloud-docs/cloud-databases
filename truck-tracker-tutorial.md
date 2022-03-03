@@ -42,7 +42,7 @@ So your trucks are flying around the country and data is pouring out of them. Ho
 
 Event Streams can take in the data from the trucks (data producers) and then serve it to the various applications that will use it (data consumers).
 
-Finally, you will need to run your Truck Tracker service somewhere, and for that we will use [{{site.data.keyword.openshiftlong_notm}}](https://www.ibm.com/cloud/openshift), a fast and secure way to containerize and deploy enterprise workloads in Kubernetes clusters. We will provision an {{site.data.keyword.openshiftlong_notm}} cluster, deploy our applications to it and make them available to the database services that need access to it. We will also make a public-facing application to view the positions of trucks on a map. Read more about [{{site.data.keyword.openshiftlong_notm}}](https://cloud.redhat.com/learn/what-is-openshift) 
+Finally, you will need to run your Truck Tracker service somewhere, and for that we will use [{{site.data.keyword.openshiftlong_notm}}](https://www.ibm.com/cloud/openshift), a fast and secure way to containerize and deploy enterprise workloads in Kubernetes clusters. We will provision an {{site.data.keyword.openshiftlong_notm}} cluster, deploy our applications to it and make them available to the database services that need access to it. We will also make a public-facing application to view the positions of trucks on a map. Read more about [{{site.data.keyword.openshiftlong_notm}}.](https://cloud.redhat.com/learn/what-is-openshift) 
 
 
 
