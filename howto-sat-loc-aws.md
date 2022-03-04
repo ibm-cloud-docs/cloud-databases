@@ -131,7 +131,7 @@ To get to this state, attach a minimum of three 4x16 hosts to your location and 
 
 ![Control plane in normal state](images/cp-normal.png){: caption="Figure 1. Control plane in normal state" caption-side="bottom"}
 
-Attempting to provision a database instance into a location with a running Control plane (i.e., not 'Normal' state), the provisioning request will fail.
+Attempting to provision a database instance into a location with a running Control plane (i.e., not `Normal` state), will cause provisioning to fail.
 {: .important}
 
 ## Provisioning ICD Satellite Deployment
