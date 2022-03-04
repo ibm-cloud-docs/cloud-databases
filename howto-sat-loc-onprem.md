@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2022-01-10"
+lastupdated: "2022-03-04"
 
 keywords: IBM Cloud, databases, ICD
 
@@ -131,6 +131,31 @@ Begin by configuring IAM Authorizations:
         - **Satellite Link Administrator**
         - **Satellite Link Source Access Controller**
     - Then **Authorize**.
+
+## Ensure location readiness
+{: step}
+{: #loc-readiness}
+
+Before provisioning your ICD Satellite Deployment, your location needs to report `Normal`. This status can be confirmed in the UI, as shown here:
+
+![UI showing location is Normal](images/sat-normal.png){: caption="Figure 1. UI showing location is Normal" caption-side="bottom"}
+
+`Normal` status can also be confirmed using the CLI, with a command like:
+
+```shell
+ibmcloud sat location get --location <location name> --output=json -q | jq -r .state
+```
+The command output should report `normal`.
+
+### Obtaining `Normal` state
+{: #norm-state}
+
+To get to this state, attach a minimum of three 4x16 hosts to your location and assign them to the Control plane. Once that step is complete, provisioning of the Control plane will begin. Upon successful completion, the location state is going to report as `Normal`, as shown below: 
+
+![Control plane in normal state](images/cp-normal.png){: caption="Figure 1. Control plane in normal state" caption-side="bottom"}
+
+Attempting to provision a database instance into a location without a running Control plane (i.e., `Normal` state), will cause provisioning to fail.
+{: .important}
 
 ## Provisioning ICD Satellite Deployment
 {: #provision-satellite-deployment}
