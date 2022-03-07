@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018, 2021
-lastupdated: "2022-02-28"
+lastupdated: "2022-03-07"
 
 subcollection: cloud-databases
 
@@ -62,7 +62,7 @@ EnterpriseDB | Major version is defined by the first number in the version numbe
 etcd | Major versions are the first number in a `major.minor.patch` version number. | v3.3, unplanned | Backup taken and access removed|  
 MongoDB | Major versions are the first two numbers in a `major.x.patch` version number. In cases where `x` is even, it is a stable release suitable for production. Even `x` versions are the only ones available on Cloud Databases. | v4.0, [April 26th 2022](https://www.ibm.com/cloud/blog/announcements/databases-for-mongodb-40-end-of-life-in-april-2022) | Automatically upgraded in place to next Major version|
 PostgreSQL* | Major version is defined by the first number in the version number. | v9.6, [November 11th 2021](https://www.postgresql.org/support/versioning/)| Backup taken and access removed|  
-Redis | Major versions are the first number in a `major.minor.patch` version number. | v4.0, [March 22nd 2022](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-databases-for-redis-4-end-of-life-in-march-2022) | Backup taken and access removed|  
+Redis | Major versions are the first number in a `major.minor.patch` version number. | v4.0, [May 27th 2022](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-databases-for-redis-4-end-of-life-in-march-2022) | Automatically upgraded in place to next Major version|  
 RabbitMQ | Major versions are the first two numbers in a `major.x.patch` version number. | v3.8, [July 12nd 2022](https://www.ibm.com/cloud/blog/announcements/messages-for-rabbitmq-38-end-of-life-in-july-2022) | Backup taken and access removed|  
 {: caption="Table 1. Major versions for {{site.data.keyword.databases-for}}" caption-side="top"}
 
