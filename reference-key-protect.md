@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2020
-lastupdated: "2022-01-18"
+lastupdated: "2022-03-11"
 
 subcollection: cloud-databases
 
@@ -109,9 +109,9 @@ Cryptoshredding is a destructive action. When the key is deleted, your data is u
 
 If you use Key Protect, you can also designate a key to encrypt the Cloud Object Storage disk that holds your deployment's backups.
 
-Things to Note - 
-- BYOK for backups is only available in US regions `us-south` and `us-east`.
-- Only keys in the `us-south` are durable to region failures. You must use a key from `us-south`, regardless of where your deployment is, to ensure that your backups are available even if a region failure occurs.
+- BYOK for backups is only available in US regions `us-south`, `us-east`, and `eu-de`.
+- Only keys in the `us-south` are durable to region failures. To ensure your backups are available even if a region failure occurs, you must use a key from `us-south` regardless of your deployment location.
+{: .note}
 
 ### Granting the delegation authorization
 {: #grant-auth}
