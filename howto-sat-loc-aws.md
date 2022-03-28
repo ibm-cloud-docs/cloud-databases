@@ -68,8 +68,11 @@ Attach to your Satellite location:
 - three type **32x128** hosts
     - on AWS choose three hosts of type **AWS m5d.8xlarge**
 
-The three type **8x32** hosts are for IBM Cloud™ Databases (ICD) enabled by IBM Cloud Satellite internal use, while the three type **32x128** hosts are for your use.
+The three type **8x32** hosts are for IBM Cloud™ Databases (ICD) enabled by IBM Cloud Satellite internal use. Nodes are auto-assigned to a service cluster. The three type **32x128** hosts are for your use. 
 {: note}
+
+In order to be assigned to a service cluster, your worker nodes must match the above specifications *exactly*.
+{: .important}
 
 ### Create a Satellite block storage configuration
 {: #satellite-blockstorage-config}
