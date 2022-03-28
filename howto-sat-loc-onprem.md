@@ -68,6 +68,9 @@ Attach to your Satellite location:
 The three type **8x32** hosts are for IBM Cloud™ Databases (ICD) enabled by IBM Cloud Satellite internal use, while the three type **32x128** hosts are for your use.
 {: note}
 
+In order to be assigned to a service cluster, your worker nodes must match the above specifications *exactly*.
+{: .important}
+
 ### Create an on-prem Satellite block storage configuration for NetAPP ONTAP-SAN block storage
 {: #block-storage-config}
 
