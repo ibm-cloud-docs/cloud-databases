@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2022-01-13"
+  years: 2021, 2022
+lastupdated: "2022-03-29"
 
 keywords: IBM Cloud, databases, ICD
 
@@ -52,6 +52,7 @@ With IBM Cloud™ Databases (ICD) enabled by IBM Cloud Satellite, you can deploy
  Once your Satellite location instance is deployed, ICD will install an ICD Satellite service cluster in your Satellite location into which your database instances will be deployed. 
 
  Your ICD service cluster can operate multiple database instances, even with different database types. For instance, you may operate a {{site.data.keyword.databases-for-etcd}} and a {{site.data.keyword.databases-for-postgresql}} instance on the same service cluster. 
+ {: .important}
 
 The service cluster name is based on the first database instance, even if multiple instances exist. For example, if your service cluster has both a {{site.data.keyword.databases-for-etcd}} and a {{site.data.keyword.databases-for-postgresql}} instance on the same service cluster, the name will be based on your {{site.data.keyword.databases-for-etcd}} instance.
 {: .note}
