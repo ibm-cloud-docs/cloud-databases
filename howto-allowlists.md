@@ -237,7 +237,6 @@ Sydney  | au-syd | syd05 |  135.90.68.39/29   | 135.90.68.33
 
 Location | Region | Data center | Subnet | First IP
 -- | -- | -- | -- | --
-
 Tokyo | jp-tok | tok02 | 161.202.140.191/27 | 161.202.140.161          
 Tokyo | jp-tok | tok02 |  169.56.7.255/26   | 169.56.7.193          
 Tokyo | jp-tok | tok02 |  169.56.30.255/25  | 169.56.30.129          
@@ -268,7 +267,6 @@ Tokyo | jp-tok | tok05 | 165.192.148.63/29  | 165.192.148.57
 
 Location | Region | Data center | Subnet | First IP
 -- | -- | -- | -- | --
-
 Osaka | jp-osa |  osa21 | 163.68.68.127/28 | 163.68.68.113           
 Osaka | jp-osa |  osa21 | 163.68.73.127/27 | 163.68.73.97           
 Osaka | jp-osa |  osa21 | 163.68.96.191/26 | 163.68.96.129           
