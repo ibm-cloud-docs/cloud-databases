@@ -341,7 +341,6 @@ Washington DC | us-east | wdc07 |   169.62.6.87/29   |  169.62.6.81
 
 Location | Region | Data center | Subnet | First IP
 -- | -- | -- | -- | --
-
 Frankfurt | eu-de | fra02   | 158.177.41.255/24  | 158.177.41.1       
 Frankfurt | eu-de | fra02   | 158.177.56.255/24  | 158.177.56.1       
 Frankfurt | eu-de | fra02   | 158.177.61.255/24  | 158.177.61.1       
@@ -417,7 +416,6 @@ Paris   | eu-de | par01     | 159.8.94.95/29     | 159.8.94.89
 
 Location | Region | Data center | Subnet | First IP
 -- | -- | -- | -- | --
-
 Dallas | us-south | dal10 | 52.116.167.255/24  | 52.116.167.1          
 Dallas | us-south | dal10 | 52.116.179.175/28  | 52.116.179.161          
 Dallas | us-south | dal10 |  52.116.190.63/26  | 52.116.190.1          
