@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2022-02-15"
+lastupdated: "2022-03-30"
 
 subcollection: cloud-databases
 
@@ -102,12 +102,11 @@ If you use allowlists to control connections in your environment, you can use th
 
 Location | Region | Data center | Subnet | First IP
 -- | -- | -- | -- | --
-Chennai  |  in-che |  CHE01 | 169.38.95.127/27	 |  169.38.95.96	
-Chennai  |  in-che |  CHE01 | 169.38.121.159/28	 |  169.38.121.144	
-Chennai  |  in-che |  CHE01 | 169.38.132.127/25	 |  169.38.132.0	
-Chennai  |  in-che |  CHE01 | 169.38.136.255/26	 |  169.38.136.192	
-Chennai  |  in-che |  CHE01 | 169.38.73.151/29	 |  169.38.73.144	
-Chennai  |  in-che |  CHE01 | 169.38.105.79/29	 |  169.38.105.72	
+Chennai  |  in-che |  CHE01 | 169.38.121.159/28|  169.38.121.145
+Chennai  |  in-che |  CHE01 | 169.38.132.127/25|  169.38.132.1	 	
+Chennai  |  in-che |  CHE01 | 169.38.136.255/26|  169.38.136.193
+Chennai  |  in-che |  CHE01 | 169.38.73.151/29 |  169.38.73.145	 	
+Chennai  |  in-che |  CHE01 | 169.38.105.79/29 |  169.38.105.73	 
 
 ### `ca-tor` List
 {: #ca-tor-list} 
@@ -624,3 +623,4 @@ Dallas | us-south | dal13 |  169.62.239.47/29  | 169.62.239.40
 Dallas | us-south | dal13 | 169.62.240.223/29  | 169.62.240.216         
 Dallas | us-south | dal13 | 169.62.240.231/29  | 169.62.240.224         
 Dallas | us-south | dal13 |  174.36.70.143/29  | 174.36.70.136 
+
