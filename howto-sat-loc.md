@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-03-29"
+lastupdated: "2022-03-31"
 
 keywords: IBM Cloud, databases, ICD
 
@@ -62,6 +62,9 @@ ICD enabled by IBM Cloud Satellite supports Satellite locations on [Amazon Web S
 
 ## Before you begin
 {: #before-begin}
+
+ICD enabled by IBM Cloud Satellite does not yet provide the Security and Compliance integration, Activity Tracking, or Metrics Monitoring of a standard {{site.data.keyword.cloud}} Databases deployment.
+{: .important}
 
 - Refer to the [Satellite Usage requirements](/docs/satellite?topic=satellite-requirements).
 - Be sure you have set up the [IBM Cloud command-line interface (CLI)](/docs/satellite?topic=satellite-setup-cli), the plug-in for Satellite commands, and other related CLIs.
