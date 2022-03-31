@@ -63,6 +63,9 @@ ICD enabled by IBM Cloud Satellite supports Satellite locations on [Amazon Web S
 ## Before you begin
 {: #before-begin}
 
+ICD enabled by IBM Cloud Satellite does not yet provide the Security and Compliance integration, Activity Tracking, or Metrics Monitoring of a standard {{site.data.keyword.cloud}} Databases deployment.
+{: .important}
+
 - Refer to the [Satellite Usage requirements](/docs/satellite?topic=satellite-requirements).
 - Be sure you have set up the [IBM Cloud command-line interface (CLI)](/docs/satellite?topic=satellite-setup-cli), the plug-in for Satellite commands, and other related CLIs.
 - If you have not already created a Satellite location, see [Setting up Satellite locations](/docs/satellite?topic=satellite-locations). We recommend following the steps in the [Manually creating Satellite locations](/docs/satellite?topic=satellite-locations#location-create) documentation.
@@ -70,8 +73,5 @@ ICD enabled by IBM Cloud Satellite supports Satellite locations on [Amazon Web S
 
 As ICD enabled by IBM Cloud Satellite solely supports resource deployment in the `us-east` region, you must choose the **Washington DC** location when provisioning. 
 {: .note}
-
- ICD enabled by IBM Cloud Satellite does not yet provide the Security and Compliance integration, Activity Tracking, or Metrics Monitoring of a standard {{site.data.keyword.cloud}} Databases deployment.
- {: .important}
 
 - Before proceeding with **Step 1**, you should have set up your Satellite location properly and ensured the Satellite control plane is up and running.
