@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-03-29"
+lastupdated: "2022-03-31"
 
 keywords: IBM Cloud, databases, ICD
 
@@ -70,5 +70,8 @@ ICD enabled by IBM Cloud Satellite supports Satellite locations on [Amazon Web S
 
 As ICD enabled by IBM Cloud Satellite solely supports resource deployment in the `us-east` region, you must choose the **Washington DC** location when provisioning. 
 {: .note}
+
+ ICD enabled by IBM Cloud Satellite does not yet provide the Security and Compliance integration, Activity Tracking, or Metrics Monitoring of a standard {{site.data.keyword.cloud}} Databases deployment.
+ {: .important}
 
 - Before proceeding with **Step 1**, you should have set up your Satellite location properly and ensured the Satellite control plane is up and running.
