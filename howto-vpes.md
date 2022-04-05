@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2021
-lastupdated: "2021-11-02"
+  years: 2021, 2022
+lastupdated: "2022-04-05"
 
 subcollection: cloud-databases
 
@@ -21,7 +21,7 @@ keywords: pDNS, private endpoints, private networking, vpe, virtual private endp
 # Virtual Private Endpoints 
 {: #vpes}
 
-This document covers all the IBM Cloud Databases that includes {{site.data.keyword.databases-for-cassandra}}, {{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-enterprisedb}}, {{site.data.keyword.databases-for-etcd}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-redis}}, and {{site.data.keyword.messages-for-rabbitmq}}. 
+This document covers all the IBM Cloud Databases that includes {{site.data.keyword.databases-for-cassandra}}, {{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-enterprisedb}}, {{site.data.keyword.databases-for-etcd}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-redis}}, {{site.data.keyword.databases-for-mysql_full}}, and {{site.data.keyword.messages-for-rabbitmq}}. 
 {: .note}
 
 {{site.data.keyword.cloud}} Virtual Private Endpoint (VPE) for {{site.data.keyword.vpc_full}} provides connection points to IBM services on the IBM private network from your VPC network.
@@ -37,7 +37,7 @@ Virtual Private Endpoints (VPEs) are generally available in all regions.
 {: #vpes-before-begin}
 
 - You need to have an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/registration){: .external}
-- And an {{site.data.keyword.databases-for}} deployment. You can [provision](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-provisioning) one from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/services/). Give your deployment a memorable name that appears in your account's Resource List.
+- And a {{site.data.keyword.databases-for}} deployment. You can [provision](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-provisioning) one from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/services/). Give your deployment a memorable name that appears in your account's Resource List.
 
 ### Setting up your VPE
 {: #vpes-setup}
