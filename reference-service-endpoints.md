@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2019, 2021
-lastupdated: "2022-03-01"
+  years: 2019, 2022
+lastupdated: "2022-04-05"
 
 subcollection: cloud-databases
 
@@ -36,6 +36,11 @@ A deployment with a service endpoint on the private network gets an endpoint tha
 
 A MongoDB deployment cannot support both [public and private endpoints simultaneously](https://cloud.ibm.com/docs/databases-for-mongodb?topic=cloud-databases-service-endpoints#provisioning-with-service-endpoints). This cannot be changed after provisioning.
 {: .important}
+
+### Private Endpoint Discoverability
+{: #priv-endpoint-discoverability}
+
+Database instances with private endpoints are accessible to others within the private network. To restrict access to your databases, configure VPEs together with [allowlisting](/docs/cloud-databases?topic=cloud-databases-allowlisting).
 
 ## Enabling Service Endpoints
 {: #-enabling-service-endpoints}
