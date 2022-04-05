@@ -86,6 +86,11 @@ Virtual Private Endpoints (VPEs) are generally available in all regions.
    mongo -u $USERNAME -p $PASSWORD --tls --tlsCAFile /root/   c--authenticationDatabase admin --host replset/host-0.private.databaseappdomain.   cloud:30066,host-1.private.databases.appdomain.cloud:30066,host-private.   databases.appdomain.cloud:30066
    ```
 
+### VPE Discoverability
+{: #vpes-discoverability}
+
+Following the above steps will result in a database instance that is accessible to others within the private network. To restrict access to your databases, configure VPEs together with [allowlisting](/docs/cloud-databases?topic=cloud-databases-allowlisting).
+
 ### More resources
 {: #vpes-resources}
 
