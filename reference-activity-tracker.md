@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2021
-lastupdated: "2022-01-24"
+lastupdated: "2022-04-06"
 
 subcollection: cloud-databases
 
@@ -94,7 +94,7 @@ Action Name | Legacy Action name | Description
 |`<service_id>.deployment-user.update`|`<service_id>.user-password.update`| A user's password was updated. A "-failure" flag is included in the message if the attempt to update a user's password failed.
 |`<service_id>.deployment-user.create`|`<service_id>.user.create`|A user was created. A "-failure" flag is included in the message if the attempt to create a user failed.
 |`<service_id>.deployment-user.delete`|`<service_id>.user.delete`|A user was deleted. A "-failure" flag is included in the message if the attempt to delete a user failed.
-|No Longer Sent (*see below for more information*)	 |`<service_id>.backup.restore`|A restore from backup was created. If the attempted restore failed, a "-failure" flag is included in the message.
+|No Longer Sent (_see below for more information_)	 |`<service_id>.backup.restore`|A restore from backup was created. If the attempted restore failed, a "-failure" flag is included in the message.
 |`<service_id>.deployment-group.update`|`<service_id>.resources.scale`|A scaling operation was performed. If the scaling operation failed, a "-failure" flag is included in the message.
 |`<service_id>.deployment-allowlist-ip-addresses.update` |`<service_id>.whitelisted-ips-list.update`|The allowlist was modified. A "-failure" flag is included in the message if the attempt to modify the allowlist failed.
 |`<service_id>.deployment.update`|`<service_id>.serviceendpoints.update`|A change was made to the service endpoints configuration. If the operation failed, a "-failure" flag is included in the message.
