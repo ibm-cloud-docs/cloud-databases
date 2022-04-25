@@ -91,11 +91,10 @@ Virtual Private Endpoints (VPEs) are generally available in all regions.
 
 Following the above steps will result in a database instance with private endpoints that is reachable via Virtual Private Endpoints from your VPC network.
 
-Database instances with private endpoints are reachable from any account within the private network. To restrict this access to specific IP addresses, or ranges of IP addresses, configure [allowlisting](/docs/cloud-databases?topic=cloud-databases-allowlisting).
+Database instances with private endpoints are reachable from any account within the private network and access to each instance requires authentication. To restrict this access to specific IP addresses, or ranges of IP addresses, configure [allowlisting](/docs/cloud-databases?topic=cloud-databases-allowlisting).
 {: .important}
 
-For more information on accessing services using service endpoints, see [Secure access to services using service endpoints
-](/docs/account?topic=account-service-endpoints-overview).
+For more information on accessing services using service endpoints, see [Secure access to services using service endpoints](/docs/account?topic=account-service-endpoints-overview).
 
 ### More resources
 {: #vpes-resources}
