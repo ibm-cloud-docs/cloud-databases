@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2022
-lastupdated: "2022-04-25"
+lastupdated: "2022-04-26"
 
 subcollection: cloud-databases
 
@@ -39,6 +39,7 @@ Database instances with private endpoints are reachable from any account within 
 
 For more information on accessing services using service endpoints, see [Secure access to services using service endpoints
 ](/docs/account?topic=account-service-endpoints-overview).
+{: .tip}
 
 ## Enabling Service Endpoints
 {: #-enabling-service-endpoints}
