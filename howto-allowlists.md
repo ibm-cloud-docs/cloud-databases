@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2022-03-30"
+lastupdated: "2022-04-26"
 
 subcollection: cloud-databases
 
@@ -25,6 +25,9 @@ If you want to restrict access to your databases, you can allowlist specific IP 
 If you use allowlists in your environment, you can allowlist our services by using the list of subnets for each region.
 
 We updated documentation to reflect changes in terminology from `whitelist` to `allowlist`. You might encounter continued references to this former terminology while we work to implement these deeper changes to code, API, and CLI commands. 
+{: .note}
+
+There is a limit of 100 allowlist entries for each deployment. 
 {: .note}
 
 ## Using IP allowlists on your Deployment
