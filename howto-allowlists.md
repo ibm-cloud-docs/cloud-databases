@@ -27,6 +27,9 @@ If you use allowlists in your environment, you can allowlist our services by usi
 We updated documentation to reflect changes in terminology from `whitelist` to `allowlist`. You might encounter continued references to this former terminology while we work to implement these deeper changes to code, API, and CLI commands. 
 {: .note}
 
+There is a limit of 100 allowlist entries for each deployment. 
+{: .note}
+
 ## Using IP allowlists on your Deployment
 {: #ip-allowlist} 
 
