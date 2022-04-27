@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2019, 2021
-lastupdated: "2022-03-01"
+  years: 2019, 2022
+lastupdated: "2022-04-27"
 
 subcollection: cloud-databases
 
@@ -22,7 +22,7 @@ keywords: service endpoints, private endpoints, private networking, vpe, virtual
 
 All {{site.data.keyword.databases-for}} deployments offer integration with [{{site.data.keyword.cloud_notm}} Service Endpoints](/docs/account?topic=account-service-endpoints-overview). It gives you the ability to enable connections to your deployments from the public internet and over the {{site.data.keyword.cloud_notm}} Private network.
 
-Service Endpoints are available in all {{site.data.keyword.cloud_notm}} Multi-Zone Regions and some Single-Zone Regions. Deployments in all other regions are able to use Service Endpoints.
+Service Endpoints are available in all {{site.data.keyword.cloud_notm}} Multi-Zone Regions and some single-campus multizone regions. Deployments in all other regions are able to use Service Endpoints.
 
 ## Public Endpoints
 {: #public-endpoints}
@@ -34,8 +34,14 @@ Public endpoints provide a connection to your deployment on the public network. 
 
 A deployment with a service endpoint on the private network gets an endpoint that is not accessible from the public internet. All traffic is routed to hardware dedicated to {{site.data.keyword.databases-for}} deployments and remains on the {{site.data.keyword.cloud_notm}} Private network. All traffic to and from this endpoint is free and unmetered on the condition that the traffic remains in {{site.data.keyword.cloud_notm}}. After your environment has access to the {{site.data.keyword.cloud_notm}} Private network, an internet connection is not required to connect to your deployment.
 
-A MongoDB deployment cannot support both [public and private endpoints simultaneously](https://cloud.ibm.com/docs/databases-for-mongodb?topic=cloud-databases-service-endpoints#provisioning-with-service-endpoints). This cannot be changed after provisioning.
+Database instances with private endpoints are reachable from any account within the private network and access to each instance requires authentication. To restrict this access to specific IP addresses, or ranges of IP addresses, configure [allowlisting](/docs/cloud-databases?topic=cloud-databases-allowlisting). 
 {: .important}
+
+A MongoDB deployment cannot support both [public and private endpoints simultaneously](https://cloud.ibm.com/docs/databases-for-mongodb?topic=cloud-databases-service-endpoints#provisioning-with-service-endpoints). *This cannot be changed after provisioning*.
+{: .important}
+
+For more information on accessing services using service endpoints, see [Secure access to services using service endpoints](/docs/account?topic=account-service-endpoints-overview).
+{: .tip}
 
 ## Enabling Service Endpoints
 {: #-enabling-service-endpoints}
@@ -47,7 +53,7 @@ Currently, enabling Service Endpoints on your account is a manual step that is h
 ## Provisioning with Service Endpoints
 {: #provisioning-service-endpoints}
 
-To configure your deployment's endpoints on provision, use the _Endpoints_ field on the catalog page. Select from the available options:
+To configure your deployment's endpoints on provision, use the *Endpoints* field on the catalog page. Select from the available options:
 - Public Network
 - Private Network
 - Both public and private network (not available for {{site.data.keyword.databases-for-mongodb}})
@@ -70,7 +76,7 @@ For more information, see the [Provisioning](/docs/cloud-databases?topic=cloud-d
 
 After you have a deployment, it is possible to change your public and private service endpoints configuration, except for {{site.data.keyword.databases-for-mongodb}}. 
 
-In the _Overview_ tab of your deployment's dashboard, go to the _Endpoints_ section. You can toggle which types of connections are available to your deployment.
+In the *Overview* tab of your deployment's dashboard, go to the *Endpoints* section. You can toggle which types of connections are available to your deployment.
 
 You can use the [`ibmcloud resource service-instance-update`](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_update) command in the CLI, specifying the endpoint with the `--service-endpoints` flag.
 ```shell
@@ -86,7 +92,7 @@ Changing the type of endpoints available on your deployment does not cause any d
 
 You can use either public or private connection strings with any set of credentials you make on your deployment. By default, the connection strings for a set of credentials are filled with strings for connecting over a public endpoint. If you are using private endpoints, you can specify connection strings that contain the private endpoint be generated instead. 
 
-When you create credentials in _Service Credentials_, use either the `{ "service-endpoints": "public" }` or the `{ "service-endpoints": "private" }` parameter to specify which endpoint gets filled into the connection strings. 
+When you create credentials in *Service Credentials*, use either the `{ "service-endpoints": "public" }` or the `{ "service-endpoints": "private" }` parameter to specify which endpoint gets filled into the connection strings. 
 
 In the API, you can use the [`/deployments/{id}/users/{userid}/connections/{endpoint_type}`](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026) to retrieve connection strings for both public or private endpoints.
 
