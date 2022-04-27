@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2022-01-18"
+  years: 2020, 2022
+lastupdated: "2022-04-27"
 
 subcollection: cloud-databases
 
@@ -25,16 +25,16 @@ keywords: HA for cloud-databases, DR for cloud-databases, high availability for 
 This document covers all the {{site.data.keyword.cloud}} Databases, which include {{site.data.keyword.databases-for-cassandra}}, {{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-enterprisedb}}, {{site.data.keyword.databases-for-etcd}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-redis}}, {{site.data.keyword.messages-for-rabbitmq}}, and {{site.data.keyword.databases-for-mysql}}. 
 {: .note}
 
-{{site.data.keyword.cloud}} Databases instances are deployed in either a multi-zone region (for example, Dallas, Frankfurt, London, Sydney, Tokyo, and Washington), or a single zone region (for example, Seoul, and Chennai). Each instance is deployed in a highly available configuration; that is, data is replicated by each database onto one or more servers making the data highly available during normal operations.
+{{site.data.keyword.cloud}} Databases instances are deployed in either a multi-zone region (for example, Dallas, Frankfurt, London, Sydney, Tokyo, and Washington), or a single-campus multizone region (for example, Seoul, and Chennai). Each instance is deployed in a highly available configuration; that is, data is replicated by each database onto one or more servers making the data highly available during normal operations.
 
 - In multi-zone regions, database members are distributed across different data centers, or zones.  
-- In single-zone regions, database members are distributed across different hosts.
+- In single-campus multizone regions, database members are distributed across different hosts.
 
-If a single zone failure in a multi-zone region or a hardware failure in any region occurs, your data is still accessible as it is replicated onto other fully functioning database servers. Such issues are addressed by {{site.data.keyword.cloud}} Specialists in place. 
+If a single-campus multizone region failure in a multi-zone region or a hardware failure in any region occurs, your data is still accessible as it is replicated onto other fully functioning database servers. Such issues are addressed by {{site.data.keyword.cloud}} Specialists in place. 
 
 You can consult your {{site.data.keyword.databases-for}} documentation for more details on how your specific database replicates data among each of its members.
 
-In addition to the high-availability configuration, for deployments in IBM Cloud Multi-Zone Regions, your data is snapshotted and backed up daily by the {{site.data.keyword.cloud}} Databases platform and stored in [cross-region Cloud Object Storage buckets](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-geo). For most IBM Cloud Single-Zone Regions, your data is backed up locally in [Single Zone Cloud Object Storage buckets](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-zonee).
+In addition to the high-availability configuration, for deployments in IBM Cloud Multi-Zone Regions, your data is snapshotted and backed up daily by the {{site.data.keyword.cloud}} Databases platform and stored in [cross-region Cloud Object Storage buckets](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-geo). For most IBM Cloud single-campus multizone regions, your data is backed up locally in [Single-campus multizone region Cloud Object Storage buckets](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-zonee).
 
 If a complete region failure occurs, the database servers in the region might not be accessible, but the backup data remains available. You can initiate a restore from these backups into an available region from the service management console. Consult your {{site.data.keyword.databases-for}} backups page for more details. 
 
