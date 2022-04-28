@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018, 2021
-lastupdated: "2022-03-07"
+lastupdated: "2022-04-28"
 
 subcollection: cloud-databases
 
@@ -66,7 +66,9 @@ Redis | Major versions are the first number in a `major.minor.patch` version n
 RabbitMQ | Major versions are the first two numbers in a `major.x.patch` version number. | v3.8, [July 12nd 2022](https://www.ibm.com/cloud/blog/announcements/messages-for-rabbitmq-38-end-of-life-in-july-2022) | Backup taken and access removed|  
 {: caption="Table 1. Major versions for {{site.data.keyword.databases-for}}" caption-side="top"}
 
-*There was a change of versioning schema for PostgreSQL after version 9.6. Before and including version 9.6, a PostgreSQL major version was defined by the first two numbers in the version.
+**There was a change of versioning schema for PostgreSQL after version 9.6. Before and including version 9.6, a PostgreSQL major version was defined by the first two numbers in the version.*
+
+Any actions taken after a database EOL date happen over several days following the EOL date. We try, but cannot guarantee, to make these upgrades outside of business hours in the local regions.  If you want more control over the upgrade process of your database instance, we recommend that you perform the upgrade following our [backup and restore process](/docs/cloud-databases?topic=cloud-databases-dashboard-backups) before the EOL date of your database version.
 {: .note}
 
 ## Minor versions
