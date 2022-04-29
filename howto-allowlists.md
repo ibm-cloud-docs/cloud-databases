@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2022-04-26"
+lastupdated: "2022-04-29"
 
 subcollection: cloud-databases
 
@@ -195,7 +195,7 @@ London | eu-gb | lon06     |  158.176.131.15/29	   | 158.176.131.9
 ### `kr-seo` List
 {: #Seoul 1-list} 
 
-`SEO01` Data Center is scheduled to close on October 28, 2002. See [Migrating resources to a different data center
+`SEO01` Data Center is scheduled to close on October 28, 2022. See [Migrating resources to a different data center
 ](/docs/cloud-databases?topic=cloud-databases-migrate-data-center) for more information, including recommended data centers to which you can migrate.
 {: .important}
 
