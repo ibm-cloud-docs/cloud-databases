@@ -105,11 +105,12 @@ If you use allowlists to control connections in your environment, you can use th
 
 Location | Region | Data center | Subnet | First IP
 -- | -- | -- | -- | --
-Chennai  |  in-che |  CHE01 | 169.38.121.159/28|  169.38.121.145
-Chennai  |  in-che |  CHE01 | 169.38.132.127/25|  169.38.132.1	 	
-Chennai  |  in-che |  CHE01 | 169.38.136.255/26|  169.38.136.193
-Chennai  |  in-che |  CHE01 | 169.38.73.151/29 |  169.38.73.145	 	
-Chennai  |  in-che |  CHE01 | 169.38.105.79/29 |  169.38.105.73	 
+ Chennai | in-che | che01 |  169.38.95.127/27 | 169.38.95.97               
+ Chennai | in-che | che01 | 169.38.121.159/28 | 169.38.121.145               
+ Chennai | in-che | che01 | 169.38.132.127/25 | 169.38.132.1               
+ Chennai | in-che | che01 | 169.38.136.255/26 | 169.38.136.193               
+ Chennai | in-che | che01 |  169.38.73.151/29 | 169.38.73.145               
+ Chennai | in-che | che01 |  169.38.105.79/29 | 169.38.105.73        
 
 ### `ca-tor` List
 {: #ca-tor-list} 
