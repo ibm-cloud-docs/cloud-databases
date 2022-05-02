@@ -292,126 +292,126 @@ Osaka | jp-osa | osa23 | 163.73.67.231/29 | 163.73.67.225
 
 Location | Region | Data center | Subnet | First IP
 -- | -- | -- | -- | --
-Washington DC | us-east | wdc04 |  52.116.78.127/25  |  52.116.78.1  
-Washington DC | us-east | wdc04 | 52.116.115.255/24  |  52.116.115.1    
-Washington DC | us-east | wdc04 | 150.239.70.255/24  |  150.239.70.1    
-Washington DC | us-east | wdc04 | 150.239.101.255/24 |  150.239.101.1    
-Washington DC | us-east | wdc04 |  169.47.179.63/26  |  169.47.179.1    
-Washington DC | us-east | wdc04 |  169.63.72.175/28  |  169.63.72.161    
-Washington DC | us-east | wdc04 | 169.63.121.159/27  |  169.63.121.129	    
-Washington DC | us-east | wdc04 |  52.116.73.231/29  |  52.116.73.225    
-Washington DC | us-east | wdc04 | 169.47.179.231/29  |  169.47.179.225	    
-Washington DC | us-east | wdc04 |  169.63.86.31/29   |  169.63.86.25    
-Washington DC | us-east | wdc04 | 169.63.111.119/29  |  169.63.111.113	    
-Washington DC | us-east | wdc04 |  169.63.121.55/29  |  169.63.121.49    
-Washington DC | us-east | wdc04 |  169.63.121.63/29  |  169.63.121.57    
-Washington DC | us-east | wdc04 | 169.63.123.167/29  |  169.63.123.161	    
-Washington DC | us-east | wdc04 | 169.63.125.223/29  |  169.63.125.217	    
-Washington DC | us-east | wdc06 | 169.59.138.255/24  |  169.59.138.1    
-Washington DC | us-east | wdc06 | 169.59.144.255/24  |  169.59.144.1    
-Washington DC | us-east | wdc06 | 169.59.158.255/24  |  169.59.158.1    
-Washington DC | us-east | wdc06 | 169.63.128.191/27  |  169.63.128.161	    
-Washington DC | us-east | wdc06 | 169.63.135.191/28  |  169.63.135.177	    
-Washington DC | us-east | wdc06 | 169.63.139.255/26  |  169.63.139.193	    
-Washington DC | us-east | wdc06 | 169.63.172.127/25  |  169.63.172.1    
-Washington DC | us-east | wdc06 | 169.59.145.239/29  |  169.59.145.233	    
-Washington DC | us-east | wdc06 |  169.60.65.55/29   |  169.60.65.49    
-Washington DC | us-east | wdc06 |   169.60.89.7/29   |  169.60.89.1     
-Washington DC | us-east | wdc06 |   169.60.93.7/29   |  169.60.93.1     
-Washington DC | us-east | wdc06 |  169.60.95.151/29  |  169.60.95.145    
-Washington DC | us-east | wdc06 | 169.63.129.119/29  |  169.63.129.113	    
-Washington DC | us-east | wdc06 | 169.63.141.239/29  |  169.63.141.233	    
-Washington DC | us-east | wdc06 | 169.63.149.199/29  |  169.63.149.193	    
-Washington DC | us-east | wdc07 | 52.117.104.255/24  |  52.117.104.1    
-Washington DC | us-east | wdc07 | 150.239.194.255/24 |  150.239.194.1    
-Washington DC | us-east | wdc07 |  169.61.123.95/28  |  169.61.123.81    
-Washington DC | us-east | wdc07 |  169.62.36.255/24  |  169.62.36.1      
-Washington DC | us-east | wdc07 |  169.62.42.63/27   |  169.62.42.33    
-Washington DC | us-east | wdc07 |  169.62.54.191/26  |  169.62.54.129    
-Washington DC | us-east | wdc07 |  169.62.60.127/25  |  169.62.60.1      
-Washington DC | us-east | wdc07 |  52.117.76.47/29   |  52.117.76.41    
-Washington DC | us-east | wdc07 |  52.117.85.71/29   |  52.117.85.65    
-Washington DC | us-east | wdc07 |  169.61.73.231/29  |  169.61.73.225    
-Washington DC | us-east | wdc07 |  169.61.95.15/29   |  169.61.95.9      
-Washington DC | us-east | wdc07 |  169.61.113.39/29  |  169.61.113.33    
-Washington DC | us-east | wdc07 |  169.61.113.47/29  |  169.61.113.41    
-Washington DC | us-east | wdc07 | 169.61.122.159/29  |  169.61.122.153	    
-Washington DC | us-east | wdc07 |   169.62.6.87/29   |  169.62.6.81     
+Washington DC | us-east | wdc04 |  52.116.78.127/25  | 52.116.78.1         
+Washington DC | us-east | wdc04 | 52.116.115.255/24  | 52.116.115.1         
+Washington DC | us-east | wdc04 | 150.239.70.255/24  | 150.239.70.1         
+Washington DC | us-east | wdc04 | 150.239.101.255/24 | 150.239.101.1         
+Washington DC | us-east | wdc04 |  169.47.179.63/26  | 169.47.179.1         
+Washington DC | us-east | wdc04 |  169.63.72.175/28  | 169.63.72.161         
+Washington DC | us-east | wdc04 | 169.63.121.159/27  | 169.63.121.129         
+Washington DC | us-east | wdc04 |  52.116.73.231/29  | 52.116.73.225         
+Washington DC | us-east | wdc04 | 169.47.179.231/29  | 169.47.179.225         
+Washington DC | us-east | wdc04 |  169.63.86.31/29   | 169.63.86.25         
+Washington DC | us-east | wdc04 | 169.63.111.119/29  | 169.63.111.113         
+Washington DC | us-east | wdc04 |  169.63.121.55/29  | 169.63.121.49         
+Washington DC | us-east | wdc04 |  169.63.121.63/29  | 169.63.121.57         
+Washington DC | us-east | wdc04 | 169.63.123.167/29  | 169.63.123.161         
+Washington DC | us-east | wdc04 | 169.63.125.223/29  | 169.63.125.217         
+Washington DC | us-east | wdc06 | 169.59.138.255/24  | 169.59.138.1         
+Washington DC | us-east | wdc06 | 169.59.144.255/24  | 169.59.144.1         
+Washington DC | us-east | wdc06 | 169.59.158.255/24  | 169.59.158.1         
+Washington DC | us-east | wdc06 | 169.63.128.191/27  | 169.63.128.161         
+Washington DC | us-east | wdc06 | 169.63.135.191/28  | 169.63.135.177         
+Washington DC | us-east | wdc06 | 169.63.139.255/26  | 169.63.139.193         
+Washington DC | us-east | wdc06 | 169.63.172.127/25  | 169.63.172.1         
+Washington DC | us-east | wdc06 | 169.59.145.239/29  | 169.59.145.233         
+Washington DC | us-east | wdc06 |  169.60.65.55/29   | 169.60.65.49         
+Washington DC | us-east | wdc06 |   169.60.89.7/29   | 169.60.89.1         
+Washington DC | us-east | wdc06 |   169.60.93.7/29   | 169.60.93.1         
+Washington DC | us-east | wdc06 |  169.60.95.151/29  | 169.60.95.145         
+Washington DC | us-east | wdc06 | 169.63.129.119/29  | 169.63.129.113         
+Washington DC | us-east | wdc06 | 169.63.141.239/29  | 169.63.141.233         
+Washington DC | us-east | wdc06 | 169.63.149.199/29  | 169.63.149.193         
+Washington DC | us-east | wdc07 | 52.117.104.255/24  | 52.117.104.1         
+Washington DC | us-east | wdc07 | 150.239.194.255/24 | 150.239.194.1         
+Washington DC | us-east | wdc07 |  169.61.123.95/28  | 169.61.123.81         
+Washington DC | us-east | wdc07 |  169.62.36.255/24  | 169.62.36.1         
+Washington DC | us-east | wdc07 |  169.62.42.63/27   | 169.62.42.33         
+Washington DC | us-east | wdc07 |  169.62.54.191/26  | 169.62.54.129         
+Washington DC | us-east | wdc07 |  169.62.60.127/25  | 169.62.60.1         
+Washington DC | us-east | wdc07 |  52.117.76.47/29   | 52.117.76.41         
+Washington DC | us-east | wdc07 |  52.117.85.71/29   | 52.117.85.65         
+Washington DC | us-east | wdc07 |  169.61.73.231/29  | 169.61.73.225         
+Washington DC | us-east | wdc07 |  169.61.95.15/29   | 169.61.95.9         
+Washington DC | us-east | wdc07 |  169.61.113.39/29  | 169.61.113.33         
+Washington DC | us-east | wdc07 |  169.61.113.47/29  | 169.61.113.41         
+Washington DC | us-east | wdc07 | 169.61.122.159/29  | 169.61.122.153         
+Washington DC | us-east | wdc07 |   169.62.6.87/29   | 169.62.6.81
 
 ### `eu-de` List
 {: #eu-de-list} 
 
 Location | Region | Data center | Subnet | First IP
 -- | -- | -- | -- | --
-Frankfurt | eu-de | fra02   | 158.177.41.255/24  | 158.177.41.1       
-Frankfurt | eu-de | fra02   | 158.177.56.255/24  | 158.177.56.1       
-Frankfurt | eu-de | fra02   | 158.177.61.255/24  | 158.177.61.1       
-Frankfurt | eu-de | fra02    | 158.177.77.63/27  | 158.177.77.33       
-Frankfurt | eu-de | fra02   | 158.177.87.255/25  | 158.177.87.129       
-Frankfurt | eu-de | fra02   | 158.177.155.63/26  | 158.177.155.1       
-Frankfurt | eu-de | fra02   | 158.177.241.255/24 | 158.177.241.1       
-Frankfurt | eu-de | fra02   | 158.177.110.111/29 | 158.177.110.105       
-Frankfurt | eu-de | fra02   | 158.177.221.175/29 | 158.177.221.169       
-Frankfurt | eu-de | fra02    | 159.122.97.23/29  | 159.122.97.17       
-Frankfurt | eu-de | fra02    | 159.122.97.47/29  | 159.122.97.41       
-Frankfurt | eu-de | fra02   | 159.122.108.215/29 | 159.122.108.209       
-Frankfurt | eu-de | fra02   | 159.122.108.223/29 | 159.122.108.217       
-Frankfurt | eu-de | fra02    | 169.50.10.15/29   | 169.50.10.9       
-Frankfurt | eu-de | fra02    | 169.50.13.207/29  | 169.50.13.201       
-Frankfurt | eu-de | fra02    | 169.50.15.31/29   | 169.50.15.25       
-Frankfurt | eu-de | fra02    | 169.50.15.191/29  | 169.50.15.185       
-Frankfurt | eu-de | fra02    | 169.50.35.111/29  | 169.50.35.105       
-Frankfurt | eu-de | fra02    | 169.50.35.239/29  | 169.50.35.233       
-Frankfurt | eu-de | fra02    | 169.50.53.247/29  | 169.50.53.241       
-Frankfurt | eu-de | fra02    | 169.50.54.23/29   | 169.50.54.17       
-Frankfurt | eu-de | fra04    | 161.156.2.255/24  | 161.156.2.1       
-Frankfurt | eu-de | fra04   | 161.156.25.255/24  | 161.156.25.1       
-Frankfurt | eu-de | fra04   | 161.156.51.255/24  | 161.156.51.1       
-Frankfurt | eu-de | fra04   | 161.156.95.223/27  | 161.156.95.193       
-Frankfurt | eu-de | fra04    | 161.156.97.63/26  | 161.156.97.1       
-Frankfurt | eu-de | fra04   | 161.156.131.255/25 | 161.156.131.129       
-Frankfurt | eu-de | fra04   | 161.156.152.255/24 | 161.156.152.1       
-Frankfurt | eu-de | fra04    | 161.156.1.79/29   | 161.156.1.73       
-Frankfurt | eu-de | fra04    | 161.156.8.47/29   | 161.156.8.41       
-Frankfurt | eu-de | fra04   | 161.156.67.247/29  | 161.156.67.241       
-Frankfurt | eu-de | fra04   | 161.156.69.135/29  | 161.156.69.129       
-Frankfurt | eu-de | fra04   | 161.156.69.143/29  | 161.156.69.137       
-Frankfurt | eu-de | fra04   | 161.156.107.159/29 | 161.156.107.153       
-Frankfurt | eu-de | fra04   | 161.156.111.55/29  | 161.156.111.49       
-Frankfurt | eu-de | fra04   | 161.156.111.79/29  | 161.156.111.73       
-Frankfurt | eu-de | fra04   | 161.156.122.239/29 | 161.156.122.233       
-Frankfurt | eu-de | fra04   | 161.156.132.103/29 | 161.156.132.97       
-Frankfurt | eu-de | fra04   | 161.156.148.215/29 | 161.156.148.209       
-Frankfurt | eu-de | fra04   | 161.156.157.135/29 | 161.156.157.129       
-Frankfurt | eu-de | fra04   | 161.156.177.183/29 | 161.156.177.177       
-Frankfurt | eu-de | fra04   | 161.156.185.31/29  | 161.156.185.25       
-Frankfurt | eu-de | fra05    | 149.81.73.159/28  | 149.81.73.145       
-Frankfurt | eu-de | fra05    | 149.81.80.255/27  | 149.81.80.225       
-Frankfurt | eu-de | fra05    | 149.81.114.63/26  | 149.81.114.1       
-Frankfurt | eu-de | fra05   | 149.81.132.127/25  | 149.81.132.1       
-Frankfurt | eu-de | fra05   | 149.81.139.255/24  | 149.81.139.1       
-Frankfurt | eu-de | fra05   | 149.81.150.255/24  | 149.81.150.1       
-Frankfurt | eu-de | fra05   | 149.81.183.255/24  | 149.81.183.1       
-Frankfurt | eu-de | fra05   | 149.81.208.255/24  | 149.81.208.1       
-Frankfurt | eu-de | fra05    | 149.81.77.207/29  | 149.81.77.201       
-Frankfurt | eu-de | fra05    | 149.81.79.183/29  | 149.81.79.177       
-Frankfurt | eu-de | fra05    | 149.81.83.215/29  | 149.81.83.209       
-Frankfurt | eu-de | fra05    | 149.81.84.103/29  | 149.81.84.97       
-Frankfurt | eu-de | fra05    | 149.81.87.143/29  | 149.81.87.137       
-Frankfurt | eu-de | fra05    | 149.81.87.151/29  | 149.81.87.145       
-Frankfurt | eu-de | fra05    | 149.81.98.167/29  | 149.81.98.161       
-Frankfurt | eu-de | fra05   | 149.81.100.207/29  | 149.81.100.201       
-Frankfurt | eu-de | fra05   | 149.81.101.119/29  | 149.81.101.113       
-Frankfurt | eu-de | fra05   | 149.81.106.239/29  | 149.81.106.233       
-Frankfurt | eu-de | fra05    | 149.81.142.47/29  | 149.81.142.41       
-Frankfurt | eu-de | fra05    | 149.81.148.79/29  | 149.81.148.73       
-Frankfurt | eu-de | fra05   | 149.81.171.231/29  | 149.81.171.225       
-Frankfurt | eu-de | fra05   | 149.81.180.207/29  | 149.81.180.201       
-Paris   | eu-de | par01    | 159.8.70.111/28     | 159.8.70.97     
-Paris   | eu-de | par01    | 159.8.90.127/26     | 159.8.90.65     
-Paris   | eu-de | par01    | 159.8.114.127/27    | 159.8.114.97     
-Paris   | eu-de | par01    | 159.8.78.239/29     | 159.8.78.233     
-Paris   | eu-de | par01     | 159.8.94.95/29     | 159.8.94.89
+Frankfurt | eu-de | fra02 | 158.177.41.255/24  | 158.177.41.1        
+Frankfurt | eu-de | fra02 | 158.177.56.255/24  | 158.177.56.1        
+Frankfurt | eu-de | fra02 | 158.177.61.255/24  | 158.177.61.1        
+Frankfurt | eu-de | fra02 |  158.177.77.63/27  | 158.177.77.33        
+Frankfurt | eu-de | fra02 | 158.177.87.255/25  | 158.177.87.129        
+Frankfurt | eu-de | fra02 | 158.177.155.63/26  | 158.177.155.1        
+Frankfurt | eu-de | fra02 | 158.177.241.255/24 | 158.177.241.1        
+Frankfurt | eu-de | fra02 | 158.177.110.111/29 | 158.177.110.105        
+Frankfurt | eu-de | fra02 | 158.177.221.175/29 | 158.177.221.169        
+Frankfurt | eu-de | fra02 |  159.122.97.23/29  | 159.122.97.17        
+Frankfurt | eu-de | fra02 |  159.122.97.47/29  | 159.122.97.41        
+Frankfurt | eu-de | fra02 | 159.122.108.215/29 | 159.122.108.209        
+Frankfurt | eu-de | fra02 | 159.122.108.223/29 | 159.122.108.217        
+Frankfurt | eu-de | fra02 |  169.50.10.15/29   | 169.50.10.9        
+Frankfurt | eu-de | fra02 |  169.50.13.207/29  | 169.50.13.201        
+Frankfurt | eu-de | fra02 |  169.50.15.31/29   | 169.50.15.25        
+Frankfurt | eu-de | fra02 |  169.50.15.191/29  | 169.50.15.185        
+Frankfurt | eu-de | fra02 |  169.50.35.111/29  | 169.50.35.105        
+Frankfurt | eu-de | fra02 |  169.50.35.239/29  | 169.50.35.233        
+Frankfurt | eu-de | fra02 |  169.50.53.247/29  | 169.50.53.241        
+Frankfurt | eu-de | fra02 |  169.50.54.23/29   | 169.50.54.17        
+Frankfurt | eu-de | fra04 |  161.156.2.255/24  | 161.156.2.1        
+Frankfurt | eu-de | fra04 | 161.156.25.255/24  | 161.156.25.1        
+Frankfurt | eu-de | fra04 | 161.156.51.255/24  | 161.156.51.1        
+Frankfurt | eu-de | fra04 | 161.156.95.223/27  | 161.156.95.193        
+Frankfurt | eu-de | fra04 |  161.156.97.63/26  | 161.156.97.1        
+Frankfurt | eu-de | fra04 | 161.156.131.255/25 | 161.156.131.129        
+Frankfurt | eu-de | fra04 | 161.156.152.255/24 | 161.156.152.1        
+Frankfurt | eu-de | fra04 |  161.156.1.79/29   | 161.156.1.73        
+Frankfurt | eu-de | fra04 |  161.156.8.47/29   | 161.156.8.41        
+Frankfurt | eu-de | fra04 | 161.156.67.247/29  | 161.156.67.241        
+Frankfurt | eu-de | fra04 | 161.156.69.135/29  | 161.156.69.129        
+Frankfurt | eu-de | fra04 | 161.156.69.143/29  | 161.156.69.137        
+Frankfurt | eu-de | fra04 | 161.156.107.159/29 | 161.156.107.153        
+Frankfurt | eu-de | fra04 | 161.156.111.55/29  | 161.156.111.49        
+Frankfurt | eu-de | fra04 | 161.156.111.79/29  | 161.156.111.73        
+Frankfurt | eu-de | fra04 | 161.156.122.239/29 | 161.156.122.233        
+Frankfurt | eu-de | fra04 | 161.156.132.103/29 | 161.156.132.97        
+Frankfurt | eu-de | fra04 | 161.156.148.215/29 | 161.156.148.209        
+Frankfurt | eu-de | fra04 | 161.156.157.135/29 | 161.156.157.129        
+Frankfurt | eu-de | fra04 | 161.156.177.183/29 | 161.156.177.177        
+Frankfurt | eu-de | fra04 | 161.156.185.31/29  | 161.156.185.25        
+Frankfurt | eu-de | fra05 |  149.81.73.159/28  | 149.81.73.145        
+Frankfurt | eu-de | fra05 |  149.81.80.255/27  | 149.81.80.225        
+Frankfurt | eu-de | fra05 |  149.81.114.63/26  | 149.81.114.1        
+Frankfurt | eu-de | fra05 | 149.81.132.127/25  | 149.81.132.1        
+Frankfurt | eu-de | fra05 | 149.81.139.255/24  | 149.81.139.1        
+Frankfurt | eu-de | fra05 | 149.81.150.255/24  | 149.81.150.1        
+Frankfurt | eu-de | fra05 | 149.81.183.255/24  | 149.81.183.1        
+Frankfurt | eu-de | fra05 | 149.81.208.255/24  | 149.81.208.1        
+Frankfurt | eu-de | fra05 |  149.81.77.207/29  | 149.81.77.201        
+Frankfurt | eu-de | fra05 |  149.81.79.183/29  | 149.81.79.177        
+Frankfurt | eu-de | fra05 |  149.81.83.215/29  | 149.81.83.209        
+Frankfurt | eu-de | fra05 |  149.81.84.103/29  | 149.81.84.97        
+Frankfurt | eu-de | fra05 |  149.81.87.143/29  | 149.81.87.137        
+Frankfurt | eu-de | fra05 |  149.81.87.151/29  | 149.81.87.145        
+Frankfurt | eu-de | fra05 |  149.81.98.167/29  | 149.81.98.161        
+Frankfurt | eu-de | fra05 | 149.81.100.207/29  | 149.81.100.201        
+Frankfurt | eu-de | fra05 | 149.81.101.119/29  | 149.81.101.113        
+Frankfurt | eu-de | fra05 | 149.81.106.239/29  | 149.81.106.233        
+Frankfurt | eu-de | fra05 |  149.81.142.47/29  | 149.81.142.41        
+Frankfurt | eu-de | fra05 |  149.81.148.79/29  | 149.81.148.73        
+Frankfurt | eu-de | fra05 | 149.81.171.231/29  | 149.81.171.225        
+Frankfurt | eu-de | fra05 | 149.81.180.207/29  | 149.81.180.201  
+Paris | eu-de | par01 | 159.8.70.111/28  | 159.8.70.97        
+Paris | eu-de | par01 | 159.8.90.127/26  | 159.8.90.65        
+Paris | eu-de | par01 | 159.8.114.127/27 | 159.8.114.97        
+Paris | eu-de | par01 | 159.8.78.239/29  | 159.8.78.233        
+Paris | eu-de | par01 |  159.8.94.95/29  | 159.8.94.89 
 
 ### `us-south` List
 {: #us-south-list} 
