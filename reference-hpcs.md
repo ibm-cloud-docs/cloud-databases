@@ -28,15 +28,6 @@ This document covers the integration of {{site.data.keyword.hscrypto}} (HPCS) wi
 
 To get started, you need [{{site.data.keyword.hscrypto}}](/catalog/services/hyper-protect-crypto-services) provisioned on your {{site.data.keyword.cloud_notm}} account. 
 
-## {{site.data.keyword.hscrypto}} versus {{site.data.keyword.keymanagementserviceshort}}
-{: #hpcs-key-protect}
-
-{{site.data.keyword.hscrypto}} is a dedicated key management service and hardware security module (HSM) based on {{site.data.keyword.cloud_notm}}. With this service, you can take the ownership of the cloud HSM to fully manage your encryption keys and to perform cryptographic operations. {{site.data.keyword.hscrypto}} is also the only service in the cloud industry that is built on FIPS 140-2 Level 4-certified hardware.
-For more information, check out {{site.data.keyword.hscrypto}}'s [documentation](/docs/hs-crypto?topic=hs-crypto-get-started).
-
-{{site.data.keyword.keymanagementservicefull}} is a full-service encryption solution that allows data to be secured and stored in {{site.data.keyword.cloud_notm}} using the latest envelope encryption techniques that leverage FIPS 140-2 Level 3 certified cloud-based hardware security modules.
-For more information, check out the [documentation](/docs/key-protect/index.html) for {{site.data.keyword.keymanagementservicefull}}.
-
 ## Creating or adding a key in {{site.data.keyword.hscrypto}}
 {: #create-key}
 
