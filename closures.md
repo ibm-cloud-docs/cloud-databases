@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2018, 2021
-lastupdated: "2021-11-11"
+  years: 2018, 2022
+lastupdated: "2022-05-05"
 
 subcollection: cloud-databases
 
@@ -22,7 +22,7 @@ keywords: migrating cloud-databases, data center cloud-databases
 For a current list of data centers, see [Locations for resource deployment
 ](/docs/overview?topic=overview-locations){: external}. 
 
-For information regarding data centers that are closing, see [Data center closures](/docs/get-support?topic=get-support-dc-closure){: external}.
+For information, see [Data center closures](/docs/get-support?topic=get-support-dc-closure){: external}.
 
 ## Migrating your resources
 {: #migrating-your-resources}
@@ -34,5 +34,5 @@ To identify your impacted resources, take advantage of special offers, or learn 
 
 To avoid any disruption to your service, please complete the following steps to migrate your resources from your current data center to your new location: 
 
-- Restore your backup into a new database, in a new region. See [Managing backups](/docs/cloud-databases?topic=cloud-databases-dashboard-backups){: .external} for more information.
-- For an {{site.data.keyword.databases-for-postgresql_full}} deployment, you can deploy [Read Replicas](/docs/databases-for-postgresql?topic=databases-for-postgresql-read-only-replicas){: .external} into a new region and turn that Read Replica into a standalone database.
+- Restore your backup into a new database, in a new region. For more information, see [Managing backups](/docs/cloud-databases?topic=cloud-databases-dashboard-backups){: .external}.
+- For an {{site.data.keyword.databases-for-postgresql_full}} deployment, you can deploy [Read Replicas](/docs/databases-for-postgresql?topic=databases-for-postgresql-read-only-replicas){: .external} into a new region and turn that Read Replica into a stand-alone database.
