@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2019, 2021
-lastupdated: "2021-12-14"
+  years: 2019, 2022
+lastupdated: "2022-05-05"
 
 keywords: kubernetes, tutorial, setup
 
@@ -17,40 +17,41 @@ subcollection: cloud-databases
 {:note: .note}
 
 
-# An example {{site.data.keyword.containershort_notm}} Application
+# Connect a {{site.data.keyword.databases-for}} deployment to an {{site.data.keyword.containerlong_notm}} application
 {: #tutorial-k8s-app}
 
-The [{{site.data.keyword.databases-for}} "Hello World" Kubernetes examples](https://github.com/IBM-Cloud/clouddatabases-helloworld-kubernetes-examples) repository holds sample {{site.data.keyword.cloud}} applications that show you how to connect to a {{site.data.keyword.databases-for}} deployment to an {{site.data.keyword.containerlong_notm}} application written in a various programming languages.  
+The [{{site.data.keyword.databases-for}} "Hello World" Kubernetes examples](https://github.com/IBM-Cloud/clouddatabases-helloworld-kubernetes-examples) repository holds sample {{site.data.keyword.cloud}} applications, which are written in various programming languages, that detail how to connect a {{site.data.keyword.databases-for}} deployment to an {{site.data.keyword.containerlong_notm}} application.  
 
-Each Git branch of the examples repository corresponds to samples in a particular programming language. For example, when you click **Branch**, a **Node** branch exists where all examples are written in JavaScript that uses Node.js. The files in each folder correspond to either a database or a message queue.  
+Each Git branch of the examples repository corresponds to samples in a particular programming language, either JavaScript that uses Node.js, or python. The files in each folder correspond either to a database or a message queue.
+{:shortdesc: .shortdesc}  
 
 ## Trying out the sample applications
 {: #sample-apps}
 
-Clone the repository of the language that you want to use. For instance, you can clone the **Node** repository by selecting the **Node** branch. Then, click **Clone or download** to get the URL you need to clone by using SSH or HTTPS. In your console, the command looks like:
+Clone the respective repo you want to use. For instance, you can clone the **Node** repository by selecting the **Node** branch. Then, click **Clone or download** to get the URL you need to clone by using SSH or HTTPS. This command looks like:
 
    ```shell
    git clone -b node git@github.com:IBM-Cloud/clouddatabases-helloworld-kubernetes-examples.git
    ```
    {: pre}
 
-Or for [cloning by using HTTPS](https://docs.github.com/en/github/using-git/which-remote-url-should-i-use#cloning-with-https-urls-recommended):
+Or, [clone by using HTTPS](https://docs.github.com/en/github/using-git/which-remote-url-should-i-use#cloning-with-https-urls-recommended):
 
    ```shell
    git clone -b node https://github.com/IBM-Cloud/clouddatabases-helloworld-kubernetes-examples.git
    ```
    {: pre}
 
-   Once the branch is cloned, select the appropriate directory for the database you want to try out. Each database has its own copy of these instructions on how to provision and deploy a database or message queue and an application on {{site.data.keyword.containerlong_notm}}.
+   After the branch is cloned, select the appropriate directory for the database you want to try. Each database has its own copy of these instructions on how to provision and deploy a database or message queue and an application on {{site.data.keyword.containerlong_notm}}.
 
 ## Running on {{site.data.keyword.cloud_notm}}
 {: #running-on-cloud}
 
-1. If you do not already have an {{site.data.keyword.cloud_notm}} account, [sign up here](https://cloud.ibm.com/registration/)
+1. If you do not already have an {{site.data.keyword.cloud_notm}} account, [sign up here.](https://cloud.ibm.com/registration/)
 
-2. [Download and install {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli). The {{site.data.keyword.cloud_notm}} CLI tool enables you to communicate with {{site.data.keyword.cloud_notm}} from your console or command line.
+1. [Download and install {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli). The {{site.data.keyword.cloud_notm}} CLI tool enables you to communicate with {{site.data.keyword.cloud_notm}} from your console or CLI.
 
-3. Install the {{site.data.keyword.containershort_notm}} CLI plug-in and the Container Registry CLI plug-in
+1. Install the {{site.data.keyword.containershort_notm}} CLI plug-in and the Container Registry CLI plug-in
 
    ```shell
    ibmcloud plugin install container-service
@@ -58,13 +59,14 @@ Or for [cloning by using HTTPS](https://docs.github.com/en/github/using-git/whic
    ```
    {: pre}
 
-   To verify their installation, run:
+   To verify their installation, run
 
    ```shell
    ibmcloud plugin list
    ```
    {: pre}
 
+   You receive a response like this:
    ```shell
    Listing installed plug-ins...
 
@@ -74,31 +76,38 @@ Or for [cloning by using HTTPS](https://docs.github.com/en/github/using-git/whic
    ```
    {: screen}
 
-4. [Download and install the Kubernetes CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
+1. [Download and install the Kubernetes CLI.](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 
-   Follow the instructions for downloading and installing the Kubernetes CLI for the platform you're using.
+   Follow the instructions for downloading and installing the Kubernetes CLI for the platform that you're using.
 
-5. Connect to {{site.data.keyword.cloud_notm}} in the command-line tool and follow the prompts to log in.
+1. Connect to {{site.data.keyword.cloud_notm}} in the CLI tool and follow the prompts to log in.
 
    ```shell
    ibmcloud login
    ```
    {: pre}
 
-   If you have a federated user ID, use the `ibmcloud login --sso` command tolog in with your single sign-on ID.
+   If you have a federated user ID, use the `ibmcloud login --sso` command to log in with your single sign-on ID.
    {: note}
 
 ## Creating your database
 {: #create-database}
 
-1. Create your database deployment.
+This process creates a standard database instance in the service that you specify that might incur extra charges in your selected plan.
+{: note}
 
-   This process creates a standard database instance in the service you specify that incurs additional charges in your selected plan.
-   {: note}
+1. You must target a resource group, by using the following command:
 
-2. The database can be created from the command line by using the `ibmcloud resource service-instance-create` command. The command takes a service instance name, a service name, plan name, and location. 
+   ```shell
+   ibmcloud target -g RESOURCE_GROUP
+   ```
+
+For more information, see [Working with resources and resource groups (ibmcloud resource).](/docs/cli?topic=cli-ibmcloud_commands_resource)
+{: tip}
+
+1. The database can be created from the CLI by using the `ibmcloud resource service-instance-create` command. The command takes a service instance name, a service name, plan name, and location. 
     
-3. The service name is one of the {{site.data.keyword.databases-for}} services, `databases-for-datastax`, `databases-for-elasticsearch`, `databases-for-enterprisedb`, `databases-for-etcd`, `databases-for-mongodb`, `databases-for-postgresql`, `databases-for-redis`, `messages-for-rabbitmq`, or `databases-for-mysql`.
+1. The service name is one of the {{site.data.keyword.databases-for}} services, `databases-for-datastax`, `databases-for-elasticsearch`, `databases-for-enterprisedb`, `databases-for-etcd`, `databases-for-mongodb`, `databases-for-postgresql`, `databases-for-redis`, `messages-for-rabbitmq`, or `databases-for-mysql`.
    
    ```shell
    ibmcloud resource service-instance-create <your_deployment_name> <service_name> standard <region>
@@ -111,18 +120,18 @@ Remember the database deployment name. Find your [region identifier here](/docs/
 ## Configuring the Kubernetes App
 {: #config-kubernetes}
 
-1. [Create an {{site.data.keyword.containershort_notm}}](/docs/containers?topic=containers-getting-started#getting-started). Choose the location and resource group that you want to set up your cluster in. Select the cluster type that you want to use. This example only requires the lite plan, which comes with one worker node. Once a cluster is provisioned, you are given a list of steps to follow to access your cluster and set the environment variables under the _Access_ tab. You are also able to verify that your deployment is provisioned and running normally.
+1. [Create a {{site.data.keyword.containershort_notm}}](/docs/containers?topic=containers-getting-started#getting-started). Choose the location and resource group in which you'd like to set up your cluster. Select the cluster type that you want to use. This example requires only the lite plan, which comes with one worker node. After a cluster is provisioned, you are given a list of steps to access your cluster and set the environment variables under the _Access_ tab. You are also able to verify that your deployment is provisioned and running normally.
 
 2. Make sure that you are targeting the correct {{site.data.keyword.cloud_notm}} resource group of your {{site.data.keyword.containershort_notm}}.
 
-   Use the following command to target your cluster resource group if your resource    group is other than `default`.
+   If your resource group is named anything other than `default`, use the following command to target your cluster resource group:
 
    ```shell
    ibmcloud target -g <resource_group_name>
    ```
    {: pre}
 
-   For this example, we're using the `default` resource group.
+   This example uses the `default` resource group.
 
 3. Create your own private image repository in [{{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-getting-started) to store your application's Docker image. Since we want the images to be private, we need to create a namespace, which creates a unique URL to your image repository.  
 
@@ -138,7 +147,7 @@ Remember the database deployment name. Find your [region identifier here](/docs/
    ```
    {: pre}
 
-   The "default" namespace refers to the Kubernetes instance and not the user created image store namespace. Likewise, if your database uses both [public and private endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints), your public endpoint is used by default. Therefore, if you want to select the private endpoint, first you need to create a service key for your database so Kubernetes can use it when binding to the database. You set up a service key by using the command:
+   The "default" namespace refers to the Kubernetes instance and not the user-created image store namespace. Likewise, if your database uses both [public and private endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints), your public endpoint is used by default. Therefore, if you want to select the private endpoint, first you need to create a service key for your database so Kubernetes can use it when binding to the database. You set up a service key by using the command:
    {: note}
 
    ```shell
@@ -146,21 +155,21 @@ Remember the database deployment name. Find your [region identifier here](/docs/
    ```
    {: pre}
       
-   The private service endpoint is selected with `--service-endpoint private`. After that, you bind the database to the Kubernetes cluster through the private endpoint by using the command:
+   The private service endpoint is selected with `--service-endpoint private`. After that, you bind the database to the Kubernetes cluster through the private endpoint by using the command
 
    ```shell
    ibmcloud ks cluster service bind <your_cluster_name> default    <your_database_deployment> --key example-private-key
    ```
    {: pre}
 
-5. Verify that the Kubernetes secret was created in your cluster namespace. Kubernetes uses secrets to store confidential information like the {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IAM) API key and the URL that the container uses to gain access. Running the following commands to first Set the cluster as the context for this session and then get the API key for accessing the instance of your deployment that's provisioned in your account.
+5. Verify that the Kubernetes secret was created in your cluster namespace. Kubernetes uses secrets to store confidential information like the {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IAM) API key and the URL that the container uses to gain access. To set the cluster as the context for this session and then get the API key for accessing the instance of your deployment, run the following commands
 
    ```shell
    ibmcloud ks cluster config --cluster <cluster_name_or_ID>
    ```
    {: pre}
 
-   then
+   Then
 
    ```shell
    kubectl get secrets --namespace=default
@@ -177,7 +186,7 @@ Remember the database deployment name. Find your [region identifier here](/docs/
    ```
    {: pre}
 
-7. `cd` into this newly created directory, and `cd` into the database folder. The code for connecting to the service, and reading from and updating the database can be found in `server.js`. See [Code Structure](#code-structures) and the code comments for information on the app's functions. There's also a `public` directory, which contains the html, stylesheets, and JavaScript for the web app. But, to get the application to work, we first need to push the Docker image of this application to our {{site.data.keyword.registryshort_notm}}.
+7. `cd` into this newly created directory, and `cd` into the database folder. The code for connecting to the service, and reading from and updating the database can be found in `server.js`. See [Code Structure](#code-structures) and the code comments for information on the app's functions. A `public` directory contains the html, stylesheets, and JavaScript for the web app. However, to get the application to work, we first need to push the Docker image of this application to our {{site.data.keyword.registryshort_notm}}.
 
 8. Build and push the application's Docker image to your {{site.data.keyword.registryshort_notm}}. Specify the appropriate region and give the container a name.
 
@@ -186,7 +195,7 @@ Remember the database deployment name. Find your [region identifier here](/docs/
    ```
    {: pre}
 
-   After it's built, you can view the image in container registry by using
+   You can view the image in container registry by using
 
    ```shell
    ibmcloud cr images
@@ -218,7 +227,7 @@ Remember the database deployment name. Find your [region identifier here](/docs/
    ```
    {: pre}
 
-   As for the `service` configuration at the bottom of the file, [`nodePort`](/docs/containers?topic=containers-nodeport) indicates the port that the application can be accessed from. You have ports in the range 30000 - 32767 that you can use, but we chose 30081. As for the TCP port, it's set to 8080, which is the port the Node.js application runs on in the container.
+   As for the `service` configuration at the end of the file, [`nodePort`](/docs/containers?topic=containers-nodeport) indicates the port that the application can be accessed from. You have ports in the range 30000 - 32767 that you can use, but we chose 30081. The TCP port is set to 8080, which is the port the Node.js application runs on in the container.
 
 ## Deploying your Kubernetes App
 {: #deploy-kubernetes}
@@ -254,7 +263,7 @@ Remember the database deployment name. Find your [region identifier here](/docs/
 
 | File | Description |
 | ---- | ----------- |
-|**server.js**|Establishes a connection to the database by using credentials from BINDING (the name we created in the Kubernetes deployment file to expose the credentials) and handles create and read operations on the database. |
+|**server.js**|Establishes a connection to the database by using credentials from BINDING (the name that we created in the Kubernetes deployment file to display the credentials) and handles create and read operations on the database. |
 |**main.js**|Handles user input for a PUT command and parses the results of a GET command to output the contents of the database.|
 {: caption="Table 1. Code structure" caption-side="bottom"}
 
