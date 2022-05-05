@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2019, 2020
-lastupdated: "2021-12-22"
+  years: 2019, 2022
+lastupdated: "2022-05-05"
 
 subcollection: cloud-databases
 
@@ -62,7 +62,7 @@ If you have a federated user ID, use the `ibmcloud login --sso` command to log i
 ## Creating a database deployment
 {: #create-database-deployment}
 
-The database can be created from the command line by using the `ibmcloud resource service-instance-create` command. The command takes a service instance name, a service name, plan name, and location. The service name is one of the {{site.data.keyword.databases-for}} services, `databases-for-datastax`,`databases-for-elasticsearch`, `databases-for-enterprisedb`, `databases-for-etcd`, `databases-for-mongodb`, `databases-for-postgresql`, `databases-for-redis`, `messages-for-rabbitmq`, or `databases-for-mysql`.
+The database can be created from the CLI by using the `ibmcloud resource service-instance-create` command. The command takes a service instance name, a service name, plan name, and location. The service name is one of the {{site.data.keyword.databases-for}} services, `databases-for-datastax`,`databases-for-elasticsearch`, `databases-for-enterprisedb`, `databases-for-etcd`, `databases-for-mongodb`, `databases-for-postgresql`, `databases-for-redis`, `messages-for-rabbitmq`, or `databases-for-mysql`.
 ```shell
 ibmcloud resource service-instance-create <your_deployment_name> <service_name> standard <region>
 ```
@@ -83,7 +83,7 @@ Remember the database deployment name.
    ibmcloud resource service-alias-create alias-name --instance-name instance-name
    ```
 
-3. Cloud Foundry uses the alias to represent the database deployment as a Cloud Foundry service. The alias name can be the same as the database service instance name. So, for an   `example-deployment` database the command is as follows:
+3. Cloud Foundry uses the alias to represent the database deployment as a Cloud Foundry service. The alias name can be the same as the database service instance name. For an   `example-deployment` database the command is as follows:
    ```shell
    ibmcloud resource service-alias-create example-deployment --instance-name example-deployment
    ```
@@ -91,7 +91,7 @@ Remember the database deployment name.
 ## Configuring the app with Cloud Foundry
 {: #configure-app}
 
-`cd` into the application's directory.  For now, the only file you need to update is the application manifest.
+`cd` into the application's directory. For now, the only file you need to update is the application manifest.
 ```bash
 ---
 applications:
@@ -114,12 +114,12 @@ applications:
 ```shell
 ibmcloud cf push
 ```
-Your application is now running at host you entered as the value for the `route` in `manifest.yml`.
+Your application is now running at the host that you entered as the value for the `route` in `manifest.yml`.
 
 ## Code Structuring
 {: #code-structure}
 
-The code for connecting to the deployment and reading from and updating the database can be found in the `server` file. There's also `template` and `static` directories, which contain the html, stylesheets and JavaScript for the web app.
+The code for connecting to the deployment and reading from and updating the database can be found in the `server` file. There is also `template` and `static` directories, which contain the html, stylesheets and JavaScript for the web app.
 
 | File | Description |
 | ---- | ----------- |
