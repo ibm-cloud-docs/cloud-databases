@@ -26,18 +26,18 @@ Backups for {{site.data.keyword.databases-for}} deployments are accessible from 
 - Backups cannot be deleted. 
 - If you delete your deployment, its backups are deleted automatically.
 - Scheduling of the daily backup is not configurable.
-- Backups are restorable to other regions, except for `eu-de` and `par-01`, which can only restore backups between each other (e.g., `par-01` backups can be restored to `eu-de`, and vice versa).
+- Backups are restorable to other regions, except for `eu-de` and `par-01`, which can restore backups only between each other (for example, `par-01` backups can be restored to `eu-de`, and vice versa).
 - Backup storage is encrypted. If you need to manage the encryption keys, you can do so with the [Key Protect integration](/docs/cloud-databases?topic=cloud-databases-key-protect#byok-for-backups). Otherwise, they are encrypted with a key that is automatically generated for your deployment.
 - Backups are also restorable across accounts, but only by using the API and only if the user that is running the restore has access to both the source and destination accounts. 
 
 ## Backups in the UI
 {: #backup-ui}
 
-The backup types have their respective tabs, either _On-demand_ or _Automatic_. Each backup is listed with its type and when the backup was taken. Click the timestamp to change its format between elapsed time, local time, and Coordinated Universal Time (UTC). 
+The backup types have their respective tabs, either _On-demand_ or _Automatic_. Each backup is listed with its type and when the backup was taken. Click the timestamp to change its format between elapsed time, local time, and Coordinated Universal Time. 
 
 ![List of backups on the Backups tab](images/backups-list.png){: caption="Figure 1. List of backups on the Backups tab" caption-side="bottom"}
 
-Click the backup to reveal information for that specific backup, including its full ID. For restore options, there is a **Restore** button or a pre-formatted CLI command. 
+Click the backup to reveal information for that specific backup, including its full ID. A **Restore** button, or pre-formatted CLI command, is there for restore options. 
 
 ## Backups in the CLI
 {: #backup-ui-cli}
@@ -70,7 +70,7 @@ For backups information in the {{site.data.keyword.databases-for}} API, use the 
 
 On-demand backups are useful if you plan to make major changes to your deployment like scaling or removing databases, tables, collections. It can also be useful if you need to back up on a schedule. On-demand backups are kept for 30 days. 
 
-Deployments come with free backup storage equal to their total disk space. If your backup storage usage is greater than total disk space, each gigabyte is charged at an overage $0.03/month. Backups are compressed, so even if you use on-demand backups, most deployments will not exceed the allotted credit.
+Deployments come with backup storage equal to their total disk space at no cost. If your backup storage usage is greater than total disk space, each gigabyte is charged at an overage $0.03/month. Backups are compressed, so even if you use on-demand backups, most deployments do not exceed the allotted credit.
 {: .tip}
 
 To create a manual backup in the UI, go to the _Backups_ tab of your deployment then click **Back up now**. A message is displayed that a backup is in progress, and an on-demand backup is added to the list of available backups.
@@ -88,9 +88,9 @@ In the API, sending a POST to the [`/deployments/{id}/backups`](https://cloud.ib
 
 Backups are restored to a new deployment. After the new deployment finishes provisioning, your data in the backup file is restored into the new deployment.
 
-By default the new deployment is auto-sized to the same disk and memory allocation as the source deployment at the time of the backup you are restoring from. If you need to adjust the resources that are allocated to the new deployment, use the optional fields in the UI, CLI, or API to resize the new deployment. Be sure to allocate enough for your data and workload; if the deployment is not given enough resources, the restore fails.
+By default the new deployment is auto-sized to the same disk and memory allocation as the source deployment at the time of the backup that you are restoring from. If you need to adjust the resources that are allocated to the new deployment, use the optional fields in the UI, CLI, or API to resize the new deployment. Be sure to allocate enough for your data and workload; if the deployment is not given enough resources, the restore fails.
 
-It is important that you do not delete the source deployment while the backup is restoring. You must wait until the new deployment is provisioned and the backup is restored before deleting the old deployment. Deleting a deployment also deletes its backups so not only will the restore fail, you might not be able to recover the backup.
+Do not delete the source deployment while the backup is restoring. Before you delete the old deployment, you must wait until the new deployment is provisioned and the backup is restored. Deleting a deployment also deletes its backups.
 {: .tip}
 
 ### Restoring a backup in the UI
@@ -99,12 +99,12 @@ It is important that you do not delete the source deployment while the backup is
 To restore a backup to a new service instance,
 
 1. Click in the corresponding row to expand the options for the backup that you want to restore.
-2. Click the **Restore** button.
+2. Click **Restore**.
 3. Use the dialog box to select from some available options. 
     - The new deployment is automatically named `<name>-restore-[timestamp]`, but you can rename it. 
-    - You can also select the region where the new deployment is located. Cross-region restores are supported, except for restoring into or out of the `eu-de` region.
+    - You can also select the region where the new deployment is located. Cross region restores are supported, except for restoring into or out of the `eu-de` region.
     - You can choose the initial resource allocation, either to expand or shrink the resources on the new deployment. You can also enable or disable dedicated cores.
-4. Click the **Restore** button. A "restore from backup started" message appears. Clicking **Your new instance is available now.** takes you to your _Resources List_.
+4. Click **Restore**. A "restore from backup started" message appears. Clicking **Your new instance is available now.** takes you to your _Resources List_.
 
 ### Restoring a backup in the CLI
 {: #restore-backup-cli}
@@ -116,9 +116,9 @@ ibmcloud resource service-instance-create <SERVICE_INSTANCE_NAME> <service-id> s
 ```
 {: .pre}
 
-Change the value of `SERVICE_INSTANCE_NAME` to the name you want for your new deployment. The `service-id` is the type of deployment, such as `databases-for-postgresql` or `messages-for-rabbitmq`. The `region` is where you want the new deployment to be located, which can be a different region from the source deployment. Cross-region restores are supported, except for restoring to or from `eu-de` by using another region. `BACKUP_ID` is the backup that you want to restore.
+Change the value of `SERVICE_INSTANCE_NAME` to the name that you want for your new deployment. The `service-id` is the type of deployment, such as `databases-for-postgresql` or `messages-for-rabbitmq`. The `region` is where you want the new deployment to be located, which can be a different region from the source deployment. Cross region restores are supported, except for restoring to or from `eu-de` by using another region. `BACKUP_ID` is the backup that you want to restore.
 
-Optional parameters are available when restoring through the CLI. Use them if you need to customize resources, or use a Key Protect key for BYOK encryption on the new deployment.
+Optional parameters are available through the CLI. Use them if you need to customize resources, or use a Key Protect key for BYOK encryption on the new deployment.
 ```bash
 ibmcloud resource service-instance-create <SERVICE_INSTANCE_NAME> <service-id> standard <region> -p
 '{"backup_id":"BACKUP_ID","key_protect_key":"KEY_PROTECT_KEY_CRN", "members_disk_allocation_mb":"DESIRED_DISK_IN_MB", "members_memory_allocation_mb":"DESIRED_MEMORY_IN_MB", "members_cpu_allocation_count":"NUMBER_OF_CORES"}'
@@ -152,7 +152,7 @@ curl -X POST \
 ```
 {: .pre}
 
-The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are all required, and `backup_id` is the backup that you want to restore. The `target` is the region where you want the new deployment to be located, which can be a different region from the source deployment. Cross-region restores are supported, except for restoring into or out of the `eu-de` region.
+The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are all required, and `backup_id` is the backup that you want to restore. The `target` is the region where you want the new deployment to be located, which can be a different region from the source deployment. Cross region restores are supported, except for restoring into or out of the `eu-de` region.
 
 If you need to adjust resources or use a Key Protect key, add any of the optional parameters `key_protect_key`, `members_disk_allocation_mb`, `members_memory_allocation_mb`, and `members_cpu_allocation_count`, and their preferred values to the body of the request.
 
@@ -160,13 +160,13 @@ If you need to adjust resources or use a Key Protect key, add any of the optiona
 {: #backup-restoration}
 
 * {{site.data.keyword.cloud_notm}} Databases are not responsible for restoration, timeliness, or validity of said backups.
-* Actions that you take as a user can compromise the integrity of backups, such as under-allocating memory and disk. Users can monitor that backups were performed successfully via the API, and periodically restore a backup to ensure validity and integrity. Users can retrieve the most recent scheduled backup details from the [Cloud Databases CLI plug-in](#backups-in-the-cli) and the [Cloud Databases API](#backups-in-the-api).
-* As a managed service, {{site.data.keyword.cloud_notm}} Databases monitors the state of your backups and can attempt to remediate when possible. If you encounter issues you cannot recover from, you can contact support for more help.
+* Actions that you take as a user can compromise the integrity of backups, such as under-allocating memory and disk. Users can monitor that backups are successful by using the API, and periodically restore a backup to ensure validity and integrity. Users can retrieve the most recent-scheduled backup details from the [Cloud Databases CLI plug-in](#backups-in-the-cli) and the [Cloud Databases API](#backups-in-the-api).
+* As a managed service, {{site.data.keyword.databases-for}} monitors the state of your backups and can attempt to remediate when possible. If you encounter issues you cannot recover from, you can contact support for more help.
 
 ## Backup Locations
 {: #backup-locations}
 
-Backup location differs per database region. You should ensure the backup region location matches your data location requirements.
+Backup location differs per database region. Ensure that the backup region location matches your data location requirements.
 
 | Database Region | Backup Region |
 |----------|---------|
@@ -183,4 +183,4 @@ Backup location differs per database region. You should ensure the backup region
 | Sao Paolo | Sao Paolo Object Storage |
 {: caption="Table 1. Database and Backup Regions" caption-side="bottom"}
 
-For more details about {{site.data.keyword.databases-for}} Object Storage locations, please review the location's [documentation](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-geo).
+For more details about {{site.data.keyword.databases-for}} Object Storage locations, review the location's [documentation](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-geo).
