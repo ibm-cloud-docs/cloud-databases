@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2021, 2022
-lastupdated: "2022-04-28"
+lastupdated: "2022-05-05"
 
 subcollection: cloud-databases
 
@@ -21,7 +21,7 @@ keywords: pDNS, private endpoints, private networking, vpe, virtual private endp
 # Virtual Private Endpoints 
 {: #vpes}
 
-This document covers all the IBM Cloud Databases that includes {{site.data.keyword.databases-for-cassandra}}, {{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-enterprisedb}}, {{site.data.keyword.databases-for-etcd}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-redis}}, {{site.data.keyword.databases-for-mysql_full}}, and {{site.data.keyword.messages-for-rabbitmq}}. 
+This document covers all the IBM Cloud Databases: {{site.data.keyword.databases-for-cassandra}}, {{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-enterprisedb}}, {{site.data.keyword.databases-for-etcd}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-redis}}, {{site.data.keyword.databases-for-mysql_full}}, and {{site.data.keyword.messages-for-rabbitmq}}. 
 {: .note}
 
 {{site.data.keyword.cloud}} Virtual Private Endpoint (VPE) for {{site.data.keyword.vpc_full}} provides connection points to IBM services on the IBM private network from your VPC network.
@@ -50,7 +50,7 @@ Virtual Private Endpoints (VPEs) are generally available in all regions.
 
 3. Make sure your {{site.data.keyword.databases-for}} deployment's [private endpoint is enabled](/docs/cloud-databases?topic=cloud-databases-service-endpoints).
 
-4. In the {{site.data.keyword.cloud_notm}} console, click the Menu icon and select -> VPC Infrastructure -> Network -> Virtual private endpoint gateways. Create a VPE for your {{site.data.keyword.databases-for}} instances with the [following instruction](/docs/vpc?topic=vpc-about-vpe). 
+4. In the {{site.data.keyword.cloud_notm}} console, click the menu icon and select -> VPC Infrastructure -> Network -> Virtual private endpoint gateways. Create a VPE for your {{site.data.keyword.databases-for}} instances with the [following instruction](/docs/vpc?topic=vpc-about-vpe). 
 
 5. After you create your VPE, it might take a few minutes for the new VPE and pDNS to complete the process and begin working for your VPC. Completion is confirmed when you see an IP address set in the [details view](/docs/vpc?topic=vpc-vpe-viewing-details-of-an-endpoint-gateway) of the VPE. 
 
@@ -89,7 +89,7 @@ Virtual Private Endpoints (VPEs) are generally available in all regions.
 ### VPE Discoverability
 {: #vpes-discoverability}
 
-Following the above steps will result in a database instance with private endpoints that is reachable via Virtual Private Endpoints from your VPC network.
+Following the previous steps results in a database instance with private endpoints that is reachable with the Virtual Private Endpoints from your VPC network.
 
 Database instances with private endpoints are reachable from any account within the private network and access to each instance requires authentication. To restrict this access to specific IP addresses, or ranges of IP addresses, configure [allowlisting](/docs/cloud-databases?topic=cloud-databases-allowlisting). 
 {: .important}
@@ -97,7 +97,7 @@ Database instances with private endpoints are reachable from any account within 
 A MongoDB deployment cannot support both [public and private endpoints simultaneously](https://cloud.ibm.com/docs/databases-for-mongodb?topic=cloud-databases-service-endpoints#provisioning-with-service-endpoints). *This cannot be changed after provisioning*.
 {: .important}
 
-For more information on accessing services using service endpoints, see [Secure access to services using service endpoints](/docs/account?topic=account-service-endpoints-overview).
+For more information, see [Secure access to services by using service endpoints](/docs/account?topic=account-service-endpoints-overview).
 {: .tip}
 
 ### More resources
