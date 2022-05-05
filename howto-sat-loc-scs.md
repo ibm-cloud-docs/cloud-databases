@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2022-01-18"
+  years: 2021, 2022
+lastupdated: "2022-05-05"
 
 keywords: IBM Cloud, databases, ICD
 
@@ -45,20 +45,20 @@ subcollection: cloud-databases
 
 As outlined in your initial ICD Satellite location deployment, your initial service cluster was established with the following hosts:
 
-- three type **8x32** hosts (on AWS, three hosts of type **AWS m5d.2xlarge**)
-- three type **32x128** hosts (on AWS, three hosts of type **AWS m5d.8xlarge**)
+- Three type **8x32** hosts (on AWS, three hosts of type **AWS m5d.2xlarge**)
+- Three type **32x128** hosts (on AWS, three hosts of type **AWS m5d.8xlarge**)
 
 The three type **8x32** hosts are for IBM Cloud™ Databases (ICD) enabled by IBM Cloud Satellite internal use, while the three type **32x128** hosts are for your use.
 
 ## Growing your service cluster
 {: #icd-service-cluster-grow}
 
-As your service cluster grows, you might be required to add additional hosts. If required, add **32x128** hosts in increments of three (e.g., three type **8x32** hosts to six type **8x32** hosts, then nine type **8x32** hosts, and so on).
+As your service cluster grows, you might be required to add extra hosts. If required, add **32x128** hosts in increments of three (for example, three type **8x32** hosts to six type **8x32** hosts, then nine type **8x32** hosts, and so on).
 
 ## Service cluster removal
 {: #icd-remove-service-cluster}
 
-Just as additional hosts are added as your data needs grow, as you downsize your service cluster, hosts will be automatically deleted when they are no longer needed.
+Just as extra hosts are added as your data needs grow, as you downsize your service cluster, hosts are automatically deleted when they are no longer needed.
 
 ## Verifying Service cluster storage assignment
 {: #icd-service-cluster-verify-storage}
