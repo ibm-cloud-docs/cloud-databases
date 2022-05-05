@@ -20,20 +20,20 @@ keywords: allowlist, ip addresses, blocklist, whitelist
 # Allowlisting
 {: #allowlisting} 
 
-If you want to restrict access to your databases, you can allowlist specific IP addresses or ranges of IP addresses on your deployment.
+To restrict access to your databases, you can allowlist specific IP addresses or ranges of IP addresses on your deployment.
 
 If you use allowlists in your environment, you can allowlist our services by using the list of subnets for each region.
 
 We updated documentation to reflect changes in terminology from `whitelist` to `allowlist`. You might encounter continued references to this former terminology while we work to implement these deeper changes to code, API, and CLI commands. 
 {: .note}
 
-There is a limit of 100 allowlist entries for each deployment. 
+Each deployment is limited 100 allowlist entries. 
 {: .note}
 
 ## Using IP allowlists on your Deployment
 {: #ip-allowlist} 
 
-When you create an allowlist, only IP addresses that match the allowlist or are in the range of IP addresses in the allowlist can connect to your deployment. Allowlists can be enabled for both public endpoints and private endpoints. When no IP addresses are in the allowlist, the allowlist is unavailable and the deployment accepts connections from any IP address.
+When you create an allowlist, only IP addresses that match the allowlist or are in the range of IP addresses in the allowlist can connect to your deployment. Allowlists can be enabled for both public endpoints and private endpoints. When no IP addresses are in the allowlist, the allowlist is disabled and the deployment accepts connections from any IP address.
 
 Even if not explicitly allowlisted, {{site.data.keyword.cloud_notm}} management services are still able to connect.
 {: .tip}
@@ -93,12 +93,12 @@ More information is in the [API Reference](https://cloud.ibm.com/apidocs/cloud-d
 ### Removing an allowlist
 {: #remove-allowlist} 
 
-From the UI, remove an IP address or netmask from the allowlist by clicking _Remove_. You can also use CLI command is `cdb deployment-whitelist-delete` or send a `DELETE` request to the API endpoint. When all entries on the allowlist are removed, the allowlist is unavailable and all IP addresses are accepted by your deployment.
+From the UI, remove an IP address or netmask from the allowlist by clicking _Remove_. You can also use CLI command is `cdb deployment-whitelist-delete` or send a `DELETE` request to the API endpoint. When all entries on the allowlist are removed, the allowlist is disabled and all IP addresses are accepted by your deployment.
 
 ## Allowlist {{site.data.keyword.databases-for}} in your Environment
 {: #allowlist-ips}
 
-If you use allowlists to control connections in your environment, you can use the following IP lists to allowlist {{site.data.keyword.databases-for}} deployments. You should allowlist all of the subnet ranges for the _entire_ region that your deployments live in.
+If you use allowlists to control connections in your environment, you can use the following IP lists to allowlist {{site.data.keyword.databases-for}} deployments. We recommend you allowlist all of the subnet ranges for the _entire_ region that your deployments live in.
 
 ### `in-che` List
 {: #che01-list} 
@@ -196,8 +196,7 @@ London | eu-gb | lon06 | 158.176.131.15/29  | 158.176.131.9
 ### `kr-seo` List
 {: #Seoul 1-list} 
 
-`SEO01` Data Center is scheduled to close on October 28, 2022. See [Migrating resources to a different data center
-](/docs/cloud-databases?topic=cloud-databases-migrate-data-center) for more information, including recommended data centers to which you can migrate.
+`SEO01` Data Center is scheduled to close on 28 October 2022. For more information (including recommended data centers to which you can migrate), see [Migrating resources to a different data center](/docs/cloud-databases?topic=cloud-databases-migrate-data-center).
 {: .important}
 
 Location | Region | Data center | Subnet | First IP
