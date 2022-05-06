@@ -42,6 +42,7 @@ toc:
           label: Tutorials
           topics: 
           - howto-tutorials.md
+          - terra-tutorial.md
           - k8-tutorial.md
           - cf-tutorial.md
           - truck-tracker-tutorial.md
