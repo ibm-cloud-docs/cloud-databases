@@ -27,7 +27,7 @@ completion-time: 2h
 {: toc-content-type="tutorial"} 
 {: toc-completion-time="2h"} 
 
-In this tutorial, you learn how to use Terraform to provision an {{site.data.keyword.databases-for-postgresql}} running on {{site.data.keyword.containershort_full}}. 
+In this tutorial, you learn how to use Terraform to provision an {{site.data.keyword.databases-for-postgresql}}. 
 {: shortdesc}
 
 ## Before you begin
