@@ -37,7 +37,7 @@ In this tutorial, you learn how to use Terraform to provision an {{site.data.key
 * [Install the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-getting-started).
 * [Understand the basics of Terraform](https://www.terraform.io/intro){: external}.
 * [Install Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli){: external}.
-* [install {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli).
+* [Install {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli).
 * [Use the console, CLI, or API to create an {{site.data.keyword.cloud}} API key](/docs/account?topic=account-userapikey&interface=ui#create_user_key)
 
 ## Establish Provider 
