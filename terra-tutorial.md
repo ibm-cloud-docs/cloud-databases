@@ -99,14 +99,3 @@ output "Mongodb_connection_string" {
   value = "http://${ibm_database.mongodb_enterprise_helen.connectionstrings[0].composed}"
 }
 ```
-
-## task-oriented title 3
-{: #tutorial-provision-postgres-tf-sh3}
-{: step}
-
-## task-oriented title 4
-{: #tutorial-provision-postgres-tf-sh4}
-{: step}
-
-## Next steps
-{: #tutorial-provision-postgres-tf-sh5}
