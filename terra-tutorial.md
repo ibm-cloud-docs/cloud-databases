@@ -14,12 +14,18 @@ completion-time: 2h
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}
+{:external: .external target="_blank"}
+{:shortdesc: .shortdesc}
+{:screen: .screen}
+{:codeblock: .codeblock}
+{:pre: .pre}
+{:tip: .tip}
+{:note: .note}
 
 <!-- The title of your tutorial should be in active voice and and start with a verb. If you include product names, makes sure to use the non-trademarked short version keyref. -->
 <!-- Make sure each H1/H2/H3/etc. heading is _unique_ to your tutorial by adding a short but human-readable identifier. For example, instead of just "#overview", use "#cd-kube-overview" -->
 
-# Set up continuous deployment to Kubernetes
+# Provision a
 {: #tutorial-cd-kube}
 {: toc-content-type="tutorial"} <!-- Always use this value -->
 {: toc-services="containers, Registry"} <!-- Only if multi-service - use same values from services metadata above-->

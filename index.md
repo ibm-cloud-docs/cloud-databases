@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2022-01-06"
+lastupdated: "2022-05-06"
 
 subcollection: cloud-databases
 
@@ -21,7 +21,7 @@ subcollection: cloud-databases
 {{site.data.keyword.cloud_notm}} Databases are managed databases (and a messaging queue) that are hosted in {{site.data.keyword.cloud_notm}} and integrated with other {{site.data.keyword.cloud_notm}} services. 
 {: shortdesc}
 
-{{site.data.keyword.databases-for}} cover the following services:
+{{site.data.keyword.databases-for}} covers the following services:
 - {{site.data.keyword.databases-for-cassandra}}
 - {{site.data.keyword.databases-for-elasticsearch}}
 - {{site.data.keyword.databases-for-enterprisedb}}
