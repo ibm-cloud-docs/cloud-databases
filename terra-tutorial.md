@@ -39,8 +39,8 @@ In this tutorial, you learn how to use Terraform to provision an {{site.data.key
 * [Install {{site.data.keyword.cloud_notm}} CLI.](/docs/cli?topic=cli-install-ibmcloud-cli)
 * [Use the console, CLI, or API to create an {{site.data.keyword.cloud}} API key](/docs/account?topic=account-userapikey&interface=ui#create_user_key)
 
-## Establish Provider 
-{: #tutorial-provision-postgres-tf-provider}
+## Provision Example
+{: #tutorial-provision-postgres-tf-example}
 {: step}
 
 To provision your Terraform provider, see the example 
@@ -54,21 +54,11 @@ terraform {
     }
   }
 }
-```
-
-Ensure your IBM Cloud Terraform Registry version number matches the latest version, which can be found [here.](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest){: external}
-{: .note}
-
-## Configure the IBM Provider
-{: #tutorial-provision-postgres-tf-sh2}
-{: step}
-
-```shell
 provider "ibm" {
   region = "us-south" # The deployment's region
   ibmcloud_api_key = "<API_KEY>"
 }
-data "ibm_resource_group" "default" {
+data "ibm_resource_group" "default" { # The resource group is "Default", unless specified by you.
   is_default = true
 }
 resource "ibm_database" "mongodb_enterprise_helen" {
