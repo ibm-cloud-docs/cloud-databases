@@ -2,7 +2,7 @@
 
 copyright:
    years: 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-09"
 
 keywords: IBM Cloud Databases, ICD, terraform
 
@@ -21,6 +21,7 @@ completion-time: 2h
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
+{:important: .important}
 
 # Provision a {{site.data.keyword.databases-for-postgresql}} instance with Terraform
 {: #tutorial-provision-postgres-tf}
@@ -35,25 +36,49 @@ In this tutorial, you learn how to use Terraform to provision an {{site.data.key
 
 * [You need to have an {{site.data.keyword.cloud_notm}} account.](https://cloud.ibm.com/registration)
 * [Understand the basics of Terraform.](https://www.terraform.io/intro){: external}
-* [Install Terraform.](https://learn.hashicorp.com/tutorials/terraform/install-cli){: external}
 * [Install {{site.data.keyword.cloud_notm}} CLI.](/docs/cli?topic=cli-install-ibmcloud-cli)
-* [Use the console, CLI, or API to create an {{site.data.keyword.cloud}} API key](/docs/account?topic=account-userapikey&interface=ui#create_user_key)
 
-## Provision Example
-{: #tutorial-provision-postgres-tf-example}
+## Step 1: Install the Terraform CLI
+{: #tutorial-provision-postgres-install-cli}
 {: step}
 
-To provision your Terraform provider, see the example 
+See [Installing the Terrafom CLI](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started) to install.
+
+## Step 2: Configure the {{site.data.keyword.cloud}} Provider plug-in
+{: #tutorial-provision-postgres-install-cli}
+{: step}
+
+Once you have installed the command-line, set up and configure the {{site.data.keyword.cloud}} Provider Plug-in. For more information, see [Configuring the IBM Cloud Provider plug-in](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started#install_provider)
+
+1. Create a `versions.tf` file with the following content. In this file, specify the {{site.data.keyword.cloud}} Provider plug-in version that you want to use with the version parameter for {{site.data.keyword.cloud}} Provider plug-in, and `required_version` to specify the Terraform template version. If no version parameter is specified, {{site.data.keyword.cloud}} Provider automatically uses the latest version of the provider. For a list of supported {{site.data.keyword.cloud}} Provider versions, see [{{site.data.keyword.cloud}} Provider plug-in releases](https://github.com/IBM-Cloud/terraform-provider-ibm/releases){: external}.
+
+   PostgreSQL Example
+   ```shell
+   terraform {
+     required_providers {
+       ibm = {
+         source = "IBM-CLoud/ibm"
+         version = "-> 9.6"
+       }
+     }
+   }
+   ```
+   {: pre}
+
+1. [Create or retrieve an IBM Cloud API key](/docs/account?topic=account-userapikey#create_user_key) The API key is used to authenticate with the {{site.data.keyword.cloud}} platform and to determine your permissions for {{site.data.keyword.cloud}} services.
+1. Create a variables file that is named `terraform.tfvars` and specify the {{site.data.keyword.cloud}} API key that you retrieved. In addition, specify the region where you want your {{site.data.keyword.cloud}} resources to be created. If no region is specified, Terraform on {{site.data.keyword.cloud}} automatically creates your resources in the `us-south` region. Variables that are defined in the `terraform.tfvars` file are automatically loaded by Terraform when the {{site.data.keyword.cloud}} Provider plug-in is initialized and you can reference them in every Terraform configuration file that you use.
+
+Because the terraform.tfvars file contains confidential information, do not push this file to a version control system. This file is meant to be on your local system only.
+{: .important}
+
+Example of terraform.tfvarsfile
+```shell
+ibmcloud_api_key = "<ibmcloud_api_key>"
+region = "<region>"
+```
+{: pre}
 
 ```shell
-terraform {
-  required_providers {
-    ibm = {
-      source  = "IBM-Cloud/ibm"
-      version = "~> 9.6"
-    }
-  }
-}
 provider "ibm" {
   region = "us-south" # The deployment's region
   ibmcloud_api_key = "<API_KEY>"
