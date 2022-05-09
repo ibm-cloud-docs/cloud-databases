@@ -90,8 +90,8 @@ provider "ibm" {
     ibmcloud_api_key   = var.ibmcloud_api_key
     region = var.region # The deployment's region
     }
-data "ibm_resource_group" "default" { # The resource group is "Default", unless specified by you.
-  is_default = true
+data "ibm_resource_group" "resource_group" {
+  name = "default"
 }
 resource "ibm_database" "mongodb_enterprise_helen" {
   resource_group_id = data.ibm_resource_group.default.id #
@@ -127,7 +127,7 @@ resource "ibm_database" "mongodb_enterprise_helen" {
     delete = "15m"
   }
 }
-output "Mongodb_connection_string" {
-  value = "http://${ibm_database.mongodb_enterprise_helen.connectionstrings[0].composed}"
+output "Postgresql" {
+  value = "http://${ibm_database.postgresql_helen.connectionstrings[0].composed}"
 }
 ```
