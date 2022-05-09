@@ -28,7 +28,7 @@ completion-time: 2h
 {: toc-content-type="tutorial"} 
 {: toc-completion-time="2h"} 
 
-In this tutorial, you learn how to use Terraform to provision an {{site.data.keyword.databases-for-postgresql}}. For more information, see [IBM Cloud in the Terraform Registry.](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: external}
+In this tutorial, you learn how to use Terraform to provision an {{site.data.keyword.databases-for-postgresql}}.
 {: shortdesc}
 
 ## Before you begin
@@ -48,17 +48,17 @@ Follow the steps at [Installing the Terrafom CLI](/docs/ibm-cloud-provider-for-t
 {: #tutorial-provision-postgres-install-cli}
 {: step}
 
-Once you have installed the command-line, set up and configure the {{site.data.keyword.cloud}} Provider Plug-in. For more information, see [Configuring the IBM Cloud Provider plug-in](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started#install_provider)
+Once you have installed the command-line, set up and configure the {{site.data.keyword.cloud}} Provider Plug-in. For more information, see [Configuring the IBM Cloud Provider plug-in.](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started#install_provider)
 
 1. Create a `versions.tf` file with the following content. In this file, specify the {{site.data.keyword.cloud}} Provider plug-in version that you want to use with the version parameter for {{site.data.keyword.cloud}} Provider plug-in, and `required_version` to specify the Terraform template version. If no version parameter is specified, {{site.data.keyword.cloud}} Provider automatically uses the latest version of the provider. For a list of supported {{site.data.keyword.cloud}} Provider versions, see [{{site.data.keyword.cloud}} Provider plug-in releases](https://github.com/IBM-Cloud/terraform-provider-ibm/releases){: external}.
 
-   PostgreSQL Example
+   {{site.data.keyword.databases-for-postgresql_full}} Example
    ```shell
    terraform {
      required_providers {
        ibm = {
          source = "IBM-CLoud/ibm"
-         version = "-> 9.6"
+         version = "-> 12"
        }
      }
    }
