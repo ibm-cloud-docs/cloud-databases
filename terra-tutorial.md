@@ -103,10 +103,10 @@ resource "ibm_database" "mongodb_enterprise_helen" {
   group {
     group_id = "member"
     memory {
-      allocation_mb = 57344
+      allocation_mb = 1024
     }
     disk {
-      allocation_mb = 573440
+      allocation_mb = 5120
     }
   }
   group {
