@@ -58,7 +58,7 @@ Once you have installed the command-line, set up and configure the {{site.data.k
      required_providers {
        ibm = {
          source = "IBM-CLoud/ibm"
-         version = "-> 12"
+         version = "-> 1.4"
        }
      }
    }
