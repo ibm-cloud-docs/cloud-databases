@@ -71,18 +71,25 @@ Once you have installed the command-line, set up and configure the {{site.data.k
 Because the terraform.tfvars file contains confidential information, do not push this file to a version control system. This file is meant to be on your local system only.
 {: .important}
 
-Example of terraform.tfvarsfile
+Example of `terraform.tfvarsfile`
 ```shell
 ibmcloud_api_key = "<ibmcloud_api_key>"
 region = "<region>"
 ```
 {: pre}
 
+1. Create a provider configuration file that is named `provider.tf`. Use this file to configure the {{site.data.keyword.cloud}} Provider plug-in with the {{site.data.keyword.cloud}} API key from your `terraform.tfvars file`. The plug-in uses this key to access {{site.data.keyword.cloud}} and to work with your {{site.data.keyword.cloud}} service. To access a variable value from the `terraform.tfvars file`, you must first declare the variable in the `provider.tf file` and then reference the variable by using the `var.<variable_name>` syntax .
+
+Example of `provider.tf` file
+
 ```shell
+variable "ibmcloud_api_key" {}
+variable "region" {}
+
 provider "ibm" {
-  region = "us-south" # The deployment's region
-  ibmcloud_api_key = "<API_KEY>"
-}
+    ibmcloud_api_key   = var.ibmcloud_api_key
+    region = var.region # The deployment's region
+    }
 data "ibm_resource_group" "default" { # The resource group is "Default", unless specified by you.
   is_default = true
 }
