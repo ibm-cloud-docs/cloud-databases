@@ -42,7 +42,7 @@ In this tutorial, you learn how to use Terraform to provision an {{site.data.key
 {: #tutorial-provision-postgres-install-cli}
 {: step}
 
-See [Installing the Terrafom CLI](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started) to install.
+Follow the steps at [Installing the Terrafom CLI](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started) to install the Terraform CLI.
 
 ## Step 2: Configure the {{site.data.keyword.cloud}} Provider plug-in
 {: #tutorial-provision-postgres-install-cli}
