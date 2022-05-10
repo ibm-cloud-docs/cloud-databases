@@ -10,7 +10,7 @@ subcollection: cloud-databases
 
 content-type: tutorial
 account-plan: paid
-completion-time: 2h
+completion-time: 1h
 
 ---
 
@@ -26,7 +26,7 @@ completion-time: 2h
 # Provision a {{site.data.keyword.databases-for-postgresql}} instance with Terraform
 {: #tutorial-provision-postgres-tf}
 {: toc-content-type="tutorial"} 
-{: toc-completion-time="2h"} 
+{: toc-completion-time="1h"} 
 
 In this tutorial, you learn how to use Terraform to provision a {{site.data.keyword.databases-for-postgresql}} instance.
 {: shortdesc}
@@ -52,7 +52,7 @@ After you install the command-line, set up and configure the {{site.data.keyword
 
 1. Create a `versions.tf` file with the following content. In this file, specify the {{site.data.keyword.cloud}} Provider plug-in version that you want to use with the version parameter for {{site.data.keyword.cloud}} Provider plug-in, and `required_version` to specify the Terraform template version. If no version parameter is specified, {{site.data.keyword.cloud}} Provider automatically uses the latest version of the provider. For a list of supported {{site.data.keyword.cloud}} Provider versions, see [{{site.data.keyword.cloud}} Provider plug-in releases](https://github.com/IBM-Cloud/terraform-provider-ibm/releases){: external}.
 
-   {{site.data.keyword.databases-for-postgresql_full}} Example
+   Example
    ```shell
    terraform {
      required_providers {
