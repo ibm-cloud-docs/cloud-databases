@@ -93,7 +93,7 @@ provider "ibm" {
 data "ibm_resource_group" "resource_group" {
   name = "default"
 }
-resource "ibm_database" "mongodb_enterprise_helen" {
+resource "ibm_database" "postgresql_default" {
   resource_group_id = data.ibm_resource_group.default.id #
   name              = "<your_database_name>" # The name can be any string and is the name that is used on the web and in the CLI to identify the new deployment.
   service           = "databases-for-postgresql" # The service you will be using for deployment.
