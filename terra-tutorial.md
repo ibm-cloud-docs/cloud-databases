@@ -2,7 +2,7 @@
 
 copyright:
    years: 2022
-lastupdated: "2022-05-09"
+lastupdated: "2022-05-10"
 
 keywords: IBM Cloud Databases, ICD, terraform
 
@@ -58,7 +58,7 @@ Once you have installed the command-line, set up and configure the {{site.data.k
      required_providers {
        ibm = {
          source = "IBM-CLoud/ibm"
-         version = "-> 1.4"
+         version = "-> 1.41.0"
        }
      }
    }
