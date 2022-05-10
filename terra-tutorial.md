@@ -131,3 +131,13 @@ output "Postgresql" {
   value = "http://${ibm_database.postgresql_default.connectionstrings[0].composed}"
 }
 ```
+
+## Step 3: Test your configuration
+{: #tutorial-provision-postgres-test}
+{: step}
+
+Now that you configured the IBM Cloud Provider plug-in for your resource you can start using Terraform on IBM Cloud to initialize, execute plan and apply commands to provision the resource. For more information, about Terraform commands to test your configuration, see [Provisioning IBM Cloud resources](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-manage_resources#provision_resources).
+
+To view sample Terraform templates with the complete Terraform configuration files to test, refer to [Sample templates](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-provider-template#sample-templates).
+
+For an overview of the Terraform resources and data sources that you can use, see the [Index of Terraform on IBM Cloud resources and data sources](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-resources-datasource-list).
