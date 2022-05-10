@@ -28,7 +28,7 @@ completion-time: 2h
 {: toc-content-type="tutorial"} 
 {: toc-completion-time="2h"} 
 
-In this tutorial, you learn how to use Terraform to provision an {{site.data.keyword.databases-for-postgresql}}.
+In this tutorial, you learn how to use Terraform to provision a {{site.data.keyword.databases-for-postgresql}} instance.
 {: shortdesc}
 
 ## Before you begin
@@ -48,7 +48,7 @@ Follow the steps at [Installing the Terrafom CLI](/docs/ibm-cloud-provider-for-t
 {: #tutorial-provision-postgres-install-cli}
 {: step}
 
-Once you have installed the command-line, set up and configure the {{site.data.keyword.cloud}} Provider Plug-in. For more information, see [Configuring the IBM Cloud Provider plug-in.](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started#install_provider)
+After you install the command-line, set up and configure the {{site.data.keyword.cloud}} Provider plug-in. For more information, see [Configuring the IBM Cloud Provider plug-in.](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started#install_provider)
 
 1. Create a `versions.tf` file with the following content. In this file, specify the {{site.data.keyword.cloud}} Provider plug-in version that you want to use with the version parameter for {{site.data.keyword.cloud}} Provider plug-in, and `required_version` to specify the Terraform template version. If no version parameter is specified, {{site.data.keyword.cloud}} Provider automatically uses the latest version of the provider. For a list of supported {{site.data.keyword.cloud}} Provider versions, see [{{site.data.keyword.cloud}} Provider plug-in releases](https://github.com/IBM-Cloud/terraform-provider-ibm/releases){: external}.
 
@@ -78,7 +78,7 @@ region = "<region>"
 ```
 {: pre}
 
-1. Create a provider configuration file that is named `provider.tf`. Use this file to configure the {{site.data.keyword.cloud}} Provider plug-in with the {{site.data.keyword.cloud}} API key from your `terraform.tfvars file`. The plug-in uses this key to access {{site.data.keyword.cloud}} and to work with your {{site.data.keyword.cloud}} service. To access a variable value from the `terraform.tfvars file`, you must first declare the variable in the `provider.tf file` and then reference the variable by using the `var.<variable_name>` syntax .
+1. Create a provider configuration file that is named `provider.tf`. Use this file to configure the {{site.data.keyword.cloud}} Provider plug-in with the {{site.data.keyword.cloud}} API key from your `terraform.tfvars file`. The plug-in uses this key to access {{site.data.keyword.cloud}} and to work with your {{site.data.keyword.cloud}} service. To access a variable value from the `terraform.tfvars file`, you must first declare the variable in the `provider.tf file` and then reference the variable by using the `var.<variable_name>` syntax.
 
 Example of `provider.tf` file
 
