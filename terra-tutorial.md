@@ -128,6 +128,6 @@ resource "ibm_database" "mongodb_enterprise_helen" {
   }
 }
 output "Postgresql" {
-  value = "http://${ibm_database.postgresql_helen.connectionstrings[0].composed}"
+  value = "http://${ibm_database.postgresql_default.connectionstrings[0].composed}"
 }
 ```
