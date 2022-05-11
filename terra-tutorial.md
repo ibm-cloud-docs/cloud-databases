@@ -2,7 +2,7 @@
 
 copyright:
    years: 2022
-lastupdated: "2022-05-10"
+lastupdated: "2022-05-11"
 
 keywords: IBM Cloud Databases, ICD, terraform
 
@@ -53,7 +53,7 @@ After you install the command-line, set up and configure the {{site.data.keyword
 1. Create a `versions.tf` file with the following content. In this file, specify the {{site.data.keyword.cloud}} Provider plug-in version that you want to use with the version parameter for {{site.data.keyword.cloud}} Provider plug-in, and `required_version` to specify the Terraform template version. If no version parameter is specified, {{site.data.keyword.cloud}} Provider automatically uses the latest version of the provider. For a list of supported {{site.data.keyword.cloud}} Provider versions, see [{{site.data.keyword.cloud}} Provider plug-in releases](https://github.com/IBM-Cloud/terraform-provider-ibm/releases){: external}.
 
    Example
-   ```shell
+   ```sh
    terraform {
      required_providers {
        ibm = {
@@ -72,7 +72,7 @@ Because the terraform.tfvars file contains confidential information, do not push
 {: .important}
 
 Example of `terraform.tfvarsfile`
-```shell
+```sh
 ibmcloud_api_key = "<ibmcloud_api_key>"
 region = "<region>"
 ```
@@ -82,7 +82,7 @@ region = "<region>"
 
 Example of `provider.tf` file
 
-```shell
+```sh
 variable "ibmcloud_api_key" {}
 variable "region" {}
 
