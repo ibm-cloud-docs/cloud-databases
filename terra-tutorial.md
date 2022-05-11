@@ -88,18 +88,18 @@ variable "region" {}
 
 provider "ibm" {
     ibmcloud_api_key   = var.ibmcloud_api_key
-    region = var.region # The deployment's region
+    region = var.region
     }
 data "ibm_resource_group" "resource_group" {
   name = "default"
 }
 resource "ibm_database" "postgresql_default" {
-  resource_group_id = data.ibm_resource_group.default.id #
-  name              = "<your_database_name>" # The name can be any string and is the name that is used on the web and in the CLI to identify the new deployment.
-  service           = "databases-for-postgresql" # The service you will be using for deployment.
-  plan              = "enterprise" # Your service plan
-  location          = "<LOCATION>" # Your desired instance location, for example, "us-south".
-  adminpassword     = "<PASSWORD>" 
+  resource_group_id = data.ibm_resource_group.default.id 
+  name              = "<your_database_name>"
+  service           = "<desired_service>"
+  plan              = "<plan_level" 
+  location          = "<location>" 
+  adminpassword     = "<password>" 
   group {
     group_id = "member"
     memory {
