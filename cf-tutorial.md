@@ -27,7 +27,7 @@ Each Git branch of the [repository](https://github.com/IBM-Cloud/clouddatabases-
 
 Clone the repository of the language that you want to use. For instance, you can clone the **Node** repository by selecting the **Node** branch. Then, click **Clone or download** to get the URL you need to clone by using SSH or HTTPS. In your console, the command looks like
 
-```shell
+```sh
 git clone -b node git@github.com:IBM-Cloud/clouddatabases-helloworld-cloudfoundry-examples.git
 ```
 
@@ -52,7 +52,7 @@ npm install
 
 3. Connect to IBM Cloud in the command-line tool and follow the prompts to log in.
 
-```shell
+```sh
 ibmcloud login
 ```
 
@@ -63,7 +63,7 @@ If you have a federated user ID, use the `ibmcloud login --sso` command to log i
 {: #create-database-deployment}
 
 The database can be created from the CLI by using the `ibmcloud resource service-instance-create` command. The command takes a service instance name, a service name, plan name, and location. The service name is one of the {{site.data.keyword.databases-for}} services, `databases-for-datastax`,`databases-for-elasticsearch`, `databases-for-enterprisedb`, `databases-for-etcd`, `databases-for-mongodb`, `databases-for-postgresql`, `databases-for-redis`, `messages-for-rabbitmq`, or `databases-for-mysql`.
-```shell
+```sh
 ibmcloud resource service-instance-create <your_deployment_name> <service_name> standard <region>
 ```
 
@@ -74,17 +74,17 @@ Remember the database deployment name.
 {: #create-cloud-foundry-alias}
 
 1. Target the correct IBM Cloud Cloud Foundry org and space, and choose where you are going to push the application code to.
-   ```shell
+   ```sh
    ibmcloud target --cf
    ```
 
 2. Create a Cloud Foundry alias for your database deployment.
-   ```shell
+   ```sh
    ibmcloud resource service-alias-create alias-name --instance-name instance-name
    ```
 
 3. Cloud Foundry uses the alias to represent the database deployment as a Cloud Foundry service. The alias name can be the same as the database service instance name. For an   `example-deployment` database the command is as follows:
-   ```shell
+   ```sh
    ibmcloud resource service-alias-create example-deployment --instance-name example-deployment
    ```
 
@@ -111,7 +111,7 @@ applications:
 
 4. Push the app to IBM Cloud. When you push the app, it is automatically bound to the service.
 
-```shell
+```sh
 ibmcloud cf push
 ```
 Your application is now running at the host that you entered as the value for the `route` in `manifest.yml`.

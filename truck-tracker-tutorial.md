@@ -88,14 +88,14 @@ Follow the steps [in this document](https://cloud.ibm.com/docs/account?topic=acc
 {: #truck-tracker-terraform-dir}
 {: step}
 
-```shell
+```sh
 git clone https://github.com/IBM-Cloud/truck-tracker.git
 cd truck-tracker/terraform
 ```
 
 Create a document called `terraform.tfvars` with the following fields: 
 
-```shell
+```sh
 ibmcloud_api_key = "<your_api_key_from_step_1>"
 region = "eu-gb"
 redis_password  = "<make_up_a_password>"
@@ -109,7 +109,7 @@ The `terraform.tfvars` document contains variables that you may want to keep sec
 
 TL;DR — run the Terraform script:
 
-```shell
+```sh
 terraform init 
 terraform apply --auto-approve
 ```
@@ -139,7 +139,7 @@ Run the build script — but before you do, are you logged into the IBM Cloud CL
 
 Go into the root of the project and type the following:
 
-```shell
+```sh
 ./build.sh
 ```
 
@@ -208,7 +208,7 @@ Because of the managed nature of all these services, as an application developer
 
 If you followed this tutorial, remember to de-provision your infrastructure to stop incurring charges. On your terminal, do the following:
 
-```shell
+```sh
 cd terraform/
 terraform destroy
 ```
