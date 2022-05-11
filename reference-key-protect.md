@@ -61,7 +61,7 @@ After you grant your {{site.data.keyword.databases-for}} deployments permission 
 If provisioning from the catalog page, select the Key Protect instance and key from the dropdown menus.
 
 In the CLI, use the `disk_encryption_key_crn` parameter in the parameters JSON object.
-```shell
+```sh
 ibmcloud resource service-instance-create example-database <service-name> standard us-south \
 -p \ '{
   "disk_encryption_key_crn": "crn:v1:<...>:key:<id>"
@@ -69,7 +69,7 @@ ibmcloud resource service-instance-create example-database <service-name> standa
 ```
 
 In the API, use the `disk_encryption_key` parameter in the body of the request.
-```shell
+```sh
 curl -X POST \
   https://resource-controller.cloud.ibm.com/v2/resource_instances \
   -H 'Authorization: Bearer <>' \
@@ -125,7 +125,7 @@ In order to enable your deployment to use the Key Protect key, you need to [Enab
 After the appropriate authorization and delegation is granted, you supply the [key name or CRN](/docs/key-protect?topic=key-protect-view-keys) when you provision a deployment.
 
 In the CLI, use the `backup_encryption_key_crn` parameter in the parameters JSON object.
-```shell
+```sh
 ibmcloud resource service-instance-create example-database <service-name> standard us-south \
 -p \ '{
   "backup_encryption_key_crn": "crn:v1:<...>:key:<id>"
@@ -133,7 +133,7 @@ ibmcloud resource service-instance-create example-database <service-name> standa
 ```
 
 In the API, use the `backup_encryption_key_crn` parameter in the body of the request.
-```shell
+```sh
 curl -X POST \
   https://resource-controller.cloud.ibm.com/v2/resource_instances \
   -H 'Authorization: Bearer <>' \

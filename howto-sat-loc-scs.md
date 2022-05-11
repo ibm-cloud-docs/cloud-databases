@@ -65,6 +65,6 @@ Just as extra hosts are added as your data needs grow, as you downsize your serv
 
 To verify a service cluster storage assignment, use the following command to list your service clusters and configurations:
 
-```shell
+```sh
 ic sat storage assignment ls
 ```

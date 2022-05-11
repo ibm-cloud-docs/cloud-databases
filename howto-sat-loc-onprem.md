@@ -147,7 +147,7 @@ Your location needs to report `Normal` before you provision your ICD Satellite D
 
 `Normal` status can also be confirmed by using the CLI, with a command like:
 
-```shell
+```sh
 ibmcloud sat location get --location <location name> --output=json -q | jq -r .state
 ```
 If successful, the command output reports `normal`.
