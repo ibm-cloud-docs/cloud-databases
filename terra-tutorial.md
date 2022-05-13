@@ -36,7 +36,6 @@ In this tutorial, you learn how to use Terraform to provision a {{site.data.keyw
 
 * [You need to have an {{site.data.keyword.cloud_notm}} account.](https://cloud.ibm.com/registration)
 * [Understand the basics of Terraform.](https://www.terraform.io/intro){: external}
-* [Install {{site.data.keyword.cloud_notm}} CLI.](/docs/cli?topic=cli-install-ibmcloud-cli)
 
 ## Step 1: Install the Terraform CLI
 {: #tutorial-provision-postgres-install-cli}
