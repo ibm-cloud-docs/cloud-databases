@@ -35,7 +35,7 @@ In this tutorial, you learn how to use Terraform to provision a {{site.data.keyw
 {: #tutorial-provision-postgres-tf-prereqs}
 
 * [You need to have an {{site.data.keyword.cloud_notm}} account.](https://cloud.ibm.com/registration)
-* [Understand the basics of Terraform.](https://www.terraform.io/intro){: external}
+* [Understand the basics of Terraform.](https://www.terraform.io/intro){: external} 
 
 ## Step 1: Install the Terraform CLI
 {: #tutorial-provision-postgres-install-cli}
@@ -86,14 +86,26 @@ Example of `provider.tf` file
 ```terraform
 variable "ibmcloud_api_key" {}
 variable "region" {}
+```
 
+```terraform
 provider "ibm" {
     ibmcloud_api_key   = var.ibmcloud_api_key
     region = var.region
     }
+```
+{: pre}
+{: codeblock}
+
+```terraform
 data "ibm_resource_group" "resource_group" {
   name = "default"
 }
+```
+{: pre}
+{: codeblock}
+
+```terraform
 resource "ibm_database" "postgresql_default" {
   resource_group_id = data.ibm_resource_group.default.id 
   name              = "<your_database_name>"
@@ -110,24 +122,17 @@ resource "ibm_database" "postgresql_default" {
       allocation_mb = 5120
     }
   }
-  group {
-    group_id = "analytics"
-    members {
-      allocation_count = 1
-    }
-  }
-  group {
-    group_id = "bi_connector"
-    members {
-      allocation_count = 1
-    }
-  }
   timeouts {
     create = "120m"
     update = "120m"
     delete = "15m"
   }
 }
+```
+{: pre}
+{: codeblock}
+
+```terraform
 output "Postgresql" {
   value = "http://${ibm_database.postgresql_default.connectionstrings[0].composed}"
 }
