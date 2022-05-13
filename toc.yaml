@@ -43,7 +43,6 @@ toc:
           topics: 
           - howto-tutorials.md
           - k8-tutorial.md
-          - cf-tutorial.md
           - truck-tracker-tutorial.md
   - navgroup: 
       id: reference
