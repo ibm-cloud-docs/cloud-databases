@@ -170,7 +170,7 @@ output "Postgresql" {
 {: codeblock}
 {: pre}
 
-## Step 3: Test your configuration
+## Step 4: Test your configuration
 {: #tutorial-provision-postgres-test}
 {: step}
 
