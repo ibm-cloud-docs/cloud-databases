@@ -96,26 +96,26 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
    
 1. In the same project directory, create a provider configuration file that is named `provider.tf`. Use this file to configure the {{site.data.keyword.cloud}} Provider plug-in with the {{site.data.keyword.cloud}} API key from your `terraform.tfvars` file. The plug-in uses this key to access {{site.data.keyword.cloud}} and to work with your {{site.data.keyword.cloud}} service. To access a variable value from the `terraform.tfvars` file, you must first declare the variable in the `provider.tf` file and then reference the variable by using the `var.<variable_name>` syntax.
 
-Example of `provider.tf` file
-
-```terraform
-variable "ibmcloud_api_key" {}
-variable "region" {}
-```
-{: pre}
-{: codeblock}
-
-```terraform
-provider "ibm" {
-    ibmcloud_api_key   = var.ibmcloud_api_key
-    region = var.region
-    }
-```
-{: pre}
-{: codeblock}
-
-
-Great! Now that you completed your Terraform on {{site.data.keyword.cloud}} setup, you can go ahead and provision a {{site.data.keyword.databases-for-postgresql}} instance.
+   Example of `provider.tf` file
+   
+   ```terraform
+   variable "ibmcloud_api_key" {}
+   variable "region" {}
+   ```
+   {: pre}
+   {: codeblock}
+   
+   ```terraform
+   provider "ibm" {
+       ibmcloud_api_key   = var.ibmcloud_api_key
+       region = var.region
+       }
+   ```
+   {: pre}
+   {: codeblock}
+   
+   
+   Great! Now that you completed your Terraform on {{site.data.keyword.cloud}} setup, you can go ahead and provision a {{site.data.keyword.databases-for-postgresql}} instance.
 
 ## Step 3: Provision a {{site.data.keyword.databases-for-postgresql}} instance
 {: #tutorial-provision-postgres-provision-instance}
