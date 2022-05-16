@@ -134,41 +134,41 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
 
 2. Provision your {{site.data.keyword.databases-for-postgresql}} instance
 
-```terraform
-# a resource group
-resource "ibm_database" "ibm_postgres_instance" {
-  resource_group_id = data.ibm_resource_group.postgres_resource_group_1.id 
-  name              = "provision_terraform_postgres"
-  service           = "databases-for-postgresql"
-  plan              = "standard" 
-  location          = "us-east" 
-  adminpassword     = "password123" 
-  group {
-    group_id = "member"
-    memory {
-      allocation_mb = 1024
-    }
-    disk {
-      allocation_mb = 5120
-    }
-  }
-  timeouts {
-    create = "120m"
-    update = "120m"
-    delete = "15m"
-  }
-}
-```
-{: pre}
-{: codeblock}
-
-```terraform
-output "Postgresql" {
-  value = "http://${ibm_database.postgresql_default.connectionstrings[0].composed}"
-}
-```
-{: codeblock}
-{: pre}
+   ```terraform
+   # a resource group
+   resource "ibm_database" "ibm_postgres_instance" {
+     resource_group_id = data.ibm_resource_group.postgres_resource_group_1.id 
+     name              = "provision_terraform_postgres"
+     service           = "databases-for-postgresql"
+     plan              = "standard" 
+     location          = "us-east" 
+     adminpassword     = "password123" 
+     group {
+       group_id = "member"
+       memory {
+         allocation_mb = 1024
+       }
+       disk {
+         allocation_mb = 5120
+       }
+     }
+     timeouts {
+       create = "120m"
+       update = "120m"
+       delete = "15m"
+     }
+   }
+   ```
+   {: pre}
+   {: codeblock}
+   
+   ```terraform
+   output "Postgresql" {
+     value = "http://${ibm_database.postgresql_default.connectionstrings[0].composed}"
+   }
+   ```
+   {: codeblock}
+   {: pre}
 
 ## Step 4: Test your configuration
 {: #tutorial-provision-postgres-test}
