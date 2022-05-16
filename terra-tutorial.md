@@ -38,7 +38,7 @@ Before beginning the process of provisioning a database with Terraform, [you nee
 
 In this tutorial, you will provision your database using Terraform, which enables you to safely and predictably create, change, and improve infrastructure. It is an open source tool that codifies APIs into declarative configuration files that can be shared amongst team members, treated as code, edited, reviewed, and versioned. It is infrastructure as code. You write down what your infrastructure should look like and Terraform will create, update, remove cloud resources as needed. For more information, see [Understand the basics of Terraform.](https://www.terraform.io/intro){: external} 
 
-To support a multi-cloud approach, Terraform works with providers. A provider is responsible for understanding API interactions and exposing resources. IBM Cloud has its provider for Terraform, enabling users of IBM Cloud to manage resources with Terraform. Although Terraform is categorized as infrastructure as code, it is not limited to Infrastructure-As-A-Service resources.
+To support a multi-cloud approach, Terraform works with providers. A provider is responsible for understanding API interactions and exposing resources. {{site.data.keyword.cloud}} has its provider for Terraform, enabling users of {{site.data.keyword.cloud}} to manage resources with Terraform. Although Terraform is categorized as infrastructure as code, it is not limited to Infrastructure-As-A-Service resources.
 
 ## Step 1: Install the Terraform CLI
 {: #tutorial-provision-postgres-install-cli}
@@ -50,7 +50,7 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
 {: #tutorial-provision-postgres-config-provider}
 {: step}
 
-1. After you install the command-line, set up and configure the {{site.data.keyword.cloud}} Provider plug-in. For more information, see [Configuring the IBM Cloud Provider plug-in.](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started#install_provider)
+1. After you install the command-line, set up and configure the {{site.data.keyword.cloud}} Provider plug-in. For more information, see [Configuring the {{site.data.keyword.cloud}} Provider plug-in.](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started#install_provider)
 
 1. Create a `versions.tf` file with the following content. In this file, specify the {{site.data.keyword.cloud}} Provider plug-in version that you want to use with the version parameter for {{site.data.keyword.cloud}} Provider plug-in, and `required_version` to specify the Terraform template version. If no version parameter is specified, {{site.data.keyword.cloud}} Provider automatically uses the latest version of the provider. For a list of supported {{site.data.keyword.cloud}} Provider versions, see [{{site.data.keyword.cloud}} Provider plug-in releases](https://github.com/IBM-Cloud/terraform-provider-ibm/releases){: external}.
 
@@ -121,22 +121,23 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
 {: #tutorial-provision-postgres-provision-instance}
 {: step}
 
-```terraform
-data "ibm_resource_group" "resource_group" {
-  name = "default"
-}
-```
-{: pre}
-{: codeblock}
+1. To set up a deployment environment, create a resource group. By organizing your services into resource groups, you can specify the resource group in this field. Otherwise, you can leave it at `default`. For more information, see [Using the catalog](/docs/databases-for-postgresql?topic=cloud-databases-provisioning#catalog). 
 
-Resource example for {{site.data.keyword.databases-for-postgresql}} instance
+   Example
+   ```terraform
+   data "ibm_resource_group" "resource_group" {
+     name = "postgres_resource_group_1"
+   }
+   ```
+   {: pre}
+   {: codeblock}
 
-Setting up a deployment environment begins with creating a resource group. Its name is taken from an environment variable:
+2. Provision your {{site.data.keyword.databases-for-postgresql}} instance
 
 ```terraform
 # a resource group
 resource "ibm_database" "ibm_postgres_instance" {
-  resource_group_id = data.ibm_resource_group.default.id 
+  resource_group_id = data.ibm_resource_group.postgres_resource_group_1.id 
   name              = "provision_terraform_postgres"
   service           = "databases-for-postgresql"
   plan              = "standard" 
@@ -173,8 +174,8 @@ output "Postgresql" {
 {: #tutorial-provision-postgres-test}
 {: step}
 
-Now that you configured the IBM Cloud Provider plug-in for your resource you can start using Terraform on IBM Cloud to initialize, execute plan and apply commands to provision the resource. For more information, about Terraform commands to test your configuration, see [Provisioning IBM Cloud resources](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-manage_resources#provision_resources).
+Now that you configured the {{site.data.keyword.cloud}} Provider plug-in for your resource you can start using Terraform on {{site.data.keyword.cloud}} to initialize, execute plan and apply commands to provision the resource. For more information, about Terraform commands to test your configuration, see [Provisioning {{site.data.keyword.cloud}} resources](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-manage_resources#provision_resources).
 
 To view sample Terraform templates with the complete Terraform configuration files to test, refer to [Sample templates](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-provider-template#sample-templates).
 
-For an overview of the Terraform resources and data sources that you can use, see the [Index of Terraform on IBM Cloud resources and data sources](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-resources-datasource-list).
+For an overview of the Terraform resources and data sources that you can use, see the [Index of Terraform on {{site.data.keyword.cloud}} resources and data sources](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-resources-datasource-list).
