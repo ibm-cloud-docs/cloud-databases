@@ -65,9 +65,17 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
    {: pre}
    {: codeblock}
 
-1. [Create or retrieve an IBM Cloud API key.](/docs/account?topic=account-userapikey#create_user_key) The API key is used to authenticate with the {{site.data.keyword.cloud}} platform and to determine your permissions for {{site.data.keyword.cloud}} services.
+1. [Create or retrieve an {{site.data.keyword.cloud}} API key.](/docs/account?topic=account-userapikey#create_user_key) The API key is used to authenticate with the {{site.data.keyword.cloud}} platform and to determine your permissions for {{site.data.keyword.cloud}} services.
 
-1. Create a variables file that is named `terraform.tfvars` and specify the {{site.data.keyword.cloud}} API key that you retrieved. In addition, specify the region where you want your {{site.data.keyword.cloud}} resources to be created. If no region is specified, Terraform on {{site.data.keyword.cloud}} automatically creates your resources in the `us-south` region. Variables that are defined in the `terraform.tfvars` file are automatically loaded by Terraform when the {{site.data.keyword.cloud}} Provider plug-in is initialized and you can reference them in every Terraform configuration file that you use
+1. Create a Terraform on {{site.data.keyword.cloud_notm}} Databases project directory. The directory will hold all your configuration files that you create as part of this tutorial. The directory in this tutorial is named `tf-postgres`, but you can use any name for the directory.
+
+   ```terraform
+   mkdir tf-postgres && cd tf-postgres
+   ```
+   {: pre}
+   {: codeblock}
+
+1. In your project directory, create a `terraform.tfvars` file and add the {{site.data.keyword.cloud}} API key that you created earlier. In addition, specify the region where you want your {{site.data.keyword.cloud}} resources to be created. If no region is specified, Terraform on {{site.data.keyword.cloud}} automatically creates your resources in the `us-south` region. The `terraform.tfvars` file is a variables file that you store on your local machine. When you initialize the CLI, all variables that are defined in this file are automatically loaded into Terraform on {{site.data.keyword.cloud}} and you can reference them in every Terraform on {{site.data.keyword.cloud}} configuration file in the same project directory.
 
 Because the `terraform.tfvars` file contains confidential information, do not push this file to a version control system. This file is meant to be on your local system only.
 {: .important}
