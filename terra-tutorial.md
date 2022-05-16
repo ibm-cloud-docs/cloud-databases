@@ -46,6 +46,10 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
 
 1. Follow the steps at [Installing the Terrafom CLI](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started) to install the Terraform CLI.
 
+## Step 2: Configure the {{site.data.keyword.cloud}} Provider plug-in
+{: #tutorial-provision-postgres-config-provider}
+{: step}
+
 1. After you install the command-line, set up and configure the {{site.data.keyword.cloud}} Provider plug-in. For more information, see [Configuring the IBM Cloud Provider plug-in.](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started#install_provider)
 
 1. Create a `versions.tf` file with the following content. In this file, specify the {{site.data.keyword.cloud}} Provider plug-in version that you want to use with the version parameter for {{site.data.keyword.cloud}} Provider plug-in, and `required_version` to specify the Terraform template version. If no version parameter is specified, {{site.data.keyword.cloud}} Provider automatically uses the latest version of the provider. For a list of supported {{site.data.keyword.cloud}} Provider versions, see [{{site.data.keyword.cloud}} Provider plug-in releases](https://github.com/IBM-Cloud/terraform-provider-ibm/releases){: external}.
@@ -80,7 +84,7 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
 Because the `terraform.tfvars` file contains confidential information, do not push this file to a version control system. This file is meant to be on your local system only.
 {: .important}
    
-   Example of `terraform.tfvarsfile`
+   Example of `terraform.tfvars` file
    ```terraform
    ibmcloud_api_key = "<ibmcloud_api_key>"
    region = "us-east"
@@ -90,7 +94,7 @@ Because the `terraform.tfvars` file contains confidential information, do not pu
    
    The `us-east` region is provided as an example, not a requirement. Use the region that works best for your instance deployment.{: .note} 
    
-1. Create a provider configuration file that is named `provider.tf`. Use this file to configure the {{site.data.keyword.cloud}} Provider plug-in with the {{site.data.keyword.cloud}} API key from your `terraform.tfvars file`. The plug-in uses this key to access {{site.data.keyword.cloud}} and to work with your {{site.data.keyword.cloud}} service. To access a variable value from the `terraform.tfvars file`, you must first declare the variable in the `provider.tf file` and then reference the variable by using the `var.<variable_name>` syntax.
+1. In the same project directory, create a provider configuration file that is named `provider.tf`. Use this file to configure the {{site.data.keyword.cloud}} Provider plug-in with the {{site.data.keyword.cloud}} API key from your `terraform.tfvars` file. The plug-in uses this key to access {{site.data.keyword.cloud}} and to work with your {{site.data.keyword.cloud}} service. To access a variable value from the `terraform.tfvars` file, you must first declare the variable in the `provider.tf` file and then reference the variable by using the `var.<variable_name>` syntax.
 
 Example of `provider.tf` file
 
@@ -98,6 +102,8 @@ Example of `provider.tf` file
 variable "ibmcloud_api_key" {}
 variable "region" {}
 ```
+{: pre}
+{: codeblock}
 
 ```terraform
 provider "ibm" {
@@ -107,6 +113,13 @@ provider "ibm" {
 ```
 {: pre}
 {: codeblock}
+
+
+Great! Now that you completed your Terraform on {{site.data.keyword.cloud}} setup, you can go ahead and provision a {{site.data.keyword.databases-for-postgresql}} instance.
+
+## Step 3: Provision a {{site.data.keyword.databases-for-postgresql}} instance
+{: #tutorial-provision-postgres-provision-instance}
+{: step}
 
 ```terraform
 data "ibm_resource_group" "resource_group" {
