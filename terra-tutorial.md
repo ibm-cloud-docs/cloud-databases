@@ -65,7 +65,7 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
    {: pre}
    {: codeblock}
 
-1. [Create or retrieve an IBM Cloud API key](/docs/account?topic=account-userapikey#create_user_key) The API key is used to authenticate with the {{site.data.keyword.cloud}} platform and to determine your permissions for {{site.data.keyword.cloud}} services.
+1. [Create or retrieve an IBM Cloud API key.](/docs/account?topic=account-userapikey#create_user_key) The API key is used to authenticate with the {{site.data.keyword.cloud}} platform and to determine your permissions for {{site.data.keyword.cloud}} services.
 
 1. Create a variables file that is named `terraform.tfvars` and specify the {{site.data.keyword.cloud}} API key that you retrieved. In addition, specify the region where you want your {{site.data.keyword.cloud}} resources to be created. If no region is specified, Terraform on {{site.data.keyword.cloud}} automatically creates your resources in the `us-south` region. Variables that are defined in the `terraform.tfvars` file are automatically loaded by Terraform when the {{site.data.keyword.cloud}} Provider plug-in is initialized and you can reference them in every Terraform configuration file that you use
 
