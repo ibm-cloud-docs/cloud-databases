@@ -2,7 +2,7 @@
 
 copyright:
    years: 2022
-lastupdated: "2022-05-13"
+lastupdated: "2022-05-16"
 
 keywords: IBM Cloud Databases, ICD, terraform
 
@@ -28,14 +28,17 @@ completion-time: 1h
 {: toc-content-type="tutorial"} 
 {: toc-completion-time="1h"} 
 
-In this tutorial, you learn how to use Terraform to provision a {{site.data.keyword.databases-for-postgresql}} instance.
+In this tutorial, you learn how to use Terraform to provision a {{site.data.keyword.databases-for-postgresql}} instance. 
 {: shortdesc}
 
-## Before you begin
+## Overview of the available tools
 {: #tutorial-provision-postgres-tf-prereqs}
 
-* [You need to have an {{site.data.keyword.cloud_notm}} account.](https://cloud.ibm.com/registration)
-* [Understand the basics of Terraform.](https://www.terraform.io/intro){: external} 
+Before beginning the process of provisioning a database with Terraform, [you need to have an {{site.data.keyword.cloud_notm}} account.](https://cloud.ibm.com/registration) 
+
+In this tutorial, you will provision your database using Terraform, which enables you to safely and predictably create, change, and improve infrastructure. It is an open source tool that codifies APIs into declarative configuration files that can be shared amongst team members, treated as code, edited, reviewed, and versioned. It is infrastructure as code. You write down what your infrastructure should look like and Terraform will create, update, remove cloud resources as needed. For more information, see [Understand the basics of Terraform.](https://www.terraform.io/intro){: external} 
+
+To support a multi-cloud approach, Terraform works with providers. A provider is responsible for understanding API interactions and exposing resources. IBM Cloud has its provider for Terraform, enabling users of IBM Cloud to manage resources with Terraform. Although Terraform is categorized as infrastructure as code, it is not limited to Infrastructure-As-A-Service resources.
 
 ## Step 1: Install the Terraform CLI
 {: #tutorial-provision-postgres-install-cli}
@@ -74,7 +77,7 @@ Because the terraform.tfvars file contains confidential information, do not push
 Example of `terraform.tfvarsfile`
 ```terraform
 ibmcloud_api_key = "<ibmcloud_api_key>"
-region = "<region>"
+region = "us-east"
 ```
 {: pre}
 {: codeblock}
@@ -105,14 +108,19 @@ data "ibm_resource_group" "resource_group" {
 {: pre}
 {: codeblock}
 
+Resource example for {{site.data.keyword.databases-for-postgresql}} instance
+
+Setting up a deployment environment begins with creating a resource group. Its name is taken from an environment variable:
+
 ```terraform
-resource "ibm_database" "postgresql_default" {
+# a resource group
+resource "ibm_database" "ibm_postgres_instance" {
   resource_group_id = data.ibm_resource_group.default.id 
-  name              = "<your_database_name>"
-  service           = "<desired_service>"
-  plan              = "<plan_level" 
-  location          = "<location>" 
-  adminpassword     = "<password>" 
+  name              = "provision_terraform_postgres"
+  service           = "databases-for-postgresql"
+  plan              = "standard" 
+  location          = "us-east" 
+  adminpassword     = "password123" 
   group {
     group_id = "member"
     memory {
