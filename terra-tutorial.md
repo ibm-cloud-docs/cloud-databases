@@ -81,8 +81,8 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
 
 1. In your project directory, create a `terraform.tfvars` file and add the {{site.data.keyword.cloud}} API key that you created earlier. In addition, specify the region where you want your {{site.data.keyword.cloud}} resources to be created. If no region is specified, Terraform on {{site.data.keyword.cloud}} automatically creates your resources in the `us-south` region. The `terraform.tfvars` file is a variables file that you store on your local machine. When you initialize the CLI, all variables that are defined in this file are automatically loaded into Terraform on {{site.data.keyword.cloud}} and you can reference them in every Terraform on {{site.data.keyword.cloud}} configuration file in the same project directory.
 
-Because the `terraform.tfvars` file contains confidential information, do not push this file to a version control system. This file is meant to be on your local system only.
-{: .important}
+   Because the `terraform.tfvars` file contains confidential information, do not push this file to a version control system. This file is meant to be on your local system only.
+   {: .important}
    
    Example of `terraform.tfvars` file
    ```terraform
