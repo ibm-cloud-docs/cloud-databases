@@ -2,7 +2,7 @@
 
 copyright:
    years: 2022
-lastupdated: "2022-05-16"
+lastupdated: "2022-05-17"
 
 keywords: IBM Cloud Databases, ICD, terraform
 
@@ -36,7 +36,7 @@ In this tutorial, you learn how to use Terraform to provision a {{site.data.keyw
 
 Before beginning the process of provisioning a database with Terraform, [you need to have an {{site.data.keyword.cloud_notm}} account.](https://cloud.ibm.com/registration) 
 
-In this tutorial, you will provision your database using Terraform, which enables you to safely and predictably create, change, and improve infrastructure. It is an open source tool that codifies APIs into declarative configuration files that can be shared amongst team members, treated as code, edited, reviewed, and versioned. It is infrastructure as code. You write down what your infrastructure should look like and Terraform will create, update, remove cloud resources as needed. For more information, see [Understand the basics of Terraform.](https://www.terraform.io/intro){: external} 
+In this tutorial, you provision your database by using Terraform, which enables you to safely and predictably create, change, and improve infrastructure. It is an open source tool that codifies APIs into declarative configuration files that can be shared among team members, which are treated as code, edited, reviewed, and versioned. It is infrastructure as code. You write down what your infrastructure should look like and Terraform will create, update, remove cloud resources as needed. For more information, see [Understand the basics of Terraform.](https://www.terraform.io/intro){: external} 
 
 To support a multi-cloud approach, Terraform works with providers. A provider is responsible for understanding API interactions and exposing resources. {{site.data.keyword.cloud}} has its provider for Terraform, enabling users of {{site.data.keyword.cloud}} to manage resources with Terraform. Although Terraform is categorized as infrastructure as code, it is not limited to Infrastructure-As-A-Service resources.
 
@@ -71,7 +71,7 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
 
 1. [Create or retrieve an {{site.data.keyword.cloud}} API key.](/docs/account?topic=account-userapikey#create_user_key) The API key is used to authenticate with the {{site.data.keyword.cloud}} platform and to determine your permissions for {{site.data.keyword.cloud}} services.
 
-1. Create a Terraform on {{site.data.keyword.cloud_notm}} Databases project directory. The directory will hold all your configuration files that you create as part of this tutorial. The directory in this tutorial is named `tf-postgres`, but you can use any name for the directory.
+1. Create a Terraform on {{site.data.keyword.cloud_notm}} Databases project directory. The directory holds all your configuration files that you create as part of this tutorial. The directory in this tutorial is named `tf-postgres`, but you can use any name for the directory.
 
    ```terraform
    mkdir tf-postgres && cd tf-postgres
@@ -172,17 +172,17 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
 
    - **Resource group** - the Resource Group value you declared.
    - **Name** - The service name can be any string and is the name that is used on the web and in the CLI to identify the new deployment.
-   - **Service** - For {{site.data.keyword.databases-for-postgresql}}, the service ID is `databases-for-postgresql`. Choose the correct Service ID for your desired deployment.
+   - **Service** - For {{site.data.keyword.databases-for-postgresql}}, the service ID is `databases-for-postgresql`. Choose the correct Service ID for your wanted deployment.
    - **Plan** - This tutorial uses a Standard plan. For more information on pricing, see [{{site.data.keyword.cloud}} Pricing](https://www.ibm.com/cloud/pricing).
    - **Location** - Choose a suitable region for your deployment instance.
-   - **Admin Password** - The {{site.data.keyword.databases-for-postgresql}} service is provisioned with an admin user, so you can manage PostgreSQL by using its command line tool, `psql`. For more information, see [Setting the Admin Password](/docs/databases-for-postgresql?topic=databases-for-postgresql-admin-password).
-   - **Group** Scaling groups represent the various resources that are allocated to a deployment. To see an example for configuring and deploying a database using `group` attributes, see [Sample database instance by using group attributes](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database#sample-database-instance-by-using-group-attributes){: external} .
+   - **Admin Password** - The {{site.data.keyword.databases-for-postgresql}} service is provisioned with an admin user, so you can manage PostgreSQL by using its command-line tool, `psql`. For more information, see [Setting the Admin Password](/docs/databases-for-postgresql?topic=databases-for-postgresql-admin-password).
+   - **Group** Scaling groups represent the various resources that are allocated to a deployment. To see an example for configuring and deploying a database that uses `group` attributes, see [Sample database instance by using group attributes.](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database#sample-database-instance-by-using-group-attributes){: external}
 
 ## Step 4: Test your configuration
 {: #tutorial-provision-postgres-test}
 {: step}
 
-Now that you configured the {{site.data.keyword.cloud}} Provider plug-in for your resource you can start using Terraform on {{site.data.keyword.cloud}} to initialize, execute plan and apply commands to provision the resource. For more information, about Terraform commands to test your configuration, see [Provisioning {{site.data.keyword.cloud}} resources](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-manage_resources#provision_resources).
+Now that you configured the {{site.data.keyword.cloud}} Provider plug-in for your resource you can start using Terraform on {{site.data.keyword.cloud}} to initialize, run, plan, and apply commands to provision the resource. For more information, about Terraform commands to test your configuration, see [Provisioning {{site.data.keyword.cloud}} resources](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-manage_resources#provision_resources).
 
 To view sample Terraform templates with the complete Terraform configuration files to test, refer to [Sample templates](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-provider-template#sample-templates).
 
