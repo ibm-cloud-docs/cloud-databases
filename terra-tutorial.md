@@ -92,7 +92,7 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
    {: pre}
    {: codeblock}
    
-   The `us-east` region is provided as an example, not a requirement. Use the region that works best for your instance deployment.{: .note} 
+   The `us-east` region is provided as an example, not a requirement. Use the region that works best for your instance deployment.
    
 1. In the same project directory, create a provider configuration file that is named `provider.tf`. Use this file to configure the {{site.data.keyword.cloud}} Provider plug-in with the {{site.data.keyword.cloud}} API key from your `terraform.tfvars` file. The plug-in uses this key to access {{site.data.keyword.cloud}} and to work with your {{site.data.keyword.cloud}} service. To access a variable value from the `terraform.tfvars` file, you must first declare the variable in the `provider.tf` file and then reference the variable by using the `var.<variable_name>` syntax.
 
