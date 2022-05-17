@@ -151,9 +151,6 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
        disk {
          allocation_mb = 5120
        }
-       cpu {
-         allocation_count = 3
-       }
      }
      timeouts {
        create = "120m"
