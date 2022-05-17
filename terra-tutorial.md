@@ -121,7 +121,7 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
 {: #tutorial-provision-postgres-provision-instance}
 {: step}
 
-1. To set up a deployment environment, create a resource group. By organizing your services into resource groups, you can organize your account resources for access control and billing purposes. For more information, see [Using the catalog](/docs/databases-for-postgresql?topic=cloud-databases-provisioning#catalog). 
+1. To set up a deployment environment, create a resource group that organizes your account resources for access control and billing purposes. For more information, see [Using the catalog](/docs/databases-for-postgresql?topic=cloud-databases-provisioning#catalog). 
 
    Example
    ```terraform
