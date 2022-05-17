@@ -136,7 +136,7 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
 
    ```terraform
    # a resource group
-   resource "ibm_database" "ibm_postgres_instance" {
+   resource "ibm_database" "postgres_db" {
      resource_group_id = data.ibm_resource_group.postgres_resource_group_1.id 
      name              = "provision_terraform_postgres"
      service           = "databases-for-postgresql"
@@ -150,6 +150,9 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
        }
        disk {
          allocation_mb = 5120
+       }
+       cpu {
+         allocation_count = 3
        }
      }
      timeouts {
@@ -170,13 +173,17 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
    {: codeblock}
    {: pre}
 
-   - **Resource group** - the Resource Group value you declared.
+   - **Resource group** - the Resource Group value you declare. 
    - **Name** - The service name can be any string and is the name that is used on the web and in the CLI to identify the new deployment.
    - **Service** - For {{site.data.keyword.databases-for-postgresql}}, the service ID is `databases-for-postgresql`. Choose the correct Service ID for your wanted deployment.
    - **Plan** - This tutorial uses a Standard plan. For more information on pricing, see [{{site.data.keyword.cloud}} Pricing](https://www.ibm.com/cloud/pricing).
    - **Location** - Choose a suitable region for your deployment instance.
    - **Admin Password** - The {{site.data.keyword.databases-for-postgresql}} service is provisioned with an admin user, so you can manage PostgreSQL by using its command-line tool, `psql`. For more information, see [Setting the Admin Password](/docs/databases-for-postgresql?topic=databases-for-postgresql-admin-password).
    - **Group** Scaling groups represent the various resources that are allocated to a deployment. To see an example for configuring and deploying a database that uses `group` attributes, see [Sample database instance by using group attributes.](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database#sample-database-instance-by-using-group-attributes){: external}
+   - **Group values** - Memory, disk, and CPU values are all based on minimum requirements for provisioning a {{site.data.keyword.databases-for-postgresql}} instance.
+   - **Timeouts** - Create, update, and delete values for this resource. ICD `create` typically takes between 30-45 minutes. `delete` and `update` typically take one minute. Provisioning times are unpredictable. If the deployment fails due to a timeout, import the database resource once the `create` is complete.
+
+
 
 ## Step 4: Test your configuration
 {: #tutorial-provision-postgres-test}
