@@ -164,7 +164,7 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
    
    ```terraform
    output "Postgresql" {
-     value = "http://${ibm_database.postgresql_default.connectionstrings[0].composed}"
+     value = "http://${ibm_database.postgresql_db.connectionstrings[0].composed}"
    }
    ```
    {: codeblock}
