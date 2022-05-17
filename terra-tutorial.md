@@ -175,7 +175,7 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
 
    - **Resource group** - the Resource Group value you declare. 
    - **Name** - The service name can be any string and is the name that is used on the web and in the CLI to identify the new deployment.
-   - **Service** - For {{site.data.keyword.databases-for-postgresql}}, the service ID is `databases-for-postgresql`. Choose the correct Service ID for your wanted deployment.
+   - **Service** - For {{site.data.keyword.databases-for-postgresql}}, the service ID is `databases-for-postgresql`. Choose the correct Service ID for your deployment.
    - **Plan** - This tutorial uses a Standard plan. For more information on pricing, see [{{site.data.keyword.cloud}} Pricing](https://www.ibm.com/cloud/pricing).
    - **Location** - Choose a suitable region for your deployment instance.
    - **Admin Password** - The {{site.data.keyword.databases-for-postgresql}} service is provisioned with an admin user, so you can manage PostgreSQL by using its command-line tool, `psql`. For more information, see [Setting the Admin Password](/docs/databases-for-postgresql?topic=databases-for-postgresql-admin-password).
