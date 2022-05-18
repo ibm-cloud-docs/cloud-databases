@@ -52,7 +52,7 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
 
 1. After you install the command-line, set up and configure the {{site.data.keyword.cloud}} Provider plug-in. For more information, see [Configuring the {{site.data.keyword.cloud}} Provider plug-in.](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started#install_provider)
 
-1. Create a `versions.tf` file with the following content. In this file, specify the {{site.data.keyword.cloud}} Provider plug-in version that you want to use with the version parameter for {{site.data.keyword.cloud}} Provider plug-in, and `required_version` to specify the Terraform template version. If no version parameter is specified, {{site.data.keyword.cloud}} Provider automatically uses the latest version of the provider. For a list of supported {{site.data.keyword.cloud}} Provider versions, see [{{site.data.keyword.cloud}} Provider plug-in releases](https://github.com/IBM-Cloud/terraform-provider-ibm/releases){: external}.
+1. Create a `versions.tf` file with the following content. In this file, specify the {{site.data.keyword.cloud}} Provider plug-in version that you want to use with the `version` parameter for {{site.data.keyword.cloud}} Provider plug-in. If no version parameter is specified, {{site.data.keyword.cloud}} Provider automatically uses the latest version of the provider. For a list of supported {{site.data.keyword.cloud}} Provider versions, see [{{site.data.keyword.cloud}} Provider plug-in releases](https://github.com/IBM-Cloud/terraform-provider-ibm/releases){: external}.
 
    Example
 
@@ -125,9 +125,7 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
 
    Example
    ```terraform
-   data "ibm_resource_group" "resource_group" {
-     name = "postgres_resource_group_1"
-   }
+   data "ibm_resource_group" "postgres_tutorial"
    ```
    {: pre}
    {: codeblock}
@@ -137,8 +135,8 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
    ```terraform
    # a resource group
    resource "ibm_database" "postgresql_db" {
-     resource_group_id = data.ibm_resource_group.group.id 
-     name              = "provision_terraform_postgres"
+     resource_group_id = data.ibm_resource_group.postgres_tutorial.id 
+     name              = "terraform_postgres"
      service           = "databases-for-postgresql"
      plan              = "standard" 
      location          = "us-east" 
@@ -151,11 +149,6 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
        disk {
          allocation_mb = 5120
        }
-     }
-     timeouts {
-       create = "120m"
-       update = "120m"
-       delete = "15m"
      }
    }
    
