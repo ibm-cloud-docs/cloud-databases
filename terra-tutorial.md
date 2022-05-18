@@ -158,11 +158,7 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
        delete = "15m"
      }
    }
-   ```
-   {: pre}
-   {: codeblock}
    
-   ```terraform
    output "Postgresql" {
      value = "http://${ibm_database.postgresql_db.connectionstrings[0].composed}"
    }
