@@ -137,7 +137,7 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
    ```terraform
    # a resource group
    resource "ibm_database" "postgresql_db" {
-     resource_group_id = data.ibm_resource_group.postgres_resource_group_1.id 
+     resource_group_id = data.ibm_resource_group.group.id 
      name              = "provision_terraform_postgres"
      service           = "databases-for-postgresql"
      plan              = "standard" 
