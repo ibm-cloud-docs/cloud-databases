@@ -2,7 +2,7 @@
 
 copyright:
    years: 2022
-lastupdated: "2022-05-17"
+lastupdated: "2022-05-18"
 
 keywords: IBM Cloud Databases, ICD, terraform
 
