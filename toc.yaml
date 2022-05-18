@@ -43,6 +43,7 @@ toc:
           topics: 
           - howto-tutorials.md
           - terra-postgres-tutorial.md
+          - terra-mongodb-tutorial.md
           - k8-tutorial.md
           - truck-tracker-tutorial.md
       - topicgroup: 
