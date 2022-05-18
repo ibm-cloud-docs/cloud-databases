@@ -169,12 +169,12 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
    - **Resource group** - the Resource Group value you declare. 
    - **Name** - The service name can be any string and is the name that is used on the web and in the CLI to identify the new deployment.
    - **Service** - For {{site.data.keyword.databases-for-postgresql}}, the service ID is `databases-for-postgresql`. Choose the correct Service ID for your deployment.
-   - **Plan** - This tutorial uses a Standard plan. For more information on pricing, see [{{site.data.keyword.cloud}} Pricing](https://www.ibm.com/cloud/pricing).
+   - **Plan** - This tutorial uses a Standard plan. For more information, see [{{site.data.keyword.cloud}} Pricing](https://www.ibm.com/cloud/pricing).
    - **Location** - Choose a suitable region for your deployment instance.
    - **Admin Password** - The {{site.data.keyword.databases-for-postgresql}} service is provisioned with an admin user, so you can manage PostgreSQL by using its command-line tool, `psql`. For more information, see [Setting the Admin Password](/docs/databases-for-postgresql?topic=databases-for-postgresql-admin-password).
    - **Group** Scaling groups represent the various resources that are allocated to a deployment. To see an example for configuring and deploying a database that uses `group` attributes, see [Sample database instance by using group attributes.](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database#sample-database-instance-by-using-group-attributes){: external}
    - **Group values** - Memory, disk, and CPU values are all based on minimum requirements for provisioning a {{site.data.keyword.databases-for-postgresql}} instance.
-   - **Timeouts** - Create, update, and delete values for this resource. ICD `create` typically takes between 30-45 minutes. `delete` and `update` typically take one minute. Provisioning times are unpredictable. If the deployment fails due to a timeout, import the database resource once the `create` is complete.
+   - **Timeouts** - Create, update, and delete values for this resource. ICD `create` typically takes in the range of 30 - 45 minutes. `delete` and `update` typically take one minute. Provisioning times are unpredictable. If the deployment fails due to a timeout, import the database resource once the `create` is complete.
 
 
 
@@ -182,7 +182,7 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
 {: #tutorial-provision-postgres-test}
 {: step}
 
-Now that you configured the {{site.data.keyword.cloud}} Provider plug-in for your resource you can start using Terraform on {{site.data.keyword.cloud}} to initialize, run, plan, and apply commands to provision the resource. For more information, about Terraform commands to test your configuration, see [Provisioning {{site.data.keyword.cloud}} resources](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-manage_resources#provision_resources).
+Now that you configured the {{site.data.keyword.cloud}} Provider plug-in for your resource, you can use Terraform on {{site.data.keyword.cloud}} to initialize, run, plan, and apply commands to provision the resource. For more information, about Terraform commands to test your configuration, see [Provisioning {{site.data.keyword.cloud}} resources](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-manage_resources#provision_resources).
 
 To view sample Terraform templates with the complete Terraform configuration files to test, refer to [Sample templates](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-provider-template#sample-templates).
 
