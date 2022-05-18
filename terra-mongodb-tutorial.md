@@ -121,12 +121,12 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
 {: #tutorial-provision-mongodb-provision-instance}
 {: step}
 
-1. To set up a deployment environment, create a resource group that organizes your account resources for access control and billing purposes. For more information, see [Using the catalog](/docs/databases-for-postgresql?topic=cloud-databases-provisioning#catalog). 
+1. To set up a deployment environment, create a resource group that organizes your account resources for access control and billing purposes. For more information, see [Using the catalog](/docs/databases-for-mongodb?topic=cloud-databases-provisioning#catalog). 
 
    Example
    ```terraform
    data "ibm_resource_group" "resource_group" {
-     name = "postgres_resource_group_1"
+     name = "mongodb_resource_group_1"
    }
    ```
    {: pre}
@@ -136,10 +136,10 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
 
    ```terraform
    # a resource group
-   resource "ibm_database" "postgresql_db" {
+   resource "ibm_database" "mongodb_db" {
      resource_group_id = data.ibm_resource_group.group.id 
-     name              = "provision_terraform_postgres"
-     service           = "databases-for-postgresql"
+     name              = "provision_terraform_mongodb"
+     service           = "databases-for-mongodb"
      plan              = "standard" 
      location          = "us-east" 
      adminpassword     = "password123" 
@@ -151,6 +151,9 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
        disk {
          allocation_mb = 5120
        }
+       cpu {
+           allocation_count = 6
+       }
      }
      timeouts {
        create = "120m"
@@ -159,8 +162,8 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
      }
    }
    
-   output "Postgresql" {
-     value = "http://${ibm_database.postgresql_db.connectionstrings[0].composed}"
+   output "Mongodb" {
+     value = "http://${ibm_database.mongodb_db.connectionstrings[0].composed}"
    }
    ```
    {: codeblock}
