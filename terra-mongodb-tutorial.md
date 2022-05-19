@@ -47,12 +47,12 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
 1. Follow the steps at [Installing the Terrafom CLI](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started) to install the Terraform CLI.
 
 ## Step 2: Configure the {{site.data.keyword.cloud}} Provider plug-in
-{: #tutorial-provision-mongodb-config-provider}
+{: #tutorial-provision-postgres-config-provider}
 {: step}
 
 1. After you install the command-line, set up and configure the {{site.data.keyword.cloud}} Provider plug-in. For more information, see [Configuring the {{site.data.keyword.cloud}} Provider plug-in.](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started#install_provider)
 
-1. Create a `versions.tf` file with the following content. In this file, specify the {{site.data.keyword.cloud}} Provider plug-in version that you want to use with the `version` parameter for {{site.data.keyword.cloud}} Provider plug-in. If no version parameter is specified, {{site.data.keyword.cloud}} Provider automatically uses the latest version of the provider. For a list of supported {{site.data.keyword.cloud}} Provider versions, see [{{site.data.keyword.cloud}} Provider plug-in releases](https://github.com/IBM-Cloud/terraform-provider-ibm/releases){: external}.
+1. Create a `versions.tf` file with the following content. In this file, specify the {{site.data.keyword.cloud}} Provider plug-in version that you want to use with the `version` parameter for Provider plug-in. If no version parameter is specified, {{site.data.keyword.cloud}} Provider automatically uses the latest version of the provider. For a list of supported versions, see [{{site.data.keyword.cloud}} Provider plug-in releases](https://github.com/IBM-Cloud/terraform-provider-ibm/releases){: external}.
 
    Example
 
@@ -116,7 +116,7 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
        ibmcloud_api_key   = var.ibmcloud_api_key
        region = var.region
        }
-       
+
    data "ibm_resource_group" "mongodb_tutorial" 
 
    resource "ibm_database" "mongodb_db" {
