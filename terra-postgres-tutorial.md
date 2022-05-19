@@ -50,24 +50,6 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
 {: #tutorial-provision-postgres-config-provider}
 {: step}
 
-1. After you install the command-line, set up and configure the {{site.data.keyword.cloud}} Provider plug-in. For more information, see [Configuring the {{site.data.keyword.cloud}} Provider plug-in.](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started#install_provider)
-
-1. Create a `versions.tf` file with the following content. In this file, specify the {{site.data.keyword.cloud}} Provider plug-in version that you want to use with the `version` parameter for Provider plug-in. If no version parameter is specified, {{site.data.keyword.cloud}} Provider automatically uses the latest version of the provider. For a list of supported versions, see [{{site.data.keyword.cloud}} Provider plug-in releases](https://github.com/IBM-Cloud/terraform-provider-ibm/releases){: external}.
-
-   Example
-
-   ```terraform
-   terraform {
-     required_providers {
-       ibm = {
-         source = "IBM-CLoud/ibm"
-         version = "-> 1.41.0"
-       }
-     }
-   }
-   ```
-   {: codeblock}
-
 1. [Create or retrieve an {{site.data.keyword.cloud}} API key.](/docs/account?topic=account-userapikey#create_user_key) The API key is used to authenticate with the {{site.data.keyword.cloud}} platform and to determine your permissions for {{site.data.keyword.cloud}} services.
 
 1. Create a Terraform on {{site.data.keyword.cloud_notm}} Databases project directory. The directory holds all your configuration files that you create as part of this tutorial. The directory in this tutorial is named `tf-postgres`, but you can use any name for the directory.
@@ -97,45 +79,48 @@ Great! Now that you completed your Terraform on {{site.data.keyword.cloud}} setu
 {: #tutorial-provision-postgres-provision-instance}
 {: step}
 
-1. In the same project directory, create a provider configuration file that is named `postgres.tf`. Use this file to configure the {{site.data.keyword.cloud}} Provider plug-in with the {{site.data.keyword.cloud}} API key from your `terraform.tfvars` file. The plug-in uses this key to access {{site.data.keyword.cloud}} and to work with your {{site.data.keyword.cloud}} service. To access a variable value from the `terraform.tfvars` file, you must first declare the variable in the `provider.tf` file and then reference the variable by using the `var.<variable_name>` syntax.
+Create a provider configuration file that is named `postgres.tf`. Use this file to configure the {{site.data.keyword.cloud}} Provider plug-in with the {{site.data.keyword.cloud}} API key from your `terraform.tfvars` file. The plug-in uses this key to access {{site.data.keyword.cloud}} and to work with your {{site.data.keyword.cloud}} service. To access a variable value from the `terraform.tfvars` file, you must first declare the variable in the `provider.tf` file and then reference the variable by using the `var.<variable_name>` syntax.
 
    Example of `provider.tf` file
-   
-   ```terraform
-   variable "ibmcloud_api_key" {}
-   variable "region" {}
-   ```
-   {: codeblock}
-   
-   ```terraform
-   provider "ibm" {
-       ibmcloud_api_key   = var.ibmcloud_api_key
-       region = var.region
-       }
-   data "ibm_resource_group" "postgres_tutorial"
-   resource "ibm_database" "postgresql_db" {
-     resource_group_id = data.ibm_resource_group.postgres_tutorial.id 
-     name              = "terraform_postgres"
-     service           = "databases-for-postgresql"
-     plan              = "standard" 
-     location          = "us-east" 
-     adminpassword     = "password123" 
-     group {
-       group_id = "member"
-       memory {
-         allocation_mb = 1024
-       }
-       disk {
-         allocation_mb = 5120
-       }
-     }
-   }
-   
-   output "Postgresql" {
-     value = "http://${ibm_database.postgresql_db.connectionstrings[0].composed}"
-   }
-   ```
-   {: codeblock}
+  
+```terraform
+terraform {
+  required_providers {
+    ibm = {
+      source = "IBM-CLoud/ibm"
+      version = "-> 1.41.0"
+    }
+  }  
+  provider "ibm" {
+    ibmcloud_api_key = var.ibmcloud_api_key
+    region = var.region
+  }
+  data "ibm_resource_group" "postgres_tutorial" {
+    name = "terraform_postgres"
+  }
+  resource "ibm_database" "postgresql_db" {
+    resource_group_id = data.ibm_resource_group.postgres_tutorial.id 
+    name              = "terraform_postgres"
+    service           = "databases-for-postgresql"
+    plan              = "standard" 
+    location          = "us-east" 
+    adminpassword     = "password123" 
+  }
+  group {
+    group_id = "member"
+    memory {
+      allocation_mb = 1024
+    }
+    disk {
+      allocation_mb = 5120
+    }
+  }
+
+output "Postgresql" {
+value = "http://${ibm_database.postgresql_db.connectionstrings[0].composed}"
+}
+```
+{: codeblock}
 
    - **Resource group** - the Resource Group value you declare. 
    - **Name** - The service name can be any string and is the name that is used on the web and in the CLI to identify the new deployment.
