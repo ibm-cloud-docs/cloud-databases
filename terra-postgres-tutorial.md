@@ -66,7 +66,6 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
      }
    }
    ```
-   {: pre}
    {: codeblock}
 
 1. [Create or retrieve an {{site.data.keyword.cloud}} API key.](/docs/account?topic=account-userapikey#create_user_key) The API key is used to authenticate with the {{site.data.keyword.cloud}} platform and to determine your permissions for {{site.data.keyword.cloud}} services.
@@ -76,7 +75,6 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
    ```terraform
    mkdir tf-postgres && cd tf-postgres
    ```
-   {: pre}
    {: codeblock}
 
 1. In your project directory, create a `tfvars` file and add the {{site.data.keyword.cloud}} API key that you created earlier. In addition, specify the region where you want your {{site.data.keyword.cloud}} resources to be created. If no region is specified, Terraform on {{site.data.keyword.cloud}} automatically creates your resources in the `us-south` region. The `tfvars` file is a variables file that you store on your local machine. When you initialize the CLI, all variables that are defined in this file are automatically loaded into Terraform on {{site.data.keyword.cloud}} and you can reference them in every Terraform on {{site.data.keyword.cloud}} configuration file in the same project directory.
@@ -89,7 +87,6 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
    ibmcloud_api_key = "<ibmcloud_api_key>"
    region = "us-east"
    ```
-   {: pre}
    {: codeblock}
    
    The `us-east` region is provided as an example, not a requirement. Use the region that works best for your instance deployment.
@@ -108,7 +105,6 @@ Great! Now that you completed your Terraform on {{site.data.keyword.cloud}} setu
    variable "ibmcloud_api_key" {}
    variable "region" {}
    ```
-   {: pre}
    {: codeblock}
    
    ```terraform
@@ -140,7 +136,6 @@ Great! Now that you completed your Terraform on {{site.data.keyword.cloud}} setu
    }
    ```
    {: codeblock}
-   {: pre}
 
    - **Resource group** - the Resource Group value you declare. 
    - **Name** - The service name can be any string and is the name that is used on the web and in the CLI to identify the new deployment.
