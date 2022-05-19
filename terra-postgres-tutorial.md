@@ -61,19 +61,19 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
 
 1. In your project directory, create a `tfvars` file and add the {{site.data.keyword.cloud}} API key that you created earlier. In addition, specify the region where you want your {{site.data.keyword.cloud}} resources to be created. If no region is specified, Terraform on {{site.data.keyword.cloud}} automatically creates your resources in the `us-south` region. The `tfvars` file is a variables file that you store on your local machine. When you initialize the CLI, all variables that are defined in this file are automatically loaded into Terraform on {{site.data.keyword.cloud}} and you can reference them in every Terraform on {{site.data.keyword.cloud}} configuration file in the same project directory.
 
-   Because the `tfvars` file contains confidential information, do not push this file to a version control system. This file is meant to be on your local system only.
-   {: .important}
+Because the `tfvars` file contains confidential information, do not push this file to a version control system. This file is meant to be on your local system only.
+{: .important}
    
-   Example of `tfvars` file
-   ```terraform
-   ibmcloud_api_key = "<ibmcloud_api_key>"
-   region = "us-east"
-   ```
-   {: codeblock}
-   
-   The `us-east` region is provided as an example, not a requirement. Use the region that works best for your instance deployment.
-  
-Great! Now that you completed your Terraform on {{site.data.keyword.cloud}} setup, you can go ahead and provision a {{site.data.keyword.databases-for-postgresql}} instance.
+Example of `tfvars` file
+```terraform
+ibmcloud_api_key = "<ibmcloud_api_key>"
+region = "us-east"
+```
+{: codeblock}
+
+The `us-east` region is provided as an example, not a requirement. Use the region that works best for your instance deployment.{: .note}
+
+Great, now that you completed your Terraform on {{site.data.keyword.cloud}} setup, you can go ahead and provision a {{site.data.keyword.databases-for-postgresql}} instance.
 
 ## Step 3: Provision a {{site.data.keyword.databases-for-postgresql}} instance
 {: #tutorial-provision-postgres-provision-instance}
