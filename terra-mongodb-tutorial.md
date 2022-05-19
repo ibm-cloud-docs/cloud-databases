@@ -93,7 +93,13 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
    {: codeblock}
    
    The `us-east` region is provided as an example, not a requirement. Use the region that works best for your instance deployment.
-   
+
+   Great! Now that you completed your Terraform on {{site.data.keyword.cloud}} setup, you can go ahead and provision a {{site.data.keyword.databases-for-mongodb}} instance.
+
+## Step 3: Provision a {{site.data.keyword.databases-for-mongodb}} instance
+{: #tutorial-provision-mongodb-provision-instance}
+{: step}
+
 1. In the same project directory, create a provider configuration file that is named `provider.tf`. Use this file to configure the {{site.data.keyword.cloud}} Provider plug-in with the {{site.data.keyword.cloud}} API key from your `terraform.tfvars` file. The plug-in uses this key to access {{site.data.keyword.cloud}} and to work with your {{site.data.keyword.cloud}} service. To access a variable value from the `terraform.tfvars` file, you must first declare the variable in the `provider.tf` file and then reference the variable by using the `var.<variable_name>` syntax.
 
    Example of `provider.tf` file
@@ -110,35 +116,12 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
        ibmcloud_api_key   = var.ibmcloud_api_key
        region = var.region
        }
-   ```
-   {: pre}
-   {: codeblock}
-   
-   
-   Great! Now that you completed your Terraform on {{site.data.keyword.cloud}} setup, you can go ahead and provision a {{site.data.keyword.databases-for-mongodb}} instance.
+       
+   data "ibm_resource_group" "mongodb_tutorial" 
 
-## Step 3: Provision a {{site.data.keyword.databases-for-mongodb}} instance
-{: #tutorial-provision-mongodb-provision-instance}
-{: step}
-
-1. To set up a deployment environment, create a resource group that organizes your account resources for access control and billing purposes. For more information, see [Using the catalog](/docs/databases-for-mongodb?topic=cloud-databases-provisioning#catalog). 
-
-   Example
-   ```terraform
-   data "ibm_resource_group" "resource_group" {
-     name = "mongodb_resource_group_1"
-   }
-   ```
-   {: pre}
-   {: codeblock}
-
-2. Provision your {{site.data.keyword.databases-for-mongodb}} instance
-
-   ```terraform
-   # a resource group
    resource "ibm_database" "mongodb_db" {
-     resource_group_id = data.ibm_resource_group.group.id 
-     name              = "provision_terraform_mongodb"
+     resource_group_id = data.ibm_resource_group.mongodb_tutorial.id
+     name              = "terraform_mongodb"
      service           = "databases-for-mongodb"
      plan              = "standard" 
      location          = "us-east" 
@@ -146,10 +129,10 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
      group {
        group_id = "member"
        memory {
-         allocation_mb = 1024
+         allocation_mb = 14336
        }
        disk {
-         allocation_mb = 5120
+         allocation_mb = 20480
        }
        cpu {
            allocation_count = 6
