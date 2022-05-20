@@ -79,7 +79,7 @@ Great, now that you completed your Terraform on {{site.data.keyword.cloud}} setu
 {: #tutorial-provision-postgres-provision-instance}
 {: step}
 
-Create a provider configuration file that is named `postgres.tf`. Use this file to configure the {{site.data.keyword.cloud}} Provider plug-in with the {{site.data.keyword.cloud}} API key from your `terraform.tfvars` file. The plug-in uses this key to access {{site.data.keyword.cloud}} and to work with your {{site.data.keyword.cloud}} service. To access a variable value from the `terraform.tfvars` file, you must first declare the variable in the `provider.tf` file and then reference the variable by using the `var.<variable_name>` syntax.
+Create a provider configuration file that is named `postgres.tf`. Use this file to configure the {{site.data.keyword.cloud}} Provider plug-in with the {{site.data.keyword.cloud}} API key from your `tfvars` file. The plug-in uses this key to access {{site.data.keyword.cloud}} and to work with your {{site.data.keyword.cloud}} service. To access a variable value from the `tfvars` file, you must first declare the variable in the `provider.tf` file and then reference the variable by using the `var.<variable_name>` syntax.
 
    Example of `provider.tf` file
   
