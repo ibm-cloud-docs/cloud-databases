@@ -132,8 +132,6 @@ value = "http://${ibm_database.postgresql_db.connectionstrings[0].composed}"
    - **Group values** - Memory, disk, and CPU values are all based on minimum requirements for provisioning a {{site.data.keyword.databases-for-postgresql}} instance.
    - **Timeouts** - Create, update, and delete values for this resource. ICD `create` typically takes in the range of 30 - 45 minutes. `delete` and `update` typically take one minute. Provisioning times are unpredictable. If the deployment fails due to a timeout, import the database resource once the `create` is complete.
 
-
-
 ## Step 4: Test your configuration
 {: #tutorial-provision-postgres-test}
 {: step}
