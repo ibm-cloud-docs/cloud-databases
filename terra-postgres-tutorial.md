@@ -64,14 +64,14 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
 Because the `tfvars` file contains confidential information, do not push this file to a version control system. This file is meant to be on your local system only.
 {: .important}
    
-Example of `tfvars` file
-```terraform
-ibmcloud_api_key = "<ibmcloud_api_key>"
-region = "us-east"
-```
-{: codeblock}
-
-The `us-east` region is provided as an example, not a requirement. Use the region that works best for your instance deployment.{: .note}
+   Example of `tfvars` file
+   ```terraform
+   ibmcloud_api_key = "<ibmcloud_api_key>"
+   region = "us-east"
+   ```
+   {: codeblock}
+   
+   The `us-east` region is provided as an example, not a requirement. Use the region that works best for your instance deployment.{: .note}
 
 Great, now that you completed your Terraform on {{site.data.keyword.cloud}} setup, you can go ahead and provision a {{site.data.keyword.databases-for-postgresql}} instance.
 
