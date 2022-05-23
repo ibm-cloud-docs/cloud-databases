@@ -2,7 +2,7 @@
 
 copyright:
    years: 2022
-lastupdated: "2022-05-20"
+lastupdated: "2022-05-23"
 
 keywords: IBM Cloud Databases, ICD, terraform, postgresql terraform
 
@@ -40,10 +40,11 @@ In this tutorial, you provision your database by using Terraform, which enables 
 
 To support a multi-cloud approach, Terraform works with providers. A provider is responsible for understanding API interactions and exposing resources. {{site.data.keyword.cloud}} has its provider for Terraform, enabling users of {{site.data.keyword.cloud}} to manage resources with Terraform. Although Terraform is categorized as infrastructure as code, it is not limited to Infrastructure-As-A-Service resources. For more information, see [ibm_database](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database).
 
-## Step 1: Install the Terraform CLI
+## Step 1: Install Terraform and the Terraform CLI
 {: #tutorial-provision-postgres-install-cli}
 {: step}
 
+1. Follow the steps at [Install Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli?in=terraform/docker-get-started){: external} to install Terraform.
 1. Follow the steps at [Installing the Terrafom CLI](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started) to install the Terraform CLI.
 
 ## Step 2: Configure the {{site.data.keyword.cloud}} Provider plug-in
