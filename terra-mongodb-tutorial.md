@@ -175,7 +175,7 @@ Now that you configured the {{site.data.keyword.cloud}} Provider plug-in for you
 | [terraform fmt](https://www.terraform.io/cli/commands/fmt){: external} | The terraform fmt command is used to rewrite Terraform configuration files to a canonical format and style. | 
 | [terraform validate](https://www.terraform.io/cli/commands/validate){: external} | The terraform validate command validates the configuration files in a directory  | 
 | [terraform apply](https://www.terraform.io/cli/commands/apply){: external} | The terraform apply command executes the actions proposed in a Terraform plan. | 
-{: caption="Table 1. Markdown coding for tables" caption-side="bottom"}
+{: caption="Table 1. Terrarform provisioning commands" caption-side="bottom"}
 
  For more information, see [Provisioning {{site.data.keyword.cloud}} resources](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-manage_resources#provision_resources).
 
