@@ -148,8 +148,18 @@ value = "http://${ibm_database.mongodb_db.connectionstrings[0].composed}"
 {: #tutorial-provision-mongodb-test}
 {: step}
 
-Now that you configured the {{site.data.keyword.cloud}} Provider plug-in for your resource you can start using Terraform on {{site.data.keyword.cloud}} to initialize, run, plan, and apply commands to provision the resource. For more information, about Terraform commands to test your configuration, see [Provisioning {{site.data.keyword.cloud}} resources](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-manage_resources#provision_resources).
+Now that you configured the {{site.data.keyword.cloud}} Provider plug-in for your resource, you can start using Terraform on {{site.data.keyword.cloud}} to initialize, run, plan, and apply commands to provision the resource. You'll need the following commands:
 
-To view sample Terraform templates with the complete Terraform configuration files to test, refer to [Sample templates](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-provider-template#sample-templates).
+| Command Description | Command | 
+| -------------- | -------------- | 
+| The terraform init command is used to initialize a working directory containing Terraform configuration files. | [terraform init](https://www.terraform.io/cli/commands/init){: external} | 
+| The terraform fmt command is used to rewrite Terraform configuration files to a canonical format and style. | [terraform fmt](https://www.terraform.io/cli/commands/fmt){: external}  | 
+| The terraform validate command validates the configuration files in a directory | [terraform validate](https://www.terraform.io/cli/commands/validate){: external}  | 
+| The terraform apply command executes the actions proposed in a Terraform plan. | [terraform apply](https://www.terraform.io/cli/commands/apply){: external}   | 
+{: caption="Table 1. Markdown coding for tables" caption-side="bottom"}
+
+ For more information, see [Provisioning {{site.data.keyword.cloud}} resources](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-manage_resources#provision_resources).
+
+ To view sample Terraform templates with the complete Terraform configuration files to test, refer to [Sample templates](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-provider-template#sample-templates).
 
 For an overview of the Terraform resources and data sources that you can use, see the [Index of Terraform on {{site.data.keyword.cloud}} resources and data sources](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-resources-datasource-list).
