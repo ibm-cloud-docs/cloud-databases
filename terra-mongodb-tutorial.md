@@ -92,43 +92,44 @@ terraform {
       version = "-> 1.41.0"
       }
   } 
-  provider "ibm" {
-    ibmcloud_api_key = var.ibmcloud_api_key
-    region = var.region
-  }
+}
 
-  data "ibm_resource_group" "mongodb_tutorial" {
-    name = "terraform_mongodb"
-  }
+provider "ibm" {
+  ibmcloud_api_key = var.ibmcloud_api_key
+  region = var.region
+}
 
-  resource "ibm_database" "mongodb_db" {
-    resource_group_id = data.ibm_resource_group.mongodb_tutorial.id
-    name              = "terraform_mongodb"
-    service           = "databases-for-mongodb"
-    plan              = "standard" 
-    location          = "us-east" 
-    adminpassword     = "password123" 
-  }  
-  group {
-    group_id = "member"
-    memory {
-      allocation_mb = 14336
-    }
-    disk {
-      allocation_mb = 20480
-    }
-    cpu {
-      allocation_count = 6
-    }
+data "ibm_resource_group" "mongodbee_tutorial" {
+  name = "terraform_mongodbee"
+}
+
+resource "ibm_database" "mongodb_dbee" {
+  resource_group_id = data.ibm_resource_group.mongodbee_tutorial.id
+  name              = "terraform_mongodbee"
+  service           = "databases-for-mongodb"
+  plan              = "standard" 
+  location          = "us-east" 
+  adminpassword     = "password123" 
+} 
+group {
+  group_id = "member"
+  memory {
+    allocation_mb = 14336
   }
-  timeouts {create = "120m"
-  update = "120m"
-  delete = "15m"
+  disk {
+    allocation_mb = 20480
+  }
+  cpu {
+    allocation_count = 6
   }
 }
-   
+timeouts {
+  create = "120m"
+  update = "120m"
+  delete = "15m"
+}
 output "Mongodb" {
-value = "http://${ibm_database.mongodb_db.connectionstrings[0].composed}"
+  value = "http://${ibm_database.mongodb_db.connectionstrings[0].composed}"
 }
 ```
 {: codeblock}
