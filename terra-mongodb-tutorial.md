@@ -4,7 +4,7 @@ copyright:
    years: 2022
 lastupdated: "2022-05-23"
 
-keywords: IBM Cloud Databases, ICD, terraform, terraform mongodb
+keywords: IBM Cloud Databases, ICD, terraform, terraform mongodbee
 
 subcollection: cloud-databases
 
@@ -23,16 +23,16 @@ completion-time: 1h
 {:note: .note}
 {:important: .important}
 
-# Provision a {{site.data.keyword.databases-for-mongodb}} instance with Terraform
-{: #tutorial-provision-mongodb-tf}
+# Provision a {{site.data.keyword.databases-for-mongodb}} Enterprise Edition instance with Terraform
+{: #tutorial-provision-mongodbee-tf}
 {: toc-content-type="tutorial"} 
 {: toc-completion-time="1h"} 
 
-In this tutorial, you learn how to use Terraform to provision a {{site.data.keyword.databases-for-mongodb}} instance. 
+In this tutorial, you learn how to use Terraform to provision a {{site.data.keyword.databases-for-mongodb}} Enterprise Edition instance. 
 {: shortdesc}
 
 ## Overview of the available tools
-{: #tutorial-provision-mongodb-tf-prereqs}
+{: #tutorial-provision-mongodbee-tf-prereqs}
 
 Before beginning the process of provisioning a database with Terraform, [you need to have an {{site.data.keyword.cloud_notm}} account.](https://cloud.ibm.com/registration) 
 
@@ -53,10 +53,10 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
 
 1. [Create or retrieve an {{site.data.keyword.cloud}} API key.](/docs/account?topic=account-userapikey#create_user_key) The API key is used to authenticate with the {{site.data.keyword.cloud}} platform and to determine your permissions for {{site.data.keyword.cloud}} services.
 
-1. Create a Terraform on {{site.data.keyword.cloud_notm}} Databases project directory. The directory holds all your configuration files that you create as part of this tutorial. The directory in this tutorial is named `tf-mongodb`, but you can use any name for the directory.
+1. Create a Terraform on {{site.data.keyword.cloud_notm}} Databases project directory. The directory holds all your configuration files that you create as part of this tutorial. The directory in this tutorial is named `tf-mongodbee`, but you can use any name for the directory.
 
    ```terraform
-   mkdir tf-mongodb && cd tf-mongodb
+   mkdir tf-mongodbee && cd tf-mongodbee
    ```
    {: codeblock}
 
@@ -77,7 +77,7 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
    Great! Now that you completed your Terraform on {{site.data.keyword.cloud}} setup, you can go ahead and provision a {{site.data.keyword.databases-for-mongodb}} instance.
 
 ## Step 3: Provision a {{site.data.keyword.databases-for-mongodb}} instance
-{: #tutorial-provision-mongodb-provision-instance}
+{: #tutorial-provision-mongodbee-provision-instance}
 {: step}
 
 1. In the same project directory, create a provider configuration file that is named `provider.tf`. Use this file to configure the {{site.data.keyword.cloud}} Provider plug-in with the {{site.data.keyword.cloud}} API key from your `terraform.tfvars` file. The plug-in uses this key to access {{site.data.keyword.cloud}} and to work with your {{site.data.keyword.cloud}} service. To access a variable value from the `tfvars` file, you must first declare the variable in the `provider.tf` file and then reference the variable by using the `var.<variable_name>` syntax.
@@ -123,13 +123,31 @@ group {
     allocation_count = 6
   }
 }
+group {
+  group_id = "analytics"
+  members { 
+    allocation_count = 1
+  }
+}
+group {
+  group_id = "bi_connector"
+  members { 
+    allocation_count = 1
+  }
+}
 timeouts {
   create = "120m"
   update = "120m"
   delete = "15m"
 }
-output "Mongodb" {
-  value = "http://${ibm_database.mongodb_db.connectionstrings[0].composed}"
+output "bi_connector_connection" {
+  description = "BI Connector connection string"
+  value       = data.ibm_database_connection.mongodb_conn.bi_connector.0.composed.0
+}
+
+output "analytics_connection" {
+  description = "Analytics Node connection string"
+  value       = data.ibm_database_connection.mongodb_conn.analytics.0.composed.0
 }
 ```
 {: codeblock}
