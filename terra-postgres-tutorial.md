@@ -91,31 +91,35 @@ terraform {
       source = "IBM-CLoud/ibm"
       version = "-> 1.41.0"
     }
-  }  
-  provider "ibm" {
-    ibmcloud_api_key = var.ibmcloud_api_key
-    region = var.region
   }
-  data "ibm_resource_group" "postgres_tutorial" {
-    name = "terraform_postgres"
+}  
+
+provider "ibm" {
+  ibmcloud_api_key = var.ibmcloud_api_key
+  region = var.region
+}
+
+data "ibm_resource_group" "postgres_tutorial" {
+  name = "terraform_postgres"
+}
+
+resource "ibm_database" "postgresql_db" {
+  resource_group_id = data.ibm_resource_group.postgres_tutorial.id 
+  name              = "terraform_postgres"
+  service           = "databases-for-postgresql"
+  plan              = "standard" 
+  location          = "us-east" 
+  adminpassword     = "password123" 
+}
+group {
+  group_id = "member"
+  memory {
+    allocation_mb = 1024
   }
-  resource "ibm_database" "postgresql_db" {
-    resource_group_id = data.ibm_resource_group.postgres_tutorial.id 
-    name              = "terraform_postgres"
-    service           = "databases-for-postgresql"
-    plan              = "standard" 
-    location          = "us-east" 
-    adminpassword     = "password123" 
-  }
-  group {
-    group_id = "member"
-    memory {
-      allocation_mb = 1024
+  disk {
+    allocation_mb = 5120
     }
-    disk {
-      allocation_mb = 5120
-    }
-  }
+}
 
 output "Postgresql" {
 value = "http://${ibm_database.postgresql_db.connectionstrings[0].composed}"
