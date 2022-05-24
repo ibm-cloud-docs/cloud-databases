@@ -135,20 +135,20 @@ value = "http://${ibm_database.postgresql_db.connectionstrings[0].composed}"
    - **Admin Password** - The {{site.data.keyword.databases-for-postgresql}} service is provisioned with an admin user, so you can manage PostgreSQL by using its command-line tool, `psql`. For more information, see [Setting the Admin Password](/docs/databases-for-postgresql?topic=databases-for-postgresql-admin-password).
    - **Group** Scaling groups represent the various resources that are allocated to a deployment. To see an example for configuring and deploying a database that uses `group` attributes, see [Sample database instance by using group attributes.](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database#sample-database-instance-by-using-group-attributes){: external}
    - **Group values** - Memory, disk, and CPU values are all based on minimum requirements for provisioning a {{site.data.keyword.databases-for-postgresql}} instance.
-   - **Timeouts** - Create, update, and delete values for this resource. ICD `create` typically takes in the range of 30 - 45 minutes. `delete` and `update` typically take one minute. Provisioning times are unpredictable. If the deployment fails due to a timeout, import the database resource once the `create` is complete.
+   - **Timeouts** - Create, update, and delete values for this resource. ICD `create` typically takes in the range of 30 - 45 minutes. `delete` and `update` typically take 1 minute. Provisioning times are unpredictable. If the deployment fails due to a timeout, import the database resource once the `create` is complete.
 
 ## Step 4: Test your configuration
 {: #tutorial-provision-mongodb-test}
 {: step}
 
-Now that you configured the {{site.data.keyword.cloud}} Provider plug-in for your resource, you can start using Terraform on {{site.data.keyword.cloud}} to initialize, run, plan, and apply commands to provision the resource. You'll need the following commands:
+Now that you configured the {{site.data.keyword.cloud}} Provider plug-in for your resource, you can use Terraform on {{site.data.keyword.cloud}} to initialize, run, plan, and apply commands to provision the resource. You need the following commands:
 
 | Command Description | Command | 
 | -------------- | -------------- | 
-| [terraform init](https://www.terraform.io/cli/commands/init){: external} | The terraform init command is used to initialize a working directory containing Terraform configuration files. | 
-| [terraform fmt](https://www.terraform.io/cli/commands/fmt){: external} | The terraform fmt command is used to rewrite Terraform configuration files to a canonical format and style. | 
-| [terraform validate](https://www.terraform.io/cli/commands/validate){: external} | The terraform validate command validates the configuration files in a directory  | 
-| [terraform apply](https://www.terraform.io/cli/commands/apply){: external} | The terraform apply command executes the actions proposed in a Terraform plan. | 
+| [`terraform init`](https://www.terraform.io/cli/commands/init){: external} | The `terraform init` command is used to initialize a working directory containing Terraform configuration files. | 
+| [`terraform fmt`](https://www.terraform.io/cli/commands/fmt){: external} | The `terraform fmt` command is used to rewrite Terraform configuration files to a canonical format and style. | 
+| [`terraform validate`](https://www.terraform.io/cli/commands/validate){: external} | The `terraform validate` command validates the configuration files in a directory  | 
+| [`terraform apply`](https://www.terraform.io/cli/commands/apply){: external} | The `terraform apply` command runs the actions that are proposed in a Terraform plan. | 
 {: caption="Table 1. Terrarform provisioning commands" caption-side="bottom"}
 
  For more information, see [Provisioning {{site.data.keyword.cloud}} resources](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-manage_resources#provision_resources).
