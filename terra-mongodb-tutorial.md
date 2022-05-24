@@ -36,7 +36,7 @@ In this tutorial, you learn how to use Terraform to provision a {{site.data.keyw
 
 Before beginning the process of provisioning a database with Terraform, [you need to have an {{site.data.keyword.cloud_notm}} account.](https://cloud.ibm.com/registration) 
 
-In this tutorial, you provision your database by using Terraform, which enables you to safely and predictably create, change, and improve infrastructure. It is an open source tool that codifies APIs into declarative configuration files that can be shared among team members, which are treated as code, edited, reviewed, and versioned. It is infrastructure as code. You write down what your infrastructure should look like and Terraform will create, update, and remove cloud resources as needed. For more information, see [Understand the basics of Terraform.](https://www.terraform.io/intro){: external} 
+In this tutorial, you provision your database by using Terraform, a service that enables you to safely and predictably create, change, and improve infrastructure. It is an open source tool that codifies APIs into declarative configuration files that can be shared among team members, which are treated as code, edited, reviewed, and versioned. It is infrastructure as code. You write down what your infrastructure should look like and Terraform will create, update, and remove cloud resources as needed. For more information, see [Understand the basics of Terraform.](https://www.terraform.io/intro){: external} 
 
 To support a multi-cloud approach, Terraform works with providers. A provider is responsible for understanding API interactions and exposing resources. {{site.data.keyword.cloud}} has its provider for Terraform, enabling users of {{site.data.keyword.cloud}} to manage resources with Terraform. Although Terraform is categorized as infrastructure as code, it is not limited to Infrastructure-As-A-Service resources. For more information, see [ibm_database](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database).
 
@@ -59,7 +59,7 @@ Follow the steps at [Install Terraform](https://learn.hashicorp.com/tutorials/te
    ```
    {: codeblock}
 
-1. In your project directory, create a `tfvars` file and add the {{site.data.keyword.cloud}} API key that you created earlier. In addition, specify the region where you want your {{site.data.keyword.cloud}} resources to be created. If no region is specified, Terraform on {{site.data.keyword.cloud}} automatically creates your resources in the `us-south` region. The `tfvars` file is a variables file that you store on your local machine. When you initialize the CLI, all variables that are defined in this file are automatically loaded into Terraform on {{site.data.keyword.cloud}} and you can reference them in every Terraform on {{site.data.keyword.cloud}} configuration file in the same project directory.
+1. In your project directory, create a `tfvars` file and add the {{site.data.keyword.cloud}} API key that you created earlier. In addition, specify the region where you want your {{site.data.keyword.cloud}} resources to be created. If no region is specified, Terraform on {{site.data.keyword.cloud}} automatically creates your resources in the `us-south` region. The `tfvars` file is a variables file that you store on your local machine. When you initialize the CLI, all variables that are defined in this file are automatically loaded into Terraform on {{site.data.keyword.cloud}}. You can reference them in every Terraform on {{site.data.keyword.cloud}} configuration file in the same project directory.
 
    Because the `tfvars` file contains confidential information, do not push this file to a version control system. This file is meant to be on your local system only.
    {: .important}
@@ -161,26 +161,26 @@ output "analytics_connection" {
    - **Resource group** - the Resource Group value you declare. 
    - **Name** - The service name can be any string and is the name that is used on the web and in the CLI to identify the new deployment.
    - **Service** - For {{site.data.keyword.databases-for-mongodb}}, the service ID is `databases-for-mongodb`. Choose the correct Service ID for your deployment.
-   - **Plan** - This tutorial uses a Standard plan. For more information on pricing, see [{{site.data.keyword.cloud}} Pricing](https://www.ibm.com/cloud/pricing).
+   - **Plan** - This tutorial uses a Standard plan. For more information, see [{{site.data.keyword.cloud}} Pricing](https://www.ibm.com/cloud/pricing).
    - **Location** - Choose a suitable region for your deployment instance.
-   - **Admin Password** - You have to set the admin password before you can use it to connect. For more information, see [Setting the Admin Password](/docs/databases-for-mongodb?topic=databases-for-mongodb-admin-password).
+   - **Admin Password** - You must set the admin password before you can use it to connect. For more information, see [Setting the Admin Password](/docs/databases-for-mongodb?topic=databases-for-mongodb-admin-password).
    - **Group** Scaling groups represent the various resources that are allocated to a deployment. To see an example for configuring and deploying a database that uses `group` attributes, see [Sample database instance by using group attributes.](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database#sample-database-instance-by-using-group-attributes){: external}
    - **Group values** - Memory, disk, and CPU values are all based on minimum requirements for provisioning a {{site.data.keyword.databases-for-mongodb}} instance.
-   - **Timeouts** - Create, update, and delete values for this resource. ICD `create` typically takes between 30-45 minutes. `delete` and `update` typically take one minute. Provisioning times are unpredictable. If the deployment fails due to a timeout, import the database resource once the `create` is complete.
+   - **Timeouts** - Create, update, and delete values for this resource. ICD `create` typically takes between 30-45 minutes. `delete` and `update` typically take 1 minute. Provisioning times are unpredictable. If the deployment fails due to a timeout, import the database resource once the `create` is complete.
 
 
 ## Step 4: Test your configuration
 {: #tutorial-provision-mongodb-test}
 {: step}
 
-Now that you configured the {{site.data.keyword.cloud}} Provider plug-in for your resource, you can start using Terraform on {{site.data.keyword.cloud}} to initialize, run, plan, and apply commands to provision the resource. You'll need the following commands:
+Now that you configured the {{site.data.keyword.cloud}} Provider plug-in for your resource, you can use Terraform on {{site.data.keyword.cloud}} to initialize, run, plan, and apply commands to provision the resource. You need the following commands:
 
 | Command Description | Command | 
 | -------------- | -------------- | 
-| [terraform init](https://www.terraform.io/cli/commands/init){: external} | The terraform init command is used to initialize a working directory containing Terraform configuration files. | 
-| [terraform fmt](https://www.terraform.io/cli/commands/fmt){: external} | The terraform fmt command is used to rewrite Terraform configuration files to a canonical format and style. | 
-| [terraform validate](https://www.terraform.io/cli/commands/validate){: external} | The terraform validate command validates the configuration files in a directory  | 
-| [terraform apply](https://www.terraform.io/cli/commands/apply){: external} | The terraform apply command executes the actions proposed in a Terraform plan. | 
+| [`terraform init`](https://www.terraform.io/cli/commands/init){: external} | The `terraform init` command is used to initialize a working directory containing Terraform configuration files. | 
+| [`terraform fmt`](https://www.terraform.io/cli/commands/fmt){: external} | The `terraform fmt` command is used to rewrite Terraform configuration files to a canonical format and style. | 
+| [`terraform validate`](https://www.terraform.io/cli/commands/validate){: external} | The `terraform validate` command validates the configuration files in a directory  | 
+| [`terraform apply`](https://www.terraform.io/cli/commands/apply){: external} | The `terraform apply` command runs the actions that are proposed in a Terraform plan. | 
 {: caption="Table 1. Terrarform provisioning commands" caption-side="bottom"}
 
  For more information, see [Provisioning {{site.data.keyword.cloud}} resources](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-manage_resources#provision_resources).
