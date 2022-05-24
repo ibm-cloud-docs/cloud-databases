@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2019, 2020
-lastupdated: "2022-04-06"
+  years: 2019, 2022
+lastupdated: "2022-05-24"
 
 subcollection: cloud-databases
 
@@ -104,14 +104,13 @@ Cryptoshredding is a destructive action. When the key is deleted, your data is u
 
 {{site.data.keyword.keymanagementserviceshort}} allows you to [initiate a force delete](/docs/key-protect?topic=key-protect-delete-keys) of a key that is in use by {{site.data.keyword.cloud}} services, including your {{site.data.keyword.databases-for}} deployments. This action is called cryptoshredding. Deleting a key that is in use on your deployment locks the disks that contain your data and disables your deployment. You are still able to access the UI and some metadata such as security settings in the UI, CLI, and API but you are not able to access any of the databases or data that is contained within them. Key deletion is [sent to the {{site.data.keyword.at_short}}](/docs/key-protect?topic=key-protect-at-events) as `kms.secrets.delete`.
 
-## BYOK for backups
+## Bring your own key for backups
 {: #key-byok}
 
-If you use Key Protect, you can also designate a key to encrypt the Cloud Object Storage disk that holds your deployment's backups.
+If you use Key Protect, when you provision a database you can also designate a key to encrypt the Cloud Object Storage disk that holds your deployment's backups. 
+Bring your own key for backups is only available in the following regions: `us-south`, `us-east`, and `eu-de`. 
 
-BYOK for backups is only available in the following regions: `us-south`, `us-east`, and `eu-de`. 
-
-Only keys in the `us-south` region are durable to region failures. To ensure your backups are available even if a region failure occurs, you must use a key from `us-south` or `eu-de`, regardless of your deployment location.
+Only keys in the `us-south` region are durable to region failures. To ensure that your backups are available even if a region failure occurs, you must use a key from `us-south` or `eu-de`, regardless of your deployment location.
 {: .note}
 
 ### Granting the delegation authorization
@@ -159,16 +158,16 @@ And one for the Cloud Object Storage bucket for its backups, where the deploymen
 Role | Source | Target | Type
 -----|-----|-----|-----
 Reader | Cloud Object Storage service | Key Protect Service | Created by `<cloud-databases-crn>`
-{: caption="Table 2. Example Key Protect Authorization for COS from Cloud Databases " caption-side="top"}
+{: caption="Table 2. Example Key Protect Authorization for Cloud Object Storage from Cloud Databases " caption-side="top"}
 
 ### Removing Keys
 {: #key-remove}
 
 IAM/Key Protect does not stop you from removing the policy between the key and Cloud Object Storage (the second example), but doing so can make your backups unrestorable. To prevent this, if you delete the Cloud Object Storage policy that governs the ability of Cloud Databases to use the key for Cloud Object Storage, the policy is re-created to continue backing up your deployment.
 
-Be very careful when removing keys and authorizations. If you have multiple deployments that use the same keys, it is possible to inadvertently destroy backups to **all** of those deployments by revoking the delegation authorization. If at all possible, do not use the same key for multiple deployment's backups.
+Be careful when removing keys and authorizations. If you have multiple deployments that use the same keys, it is possible to inadvertently destroy backups to **all** of those deployments by revoking the delegation authorization. If at all possible, do not use the same key for multiple deployment's backups.
 
-If you want to shred the backups, you can delete the key. Cloud Object Storage takes care of making sure that the storage is unreadable and unwriteable. But any other deployments that use that same key for backups will encounter subsequent backup failures.
+If you want to shred the backups, you can delete the key. Cloud Object Storage ensures that the storage is unreadable and unwriteable. However, any other deployments that use that same key for backups will encounter subsequent backup failures.
 
 If you do require that the same key to be used for multiple deployment's backups, removing keys and authorizations can have the following side effects.
 - If you delete just the Cloud Object Storage authorization (as seen in Table 2), then not only is the deployment that is shown as the creator affected, but any deployments that also use the same key are also affected. Those deployments can encounter temporary backup failures until the policy is automatically re-created. There should be no lasting effects, except for missing backups.
