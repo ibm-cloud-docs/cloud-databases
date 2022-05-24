@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-05-05"
+lastupdated: "2022-05-24"
 
 keywords: provision cloud databases, databases with terraform, provisioning parameters
 
@@ -128,7 +128,7 @@ More information on the Resource Controller API is found in its [API Reference](
 ## Provisioning with Terraform
 {: #provisioning-terraform}
 
-If you use Terraform to manage your infrastructure, the [{{site.data.keyword.cloud_notm}} provider for Terraform](/docs/terraform?topic=terraform-getting-started) supports provisioning {{site.data.keyword.databases-for}} deployments. A sample Terraform configuration file is on the [Cloud Databases resources](/docs/terraform?topic=terraform-databases-resources) documentation page.
+If you use Terraform to manage your infrastructure, the [{{site.data.keyword.cloud_notm}} provider for Terraform](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started) supports provisioning {{site.data.keyword.databases-for}} deployments. A sample Terraform configuration file is on the [Cloud Databases resources](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: .external} documentation page.
 
 ## List of Additional Parameters
 {: #provisioning-parameters}
