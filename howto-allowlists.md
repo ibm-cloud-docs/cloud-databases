@@ -2,11 +2,11 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-05-02"
+lastupdated: "2022-05-24"
 
 subcollection: cloud-databases
 
-keywords: allowlist, ip addresses, blocklist, whitelist
+keywords: allowlist, ip addresses, blocklist, whitelist, cloud databases
 
 ---
 
