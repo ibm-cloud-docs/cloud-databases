@@ -2,7 +2,7 @@
 
 copyright:
    years: 2022
-lastupdated: "2022-05-23"
+lastupdated: "2022-05-24"
 
 keywords: IBM Cloud Databases, ICD, terraform, terraform mongodbee
 
@@ -44,8 +44,7 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
 {: #tutorial-provision-postgres-install-cli}
 {: step}
 
-1. Follow the steps at [Install Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli?in=terraform/docker-get-started){: external} to install Terraform.
-1. Follow the steps at [Installing the Terrafom CLI](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started) to install the Terraform CLI.
+Follow the steps at [Install Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli?in=terraform/docker-get-started){: external} to install Terraform.
 
 ## Step 2: Configure the {{site.data.keyword.cloud}} Provider plug-in
 {: #tutorial-provision-postgres-config-provider}
@@ -101,6 +100,13 @@ provider "ibm" {
 
 data "ibm_resource_group" "mongodbee_tutorial" {
   name = "terraform_mongodbee"
+}
+
+data "ibm_database_connection" "mongodb_conn" {
+  deployment_id = ibm_database.mongodb_enterprise.id
+  user_type     = "database"
+  user_id       = "admin"
+  endpoint_type = "public"
 }
 
 resource "ibm_database" "mongodb_dbee" {
