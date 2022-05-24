@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2021
-lastupdated: "2022-04-06"
+lastupdated: "2022-05-24"
 
 subcollection: cloud-databases
 
@@ -18,7 +18,7 @@ keywords: events, auditing
 {:tip: .tip}
 
 # Activity Tracker Integration
-{: #activity-tracker-integration}
+{: #activity-tracker}
 
 {{site.data.keyword.cloud_notm}} Databases deployments are integrated with Activity Tracker events in [{{site.data.keyword.at_full}}](/docs/activity-tracker?topic=activity-tracker-getting-started), so you can view service-level events.
 
@@ -42,14 +42,14 @@ Deployment Region | Activity Tracker Region
 `par01` | `eu-de`
 {: caption="Table 1. Activity Tracker regions" caption-side="top"}
 
-`SEO01` Data Center is scheduled to close on October 28, 2002. See [Migrating resources to a different data center
+`SEO01` Data Center is scheduled to close on 28 October 2022. See [Migrating resources to a different data center
 ](/docs/cloud-databases?topic=cloud-databases-migrate-data-center) for more information, including recommended data centers to which you can migrate.
 {: .important}
 
 Events from your deployments appear in an Activity Tracker instance in the same region, except in the cases of `seo01` and `jp-osa`. Events for deployments in `seo01` are forwarded to `jp-tok` while `jp-osa` events are forwarded to `jp-tok`. If you have deployments in multiple regions, you must set up the Activity Tracker in multiple regions. 
 
 ## Activity Tracker
-{: #activity-tracker}
+{: #activity-tracker-provision}
 
 When you provision the service, events are automatically forwarded from all your {{site.data.keyword.databases-for}} deployments in the same region.
 
@@ -84,7 +84,7 @@ A description of the common fields for an {{site.data.keyword.at_short}} event i
 
 The table lists the events that are sent to {{site.data.keyword.at_short}} from {{site.data.keyword.databases-for}} deployments.
 
-A new auditing message format has been released and the legacy format for events that are submitted to your Activity Tracker instances will be deprecated. Deprecated events, and their analogous new events, are listed in the table. You should update any alerting or tooling that relies on the text strings of the deprecated events to the new event format.
+A new auditing message format has been released and the legacy format for events that are submitted to your Activity Tracker instances will be deprecated. Deprecated events, and their analogous new events, are listed in the table. You should update any alerting or tools that rely on the text strings of the deprecated events to the new event format.
 {: .note}
 
 Action Name | Legacy Action name | Description
