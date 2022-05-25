@@ -61,9 +61,7 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
 
 3. In your project directory, create a variable definition file that is named `terraform.tfvars` and specify the {{site.data.keyword.cloud_notm}} API key that you retrieved. In addition, you specify the region where you want your {{site.data.keyword.cloud_notm}} resources to be created. If no region is specified, the {{site.data.keyword.cloud}} Provider plug-in automatically creates your resources in the us-south region. Variables that are defined in the `terraform.tfvars` file are automatically loaded by Terraform when the {{site.data.keyword.cloud_notm}} Provider plug-in is initialized and you can reference them in every Terraform configuration file that you use.
 
-Because the variable defintions file contains confidential information, do not push this file to a version control system. This file is meant to be on your local system only.
-
-   {: .important}
+Because the variable defintions file contains confidential information, do not push this file to a version control system. This file is meant to be on your local system only.{: .important}
 
    **Example of `terraform.tfvars` file**
 
@@ -75,7 +73,7 @@ Because the variable defintions file contains confidential information, do not p
 
 The `us-east` region is provided as an example, not a requirement. Use the region that works best for your instance deployment.{: .note}
 
-5. Create a provider configuration file that is named `provider.tf`. Use this file to configure the {{site.data.keyword.cloud_notm}} Provider plug-in with the {{site.data.keyword.cloud_notm}} API key from your `terraform.tfvars` file. The plug-in uses this key to access {{site.data.keyword.cloud_notm}} and to work with your {{site.data.keyword.cloud_notm}} service. To access a variable value from the `terraform.tfvars` file, you must first declare the variable in the `provider.tf` file and then reference the variable by using the `var.<variable_name>` syntax .
+1. Create a provider configuration file that is named `provider.tf`. Use this file to configure the {{site.data.keyword.cloud_notm}} Provider plug-in with the {{site.data.keyword.cloud_notm}} API key from your `terraform.tfvars` file. The plug-in uses this key to access {{site.data.keyword.cloud_notm}} and to work with your {{site.data.keyword.cloud_notm}} service. To access a variable value from the `terraform.tfvars` file, you must first declare the variable in the `provider.tf` file and then reference the variable by using the `var.<variable_name>` syntax .
 
     **Example `provider.tf` file**
 
@@ -96,37 +94,37 @@ The `us-east` region is provided as an example, not a requirement. Use the regio
 
 Create a Terraform configuration file that is named `postgres.tf`.
 
-    Example of `postgres.tf` file
+   Example of `postgres.tf` file
 
-    ```terraform
-    data "ibm_resource_group" "postgres_tutorial" {
-      name = "terraform_postgres"
-    }
-
-    resource "ibm_database" "postgresql_db" {
-      resource_group_id = data.ibm_resource_group.postgres_tutorial.id
-      name              = "terraform_postgres"
-      service           = "databases-for-postgresql"
-      plan              = "standard"
-      location          = "us-east"
-      adminpassword     = "password123"
-
-      group {
-        group_id = "member"
-        memory {
-          allocation_mb = 1024
-        }
-        disk {
-          allocation_mb = 5120
-        }
-      }
+   ```terraform
+   data "ibm_resource_group" "postgres_tutorial" {
+     name = "terraform_postgres"
+   }
+   
+   resource "ibm_database" "postgresql_db" {
+     resource_group_id = data.ibm_resource_group.postgres_tutorial.id
+     name              = "terraform_postgres"
+     service           = "databases-for-postgresql"
+     plan              = "standard"
+     location          = "us-east"
+     adminpassword     = "password123"
+     
+     group {
+       group_id = "member"
+       memory {
+         allocation_mb = 1024
+       }
+       disk {
+         allocation_mb = 5120
+       }
+     }
     }
 
     output "Postgresql" {
       value = "http://${ibm_database.postgresql_db.connectionstrings[0].composed}"
     }
-  ```
-  {: codeblock}
+   ```
+   {: codeblock}
 
    - **Resource group** - the Resource Group value you declare.
    - **Name** - The service name can be any string and is the name that is used on the web and in the CLI to identify the new deployment.
