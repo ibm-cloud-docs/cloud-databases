@@ -94,7 +94,7 @@ Follow the steps at [Install Terraform](https://learn.hashicorp.com/tutorials/te
 
 In the same project directory, create a Terraform configuration file named `mongodbee.tf`.
 
-    **Example of `mongodbee.tf` file**
+**Example `mongodbee.tf` file**
 
     ```terraform
     data "ibm_resource_group" "mongodbee_tutorial" {
