@@ -2,9 +2,9 @@
 
 copyright:
    years: 2022
-lastupdated: "2022-05-24"
+lastupdated: "2022-05-25"
 
-keywords: IBM Cloud Databases, ICD, terraform, terraform mongodbee
+keywords: IBM Cloud Databases, ICD, terraform, terraform mongodbee, mongodb, mongodbee
 
 subcollection: cloud-databases
 

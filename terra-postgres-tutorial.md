@@ -2,9 +2,9 @@
 
 copyright:
    years: 2022
-lastupdated: "2022-05-23"
+lastupdated: "2022-05-25"
 
-keywords: IBM Cloud Databases, ICD, terraform, postgresql terraform
+keywords: IBM Cloud Databases, ICD, terraform, postgresql terraform, postgresql
 
 subcollection: cloud-databases
 
