@@ -71,7 +71,7 @@ Follow the steps at [Install Terraform](https://learn.hashicorp.com/tutorials/te
    ```
    {: codeblock}
 
-The `us-east` region is provided as an example, not a requirement. Use the region that works best for your instance deployment.
+   The `us-east` region is provided as an example, not a requirement. Use the region that works best for your instance deployment.
 
 1. Create a provider configuration file that is named `provider.tf`. Use this file to configure the {{site.data.keyword.cloud_notm}} Provider plug-in with the {{site.data.keyword.cloud_notm}} API key from your `terraform.tfvars` file. The plug-in uses this key to access {{site.data.keyword.cloud_notm}} and to work with your {{site.data.keyword.cloud_notm}} service. To access a variable value from the `terraform.tfvars` file, you must first declare the variable in the `provider.tf` file and then reference the variable by using the `var.<variable_name>` syntax .
 
