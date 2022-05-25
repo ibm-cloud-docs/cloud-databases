@@ -40,7 +40,7 @@ In this tutorial, you provision your database by using Terraform, which enables 
 
 To support a multi-cloud approach, Terraform works with providers. A provider is responsible for understanding API interactions and exposing resources. {{site.data.keyword.cloud}} has its provider for Terraform, enabling users of {{site.data.keyword.cloud}} to manage resources with Terraform. Although Terraform is categorized as infrastructure as code, it is not limited to Infrastructure-As-A-Service resources. For more information, see [ibm_database](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database).
 
-## Step 1: Install the Terraform CLI
+## Step 1: Install Terraform
 {: #tutorial-provision-postgres-install-cli}
 {: step}
 
