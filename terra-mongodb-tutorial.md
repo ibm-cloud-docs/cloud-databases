@@ -28,7 +28,7 @@ completion-time: 1h
 {: toc-content-type="tutorial"}
 {: toc-completion-time="1h"}
 
-In this tutorial, you learn how to use Terraform to provision a {{site.data.keyword.databases-for-mongodb}} Enterprise Edition instance.
+In this tutorial, you learn how to use Terraform to provision a {{site.data.keyword.databases-for-mongodb}} Enterprise Edition instance that includes the {{site.data.keyword.databases-for-mongodb}} Enterprise Edition Analytics Add-On. The {{site.data.keyword.databases-for-mongodb}} EE Analytics Add-On allows you to execute long-running analytical queries and/or provision a [MongoDB Connector for business intelligence(BI)](https://docs.mongodb.com/bi-connector/current/){: .external} to make your query data compatible with BI tools, such as [Tableau](https://www.tableau.com/){: .external}.
 {: shortdesc}
 
 ## Overview of the available tools
