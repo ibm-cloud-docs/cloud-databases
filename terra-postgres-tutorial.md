@@ -61,7 +61,7 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
 
 1. In your project directory, create a variable definition file that is named `terraform.tfvars` and specify the {{site.data.keyword.cloud_notm}} API key that you retrieved. In addition, you specify the region where you want your {{site.data.keyword.cloud_notm}} resources to be created. If no region is specified, the {{site.data.keyword.cloud}} Provider plug-in automatically creates your resources in the us-south region. Variables that are defined in the `terraform.tfvars` file are automatically loaded by Terraform when the {{site.data.keyword.cloud_notm}} Provider plug-in is initialized and you can reference them in every Terraform configuration file that you use.
 
-   Because the variable defintions file contains confidential information, do not push this file to a version control system. This file is meant to be on your local system only.{: .important}
+   Because the variable definitions file contains confidential information, do not push this file to a version control system. This file is meant to be on your local system only.{: .important}
 
    **Example of `terraform.tfvars` file**
 
@@ -73,7 +73,7 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
 
    The `us-east` region is provided as an example, not a requirement. Use the region that works best for your instance deployment.{: .note}
 
-1. Create a provider configuration file that is named `provider.tf`. Use this file to configure the {{site.data.keyword.cloud_notm}} Provider plug-in with the {{site.data.keyword.cloud_notm}} API key from your `terraform.tfvars` file. The plug-in uses this key to access {{site.data.keyword.cloud_notm}} and to work with your {{site.data.keyword.cloud_notm}} service. To access a variable value from the `terraform.tfvars` file, you must first declare the variable in the `provider.tf` file and then reference the variable by using the `var.<variable_name>` syntax .
+1. Create a provider configuration file that is named `provider.tf`. Use this file to configure the {{site.data.keyword.cloud_notm}} Provider plug-in with the {{site.data.keyword.cloud_notm}} API key from your `terraform.tfvars` file. The plug-in uses this key to access {{site.data.keyword.cloud_notm}} and to work with your {{site.data.keyword.cloud_notm}} service. To access a variable value from the `terraform.tfvars` file, you must first declare the variable in the `provider.tf` file and then reference the variable by using the `var.<variable_name>` syntax.
 
     **Example `provider.tf` file**
 
