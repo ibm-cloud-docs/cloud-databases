@@ -2,7 +2,7 @@
 
 copyright:
    years: 2022
-lastupdated: "2022-05-25"
+lastupdated: "2022-05-26"
 
 keywords: IBM Cloud Databases, ICD, terraform, terraform mongodbee, mongodb, mongodbee
 
@@ -96,81 +96,71 @@ In the same project directory, create a Terraform configuration file named `mong
 
 **Example `mongodbee.tf` file**
 
-    ```terraform
-    data "ibm_resource_group" "mongodbee_tutorial" {
-      name = "default"
+```terraform
+data "ibm_resource_group" "mongodbee_tutorial" {
+  name = "default"
+  
+resource "ibm_database" "mongodbee_db" {
+  resource_group_id = data.ibm_resource_group.mongodbee_tutorial.id
+  name              = "terraform_mongodbee"
+  service           = "databases-for-mongodb"
+  plan              = "standard"
+  location          = "us-east"
+  adminpassword     = "password123
+
+group {
+  group_id = "member"
+  memory {
+    allocation_mb = 14336
+  }
+  disk {
+    allocation_mb = 20480
+  }
+  cpu {
+    allocation_count = 6
+  }
+  
+  group {
+    group_id = "analytics"
+    members {
+      allocation_count = 1
     }
-
-    resource "ibm_database" "mongodbee_db" {
-      resource_group_id = data.ibm_resource_group.mongodbee_tutorial.id
-      name              = "terraform_mongodbee"
-      service           = "databases-for-mongodb"
-      plan              = "standard"
-      location          = "us-east"
-      adminpassword     = "password123"
-
-      group {
-        group_id = "member"
-        memory {
-          allocation_mb = 14336
-        }
-        disk {
-          allocation_mb = 20480
-        }
-        cpu {
-          allocation_count = 6
-        }
-      }
-
-      group {
-        group_id = "analytics"
-        members {
-          allocation_count = 1
-        }
-      }
-
-      group {
-        group_id = "bi_connector"
-        members {
-          allocation_count = 1
-        }
-      }
-
-      timeouts {
-        create = "120m"
-        update = "120m"
-        delete = "15m"
-      }
+  group {
+    group_id = "bi_connector"
+    members {
+      allocation_count = 1
     }
+  timeouts {
+    create = "120m"
+    update = "120m"
+    delete = "15m"
+  }
+  data "ibm_database_connection" "mongodbee_conn" {
+    deployment_id = ibm_database.mongodbee_db.id
+    user_type     = "database"
+    user_id       = "admin"
+    endpoint_type = "public"
+  
+  output "bi_connector_connection" {
+    description = "BI Connector connection string"
+    value       = data.ibm_database_connection.mongodbee_conn.bi_connector.0.composed.0
+ 
+  output "analytics_connection" {
+    description = "Analytics Node connection string"
+    value       = data.ibm_database_connection.mongodbee_conn.analytics.0.composed.0
+  }
+```
+{: codeblock
 
-    data "ibm_database_connection" "mongodbee_conn" {
-      deployment_id = ibm_database.mongodbee_db.id
-      user_type     = "database"
-      user_id       = "admin"
-      endpoint_type = "public"
-    }
-
-    output "bi_connector_connection" {
-      description = "BI Connector connection string"
-      value       = data.ibm_database_connection.mongodbee_conn.bi_connector.0.composed.0
-    }
-
-    output "analytics_connection" {
-      description = "Analytics Node connection string"
-      value       = data.ibm_database_connection.mongodbee_conn.analytics.0.composed.0
-    }
-    ```
-    {: codeblock}
-
-   - **Resource group** - the Resource Group value you declare.
-   - **Name** - The service name can be any string and is the name that is used on the web and in the CLI to identify the new deployment.
-   - **Service** - For {{site.data.keyword.databases-for-mongodb}}, the service ID is `databases-for-mongodb`. Choose the correct Service ID for your deployment.
-   - **Plan** - This tutorial uses a Standard plan. For more information, see [{{site.data.keyword.cloud}} Pricing](https://www.ibm.com/cloud/pricing).
-   - **Location** - Choose a suitable region for your deployment instance.
-   - **Admin Password** - You must set the admin password before you can use it to connect. For more information, see [Setting the Admin Password](/docs/databases-for-mongodb?topic=databases-for-mongodb-admin-password).
-   - **Group** Scaling groups represent the various resources that are allocated to a deployment. To see an example for configuring and deploying a database that uses `group` attributes, see [Sample database instance by using group attributes.](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database#sample-database-instance-by-using-group-attributes){: external}
-   - **Group values** - Memory, disk, and CPU values are all based on minimum requirements for provisioning a {{site.data.keyword.databases-for-mongodb}} instance.
-   - **Timeouts** - Create, update, and delete values for this resource. ICD `create` typically takes between 30-45 minutes. `delete` and `update` typically take 1 minute. Provisioning times are unpredictable. If the deployment fails due to a timeout, import the database resource once the `create` is complete.
+- **Resource group** - the Resource Group value you declare.
+- **Name** - The service name can be any string and is the name that is used on the web and in the CLI to identify the new deployment.
+- **Service** - For {{site.data.keyword.databases-for-mongodb}}, the service ID is `databases-for-mongodb`. Choose the correct Service ID for your deployment.
+- **Plan** - This tutorial uses a Standard plan. For more information, see [{{site.data.keyword.cloud}} Pricing](https://www.ibm.com/cloud/pricing).
+- **Location** - Choose a suitable region for your deployment instance.
+- **Admin Password** - You must set the admin password before you can use it to connect. For more information, see [Setting the Admin Password](/docs/databases-for-mongodtopic=databases-for-mongodb-admin-password).
+- **Group** Scaling groups represent the various resources that are allocated to a deployment. To see an example for configuring and deploying a database that uses `group` attributes, se[Sample database instance by using group attributes.](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database#sample-database-instance-by-using-group-attributes){external}
+- **Group values** - Memory, disk, and CPU values are all based on minimum requirements for provisioning a {{site.data.keyword.databases-for-mongodb}} instance.
+- **Timeouts** - Create, update, and delete values for this resource. ICD `create` typically takes between 30-45 minutes. `delete` and `update` typically take 1 minute. Provisioning times arunpredictable. If the deployment fails due to a timeout, import the database resource once the `create` is complete.
 
 
 ## Step 4: Test your configuration
