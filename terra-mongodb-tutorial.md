@@ -150,7 +150,7 @@ group {
     value       = data.ibm_database_connection.mongodbee_conn.analytics.0.composed.0
   }
 ```
-{: codeblock
+{: codeblock}
 
 - **Resource group** - the Resource Group value you declare.
 - **Name** - The service name can be any string and is the name that is used on the web and in the CLI to identify the new deployment.
