@@ -2,7 +2,7 @@
 
 copyright:
    years: 2022
-lastupdated: "2022-05-25"
+lastupdated: "2022-05-26"
 
 keywords: IBM Cloud Databases, ICD, terraform, postgresql terraform, postgresql
 
@@ -94,7 +94,7 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
 
 Create a Terraform configuration file that is named `postgres.tf`.
 
-   Example of `postgres.tf` file
+   **Example of `postgres.tf` file**
 
    ```terraform
    data "ibm_resource_group" "postgres_tutorial" {
