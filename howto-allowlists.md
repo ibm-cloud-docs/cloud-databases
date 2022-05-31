@@ -118,21 +118,21 @@ Channai | in-che | che01 | 169.38.105.79/29  | 169.38.105.73
 
 Location | Region | Data center | Subnet | First IP
 -- | -- | -- | -- | --
-Toronto | ca-tor | tor01  | 158.85.91.111/28  | 158.85.91.97        
-Toronto | ca-tor | tor01  | 158.85.120.63/26  | 158.85.120.1        
-Toronto | ca-tor | tor01  | 169.55.142.191/27 | 169.55.142.161         
-Toronto | ca-tor | tor01  | 158.85.95.183/29  | 158.85.95.177        
-Toronto | ca-tor | tor01  | 169.55.130.215/29 | 169.55.130.209         
-Toronto | ca-tor | tor04  | 163.74.68.95/28   | 163.74.68.81        
-Toronto | ca-tor | tor04  | 163.74.69.159/27  | 163.74.69.129        
-Toronto | ca-tor | tor04  | 163.74.72.127/26  | 163.74.72.65        
-Toronto | ca-tor | tor04  | 163.74.68.55/29   | 163.74.68.49        
-Toronto | ca-tor | tor04  | 163.74.68.63/29   | 163.74.68.57        
-Toronto | ca-tor | tor05  | 163.75.67.111/28  | 163.75.67.97        
-Toronto | ca-tor | tor05  | 163.75.68.95/27   | 163.75.68.65        
-Toronto | ca-tor | tor05  | 163.75.75.63/26   | 163.75.75.1        
-Toronto | ca-tor | tor05  | 163.75.67.7/29    | 163.75.67.1         
-Toronto | ca-tor | tor05  | 163.75.67.119/29  | 163.75.67.113
+Toronto | ca-tor | tor01  | 158.85.91.111/28  |  158.85.91.97    
+Toronto | ca-tor | tor01  | 158.85.120.63/26  |  158.85.120.1    
+Toronto | ca-tor | tor01  | 169.55.142.191/27 |  169.55.142.161     
+Toronto | ca-tor | tor01  | 158.85.95.183/29  |  158.85.95.177    
+Toronto | ca-tor | tor01  | 169.55.130.215/29 |  169.55.130.209     
+Toronto | ca-tor | tor04  | 163.74.68.95/28   |  163.74.68.81    
+Toronto | ca-tor | tor04  | 163.74.69.159/27  |  163.74.69.129    
+Toronto | ca-tor | tor04  | 163.74.72.127/26  |  163.74.72.65    
+Toronto | ca-tor | tor04  | 163.74.68.55/29   |  163.74.68.49    
+Toronto | ca-tor | tor04  | 163.74.68.63/29   |  163.74.68.57    
+Toronto | ca-tor | tor05  | 163.75.67.111/28  |  163.75.67.97    
+Toronto | ca-tor | tor05  | 163.75.68.95/27   |  163.75.68.65    
+Toronto | ca-tor | tor05  | 163.75.75.63/26   |  163.75.75.1    
+Toronto | ca-tor | tor05  | 163.75.67.7/29    |  163.75.67.1   
+Toronto | ca-tor | tor05  | 163.75.67.119/29  |  163.75.67.113
 
 ### `br-sao` List
 {: #br-sao-list} 
