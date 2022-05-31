@@ -298,7 +298,7 @@ Tokyo | jp-tok | tok05 | 165.192.148.63/29  | 165.192.148.57
 
 Location | Region | Data center | Subnet | First IP
 -- | -- | -- | -- | --
-Osaka | jp-osa | osa21 | 163.68.68.127/28 | 163.68.68.113         
+Osaka | jp-osa | osa21 | 163.68.68.127/28 | 163.68.68.113          
 Osaka | jp-osa | osa21 | 163.68.73.127/27 | 163.68.73.97         
 Osaka | jp-osa | osa21 | 163.68.96.191/26 | 163.68.96.129         
 Osaka | jp-osa | osa21 | 163.68.67.119/29 | 163.68.67.113         
