@@ -129,6 +129,9 @@ Channai | in-che | che01 |  10.162.132.79/29  | 10.162.132.73
 ### `ca-tor` List
 {: #ca-tor-list} 
 
+#### Public Subnets
+{: #ca-tor-public-list} 
+
 Location | Region | Data center | Subnet | First IP
 -- | -- | -- | -- | --
 Toronto | ca-tor | tor01  | 158.85.91.111/28  |  158.85.91.97    
@@ -146,6 +149,21 @@ Toronto | ca-tor | tor05  | 163.75.68.95/27   |  163.75.68.65
 Toronto | ca-tor | tor05  | 163.75.75.63/26   |  163.75.75.1    
 Toronto | ca-tor | tor05  | 163.75.67.7/29    |  163.75.67.1   
 Toronto | ca-tor | tor05  | 163.75.67.119/29  |  163.75.67.113
+
+#### Private Subnets
+{: #ca-tor-private-list} 
+
+Toronto | ca-tor | tor01 | 10.114.100.127/26 | 10.114.100.65    
+Toronto | ca-tor | tor01 |  10.114.79.63/29  | 10.114.79.57    
+Toronto | ca-tor | tor01 |  10.115.88.79/29  | 10.115.88.73    
+Toronto | ca-tor | tor04 |  10.11.22.127/25  | 10.11.22.1    
+Toronto | ca-tor | tor04 |  10.11.25.191/26  | 10.11.25.129    
+Toronto | ca-tor | tor04 |   10.11.12.47/29  | 10.11.12.41    
+Toronto | ca-tor | tor04 |   10.11.12.55/29  | 10.11.12.49    
+Toronto | ca-tor | tor05 |  10.243.14.255/26 | 10.243.14.193    
+Toronto | ca-tor | tor05 | 10.243.102.255/25 | 10.243.102.129    
+Toronto | ca-tor | tor05 |  10.243.23.135/29 | 10.243.23.129    
+Toronto | ca-tor | tor05 |  10.243.23.159/29 | 10.243.23.153
 
 ### `br-sao` List
 {: #br-sao-list} 
