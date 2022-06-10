@@ -171,6 +171,9 @@ Sao Paolo | br-sao | sao05 | 163.109.65.127/29 | 163.109.65.121
 ### `eu-gb` List
 {: #eu-gb-list} 
 
+#### Public Subnets
+{: #eu-gb-public-list} 
+
 Location | Region | Data center | Subnet | First IP
 -- | -- | -- | -- | --
 London | eu-gb | lon04 |   158.175.64.95/28  | 158.175.64.81
@@ -206,6 +209,40 @@ London | eu-gb | lon06 |  158.176.113.143/29 | 158.176.113.137
 London | eu-gb | lon06 |  158.176.122.239/29 | 158.176.122.233
 London | eu-gb | lon06 |  158.176.124.223/29 | 158.176.124.217
 London | eu-gb | lon06 |  158.176.131.15/29  | 158.176.131.9
+
+#### Private Subnets
+{: #eu-gb-private-list} 
+
+Location | Region | Data center | Subnet | First IP
+-- | -- | -- | -- | --
+London | eu-gb | lon04 |   10.45.36.63/26  | 10.45.36.1          
+London | eu-gb | lon04 |  10.45.235.255/25 | 10.45.235.129          
+London | eu-gb | lon04 |  10.45.245.255/24 | 10.45.245.1          
+London | eu-gb | lon04 |   10.45.17.7/29   | 10.45.17.1          
+London | eu-gb | lon04 |  10.45.17.135/29  | 10.45.17.129          
+London | eu-gb | lon04 |   10.45.63.79/29  | 10.45.63.73          
+London | eu-gb | lon04 |  10.45.63.127/29  | 10.45.63.121          
+London | eu-gb | lon04 |  10.45.131.175/29 | 10.45.131.169          
+London | eu-gb | lon04 |  10.45.142.247/29 | 10.45.142.241          
+London | eu-gb | lon05 |  10.196.18.63/26  | 10.196.18.1          
+London | eu-gb | lon05 |  10.196.54.255/25 | 10.196.54.129          
+London | eu-gb | lon05 |  10.196.60.255/24 | 10.196.60.1          
+London | eu-gb | lon05 | 10.196.149.255/24 | 10.196.149.1          
+London | eu-gb | lon05 |  10.196.4.183/29  | 10.196.4.177          
+London | eu-gb | lon05 |  10.196.12.191/29 | 10.196.12.185          
+London | eu-gb | lon05 |  10.196.13.71/29  | 10.196.13.65          
+London | eu-gb | lon05 |  10.196.43.231/29 | 10.196.43.225          
+London | eu-gb | lon05 |  10.196.50.39/29  | 10.196.50.33          
+London | eu-gb | lon05 |  10.196.50.47/29  | 10.196.50.41          
+London | eu-gb | lon06 |  10.72.162.191/26 | 10.72.162.129          
+London | eu-gb | lon06 |  10.72.196.255/24 | 10.72.196.1          
+London | eu-gb | lon06 |  10.72.211.255/25 | 10.72.211.129          
+London | eu-gb | lon06 |   10.72.9.63/29   | 10.72.9.57          
+London | eu-gb | lon06 |   10.72.25.95/29  | 10.72.25.89          
+London | eu-gb | lon06 |  10.72.42.215/29  | 10.72.42.209          
+London | eu-gb | lon06 |  10.72.95.167/29  | 10.72.95.161          
+London | eu-gb | lon06 |  10.72.127.111/29 | 10.72.127.105          
+London | eu-gb | lon06 |  10.72.187.247/29 | 10.72.187.241 
 
 ### `kr-seo` List
 {: #Seoul 1-list} 
