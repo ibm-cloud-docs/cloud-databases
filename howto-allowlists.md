@@ -345,6 +345,9 @@ Tokyo | jp-tok | tok05 | 165.192.148.63/29  | 165.192.148.57
 ### `jp-osa` List
 {: #jp-osa-list} 
 
+### Public Subnets
+{: #jp-osa-public-list} 
+
 Location | Region | Data center | Subnet | First IP
 -- | -- | -- | -- | --
 Osaka | jp-osa | osa21 | 163.68.68.127/28 | 163.68.68.113          
@@ -362,6 +365,19 @@ Osaka | jp-osa | osa23 | 163.73.68.95/27  | 163.73.68.65
 Osaka | jp-osa | osa23 | 163.73.71.63/26  | 163.73.71.1         
 Osaka | jp-osa | osa23 | 163.73.67.191/29 | 163.73.67.185         
 Osaka | jp-osa | osa23 | 163.73.67.231/29 | 163.73.67.225
+
+### Private Subnets
+{: #jp-osa-private-list} 
+
+Osaka | jp-osa | osa21 |  10.8.22.255/26 | 10.8.22.193         
+Osaka | jp-osa | osa21 |  10.8.16.159/29 | 10.8.16.153         
+Osaka | jp-osa | osa21 |  10.8.16.167/29 | 10.8.16.161         
+Osaka | jp-osa | osa22 |  10.9.12.127/26 | 10.9.12.65         
+Osaka | jp-osa | osa22 |  10.9.6.207/29  | 10.9.6.201         
+Osaka | jp-osa | osa22 |  10.9.6.215/29  | 10.9.6.209         
+Osaka | jp-osa | osa23 | 10.10.12.255/26 | 10.10.12.193         
+Osaka | jp-osa | osa23 |   10.10.8.7/29  | 10.10.8.1         
+Osaka | jp-osa | osa23 |  10.10.8.15/29  | 10.10.8.9
 
 ### `us-east` List
 {: #us-east-list} 
