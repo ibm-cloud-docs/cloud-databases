@@ -480,6 +480,9 @@ Osaka | jp-osa | osa23 |  10.10.8.15/29  | 10.10.8.9
 ### `us-east` List
 {: #us-east-list} 
 
+#### Public Subnets
+{: #us-east-public-list} 
+
 Location | Region | Data center | Subnet | First IP
 -- | -- | -- | -- | --
 Washington DC | us-east | wdc04 |  52.116.78.127/25  | 52.116.78.1        
@@ -527,6 +530,49 @@ Washington DC | us-east | wdc07 |  169.61.113.39/29  | 169.61.113.33
 Washington DC | us-east | wdc07 |  169.61.113.47/29  | 169.61.113.41        
 Washington DC | us-east | wdc07 | 169.61.122.159/29  | 169.61.122.153        
 Washington DC | us-east | wdc07 |   169.62.6.87/29   | 169.62.6.81
+
+#### Private Subnets
+{: #us-east-private-list} 
+
+Washington DC | us-east | wdc04 |  10.65.119.255/25 | 10.65.119.129   
+Washington DC | us-east | wdc04 |  10.65.145.255/26 | 10.65.145.193   
+Washington DC | us-east | wdc04 |  10.211.67.255/24 | 10.211.67.1   
+Washington DC | us-east | wdc04 |  10.211.96.255/24 | 10.211.96.1   
+Washington DC | us-east | wdc04 | 10.211.126.255/24 | 10.211.126.1   
+Washington DC | us-east | wdc04 |    10.65.0.7/29   | 10.65.0.1   
+Washington DC | us-east | wdc04 |  10.65.99.103/29  | 10.65.99.97   
+Washington DC | us-east | wdc04 |  10.65.145.95/29  | 10.65.145.89   
+Washington DC | us-east | wdc04 |  10.65.152.223/29 | 10.65.152.217   
+Washington DC | us-east | wdc04 |  10.65.179.159/29 | 10.65.179.153   
+Washington DC | us-east | wdc04 |  10.65.218.247/29 | 10.65.218.241   
+Washington DC | us-east | wdc04 |  10.65.224.15/29  | 10.65.224.9   
+Washington DC | us-east | wdc04 |  10.65.224.23/29  | 10.65.224.17   
+Washington DC | us-east | wdc06 | 10.188.150.255/24 | 10.188.150.1   
+Washington DC | us-east | wdc06 | 10.188.160.127/26 | 10.188.160.65   
+Washington DC | us-east | wdc06 |  10.189.7.127/25  | 10.189.7.1   
+Washington DC | us-east | wdc06 |  10.189.91.255/24 | 10.189.91.1   
+Washington DC | us-east | wdc06 | 10.189.159.255/24 | 10.189.159.1   
+Washington DC | us-east | wdc06 |  10.188.34.31/29  | 10.188.34.25   
+Washington DC | us-east | wdc06 |  10.188.35.231/29 | 10.188.35.225   
+Washington DC | us-east | wdc06 |  10.188.53.127/29 | 10.188.53.121   
+Washington DC | us-east | wdc06 | 10.188.137.247/29 | 10.188.137.241   
+Washington DC | us-east | wdc06 | 10.188.140.143/29 | 10.188.140.137   
+Washington DC | us-east | wdc06 |  10.188.199.95/29 | 10.188.199.89   
+Washington DC | us-east | wdc06 |  10.189.13.23/29  | 10.189.13.17   
+Washington DC | us-east | wdc06 |  10.189.45.223/29 | 10.189.45.217   
+Washington DC | us-east | wdc07 |  10.39.58.255/24  | 10.39.58.1   
+Washington DC | us-east | wdc07 |  10.39.62.255/24  | 10.39.62.1   
+Washington DC | us-east | wdc07 |  10.190.86.191/26 | 10.190.86.129   
+Washington DC | us-east | wdc07 | 10.191.126.127/25 | 10.191.126.1   
+Washington DC | us-east | wdc07 | 10.191.213.255/24 | 10.191.213.1   
+Washington DC | us-east | wdc07 |  10.190.22.175/29 | 10.190.22.169   
+Washington DC | us-east | wdc07 | 10.190.123.143/29 | 10.190.123.137   
+Washington DC | us-east | wdc07 |  10.190.166.39/29 | 10.190.166.33   
+Washington DC | us-east | wdc07 | 10.190.233.215/29 | 10.190.233.209   
+Washington DC | us-east | wdc07 |  10.191.11.127/29 | 10.191.11.121   
+Washington DC | us-east | wdc07 |  10.191.12.175/29 | 10.191.12.169   
+Washington DC | us-east | wdc07 |  10.191.49.247/29 | 10.191.49.241   
+Washington DC | us-east | wdc07 |  10.191.115.7/29  | 10.191.115.1
 
 ### `eu-de` List
 {: #eu-de-list} 
