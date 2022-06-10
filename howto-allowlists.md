@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-06-09"
+lastupdated: "2022-06-10"
 
 subcollection: cloud-databases
 
@@ -702,7 +702,6 @@ Dallas |us-south | dal13 |  174.36.70.143/29  | 174.36.70.137
 
 Location | Region | Data center | Subnet | First IP
 -- | -- | -- | -- | --
-
 Dallas | us-south | dal10 |    10.5.5.255/24   | 10.5.5.1            
 Dallas | us-south | dal10 |   10.5.124.255/24  | 10.5.124.1            
 Dallas | us-south | dal10 |   10.5.204.255/24  | 10.5.204.1            
