@@ -264,10 +264,13 @@ London | eu-gb | lon06 |  10.72.127.111/29 | 10.72.127.105
 London | eu-gb | lon06 |  10.72.187.247/29 | 10.72.187.241 
 
 ### `kr-seo` List
-{: #Seoul 1-list} 
+{: #kr-seo-list} 
 
 `SEO01` Data Center is scheduled to close on 28 October 2022. For more information (including recommended data centers to which you can migrate), see [Migrating resources to a different data center](/docs/cloud-databases?topic=cloud-databases-migrate-data-center).
 {: .important}
+
+#### Public Subnets
+{: #kr-seo-public-list} 
 
 Location | Region | Data center | Subnet | First IP
 -- | -- | -- | -- | --
@@ -277,6 +280,14 @@ Seoul | kr-seo | seo01 | 169.56.120.127/27 | 169.56.120.97
 Seoul | kr-seo | seo01 | 169.56.179.255/25 | 169.56.179.129        
 Seoul | kr-seo | seo01 | 169.56.67.239/29  | 169.56.67.233       
 Seoul | kr-seo | seo01 | 169.56.164.71/29  | 169.56.164.65
+
+#### Private Subnets
+{: #kr-seo-private-list} 
+
+Seoul | kr-seo | seo01 | 10.178.123.255/26 | 10.178.123.193     
+Seoul | kr-seo | seo01 | 10.178.226.127/25 | 10.178.226.1     
+Seoul | kr-seo | seo01 | 10.178.124.175/29 | 10.178.124.169     
+Seoul | kr-seo | seo01 |  10.178.238.55/29 | 10.178.238.49
 
 ### `au-syd` List
 {: #au-syd-list} 
@@ -364,7 +375,7 @@ Tokyo | jp-tok | tok05 | 165.192.148.63/29  | 165.192.148.57
 ### `jp-osa` List
 {: #jp-osa-list} 
 
-### Public Subnets
+#### Public Subnets
 {: #jp-osa-public-list} 
 
 Location | Region | Data center | Subnet | First IP
@@ -385,7 +396,7 @@ Osaka | jp-osa | osa23 | 163.73.71.63/26  | 163.73.71.1
 Osaka | jp-osa | osa23 | 163.73.67.191/29 | 163.73.67.185         
 Osaka | jp-osa | osa23 | 163.73.67.231/29 | 163.73.67.225
 
-### Private Subnets
+#### Private Subnets
 {: #jp-osa-private-list} 
 
 Osaka | jp-osa | osa21 |  10.8.22.255/26 | 10.8.22.193         
