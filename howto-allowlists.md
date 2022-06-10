@@ -168,7 +168,7 @@ Toronto | ca-tor | tor05 |  10.243.23.159/29 | 10.243.23.153
 ### `br-sao` List
 {: #br-sao-list} 
 
-### Public Subnets
+#### Public Subnets
 {: #br-sao-public-list} 
 
 Location | Region | Data center | Subnet | First IP
@@ -189,7 +189,7 @@ Sao Paolo | br-sao | sao05 | 163.109.68.175/28 | 163.109.68.161
 Sao Paolo | br-sao | sao05 | 163.109.65.119/29 | 163.109.65.113            
 Sao Paolo | br-sao | sao05 | 163.109.65.127/29 | 163.109.65.121   
 
-### Private Subnets
+#### Private Subnets
 {: #br-sao-private-list} 
 
 Sao Paolo | br-sao | sao01 | 10.150.175.255/26  | 10.150.175.193               
