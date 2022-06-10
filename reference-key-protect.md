@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2022
-lastupdated: "2022-05-24"
+lastupdated: "2022-06-10"
 
 subcollection: cloud-databases
 
@@ -110,7 +110,7 @@ Cryptoshredding is a destructive action. When the key is deleted, your data is u
 If you use Key Protect, when you provision a database you can also designate a key to encrypt the Cloud Object Storage disk that holds your deployment's backups. 
 Bring your own key for backups is only available in the following regions: `us-south`, `us-east`, and `eu-de`. 
 
-Only keys in the `us-south` region are durable to region failures. To ensure that your backups are available even if a region failure occurs, you must use a key from `us-south` or `eu-de`, regardless of your deployment location.
+Only keys in the `us-south` and `eu-de` regions are durable to region failures. To ensure that your backups are available even if a region failure occurs, you must use a key from `us-south` or `eu-de`, regardless of your deployment location.
 {: .note}
 
 ### Granting the delegation authorization
