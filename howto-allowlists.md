@@ -289,7 +289,6 @@ London | eu-gb | lon06 |  10.72.187.247/29 | 10.72.187.241
 
 #### Public Subnets
 {: #kr-seo-public-list} 
-
 Location | Region | Data center | Subnet | First IP
 -- | -- | -- | -- | --
 Seoul | kr-seo | seo01 | 169.56.80.143/28  | 169.56.80.129       
