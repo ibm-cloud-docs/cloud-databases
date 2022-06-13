@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2022
-lastupdated: "2022-05-05"
+lastupdated: "2022-06-13"
 
 keywords: kubernetes, tutorial, setup, terraform, IBM Cloud Databases, ICD
 
@@ -65,10 +65,3 @@ Use [Databases for PostgreSQL](/docs/databases-for-postgresql) to set up isolate
 The [{{site.data.keyword.databases-for}} "Hello World" Kubernetes tutorial](https://github.com/IBM-Cloud/clouddatabases-helloworld-kubernetes-examples) repository holds sample {{site.data.keyword.cloud}} applications that show you how to connect to a {{site.data.keyword.databases-for}} deployment to an {{site.data.keyword.containerlong_notm}} application written in various programming languages.  
 
 Each Git branch of the examples repository corresponds to samples in a particular programming language. For example, when you click **Branch**, a **Node** branch exists where all examples are written in JavaScript that uses Node.js. The files in each folder correspond to either a database or a message queue.  
-
-### An example Cloud Foundry Application
-{: #example-cf-app}
-
-The [{{site.data.keyword.databases-for}} Cloud Foundry application tutorial](https://github.com/IBM-Cloud/clouddatabases-helloworld-cloudfoundry-examples) demonstrates how to connect a Cloud Foundry application in {{site.data.keyword.cloud_notm}} to a {{site.data.keyword.databases-for}} deployment. The application creates, reads from, and writes to a database that uses data that is supplied by the app's web interface.
-
-Each Git branch of the [repository](https://github.com/IBM-Cloud/clouddatabases-helloworld-cloudfoundry-examples) corresponds to samples in a particular programming language. For example, when you click **Branch** you see a **Node** branch, where all examples are written in JavaScript that uses Node.js. The files in each folder correspond to either a database or a message queue. 
