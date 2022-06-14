@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018, 2022
-lastupdated: "2022-05-05"
+lastupdated: "2022-06-14"
 
 subcollection: cloud-databases
 
@@ -64,6 +64,7 @@ MongoDB | Major versions are the first two numbers in a `major.x.patch` versio
 PostgreSQL* | Major version is defined by the first number in the version number. | v9.6, [11 November 2021](https://www.postgresql.org/support/versioning/)| Backup taken and access removed|  
 Redis | Major versions are the first number in a `major.minor.patch` version number. | v4.0, [27 May 2022](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-databases-for-redis-4-end-of-life-in-march-2022) | Automatically upgraded in place to next Major version only for Redis 4 to Redis 5|  
 RabbitMQ | Major versions are the first two numbers in a `major.x.patch` version number. | v3.8, [12 July 2022](https://www.ibm.com/cloud/blog/announcements/messages-for-rabbitmq-38-end-of-life-in-july-2022) | Backup taken and access removed|  
+MySQL | Major versions are the first two numbers in a `major.x.patch` version number. | v5.7, October 2023 | Backup taken and access removed|  
 {: caption="Table 1. Major versions for {{site.data.keyword.databases-for}}" caption-side="top"}
 
 **The versioning schema for PostgreSQL changed after version 9.6. Before and including version 9.6, a PostgreSQL major version was defined by the first two numbers in the version.*
