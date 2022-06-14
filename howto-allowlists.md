@@ -663,6 +663,8 @@ Paris | eu-de | par01 | 159.8.94.95/29   | 159.8.94.89
 #### Private Subnets
 {: #eu-de-private-list} 
 
+Location | Region | Data center | Subnet | First IP
+-- | -- | -- | -- | --
 Frankfurt | eu-de | fra02 |  10.20.34.255/24   | 10.20.34.1       
 Frankfurt | eu-de | fra02 | 10.134.228.255/24  | 10.134.228.1       
 Frankfurt | eu-de | fra02 |   10.194.5.63/26   | 10.194.5.1       
