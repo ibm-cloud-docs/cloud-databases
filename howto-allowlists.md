@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-06-14"
+lastupdated: "2022-06-15"
 
 subcollection: cloud-databases
 
@@ -153,6 +153,8 @@ Toronto | ca-tor | tor05  | 163.75.67.119/29  |  163.75.67.113
 #### Private Subnets
 {: #ca-tor-private-list} 
 
+Location | Region | Data center | Subnet | First IP
+-- | -- | -- | -- | --
 Toronto | ca-tor | tor01 | 10.114.100.127/26 | 10.114.100.65    
 Toronto | ca-tor | tor01 |  10.114.79.63/29  | 10.114.79.57    
 Toronto | ca-tor | tor01 |  10.115.88.79/29  | 10.115.88.73    
