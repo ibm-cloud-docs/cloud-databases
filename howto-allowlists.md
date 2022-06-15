@@ -426,6 +426,8 @@ Tokyo | jp-tok | tok05 | 165.192.148.63/29  | 165.192.148.57
 #### Private Subnets
 {: #jp-tok-private-list} 
 
+Location | Region | Data center | Subnet | First IP
+-- | -- | -- | -- | --
 Tokyo | jp-tok | tok02 | 10.129.132.127/25 | 10.129.132.1              
 Tokyo | jp-tok | tok02 | 10.129.223.255/24 | 10.129.223.1              
 Tokyo | jp-tok | tok02 | 10.133.170.255/26 | 10.133.170.193              
@@ -475,6 +477,8 @@ Osaka | jp-osa | osa23 | 163.73.67.231/29 | 163.73.67.225
 #### Private Subnets
 {: #jp-osa-private-list} 
 
+Location | Region | Data center | Subnet | First IP
+-- | -- | -- | -- | --
 Osaka | jp-osa | osa21 |  10.8.22.255/26 | 10.8.22.193         
 Osaka | jp-osa | osa21 |  10.8.16.159/29 | 10.8.16.153         
 Osaka | jp-osa | osa21 |  10.8.16.167/29 | 10.8.16.161         
@@ -542,6 +546,8 @@ Washington DC | us-east | wdc07 |   169.62.6.87/29   | 169.62.6.81
 #### Private Subnets
 {: #us-east-private-list} 
 
+Location | Region | Data center | Subnet | First IP
+-- | -- | -- | -- | --
 Washington DC | us-east | wdc04 |  10.65.119.255/25 | 10.65.119.129   
 Washington DC | us-east | wdc04 |  10.65.145.255/26 | 10.65.145.193   
 Washington DC | us-east | wdc04 |  10.211.67.255/24 | 10.211.67.1   
