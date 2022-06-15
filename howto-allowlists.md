@@ -194,6 +194,8 @@ Sao Paolo | br-sao | sao05 | 163.109.65.127/29 | 163.109.65.121
 #### Private Subnets
 {: #br-sao-private-list} 
 
+Location | Region | Data center | Subnet | First IP
+-- | -- | -- | -- | --
 Sao Paolo | br-sao | sao01 | 10.150.175.255/26  | 10.150.175.193               
 Sao Paolo | br-sao | sao01 | 10.151.137.127/25  | 10.151.137.1               
 Sao Paolo | br-sao | sao01 | 10.150.169.167/29  | 10.150.169.161               
@@ -344,6 +346,8 @@ Sydney | au-syd | syd05 |  135.90.68.39/29   | 135.90.68.33
 #### Private Subnets
 {: #au-syd-private-list} 
 
+Location | Region | Data center | Subnet | First IP
+-- | -- | -- | -- | --
 Sydney | au-syd | syd01 | 10.138.220.255/25  | 10.138.220.129   
 Sydney | au-syd | syd01 |  10.139.40.63/26   | 10.139.40.1   
 Sydney | au-syd | syd01 |  10.138.152.63/29  | 10.138.152.57   
