@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2022-04-06"
+  years: 2019, 2022
+lastupdated: "2022-06-16"
 
 subcollection: cloud-databases
 
@@ -47,59 +47,50 @@ Access to certain API endpoints and requests is governed by role. The following 
 {: #viewer}
 
 The allowed actions for the Viewer role.
-```bash
-GET /v4/ibm/deployables
+```sh
+GET /v5/ibm/deployables
 Read Deployables
 ---
-GET /v4/ibm/regions
+GET /v5/ibm/regions
 Read Discover available regions
 ---
 GET /v4/ibm/tasks/:task_id
 Read a Task
 ---
-GET /v4/ibm/backups/:backup_id
+GET /v5/ibm/tasks/:task_id
 Read a Backup
 ---
-GET /v4/ibm/deployments/:deployment_id
+GET /v5/ibm/deployments/:deployment_id
 Read a Deployment
 ---
-GET /v4/ibm/deployables/:deployable_id/groups
+GET /v5/ibm/deployables/:deployable_id/groups
 Read deployable group
 ---
-GET /v4/ibm/deployments/:deployment_id/point_in_time_recovery_data
+GET /v5/ibm/deployments/:deployment_id/point_in_time_recovery_data
 Read all deployment point-in-time-recovery data
 ---
-GET /v4/ibm/deployments/:deployment_id/tasks
+GET /v5/ibm/deployments/:deployment_id/tasks
 Read all deployment tasks
 ---
-GET /v4/ibm/deployments/:deployment_id/backups
+GET /v5/ibm/deployments/:deployment_id/backups
 Read all deployment backups
 ---
-GET /v4/ibm/deployments/:deployment_id/remotes
+GET /v5/ibm/deployments/:deployment_id/remotes
 Read all deployment remotes
 ---
-GET /v4/ibm/deployments/:deployment_id/groups
+GET /v5/ibm/deployables/:deployable_id/groups
 Read all deployment groups
 ---
-GET /v4/ibm/deployments/:deployment_id/configuration/schema
+GET /v5/ibm/deployments/:deployment_id/configuration/schema
 Read deployment configuration schema
 ---
-GET /v4/ibm/deployments/:deployment_id/users/:user_id
-Read a DeploymentUser
----
-GET /v4/ibm/deployments/:deployment_id/users/:user_id/connections
+GET /v5/ibm/deployments/:deployment_id/users/:user_type/:user_id/connections/:endpoint_type
 Read deployment user connections
 ---
-GET /v4/ibm/deployments/:deployment_id/users/:user_id/connections/:endpoint_type
-Read deployment user connections
----
-POST /v4/ibm/deployments/:deployment_id/users/:user_id/connections
+POST /v5/ibm/deployments/:deployment_id/users/:user_type/:user_id/connections/:endpoint_type
 Create deployment user connections
 ---
-POST /v4/ibm/deployments/:deployment_id/users/:user_id/connections/:endpoint_type
-Create deployment user connections
----
-GET /v4/ibm/deployments/:deployment_id/whitelists/ip_addresses
+GET /v5/ibm/deployments/:deployment_id/allowlists/ip_addresses
 Read Allowlisted IP Addresses
 ```
 
@@ -107,101 +98,83 @@ Read Allowlisted IP Addresses
 {: #operator}
 
 The Operator and Editor roles are functionally the same for {{site.data.keyword.databases-for}}. This list contains allowed actions for the Operator and the Editor roles.
-```bash
-GET /v4/ibm/deployables
+```sh
+GET /v5/ibm/deployables
 Read Deployables
 ---
-GET /v4/ibm/regions
+GET /v5/ibm/regions
 Read Discover available regions
 ---
-GET /v4/ibm/tasks/:task_id
+GET /v5/ibm/tasks/:task_id
 Read a Task
 ---
-GET /v4/ibm/backups/:backup_id
+GET /v5/ibm/backups/:backup_id
 Read a Backup
 ---
-GET /v4/ibm/deployments/:deployment_id
+GET /v5/ibm/deployments/:deployment_id
 Read a Deployment
 ---
-PATCH /v4/ibm/deployments/:deployment_id
-Update a Deployment
----
-GET /v4/ibm/deployables/:deployable_id/groups
+GET /v5/ibm/deployables/:deployable_id/groups
 Read deployable group
 ---
-GET /v4/ibm/deployments/:deployment_id/point_in_time_recovery_data
+GET /v5/ibm/deployments/:deployment_id/point_in_time_recovery_data
 Read all deployment point-in-time-recovery data
 ---
-GET /v4/ibm/deployments/:deployment_id/tasks
+GET /v5/ibm/deployments/:deployment_id/tasks
 Read all deployment tasks
 ---
-GET /v4/ibm/deployments/:deployment_id/backups
+GET /v5/ibm/deployments/:deployment_id/backups
 Read all deployment backups
 ---
-POST /v4/ibm/deployments/:deployment_id/backups
+POST /v5/ibm/deployments/:deployment_id/backups
 Create an on-demand backup
 ---
-GET /v4/ibm/deployments/:deployment_id/remotes
+GET /v5/ibm/deployments/:deployment_id/remotes
 Read all deployment remotes
 ---
-PATCH /v4/ibm/deployments/:deployment_id/remotes
-Update a remote replica
----
-POST /v4/ibm/deployments/:deployment_id/remotes/resync
+POST /v5/ibm/deployments/:deployment_id/remotes/resync
 Resync remote replica
 ---
-GET /v4/ibm/deployments/:deployment_id/groups
+GET /v5/ibm/deployables/:deployable_id/groups
 Read all deployment groups
 ---
-PATCH /v4/ibm/deployments/:deployment_id/groups/:group_id
-Read deployment group
+PATCH /v5/ibm/deployments/:deployment_id/groups/:group_id
+Set scaling values on a specified group.
 ---
-DELETE /v4/ibm/deployments/:deployment_id/management/database_connections
-Kill all database connections
+DELETE /v5/ibm/deployments/:deployment_id/management/database_connections
+Closes all the connections on a deployment. Available for PostgreSQL and EnterpriseDB ONLY.
 ---
-PATCH /v4/ibm/deployments/:deployment_id/configuration
+PATCH /v5/ibm/deployments/:deployment_id/configuration
 Update deployment configuration
 ---
-GET /v4/ibm/deployments/:deployment_id/configuration/schema
+GET /v5/ibm/deployments/:deployment_id/configuration/schema
 Read deployment configuration schema
 ---
-POST /v4/ibm/deployments/:deployment_id/users
-Create a DeploymentUser
+POST /v5/ibm/deployments/:deployment_id/users/:user_type
+Create a user based on user type
 ---
-GET /v4/ibm/deployments/:deployment_id/users/:user_id
-Read a DeploymentUser
+DELETE /v5/ibm/deployments/:deployment_id/users/:user_type/:user_id
+Remove a user based on user type
 ---
-PATCH /v4/ibm/deployments/:deployment_id/users/:user_id
-Update a DeploymentUser
----
-DELETE /v4/ibm/deployments/:deployment_id/users/:user_id
-Remove a DeploymentUser
----
-GET /v4/ibm/deployments/:deployment_id/users/:user_id/connections
+GET /v5/ibm/deployments/:deployment_id/users/:user_type/:user_id/connections/:endpoint_type
 Read deployment user connections
 ---
-GET /v4/ibm/deployments/:deployment_id/users/:user_id/connections/:endpoint_type
-Read deployment user connections
----
-POST /v4/ibm/deployments/:deployment_id/users/:user_id/connections
+POST /v5/ibm/deployments/:deployment_id/users/:user_type/:user_id/connections/:endpoint_type
 Create deployment user connections
 ---
-POST /v4/ibm/deployments/:deployment_id/users/:user_id/connections/:endpoint_type
-Create deployment user connections
----
-GET /v4/ibm/deployments/:deployment_id/whitelists/ip_addresses
+GET /v5/ibm/deployments/:deployment_id/allowlists/ip_addresses
 Read Allowlisted IP Addresses
 ---
-POST /v4/ibm/deployments/:deployment_id/whitelists/ip_addresses
+POST /v5/ibm/deployments/:deployment_id/allowlists/ip_addresses
 Create an Allowlisted IP Addresses
 ---
-DELETE /v4/ibm/deployments/:deployment_id/whitelists/ip_addresses/:ip_address_id
+DELETE /v5/ibm/deployments/:deployment_id/allowlists/ip_addresses/:ip_address_id
 Remove an Allowlisted IP Addresses
 ---
-PUT /v4/ibm/deployments/:deployment_id/whitelists/ip_addresses
+PUT /v5/ibm/deployments/:deployment_id/allowlists/ip_addresses
 Bulk allowlist IP addresses
 ---
-POST /v4/ibm/deployments/:deployment_id/elasticsearch/file_syncs
+POST /v5/ibm/deployments/:deployment_id/elasticsearch/file_syncs
 Create elasticsearch file sync
 ```
 
@@ -209,100 +182,85 @@ Create elasticsearch file sync
 {: #admin}
 
 The allowed actions for the Administrator role.
-```bash
-GET /v4/ibm/deployables
+```sh
+GET /v5/ibm/deployables
 Read Deployables
 ---
-GET /v4/ibm/regions
+GET /v5/ibm/regions
 Read Discover available regions
 ---
-GET /v4/ibm/tasks/:task_id
+GET /v5/ibm/tasks/:task_id
 Read a Task
 ---
-GET /v4/ibm/backups/:backup_id
+GET /v5/ibm/backups/:backup_id
 Read a Backup
 ---
-GET /v4/ibm/deployments/:deployment_id
+GET /v5/ibm/deployments/:deployment_id
 Read a Deployment
 ---
-PATCH /v4/ibm/deployments/:deployment_id
-Update a Deployment
----
-GET /v4/ibm/deployables/:deployable_id/groups
+GET /v5/ibm/deployables/:deployable_id/groups
 Read deployable group
 ---
-GET /v4/ibm/deployments/:deployment_id/point_in_time_recovery_data
+GET /v5/ibm/deployments/:deployment_id/point_in_time_recovery_data
 Read all deployment point-in-time-recovery data
 ---
-GET /v4/ibm/deployments/:deployment_id/tasks
+GET /v5/ibm/deployments/:deployment_id/tasks
 Read all deployment tasks
 ---
-GET /v4/ibm/deployments/:deployment_id/backups
+GET /v5/ibm/backups/:backup_id
 Read all deployment backups
 ---
-POST /v4/ibm/deployments/:deployment_id/backups
+POST /v5/ibm/deployments/:deployment_id/backups
 Create an on-demand backup
 ---
-GET /v4/ibm/deployments/:deployment_id/remotes
+GET /v5/ibm/deployments/:deployment_id/backups
 Read all deployment remotes
 ---
-PATCH /v4/ibm/deployments/:deployment_id/remotes
-Update a remote replica
----
-POST /v4/ibm/deployments/:deployment_id/remotes/resync
+POST /v5/ibm/deployments/:deployment_id/remotes/resync
 Resync remote replica
 ---
-GET /v4/ibm/deployments/:deployment_id/groups
+GET /v5/ibm/deployables/:deployable_id/groups
 Read all deployment groups
 ---
-PATCH /v4/ibm/deployments/:deployment_id/groups/:group_id
+PATCH /v5/ibm/deployments/:deployment_id/groups/:group_id
 Read deployment group
 ---
-DELETE /v4/ibm/deployments/:deployment_id/management/database_connections
+DELETE /v5/ibm/deployments/:deployment_id/management/database_connections
 Kill all database connections
 ---
-PATCH /v4/ibm/deployments/:deployment_id/configuration
+PATCH /v5/ibm/deployments/:deployment_id/configuration
 Update deployment configuration
 ---
-GET /v4/ibm/deployments/:deployment_id/configuration/schema
+GET /v5/ibm/deployments/:deployment_id/configuration/schema
 Read deployment configuration schema
 ---
-POST /v4/ibm/deployments/:deployment_id/users
-Create a DeploymentUser
+POST /v5/ibm/deployments/:deployment_id/users/:user_type
+Create a user based on user type
 ---
-GET /v4/ibm/deployments/:deployment_id/users/:user_id
-Read a DeploymentUser
----
-PATCH /v4/ibm/deployments/:deployment_id/users/:user_id
+PATCH /v5/ibm/deployments/:deployment_id/users/:user_type/:user_id
 Update a DeploymentUser
 ---
-DELETE /v4/ibm/deployments/:deployment_id/users/:user_id
-Remove a DeploymentUser
+DELETE /v5/ibm/deployments/:deployment_id/users/:user_type/:user_id
+Remove a user based on user type
 ---
-GET /v4/ibm/deployments/:deployment_id/users/:user_id/connections
+GET /v5/ibm/deployments/:deployment_id/users/:user_type/:user_id/connections/:endpoint_type
 Read deployment user connections
 ---
-GET /v4/ibm/deployments/:deployment_id/users/:user_id/connections/:endpoint_type
-Read deployment user connections
----
-POST /v4/ibm/deployments/:deployment_id/users/:user_id/connections
+POST /v5/ibm/deployments/:deployment_id/users/:user_type/:user_id/connections/:endpoint_type
 Create deployment user connections
 ---
-POST /v4/ibm/deployments/:deployment_id/users/:user_id/connections/:endpoint_type
-Create deployment user connections
----
-GET /v4/ibm/deployments/:deployment_id/whitelists/ip_addresses
+GET /v5/ibm/deployments/:deployment_id/allowlists/ip_addresses
 Read Allowlisted IP Addresses
 ---
-POST /v4/ibm/deployments/:deployment_id/whitelists/ip_addresses
+POST /v5/ibm/deployments/:deployment_id/allowlists/ip_addresses
 Create an Allowlisted IP Addresses
 ---
-DELETE /v4/ibm/deployments/:deployment_id/whitelists/ip_addresses/:ip_address_id
+DELETE /v5/ibm/deployments/:deployment_id/allowlists/ip_addresses/:ip_address_id
 Remove an Allowlisted IP Addresses
 ---
-PUT /v4/ibm/deployments/:deployment_id/whitelists/ip_addresses
+PUT /v5/ibm/deployments/:deployment_id/allowlists/ip_addresses
 Bulk allowlist IP addresses
 ---
-POST /v4/ibm/deployments/:deployment_id/elasticsearch/file_syncs
+POST /v5/ibm/deployments/:deployment_id/elasticsearch/file_syncs
 Create elasticsearch file sync
 ```
