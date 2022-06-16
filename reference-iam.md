@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2022-04-06"
+  years: 2019, 2022
+lastupdated: "2022-06-16"
 
 subcollection: cloud-databases
 
@@ -47,59 +47,50 @@ Access to certain API endpoints and requests is governed by role. The following 
 {: #viewer}
 
 The allowed actions for the Viewer role.
-```bash
-GET /v4/ibm/deployables
+```sh
+GET /v5/ibm/deployables
 Read Deployables
 ---
-GET /v4/ibm/regions
+GET /v5/ibm/regions
 Read Discover available regions
 ---
 GET /v4/ibm/tasks/:task_id
 Read a Task
 ---
-GET /v4/ibm/backups/:backup_id
+GET /v5/ibm/tasks/:task_id
 Read a Backup
 ---
-GET /v4/ibm/deployments/:deployment_id
+GET /v5/ibm/deployments/:deployment_id
 Read a Deployment
 ---
-GET /v4/ibm/deployables/:deployable_id/groups
+GET /v5/ibm/deployables/:deployable_id/groups
 Read deployable group
 ---
-GET /v4/ibm/deployments/:deployment_id/point_in_time_recovery_data
+GET /v5/ibm/deployments/:deployment_id/point_in_time_recovery_data
 Read all deployment point-in-time-recovery data
 ---
-GET /v4/ibm/deployments/:deployment_id/tasks
+GET /v5/ibm/deployments/:deployment_id/tasks
 Read all deployment tasks
 ---
-GET /v4/ibm/deployments/:deployment_id/backups
+GET /v5/ibm/deployments/:deployment_id/backups
 Read all deployment backups
 ---
-GET /v4/ibm/deployments/:deployment_id/remotes
+GET /v5/ibm/deployments/:deployment_id/remotes
 Read all deployment remotes
 ---
-GET /v4/ibm/deployments/:deployment_id/groups
+GET /v5/ibm/deployables/:deployable_id/groups
 Read all deployment groups
 ---
-GET /v4/ibm/deployments/:deployment_id/configuration/schema
+GET /v5/ibm/deployments/:deployment_id/configuration/schema
 Read deployment configuration schema
 ---
-GET /v4/ibm/deployments/:deployment_id/users/:user_id
-Read a DeploymentUser
----
-GET /v4/ibm/deployments/:deployment_id/users/:user_id/connections
+GET /v5/ibm/deployments/:deployment_id/users/:user_type/:user_id/connections/:endpoint_type
 Read deployment user connections
 ---
-GET /v4/ibm/deployments/:deployment_id/users/:user_id/connections/:endpoint_type
-Read deployment user connections
----
-POST /v4/ibm/deployments/:deployment_id/users/:user_id/connections
+POST /v5/ibm/deployments/:deployment_id/users/:user_type/:user_id/connections/:endpoint_type
 Create deployment user connections
 ---
-POST /v4/ibm/deployments/:deployment_id/users/:user_id/connections/:endpoint_type
-Create deployment user connections
----
-GET /v4/ibm/deployments/:deployment_id/whitelists/ip_addresses
+GET /v5/ibm/deployments/:deployment_id/allowlists/ip_addresses
 Read Allowlisted IP Addresses
 ```
 
@@ -107,7 +98,7 @@ Read Allowlisted IP Addresses
 {: #operator}
 
 The Operator and Editor roles are functionally the same for {{site.data.keyword.databases-for}}. This list contains allowed actions for the Operator and the Editor roles.
-```bash
+```sh
 GET /v4/ibm/deployables
 Read Deployables
 ---
