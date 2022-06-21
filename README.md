@@ -7,6 +7,7 @@ This repo contains documentation common to the IBM Cloud Databases services, enc
 - Databases for PostgreSQL
 - Databases for Redis
 - Messages for RabbitMQ
+- Databases for MySQL {{site.data.keyword.databases-for-mysql}}
 
 These docs do not have an attached catalog entry, and do not show up as a distinct service on the docs pages. They are linked to in the Table of Contents in the above services' documentation.
 
@@ -29,5 +30,9 @@ The output from the `publish` branch is mirrored on [github.com](https://github.
 - [IBM Cloud doc build](https://test.cloud.ibm.com/docs/developing/writing?topic=writing-get-start-docbuilds)
 
 For general questions about IBM Cloud Databases, see the [icd-questions channel](https://ibm-cloudplatform.slack.com/messages/C534XRCF3/)
+
+## Blog Submissions
+
+To submit a blog, go [here](https://w3.ibm.com/w3publisher/ibm-cloud-blog/submit-a-post). Ian Smalley handles everything blog-related, so any updates go through him. Use the same form to update, just make a note that it's an update, not a new post.
 
 
