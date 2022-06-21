@@ -19,60 +19,175 @@ completion-time: 2h
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
+{:important: .important}
 
-# 
-{: #}
+# Mapping Global COVID-19 cases with the {{site.data.keyword.databases-for-mongodb}} EE (Enterprise Edition) Analytics Add-On and Tableau
+{: #bi-connector-tutorial-description}
 {: toc-completion-time="2h"}
 {: toc-content-type="tutorial"}
 
-## 
-{: #}
+The {{site.data.keyword.databases-for-mongodb}} EE (Enterprise Edition) Analytics Add-On allows you to run long-running analytical queries or provision a [MongoDB Connector for business intelligence(BI)](https://docs.mongodb.com/bi-connector/current/){: .external} to make your query data compatible with BI tools, such as [Tableau](https://www.tableau.com/){: .external}.
 
-## 
-{: #}
+For more information, see [{{site.data.keyword.databases-for-mongodb}} EE (Enterprise Edition) Analytics Add-On](/docs/databases-for-mongodb?topic=databases-for-mongodb-mongodbee-analytics). 
 
-## What you will need 
+This tutorial familiarizes you with the Analytics Add-On using Tableau to visualize data in your MongoDB instance. In summary, you will:
+- Install an instance of {{site.data.keyword.databases-for-mongodb}} EE with the Analytics Add-On using [Terraform](https://www.terraform.io/intro){: .external}, a popular Infrastructure-as-Code tool.
+- Upload data to your MongoDB database instance (COVID-19 data from the World Health Organization), by using basic [Node.js](https://nodejs.org/en/about/){: .external} scripting.
+- Connect your database instance to Tableau.
+- Generate a map visualization of COVID-19 cases around the world.
+
+This tutorial requires some basic knowledge of the Command Line Interface (CLI) and basic knowledge of Node.js.
+
+Because the MongoDB instance you require is not free, this tutorial is not cost-free. However, if you deprovision your resources after completion, the cost should not be more than a few dollars.{: .important}
+
+## What you need 
 {: #what-you-need}
 
-Before you begin, it's a good idea to install some necessary productivity tools:
+Before you begin, it's a good idea to have:
 
-- An [IBM Cloud](https://cloud.ibm.com/login) pay-as-you-go account (make sure it is [logged in to your account.](https://cloud.ibm.com/docs/cli?topic=cli-getting-started#step4-configure-idt-env))
-- The [IBM CLI](https://www.ibm.com/cloud/cli) - the command line interface to interact with the IBM API. You will need to make sure it has the following [plug-ins](https://cloud.ibm.com/docs/cli?topic=cli-plug-ins):
-   - openshift (oc)
-   - container registry (cr)
-- Make sure you have access to a Mac or Linux terminal.
-- [The Kubernetes CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl/) - a command line interface for running commands against Kubernetes clusters.
-- [Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli) - automates your resource provisioning
-- [Docker](https://docs.docker.com/engine/install/) We will be using Docker to create the images that will run your code inside your cluster — make sure you are logged into your Docker account
-- [jq](https://stedolan.github.io/jq/) - a lightweight and flexible command-line JSON processor
-- [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) - a free and open source distributed version control system
-- [Node.js and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+- An [IBM Cloud](https://cloud.ibm.com/login) pay-as-you-go account, [logged in to your account](https://cloud.ibm.com/docs/cli?topic=cli-getting-started#step4-configure-idt-env).
+- [Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli){: .external} - automates your resource provisioning.
+- Access to a Mac or Linux terminal.
+- [Node.js and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).{: .external}
+- [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git){: .external} - a free and open source-distributed version control system.
+- [MongoDB Compass](https://www.mongodb.com/try/download/compass){: .external} to look at your data (optional).
+- [The Kubernetes CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl/){: .external} - a command-line interface for running commands against Kubernetes clusters.
+- [Tableau], to visualize your data. You need to set up a [30-day free trial](https://www.tableau.com/products/trial){: .external}.
 
 ## Step-by-step instructions 
 {: #bi-connector-steps}
 
-### Step 1: 
-{: #}
+### Step 1: Obtain an API key to deploy infrastructure to your account
+{: #obtain-api-key}
 {: step}
 
-### Step 2:
-{: #}
+Follow the steps [here](/docs/account?topic=account-userapikey&interface=ui#create_user_key) to create an API key. This key is used in Step 2.
+
+### Step 2: Clone the repo and change directories into the Terraform directory
+{: #clone-repo}
 {: step}
 
-### Step 3: 
-{: #}
+Use the following command to clone the appropriate repo and change directories into the Terraform directory:
+
+```sh
+git clone https://github.com/IBM-Cloud/mongo-bi-tools-tutorial.git
+cd mongo-bi-tools-tutorial/terraform
+```
+{: .codeblock}
+
+### Step 3: Create your `terraform.tfvars` document
+{: #create-terra-doc}
 {: step}
 
-### Step 4: 
-{: #}
+Using the following command, create a document that is named `terraform.tfvars`:
+
+```sh
+ibmcloud_api_key = "<your_api_key_from_step_1>"
+region = "eu-gb"
+admin_password = "<create_10_character_password>"
+```
+
+The `terraform.tfvars` document contains variables that you might [want to keep secret](https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files){: .external}.{: .important}
+
+### Step 4: Create your infrastructure
+{: #create-infra}
 {: step}
 
-### Step 5: 
-{: #}
+Using the following command, run the Terraform script:
+
+```terraform
+terraform init 
+terraform apply --auto-approve
+terraform output -json > ../import-covid-data/output.json
+```
+{: .codeblock}
+
+The Terraform folder contains a number of simple scripts:
+- `main.tf` tells Terraform to use {{site.data.keyword.cloud_notm}}.
+- `variables.tf` contains the variable definitions whose values are populated from the `terraform.tfvars` file.
+- `mongo.tf` creates a {{site.data.keyword.databases-for-mongodb}} EE instance with the Analytics Add-On with the following options: 
+   - 6 CPU cores 
+   - 14 GB RAM
+   - 20 GB memory.
+
+The Terraform script outputs connection strings that are stored in a file named `output.json`. This file is used in the following step.
+
+### Step 5: Upload data to your {{site.data.keyword.databases-for-mongodb}} EE instance
+{: #upload-data}
 {: step}
 
-## What you just did
-{: #bi-connector-what-happened}
+In this step, you use a Node.js script to upload data to your {{site.data.keyword.databases-for-mongodb}} EE instance. The [World Health Organization (WHO) Coronavirus (COVID-19) Dashboard](https://covid19.who.int/data){: .external} provides a daily update of COVID-19 data (deaths, vaccine utilization, and cases). 
 
-### Summary
-{: #bi-connector-summary}
+Ensure you are in your root directory, then use the following command to import this data into your {{site.data.keyword.databases-for-mongodb}} EE instance.
+
+```sh
+cd import-covid-data
+npm install
+node main.js
+```
+
+The `npm install` command installs all dependencies that are needed by your script.
+The `main.js` script does a number of things:
+
+- It reads in the connection strings so that it can connect to your {{site.data.keyword.databases-for-mongodb}} EE instance.
+- It reads in your `terraform.tfvars` credentials file for the password to access your {{site.data.keyword.databases-for-mongodb}} EE instance.
+- It reads the COVID data file from the WHO Dashboard. This data file is in CSV format and MongoDB requires JSON format, so the script reads the data and converts it into a JSON document.
+- It connects to your {{site.data.keyword.databases-for-mongodb}} EE instance and uploads all data (200k+ rows) into a collection named `daily_covid_global_data`. If the collection exists, it deletes it and start again. You can run the script multiple times without importing duplicate data.
+
+It takes only a few seconds to upload all of your data. You are now ready to visualize your using Tableau! The script that you executed will print the connection strings that you need for the next step.
+
+### Step 6: Connect your database instance to Tableau
+{: #connect-instance-tableau}
+
+Connect your {{site.data.keyword.databases-for-mongodb}} EE (Enterprise Edition) Analytics Add-On instance to Tableau. In the "Connect" tab, choose the MongoDB BI Connector and enter your connection information:
+
+![Connect to Tableau](images/tableau-connect.png){: caption="Figure 1. Connect to Tableau" caption-side="bottom"}
+
+![Choose to Connect to MongoDB](images/tableau-connect-mongodb.png){: caption="Figure 2. Choose to Connect to MongoDB" caption-side="bottom"} 
+
+The server and port values come from the printed output of [Step 4]({#create-infra).
+Leave the database blank.
+The username is "admin".
+The password is the one you created in [Step 2](#clone-repo).
+
+![MongoDB Connector Values](images/tableau-connect-variables.png){: caption="Figure 3. Enter your MongoDB Connector Values" caption-side="bottom"} 
+
+In the Initial SQL tab, enter "FLUSH SAMPLE" and click "Sign In"
+
+![Type FLUSH SAMPLE](images/tableau-flush-sample.png){: caption="Figure 4. Type FLUSH SAMPLE" caption-side="bottom"} 
+
+The `FLUSH SAMPLE` command tells the BI Connector to re-create the necessary tabular schema from a sample of the collection documents. Whenever your document structure changes, you need to re-execute the `FLUSH SAMPLE` command to re-create the BI Connector schema.
+
+If your database has many documents, schema creation is a time-consuming process. You should only run `FLUSH SAMPLE` if your document structure changes or you create new collections.{: .note}
+
+### Step 7: Visualize your data!
+{: #visualize-your-data}
+
+You can now select the WHO database on the right. Next, press "Update Now" to see the data in tabular format.
+
+![Visualize your data in tabular format](images/tableau-connect-view-data.png){: caption="Figure 5. Visualize your data in tabular format" caption-side="bottom"} 
+
+If you select the map view from the right menu, you can also see your data in a nice map, with the columns containing country codes and the rows containing cumulative cases.
+
+tableau-connect-map-view.png
+![Visualize your data in map view](images/tableau-connect-view-data.png){: caption="Figure 6. Visualize your data in map view" caption-side="bottom"} 
+
+### Step 8: Deprovision your infrastructure
+{: #deprovision-infra}
+
+To avoid incurring charges, remember to deprovision your resources. Terraform can take care of this. In the CLI, make sure you are in the project's `terraform` directory, then use the following command:
+
+
+```terraform
+terraform destroy --auto-approve
+```
+{: .codeblock}
+
+To confirm that your instance has been deprovisioned, check the Resources section in the [IBM Cloud Console](https://cloud.ibm.com/resources).
+
+## Summary
+{: #summary}
+
+In this tutorial, you used Terraform to provision an {{site.data.keyword.databases-for-mongodb}} EE (Enterprise Edition) instance and then used the Analytics Add-On BI Connector to visualize your data in Tableau. 
+
+Remember, there are [offers available](https://www.ibm.com/cloud/free) to help you continue your IBM Cloud journey of discovery!{: .important}

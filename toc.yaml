@@ -46,6 +46,7 @@ toc:
           - terra-mongodb-tutorial.md
           - k8-tutorial.md
           - truck-tracker-tutorial.md
+          - bi-tutorial.md
       - topicgroup: 
           label: Logging and monitoring
           topics: 
