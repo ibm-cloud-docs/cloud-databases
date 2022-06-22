@@ -168,7 +168,6 @@ You can now select the WHO database on the right. Next, press "Update Now" to se
 
 If you select the map view from the right menu, you can also see your data in a nice map, with the columns containing country codes and the rows containing cumulative cases.
 
-tableau-connect-map-view.png
 ![Visualize your data in map view](images/tableau-connect-map-view.png){: caption="Figure 6. Visualize your data in map view" caption-side="bottom"} 
 
 ### Step 8: Deprovision your infrastructure
