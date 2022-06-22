@@ -47,6 +47,11 @@ toc:
           - k8-tutorial.md
           - truck-tracker-tutorial.md
           - bi-tutorial.md
+      - topicgroup: 
+          label: Logging and monitoring
+          topics: 
+          - reference-activity-tracker.md
+          - reference-logging.md
   - navgroup: 
       id: reference
       topics: 
@@ -57,8 +62,6 @@ toc:
       - db-version-policy.md
       - reference-responsibilities.md
       - reference-iam.md
-      - reference-logging.md
-      - reference-activity-tracker.md
       - topicgroup: 
           label: Connecting over Private Networks
           topics: 
