@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2022
-lastupdated: "2022-06-21"
+lastupdated: "2022-06-22"
 
 keywords: IBM Cloud Databases, ICD, bi connector
 
@@ -51,8 +51,7 @@ Before you begin, it's a good idea to have:
 - [Node.js and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).{: .external}
 - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git){: .external} - a free and open source-distributed version control system.
 - [MongoDB Compass](https://www.mongodb.com/try/download/compass){: .external} to look at your data (optional).
-- [The Kubernetes CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl/){: .external} - a command-line interface for running commands against Kubernetes clusters.
-- [Tableau], to visualize your data. You need to set up a [30-day free trial](https://www.tableau.com/products/trial){: .external}.
+- Tableau, to visualize your data. You need to set up a [30-day free trial](https://www.tableau.com/products/trial){: .external}.
 
 ## Step-by-step instructions 
 {: #bi-connector-steps}
@@ -83,7 +82,7 @@ Using the following command, create a document that is named `terraform.tfvars`:
 
 ```sh
 ibmcloud_api_key = "<your_api_key_from_step_1>"
-region = "eu-gb"
+region = "eu-gb" #Choose a suitable region for your deployment instance.
 admin_password = "<create_10_character_password>"
 ```
 
@@ -118,7 +117,7 @@ The Terraform script outputs connection strings that are stored in a file named 
 
 In this step, you use a Node.js script to upload data to your {{site.data.keyword.databases-for-mongodb}} EE instance. The [World Health Organization (WHO) Coronavirus (COVID-19) Dashboard](https://covid19.who.int/data){: .external} provides a daily update of COVID-19 data (deaths, vaccine utilization, and cases). 
 
-Ensure you are in your root directory, then use the following command to import this data into your {{site.data.keyword.databases-for-mongodb}} EE instance.
+Ensure you are in your project directory, then use the following command to import this data into your {{site.data.keyword.databases-for-mongodb}} EE instance.
 
 ```sh
 cd import-covid-data
@@ -132,9 +131,9 @@ The `main.js` script does a number of things:
 - It reads in the connection strings so that it can connect to your {{site.data.keyword.databases-for-mongodb}} EE instance.
 - It reads in your `terraform.tfvars` credentials file for the password to access your {{site.data.keyword.databases-for-mongodb}} EE instance.
 - It reads the COVID data file from the WHO Dashboard. This data file is in CSV format and MongoDB requires JSON format, so the script reads the data and converts it into a JSON document.
-- It connects to your {{site.data.keyword.databases-for-mongodb}} EE instance and uploads all data (200k+ rows) into a collection named `daily_covid_global_data`. If the collection exists, it deletes it and start again. You can run the script multiple times without importing duplicate data.
+- It connects to your {{site.data.keyword.databases-for-mongodb}} EE instance and uploads all data (200k+ rows) into a collection named `daily_covid_global_data`. If the collection exists, it deletes it and starts again. You can run the script multiple times without importing duplicate data.
 
-It takes only a few seconds to upload all of your data. You are now ready to visualize your using Tableau! The script that you executed will print the connection strings that you need for the next step.
+It takes only a few seconds to upload all of your data. You are now ready to visualize your using Tableau! The script that you ran will print the connection strings that you need for the next step.
 
 ### Step 6: Connect your database instance to Tableau
 {: #connect-instance-tableau}
@@ -156,7 +155,7 @@ In the Initial SQL tab, enter "FLUSH SAMPLE" and click "Sign In"
 
 ![Type FLUSH SAMPLE](images/tableau-flush-sample.png){: caption="Figure 4. Type FLUSH SAMPLE" caption-side="bottom"} 
 
-The `FLUSH SAMPLE` command tells the BI Connector to re-create the necessary tabular schema from a sample of the collection documents. Whenever your document structure changes, you need to re-execute the `FLUSH SAMPLE` command to re-create the BI Connector schema.
+The `FLUSH SAMPLE` command tells the BI Connector to re-create the necessary tabular schema from a sample of the collection documents. Whenever your document structure changes, you need to reexecute the `FLUSH SAMPLE` command to re-create the BI Connector schema.
 
 If your database has many documents, schema creation is a time-consuming process. You should only run `FLUSH SAMPLE` if your document structure changes or you create new collections.{: .note}
 
@@ -170,12 +169,12 @@ You can now select the WHO database on the right. Next, press "Update Now" to se
 If you select the map view from the right menu, you can also see your data in a nice map, with the columns containing country codes and the rows containing cumulative cases.
 
 tableau-connect-map-view.png
-![Visualize your data in map view](images/tableau-connect-view-data.png){: caption="Figure 6. Visualize your data in map view" caption-side="bottom"} 
+![Visualize your data in map view](images/tableau-connect-map-view.png){: caption="Figure 6. Visualize your data in map view" caption-side="bottom"} 
 
 ### Step 8: Deprovision your infrastructure
 {: #deprovision-infra}
 
-To avoid incurring charges, remember to deprovision your resources. Terraform can take care of this. In the CLI, make sure you are in the project's `terraform` directory, then use the following command:
+To avoid incurring charges, remember to deprovision your resources. Terraform can take care of this. In the terminal, make sure you are in the project's `terraform` directory, then use the following command:
 
 
 ```terraform
@@ -183,11 +182,11 @@ terraform destroy --auto-approve
 ```
 {: .codeblock}
 
-To confirm that your instance has been deprovisioned, check the Resources section in the [IBM Cloud Console](https://cloud.ibm.com/resources).
+To confirm that your instance is deprovisioned, check the Resources section in the [IBM Cloud Console](https://cloud.ibm.com/resources).
 
 ## Summary
 {: #summary}
 
-In this tutorial, you used Terraform to provision an {{site.data.keyword.databases-for-mongodb}} EE (Enterprise Edition) instance and then used the Analytics Add-On BI Connector to visualize your data in Tableau. 
+In this tutorial, you used Terraform to provision a {{site.data.keyword.databases-for-mongodb}} EE (Enterprise Edition) instance and then used the Analytics Add-On BI Connector to visualize your data in Tableau. 
 
 Remember, there are [offers available](https://www.ibm.com/cloud/free) to help you continue your IBM Cloud journey of discovery!{: .important}
