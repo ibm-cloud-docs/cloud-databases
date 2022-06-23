@@ -20,6 +20,7 @@ completion-time: 2h
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:step: data-tutorial-type="step"}
 
 # Mapping Global COVID-19 cases with the {{site.data.keyword.databases-for-mongodb}} EE (Enterprise Edition) Analytics Add-On and Tableau
 {: #bi-connector-tutorial-description}
