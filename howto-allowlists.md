@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-06-15"
+lastupdated: "2022-06-29"
 
 subcollection: cloud-databases
 
@@ -24,7 +24,7 @@ To restrict access to your databases, you can allowlist specific IP addresses or
 
 If you use allowlists in your environment, you can allowlist our services by using the list of subnets for each region.
 
-We updated documentation to reflect changes in terminology from `whitelist` to `allowlist`. You might encounter continued references to this former terminology while we work to implement these deeper changes to code, API, and CLI commands. 
+While IBM values the use of inclusive language, terms that are outside of IBM's direct influence are sometimes required for the sake of maintaining user understanding. As other industry leaders join IBM in embracing the use of inclusive language, IBM will continue to update terminology to reflect those changes. We updated documentation to reflect changes in terminology from `whitelist` to `allowlist`. You might encounter continued references to this former terminology while we work to implement these deeper changes to code, API, and CLI commands. 
 {: .note}
 
 Each deployment is limited 100 allowlist entries. 
