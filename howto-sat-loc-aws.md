@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-03-28"
+lastupdated: "2022-06-30"
 
 keywords: IBM Cloud, databases, ICD
 
@@ -68,7 +68,7 @@ Attach to your Satellite location:
 - Three type **32x128** hosts
     - On AWS choose three hosts of type **AWS m5d.8xlarge**
 
-The three type **8x32** hosts are for IBM Cloud™ Databases (ICD) enabled by IBM Cloud Satellite internal use. Nodes are auto-assigned to a service cluster. The three type **32x128** hosts are for your use. 
+You should also attach an additional three **32x128** hosts to be kept in reserve. While optional, this step is recommended and you will see a notification in the UI until the reserve workers are attached. 
 {: note}
 
 To be assigned to a service cluster, your worker nodes must match these specifications *exactly*.
