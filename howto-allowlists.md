@@ -154,18 +154,6 @@ Toronto | ca-tor | tor05 |  163.75.67.119/29 | 163.75.67.113
 
 Location | Region | Data center | Subnet | First IP
 -- | -- | -- | -- | --
-Toronto | ca-tor | tor01 | 10.114.100.127/26 | 10.114.100.65    
-Toronto | ca-tor | tor01 |  10.114.79.63/29  | 10.114.79.57    
-Toronto | ca-tor | tor01 |  10.115.88.79/29  | 10.115.88.73    
-Toronto | ca-tor | tor04 |  10.11.22.127/25  | 10.11.22.1    
-Toronto | ca-tor | tor04 |  10.11.25.191/26  | 10.11.25.129    
-Toronto | ca-tor | tor04 |   10.11.12.47/29  | 10.11.12.41    
-Toronto | ca-tor | tor04 |   10.11.12.55/29  | 10.11.12.49    
-Toronto | ca-tor | tor05 |  10.243.14.255/26 | 10.243.14.193    
-Toronto | ca-tor | tor05 | 10.243.102.255/25 | 10.243.102.129    
-Toronto | ca-tor | tor05 |  10.243.23.135/29 | 10.243.23.129    
-Toronto | ca-tor | tor05 |  10.243.23.159/29 | 10.243.23.153
-
 Toronto | ca-tor | tor01 | 10.114.100.127/26 | 10.114.100.65         
 Toronto | ca-tor | tor01 |  10.114.79.63/29  | 10.114.79.57         
 Toronto | ca-tor | tor01 |  10.115.88.79/29  | 10.115.88.73         
@@ -186,21 +174,22 @@ Toronto | ca-tor | tor05 |  10.243.23.159/29 | 10.243.23.153
 
 Location | Region | Data center | Subnet | First IP
 -- | -- | -- | -- | --
-Sao Paolo | br-sao | sao01 | 169.57.154.239/28 | 169.57.154.225            
-Sao Paolo | br-sao | sao01 | 169.57.191.63/26  | 169.57.191.1         
-Sao Paolo | br-sao | sao01 | 169.57.225.127/27 | 169.57.225.97          
-Sao Paolo | br-sao | sao01 | 169.57.167.95/29  | 169.57.167.89            
-Sao Paolo | br-sao | sao01 | 169.57.199.23/29  | 169.57.199.17            
-Sao Paolo | br-sao | sao04 | 163.107.67.63/28  | 163.107.67.49            
-Sao Paolo | br-sao | sao04 | 163.107.69.63/27  | 163.107.69.33           
-Sao Paolo | br-sao | sao04 | 163.107.72.127/26 | 163.107.72.65          
-Sao Paolo | br-sao | sao04 | 163.107.68.87/29  | 163.107.68.81            
-Sao Paolo | br-sao | sao04 | 163.107.68.95/29  | 163.107.68.89          
-Sao Paolo | br-sao | sao05 | 163.109.68.63/26  | 163.109.68.1        
-Sao Paolo | br-sao | sao05 | 163.109.68.95/27  | 163.109.68.65      
-Sao Paolo | br-sao | sao05 | 163.109.68.175/28 | 163.109.68.161            
-Sao Paolo | br-sao | sao05 | 163.109.65.119/29 | 163.109.65.113            
-Sao Paolo | br-sao | sao05 | 163.109.65.127/29 | 163.109.65.121   
+Sao Paolo | br-sao | sao01 | 169.57.154.239/28 | 169.57.154.225         
+Sao Paolo | br-sao | sao01 |  169.57.191.63/26 | 169.57.191.1         
+Sao Paolo | br-sao | sao01 | 169.57.198.255/25 | 169.57.198.129         
+Sao Paolo | br-sao | sao01 | 169.57.225.127/27 | 169.57.225.97         
+Sao Paolo | br-sao | sao01 |  169.57.167.95/29 | 169.57.167.89         
+Sao Paolo | br-sao | sao01 |  169.57.199.23/29 | 169.57.199.17         
+Sao Paolo | br-sao | sao04 |  163.107.67.63/28 | 163.107.67.49         
+Sao Paolo | br-sao | sao04 |  163.107.69.63/27 | 163.107.69.33         
+Sao Paolo | br-sao | sao04 | 163.107.72.127/26 | 163.107.72.65         
+Sao Paolo | br-sao | sao04 |  163.107.68.87/29 | 163.107.68.81         
+Sao Paolo | br-sao | sao04 |  163.107.68.95/29 | 163.107.68.89         
+Sao Paolo | br-sao | sao05 |  163.109.68.63/26 | 163.109.68.1         
+Sao Paolo | br-sao | sao05 |  163.109.68.95/27 | 163.109.68.65         
+Sao Paolo | br-sao | sao05 | 163.109.68.175/28 | 163.109.68.161         
+Sao Paolo | br-sao | sao05 | 163.109.65.119/29 | 163.109.65.113         
+Sao Paolo | br-sao | sao05 | 163.109.65.127/29 | 163.109.65.121
 
 #### Private Subnets
 {: #br-sao-private-list} 
