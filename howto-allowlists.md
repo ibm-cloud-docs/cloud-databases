@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-06-29"
+lastupdated: "2022-07-01"
 
 subcollection: cloud-databases
 
@@ -24,7 +24,7 @@ To restrict access to your databases, you can allowlist specific IP addresses or
 
 If you use allowlists in your environment, you can allowlist our services by using the list of subnets for each region.
 
-While IBM values the use of inclusive language, terms that are outside of IBM's direct influence are sometimes required for the sake of maintaining user understanding. As other industry leaders join IBM in embracing the use of inclusive language, IBM will continue to update terminology to reflect those changes. We updated documentation to reflect changes in terminology from `whitelist` to `allowlist`. You might encounter continued references to this former terminology while we work to implement these deeper changes to code, API, and CLI commands. 
+While IBM values the use of inclusive language, terms that are outside of IBM's direct influence are sometimes required for the sake of maintaining user understanding. As other industry leaders join IBM in embracing the use of inclusive language, IBM continues to update terminology to reflect those changes. We updated documentation to reflect changes in terminology from `whitelist` to `allowlist`. You might encounter continued references to this former terminology while we work to implement these deeper changes to code, API, and CLI commands. 
 {: .note}
 
 Each deployment is limited 100 allowlist entries. 
@@ -108,12 +108,12 @@ If you use allowlists to control connections in your environment, you can use th
 
 Location | Region | Data center | Subnet | First IP
 -- | -- | -- | -- | --
-Channai | in-che | che01 | 169.38.95.127/27  | 169.38.95.97         
-Channai | in-che | che01 | 169.38.121.159/28 | 169.38.121.145          
-Channai | in-che | che01 | 169.38.132.127/25 | 169.38.132.1          
-Channai | in-che | che01 | 169.38.136.255/26 | 169.38.136.193          
-Channai | in-che | che01 | 169.38.73.151/29  | 169.38.73.145         
-Channai | in-che | che01 | 169.38.105.79/29  | 169.38.105.73 
+Channai | in-che | che01 |  169.38.95.127/27 | 169.38.95.97        
+Channai | in-che | che01 | 169.38.121.159/28 | 169.38.121.145        
+Channai | in-che | che01 | 169.38.132.127/25 | 169.38.132.1        
+Channai | in-che | che01 | 169.38.136.255/26 | 169.38.136.193        
+Channai | in-che | che01 |  169.38.73.151/29 | 169.38.73.145        
+Channai | in-che | che01 |  169.38.105.79/29 | 169.38.105.73  
 
 #### Private Subnets
 {: #che01-private-list} 
