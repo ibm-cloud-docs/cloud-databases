@@ -464,7 +464,7 @@ Osaka | jp-osa | osa22 |  10.9.6.207/29  | 10.9.6.201
 Osaka | jp-osa | osa22 |  10.9.6.215/29  | 10.9.6.209         
 Osaka | jp-osa | osa23 | 10.10.12.255/26 | 10.10.12.193         
 Osaka | jp-osa | osa23 |   10.10.8.7/29  | 10.10.8.1         
-Osaka | jp-osa | osa23 |  10.10.8.15/29  | 10.10.8.9
+Osaka | jp-osa | osa23 |  10.10.8.15/29  | 10.10.8.9 
 
 ### `us-east` List
 {: #us-east-list} 
