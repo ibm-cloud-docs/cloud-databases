@@ -296,12 +296,12 @@ London | eu-gb | lon06 |  10.72.187.247/29 | 10.72.187.241
 
 Location | Region | Data center | Subnet | First IP
 -- | -- | -- | -- | --
-Seoul | kr-seo | seo01 | 169.56.80.143/28  | 169.56.80.129       
-Seoul | kr-seo | seo01 | 169.56.106.63/26  | 169.56.106.1       
-Seoul | kr-seo | seo01 | 169.56.120.127/27 | 169.56.120.97        
-Seoul | kr-seo | seo01 | 169.56.179.255/25 | 169.56.179.129        
-Seoul | kr-seo | seo01 | 169.56.67.239/29  | 169.56.67.233       
-Seoul | kr-seo | seo01 | 169.56.164.71/29  | 169.56.164.65
+Seoul | kr-seo | seo01 |  169.56.80.143/28 | 169.56.80.129         
+Seoul | kr-seo | seo01 |  169.56.106.63/26 | 169.56.106.1         
+Seoul | kr-seo | seo01 | 169.56.120.127/27 | 169.56.120.97         
+Seoul | kr-seo | seo01 | 169.56.179.255/25 | 169.56.179.129         
+Seoul | kr-seo | seo01 |  169.56.67.239/29 | 169.56.67.233         
+Seoul | kr-seo | seo01 |  169.56.164.71/29 | 169.56.164.65 
 
 #### Private Subnets
 {: #kr-seo-private-list} 
