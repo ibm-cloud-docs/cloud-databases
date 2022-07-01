@@ -120,11 +120,10 @@ Channai | in-che | che01 |  169.38.105.79/29 | 169.38.105.73
 
 Location | Region | Data center | Subnet | First IP
 -- | -- | -- | -- | --
-Channai | in-che | che01 |  10.162.8.127/26   | 10.162.8.65    
-Channai | in-che | che01 |  10.163.20.127/25  | 10.163.20.1       
-Channai | in-che | che01 |  10.162.115.103/29 | 10.162.115.97     
-Channai | in-che | che01 |  10.162.132.79/29  | 10.162.132.73 
-
+Channai | in-che | che01 |   10.162.8.127/26  | 10.162.8.65 
+Channai | in-che | che01 |   10.163.20.127/25 | 10.163.20.1    
+Channai | in-che | che01 |  10.162.115.103/29 | 10.162.115.97    
+Channai | in-che | che01 |   10.162.132.79/29 | 10.162.132.73
 
 ### `ca-tor` List
 {: #ca-tor-list} 
