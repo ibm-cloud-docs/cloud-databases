@@ -435,7 +435,7 @@ Tokyo | jp-tok | tok05 | 10.193.103.175/29 | 10.193.103.169
 
 Location | Region | Data center | Subnet | First IP
 -- | -- | -- | -- | --
-Osaka | jp-osa | osa21 | 163.68.68.127/28 | 163.68.68.113          
+Osaka | jp-osa | osa21 | 163.68.68.127/28 | 163.68.68.113         
 Osaka | jp-osa | osa21 | 163.68.73.127/27 | 163.68.73.97         
 Osaka | jp-osa | osa21 | 163.68.96.191/26 | 163.68.96.129         
 Osaka | jp-osa | osa21 | 163.68.67.119/29 | 163.68.67.113         
@@ -449,7 +449,7 @@ Osaka | jp-osa | osa23 | 163.73.65.175/28 | 163.73.65.161
 Osaka | jp-osa | osa23 | 163.73.68.95/27  | 163.73.68.65         
 Osaka | jp-osa | osa23 | 163.73.71.63/26  | 163.73.71.1         
 Osaka | jp-osa | osa23 | 163.73.67.191/29 | 163.73.67.185         
-Osaka | jp-osa | osa23 | 163.73.67.231/29 | 163.73.67.225
+Osaka | jp-osa | osa23 | 163.73.67.231/29 | 163.73.67.225  
 
 #### Private Subnets
 {: #jp-osa-private-list} 
