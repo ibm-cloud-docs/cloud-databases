@@ -2,9 +2,9 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-05-24"
+lastupdated: "2022-07-14"
 
-keywords: provision cloud databases, databases with terraform, provisioning parameters
+keywords: provision cloud databases, terraform, provisioning parameters, cli, resource controller api
 
 subcollection: cloud-databases
 
@@ -61,18 +61,18 @@ After you select the appropriate settings, click **Create** to start the provisi
 
 The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your console or CLI. For more information, see [Download and install {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli).
 
-To create a {{site.data.keyword.databases-for}} deployment, you use the CLI to request a service instance with the service ID of the database (or messaging queue) you want to provision.
+To create a {{site.data.keyword.databases-for}} deployment, use the CLI to request a service instance with the service ID of the database (or messaging queue) you want to provision.
 
 The command template is
 
-```bash
+```sh
 ibmcloud resource service-instance-create <service-name> <service-id> <service-plan-id> <region> --service-endpoints <SERVICE_ENDPOINTS_TYPE>
 ```
 
 More information about this command, in general, is available in the [CLI reference for resource groups](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_create).
 
 When the command is run, provisioning the database deployment begins. The database takes some time to deploy. You can check on its progress on your {{site.data.keyword.cloud_notm}} Dashboard. You can also run:
-```bash
+```sh
 ibmcloud resource service-instance <service-name>
 ```
 
@@ -82,7 +82,7 @@ This command reports the current state of the service instance.
 {: #flags-params}
 
 The `--service-endpoints` flag enables connections to your deployments from the public internet and over the IBM Cloud Private network, by using [Service Endpoints](/docs/services/cloud-databases?topic=cloud-databases-service-endpoints). By default, connections to your deployment can be made from the public network. Possible values are 'public', 'private', 'public-and-private'. If the flag is omitted, the default is public endpoints.
-```bash
+```sh
 ibmcloud resource service-instance-create <service-name> --service-endpoints <endpoint-type>
 ```
 
@@ -90,7 +90,7 @@ The `service-instance-create` command supports a `-p` flag, which allows JSON-fo
 
 For example, if a database is being provisioned from a particular backup and the new database deployment needs a total of 9 GB of memory across three members, then the command to provision 3 GB per member looks like
 
-```bash
+```sh
 ibmcloud resource service-instance-create example-database <service-name> standard us-south \
 -p \ '{
   "backup_id": "crn:v1:blue:public:databases-for-mysql:us-south:a/54e8ffe85dcedf470db5b5ee6ac4a8d8:1b8f53db-fc2d-4e24-8470-f82b15c71717:backup:06392e97-df90-46d8-98e8-cb67e9e0a8e6",
@@ -133,7 +133,7 @@ If you use Terraform to manage your infrastructure, the [{{site.data.keyword.clo
 ## List of Additional Parameters
 {: #provisioning-parameters}
 
-* `backup_id`- A CRN of a backup resource to restore from. The backup must have been created by a database deployment with the same service ID. The backup is loaded after provisioning and the new deployment starts up that uses that data. A backup CRN is in the format `crn:v1:<...>:backup:<uuid>`. If omitted, the database is provisioned empty.
+* `backup_id`- A CRN of a backup resource to restore from. The backup must be created by a database deployment with the same service ID. The backup is loaded after provisioning and the new deployment starts up that uses that data. A backup CRN is in the format `crn:v1:<...>:backup:<uuid>`. If omitted, the database is provisioned empty.
 * `version` - The version of the database to be provisioned. If omitted, the database is created with the most recent major and minor version.
 * `disk_encryption_key_crn` - The CRN of a [Key Protect key](/docs/key-protect?topic=key-protect-view-keys), which is then used for disk encryption. A key protect CRN is in the format `crn:v1:<...>:key:<id>`.
 * `backup_encryption_key_crn` - The CRN of a [Key Protect key](/docs/key-protect?topic=key-protect-view-keys), which is then used for backup encryption. A key protect CRN is in the format `crn:v1:<...>:key:<id>`. Note: to use a key for your backups, you must first [enable the service-to-service delegation](/docs/cloud-databases?topic=cloud-databases-key-protect#byok-for-backups).
