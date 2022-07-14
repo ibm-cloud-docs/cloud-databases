@@ -126,6 +126,7 @@ curl -X POST \
   }'
 ```
 {: .pre}
+
 The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are all required. If needed, you can send [more parameters](#list-of-additional-parameters) in the request body.
 
 More information on the Resource Controller API is found in its [API Reference](https://{DomainName}/apidocs/resource-controller#create-provision-a-new-resource-instance).
