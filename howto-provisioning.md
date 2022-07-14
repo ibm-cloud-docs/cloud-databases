@@ -68,6 +68,7 @@ The command template is
 ```sh
 ibmcloud resource service-instance-create <service-name> <service-id> <service-plan-id> <region> --service-endpoints <SERVICE_ENDPOINTS_TYPE>
 ```
+{: .pre}
 
 More information about this command, in general, is available in the [CLI reference for resource groups](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_create).
 
@@ -75,6 +76,7 @@ When the command is run, provisioning the database deployment begins. The databa
 ```sh
 ibmcloud resource service-instance <service-name>
 ```
+{: .pre}
 
 This command reports the current state of the service instance.
 
@@ -85,6 +87,7 @@ The `--service-endpoints` flag enables connections to your deployments from the 
 ```sh
 ibmcloud resource service-instance-create <service-name> --service-endpoints <endpoint-type>
 ```
+{: .pre}
 
 The `service-instance-create` command supports a `-p` flag, which allows JSON-formatted [parameters](#provisioning-parameters) to be passed to the provisioning process. Some parameter values are CRNs (Cloud Resource Name), which uniquely identify a resource in the cloud. All parameter names and values are passed as strings.
 
@@ -97,6 +100,7 @@ ibmcloud resource service-instance-create example-database <service-name> standa
   "members_memory_allocation_mb": "3072"
 }'
 ```
+{: .pre}
 
 ## Provisioning through the Resource Controller API
 {: #provision-controller-api}
@@ -121,6 +125,7 @@ curl -X POST \
     "resource_plan_id": "databases-for-redis-standard"
   }'
 ```
+{: .pre}
 The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are all required. If needed, you can send [more parameters](#list-of-additional-parameters) in the request body.
 
 More information on the Resource Controller API is found in its [API Reference](https://{DomainName}/apidocs/resource-controller#create-provision-a-new-resource-instance).
