@@ -26,15 +26,15 @@ You can provision a deployment by going to the service's catalog page, or by spe
 
 Deployment Type|Catalog Page|Service ID
 ----------|-----|-----------
-Databases for DataStax|[Link](https://cloud.ibm.com/catalog/services/databases-for-cassandra)|`databases-for-datastax`
-Databases for Elasticsearch|[Link](https://cloud.ibm.com/catalog/services/databases-for-elasticsearch)|`databases-for-elasticsearch`
-Databases for EnterpriseDB|[Link](https://cloud.ibm.com/catalog/services/databases-for-enterprisedb)|`databases-for-enterprisedb`
-Databases for etcd|[Link](https://cloud.ibm.com/catalog/services/databases-for-etcd)|`databases-for-etcd`
-Databases for MongoDB|[Link](https://cloud.ibm.com/catalog/services/databases-for-mongodb)|`databases-for-mongodb`
-Databases for PostgreSQL|[Link](https://cloud.ibm.com/catalog/services/databases-for-postgresql)|`databases-for-postgresql`
-Databases for Redis|[Link](https://cloud.ibm.com/catalog/services/databases-for-redis)|`databases-for-redis`
-Databases for MySQL|[Link](https://cloud.ibm.com/catalog/services/databases-for-mysql)|`databases-for-mysql`
-Messages for RabbitMQ|[Link](https://cloud.ibm.com/catalog/services/messages-for-rabbitmq)|`messages-for-rabbitmq`
+{{site.data.keyword.databases-for-cassandra_full}}|[Link](https://cloud.ibm.com/catalog/services/databases-for-cassandra)|`databases-for-datastax`
+{{site.data.keyword.databases-for-elasticsearch_full}}|[Link](https://cloud.ibm.com/catalog/services/databases-for-elasticsearch)|`databases-for-elasticsearch`
+{{site.data.keyword.databases-for-enterprisedb_full}}|[Link](https://cloud.ibm.com/catalog/services/databases-for-enterprisedb)|`databases-for-enterprisedb`
+{{site.data.keyword.databases-for-etcd_full}}|[Link](https://cloud.ibm.com/catalog/services/databases-for-etcd)|`databases-for-etcd`
+{{site.data.keyword.databases-for-mongodb_full}}|[Link](https://cloud.ibm.com/catalog/services/databases-for-mongodb)|`databases-for-mongodb`
+{{site.data.keyword.databases-for-postgresql_full}}|[Link](https://cloud.ibm.com/catalog/services/databases-for-postgresql)|`databases-for-postgresql`
+{{site.data.keyword.databases-for-redis_full}}|[Link](https://cloud.ibm.com/catalog/services/databases-for-redis)|`databases-for-redis`
+{{site.data.keyword.databases-for-mysql_full}}|[Link](https://cloud.ibm.com/catalog/services/databases-for-mysql)|`databases-for-mysql`
+{{site.data.keyword.messages-for-rabbitmq_full}}|[Link](https://cloud.ibm.com/catalog/services/messages-for-rabbitmq)|`messages-for-rabbitmq`
 {: caption="Table 1. {{site.data.keyword.databases-for}} deployments" caption-side="top"}
 
 ## Using the catalog
