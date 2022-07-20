@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-07-19"
+lastupdated: "2022-07-20"
 
 subcollection: cloud-databases
 
@@ -114,7 +114,7 @@ If you use allowlists to control connections in your environment, you can use th
 | Channai | in-che | che01 | 169.38.136.255/26 | 169.38.136.193 |        
 | Channai | in-che | che01 |  169.38.73.151/29 | 169.38.73.145 |        
 | Channai | in-che | che01 |  169.38.105.79/29 | 169.38.105.73 |  
-{: caption="Table 1. `in-che` Public Subnets" caption-side="top"}
+{: caption="Table 1. in-che Public Subnets" caption-side="top"}
 
 #### Private Subnets
 {: #che01-private-list} 
@@ -125,7 +125,7 @@ If you use allowlists to control connections in your environment, you can use th
 | Channai | in-che | che01 |   10.163.20.127/25 | 10.163.20.1 |   
 | Channai | in-che | che01 |  10.162.115.103/29 | 10.162.115.97 |   
 | Channai | in-che | che01 |   10.162.132.79/29 | 10.162.132.73 |
-{: caption="Table 2. `in-che` Private Subnets" caption-side="top"}
+{: caption="Table 2. in-che Private Subnets" caption-side="top"}
 
 ### `ca-tor` List
 {: #ca-tor-list} 
@@ -150,7 +150,7 @@ If you use allowlists to control connections in your environment, you can use th
 | Toronto | ca-tor | tor05 |  163.75.75.63/26  | 163.75.75.1 |        
 | Toronto | ca-tor | tor05 |   163.75.67.7/29  | 163.75.67.1 |        
 | Toronto | ca-tor | tor05 |  163.75.67.119/29 | 163.75.67.113 |
-{: caption="Table 3. `tor` Public Subnets" caption-side="top"}
+{: caption="Table 3. tor Public Subnets" caption-side="top"}
 
 #### Private Subnets
 {: #ca-tor-private-list} 
@@ -168,7 +168,7 @@ If you use allowlists to control connections in your environment, you can use th
 | Toronto | ca-tor | tor05 | 10.243.102.255/25 | 10.243.102.129 |        
 | Toronto | ca-tor | tor05 |  10.243.23.135/29 | 10.243.23.129 |        
 | Toronto | ca-tor | tor05 |  10.243.23.159/29 | 10.243.23.153 |
-{: caption="Table 4. `ca-tor` Private Subnets" caption-side="top"}
+{: caption="Table 4. ca-tor Private Subnets" caption-side="top"}
 
 ### `br-sao` List
 {: #br-sao-list} 
@@ -194,7 +194,7 @@ If you use allowlists to control connections in your environment, you can use th
 | Sao Paolo | br-sao | sao05 | 163.109.68.175/28 | 163.109.68.161 |        
 | Sao Paolo | br-sao | sao05 | 163.109.65.119/29 | 163.109.65.113 |        
 | Sao Paolo | br-sao | sao05 | 163.109.65.127/29 | 163.109.65.121 |
-{: caption="Table 5. `br-sao` Public Subnets" caption-side="top"}
+{: caption="Table 5. br-sao Public Subnets" caption-side="top"}
 
 #### Private Subnets
 {: #br-sao-private-list} 
@@ -213,7 +213,7 @@ If you use allowlists to control connections in your environment, you can use th
 | Sao Paolo | br-sao | sao05 |  10.15.31.127/25  | 10.15.31.1 |
 | Sao Paolo | br-sao | sao05 |  10.15.18.183/29  | 10.15.18.177 |
 | Sao Paolo | br-sao | sao05 |  10.15.18.191/29  | 10.15.18.185 |
-{: caption="Table 6. `br-sao` Private Subnets" caption-side="top"}
+{: caption="Table 6. br-sao Private Subnets" caption-side="top"}
 
 ### `eu-gb` List
 {: #eu-gb-list} 
@@ -256,7 +256,7 @@ If you use allowlists to control connections in your environment, you can use th
 | London | eu-gb | lon06 | 158.176.122.239/29 | 158.176.122.233 |
 | London | eu-gb | lon06 | 158.176.124.223/29 | 158.176.124.217 |
 | London | eu-gb | lon06 | 158.176.131.15/29  | 158.176.131.9 |
-{: caption="Table 7. `eu-gb` Public Subnets" caption-side="top"}
+{: caption="Table 7. eu-gb Public Subnets" caption-side="top"}
 
 #### Private Subnets
 {: #eu-gb-private-list} 
@@ -291,7 +291,7 @@ If you use allowlists to control connections in your environment, you can use th
 | London | eu-gb | lon06 |  10.72.95.167/29  | 10.72.95.161 |
 | London | eu-gb | lon06 |  10.72.127.111/29 | 10.72.127.105 |
 | London | eu-gb | lon06 |  10.72.187.247/29 | 10.72.187.241 |
-{: caption="Table 8. `eu-gb` Private Subnets" caption-side="top"}
+{: caption="Table 8. eu-gb Private Subnets" caption-side="top"}
 
 ### `kr-seo` List
 {: #kr-seo-list} 
@@ -310,7 +310,7 @@ If you use allowlists to control connections in your environment, you can use th
 | Seoul | kr-seo | seo01 | 169.56.179.255/25 | 169.56.179.129 |
 | Seoul | kr-seo | seo01 |  169.56.67.239/29 | 169.56.67.233 |
 | Seoul | kr-seo | seo01 |  169.56.164.71/29 | 169.56.164.65 |
-{: caption="Table 9. `eu-gb` Public Subnets" caption-side="top"}
+{: caption="Table 9. eu-gb Public Subnets" caption-side="top"}
 
 #### Private Subnets
 {: #kr-seo-private-list} 
@@ -321,7 +321,7 @@ If you use allowlists to control connections in your environment, you can use th
 | Seoul | kr-seo | seo01 | 10.178.226.127/25 | 10.178.226.1 |
 | Seoul | kr-seo | seo01 | 10.178.124.175/29 | 10.178.124.169 |  
 | Seoul | kr-seo | seo01 |  10.178.238.55/29 | 10.178.238.49 |
-{: caption="Table 10. `seo` Private Subnets" caption-side="top"}
+{: caption="Table 10. seo Private Subnets" caption-side="top"}
 
 ### `au-syd` List
 {: #au-syd-list} 
@@ -352,7 +352,7 @@ If you use allowlists to control connections in your environment, you can use th
 | Sydney | au-syd | syd05 |  135.90.67.31/29   | 135.90.67.25 |
 | Sydney | au-syd | syd05 |  135.90.67.135/29  | 135.90.67.129 |
 | Sydney | au-syd | syd05 |  135.90.68.39/29   | 135.90.68.33 |
-{: caption="Table 11. `au-syd` Public Subnets" caption-side="top"}
+{: caption="Table 11. au-syd Public Subnets" caption-side="top"}
 
 #### Private Subnets
 {: #au-syd-private-list} 
@@ -374,7 +374,7 @@ If you use allowlists to control connections in your environment, you can use th
 | Sydney | au-syd | syd05 |  10.195.7.239/29  | 10.195.7.233 |
 | Sydney | au-syd | syd05 |  10.195.7.247/29  | 10.195.7.241 |
 | Sydney | au-syd | syd05 |  10.195.46.111/29 | 10.195.46.105 |
-{: caption="Table 12. `au-syd` Private Subnets" caption-side="top"}
+{: caption="Table 12. au-syd Private Subnets" caption-side="top"}
 
 ### `jp-tok` List
 {: #jp-tok-list} 
@@ -411,7 +411,7 @@ If you use allowlists to control connections in your environment, you can use th
 | Tokyo | jp-tok | tok05 | 165.192.70.175/29  | 165.192.70.169 |
 | Tokyo | jp-tok | tok05 | 165.192.71.239/29  | 165.192.71.233 |
 | Tokyo | jp-tok | tok05 | 165.192.148.63/29  | 165.192.148.57 |
-{: caption="Table 13. `tok` Public Subnets" caption-side="top"}
+{: caption="Table 13. tok Public Subnets" caption-side="top"}
 
 #### Private Subnets
 {: #jp-tok-private-list} 
@@ -439,7 +439,7 @@ If you use allowlists to control connections in your environment, you can use th
 |Tokyo | jp-tok | tok05 |  10.193.19.39/29  | 10.193.19.33 |
 |Tokyo | jp-tok | tok05 |  10.193.76.255/29 | 10.193.76.249 |
 |Tokyo | jp-tok | tok05 | 10.193.103.175/29 | 10.193.103.169 |
-{: caption="Table 14. `tok` Private Subnets" caption-side="top"}       
+{: caption="Table 14. tok Private Subnets" caption-side="top"}       
 
 ### `jp-osa` List
 {: #jp-osa-list} 
@@ -464,7 +464,7 @@ If you use allowlists to control connections in your environment, you can use th
 | Osaka | jp-osa | osa23 | 163.73.71.63/26  | 163.73.71.1 |
 | Osaka | jp-osa | osa23 | 163.73.67.191/29 | 163.73.67.185 |
 | Osaka | jp-osa | osa23 | 163.73.67.231/29 | 163.73.67.225 |
-{: caption="Table 15. `jp-osa` Public Subnets" caption-side="top"}  
+{: caption="Table 15. jp-osa Public Subnets" caption-side="top"}  
 
 #### Private Subnets
 {: #jp-osa-private-list} 
@@ -480,7 +480,7 @@ If you use allowlists to control connections in your environment, you can use th
 | Osaka | jp-osa | osa23 | 10.10.12.255/26 | 10.10.12.193 |        
 | Osaka | jp-osa | osa23 |   10.10.8.7/29  | 10.10.8.1 |        
 | Osaka | jp-osa | osa23 |  10.10.8.15/29  | 10.10.8.9 |
-{: caption="Table 16. `jp-osa` Private Subnets" caption-side="top"}  
+{: caption="Table 16. jp-osa Private Subnets" caption-side="top"}  
 
 ### `us-east` List
 {: #us-east-list} 
@@ -535,7 +535,7 @@ If you use allowlists to control connections in your environment, you can use th
 | Washington DC | us-east | wdc07 |  169.61.113.47/29  | 169.61.113.41 |       
 | Washington DC | us-east | wdc07 | 169.61.122.159/29  | 169.61.122.153 |        
 | Washington DC | us-east | wdc07 |   169.62.6.87/29   | 169.62.6.81 |
-{: caption="Table 17. `us-east` Public Subnets" caption-side="top"}  
+{: caption="Table 17. us-east Public Subnets" caption-side="top"}  
 
 #### Private Subnets
 {: #us-east-private-list} 
@@ -581,7 +581,7 @@ If you use allowlists to control connections in your environment, you can use th
 | Washington DC | us-east | wdc07 |  10.191.12.175/29 | 10.191.12.169  |       
 | Washington DC | us-east | wdc07 |  10.191.49.247/29 | 10.191.49.241  |       
 | Washington DC | us-east | wdc07 |  10.191.115.7/29  | 10.191.115.1   |
-{: caption="Table 18. `us-east` Private Subnets" caption-side="top"}  
+{: caption="Table 18. us-east Private Subnets" caption-side="top"}  
 
 ### `eu-de` List
 {: #eu-de-list} 
@@ -666,7 +666,7 @@ If you use allowlists to control connections in your environment, you can use th
 | Paris | eu-de | par01 |  159.8.114.127/27 | 159.8.114.97           | 
 | Paris | eu-de | par01 |  159.8.78.239/29  | 159.8.78.233           |
 | Paris | eu-de | par01 |   159.8.94.95/29  | 159.8.94.89            |
-{: caption="Table 19. `eu-de` Public Subnets" caption-side="top"}  
+{: caption="Table 19. eu-de Public Subnets" caption-side="top"}  
 
 #### Private Subnets
 {: #eu-de-private-list} 
@@ -746,7 +746,7 @@ If you use allowlists to control connections in your environment, you can use th
 | Paris| eu-de | par01 |  10.127.213.63/26 | 10.127.213.1        |
 | Paris| eu-de | par01 |  10.126.23.255/29 | 10.126.23.249        |
 | Paris| eu-de | par01 | 10.126.100.135/29 | 10.126.100.129 |
-{: caption="Table 20. `eu-de` Private Subnets" caption-side="top"} 
+{: caption="Table 20. eu-de Private Subnets" caption-side="top"} 
 
 ### `us-south` List
 {: #us-south-list}
@@ -987,7 +987,7 @@ If you use allowlists to control connections in your environment, you can use th
 | Dallas | us-south | dal13 | 169.62.240.223/29  | 169.62.240.217      |   
 | Dallas | us-south | dal13 | 169.62.240.231/29  | 169.62.240.225      |   
 | Dallas | us-south | dal13 |  174.36.70.143/29  | 174.36.70.137       |
-{: caption="Table 21. `us-south` Public Subnets" caption-side="top"} 
+{: caption="Table 21. us-south Public Subnets" caption-side="top"} 
 
 #### Private Subnets
 {: #us-south-private-list}
@@ -1215,4 +1215,4 @@ If you use allowlists to control connections in your environment, you can use th
 | Dallas | us-south | dal13 |   10.220.30.31/29   | 10.220.30.25       |  
 | Dallas | us-south | dal13 |  10.220.162.167/29  | 10.220.162.161     |    
 | Dallas | us-south | dal13 |  10.220.202.239/29  | 10.220.202.233     |
-{: caption="Table 22. `us-south` Private Subnets" caption-side="top"} 
+{: caption="Table 22. us-south Private Subnets" caption-side="top"} 
