@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-06-16"
+lastupdated: "2022-07-20"
 
 subcollection: cloud-databases
 
@@ -30,12 +30,12 @@ For more information about assigning user roles in {{site.data.keyword.cloud_not
 
 The following table provides a general overview of actions that are mapped to service management roles. Service management roles enable users to perform tasks on service resources at the service level. For example, assign user access for the service, create or delete service IDs, create instances, and bind instances to applications.
 
-Service management role | Description of actions | Example actions
------------------|-----------------|-----------------
-Viewer | As a viewer, you can view database instances but you can't make configuration changes. | View Service Overview and View Alerts
-Editor | As an editor, you can perform all platform actions (including making configuration changes and managing credentials) except for managing the account and assigning access policies. | Scale a Deployment and Change a Deployment's Password
-Operator | As an operator, you can view database instances and make configuration changes that include managing database credentials. | Scale a Deployment and Change a Deployment's Password
-Administrator | As an administrator, you can perform all platform actions, including assigning access policies to other users. | Scale a Deployment, Change a Deployment's Password, and Assign Access Policies
+| Service management role | Description of actions | Example actions |
+| ----------------- | ----------------- | ----------------- |
+| Viewer | As a viewer, you can view database instances but you can't make configuration changes. | View Service Overview and View Alerts |
+| Editor | As an editor, you can perform all platform actions (including making configuration changes and managing credentials) except for managing the account and assigning | access policies. | Scale a Deployment and Change a Deployment's Password |
+| Operator | As an operator, you can view database instances and make configuration changes that include managing database credentials. | Scale a Deployment and Change a | Deployment's Password |
+| Administrator | As an administrator, you can perform all platform actions, including assigning access policies to other users. | Scale a Deployment, Change a Deployment's | Password, and Assign Access Policies |
 {: caption="Table 1. IAM user roles and actions" caption-side="top"}
 
 ## Actions for {{site.data.keyword.databases-for}} API
