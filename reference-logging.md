@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2019, 2021
-lastupdated: "2022-01-24"
+  years: 2019, 2022
+lastupdated: "2022-07-20"
 
 subcollection: cloud-databases
 
@@ -27,20 +27,20 @@ This document covers the integration of {{site.data.keyword.loganalysisshort}} w
 
 Currently, {{site.data.keyword.loganalysisfull}} integration is available for {{site.data.keyword.databases-for}} deployments according to the following table.
 
-Deployment Region | Log Analysis Region 
-----------|-----------
-`us-south` | `us-south`
-`jp-tok` | `jp-tok`
-`eu-gb` | `eu-gb`
-`seo01` | `jp-tok`
-`che01` | `che01`
-`eu-de` | `eu-de`
-`au-syd` | `au-syd`
-`us-east` | `us-east`
-`ca-tor` | `ca-tor`
-`jp-osa` | `jp-tok` 
-`br-sao` | `br-sao`
-`par01` | `eu-de`
+| Deployment Region | Log Analysis Region |
+| ----------|----------- |
+| `us-south` | `us-south` |
+| `jp-tok` | `jp-tok` |
+| `eu-gb` | `eu-gb` |
+| `seo01` | `jp-tok` |
+| `che01` | `che01` |
+| `eu-de` | `eu-de` |
+| `au-syd` | `au-syd` |
+| `us-east` | `us-east` |
+| `ca-tor` | `ca-tor` |
+| `jp-osa` | `jp-tok`  |
+| `br-sao` | `br-sao` |
+| `par01` | `eu-de` |
 {: caption="Table 1. Log Analysis regions" caption-side="top"}
 
 `SEO01` Data Center is scheduled to close on October 28, 2002. See [Migrating resources to a different data center
