@@ -263,8 +263,8 @@ Remember the database deployment name. Find your [region identifier here](/docs/
 
 | File | Description |
 | ---- | ----------- |
-|**server.js**|Establishes a connection to the database by using credentials from BINDING (the name that we created in the Kubernetes deployment file to display the credentials) and handles create and read operations on the database. |
-|**main.js**|Handles user input for a PUT command and parses the results of a GET command to output the contents of the database.|
+|**server.js** | Establishes a connection to the database by using credentials from BINDING (the name that we created in the Kubernetes deployment file to display the credentials) and handles create and read operations on the database. |
+|**main.js** | Handles user input for a PUT command and parses the results of a GET command to output the contents of the database. |
 {: caption="Table 1. Code structure" caption-side="bottom"}
 
 The app uses a PUT and a GET operation:
