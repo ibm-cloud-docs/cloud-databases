@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2022-01-06"
+  years: 2019, 2022
+lastupdated: "2022-07-29"
 
 subcollection: cloud-databases
 
@@ -21,13 +21,13 @@ subcollection: cloud-databases
 {{site.data.keyword.cloud_notm}} Databases are managed databases (and a messaging queue) that are hosted in {{site.data.keyword.cloud_notm}} and integrated with other {{site.data.keyword.cloud_notm}} services. 
 {: shortdesc}
 
-{{site.data.keyword.databases-for}} cover the following services:
-- {{site.data.keyword.databases-for-cassandra}}
-- {{site.data.keyword.databases-for-elasticsearch}}
-- {{site.data.keyword.databases-for-enterprisedb}}
-- {{site.data.keyword.databases-for-etcd}}
-- {{site.data.keyword.databases-for-mongodb}}
-- {{site.data.keyword.databases-for-postgresql}}
-- {{site.data.keyword.databases-for-redis}}
-- {{site.data.keyword.messages-for-rabbitmq}}
-- {{site.data.keyword.databases-for-mysql}}
+{{site.data.keyword.databases-for}} covers the following services:
+- {{site.data.keyword.databases-for-cassandra_full}}
+- {{site.data.keyword.databases-for-elasticsearch_full}}
+- {{site.data.keyword.databases-for-enterprisedb_full}}
+- {{site.data.keyword.databases-for-etcd_full}}
+- {{site.data.keyword.databases-for-mongodb_full}}
+- {{site.data.keyword.databases-for-postgresql_full}}
+- {{site.data.keyword.databases-for-redis_full}}
+- {{site.data.keyword.databases-for-mysql_full}}
+- {{site.data.keyword.messages-for-rabbitmq_full}}
