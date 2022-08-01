@@ -304,11 +304,11 @@ If you use allowlists to control connections in your environment, you can use th
 
 | Location | Region | Data center | Subnet | First IP |
 | -- | -- | -- | -- | -- |
-| Seoul | kr-seo | seo01 |  169.56.80.143/28 | 169.56.80.129 |
-| Seoul | kr-seo | seo01 |  169.56.106.63/26 | 169.56.106.1 |
-| Seoul | kr-seo | seo01 | 169.56.120.127/27 | 169.56.120.97 |
-| Seoul | kr-seo | seo01 | 169.56.179.255/25 | 169.56.179.129 |
-| Seoul | kr-seo | seo01 |  169.56.67.239/29 | 169.56.67.233 |
+| Seoul | kr-seo | seo01 |  169.56.80.143/28 | 169.56.80.129 |       
+| Seoul | kr-seo | seo01 |  169.56.106.63/26 | 169.56.106.1 |       
+| Seoul | kr-seo | seo01 | 169.56.120.127/27 | 169.56.120.97 |       
+| Seoul | kr-seo | seo01 | 169.56.179.255/25 | 169.56.179.129 |       
+| Seoul | kr-seo | seo01 |  169.56.67.239/29 | 169.56.67.233 |       
 | Seoul | kr-seo | seo01 |  169.56.164.71/29 | 169.56.164.65 |
 {: caption="Table 9. eu-gb Public Subnets" caption-side="bottom"}
 
