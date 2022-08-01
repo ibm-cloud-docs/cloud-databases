@@ -317,9 +317,9 @@ If you use allowlists to control connections in your environment, you can use th
 
 | Location | Region | Data center | Subnet | First IP |
 | -- | -- | -- | -- | -- |
-| Seoul | kr-seo | seo01 | 10.178.123.255/26 | 10.178.123.193 |   
-| Seoul | kr-seo | seo01 | 10.178.226.127/25 | 10.178.226.1 |
-| Seoul | kr-seo | seo01 | 10.178.124.175/29 | 10.178.124.169 |  
+| Seoul | kr-seo | seo01 | 10.178.123.255/26 | 10.178.123.193 |      
+| Seoul | kr-seo | seo01 | 10.178.226.127/25 | 10.178.226.1 |      
+| Seoul | kr-seo | seo01 | 10.178.124.175/29 | 10.178.124.169 |      
 | Seoul | kr-seo | seo01 |  10.178.238.55/29 | 10.178.238.49 |
 {: caption="Table 10. seo Private Subnets" caption-side="bottom"}
 
