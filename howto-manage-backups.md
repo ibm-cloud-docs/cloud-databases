@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2021
-lastupdated: "2021-12-15"
+  years: 2019, 2022
+lastupdated: "2022-08-03"
 
 subcollection: cloud-databases
 
@@ -16,19 +16,19 @@ keywords: backups
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Managing backups
+# Managing {{site.data.keyword.databases-for}} backups
 {: #dashboard-backups}
 
-Backups for {{site.data.keyword.databases-for}} deployments are accessible from the _Backups_ tab of your deployment's dashboard. Some general information about backups,
+Backups for {{site.data.keyword.databases-for}} deployments are accessible from the _Backups_ tab of your deployment's dashboard. Here is some additional general information about backups:
 
 - One backup is taken every day.
 - Backups are available for 30 days. 
 - Backups cannot be deleted. 
 - If you delete your deployment, its backups are deleted automatically.
-- Scheduling of the daily backup is not configurable.
-- Backups are restorable to other regions, except for `eu-de` and `par-01`, which can restore backups only between each other (for example, `par-01` backups can be restored to `eu-de`, and vice versa).
-- Backup storage is encrypted. If you need to manage the encryption keys, you can do so with the [Key Protect integration](/docs/cloud-databases?topic=cloud-databases-key-protect#byok-for-backups). Otherwise, they are encrypted with a key that is automatically generated for your deployment.
-- Backups are also restorable across accounts, but only by using the API and only if the user that is running the restore has access to both the source and destination accounts. 
+- Daily backup scheduling is not configurable.
+- Backups are restorable to other regions, except for `eu-de` and `par-01`, which can restore backups only between each other. For example, `par-01` backups can be restored to `eu-de`, and vice versa.
+- Backup storage is encrypted. To manage the encryption keys, see [Key Protect integration](/docs/cloud-databases?topic=cloud-databases-key-protect#byok-for-backups). Otherwise, backups are encrypted with a key that is automatically generated for your deployment.
+- Backups are restorable across accounts, but only through the API and only if the user that is running the restore has access to both the source and destination accounts. 
 
 ## Backups in the UI
 {: #backup-ui}
@@ -42,40 +42,40 @@ Click the backup to reveal information for that specific backup, including its f
 ## Backups in the CLI
 {: #backup-ui-cli}
 
-You can also access the list of backups and individual backup information from the {{site.data.keyword.databases-for}} CLI plug-in and the {{site.data.keyword.databases-for}} API.
+You can access the list of backups and individual backup information from the {{site.data.keyword.databases-for}} CLI plug-in and the {{site.data.keyword.databases-for}} API.
 
-Use the [`cdb deployment-backups-list`](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-backups-list) command to view the list of all available backups for your deployment. To get the details about a specific backup, use [`cdb backup-show`](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#backup-show) command.
+Use the [`cdb deployment-backups-list`](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-backups-list) command to view the list of all available backups for your deployment. To get details about a specific backup, use the [`cdb backup-show`](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#backup-show) command.
 
-For example, to view the backups for a deployment named "example-deployment", use the following command.
+For example, to view the backups for a deployment named "example-deployment", use the following command:
 
-```bash
+```sh
 ibmcloud cdb deployment-backups-list example-deployment
 ```
 {: .pre}
 
-To see the details of one of the backups from the list, take the ID from the `ID` field of the `deployment-backups-list` response and use it with the `backup-show` command.
+To see the details of one of the backups from the list, take the ID from the `ID` field of the `deployment-backups-list` response and use it with the `backup-show` command:
 
-```bash
+```sh
 ibmcloud cdb backup-show crn:v1:staging:public:cloud-databases:us-south:a/6284014dd5b487c87a716f48aeeaf99f:3b4537bf-a585-4594-8262-2b1e24e2701e:backup:a3364821-d061-413f-a0df-6ba0e2951566
 ```
 {: .pre}
 
-## Backups in the API
+## Backups in the {{site.data.keyword.databases-for}} API
 {: #backup-ui-api}
 
-For backups information in the {{site.data.keyword.databases-for}} API, use the [`/deployments/{id}/backups`](https://cloud.ibm.com/apidocs/cloud-databases-api#get-currently-available-backups-from-a-deployment) endpoint to list the deployment's backups. Use the [`/backups/{backup_id}`](https://{DomainName}/apidocs/cloud-databases-api#get-information-about-a-backup) endpoint to get information about a specific backup.
+For backups information in the {{site.data.keyword.databases-for}} API, use the [`/deployments/{id}/backups`](https://cloud.ibm.com/apidocs/cloud-databases-api#get-currently-available-backups-from-a-deployment) endpoint to list the deployment's backups. To get information about a specific backup, use the [`/backups/{backup_id}`](https://{DomainName}/apidocs/cloud-databases-api#get-information-about-a-backup) endpoint.
 
 ## Taking an on-demand backup
 {: #ondemand-backup}
 
-On-demand backups are useful if you plan to make major changes to your deployment like scaling or removing databases, tables, collections. It can also be useful if you need to back up on a schedule. On-demand backups are kept for 30 days. 
+If you plan to make major changes to your deployment, like scaling or removing databases, tables, collections, on-demand backups are useful. It can also be useful if you need to back up on a schedule. On-demand backups are kept for 30 days. 
 
-Deployments come with backup storage equal to their total disk space at no cost. If your backup storage usage is greater than total disk space, each gigabyte is charged at an overage $0.03/month. Backups are compressed, so even if you use on-demand backups, most deployments do not exceed the allotted credit.
+Deployments come with backup storage equal to their total disk space at no cost. If your backup storage usage is greater than total disk space, each gigabyte is charged at an overage of $0.03/month. Backups are compressed, so even if you use on-demand backups, most deployments do not exceed the allotted credit.
 {: .tip}
 
 To create a manual backup in the UI, go to the _Backups_ tab of your deployment then click **Back up now**. A message is displayed that a backup is in progress, and an on-demand backup is added to the list of available backups.
 
-In the CLI, you trigger an on-demand backup with the [`cdb deployment-backup-now`](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-backup-now) command.
+In the CLI, an on-demand backup is triggered with the [`cdb deployment-backup-now`](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-backup-now) command.
 ```sh
 ibmcloud cdb deployment-backup-now example-deployment
 ```
@@ -88,9 +88,9 @@ In the API, sending a POST to the [`/deployments/{id}/backups`](https://cloud.ib
 
 Backups are restored to a new deployment. After the new deployment finishes provisioning, your data in the backup file is restored into the new deployment.
 
-By default the new deployment is auto-sized to the same disk and memory allocation as the source deployment at the time of the backup that you are restoring from. If you need to adjust the resources that are allocated to the new deployment, use the optional fields in the UI, CLI, or API to resize the new deployment. Be sure to allocate enough for your data and workload; if the deployment is not given enough resources, the restore fails.
+By default, the new deployment is auto-sized to the same disk and memory allocation as the source deployment at the time of the backup from which you are restoring. To adjust the resources that are allocated to the new deployment, use the optional fields in the UI, CLI, or API to resize the new deployment. Be sure to allocate enough for your data and workload; if the deployment is not given enough resources, the restore fails.
 
-Do not delete the source deployment while the backup is restoring. Before you delete the old deployment, you must wait until the new deployment is provisioned and the backup is restored. Deleting a deployment also deletes its backups.
+Do not delete the source deployment while the backup is restoring. Before you delete the old deployment, wait until the new deployment is provisioned and the backup is restored. Deleting a deployment also deletes its backups.
 {: .tip}
 
 ### Restoring a backup in the UI
@@ -111,7 +111,7 @@ To restore a backup to a new service instance,
 
 The Resource Controller supports provisioning of database deployments, and provisioning and restoring are the responsibility of the Resource Controller CLI. Use the [`resource service-instance-create`](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_create) command.
 
-```bash
+```sh
 ibmcloud resource service-instance-create <SERVICE_INSTANCE_NAME> <service-id> standard <region> -p '{"backup_id":"BACKUP_ID"}'
 ```
 {: .pre}
@@ -119,7 +119,7 @@ ibmcloud resource service-instance-create <SERVICE_INSTANCE_NAME> <service-id> s
 Change the value of `SERVICE_INSTANCE_NAME` to the name that you want for your new deployment. The `service-id` is the type of deployment, such as `databases-for-postgresql` or `messages-for-rabbitmq`. The `region` is where you want the new deployment to be located, which can be a different region from the source deployment. Cross region restores are supported, except for restoring to or from `eu-de` by using another region. `BACKUP_ID` is the backup that you want to restore.
 
 Optional parameters are available through the CLI. Use them if you need to customize resources, or use a Key Protect key for BYOK encryption on the new deployment.
-```bash
+```sh
 ibmcloud resource service-instance-create <SERVICE_INSTANCE_NAME> <service-id> standard <region> -p
 '{"backup_id":"BACKUP_ID","key_protect_key":"KEY_PROTECT_KEY_CRN", "members_disk_allocation_mb":"DESIRED_DISK_IN_MB", "members_memory_allocation_mb":"DESIRED_MEMORY_IN_MB", "members_cpu_allocation_count":"NUMBER_OF_CORES"}'
 ```
@@ -135,7 +135,7 @@ The Resource Controller supports provisioning of database deployments, and provi
 
 When you have all the information, the create request is a `POST` to the [`/resource_instances`](https://{DomainName}/apidocs/resource-controller#create-provision-a-new-resource-instance) endpoint.
 
-```bash
+```sh
 curl -X POST \
   https://resource-controller.cloud.ibm.com/v2/resource_instances \
   -H 'Authorization: Bearer <>' \
@@ -184,3 +184,11 @@ Backup location differs per database region. Ensure that the backup region locat
 {: caption="Table 1. Database and Backup Regions" caption-side="bottom"}
 
 For more details about {{site.data.keyword.databases-for}} Object Storage locations, review the location's [documentation](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-geo).
+
+## Point-in-Time Recovery
+{: #pitr-recovery-options}
+
+With Point-in-Time Recovery (PIRTR), the deployment continuously backs up incrementally and can replay transactions to bring a new deployment that is restored from a backup to any point in the last 7 days. {{site.data.keyword.databases-for}} offers Point-In-Time Recovery (PITR) for the following services:
+
+- [{{site.data.keyword.databases-for-mysql_full}}](/docs/databases-for-mysql?topic=databases-for-mysql-pitr) 
+- [{{site.data.keyword.databases-for-postgresql_full}}](/docs/databases-for-postgresql?topic=databases-for-postgresql-pitr)
