@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-08-01"
+lastupdated: "2022-08-04"
 
 subcollection: cloud-databases
 
@@ -16,6 +16,7 @@ keywords: allowlist, ip addresses, blocklist, whitelist, cloud databases allowli
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
+{:important: .important}	
 
 # Allowlisting
 {: #allowlisting} 
@@ -27,8 +28,8 @@ If you use allowlists in your environment, you can allowlist our services by usi
 While IBM values the use of inclusive language, terms that are outside of IBM's direct influence are sometimes required for the sake of maintaining user understanding. As other industry leaders join IBM in embracing the use of inclusive language, IBM continues to update terminology to reflect those changes. We updated documentation to reflect changes in terminology from `whitelist` to `allowlist`. You might encounter continued references to this former terminology while we work to implement these deeper changes to code, API, and CLI commands. 
 {: .note}
 
-Each deployment is limited 100 allowlist entries. 
-{: .note}
+Each deployment is limited to 100 allowlist entries. 
+{: .important}
 
 ## Using IP allowlists on your Deployment
 {: #ip-allowlist} 
