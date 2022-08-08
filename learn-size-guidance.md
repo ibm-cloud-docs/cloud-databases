@@ -106,7 +106,7 @@ The `allocated_units`, `memory_per_unit_in_mb`, and the `storage_per_unit_in_mb`
 
 `"allocated_units": 2` indicates two units of memory and storage per data member. The amount of memory is multiplied by the `"memory_per_unit_in_mb": 102` (2 * 102 = 204 MB). Likewise, the amount of storage is multiplied by the `"storage_per_unit_in_mb": 1024` (2 * 1024 = 2048 MB).
  
-A simple method to get the per member total with one request to the Compose API and jq is to run
+A simple method to get the per member total with one request to the Compose API and `jq` is to run
 ```sh
 $ curl -s -X GET -H "Authorization: Bearer $token" \
     -H "Content-Type: application/json" \ 
