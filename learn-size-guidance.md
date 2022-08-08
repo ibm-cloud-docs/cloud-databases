@@ -33,9 +33,9 @@ In order to use the Compose API, create a unique API token for your account. Sel
 
 ![The Scale Resources Pane in Settings](images/size-guidance-compose-api-token.svg){: caption="Figure 1. The Scale Resources Pane" caption-side="bottom"}
 
-You are taken to the API tokens page. On the right, enter the name of your API token and click the **Create**. 
+You are taken to the API tokens page. On the right, enter the name of your API token and click **Create**. 
 
-![The Scale Resources Pane in Settings](images/size-guidance-create-api-token.png){: caption="Figure 2. The Scale Resources Pane" caption-side="bottom"}
+![The Scale Resources Pane in Settings](images/size-guidance-create-api-token.svg){: caption="Figure 2. The Scale Resources Pane" caption-side="bottom"}
 
 When presented with your API token, save it.
 
