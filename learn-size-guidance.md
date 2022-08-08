@@ -29,15 +29,15 @@ The steps outlined below are intended for [Compose.com](https://compose.com/){: 
 
 Use the [Compose API](https://apidocs.compose.com/){: .external} to obtain the total amount of RAM and storage that is allocated to each deployment.
 
-In order to use the Compose API, you need to create a unique API token for your account. Select **Account** from the Compose UI then click the **API Tokens** button. 
+In order to use the Compose API, create a unique API token for your account. Select **Account** from the Compose UI, then click **API Tokens**. 
 
 ![The Scale Resources Pane in Settings](images/size-guidance-compose-api-token.svg){: caption="Figure 1. The Scale Resources Pane" caption-side="bottom"}
 
-You are taken to the API tokens page. On the right, enter the name of your API token and click the “Create” button. 
+You are taken to the API tokens page. On the right, enter the name of your API token and click the **Create**. 
 
 ![The Scale Resources Pane in Settings](images/size-guidance-create-api-token.png){: caption="Figure 2. The Scale Resources Pane" caption-side="bottom"}
 
-When presented with your API token, make sure you save it.
+When presented with your API token, save it.
 
 ![The Scale Resources Pane in Settings](images/size-guidance-personal-api-tokens.png){: caption="Figure 3. The Scale Resources Pane" caption-side="bottom"}
 
@@ -48,7 +48,7 @@ You can revoke API tokens anytime and create new ones.
 
 With your API token, you can now use the Compose API. A list of all the API endpoints is available in the [Compose API reference](https://apidocs.compose.com/v1.0/reference){: .external}.
 
-In order to extract the information that you need to obtain the allocated RAM and storage for your deployment, you might want to install [jq](https://stedolan.github.io/jq/){: .external}. The `jq` utility makes parsing the returned JSON objects from the API easier to understand.
+To extract the information that you need to obtain the allocated RAM and storage for your deployment, you can install [jq](https://stedolan.github.io/jq/){: .external}. The `jq` utility makes parsing the returned JSON objects from the API easier to understand.
 {: .tip}
 
 Export your API token from your console so that you can use it in the API request.  
@@ -69,7 +69,7 @@ The response looks something like
 {"id":"5aaa501edra466001a1bf6c1","name":"spicy-mongodb-22"}
 ```
 
-With the deployment IDs, you can extract the RAM and storage that is allocated to each data member of a deployment by using the `/deployments/<deployment id>/scalings` endpoint. For example, the request for the `spicy-mongodb-22` deployment is
+With the deployment IDs, extract the RAM and storage that is allocated to each data member of a deployment by using the `/deployments/<deployment id>/scalings` endpoint. For example, the request for the `spicy-mongodb-22` deployment is
 ```sh
 curl -s -X GET -H "Authorization: Bearer $token" \ 
     -H "Content-Type: application/json" \ 
@@ -90,7 +90,7 @@ And the response looks something like
 } 
 ```
 
-The `allocated_units`, `memory_per_unit_in_mb`, and the `storage_per_unit_in_mb` keys are the important ones. `"allocated_units": 1` is the most basic unit; essentially, it’s a fresh deployment with the least amount of RAM and disk allocated to each member possible. As you add more units, you add more memory and storage in the amounts that are indicated by `memory_per_unit_in_mb` and `storage_per_unit_in_mb`. The same API request for the `fearless-postgresql-70` returns a response like
+The `allocated_units`, `memory_per_unit_in_mb`, and the `storage_per_unit_in_mb` keys are important. `"allocated_units": 1` is the most basic unit; essentially, it’s a fresh deployment with the least amount of RAM and disk allocated to each member possible. As you add more units, you add more memory and storage in the amounts that are indicated by `memory_per_unit_in_mb` and `storage_per_unit_in_mb`. The same API request for the `fearless-postgresql-70` returns a response like
 ```json
 { 
   "allocated_units": 2, 
@@ -120,9 +120,9 @@ The response gives you something like
   "Storage": "2048mb" 
 } 
 ```
-This JSON object represents the memory of EACH of your database members you have in your Compose deployment. It’s important to note that for IBM Cloud Databases, you must consider that you have two or three members for each database in IBM Cloud Databases.  
+This JSON object represents the memory of *each* of your database members you have in your Compose deployment. It’s important to note that for IBM {{site.data.keyword.databases-for}}, you must have two or three members for each database.  
 
-For convenience, here’s a script that gives you the name, ID, units, and RAM allocated per member to all your Compose deployments.
+Here’s a script that gives you the name, ID, units, and RAM allocated per member to all your Compose deployments.
 ```sh
 export token=<Compose API token> 
 
@@ -136,23 +136,23 @@ for db in $(curl -s -X GET -H "Authorization: Bearer $token" -H "Content-Type: a
 done
 ```
 
-## Map the Compose deployment's Resources to IBM Cloud Databases
+## Map the Compose deployment's Resources to IBM {{site.data.keyword.databases-for}}
 {: #map-deployment} 
 
-Determining how much Disk, IOPS, and CPU breaks down to how much storage you require and how your database is being used (for example, does it have many I/O operations?). Memory resource allocation is similar between Compose and IBM Cloud Databases.
+Determining how much Disk, IOPS, and CPU breaks down to how much storage you require and how your database is being used (for example, does it have many I/O operations?). Memory resource allocation is similar between Compose and IBM {{site.data.keyword.databases-for}}.
 
 **RAM**  
-The general rule for memory is to provide the same amount of memory (or more) allotted to the Compose deployment to the new IBM Cloud Database. The minimum memory allocation for an IBM Cloud Databases deployment is 1 GB per member.
+The general rule for memory is to provide the same amount of memory (or more) allotted to the Compose deployment to the new {{site.data.keyword.cloud}} Database. The minimum memory allocation for an IBM {{site.data.keyword.databases-for}} deployment is 1 GB per member.
 
 **Disk**  
-Disk space (storage) is not 1:1 between Compose and IBM Cloud Databases.  In addition to the amount of data storage, the disk space allocation of an IBM Cloud Databases deployment impacts the amount of IOPS that the disk is given. You receive 10 IOPS per GB of allocated disk and IOPS affects read/write throughput of the underlying database’s disk, which is another consideration. For Disk, the recommended sizes are based on of sizes of 128 GB, 256 GB, 512 GB, 768 GB, 1024 GB, and 1168 GB so that there are significant jumps in IOPS. 
+Disk space (storage) is not 1:1 between Compose and IBM {{site.data.keyword.databases-for}}.  In addition to the amount of data storage, the disk space allocation of an {{site.data.keyword.cloud}} Databases deployment impacts the amount of IOPS that the disk is given. You receive 10 IOPS per GB of allocated disk and IOPS affects read/write throughput of the underlying database’s disk, which is another consideration. For Disk, the recommended sizes are based on of sizes of 128 GB, 256 GB, 512 GB, 768 GB, 1024 GB, and 1168 GB so that there are significant jumps in IOPS. 
 
 **CPU**  
-CPU allocation also does not have a direct mapping between Compose and IBM Cloud Databases. The CPU allocation of an IBM Cloud Database deployment reserves a minimum set of CPUs on a host to support your database’s workload. This is not available on Compose, and CPU needs vary by workload. For CPU, the recommended sizes are based on of sizes of 3, 9, and 27 cores based on the performance needs for your application. You might also decide not to allocate dedicated cores to your IBM Cloud deployments that are used for development purposes or are less active.
+CPU allocation also does not have a direct mapping between Compose and IBM {{site.data.keyword.databases-for}}. The CPU allocation of an {{site.data.keyword.cloud}} Database deployment reserves a minimum set of CPUs on a host to support your database’s workload. This is not available on Compose, and CPU needs vary by workload. For CPU, the recommended sizes are based on of sizes of 3, 9, and 27 cores based on the performance needs for your application. You might also decide not to allocate dedicated cores to your {{site.data.keyword.cloud}} deployments that are used for development purposes or are less active.
 
 In general, these suggestions are for simplicity and you can choose different values and multiples if you expect your application to require more CPU or IOPS (Disk).
 
-Following is an estimation function to derive a starting configuration for your IBM Cloud Databases deployment based on the RAM configuration on Compose in MB and where you fall between the minimum size and maximum size of an IBM Cloud Databases deployment. 
+Following is an estimation function to derive a starting configuration for your IBM {{site.data.keyword.databases-for}} deployment based on the RAM configuration on Compose in MB and where you fall between the minimum size and maximum size of an IBM {{site.data.keyword.databases-for}} deployment. 
 ```python
 RAM_MAX_GB = 112
 CPU = [3, 9, 27]
@@ -199,12 +199,12 @@ Examples:
         RAM: 15360 MB, CPUs: 9, disk: 393216 MB 
     ```
 
-## Provisioning the IBM Cloud Databases Deployment  
+## Provisioning the {{site.data.keyword.cloud}} Databases Deployment  
 {: #provision} 
 
-You can provision an IBM Cloud Databases deployment by using the [IBM Cloud catalog](https://cloud.ibm.com/catalog?category=databases) or the [IBM Cloud CLI](/docs/cli?topic=cli-install-ibmcloud-cli). The catalog does not provide as much granularity when selecting the resources for your deployment, so this example uses the Python script from step 3 and use the IBM Cloud CLI to provision the deployment.
+You can provision an {{site.data.keyword.cloud}} Databases deployment by using the [IBM Cloud catalog](https://cloud.ibm.com/catalog?category=databases) or the [IBM Cloud CLI](/docs/cli?topic=cli-install-ibmcloud-cli). The catalog does not provide as much granularity when selecting the resources for your deployment, so this example uses the Python script from step 3 and use the {{site.data.keyword.cloud}} CLI to provision the deployment.
 
-The syntax for provisioning a deployment by using the IBM Cloud CLI looks like
+The syntax for provisioning a deployment by using the {{site.data.keyword.cloud}} CLI looks like
 ```bash
 ibmcloud resource service-instance-create <name> databases-for-postgresql standard <region> -p '{"members_memory_allocation_mb": "<total_memory>", "members_disk_allocation_mb": "<total_disk>", "members_cpu_allocation_count": "<total_cpu>" }' 
 ```
@@ -216,10 +216,9 @@ Assume that you have 510 MB of RAM and 5 GB of storage that is allocated to a Co
 Total Allocation: 
     RAM: 2048 MB, CPUs: 6, disk: 262144 MB 
 ```
-The recommendation is to provision an IBM Cloud Databases deployment with 1 GB of RAM, 3 CPU cores, and 128 GB disk per member.  If this is a development deployment, or other low-priority deployment, you can choose to provision at 0 CPU cores. 
+The recommendation is to provision an IBM {{site.data.keyword.databases-for}} deployment with 1 GB of RAM, 3 CPU cores, and 128 GB disk per member.  If this is a development deployment, or other low-priority deployment, you can choose to provision at 0 CPU cores. 
 
-The IBM Cloud CLI requires you to send the total resource allocation for the IBM Cloud 
-Databases deployment in the provision request.  So use numbers from the "Total Allocation" and plug them into the IBM Cloud CLI command
+The {{site.data.keyword.cloud}} CLI requires you to send the total resource allocation for the {{site.data.keyword.cloud}} Databases deployment in the provision request.  So use numbers from the **Total Allocation** and plug them into the {{site.data.keyword.cloud}} CLI command
 ```sh
 ibmcloud resource service-instance-create <name> databases-for-postgresql standard <region> -p '{"members_memory_allocation_mb": "2048", "members_disk_allocation_mb": "262144", "members_cpu_allocation_count": "6" }' 
 ```
@@ -236,10 +235,10 @@ So for the example PostgreSQL, the total allocations are
 - `total_disk= 2 * 128 * 1024 = 262144`
 - `total_cpu = 2 * 3 = 6`
 
-## Monitoring the IBM Cloud Databases Deployment
+## Monitoring the IBM {{site.data.keyword.databases-for}} Deployment
 {: #monitor} 
 
-You now have an IBM Cloud Databases deployment that approximates the resource allocation of your Compose deployment. To determine whether you need more resources, look at monitoring your databases. Monitoring for {{site.data.keyword.databases-for}} deployments is provided through integration with the [{{site.data.keyword.monitoringfull}}](/docs/monitoring?topic=monitoring-getting-started) service. With it you can monitor the memory, disk, disk I/O utilization, and CPU usage of each of your deployments. 
+You now have an IBM {{site.data.keyword.databases-for}} deployment that approximates the resource allocation of your Compose deployment. To determine whether you need more resources, look at monitoring your databases. Monitoring for {{site.data.keyword.databases-for}} deployments is provided through integration with the [{{site.data.keyword.monitoringfull}}](/docs/monitoring?topic=monitoring-getting-started) service. With it you can monitor the memory, disk, disk I/O utilization, and CPU usage of each of your deployments. 
 
 Deployments can be both manually scaled to your usage, or configured to autoscale under certain resource conditions.
 If you find that you’re using too much CPU, you can allocate more. Likewise, if you find that you’re running out of disk space, allocate a little more. You can use our increment suggestions or use your own allocations. 
