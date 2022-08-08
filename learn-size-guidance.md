@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2021
-lastupdated: "2021-12-22"
+  years: 2021, 2022
+lastupdated: "2022-08-08"
 
 keywords: Compose, cloud databases, migrating, disk size, memory size, CPU size, resources
 
@@ -16,22 +16,22 @@ subcollection: cloud-databases
 {:screen: .screen}
 {:tip: .tip}
 
-# RAM, Disk, and CPU Sizing from Compose to IBM Cloud Databases
+# RAM, Disk, and CPU Sizing from Compose to IBM {{site.data.keyword.databases-for}}
 {: #compose-icd-sizing} 
 
-If your database deployments are currently on Compose, the following information helps determine the starting allocation for RAM, disk, and CPUs needed for new deployments on IBM {{site.data.keyword.databases-for}}. For your convenience, [step 3](#map-deployment) includes a Python function that writes the per-member and total allocation recommendations for your IBM {{site.data.keyword.databases-for}} deployment, based on your RAM input.
+If your database deployments are currently on Compose, determine the starting allocation for RAM, disk, and CPUs needed for new deployments on IBM {{site.data.keyword.databases-for}}. For your convenience, [Step 3](#map-deployment) includes a Python function that writes the per-member and total allocation recommendations for your IBM {{site.data.keyword.databases-for}} deployment, based on your RAM input.
 
-The steps outlined below are intended for [Compose.com](https://compose.com/) clients. Instructions for clients transitioning from Compose on IBM Cloud are forthcoming.
+The steps outlined below are intended for [Compose.com](https://compose.com/){: .external} clients. Instructions for clients transitioning from Compose on {{site.data.keyword.cloud_notm}} are forthcoming.
 {: .note}
 
 ## Create a Compose API Token 
 {: #compose-api-token} 
 
-You can use the [Compose API](https://apidocs.compose.com/) to obtain the total amount of RAM and storage that is allocated to each deployment.
+Use the [Compose API](https://apidocs.compose.com/){: .external} to obtain the total amount of RAM and storage that is allocated to each deployment.
 
 In order to use the Compose API, you need to create a unique API token for your account. Select **Account** from the Compose UI then click the **API Tokens** button. 
 
-![The Scale Resources Pane in Settings](images/size-guidance-compose-api-token.png){: caption="Figure 1. The Scale Resources Pane" caption-side="bottom"}
+![The Scale Resources Pane in Settings](images/size-guidance-compose-api-token.svg){: caption="Figure 1. The Scale Resources Pane" caption-side="bottom"}
 
 You are taken to the API tokens page. On the right, enter the name of your API token and click the “Create” button. 
 
@@ -46,18 +46,18 @@ You can revoke API tokens anytime and create new ones.
 ## Determine the Current Memory and Storage Size of your Compose Deployments 
 {: #current-memory} 
 
-With your API token, you can now use the Compose API. A list of all the API endpoints is available in the [Compose API reference](https://apidocs.compose.com/v1.0/reference).
+With your API token, you can now use the Compose API. A list of all the API endpoints is available in the [Compose API reference](https://apidocs.compose.com/v1.0/reference){: .external}.
 
-In order to extract the information that you need to obtain the allocated RAM and storage for your deployment, you might want to install [jq](https://stedolan.github.io/jq/). The `jq` utility makes parsing the returned JSON objects from the API easier to understand.
+In order to extract the information that you need to obtain the allocated RAM and storage for your deployment, you might want to install [jq](https://stedolan.github.io/jq/){: .external}. The `jq` utility makes parsing the returned JSON objects from the API easier to understand.
 {: .tip}
 
 Export your API token from your console so that you can use it in the API request.  
-```bash
+```sh
 export token=<compose api token>
 ```
 
 Then, run the following command to get a list of the names and IDs of all your Compose deployments.
-```curl
+```sh
 curl -s -X GET -H "Authorization: Bearer $token" \ 
     -H "Content-Type: application/json" \ 
     https://api.compose.io/2016-07/deployments | jq -c '.[][][] | {"id": .id, "name": .name}'
@@ -70,7 +70,7 @@ The response looks something like
 ```
 
 With the deployment IDs, you can extract the RAM and storage that is allocated to each data member of a deployment by using the `/deployments/<deployment id>/scalings` endpoint. For example, the request for the `spicy-mongodb-22` deployment is
-```curl
+```sh
 curl -s -X GET -H "Authorization: Bearer $token" \ 
     -H "Content-Type: application/json" \ 
     "https://api.compose.io/2016-07/deployments/5aaa501edra466001a1bf6c1/scalings" | jq
@@ -107,7 +107,7 @@ The `allocated_units`, `memory_per_unit_in_mb`, and the `storage_per_unit_in_mb`
 `"allocated_units": 2` indicates two units of memory and storage per data member. The amount of memory is multiplied by the `"memory_per_unit_in_mb": 102` (2 * 102 = 204 MB). Likewise, the amount of storage is multiplied by the `"storage_per_unit_in_mb": 1024` (2 * 1024 = 2048 MB).
  
 A simple method to get the per member total with one request to the Compose API and jq is to run
-```bash
+```sh
 $ curl -s -X GET -H "Authorization: Bearer $token" \
     -H "Content-Type: application/json" \ 
     "https://api.compose.io/2016-07/deployments/<deployment id>/scalings" | jq '{"RAM per member": (((.allocated_units * .memory_per_unit_in_mb) | tostring ) +  "mb"), "Storage per member": (((.allocated_units * .storage_per_unit_in_mb) | tostring ) +  "mb")}' | jq 
@@ -123,7 +123,7 @@ The response gives you something like
 This JSON object represents the memory of EACH of your database members you have in your Compose deployment. It’s important to note that for IBM Cloud Databases, you must consider that you have two or three members for each database in IBM Cloud Databases.  
 
 For convenience, here’s a script that gives you the name, ID, units, and RAM allocated per member to all your Compose deployments.
-```bash
+```sh
 export token=<Compose API token> 
 
 for db in $(curl -s -X GET -H "Authorization: Bearer $token" -H "Content-Type: application/json" https://api.compose.io/2016-07/deployments | jq -c '.[][][] | {"id": .id, "name": .name}'); do
@@ -210,7 +210,7 @@ ibmcloud resource service-instance-create <name> databases-for-postgresql standa
 ```
 
 Assume that you have 510 MB of RAM and 5 GB of storage that is allocated to a Compose for PostgreSQL deployment and you want to provision a Databases for PostgreSQL database. The estimation function in the previous section accepts the per-member allocation in MB for your Compose deployment as returned by the API in Step 1.  So, using 510 MB RAM into the estimation function yields 
-```bash
+```sh
 >>> estimate(510, “postgresql”) Per-Member: 
     RAM: 1 GB, CPUs: 3, disk: 128 GB 
 Total Allocation: 
@@ -220,7 +220,7 @@ The recommendation is to provision an IBM Cloud Databases deployment with 1 GB o
 
 The IBM Cloud CLI requires you to send the total resource allocation for the IBM Cloud 
 Databases deployment in the provision request.  So use numbers from the "Total Allocation" and plug them into the IBM Cloud CLI command
-```bash
+```sh
 ibmcloud resource service-instance-create <name> databases-for-postgresql standard <region> -p '{"members_memory_allocation_mb": "2048", "members_disk_allocation_mb": "262144", "members_cpu_allocation_count": "6" }' 
 ```
 
