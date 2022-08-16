@@ -89,7 +89,7 @@ If you provision a deployment through the CLI or API, the key protect key needs 
 ## Key Rotation
 {: #keyrotation}
 
-Key Protect offers manual and automatic [key rotation](https://cloud.ibm.com/docs/key-protect?topic=key-protect-rotate-keys) and key rotation is supported by Cloud Databases deployments. When you rotate a key, the process initiates a _syncing KMS state_ task, and your deployment is reencrypted with the new key. The task is displayed on the _Tasks_ page on your deployment's _Overview_ and the associated Key Protect and Cloud Databases events are sent to Activity Tracker.
+Key Protect offers manual and automatic [key rotation](/docs/key-protect?topic=key-protect-rotate-keys) and key rotation is supported by Cloud Databases deployments. When you rotate a key, the process initiates a _syncing KMS state_ task, and your deployment is reencrypted with the new key. The task is displayed on the _Tasks_ page on your deployment's _Overview_ and the associated Key Protect and Cloud Databases events are sent to Activity Tracker.
 
 For information on key rotation frequency, see [Rotating manually or automatically](/docs/key-protect?topic=key-protect-key-rotation#compare-key-rotation-options).
 
