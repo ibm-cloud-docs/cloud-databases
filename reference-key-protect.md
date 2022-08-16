@@ -150,17 +150,17 @@ curl -X POST \
 
 After you enable delegation and provisioned your deployment, two entries appear in your _Authorizations_ in IAM. One is the entry for the deployment that lists its status as delegator. It is "User Created".
 
-Role | Source | Target | Type
------|-----|-----|-----
-AuthorizationDelegator, Reader | `<cloud-databases>` Service | Key Protect Service | User defined
-{: caption="Table 1. Example delegator Key Protect Authorization " caption-side="top"}
+| Role | Source | Target | Type |
+| -----|-----|-----|----- |
+| AuthorizationDelegator, Reader | `<cloud-databases>` Service | Key Protect Service | User defined |
+{: caption="Table 1. Example delegator Key Protect Authorization " caption-side="bottom"}
 
 And one for the Cloud Object Storage bucket for its backups, where the deployment is the initiator.
 
-Role | Source | Target | Type
------|-----|-----|-----
-Reader | Cloud Object Storage service | Key Protect Service | Created by `<cloud-databases-crn>`
-{: caption="Table 2. Example Key Protect Authorization for Cloud Object Storage from Cloud Databases " caption-side="top"}
+| Role | Source | Target | Type |
+| -----|-----|-----|----- |
+| Reader | Cloud Object Storage service | Key Protect Service | Created by `<cloud-databases-crn>` |
+{: caption="Table 2. Example Key Protect Authorization for Cloud Object Storage from Cloud Databases " caption-side="bottom"}
 
 ### Removing Keys
 {: #key-remove}
