@@ -1,11 +1,11 @@
 ---
 copyright:
   years: 2019, 2022
-lastupdated: "2022-06-10"
+lastupdated: "2022-08-16"
 
 subcollection: cloud-databases
 
-keywords: bring your own key, byok, cryptoshredding
+keywords: bring your own key, byok, cryptoshredding, key rotation, key rotation frequency
 
 ---
 
@@ -34,7 +34,7 @@ To get started, you need [{{site.data.keyword.keymanagementserviceshort}}](https
 Go to your instance of {{site.data.keyword.keymanagementserviceshort}} and [generate or enter a key](/docs/key-protect?topic=key-protect-getting-started-tutorial).
 
 ## Granting service authorization
-{: #granting-serviice-auth}
+{: #granting-service-auth}
 
 Authorize {{site.data.keyword.keymanagementserviceshort}} for use with {{site.data.keyword.databases-for}} deployments:
 
@@ -91,6 +91,8 @@ If you provision a deployment through the CLI or API, the key protect key needs 
 
 Key Protect offers manual and automatic [key rotation](https://cloud.ibm.com/docs/key-protect?topic=key-protect-rotate-keys) and key rotation is supported by Cloud Databases deployments. When you rotate a key, the process initiates a _syncing KMS state_ task, and your deployment is reencrypted with the new key. The task is displayed on the _Tasks_ page on your deployment's _Overview_ and the associated Key Protect and Cloud Databases events are sent to Activity Tracker.
 
+For information on key rotation frequency, see [Rotating manually or automatically](/docs/key-protect?topic=key-protect-key-rotation#compare-key-rotation-options).
+
 ## Deleting the Deployment
 {: #deleting-deployment}
 
@@ -116,7 +118,7 @@ Only keys in the `us-south` and `eu-de` regions are durable to region failures. 
 ### Granting the delegation authorization
 {: #grant-auth}
 
-In order to enable your deployment to use the Key Protect key, you need to [Enable authorization to be delegated](/docs/account?topic=account-serviceauth) when granting the service authorizations. If the delegation authorization is not present before provisioning your deployment with a key, the provision fails.
+To enable your deployment to use the Key Protect key, you need to [Enable authorization to be delegated](/docs/account?topic=account-serviceauth) when granting the service authorizations. If the delegation authorization is not present before provisioning your deployment with a key, the provision fails.
 
 ### Using the Key at Provision
 {: #key-provision}
