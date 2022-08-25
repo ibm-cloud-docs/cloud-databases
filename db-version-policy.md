@@ -5,7 +5,7 @@ lastupdated: "2022-08-25"
 
 subcollection: cloud-databases
 
-keywords: version for cloud-databases, database version
+keywords: version for cloud-databases, database version, end of life, major version, minor version, deprecate, deprecation
 
 ---
 
@@ -19,7 +19,7 @@ keywords: version for cloud-databases, database version
 # Database Versioning Policy
 {: #versioning-policy}
 
-When you provision a {{site.data.keyword.databases-for}} deployment, you can choose from the versions currently available on {{site.data.keyword.cloud_notm}}. Find the latest versions from the [Catalog pages](https://cloud.ibm.com/catalog?category=databases), the [{{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} CLI](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployables-show), or the [{{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api#get-all-deployable-databases).
+When you provision a {{site.data.keyword.databases-for}} deployment, you can choose from the versions currently available on {{site.data.keyword.cloud_notm}}. Find the latest versions from the [catalog pages](https://cloud.ibm.com/catalog?category=databases), the [{{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} CLI](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployables-show), or the [{{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api#get-all-deployable-databases).
 
 ## Version Tags
 {: #version-tags}
@@ -48,13 +48,13 @@ Restoration of existing databases into new deployments of the deprecated major v
 
 At the end of the transition window, deprecated major versions cannot be deployed on {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}}. A backup of the deployment is taken and access to databases that are running a deprecated version is removed or automatically upgraded to the next major version. See table 1 for which databases are upgraded or removed. Regardless, the backup is available to be restored into a new supported database version.
 
-Failure to act can result in compatibility issues with your apps when IBM upgrades in-place. On rare occasions, failure can result, impacting your availability. If a failure occurs, the database is disabled and you need to restore from backup. We recommend self-migrating before the end of support date.
+Failure to act can result in compatibility issues with your apps when IBM upgrades in-place. On rare occasions, failure can result, impacting your availability. If a failure occurs, the database is disabled, and you need to restore from backup. We recommend self-migrating before the end of support date.
 {: .note}
 
 ## Major versions defined
 {: #version-definitions}
 
-| Database | Versioning Schema | Next Known End of Life Version and Date | End of Life procedure |
+| Database | Versioning Schema | Next Known End of Life Version and Date | End of life procedure |
 | --------- | --------- | --------- | --------- |
 | DataStax | Major versions are the first number in a `major.minor.patch` version number. | v6.7, [24 May 2022](https://www.ibm.com/cloud/blog/announcements/databases-for-datastax-6-7-end-of-life-in-may-2022) | Backup taken and access removed |  
 | Elasticsearch | Major versions are the first number in a `release.version.maintenance` version number.| Backup taken and access removed |  
@@ -77,13 +77,13 @@ Any actions taken after a database EOL date happen over several days after the E
 ## Major versioning End of Life
 {: #-major-version-eol}
 
-You will receive multiple notifications when a major version reaches its End of life. You can typically expect:
+You receive multiple notifications when a major version reaches its End of life. You can typically expect:
 * A blog post
 * An announcement in your service's Release Notes
-* A notification by email through the {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} API
-   ![Rabbit MQ Service Announcement Example](images/api-announce.png){: caption="Figure 1. Rabbit MQ Service Announcement Example" caption-side="bottom"}
+* A notification by email through the {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} API. This email contains a *Notifications* link that takes you to a Notifications Management page. **Make sure that these announcements are not being caught by your email service's spam filter.**
+   ![RabbitMQ Service Announcement Example](images/api-announce.png){: caption="Figure 1. Rabbit MQ Service Announcement Example" caption-side="bottom"}
 
-### Programatic Methods for Checking Version Status
+### Programmatic Methods for Checking Version Status
 {: #-major-version-eol-check-version-status}
 
 The {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} `deployables` command shows deployable database types, specifically the available versions of databases, and their preferred or stable status.
