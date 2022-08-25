@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018, 2022
-lastupdated: "2022-06-27"
+lastupdated: "2022-08-25"
 
 subcollection: cloud-databases
 
@@ -19,7 +19,7 @@ keywords: version for cloud-databases, database version
 # Database Versioning Policy
 {: #versioning-policy}
 
-When you provision a {{site.data.keyword.databases-for}} deployment, you can choose from the versions currently available on {{site.data.keyword.cloud_notm}}. You can find the latest versions from the [catalog pages](https://cloud.ibm.com/catalog?category=databases), from the cloud databases cli plug-in command [`ibmcloud cdb deployables-show`](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployables-show), or from the cloud databases API [`/deployables`](https://cloud.ibm.com/apidocs/cloud-databases-api#get-all-deployable-databases) endpoint.
+When you provision a {{site.data.keyword.databases-for}} deployment, you can choose from the versions currently available on {{site.data.keyword.cloud_notm}}. Find the latest versions from the [Catalog pages](https://cloud.ibm.com/catalog?category=databases), the [{{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} CLI](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployables-show), or the [{{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api#get-all-deployable-databases).
 
 ## Version Tags
 {: #version-tags}
@@ -73,6 +73,28 @@ Failure to act can result in compatibility issues with your apps when IBM upgrad
 
 Any actions taken after a database EOL date happen over several days after the EOL date. We try, but cannot guarantee, to make these upgrades outside of business hours in the local regions. If you want more control over the upgrade process of your database instance, we recommend that you upgrade following our [backup and restore process](/docs/cloud-databases?topic=cloud-databases-dashboard-backups) before the EOL date of your database version.
 {: .note}
+
+## Major versioning End of Life
+{: #-major-version-eol}
+
+You will receive multiple notifications when a major version reaches its End of life. You can typically expect:
+* A blog post
+* An announcement in your service's Release Notes
+* A notification by email through the {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} API
+   ![Rabbit MQ Service Announcement Example](images/api-announce.png){: caption="Figure 1. Rabbit MQ Service Announcement Example" caption-side="bottom"}
+
+### Programatic Methods for Checking Version Status
+{: #-major-version-eol-check-version-status}
+
+The {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} `deployables` command shows deployable database types, specifically the available versions of databases, and their preferred or stable status.
+```shell
+ibmcloud cdb deployables-show [--stable] [--preferred] [--json]
+```
+
+The {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} API `deployables` endpoint returns all deployable databases. Use the `version` parameter to return the version number.
+```text
+GET /v5/ibm/deployables
+```
 
 ## Minor versions
 {: #minor-versions}
