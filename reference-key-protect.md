@@ -43,7 +43,7 @@ Authorize {{site.data.keyword.keymanagementserviceshort}} for use with {{site.da
 3. In the side navigation, click **Authorizations**.
 4. Click **Create**.
 5. In the **Source service** menu, select the service of the deployment. For example, **Databases for PostgreSQL** or **Messages for RabbitMQ**
-6. In the **Source service instance** menu, select **All instances**.
+6. To the question **How do you want to scope the access?**, select **All resources**.
 7. In the **Target service** menu, select **Key Protect**.
 8. Select or retain the default value **`Account`** as the resource group for the **Target Service**
 9. In the Target service **Instance ID** menu, select the service instances to authorize.
