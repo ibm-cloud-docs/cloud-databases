@@ -88,12 +88,12 @@ For information on checking End of life status, see [Programmatic Methods for Ch
 ### Programmatic Methods for Checking Version Status
 {: #-major-version-eol-check-version-status}
 
-The {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} `deployables` [command](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployables-show) shows deployable database types, specifically the available versions of databases, and their preferred or stable status.
+The {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} `deployables` [command](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployables-show) shows deployable database types, specifically the available versions of databases, and their `preferred` or `stable` status.
 ```shell
 ibmcloud cdb deployables-show [--stable] [--preferred] [--json]
 ```
 
-Review the output, specifically *Status* and *Preferred*, to check the End of life status of a major version, as shown in this example where v4.4 is the *Preferred* version and v4.2's *Status* is deprecated.
+To check the status of a major version, review the output of the `deployable` command, specifically *Status* and *Preferred*. The following output example shows version 4.4 is the `Preferred` version and version 4.2's *Status* is `deprecated`.
 
 ```text
 Database Type:  mongodb
