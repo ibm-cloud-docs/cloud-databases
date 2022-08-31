@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018, 2022
-lastupdated: "2022-08-25"
+lastupdated: "2022-08-31"
 
 subcollection: cloud-databases
 
@@ -83,12 +83,23 @@ You receive multiple notifications when a major version reaches its End of life.
 * A notification by email through the {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} API. This email contains a *Notifications* link that takes you to a Notifications Management page. **Make sure that these announcements are not being caught by your email service's spam filter.**
    ![RabbitMQ Service Announcement Example](images/api-announce.png){: caption="Figure 1. Rabbit MQ Service Announcement Example" caption-side="bottom"}
 
+For information on checking End of life status, see [Programmatic Methods for Checking Version Status](#programmatic-methods-for-checking-version-status).
+
 ### Programmatic Methods for Checking Version Status
 {: #-major-version-eol-check-version-status}
 
-The {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} `deployables` command shows deployable database types, specifically the available versions of databases, and their preferred or stable status.
+The {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} `deployables` [command](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployables-show) shows deployable database types, specifically the available versions of databases, and their preferred or stable status.
 ```shell
 ibmcloud cdb deployables-show [--stable] [--preferred] [--json]
+```
+
+Review the output, specifically *Status* and *Preferred*, to check the End of life status of a major version, as shown in this example where v4.4 is the *Preferred* version and v4.2's *Status* is deprecated.
+
+```text
+Database Type:  mongodb
+Version   Status       Preferred
+4.4       stable       true
+4.2       deprecated   false
 ```
 
 The {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} API `deployables` endpoint returns all deployable databases. Use the `version` parameter to return the version number.
