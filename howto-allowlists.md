@@ -305,12 +305,12 @@ If you use allowlists to control connections in your environment, you can use th
 
 | Location | Region | Data center | Subnet | First IP |
 | -- | -- | -- | -- | -- |
-| Seoul | kr-seo | seo01 |  169.56.80.143/28 | 169.56.80.129 |       
-| Seoul | kr-seo | seo01 |  169.56.106.63/26 | 169.56.106.1 |       
-| Seoul | kr-seo | seo01 | 169.56.120.127/27 | 169.56.120.97 |       
-| Seoul | kr-seo | seo01 | 169.56.179.255/25 | 169.56.179.129 |       
-| Seoul | kr-seo | seo01 |  169.56.67.239/29 | 169.56.67.233 |       
-| Seoul | kr-seo | seo01 |  169.56.164.71/29 | 169.56.164.65 |
+| Seoul | kr-seo | seo01 |  169.56.80.143/28 | 169.56.80.129 |          
+| Seoul | kr-seo | seo01 |  169.56.106.63/26 | 169.56.106.1 |          
+| Seoul | kr-seo | seo01 | 169.56.120.127/27 | 169.56.120.97 |          
+| Seoul | kr-seo | seo01 | 169.56.179.255/25 | 169.56.179.129 |          
+| Seoul | kr-seo | seo01 |  169.56.67.239/29 | 169.56.67.233 |          
+| Seoul | kr-seo | seo01 |  169.56.164.71/29 | 169.56.164.65 | 
 {: caption="Table 9. eu-gb Public Subnets" caption-side="bottom"}
 
 #### Private Subnets
@@ -318,9 +318,9 @@ If you use allowlists to control connections in your environment, you can use th
 
 | Location | Region | Data center | Subnet | First IP |
 | -- | -- | -- | -- | -- |
-| Seoul | kr-seo | seo01 | 10.178.123.255/26 | 10.178.123.193 |      
-| Seoul | kr-seo | seo01 | 10.178.226.127/25 | 10.178.226.1 |      
-| Seoul | kr-seo | seo01 | 10.178.124.175/29 | 10.178.124.169 |      
+| Seoul | kr-seo | seo01 | 10.178.123.255/26 | 10.178.123.193 |       
+| Seoul | kr-seo | seo01 | 10.178.226.127/25 | 10.178.226.1 |       
+| Seoul | kr-seo | seo01 | 10.178.124.175/29 | 10.178.124.169 |       
 | Seoul | kr-seo | seo01 |  10.178.238.55/29 | 10.178.238.49 |
 {: caption="Table 10. seo Private Subnets" caption-side="bottom"}
 
