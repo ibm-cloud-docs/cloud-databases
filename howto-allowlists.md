@@ -179,22 +179,22 @@ If you use allowlists to control connections in your environment, you can use th
 
 | Location | Region | Data center | Subnet | First IP |
 | -- | -- | -- | -- | -- |
-| Sao Paolo | br-sao | sao01 | 169.57.154.239/28 | 169.57.154.225 |        
-| Sao Paolo | br-sao | sao01 |  169.57.191.63/26 | 169.57.191.1   |      
-| Sao Paolo | br-sao | sao01 | 169.57.198.255/25 | 169.57.198.129 |        
-| Sao Paolo | br-sao | sao01 | 169.57.225.127/27 | 169.57.225.97  |       
-| Sao Paolo | br-sao | sao01 |  169.57.167.95/29 | 169.57.167.89  |       
-| Sao Paolo | br-sao | sao01 |  169.57.199.23/29 | 169.57.199.17  |       
-| Sao Paolo | br-sao | sao04 |  163.107.67.63/28 | 163.107.67.49  |       
-| Sao Paolo | br-sao | sao04 |  163.107.69.63/27 | 163.107.69.33  |       
-| Sao Paolo | br-sao | sao04 | 163.107.72.127/26 | 163.107.72.65  |       
-| Sao Paolo | br-sao | sao04 |  163.107.68.87/29 | 163.107.68.81  |       
-| Sao Paolo | br-sao | sao04 |  163.107.68.95/29 | 163.107.68.89  |       
-| Sao Paolo | br-sao | sao05 |  163.109.68.63/26 | 163.109.68.1   |      
-| Sao Paolo | br-sao | sao05 |  163.109.68.95/27 | 163.109.68.65  |       
-| Sao Paolo | br-sao | sao05 | 163.109.68.175/28 | 163.109.68.161 |        
-| Sao Paolo | br-sao | sao05 | 163.109.65.119/29 | 163.109.65.113 |        
-| Sao Paolo | br-sao | sao05 | 163.109.65.127/29 | 163.109.65.121 |
+| Sao Paolo | br-sao | sao01 | 169.57.154.239/28 | 169.57.154.225  |        
+| Sao Paolo | br-sao | sao01 |  169.57.191.63/26 | 169.57.191.1  |        
+| Sao Paolo | br-sao | sao01 | 169.57.198.255/25 | 169.57.198.129  |        
+| Sao Paolo | br-sao | sao01 | 169.57.225.127/27 | 169.57.225.97  |        
+| Sao Paolo | br-sao | sao01 |  169.57.167.95/29 | 169.57.167.89  |        
+| Sao Paolo | br-sao | sao01 |  169.57.199.23/29 | 169.57.199.17  |        
+| Sao Paolo | br-sao | sao04 |  163.107.67.63/28 | 163.107.67.49  |        
+| Sao Paolo | br-sao | sao04 |  163.107.69.63/27 | 163.107.69.33  |        
+| Sao Paolo | br-sao | sao04 | 163.107.72.127/26 | 163.107.72.65  |        
+| Sao Paolo | br-sao | sao04 |  163.107.68.87/29 | 163.107.68.81  |        
+| Sao Paolo | br-sao | sao04 |  163.107.68.95/29 | 163.107.68.89  |        
+| Sao Paolo | br-sao | sao05 |  163.109.68.63/26 | 163.109.68.1  |        
+| Sao Paolo | br-sao | sao05 |  163.109.68.95/27 | 163.109.68.65  |        
+| Sao Paolo | br-sao | sao05 | 163.109.68.175/28 | 163.109.68.161  |        
+| Sao Paolo | br-sao | sao05 | 163.109.65.119/29 | 163.109.65.113  |        
+| Sao Paolo | br-sao | sao05 | 163.109.65.127/29 | 163.109.65.121  | 
 {: caption="Table 5. br-sao Public Subnets" caption-side="bottom"}
 
 #### Private Subnets
@@ -202,18 +202,18 @@ If you use allowlists to control connections in your environment, you can use th
 
 | Location | Region | Data center | Subnet | First IP |
 | -- | -- | -- | -- | -- |
-| Sao Paolo| br-sao | sao01 | 10.150.175.255/26 | 10.150.175.193 |      
-| Sao Paolo| br-sao | sao01 | 10.151.137.127/25 | 10.151.137.1 |      
-| Sao Paolo| br-sao | sao01 | 10.150.169.167/29 | 10.150.169.161 |      
-| Sao Paolo| br-sao | sao01 |  10.150.207.55/29 | 10.150.207.49 |      
-| Sao Paolo| br-sao | sao04 |  10.14.19.127/26  | 10.14.19.65 |      
-| Sao Paolo| br-sao | sao04 |  10.14.41.255/25  | 10.14.41.129 |      
-| Sao Paolo| br-sao | sao04 |   10.14.20.63/29  | 10.14.20.57 |      
-| Sao Paolo| br-sao | sao04 |   10.14.21.23/29  | 10.14.21.17 |      
-| Sao Paolo| br-sao | sao05 |  10.15.20.191/26  | 10.15.20.129 |      
-| Sao Paolo| br-sao | sao05 |  10.15.31.127/25  | 10.15.31.1 |      
-| Sao Paolo| br-sao | sao05 |  10.15.18.183/29  | 10.15.18.177 |      
-| Sao Paolo| br-sao | sao05 |  10.15.18.191/29  | 10.15.18.185 |
+| Sao Paolo | br-sao | sao01 | 10.150.175.255/26 | 10.150.175.193 |         
+| Sao Paolo | br-sao | sao01 | 10.151.137.127/25 | 10.151.137.1 |         
+| Sao Paolo | br-sao | sao01 | 10.150.169.167/29 | 10.150.169.161 |         
+| Sao Paolo | br-sao | sao01 |  10.150.207.55/29 | 10.150.207.49 |         
+| Sao Paolo | br-sao | sao04 |  10.14.19.127/26  | 10.14.19.65 |         
+| Sao Paolo | br-sao | sao04 |  10.14.41.255/25  | 10.14.41.129 |         
+| Sao Paolo | br-sao | sao04 |   10.14.20.63/29  | 10.14.20.57 |         
+| Sao Paolo | br-sao | sao04 |   10.14.21.23/29  | 10.14.21.17 |         
+| Sao Paolo | br-sao | sao05 |  10.15.20.191/26  | 10.15.20.129 |         
+| Sao Paolo | br-sao | sao05 |  10.15.31.127/25  | 10.15.31.1 |         
+| Sao Paolo | br-sao | sao05 |  10.15.18.183/29  | 10.15.18.177 |         
+| Sao Paolo | br-sao | sao05 |  10.15.18.191/29  | 10.15.18.185 |  
 {: caption="Table 6. br-sao Private Subnets" caption-side="bottom"}
 
 ### `eu-gb` List
