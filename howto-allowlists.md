@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-08-04"
+lastupdated: "2022-09-01"
 
 subcollection: cloud-databases
 
@@ -109,12 +109,12 @@ If you use allowlists to control connections in your environment, you can use th
 
 | Location | Region | Data center | Subnet | First IP |
 | -- | -- | -- | -- | -- |
-| Channai | in-che | che01 |  169.38.95.127/27 | 169.38.95.97     |
-| Channai | in-che | che01 | 169.38.121.159/28 | 169.38.121.145     |
-| Channai | in-che | che01 | 169.38.132.127/25 | 169.38.132.1     |
-| Channai | in-che | che01 | 169.38.136.255/26 | 169.38.136.193     |
-| Channai | in-che | che01 |  169.38.73.151/29 | 169.38.73.145     |
-| Channai | in-che | che01 |  169.38.105.79/29 | 169.38.105.73 |
+| Channai | in-che | che01 |  169.38.95.127/27  | 169.38.95.97  |        
+| Channai | in-che | che01 | 169.38.121.159/28  | 169.38.121.145  |        
+| Channai | in-che | che01 | 169.38.132.127/25  | 169.38.132.1  |        
+| Channai | in-che | che01 | 169.38.136.255/26  | 169.38.136.193  |        
+| Channai | in-che | che01 |  169.38.73.151/29  | 169.38.73.145  |        
+| Channai | in-che | che01 |  169.38.105.79/29  | 169.38.105.73  |
 {: caption="Table 1. in-che Public Subnets" caption-side="bottom"}
 
 #### Private Subnets
@@ -122,10 +122,10 @@ If you use allowlists to control connections in your environment, you can use th
 
 | Location | Region | Data center | Subnet | First IP |
 | -- | -- | -- | -- | -- |
-| Channai | in-che | che01 |  10.162.8.127/26  | 10.162.8.65         
-| Channai | in-che | che01 |  10.163.20.127/25 | 10.163.20.1         
-| Channai | in-che | che01 | 10.162.115.103/29 | 10.162.115.97         
-| Channai | in-che | che01 |  10.162.132.79/29 | 10.162.132.73
+| Channai | in-che | che01 |  10.162.8.127/26  | 10.162.8.65 |         
+| Channai | in-che | che01 |  10.163.20.127/25 | 10.163.20.1 |         
+| Channai | in-che | che01 | 10.162.115.103/29 | 10.162.115.97 |         
+| Channai | in-che | che01 |  10.162.132.79/29 | 10.162.132.73 |
 {: caption="Table 2. in-che Private Subnets" caption-side="bottom"}
 
 ### `ca-tor` List
