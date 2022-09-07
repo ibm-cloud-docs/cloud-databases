@@ -34,6 +34,7 @@ toc:
       - howto-allowlists.md
       - ha-dr.md
       - closures.md
+      - howto-cbr.md
       - topicgroup: 
           label: Enhancing security
           topics: 
