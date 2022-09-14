@@ -1,11 +1,11 @@
 ---
 copyright:
   years: 2019, 2022
-lastupdated: "2022-08-16"
+lastupdated: "2022-09-14"
 
 subcollection: cloud-databases
 
-keywords: bring your own key, byok, cryptoshredding, key rotation, key rotation frequency
+keywords: bring your own key, byok, cryptoshredding, key rotation, key rotation frequency, bring your own key
 
 ---
 
@@ -110,10 +110,9 @@ Cryptoshredding is a destructive action. When the key is deleted, your data is u
 {: #key-byok}
 
 If you use Key Protect, when you provision a database you can also designate a key to encrypt the Cloud Object Storage disk that holds your deployment's backups. 
-Bring your own key for backups is only available in the following regions: `us-south`, `us-east`, and `eu-de`. 
 
-Only keys in the `us-south` and `eu-de` regions are durable to region failures. To ensure that your backups are available even if a region failure occurs, you must use a key from `us-south` or `eu-de`, regardless of your deployment location.
-{: .note}
+- BYOK for backups is available only in US regions `us-south` and `us-east`.{: .note}
+- Only keys in the `us-south` are durable to region failures. To ensure that your backups are available even if a region failure occurs, you must use a key from `us-south`, regardless of your deployment's location.{: .important}
 
 ### Granting the delegation authorization
 {: #grant-auth}
