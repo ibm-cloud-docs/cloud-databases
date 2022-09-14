@@ -91,12 +91,12 @@ If you provision a deployment through the CLI or API, the key protect key needs 
 
 Key Protect offers manual and automatic [key rotation](/docs/key-protect?topic=key-protect-rotate-keys) and key rotation is supported by Cloud Databases deployments. When you rotate a key, the process initiates a _syncing KMS state_ task, and your deployment is reencrypted with the new key. The task is displayed on the _Tasks_ page on your deployment's _Overview_ and the associated Key Protect and Cloud Databases events are sent to Activity Tracker.
 
-For information on key rotation frequency, see [Rotating manually or automatically](/docs/key-protect?topic=key-protect-key-rotation#compare-key-rotation-options).
+For more information, see [Rotating manually or automatically](/docs/key-protect?topic=key-protect-key-rotation#compare-key-rotation-options).
 
 ## Deleting the Deployment
 {: #deleting-deployment}
 
-If you delete a deployment that is protected with a Key Protect key, the deployment remains registered against the key during the soft-deletion period (up to 9 days). If you need to delete the key in the soft-deletion period, you must [force delete](/docs/key-protect?topic=key-protect-delete-keys) the key. After the soft-deletion period, the key can be deleted without the force. You can check the [association between the key and your deployment](/docs/key-protect?topic=key-protect-view-protected-resources) to determine when you can delete the key.
+If you delete a deployment that is protected with a Key Protect key, the deployment remains registered against the key during the soft-deletion period (up to 9 days). To delete the key in the soft-deletion period, [force delete](/docs/key-protect?topic=key-protect-delete-keys) the key. After the soft-deletion period, the key can be deleted without the force. To determine when you can delete the key, check the [association between the key and your deployment](/docs/key-protect?topic=key-protect-view-protected-resources).
 
 ## Cryptoshredding
 {: #crypto-shredding}
@@ -167,13 +167,13 @@ And one for the Cloud Object Storage bucket for its backups, where the deploymen
 
 IAM/Key Protect does not stop you from removing the policy between the key and Cloud Object Storage (the second example), but doing so can make your backups unrestorable. To prevent this, if you delete the Cloud Object Storage policy that governs the ability of Cloud Databases to use the key for Cloud Object Storage, the policy is re-created to continue backing up your deployment.
 
-Be careful when removing keys and authorizations. If you have multiple deployments that use the same keys, it is possible to inadvertently destroy backups to **all** of those deployments by revoking the delegation authorization. If at all possible, do not use the same key for multiple deployment's backups.
+Be careful when removing keys and authorizations. If you have multiple deployments that use the same keys, it is possible to inadvertently destroy backups to **all** of those deployments by revoking the delegation authorization. If possible, do not use the same key for multiple deployment's backups.
 
 If you want to shred the backups, you can delete the key. Cloud Object Storage ensures that the storage is unreadable and unwriteable. However, any other deployments that use that same key for backups will encounter subsequent backup failures.
 
 If you do require that the same key to be used for multiple deployment's backups, removing keys and authorizations can have the following side effects.
 - If you delete just the Cloud Object Storage authorization (as seen in Table 2), then not only is the deployment that is shown as the creator affected, but any deployments that also use the same key are also affected. Those deployments can encounter temporary backup failures until the policy is automatically re-created. There should be no lasting effects, except for missing backups.
-- If you delete just Cloud Databases delegator authorization, which is created by you the user (as seen in Table 1), nothing immediately breaks because the second authorization is still in place. However, if the Cloud Object Storage authorization is ever removed, it cannot be re-created, and can lead to multiple deployments that use the same key losing the ability to back up.
+- If you delete just Cloud Databases delegator authorization, which is created by you (as seen in Table 1), nothing immediately breaks because the second authorization is still in place. However, if the Cloud Object Storage authorization is ever removed, it cannot be re-created, and can lead to multiple deployments that use the same key losing the ability to back up.
 - If you delete both the Cloud Object Storage authorization **AND** the Cloud Databases delegator authorization, all deployments that use the same key will immediately not have the ability to back up and the correct authorizations will not be able to be re-created, effectively destroying the backups for all deployments that use that key.
 
 Use caution if you reuse keys.
