@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018, 2022
-lastupdated: "2022-08-25"
+lastupdated: "2022-09-16"
 
 subcollection: cloud-databases
 
@@ -56,14 +56,14 @@ Failure to act can result in compatibility issues with your apps when IBM upgrad
 
 | Database | Versioning Schema | Next Known End of Life Version and Date | End of life procedure |
 | --------- | --------- | --------- | --------- |
-| DataStax | Major versions are the first number in a `major.minor.patch` version number. | v6.7, [24 May 2022](https://www.ibm.com/cloud/blog/announcements/databases-for-datastax-6-7-end-of-life-in-may-2022) | Backup taken and access removed |  
-| Elasticsearch | Major versions are the first number in a `release.version.maintenance` version number.| Backup taken and access removed |  
+| DataStax | Major versions are the first number in a `major.minor.patch` version number. | v6.8.x, March 2026 | Backup taken and access removed |  
+| Elasticsearch | Major versions are the first number in a `release.version.maintenance` version number.| v7.17.x, August 2023 | Backup taken and access removed |  
 | EnterpriseDB | Major version is defined by the first number in the version number. | v12, December 2024 | Backup taken and access removed |  
 | etcd | Major versions are the first number in a `major.minor.patch` version number. | v3.3, unplanned | Backup taken and access removed |  
-| MongoDB | Major versions are the first two numbers in a `major.x.patch` version number. In cases where `x` is even, it is a stable release suitable for production. Even `x` versions are the only ones available on Cloud Databases. | v4.0, [26 April 2022](https://www.ibm.com/cloud/blog/announcements/databases-for-mongodb-40-end-of-life-in-april-2022) | Automatically upgraded in place to next Major version |
+| MongoDB | Major versions are the first two numbers in a `major.x.patch` version number. In cases where `x` is even, it is a stable release suitable for production. Even `x` versions are the only ones available on Cloud Databases. | v4.2, April 2023 | Automatically upgraded in place to next Major version |
 | PostgreSQL* | Major version is defined by the first number in the version number. | v10, [3 November 2022](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-databases-for-postgresql-10-end-of-life-in-november-2022)| Backup taken and access removed |  
-| Redis | Major versions are the first number in a `major.minor.patch` version number. | v4.0, [27 May 2022](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-databases-for-redis-4-end-of-life-in-march-2022) | Automatically upgraded in place to next Major version only for Redis 4 to Redis 5 |  
-| RabbitMQ | Major versions are the first two numbers in a `major.x.patch` version number. | v3.8, [12 July 2022](https://www.ibm.com/cloud/blog/announcements/messages-for-rabbitmq-38-end-of-life-in-july-2022) | Backup taken and access removed |  
+| Redis | Major versions are the first number in a `major.minor.patch` version number. | v5.0, TBD | Automatically upgraded in place to next Major version only for Redis 4 to Redis 5 |  
+| RabbitMQ | Major versions are the first two numbers in a `major.x.patch` version number. | v3.9, May 2023 | Backup taken and access removed |  
 | MySQL** | Major versions are the first two numbers in a `major.x.patch` version number. | v5.7, October 2023 | Backup taken and access removed |  
 {: caption="Table 1. Major versions for {{site.data.keyword.databases-for}}" caption-side="top"}
 
@@ -78,18 +78,32 @@ Any actions taken after a database EOL date happen over several days after the E
 {: #-major-version-eol}
 
 You receive multiple notifications when a major version reaches its End of life. You can typically expect:
-* A blog post
-* An announcement in your service's Release Notes
+* A blog post, for example: [Messages for RabbitMQ 3.8 End of Life in July 2022](https://www.ibm.com/cloud/blog/announcements/messages-for-rabbitmq-38-end-of-life-in-july-2022) 
+* An announcement in your service's Release Notes, for example: [IBM Cloud® Messages for RabbitMQ 3.8 End of Life in July 2022](https://cloud.ibm.com/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-relnotes#messages-for-rabbitmq-25jan2022)
 * A notification by email through the {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} API. This email contains a *Notifications* link that takes you to a Notifications Management page. **Make sure that these announcements are not being caught by your email service's spam filter.**
+   For more information, see [Setting up Distribution Lists for IBM Cloud Notifications](https://www.ibm.com/cloud/blog/announcements/setting-up-distribution-lists-for-ibm-cloud-notifications).
    ![RabbitMQ Service Announcement Example](images/api-announce.png){: caption="Figure 1. Rabbit MQ Service Announcement Example" caption-side="bottom"}
+
+For more information, see [Programmatic Methods for Checking Version Status](#programmatic-methods-for-checking-version-status).
 
 ### Programmatic Methods for Checking Version Status
 {: #-major-version-eol-check-version-status}
 
-The {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} `deployables` command shows deployable database types, specifically the available versions of databases, and their preferred or stable status.
+The following [{{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} `deployables` command](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployables-show) shows deployable database types, specifically the available versions of databases, and their `preferred` or `stable` status.
 ```shell
 ibmcloud cdb deployables-show [--stable] [--preferred] [--json]
 ```
+
+
+Check the status of a major version by reviewing the output of the `deployable` command, specifically *Status* and *Preferred*. The following output example shows that version 4.4 is the `Preferred` version and version 4.2's *Status* is `deprecated`.
+
+```text
+Database Type:  mongodb
+Version   Status       Preferred
+4.4       stable       true
+4.2       deprecated   false
+```
+
 
 The {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} API `deployables` endpoint returns all deployable databases. Use the `version` parameter to return the version number.
 ```text
