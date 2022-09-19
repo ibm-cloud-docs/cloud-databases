@@ -4,7 +4,7 @@ copyright:
   years:  2022
 lastupdated: "2022-09-19"
 
-keywords: restricting access to cloud databases, restricting access to ICD
+keywords: restricting access to cloud databases, restricting access to ICD, DataStax cbr, Elasticsearch cbr, EnterpriseDB cbr, etcd cbr, mongodb cbr, postgresql cbr, redis cbr, mysql cbr, rabbitmq cbr
 
 subcollection: cloud-databases
 
@@ -19,17 +19,17 @@ subcollection: cloud-databases
 {:important: .important}	
 {:experimental: .experimental}
 
-This document outlines the process for using context-based restrictions to protect your {{site.data.keyword.databases-for}} resources. This process is not yet in production. Use this document to prepare your resources for context-based restrictions.{: experimental}
+This document outlines the process for using context-based restrictions (CBR) to protect your {{site.data.keyword.databases-for}} resources. This process is not yet in production. Use this document to prepare your resources for context-based restrictions.{: experimental}
 
 # Protecting {{site.data.keyword.databases-for}} resources with context-based restrictions
 {: #cbr}
 
-Context-based restrictions give account owners and administrators the ability to define and enforce access restrictions for {{site.data.keyword.cloud}} resources based on the context of access requests. Access to {{site.data.keyword.databases-for}} resources can be controlled with context-based restrictions and identity and access management (IAM) policies.
+Context-based restrictions (CBR) give account owners and administrators the ability to define and enforce access restrictions for {{site.data.keyword.cloud}} resources based on the context of access requests. Access to {{site.data.keyword.databases-for}} resources can be controlled with CBR and identity and access management (IAM) policies.
 {: shortdesc}
 
-These restrictions work with traditional IAM policies, which are based on identity, to provide an extra layer of protection. Unlike IAM policies, context-based restrictions don't assign access. Context-based restrictions check that an access request comes from an allowed context that you configure. Since both IAM access and context-based restrictions enforce access, context-based restrictions offer protection even in the face of compromised or mismanaged credentials. For more information, see [What are context-based restrictions](/docs/account?topic=account-context-restrictions-whatis).
+These restrictions work with traditional IAM policies, which are based on identity, to provide an extra layer of protection. Unlike IAM policies, CBRs don't assign access. CBRs check that an access request comes from an allowed context that you configure. Since both IAM access and CBRs enforce access, CBRs offer protection even in the face of compromised or mismanaged credentials. For more information, see [What are context-based restrictions](/docs/account?topic=account-context-restrictions-whatis).
 
-A user must have the Administrator role on the {{site.data.keyword.databases-for}} service to create, update, or delete rules. A user must also have either the Editor or Administrator role on the Context-based restrictions service to create, update, or delete network zones. A user with the Viewer role on the Context-based restrictions service can only add network zones to a rule. 
+A user must have the Administrator role on the {{site.data.keyword.databases-for}} service to create, update, or delete rules. A user must also have either the Editor or Administrator role on the CBR service to create, update, or delete network zones. A user with the Viewer role on the CBRs service can only add network zones to a rule. 
 {: note}
 
 Any {{site.data.keyword.cloudaccesstraillong_notm}} or audit log events generated come from the context-based restrictions service, not {{site.data.keyword.databases-for}}. For more information, see [Monitoring context-based restrictions](/docs/account?topic=account-cbr-monitor).
@@ -41,28 +41,28 @@ To get started protecting your {{site.data.keyword.databases-for}} resources wit
 ## How {{site.data.keyword.databases-for}} integrates with context-based restrictions
 {: #cbr-overview}
 
-_If context-based restrictions don't apply holistically to all components of your service's resources, provide a paragraph that categorizes the scope of what’s enforced or impacted and what isn't. Also, consider the following use cases to determine what you need to document for your service:_
+You can create context-based restrictions (CBR) for {{site.data.keyword.databases-for}} resources or for specific APIs.
 
-_1. Include common examples across all interface types (UI, CLI, API). See platform task topics, but if there's something specific in CLI/API as far as scoping a rule, then you might want to include those here--similar to examples for fine-grained access by using the interfacer switcher._
+### Protecting IBM Cloud Kubernetes Service resources
+{: #cbr-overview-protect-services}
 
-_2. Consider the different access patterns for your service's APIs, if any. How does a customer use the APIs? How does your service have it set up for creating context-based restriction rules and how does that impact operations a customer can perform (for example, scoping a rule to protect specific APIs)? Think about a user creating a rule. When you select and scope resources for a rule, you must select the service, resources, and then you might have the option to scope protection to APIs. Depending on what level of this your service supports, you might need to document what's available and how this works for your service. Name this section "Protecting specific APIs". Include information about each API or API type, such as the actions and action descriptions that map to each._
+You can create CBR rules to protect specific regions, resource groups, and instances.
 
-   _Tip: Ask your development team for the CBR service registration json file to help you get started. In the file, you'll find the APIs that customers can use to scope a rule._
+**Region**
+   Protects {{site.data.keyword.databases-for}} resources in a specific region. If you include a region in your CBR rule, resources in the network zones that you associate with the rule can interact only with resources in that region.
+   If you use the CLI, you can specify the `--region REGION` option to protect resources in a specific region.
+   If you use the API, you can specify `"name": "region","value": "REGION"` field in the resource attributes.
 
-_3. Document resource attributes. Check the UI for the resource attributes that customers can use to scope the rule to specific resources. Documenting these resource attributes can help customers that are using the CLI or API because there is currently no programmatic way to retreive the available resource attributes for a given service. Name this section "Protecting specific resources"._ 
+**Resource group**
+   Protects {{site.data.keyword.databases-for}} resources in a specific resource group.
+   If you use the CLI, you can specify the `--resource-group-id RESOURCE-GROUP-ID` option to protect resources in a specific resource group.
+   If you use the API, you can specify `"name": "resourceGroupId","value": "RESOURCE-GROUP-ID"` field in the resource attributes.
 
-_4. If you use private endpoints, private endpoints might already have an allowlist concept, so how would integration with context-based restrictions work? Honor both, honor one over the other, an intersection of these, how will this work if you have a legacy system in place?_
-
-_5. State any limitations on how the context-based restrictions work with your service's resources when it's working with another service or generally within the platform. You can use a note format if this is only a sentence or two. For example, "Context-based restrictions are not supported in Object Storage for Satellite."_
-
-_6. Are there service to service authorizations required to be in place? If so, you would want to create rules to allow for those service to service authorizations to continue working once a rule is in place._ 
-
-   _Example:_
-   1. There is an existing IAM S2S authorization to allow COS to access key protect.
-   2. Someone creates a CBR rule on key protect.
-   3. For the rule in step 2, a CBR zone would need to specify a service reference allowing COS to access key protect. Without this step network access would be blocked.
-
-_For an example of how to document your service's intrgration with context-based restrictions, see the [Protecting IBM Cloud Kubernetes Service resources with context-based restrictions](https://test.cloud.ibm.com/docs/containers?topic=containers-cbr&interface=api#api-types-cbr)._
+**Namespace**
+   Protects a specific namespace. If you include a namespace in your CBR rule, resources in the network zones that you associate with the rule can interact only with resources in that namespace. Note that scoping a rule to a specific namespace is only available only for rules that protect the cluster API type.
+   Protects IBM Cloud Kubernetes Service resources in a specific resource group.
+   If you use the CLI, you can specify the `--resource-attributes` namespace=NAMESPACE option to protect resources in a specific resource group.
+   If you use the API, you can specify `"name": "namespace","value": "NAMESPACE"` field in the resource attributes.
 
 ## Creating network zones 
 {: #network-zone}
@@ -76,6 +76,12 @@ A network zone represents an allowlist of IP addresses where an access request i
 Make sure to add {{site.data.keyword.databases-for}} to network zones for rules that target other {{site.data.keyword.cloud_notm}} resources, or some operations in your workflow might fail.
 {: important}
 
+
+### Creating network zones from the CLI
+{: #network-zone-cli}
+
+1. To create network zones from the CLI, [install the CBR CLI plug-in](/docs/account?topic=cli-cbr-plugin#install-cbr-plugin).
+1. You can use the `cbr-zone-create` command to add resources to network zones. For more information, see the [CBR CLI reference](https://test.cloud.ibm.com/docs/account?topic=cli-cbr-plugin#cbr-zones-cli). Note that the `service_name` for {{site.data.keyword.databases-for}} is <INSERT SERVICE NAME HERE>.
 
 ### Creating network zones in the console
 {: #network-zone-ui}
