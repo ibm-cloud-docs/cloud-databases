@@ -2,7 +2,7 @@
 
 copyright:
   years:  2022
-lastupdated: "2022-09-07"
+lastupdated: "2022-09-19"
 
 keywords: restricting access to cloud databases, restricting access to ICD
 
@@ -10,11 +10,16 @@ subcollection: cloud-databases
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}
+{:shortdesc: .shortdesc}
+{:screen: .screen}
+{:codeblock: .codeblock}
+{:pre: .pre}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}	
+{:experimental: .experimental}
 
-_Name your file `cbr.md` and include it in the **How to** nav group in the **Enhancing security** topic group in your `toc.yaml` file. See https://test.cloud.ibm.com/docs/writing?topic=writing-security-content-guidance_
-
-_Do not use terms: network rules, CBR acronym is appropriate in API/CLI but not for end user/console docs_
+This document outlines the process for using context-based restrictions to protect your {{site.data.keyword.databases-for}} resources. This process is not yet in production, so use the information below for informational purposes intended to allow you to prepare your resources for context-based restrictions.{: experimental}
 
 # Protecting {{site.data.keyword.databases-for}} resources with context-based restrictions
 {: #cbr}
