@@ -19,7 +19,7 @@ subcollection: cloud-databases
 {:important: .important}	
 {:experimental: .experimental}
 
-This document outlines the process for using context-based restrictions to protect your {{site.data.keyword.databases-for}} resources. This process is not yet in production, so use the information below for informational purposes intended to allow you to prepare your resources for context-based restrictions.{: experimental}
+This document outlines the process for using context-based restrictions to protect your {{site.data.keyword.databases-for}} resources. This process is not yet in production. Use this document to prepare your resources for context-based restrictions.{: experimental}
 
 # Protecting {{site.data.keyword.databases-for}} resources with context-based restrictions
 {: #cbr}
