@@ -19,7 +19,7 @@ subcollection: cloud-databases
 {:important: .important}	
 {:experimental: .experimental}
 
-This document outlines the process for using context-based restrictions (CBR) to protect your {{site.data.keyword.databases-for}} resources. This process is not yet in production. Use this document to prepare your resources for context-based restrictions.{: experimental}
+This document outlines the process for using context-based restrictions (CBR) to protect your {{site.data.keyword.databases-for}} resources. This process is not yet in production. Use this document to prepare your resources for context-based restrictions.{: important}
 
 # Protecting {{site.data.keyword.databases-for}} resources with context-based restrictions
 {: #cbr}
@@ -75,7 +75,6 @@ A network zone represents an allowlist of IP addresses where an access request i
 
 Make sure to add {{site.data.keyword.databases-for}} to network zones for rules that target other {{site.data.keyword.cloud_notm}} resources, or some operations in your workflow might fail.
 {: important}
-
 
 ### Creating network zones from the CLI
 {: #network-zone-cli}
