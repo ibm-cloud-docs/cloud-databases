@@ -57,7 +57,7 @@ Failure to act can result in compatibility issues with your apps when IBM upgrad
 | Database | Versioning Schema | Next Known End of Life Version and Date | End of life procedure |
 | --------- | --------- | --------- | --------- |
 | DataStax | Major versions are the first number in a `major.minor.patch` version number. | v6.8.x, March 2026 | Backup taken and access removed |  
-| Elasticsearch | Major versions are the first number in a `release.version.maintenance` version number.| v7.10, TBD | Backup taken and access removed |  
+| Elasticsearch | Major versions are the first number in a `release.version.maintenance` version number.| TBD | Backup taken and access removed |  
 | EnterpriseDB | Major version is defined by the first number in the version number. | v12, December 2024 | Backup taken and access removed |  
 | etcd | Major versions are the first number in a `major.minor.patch` version number. | v3.3, unplanned | Backup taken and access removed |  
 | MongoDB | Major versions are the first two numbers in a `major.x.patch` version number. In cases where `x` is even, it is a stable release suitable for production. Even `x` versions are the only ones available on Cloud Databases. | v4.2, April 2023 | Automatically upgraded in place to next Major version |
