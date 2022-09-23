@@ -41,7 +41,7 @@ To get started protecting your {{site.data.keyword.databases-for}} resources wit
 
 You can create context-based restrictions (CBR) for {{site.data.keyword.databases-for}} resources or for specific APIs.
 
-### Protecting IBM Cloud Kubernetes Service resources
+### Protecting {{site.data.keyword.databases-for}} resources
 {: #cbr-overview-protect-services}
 
 You can create CBR rules to protect specific regions, resource groups, and instances.
@@ -58,7 +58,7 @@ You can create CBR rules to protect specific regions, resource groups, and insta
 
 **Namespace**
    Protects a specific namespace. If you include a namespace in your CBR rule, resources in the network zones that you associate with the rule can interact only with resources in that namespace. Note that scoping a rule to a specific namespace is only available only for rules that protect the cluster API type.
-   Protects IBM Cloud Kubernetes Service resources in a specific resource group.
+   Protects {{site.data.keyword.databases-for}} resources in a specific resource group.
    If you use the CLI, you can specify the `--resource-attributes` namespace=NAMESPACE option to protect resources in a specific resource group.
    If you use the API, you can specify `"name": "namespace","value": "NAMESPACE"` field in the resource attributes.
 
@@ -103,6 +103,5 @@ The `serviceRef` attribute for {{site.data.keyword.databases-for}} is `your-serv
 
 You can use the `cbr-zone-create` command to add network locations, VPCs, and service references to network zones. For more information, see the CBR [CLI reference](/docs/account?topic=cli-cbr-plugin#cbr-zones-cli). Add {{site.data.keyword.databases-for}} to network zones as a service reference to allow *serviceName* to access resources and services in your account that are the subject of a rule.
     
-    To find a list of available service refs, run the `ibmcloud cbr service-ref-targets` [command](/docs/account?topic=cli-cbr-plugin#cbr-cli-service-ref-targets-command). The `service_name` for {{site.data.keyword.databases-for}} is `{{site.data.keyword.databases-for}}`.
-    {: tip}
+To find a list of available service refs, run the `ibmcloud cbr service-ref-targets` [command](/docs/account?topic=cli-cbr-plugin#cbr-cli-service-ref-targets-command). The `service_name` for {{site.data.keyword.databases-for}} is `{{site.data.keyword.databases-for}}`.{: tip}
     
