@@ -19,7 +19,7 @@ subcollection: cloud-databases
 {:important: .important}	
 {:experimental: .experimental}
 
-This document outlines the process for using context-based restrictions (CBR) to protect your {{site.data.keyword.databases-for}} resources. This process is not yet in production. Use this document to prepare your resources for context-based restrictions.{: important}
+This document outlines the process for using context-based restrictions (CBR) to protect your {{site.data.keyword.databases-for}} resources. This process is not yet in production. Use this document to prepare your resources for context-based restrictions.{: .important}
 
 # Protecting {{site.data.keyword.databases-for}} resources with context-based restrictions
 {: #cbr}
@@ -35,8 +35,6 @@ A user must have the Administrator role on the {{site.data.keyword.databases-for
 Any {{site.data.keyword.cloudaccesstraillong_notm}} or audit log events generated come from the context-based restrictions service, not {{site.data.keyword.databases-for}}. For more information, see [Monitoring context-based restrictions](/docs/account?topic=account-cbr-monitor).
 
 To get started protecting your {{site.data.keyword.databases-for}} resources with context-based restrictions, see the tutorial for [Leveraging context-based restrictions to secure your resources](/docs/account?topic=account-context-restrictions-tutorial).
-
-<!-- Most services can include only the content above this comment. If your service has limitations, stipulations as to how rules and network zones are enforced, or other use cases specific to your service, then review the following section to include additional information. -->
 
 ## How {{site.data.keyword.databases-for}} integrates with context-based restrictions
 {: #cbr-overview}
@@ -80,7 +78,7 @@ Make sure to add {{site.data.keyword.databases-for}} to network zones for rules 
 {: #network-zone-cli}
 
 1. To create network zones from the CLI, [install the CBR CLI plug-in](/docs/account?topic=cli-cbr-plugin#install-cbr-plugin).
-1. You can use the `cbr-zone-create` command to add resources to network zones. For more information, see the [CBR CLI reference](https://test.cloud.ibm.com/docs/account?topic=cli-cbr-plugin#cbr-zones-cli). Note that the `service_name` for {{site.data.keyword.databases-for}} is <INSERT SERVICE NAME HERE>.
+1. You can use the `cbr-zone-create` command to add resources to network zones. For more information, see the [CBR CLI reference](https://test.cloud.ibm.com/docs/account?topic=cli-cbr-plugin#cbr-zones-cli). Note that the `service_name` for {{site.data.keyword.databases-for}} is **SERVICE_NAME**.
 
 ### Creating network zones in the console
 {: #network-zone-ui}
@@ -92,7 +90,7 @@ Make sure to add {{site.data.keyword.databases-for}} to network zones for rules 
 {: #network-zone-api}
 {: api}
 
-You can create network zones by using the `create-zone` command. For more information, see the [API docs](/apidocs/context-based-restrictions#create-zone). You can add _serviceName_ to network zones as a service reference to allow {{site.data.keyword.databases-for}} to access resources and services in your account that are the subject of a rule.
+You can create network zones by using the `create-zone` command. For more information, see the [API docs](/apidocs/context-based-restrictions#create-zone). You can add *serviceName* to network zones as a service reference to allow {{site.data.keyword.databases-for}} to access resources and services in your account that are the subject of a rule.
 
 The `serviceRef` attribute for {{site.data.keyword.databases-for}} is `your-service`.
 {: tip}
@@ -103,7 +101,7 @@ The `serviceRef` attribute for {{site.data.keyword.databases-for}} is `your-serv
 {: #network-zone-cli}
 {: cli}
 
-You can use the `cbr-zone-create` command to add network locations, VPCs, and service references to network zones. For more information, see the CBR [CLI reference](/docs/account?topic=cli-cbr-plugin#cbr-zones-cli). Add {{site.data.keyword.databases-for}} to network zones as a service reference to allow _serviceName_ to access resources and services in your account that are the subject of a rule.
+You can use the `cbr-zone-create` command to add network locations, VPCs, and service references to network zones. For more information, see the CBR [CLI reference](/docs/account?topic=cli-cbr-plugin#cbr-zones-cli). Add {{site.data.keyword.databases-for}} to network zones as a service reference to allow *serviceName* to access resources and services in your account that are the subject of a rule.
     
     To find a list of available service refs, run the `ibmcloud cbr service-ref-targets` [command](/docs/account?topic=cli-cbr-plugin#cbr-cli-service-ref-targets-command). The `service_name` for {{site.data.keyword.databases-for}} is `{{site.data.keyword.databases-for}}`.
     {: tip}
