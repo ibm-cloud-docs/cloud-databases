@@ -2,7 +2,7 @@
 
 copyright:
   years:  2022
-lastupdated: "2022-09-19"
+lastupdated: "2022-09-23"
 
 keywords: restricting access to cloud databases, restricting access to ICD, DataStax cbr, Elasticsearch cbr, EnterpriseDB cbr, etcd cbr, mongodb cbr, postgresql cbr, redis cbr, mysql cbr, rabbitmq cbr
 
@@ -106,34 +106,3 @@ You can use the `cbr-zone-create` command to add network locations, VPCs, and se
     To find a list of available service refs, run the `ibmcloud cbr service-ref-targets` [command](/docs/account?topic=cli-cbr-plugin#cbr-cli-service-ref-targets-command). The `service_name` for {{site.data.keyword.databases-for}} is `{{site.data.keyword.databases-for}}`.
     {: tip}
     
-*Insert your examples here.*
-
-## Creating rules
-{: #create-rules}
-
-Define restrictions to {{site.data.keyword.databases-for}} resources by creating rules. 
-
-### Creating rules in the console
-{: #rules-ui}
-{: ui}
-
-Review the following examples to learn how to create rules for {{site.data.keyword.databases-for}}.
-
-*Insert your examples here. Include more complex use cases, like scoping a rule to protect specific APIs.*
-
-### Creating rules by using the API
-{: #rules-api}
-{: api}
-
-Review the following examples to learn how to create rules for {{site.data.keyword.databases-for}}. For more information, see the [API docs](/apidocs/context-based-restrictions#create-rule).
-
-*Insert your examples here. Include more complex use cases, like scoping a rule to protect specific APIs.*
-
-
-### Creating rules by using the CLI
-{: #rules-cli}
-{: cli}
-
-Review the following examples to learn how to create rules for {{site.data.keyword.databases-for}}. For more information, see the CBR [CLI reference](/docs/account?topic=cli-cbr-plugin). 
-
-*Insert your examples here. Include more complex use cases, like scoping a rule to protect specific APIs.*
