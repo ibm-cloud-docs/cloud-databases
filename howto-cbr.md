@@ -44,23 +44,18 @@ You can create context-based restrictions (CBR) for {{site.data.keyword.database
 ### Protecting {{site.data.keyword.databases-for}} resources
 {: #cbr-overview-protect-services}
 
-You can create CBR rules to protect specific **regions**, **resource groups**, and **instances**.
+You can create CBR rules to protect specific **regions**, **namespaces**, and **instances**.
 
 **Region**
    Protects {{site.data.keyword.databases-for}} resources in a specific region. If you include a region in your CBR rule, resources in the network zones that you associate with the rule can interact only with resources in that region.
    If you use the CLI, you can specify the `--region REGION` option to protect resources in a specific region.
    If you use the API, you can specify `"name": "region","value": "REGION"` field in the resource attributes.
 
-**Resource group**
-   Protects {{site.data.keyword.databases-for}} resources in a specific resource group.
-   If you use the CLI, you can specify the `--resource-group-id RESOURCE-GROUP-ID` option to protect resources in a specific resource group.
-   If you use the API, you can specify `"name": "resourceGroupId","value": "RESOURCE-GROUP-ID"` field in the resource attributes.
-
 **Namespace**
    Protects a specific namespace. If you include a namespace in your CBR rule, resources in the network zones that you associate with the rule can interact only with resources in that namespace. Note that scoping a rule to a specific namespace is only available only for rules that protect the cluster API type.
    Protects {{site.data.keyword.databases-for}} resources in a specific resource group.
-   If you use the CLI, you can specify the `--resource-attributes` namespace=NAMESPACE option to protect resources in a specific resource group.
-   If you use the API, you can specify `"name": "namespace","value": "NAMESPACE"` field in the resource attributes.
+   If you use the CLI, you can specify the `--resource-attributes namespace=NAMESPACE` option to protect resources in a specific resource group.
+   If you use the UI, you can specify `"name": "namespace","value": "NAMESPACE"` field in the resource attributes.
 
 ## Creating network zones 
 {: #network-zone}
@@ -81,22 +76,8 @@ Make sure to add {{site.data.keyword.databases-for}} to network zones for rules 
 
 * You can use the `cbr-zone-create` command to add resources to network zones. For more information, see the [CBR CLI reference](https://test.cloud.ibm.com/docs/account?topic=cli-cbr-plugin#cbr-zones-cli). Add {{site.data.keyword.databases-for}} to network zones as a service reference to allow *serviceName* to access resources and services in your account that are the subject of a rule.
 
-To find a list of available service refs, run the `ibmcloud cbr service-ref-targets` [command](/docs/account?topic=cli-cbr-plugin#cbr-cli-service-ref-targets-command). The `service_name` for {{site.data.keyword.databases-for}} is `{{site.data.keyword.databases-for}}`.{: tip}
-
-
-### Creating network zones in the console
+### Creating network zones in the UI
 {: #network-zone-ui}
 {: ui}
-
-*Insert your examples here.*
-
-### Creating network zones by using the API
-{: #network-zone-api}
-{: api}
-
-You can create network zones by using the `create-zone` command. For more information, see the [API docs](/apidocs/context-based-restrictions#create-zone). You can add *serviceName* to network zones as a service reference to allow {{site.data.keyword.databases-for}} to access resources and services in your account that are the subject of a rule.
-
-The `serviceRef` attribute for {{site.data.keyword.databases-for}} is `your-service`.
-{: tip}
 
 *Insert your examples here.*
