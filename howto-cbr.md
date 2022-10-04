@@ -104,12 +104,12 @@ Rules restrict access to specific cloud resources based on resource attributes a
 #### Step 1: Select your resources
 {: #rules-ui-select-resources}
 
-1. Within **Services**, select which resources to target from the list provided.
-1. Within **APIs**, select **Specific APIs**, then **Data plane**.
+1. **Service** - Select which resources to target from the list provided.
+1. **APIs** - Select **Specific APIs**, then **Data plane**.
    
-   **{{site.data.keyword.databases-for}} does not currently support **Control plane** as an option.**
+   *{{site.data.keyword.databases-for}} does not currently support **Control plane** as an option.*
 
-1. Within **Resources**, choose the scope of your restrictions, either *All resources* or by choosing *Specific resources*.
+1. **Resources** - Choose the scope of your restrictions, either *All resources* or by choosing *Specific resources*.
    If you choose *Specific resources*, you have the option of specifying *Region*, *Resource group*, or *Service instance*.
 
 #### Step 2: Add a context
@@ -117,7 +117,9 @@ Rules restrict access to specific cloud resources based on resource attributes a
 
  Contexts define from where your resources can be accessed, effectively linking your network zone to your rule.
 
-Select a network zone from the list provided, then click *Add*. You will see the Context added to the righthand menu. 
+1. Select a network zone from the list provided, then click *Add*. You will see the Context added to the righthand menu. 
+
+1. **Endpoint types** To specify public, private, or direct endpoints, select *Yes* to allow only specific endpoint types and choose from the available list. 
 
 #### Step 3: Describe your rule
 {: #rules-ui-describe-rule}
@@ -126,3 +128,9 @@ While naming your rule is optional, it's recommended. Lastly, enforce your rule 
 
 Click **Create** and your rule is now enforced in your designated network zone.
 
+### Verifying your rule
+{: #rules-ui-verify}
+
+To verify that your rule has been applied, go to the {{site.data.keyword.cloud}} Dashboard and select the relevant instance from your *Resource List*. Within the **Recent Tasks** panel, you will see your rule's status.
+
+The task of creating or modifying a rule goes into your instance's task queue. Depending on the workload of your instance, it may take some time for your rule enforcement to complete.{: .note}
