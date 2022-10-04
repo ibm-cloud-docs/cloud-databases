@@ -80,10 +80,13 @@ Make sure to add {{site.data.keyword.databases-for}} to network zones for rules 
 {: #network-zone-ui}
 {: ui}
 
-- Navigate to *Context-based restrictions* in the *Manage* section of the {{site.data.keyword.cloud}} Dashboard.
-- Select *Create a network zone*.
-- Name your network zone.
-- Enter your *Allowed IP adresses.* You can enter a single IP addresses, a range of IP addresses, or a single CIDR.
+1. Navigate to *Context-based restrictions* in the *Manage* section of the {{site.data.keyword.cloud}} Dashboard.
+1. Select *Create a network zone*.
+1. Name your network zone.
+1. Enter your *Allowed IP adresses.* You can enter a single IP addresses, a range of IP addresses, or a single CIDR.
+
    The *Denied IP addresses* field is optional. Input any exceptions contained within the IP ranges you provide in your allowed IP adresses.{: .note}
-- You can then choose your *Allowed VPCs*. You can select as many as you like. 
-- {{site.data.keyword.databases-for}} does not support *Reference a service*. Selecting a service will result in an error when you create a rule.{: .important}
+
+1. You can then choose your *Allowed VPCs*. You can select as many as you like. 
+
+   {{site.data.keyword.databases-for}} does not support *Reference a service*. Selecting a service will result in an error when you create a rule.{: .important}
