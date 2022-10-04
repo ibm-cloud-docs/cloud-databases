@@ -78,15 +78,51 @@ Make sure to add {{site.data.keyword.databases-for}} to network zones for rules 
 
 ### Creating network zones in the UI
 {: #network-zone-ui}
-{: ui}
 
 1. Navigate to *Context-based restrictions* in the *Manage* section of the {{site.data.keyword.cloud}} Dashboard.
 1. Select *Create a network zone*.
 1. Name your network zone.
 1. Enter your *Allowed IP adresses.* You can enter a single IP addresses, a range of IP addresses, or a single CIDR.
 
-   The *Denied IP addresses* field is optional. Input any exceptions contained within the IP ranges you provide in your allowed IP adresses.{: .note}
+   **The *Denied IP addresses* field is optional. Input any exceptions contained within the IP ranges you provide in your allowed IP adresses.**
 
-1. You can then choose your *Allowed VPCs*. You can select as many as you like. 
+1. Choose your *Allowed VPCs*, selecting as many as you like. 
 
-   {{site.data.keyword.databases-for}} does not support *Reference a service*. Selecting a service will result in an error when you create a rule.{: .important}
+   **{{site.data.keyword.databases-for}} does not support *Reference a service*. Selecting a service will result in an error when you create a rule.**
+
+## Creating rules 
+{: #rules}
+
+Rules restrict access to specific cloud resources based on resource attributes and contexts.
+
+### Creating rules from the CLI
+{: #rules-cli}
+
+### Creating rules from the UI
+{: #rules-ui}
+
+#### Step 1: Select your resources
+{: #rules-ui-select-resources}
+
+1. Within **Services**, select which resources to target from the list provided.
+1. Within **APIs**, select **Specific APIs**, then **Data plane**.
+   
+   **{{site.data.keyword.databases-for}} does not currently support **Control plane** as an option.**
+
+1. Within **Resources**, choose the scope of your restrictions, either *All resources* or by choosing *Specific resources*.
+   If you choose *Specific resources*, you have the option of specifying *Region*, *Resource group*, or *Service instance*.
+
+#### Step 2: Add a context
+{: #rules-ui-add-context}
+
+ Contexts define from where your resources can be accessed, effectively linking your network zone to your rule.
+
+Select a network zone from the list provided, then click *Add*. You will see the Context added to the righthand menu. 
+
+#### Step 3: Describe your rule
+{: #rules-ui-describe-rule}
+
+While naming your rule is optional, it's recommended. Lastly, enforce your rule by selecting *Enabled*
+
+Click **Create** and your rule is now enforced in your designated network zone.
+
