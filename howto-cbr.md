@@ -2,7 +2,7 @@
 
 copyright:
   years:  2022
-lastupdated: "2022-09-30"
+lastupdated: "2022-10-04"
 
 keywords: restricting access to cloud databases, restricting access to ICD, DataStax cbr, Elasticsearch cbr, EnterpriseDB cbr, etcd cbr, mongodb cbr, postgresql cbr, redis cbr, mysql cbr, rabbitmq cbr
 
@@ -80,4 +80,10 @@ Make sure to add {{site.data.keyword.databases-for}} to network zones for rules 
 {: #network-zone-ui}
 {: ui}
 
-*Insert your examples here.*
+- Navigate to *Context-based restrictions* in the *Manage* section of the {{site.data.keyword.cloud}} Dashboard.
+- Select *Create a network zone*.
+- Name your network zone.
+- Enter your *Allowed IP adresses.* You can enter a single IP addresses, a range of IP addresses, or a single CIDR.
+   The *Denied IP addresses* field is optional. Input any exceptions contained within the IP ranges you provide in your allowed IP adresses.{: .note}
+- You can then choose your *Allowed VPCs*. You can select as many as you like. 
+- {{site.data.keyword.databases-for}} does not support *Reference a service*. Selecting a service will result in an error when you create a rule.{: .important}
