@@ -2,7 +2,7 @@
 
 copyright:
   years:  2022
-lastupdated: "2022-10-04"
+lastupdated: "2022-10-05"
 
 keywords: restricting access to cloud databases, restricting access to ICD, DataStax cbr, Elasticsearch cbr, EnterpriseDB cbr, etcd cbr, mongodb cbr, postgresql cbr, redis cbr, mysql cbr, rabbitmq cbr
 
@@ -72,24 +72,24 @@ Make sure to add {{site.data.keyword.databases-for}} to network zones for rules 
 ### Creating network zones from the CLI
 {: #network-zone-cli}
 
-* To create network zones from the CLI, [install the CBR CLI plug-in](/docs/account?topic=cli-cbr-plugin#install-cbr-plugin).
+To create network zones from the CLI, [install the CBR CLI plug-in](/docs/account?topic=cli-cbr-plugin#install-cbr-plugin). You can use the `cbr-zone-create` command to add resources to network zones. For more information, see the [CBR CLI reference](https://test.cloud.ibm.com/docs/account?topic=cli-cbr-plugin#cbr-zones-cli). 
 
-* You can use the `cbr-zone-create` command to add resources to network zones. For more information, see the [CBR CLI reference](https://test.cloud.ibm.com/docs/account?topic=cli-cbr-plugin#cbr-zones-cli). Add {{site.data.keyword.databases-for}} to network zones as a service reference to allow *serviceName* to access resources and services in your account that are the subject of a rule.
+Add {{site.data.keyword.databases-for}} to network zones as a service reference to allow *serviceName* to access resources and services in your account that are the subject of a rule.
 
-1. Create a zone using the following command:
+* Create a zone using a command like:
 
    ```sh
    ic cbr zone-create --addresses=1.1.1.1,5.5.5.5 --name="vs-test-cli-2"
    ```
    {: .pre}
 
-1. Update a zone using the following command:
+* Update a zone using a command like:
    ```sh
    ic cbr zone-update <zone_id> --addresses=1.2.3.4 --name="vs-test-cli-2"
    ```
    {: .pre}
 
-1. Delete a zone using the following command:
+* Delete a zone using a command like:
    ```sh
    ic cbr zone-delete <zone_id>
    ```
@@ -101,13 +101,10 @@ Make sure to add {{site.data.keyword.databases-for}} to network zones for rules 
 1. Navigate to *Context-based restrictions* in the *Manage* section of the {{site.data.keyword.cloud}} Dashboard.
 1. Select *Create a network zone*.
 1. Name your network zone.
-1. Enter your *Allowed IP adresses.* You can enter a single IP addresses, a range of IP addresses, or a single CIDR.
-
-   **The *Denied IP addresses* field is optional. Input any exceptions contained within the IP ranges you provide in your allowed IP adresses.**
-
+1. Enter your *Allowed IP adresses.* You can enter a single IP address, a range of IP addresses, or a single CIDR. **The *Denied IP addresses* field is optional. Input any exceptions contained within the IP ranges you provide in your allowed IP adresses.**
 1. Choose your *Allowed VPCs*, selecting as many as you like. 
 
-   **{{site.data.keyword.databases-for}} does not support *Reference a service*. Selecting a service will result in an error when you create a rule.**
+{{site.data.keyword.databases-for}} does not support *Reference a service*. Selecting a service will result in an error when you create a rule.{: .note}
 
 ## Creating rules 
 {: #rules}
@@ -117,22 +114,23 @@ Rules restrict access to specific cloud resources based on resource attributes a
 ### Creating rules from the CLI
 {: #rules-cli}
 
-* To create network zones from the CLI, [install the CBR CLI plug-in](/docs/account?topic=cli-cbr-plugin#install-cbr-plugin).
+To create rules from the CLI, [install the CBR CLI plug-in](/docs/account?topic=cli-cbr-plugin#install-cbr-plugin).
 
-* Create a rule using a command like:
+Create a rule using a command like:
 
-   ```sh
-   ic cbr rule-create --enforcement-mode enabled --context-attributes="networkZoneId=<NETWORK_ZONE_ID>" --resource-group-id <RESOURCE_GROUP_ID> --service-name    <SERVICE_NAME> --api-types crn:v1:bluemix:public:context-based-restrictions::::api-type:data-plane --description <DESCRIPTION> --service-instance    <SERVICE_INSTANCE>
-   ```
-   {: .pre}
+```sh
+ic cbr rule-create --enforcement-mode enabled --context-attributes="networkZoneId=<NETWORK_ZONE_ID>" --resource-group-id <RESOURCE_GROUP_ID> --service-name    <SERVICE_NAME
+--api-types crn:v1:bluemix:public:context-based-restrictions::::api-type:data-plane --description <DESCRIPTION> --service-instance    <SERVICE_INSTANCE>
+```
+{: .pre}
 
-* Update a rule using a command like:
+Update a rule using a command like:
 
-   ```sh
-   ic cbr rule-update a85be8049636cfc4ae6916b62ca6406b --enforcement-mode disabled --context-attributes="networkZoneId=b0ceb852f281b489343bae8c574b219e" --resource-group-id    <RESOURCE_GROUP_ID> --service-name <SERVICE_NAME> --api-types crn:v1:bluemix:public:context-based-restrictions::::api-type:data-plane --description    <DESCRIPTION>
-   ic cbr zone-delete fac4603091363dfdda55f74fa69c22f0
-   ```
-   {: .pre}
+```sh
+ic cbr rule-update a85be8049636cfc4ae6916b62ca6406b --enforcement-mode disabled --context-attributes="networkZoneId=b0ceb852f281b489343bae8c574b219e" --resource-group-id   <RESOURCE_GROUP_ID> --service-name <SERVICE_NAME> --api-types crn:v1:bluemix:public:context-based-restrictions::::api-type:data-plane --description    <DESCRIPTION>
+ic cbr zone-delete fac4603091363dfdda55f74fa69c22f0
+```
+{: .pre}
 
 ### Creating rules from the UI
 {: #rules-ui}
@@ -140,29 +138,28 @@ Rules restrict access to specific cloud resources based on resource attributes a
 #### Step 1: Select your resources
 {: #rules-ui-select-resources}
 
-1. **Service** - Select which resources to target from the list provided.
-1. **APIs** - Select **Specific APIs**, then **Data plane**.
-   
+**Service** - Select which resources to target from the list provided.
+**APIs** - Select **Specific APIs**, then **Data plane**.
 {{site.data.keyword.databases-for}} does not currently support **Control plane** as an option.{: .note}
-
-1. **Resources** - Choose the scope of your restrictions, either *All resources* or by choosing *Specific resources*.
-   If you choose *Specific resources*, you have the option of specifying *Region*, *Resource group*, or *Service instance*.
+**Resources** - Choose the scope of your restrictions, either *All resources* or by choosing *Specific resources*. If you choose *Specific resources*, you have the option of specifying *Region*, *Resource group*, or *Service instance*.
 
 #### Step 2: Add a context
 {: #rules-ui-add-context}
 
- Contexts define from where your resources can be accessed, effectively linking your network zone to your rule.
+Contexts define from where your resources can be accessed, effectively linking your network zone to your rule.
 
-1. Select a network zone from the list provided, then click *Add*. You will see the Context added to the righthand menu. 
+* Select a network zone from the list provided, then click *Add*. You will see the Context added to the righthand menu. 
 
-1. **Endpoint types** To specify public, private, or direct endpoints, select *Yes* to allow only specific endpoint types and choose from the available list. 
+* **Endpoint types** To specify public, private, or direct endpoints, select *Yes* to allow only specific endpoint types, then choose from the available list. 
 
 #### Step 3: Describe your rule
 {: #rules-ui-describe-rule}
 
-While naming your rule is optional, it's recommended. Lastly, enforce your rule by selecting *Enabled*
+While naming your rule is optional, it's recommended. 
 
-Click **Create** and your rule is now enforced in your designated network zone.
+* Enforce your rule by selecting *Enabled*
+
+* Click **Create** and your rule is now enforced in your designated network zone.
 
 ### Verifying your rule
 {: #rules-ui-verify}
