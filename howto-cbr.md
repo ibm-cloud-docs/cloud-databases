@@ -76,6 +76,25 @@ Make sure to add {{site.data.keyword.databases-for}} to network zones for rules 
 
 * You can use the `cbr-zone-create` command to add resources to network zones. For more information, see the [CBR CLI reference](https://test.cloud.ibm.com/docs/account?topic=cli-cbr-plugin#cbr-zones-cli). Add {{site.data.keyword.databases-for}} to network zones as a service reference to allow *serviceName* to access resources and services in your account that are the subject of a rule.
 
+1. Create a zone using the following command:
+
+   ```sh
+   ic cbr zone-create --addresses=1.1.1.1,5.5.5.5 --name="vs-test-cli-2"
+   ```
+   {: .pre}
+
+1. Update a zone using the following command:
+   ```sh
+   ic cbr zone-update <zone_id> --addresses=1.2.3.4 --name="vs-test-cli-2"
+   ```
+   {: .pre}
+
+1. Delete a zone using the following command:
+   ```sh
+   ic cbr zone-delete <zone_id>
+   ```
+   {: .pre}
+
 ### Creating network zones in the UI
 {: #network-zone-ui}
 
@@ -97,6 +116,23 @@ Rules restrict access to specific cloud resources based on resource attributes a
 
 ### Creating rules from the CLI
 {: #rules-cli}
+
+* To create network zones from the CLI, [install the CBR CLI plug-in](/docs/account?topic=cli-cbr-plugin#install-cbr-plugin).
+
+* Create a rule using a command like:
+
+   ```sh
+   ic cbr rule-create --enforcement-mode enabled --context-attributes="networkZoneId=<NETWORK_ZONE_ID>" --resource-group-id <RESOURCE_GROUP_ID> --service-name    <SERVICE_NAME> --api-types crn:v1:bluemix:public:context-based-restrictions::::api-type:data-plane --description <DESCRIPTION> --service-instance    <SERVICE_INSTANCE>
+   ```
+   {: .pre}
+
+* Update a rule using a command like:
+
+   ```sh
+   ic cbr rule-update a85be8049636cfc4ae6916b62ca6406b --enforcement-mode disabled --context-attributes="networkZoneId=b0ceb852f281b489343bae8c574b219e" --resource-group-id    <RESOURCE_GROUP_ID> --service-name <SERVICE_NAME> --api-types crn:v1:bluemix:public:context-based-restrictions::::api-type:data-plane --description    <DESCRIPTION>
+   ic cbr zone-delete fac4603091363dfdda55f74fa69c22f0
+   ```
+   {: .pre}
 
 ### Creating rules from the UI
 {: #rules-ui}
