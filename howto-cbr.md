@@ -107,7 +107,7 @@ Rules restrict access to specific cloud resources based on resource attributes a
 1. **Service** - Select which resources to target from the list provided.
 1. **APIs** - Select **Specific APIs**, then **Data plane**.
    
-   *{{site.data.keyword.databases-for}} does not currently support **Control plane** as an option.*
+{{site.data.keyword.databases-for}} does not currently support **Control plane** as an option.{: .note}
 
 1. **Resources** - Choose the scope of your restrictions, either *All resources* or by choosing *Specific resources*.
    If you choose *Specific resources*, you have the option of specifying *Region*, *Resource group*, or *Service instance*.
