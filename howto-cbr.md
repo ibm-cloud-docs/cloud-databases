@@ -2,7 +2,7 @@
 
 copyright:
   years:  2022
-lastupdated: "2022-10-05"
+lastupdated: "2022-10-06"
 
 keywords: restricting access to cloud databases, restricting access to ICD, DataStax cbr, Elasticsearch cbr, EnterpriseDB cbr, etcd cbr, mongodb cbr, postgresql cbr, redis cbr, mysql cbr, rabbitmq cbr
 
@@ -76,28 +76,26 @@ To create network zones from the CLI, [install the CBR CLI plug-in](/docs/accoun
 
 Add {{site.data.keyword.databases-for}} to network zones as a service reference to allow *serviceName* to access resources and services in your account that are the subject of a rule.
 
-* Create a zone using a command like:
+* **Create a zone**:
 
    ```sh
    ic cbr zone-create --addresses=1.1.1.1,5.5.5.5 --name="vs-test-cli-2"
    ```
    {: .pre}
 
-* Update a zone using a command like:
+* **Update a zone**:
    ```sh
    ic cbr zone-update <zone_id> --addresses=1.2.3.4 --name="vs-test-cli-2"
    ```
    {: .pre}
 
-Updating requires the `ZONE-ID`, not the zone name. Use the following command to list your zones:
-```sh
+* Updating requires the `ZONE-ID`, not the zone name. Use the following command to list your zones and retrieve the revelant `ZONE-ID`:
+   ```sh
    ic cbr zones
    ```
    {: .pre}
 
-The output will list
-
-* Delete a zone using a command like:
+* **Delete a zone**:
    ```sh
    ic cbr zone-delete <zone_id>
    ```
