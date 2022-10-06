@@ -89,6 +89,14 @@ Add {{site.data.keyword.databases-for}} to network zones as a service reference 
    ```
    {: .pre}
 
+Updating requires the `ZONE-ID`, not the zone name. Use the following command to list your zones:
+```sh
+   ic cbr zones
+   ```
+   {: .pre}
+
+The output will list
+
 * Delete a zone using a command like:
    ```sh
    ic cbr zone-delete <zone_id>
@@ -131,6 +139,8 @@ ic cbr rule-update a85be8049636cfc4ae6916b62ca6406b --enforcement-mode disabled 
 ic cbr zone-delete fac4603091363dfdda55f74fa69c22f0
 ```
 {: .pre}
+
+Updating requires the zone id
 
 ### Creating rules from the UI
 {: #rules-ui}
