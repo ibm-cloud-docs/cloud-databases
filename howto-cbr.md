@@ -158,7 +158,11 @@ ic cbr zone-delete fac4603091363dfdda55f74fa69c22f0
 ```
 {: .pre}
 
-Updating requires the zone id
+Updating requires the `ZONE-ID`, not the zone name. Use the following command to list your zones and retrieve the revelant `ZONE-ID`:
+```sh
+ic cbr zones
+```
+{: .pre}
 
 ### Creating rules from the UI
 {: #rules-ui}
