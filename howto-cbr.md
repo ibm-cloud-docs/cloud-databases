@@ -167,8 +167,11 @@ Updating requires the zone id
 {: #rules-ui-select-resources}
 
 **Service** - Select which resources to target from the list provided.
+
 **APIs** - Select **Specific APIs**, then **Data plane**.
+
 {{site.data.keyword.databases-for}} does not currently support **Control plane** as an option.{: .note}
+
 **Resources** - Choose the scope of your restrictions, either *All resources* or by choosing *Specific resources*. If you choose *Specific resources*, you have the option of specifying *Region*, *Resource group*, or *Service instance*.
 
 #### Step 2: Add a context
