@@ -74,7 +74,16 @@ Make sure to add {{site.data.keyword.databases-for}} to network zones for rules 
 
 To create network zones from the CLI, [install the CBR CLI plug-in](/docs/account?topic=cli-cbr-plugin#install-cbr-plugin). You can use the `cbr-zone-create` command to add resources to network zones. For more information, see the [CBR CLI reference](https://test.cloud.ibm.com/docs/account?topic=cli-cbr-plugin#cbr-zones-cli). 
 
-Add {{site.data.keyword.databases-for}} to network zones as a service reference to allow *serviceName* to access resources and services in your account that are the subject of a rule.
+To create a zone in the CLI, you need the {{site.data.keyword.databases-for}} `service_name`:
+`databases-for-etcd`
+`databases-for-elasticsearch`
+`databases-for-mongodb`
+`databases-for-postgresql`
+`databases-for-redis`
+`messages-for-rabbitmq`
+`databases-for-cassandra`
+`databases-for-enterprisedb`
+`database-for-mysql`
 
 * **Create a zone**:
 
@@ -121,6 +130,17 @@ Rules restrict access to specific cloud resources based on resource attributes a
 {: #rules-cli}
 
 To create rules from the CLI, [install the CBR CLI plug-in](/docs/account?topic=cli-cbr-plugin#install-cbr-plugin).
+
+To create a rule in the CLI, you need the {{site.data.keyword.databases-for}} `service_name`:
+`databases-for-etcd`
+`databases-for-elasticsearch`
+`databases-for-mongodb`
+`databases-for-postgresql`
+`databases-for-redis`
+`messages-for-rabbitmq`
+`databases-for-cassandra`
+`databases-for-enterprisedb`
+`database-for-mysql`
 
 Create a rule using a command like:
 
