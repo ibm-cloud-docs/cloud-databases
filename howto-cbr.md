@@ -78,7 +78,7 @@ Make sure to add {{site.data.keyword.databases-for}} to network zones for rules 
 
 To create network zones from the CLI, [install the CBR CLI plug-in](/docs/account?topic=cli-cbr-plugin#install-cbr-plugin). You can use the `cbr-zone-create` command to add resources to network zones. For more information, see the [CBR CLI reference](https://test.cloud.ibm.com/docs/account?topic=cli-cbr-plugin#cbr-zones-cli). 
 
-To create a zone in the CLI, you need the {{site.data.keyword.databases-for}} `service_name`:
+To create a zone in the CLI, you need the appropriate {{site.data.keyword.databases-for}} `service_name`:
 * `databases-for-etcd`
 * `databases-for-elasticsearch`
 * `databases-for-mongodb`
@@ -89,26 +89,26 @@ To create a zone in the CLI, you need the {{site.data.keyword.databases-for}} `s
 * `databases-for-enterprisedb`
 * `database-for-mysql`
 
-**Create a zone**:
+Create a zone using a command like:
 
 ```sh
 ic cbr zone-create --addresses=1.1.1.1,5.5.5.5 --name="vs-test-cli-2"
 ```
 {: .pre}
 
-**Update a zone**:
+Update a zone using a command like:
 ```sh
 ic cbr zone-update <zone_id> --addresses=1.2.3.4 --name="vs-test-cli-2"
 ```
 {: .pre}
 
-Updating requires the `ZONE-ID`, not the zone name. Use the following command to list your zones and retrieve the revelant `ZONE-ID`:
-```sh
-ic cbr zones
-```
-{: .pre}
+   Updating requires the `ZONE-ID`, not the zone name. Use the following command to list your zones and retrieve the revelant `ZONE-ID`:
+   ```sh
+   ic cbr zones
+   ```
+   {: .pre}
 
-**Delete a zone**:
+Delete a zone using a command like:
 ```sh
 ic cbr zone-delete <zone_id>
 ```
@@ -120,7 +120,7 @@ ic cbr zone-delete <zone_id>
 1. Navigate to *Context-based restrictions* in the *Manage* section of the {{site.data.keyword.cloud}} Dashboard.
 1. Select *Create a network zone*.
 1. Name your network zone.
-1. Enter your *Allowed IP adresses.* You can enter a single IP address, a range of IP addresses, or a single CIDR. **The *Denied IP addresses* field is optional. Input any exceptions contained within the IP ranges you provide in your allowed IP adresses.**
+1. Enter your *Allowed IP adresses.* You can enter a single IP address, a range of IP addresses, or a single CIDR. **The *Denied IP addresses* field is optional and should only include exceptions contained within the IP ranges you provide in the allowed IP adresses field.**
 1. Choose your *Allowed VPCs*, selecting as many as you like. 
 
 {{site.data.keyword.databases-for}} does not support *Reference a service*. Selecting a service will result in an error when you create a rule.{: .note}
@@ -135,7 +135,7 @@ Rules restrict access to specific cloud resources based on resource attributes a
 
 To create rules from the CLI, [install the CBR CLI plug-in](/docs/account?topic=cli-cbr-plugin#install-cbr-plugin).
 
-To create a rule in the CLI, you need the {{site.data.keyword.databases-for}} `service_name`:
+To create a rule in the CLI, you need the appropriate {{site.data.keyword.databases-for}} `service_name`:
 * `databases-for-etcd`
 * `databases-for-elasticsearch`
 * `databases-for-mongodb`
@@ -180,7 +180,7 @@ ic cbr zones
 
 {{site.data.keyword.databases-for}} does not currently support **Control plane** as an option.{: .note}
 
-**Resources** - Choose the scope of your restrictions, either *All resources* or by choosing *Specific resources*. If you choose *Specific resources*, you have the option of specifying *Region*, *Resource group*, or *Service instance*.
+**Resources** - Choose the scope of your restrictions, either *All resources* or *Specific resources*. If you choose *Specific resources*, you have the option of specifying *Region*, *Resource group*, or *Service instance*.
 
 #### Step 2: Add a context
 {: #rules-ui-add-context}
@@ -196,7 +196,7 @@ Contexts define from where your resources can be accessed, effectively linking y
 
 While naming your rule is optional, it's recommended. 
 
-* Enforce your rule by selecting *Enabled*
+* Enforce your rule by selecting *Enabled*.
 
 * Click **Create** and your rule is now enforced in your designated network zone.
 
@@ -205,4 +205,4 @@ While naming your rule is optional, it's recommended.
 
 To verify that your rule has been applied, go to the {{site.data.keyword.cloud}} Dashboard and select the relevant instance from your *Resource List*. Within the **Recent Tasks** panel, you will see your rule's status.
 
-The task of creating or modifying a rule goes into your instance's task queue. Depending on the workload of your instance, it may take some time for your rule enforcement to complete.{: .note}
+The task of creating or modifying a rule goes into your instance's task queue. Depending on workload, it may take some time for your rule enforcement to complete.{: .note}
