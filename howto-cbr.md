@@ -98,7 +98,7 @@ To create a zone in the CLI, you need the {{site.data.keyword.databases-for}} `s
    ```
    {: .pre}
 
-* Updating requires the `ZONE-ID`, not the zone name. Use the following command to list your zones and retrieve the revelant `ZONE-ID`:
+   Updating requires the `ZONE-ID`, not the zone name. Use the following command to list your zones and retrieve the revelant `ZONE-ID`:
    ```sh
    ic cbr zones
    ```
