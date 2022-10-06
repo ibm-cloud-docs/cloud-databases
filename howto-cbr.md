@@ -85,30 +85,30 @@ To create a zone in the CLI, you need the {{site.data.keyword.databases-for}} `s
 * `databases-for-enterprisedb`
 * `database-for-mysql`
 
-* **Create a zone**:
+**Create a zone**:
 
-   ```sh
-   ic cbr zone-create --addresses=1.1.1.1,5.5.5.5 --name="vs-test-cli-2"
-   ```
-   {: .pre}
+```sh
+ic cbr zone-create --addresses=1.1.1.1,5.5.5.5 --name="vs-test-cli-2"
+```
+{: .pre}
 
-* **Update a zone**:
-   ```sh
-   ic cbr zone-update <zone_id> --addresses=1.2.3.4 --name="vs-test-cli-2"
-   ```
-   {: .pre}
+**Update a zone**:
+```sh
+ic cbr zone-update <zone_id> --addresses=1.2.3.4 --name="vs-test-cli-2"
+```
+{: .pre}
 
-   Updating requires the `ZONE-ID`, not the zone name. Use the following command to list your zones and retrieve the revelant `ZONE-ID`:
-   ```sh
-   ic cbr zones
-   ```
-   {: .pre}
+Updating requires the `ZONE-ID`, not the zone name. Use the following command to list your zones and retrieve the revelant `ZONE-ID`:
+```sh
+ic cbr zones
+```
+{: .pre}
 
-* **Delete a zone**:
-   ```sh
-   ic cbr zone-delete <zone_id>
-   ```
-   {: .pre}
+**Delete a zone**:
+```sh
+ic cbr zone-delete <zone_id>
+```
+{: .pre}
 
 ### Creating network zones in the UI
 {: #network-zone-ui}
