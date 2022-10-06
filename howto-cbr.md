@@ -52,10 +52,14 @@ You can create CBR rules to protect specific **regions**, **namespaces**, and **
    If you use the API, you can specify `"name": "region","value": "REGION"` field in the resource attributes.
 
 **Namespace**
-   Protects a specific namespace. If you include a namespace in your CBR rule, resources in the network zones that you associate with the rule can interact only with resources in that namespace. Note that scoping a rule to a specific namespace is only available only for rules that protect the cluster API type.
-   Protects {{site.data.keyword.databases-for}} resources in a specific resource group.
+   Protects a specific namespace. If you include a namespace in your CBR rule, resources in the network zones that you associate with the rule can interact only with resources in that namespace. Note that scoping a rule to a specific namespace is available only for rules that protect the cluster API type.
    If you use the CLI, you can specify the `--resource-attributes namespace=NAMESPACE` option to protect resources in a specific resource group.
    If you use the UI, you can specify `"name": "namespace","value": "NAMESPACE"` field in the resource attributes.
+
+**Instance**
+   Protects a specific instance. If you include an instance in your CBR rule, resources in the network zones that you associate with the rule can interact only with resources in that instance. Note that scoping a rule to a specific instance is available only for rules that protect the cluster API type.
+   If you use the CLI, you can specify the `--service-instance` option to protect instances in a specific resource group.
+   If you use the UI, you can specify the Service instance in the resource attributes.
 
 ## Creating network zones 
 {: #network-zone}
