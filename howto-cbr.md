@@ -157,7 +157,7 @@ ibmcloud cbr rules
 
 Delete a rule using a command like:
 ```sh
-ibmcloud cbr zone-delete <RULE-ID>
+ibmcloud cbr rule-delete <RULE-ID>
 ```
 {: .pre}
 
