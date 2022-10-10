@@ -48,7 +48,7 @@ You can create CBR rules to protect specific **regions**, **resource groups**, a
 
 **Region**
    Protects {{site.data.keyword.databases-for}} resources in a specific region. If you include a region in your CBR rule, resources in the network zones that you associate with the rule can interact only with resources in that region.
-   If you use the CLI, you can specify the `--region REGION` option to protect resources in a specific region.
+   If you use the CLI, you can specify the `--region` option to protect resources in a specific region.
    If you use the UI, you can specify *Region* in the resource attributes. 
 
 **Resource groups**
