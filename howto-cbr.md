@@ -178,7 +178,7 @@ ibmcloud cbr rule-create --enforcement-mode enabled --context-attributes "networ
 Update a rule using a command like:
 
 ```sh
-ibmcloud cbr rule-update <RULE-ID> --enforcement-mode disabled --context-attributes="networkZoneId=b0ceb852f281b489343bae8c574b219e" --resource-group-id   <RESOURCE_GROUP_ID> --service-name <SERVICE_NAME> --api-types crn:v1:bluemix:public:context-based-restrictions::::api-type:data-plane --description    <DESCRIPTION>
+ibmcloud cbr rule-update <RULE-ID> --enforcement-mode disabled --context-attributes="networkZoneId=<ZONE-ID>" --resource-group-id   <RESOURCE_GROUP_ID> --service-name <SERVICE_NAME> --api-types crn:v1:bluemix:public:context-based-restrictions::::api-type:data-plane --description    <DESCRIPTION>
 ```
 {: .pre}
 
