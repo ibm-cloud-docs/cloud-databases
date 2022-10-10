@@ -102,12 +102,13 @@ ibmcloud cbr zone-update <ZONE-ID> --addresses=1.2.3.4 --name=<NAME>
 ```
 {: .pre}
 
-   The `zone-update` command overwrites the definition and does not extend from the previous values given.
-   Updating requires the `ZONE-ID`, not the zone name. Use the following command to list your zones and retrieve the revelant `ZONE-ID`:
-   ```sh
-   ibmcloud cbr zones
-   ```
-   {: .pre}
+Updating requires the `ZONE-ID`, not the zone name. Use the following command to list your zones and retrieve the revelant `ZONE-ID`:
+```sh
+ibmcloud cbr zones
+```
+{: .pre}
+
+The `zone-update` command is an overwrite. Include all of the fields required as if you are creating the rule from scratch. If you omit any required fields, the rule will overwrite those missing fields as empty, and the rule may fail because some of those fields are required, regardless of whether they are changing the rule. {: .important}
 
 Delete a zone using a command like:
 ```sh
