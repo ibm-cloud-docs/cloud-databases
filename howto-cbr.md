@@ -27,9 +27,9 @@ This document outlines the process for using context-based restrictions (CBR) to
 Context-based restrictions (CBR) give account owners and administrators the ability to define and enforce access restrictions for {{site.data.keyword.cloud}} resources based on the context of access requests. Access to {{site.data.keyword.databases-for}} resources can be controlled with CBR and identity and access management (IAM) policies.
 {: shortdesc}
 
-These restrictions work with traditional IAM policies, which are based on identity, to provide an extra layer of protection. Unlike IAM policies, CBRs don't assign access. CBRs check that an access request comes from an allowed context that you configure. Since both IAM access and CBRs enforce access, CBRs offer protection even in the face of compromised or mismanaged credentials. For more information, see [What are context-based restrictions](/docs/account?topic=account-context-restrictions-whatis).
+These restrictions work with traditional IAM policies, which are based on identity, to provide an extra layer of protection. Unlike IAM policies, CBR doesn't assign access. CBR checks that an access request comes from an allowed context that you configure. Since both IAM access and CBR enforce access, CBR offers protection even in the face of compromised or mismanaged credentials. For more information, see [What are context-based restrictions](/docs/account?topic=account-context-restrictions-whatis).
 
-A user must have the Administrator role on the {{site.data.keyword.databases-for}} service to create, update, or delete rules. A user must also have either the Editor or Administrator role on the CBR service to create, update, or delete network zones. A user with the Viewer role on the CBRs service can only add network zones to a rule. 
+A user must have the Administrator role on the {{site.data.keyword.databases-for}} service to create, update, or delete rules. A user must also have either the Editor or Administrator role on the CBR service to create, update, or delete network zones. A user with the Viewer role on the CBR service can only add network zones to a rule. 
 {: note}
 
 Any {{site.data.keyword.cloudaccesstraillong_notm}} or audit log events generated come from the context-based restrictions service, not {{site.data.keyword.databases-for}}. For more information, see [Monitoring context-based restrictions](/docs/account?topic=account-cbr-monitor).
@@ -49,7 +49,7 @@ You can create CBR rules to protect specific **regions**, **namespaces**, and **
 **Region**
    Protects {{site.data.keyword.databases-for}} resources in a specific region. If you include a region in your CBR rule, resources in the network zones that you associate with the rule can interact only with resources in that region.
    If you use the CLI, you can specify the `--region REGION` option to protect resources in a specific region.
-   If you use the API, you can specify `"name": "region","value": "REGION"` field in the resource attributes.
+   If you use the API, you can specify `"name": "region","value": "REGION"` field in the resource attributes. 
 
 **Namespace**
    Protects a specific namespace. If you include a namespace in your CBR rule, resources in the network zones that you associate with the rule can interact only with resources in that namespace. Note that scoping a rule to a specific namespace is available only for rules that protect the cluster API type.
@@ -78,39 +78,28 @@ Make sure to add {{site.data.keyword.databases-for}} to network zones for rules 
 
 To create network zones from the CLI, [install the CBR CLI plug-in](/docs/account?topic=cli-cbr-plugin#install-cbr-plugin). You can use the `cbr-zone-create` command to add resources to network zones. For more information, see the [CBR CLI reference](https://test.cloud.ibm.com/docs/account?topic=cli-cbr-plugin#cbr-zones-cli). 
 
-To create a zone in the CLI, you need the appropriate {{site.data.keyword.databases-for}} `service_name`:
-* `databases-for-etcd`
-* `databases-for-elasticsearch`
-* `databases-for-mongodb`
-* `databases-for-postgresql`
-* `databases-for-redis`
-* `messages-for-rabbitmq`
-* `databases-for-cassandra`
-* `databases-for-enterprisedb`
-* `database-for-mysql`
-
 Create a zone using a command like:
 
 ```sh
-ic cbr zone-create --addresses=1.1.1.1,5.5.5.5 --name="vs-test-cli-2"
+ibmcloud cbr zone-create --addresses=1.1.1.1,5.5.5.5 --name=<NAME>
 ```
 {: .pre}
 
 Update a zone using a command like:
 ```sh
-ic cbr zone-update <zone_id> --addresses=1.2.3.4 --name="vs-test-cli-2"
+ibmcloud cbr zone-update <ZONE-ID> --addresses=1.2.3.4 --name=<NAME>
 ```
 {: .pre}
 
    Updating requires the `ZONE-ID`, not the zone name. Use the following command to list your zones and retrieve the revelant `ZONE-ID`:
    ```sh
-   ic cbr zones
+   ibmcloud cbr zones
    ```
    {: .pre}
 
 Delete a zone using a command like:
 ```sh
-ic cbr zone-delete <zone_id>
+ibmcloud cbr zone-delete <ZONE-ID>
 ```
 {: .pre}
 
@@ -149,22 +138,26 @@ To create a rule in the CLI, you need the appropriate {{site.data.keyword.databa
 Create a rule using a command like:
 
 ```sh
-ic cbr rule-create --enforcement-mode enabled --context-attributes="networkZoneId=<NETWORK_ZONE_ID>" --resource-group-id <RESOURCE_GROUP_ID> --service-name    <SERVICE_NAME
---api-types crn:v1:bluemix:public:context-based-restrictions::::api-type:data-plane --description <DESCRIPTION> --service-instance    <SERVICE_INSTANCE>
+ibmcloud cbr rule-create --enforcement-mode enabled --context-attributes "networkZoneId=<ZONE-ID>" --resource-group-id <RESOURCE_GROUP_ID> --service-name <SERVICE-NAME> --service-instance <SERVICE-INSTANCE> --api-types crn:v1:bluemix:public:context-based-restrictions::::api-type:data-plane --description <DESCRIPTION>
 ```
 {: .pre}
 
 Update a rule using a command like:
 
 ```sh
-ic cbr rule-update a85be8049636cfc4ae6916b62ca6406b --enforcement-mode disabled --context-attributes="networkZoneId=b0ceb852f281b489343bae8c574b219e" --resource-group-id   <RESOURCE_GROUP_ID> --service-name <SERVICE_NAME> --api-types crn:v1:bluemix:public:context-based-restrictions::::api-type:data-plane --description    <DESCRIPTION>
-ic cbr zone-delete fac4603091363dfdda55f74fa69c22f0
+ibmcloud cbr rule-update <RULE-ID> --enforcement-mode disabled --context-attributes="networkZoneId=b0ceb852f281b489343bae8c574b219e" --resource-group-id   <RESOURCE_GROUP_ID> --service-name <SERVICE_NAME> --api-types crn:v1:bluemix:public:context-based-restrictions::::api-type:data-plane --description    <DESCRIPTION>
 ```
 {: .pre}
 
-Updating requires the `ZONE-ID`, not the zone name. Use the following command to list your zones and retrieve the revelant `ZONE-ID`:
+Updating requires the `RULE-ID`, not the rule name. Use the following command to list your rules and retrieve the revelant `RULE-ID`:
 ```sh
-ic cbr zones
+ibmcloud cbr rules
+```
+{: .pre}
+
+Delete a rule using a command like:
+```sh
+ibmcloud cbr rule-delete <RULE-ID>
 ```
 {: .pre}
 
