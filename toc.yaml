@@ -35,6 +35,7 @@ toc:
       - ha-dr.md
       - closures.md
       - howto-cbr.md
+      - cbr-tutorial.md
       - topicgroup: 
           label: Enhancing security
           topics: 
