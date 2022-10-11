@@ -49,7 +49,7 @@ Before beginning this tutorial, make sure you have created or installed the foll
 {: #cbr-tutorial-create-zone}
 {: step}
 
-[Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+[Log in to your account. Target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
 1. Run the following example command to create a network that includes only one client IP that you want to use.
 
     ```sh
@@ -101,12 +101,12 @@ Before beginning this tutorial, make sure you have created or installed the foll
 {: #cbr-tutorial-create-test}
 {: step}
 
-To test your context-based restrictions setup, you can try calling the cluster APIs for your cluster, for example by listing pods, over the public network from an IP address other than the individual IP address that you allowlisted in your network zone. With this setup, all private connectivity is allowed, while only the individual IP address in your network zone can connect to the cluster APIs over the public network.
+To test your context-based restrictions setup, you can try...
 
 ## Additional scenarios
 {: #cbr-tutorial-create-additional-scenarios}
 
-Now that you've created a simpled CBR network zone and rule, review the following more advanced examples to further control access to your {{site.data.keyword.databases-for}} resources.
+Now that you've created a simple CBR network zone and rule, review the following more advanced examples to further control access to your {{site.data.keyword.databases-for}} resources.
 
 ### Allowing different IPs to access the public and private service endpoints
 {: #cbr-tutorial-scenarios-pub-priv-one-ip}
