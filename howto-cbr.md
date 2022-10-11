@@ -79,10 +79,10 @@ Make sure to add {{site.data.keyword.databases-for}} to network zones for rules 
 1. Navigate to *Context-based restrictions* in the *Manage* section of the {{site.data.keyword.cloud}} Dashboard.
 1. Select *Create a network zone*.
 1. Name your network zone.
-1. Enter your *Allowed IP adresses.* You can enter a single IP address, a range of IP addresses, or a single CIDR. **The *Denied IP addresses* field is optional and should only include exceptions contained within the IP ranges you provide in the allowed IP adresses field.**
+1. Enter your *Allowed IP addresses.* You can enter a single IP address, a range of IP addresses, or a single CIDR. **The *Denied IP addresses* field is optional and should only include exceptions that are contained within the IP ranges you provide in the allowed IP addresses field.**
 1. Choose your *Allowed VPCs*, selecting as many as you like. 
 
-{{site.data.keyword.databases-for}} does not support *Reference a service*. Selecting a service will result in an error when you create a rule.{: .note}
+{{site.data.keyword.databases-for}} does not support *Reference a service*. Selecting a service results in an error when you create a rule.{: .note}
 
 ### Creating network zones in the CLI
 {: #network-zone-cli}
@@ -102,13 +102,13 @@ ibmcloud cbr zone-update <ZONE-ID> --addresses=1.2.3.4 --name=<NAME>
 ```
 {: .pre}
 
-Updating requires the `ZONE-ID`, not the zone name. Use the following command to list your zones and retrieve the revelant `ZONE-ID`:
+Updating requires the `ZONE-ID`, not the zone name. Use the following command to list your zones and retrieve the relevant `ZONE-ID`:
 ```sh
 ibmcloud cbr zones
 ```
 {: .pre}
 
-The `zone-update` command is an overwrite. Include all of the fields required as if you are creating the rule from scratch. If you omit any required fields, the rule will overwrite those missing fields as empty, and the rule may fail because some of those fields are required, regardless of whether they are changing the rule. {: .important}
+The `zone-update` command is an overwrite. Include all of the fields that are required as if you are creating the rule from scratch. If you omit any required fields, the rule overwrites those missing fields as empty, and the rule might fail because some of those fields are required, regardless of whether they are changing the rule. {: .important}
 
 Delete a zone using a command like:
 ```sh
@@ -183,9 +183,9 @@ ibmcloud cbr rule-update <RULE-ID> --enforcement-mode disabled --context-attribu
 ```
 {: .pre}
 
-The `rule-update` command is an overwrite. Include all of the fields required as if you are creating the rule from scratch. If you omit any required fields, the rule will overwrite those missing fields as empty, and the rule may fail because some of those fields are required, regardless of whether they are changing the rule. {: .important}
+The `rule-update` command is an overwrite. Include all of the fields required as if you are creating the rule from scratch. If you omit any required fields, the rule overwrites those missing fields as empty, and the rule might fail because some of those fields are required, regardless of whether they are changing the rule. {: .important}
 
-Updating requires the `RULE-ID`, not the rule name. Use the following command to list your rules and retrieve the revelant `RULE-ID`:
+Updating requires the `RULE-ID`, not the rule name. Use the following command to list your rules and retrieve the relevant `RULE-ID`:
 ```sh
 ibmcloud cbr rules
 ```
@@ -202,4 +202,4 @@ ibmcloud cbr rule-delete <RULE-ID>
 
 To verify that your rule has been applied, go to the {{site.data.keyword.cloud}} Dashboard and select the relevant instance from your *Resource List*. Within the **Recent Tasks** panel, you will see your rule's status.
 
-The task of creating or modifying a rule goes into your instance's task queue. Depending on workload, it may take some time for your rule enforcement to complete.{: .note}
+The task of creating or modifying a rule goes into your instance's task queue. Depending on workload, it might take some time for your rule enforcement to complete.{: .note}
