@@ -2,7 +2,7 @@
 
 copyright:
   years:  2022
-lastupdated: "2022-10-10"
+lastupdated: "2022-10-11"
 
 keywords: restricting access to cloud databases, restricting access to ICD, DataStax cbr, Elasticsearch cbr, EnterpriseDB cbr, etcd cbr, mongodb cbr, postgresql cbr, redis cbr, mysql cbr, rabbitmq cbr
 
@@ -19,7 +19,7 @@ subcollection: cloud-databases
 {:important: .important}	
 {:experimental: .experimental}
 
-This document outlines the process for using context-based restrictions (CBR) to protect your {{site.data.keyword.databases-for}} resources. This process is not yet in production. Use this document to prepare your resources for context-based restrictions. {{site.data.keyword.databases-for}} does not offer CBR enforcement of the control-plane in this current phase of implementation.{: .important}
+This document outlines the process for using context-based restrictions (CBR) to protect your {{site.data.keyword.databases-for}} resources. Use this document to prepare your resources for context-based restrictions. {{site.data.keyword.databases-for}} does not offer CBR enforcement of the control-plane in this current phase of implementation.{: .important}
 
 # Protecting {{site.data.keyword.databases-for}} resources with context-based restrictions
 {: #cbr}
