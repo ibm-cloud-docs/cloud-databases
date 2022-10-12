@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-09-03"
+lastupdated: "2022-10-11"
 
 subcollection: cloud-databases
 
@@ -21,6 +21,8 @@ keywords: allowlist, ip addresses, blocklist, whitelist, cloud databases allowli
 # Allowlisting
 {: #allowlisting} 
 
+{{site.data.keyword.databases-for}} now supports Context-based restrictions (CBR), which give account owners and administrators the ability to define and enforce access restrictions for {{site.data.keyword.cloud}} resources based on the context of access requests. Access to {{site.data.keyword.databases-for}} resources can be controlled with CBR and identity and access management (IAM) policies. CBRs check that an access request comes from an allowed context that you configure. Since both IAM access and CBR enforce access, CBR offers protection even in the face of compromised or mismanaged credentials. For more information, see [Protecting Cloud Databases resources with context-based restrictions](/docs/cloud-databases?topic=cloud-databases-cbr).{: .tip}
+
 To restrict access to your databases, you can allowlist specific IP addresses or ranges of IP addresses on your deployment.
 
 If you use allowlists in your environment, you can allowlist our services by using the list of subnets for each region.
@@ -28,16 +30,16 @@ If you use allowlists in your environment, you can allowlist our services by usi
 While IBM values the use of inclusive language, terms that are outside of IBM's direct influence are sometimes required for the sake of maintaining user understanding. As other industry leaders join IBM in embracing the use of inclusive language, IBM continues to update terminology to reflect those changes. We updated documentation to reflect changes in terminology from `whitelist` to `allowlist`. You might encounter continued references to this former terminology while we work to implement these deeper changes to code, API, and CLI commands. 
 {: .note}
 
-Each deployment is limited to 100 allowlist entries. 
-{: .important}
-
 ## Using IP allowlists on your Deployment
 {: #ip-allowlist} 
 
 When you create an allowlist, only IP addresses that match the allowlist or are in the range of IP addresses in the allowlist can connect to your deployment. Allowlists can be enabled for both public endpoints and private endpoints. When no IP addresses are in the allowlist, the allowlist is disabled and the deployment accepts connections from any IP address.
 
+Each deployment is limited to 100 allowlist entries. 
+{: .important}
+
 Even if not explicitly allowlisted, {{site.data.keyword.cloud_notm}} management services are still able to connect.
-{: .tip}
+{: .note}
 
 ### Setting an allowlist
 {: #set-allowlist} 
@@ -109,12 +111,12 @@ If you use allowlists to control connections in your environment, you can use th
 
 | Location | Region | Data center | Subnet | First IP |
 | -- | -- | -- | -- | -- |
-| Channai | in-che | che01 |  169.38.95.127/27  | 169.38.95.97  |        
-| Channai | in-che | che01 | 169.38.121.159/28  | 169.38.121.145  |        
-| Channai | in-che | che01 | 169.38.132.127/25  | 169.38.132.1  |        
-| Channai | in-che | che01 | 169.38.136.255/26  | 169.38.136.193  |        
-| Channai | in-che | che01 |  169.38.73.151/29  | 169.38.73.145  |        
-| Channai | in-che | che01 |  169.38.105.79/29  | 169.38.105.73  |
+| Chennai | in-che | che01 |  169.38.95.127/27 | 169.38.95.97 |
+| Chennai | in-che | che01 | 169.38.121.159/28 | 169.38.121.145 |
+| Chennai | in-che | che01 | 169.38.132.127/25 | 169.38.132.1 |
+| Chennai | in-che | che01 | 169.38.136.255/26 | 169.38.136.193 |
+| Chennai | in-che | che01 |  169.38.73.151/29 | 169.38.73.145 |
+| Chennai | in-che | che01 |  169.38.105.79/29 | 169.38.105.73 |
 {: caption="Table 1. in-che Public Subnets" caption-side="bottom"}
 
 #### Private Subnets
@@ -122,10 +124,10 @@ If you use allowlists to control connections in your environment, you can use th
 
 | Location | Region | Data center | Subnet | First IP |
 | -- | -- | -- | -- | -- |
-| Channai | in-che | che01 |  10.162.8.127/26  | 10.162.8.65 |         
-| Channai | in-che | che01 |  10.163.20.127/25 | 10.163.20.1 |         
-| Channai | in-che | che01 | 10.162.115.103/29 | 10.162.115.97 |         
-| Channai | in-che | che01 |  10.162.132.79/29 | 10.162.132.73 |
+| Chennai | in-che | che01 |  10.162.8.127/26  | 10.162.8.65 |         
+| Chennai | in-che | che01 |  10.163.20.127/25 | 10.163.20.1 |         
+| Chennai | in-che | che01 | 10.162.115.103/29 | 10.162.115.97 |         
+| Chennai | in-che | che01 |  10.162.132.79/29 | 10.162.132.73 |  
 {: caption="Table 2. in-che Private Subnets" caption-side="bottom"}
 
 ### `ca-tor` List
@@ -136,20 +138,20 @@ If you use allowlists to control connections in your environment, you can use th
 
 | Location | Region | Data center | Subnet | First IP |
 | -- | -- | -- | -- | -- |
-| Toronto | ca-tor | tor01 |  158.85.91.111/28 | 158.85.91.97 |        
-| Toronto | ca-tor | tor01 |  158.85.120.63/26 | 158.85.120.1 |        
-| Toronto | ca-tor | tor01 | 169.55.142.191/27 | 169.55.142.161 |        
-| Toronto | ca-tor | tor01 |  158.85.95.183/29 | 158.85.95.177 |        
-| Toronto | ca-tor | tor01 | 169.55.130.215/29 | 169.55.130.209 |        
-| Toronto | ca-tor | tor04 |  163.74.68.95/28  | 163.74.68.81 |        
-| Toronto | ca-tor | tor04 |  163.74.69.159/27 | 163.74.69.129 |        
-| Toronto | ca-tor | tor04 |  163.74.72.127/26 | 163.74.72.65 |        
-| Toronto | ca-tor | tor04 |  163.74.68.55/29  | 163.74.68.49 |        
-| Toronto | ca-tor | tor04 |  163.74.68.63/29  | 163.74.68.57 |        
-| Toronto | ca-tor | tor05 |  163.75.67.111/28 | 163.75.67.97 |        
-| Toronto | ca-tor | tor05 |  163.75.68.95/27  | 163.75.68.65 |        
-| Toronto | ca-tor | tor05 |  163.75.75.63/26  | 163.75.75.1 |        
-| Toronto | ca-tor | tor05 |   163.75.67.7/29  | 163.75.67.1 |        
+| Toronto | ca-tor | tor01 |  158.85.91.111/28 | 158.85.91.97 |         
+| Toronto | ca-tor | tor01 |  158.85.120.63/26 | 158.85.120.1 |         
+| Toronto | ca-tor | tor01 | 169.55.142.191/27 | 169.55.142.161 |         
+| Toronto | ca-tor | tor01 |  158.85.95.183/29 | 158.85.95.177 |         
+| Toronto | ca-tor | tor01 | 169.55.130.215/29 | 169.55.130.209 |         
+| Toronto | ca-tor | tor04 |  163.74.68.95/28  | 163.74.68.81 |         
+| Toronto | ca-tor | tor04 |  163.74.69.159/27 | 163.74.69.129 |         
+| Toronto | ca-tor | tor04 |  163.74.72.127/26 | 163.74.72.65 |         
+| Toronto | ca-tor | tor04 |  163.74.68.55/29  | 163.74.68.49 |         
+| Toronto | ca-tor | tor04 |  163.74.68.63/29  | 163.74.68.57 |         
+| Toronto | ca-tor | tor05 |  163.75.67.111/28 | 163.75.67.97 |         
+| Toronto | ca-tor | tor05 |  163.75.68.95/27  | 163.75.68.65 |         
+| Toronto | ca-tor | tor05 |  163.75.75.63/26  | 163.75.75.1 |         
+| Toronto | ca-tor | tor05 |   163.75.67.7/29  | 163.75.67.1 |         
 | Toronto | ca-tor | tor05 |  163.75.67.119/29 | 163.75.67.113 |
 {: caption="Table 3. tor Public Subnets" caption-side="bottom"}
 
@@ -491,51 +493,51 @@ If you use allowlists to control connections in your environment, you can use th
 
 | Location | Region | Data center | Subnet | First IP |
 | -- | -- | -- | -- | -- |
-| Washington DC | us-east | wdc04 |  52.116.78.127/25  | 52.116.78.1 |         
-| Washington DC | us-east | wdc04 | 52.116.115.255/24  | 52.116.115.1 |         
-| Washington DC | us-east | wdc04 | 150.239.70.255/24  | 150.239.70.1 |         
-| Washington DC | us-east | wdc04 | 150.239.101.255/24 | 150.239.101.1 |         
-| Washington DC | us-east | wdc04 |  169.47.179.63/26  | 169.47.179.1 |         
-| Washington DC | us-east | wdc04 |  169.63.72.175/28  | 169.63.72.161 |         
-| Washington DC | us-east | wdc04 | 169.63.121.159/27  | 169.63.121.129 |         
-| Washington DC | us-east | wdc04 |  52.116.73.231/29  | 52.116.73.225 |         
-| Washington DC | us-east | wdc04 | 169.47.179.231/29  | 169.47.179.225 |         
-| Washington DC | us-east | wdc04 |  169.63.86.31/29   | 169.63.86.25 |         
-| Washington DC | us-east | wdc04 | 169.63.111.119/29  | 169.63.111.113 |         
-| Washington DC | us-east | wdc04 |  169.63.121.55/29  | 169.63.121.49 |         
-| Washington DC | us-east | wdc04 |  169.63.121.63/29  | 169.63.121.57 |         
-| Washington DC | us-east | wdc04 | 169.63.123.167/29  | 169.63.123.161 |         
-| Washington DC | us-east | wdc04 | 169.63.125.223/29  | 169.63.125.217 |         
-| Washington DC | us-east | wdc06 | 169.59.138.255/24  | 169.59.138.1 |         
-| Washington DC | us-east | wdc06 | 169.59.144.255/24  | 169.59.144.1 |         
-| Washington DC | us-east | wdc06 | 169.59.158.255/24  | 169.59.158.1 |         
-| Washington DC | us-east | wdc06 | 169.63.128.191/27  | 169.63.128.161 |         
-| Washington DC | us-east | wdc06 | 169.63.135.191/28  | 169.63.135.177 |         
-| Washington DC | us-east | wdc06 | 169.63.139.255/26  | 169.63.139.193 |         
-| Washington DC | us-east | wdc06 | 169.63.172.127/25  | 169.63.172.1 |         
-| Washington DC | us-east | wdc06 | 169.59.145.239/29  | 169.59.145.233 |         
-| Washington DC | us-east | wdc06 |  169.60.65.55/29   | 169.60.65.49 |         
-| Washington DC | us-east | wdc06 |   169.60.89.7/29   | 169.60.89.1 |         
-| Washington DC | us-east | wdc06 |   169.60.93.7/29   | 169.60.93.1 |         
-| Washington DC | us-east | wdc06 |  169.60.95.151/29  | 169.60.95.145 |         
-| Washington DC | us-east | wdc06 | 169.63.129.119/29  | 169.63.129.113 |         
-| Washington DC | us-east | wdc06 | 169.63.141.239/29  | 169.63.141.233 |         
-| Washington DC | us-east | wdc06 | 169.63.149.199/29  | 169.63.149.193 |         
-| Washington DC | us-east | wdc07 | 52.117.104.255/24  | 52.117.104.1 |         
-| Washington DC | us-east | wdc07 | 150.239.194.255/24 | 150.239.194.1 |         
-| Washington DC | us-east | wdc07 |  169.61.123.95/28  | 169.61.123.81 |         
-| Washington DC | us-east | wdc07 |  169.62.36.255/24  | 169.62.36.1 |         
-| Washington DC | us-east | wdc07 |  169.62.42.63/27   | 169.62.42.33 |         
-| Washington DC | us-east | wdc07 |  169.62.54.191/26  | 169.62.54.129 |         
-| Washington DC | us-east | wdc07 |  169.62.60.127/25  | 169.62.60.1 |         
-| Washington DC | us-east | wdc07 |  52.117.76.47/29   | 52.117.76.41 |         
-| Washington DC | us-east | wdc07 |  52.117.85.71/29   | 52.117.85.65 |         
-| Washington DC | us-east | wdc07 |  169.61.73.231/29  | 169.61.73.225 |         
-| Washington DC | us-east | wdc07 |  169.61.95.15/29   | 169.61.95.9 |         
-| Washington DC | us-east | wdc07 |  169.61.113.39/29  | 169.61.113.33 |         
-| Washington DC | us-east | wdc07 |  169.61.113.47/29  | 169.61.113.41 |         
-| Washington DC | us-east | wdc07 | 169.61.122.159/29  | 169.61.122.153 |         
-| Washington DC | us-east | wdc07 |   169.62.6.87/29   | 169.62.6.81 |    
+| Washington DC | wdc04 |  52.116.78.127/25  | 52.116.78.1 |         
+| Washington DC | wdc04 | 52.116.115.255/24  | 52.116.115.1 |         
+| Washington DC | wdc04 | 150.239.70.255/24  | 150.239.70.1 |         
+| Washington DC | wdc04 | 150.239.101.255/24 | 150.239.101.1 |         
+| Washington DC | wdc04 |  169.47.179.63/26  | 169.47.179.1 |         
+| Washington DC | wdc04 |  169.63.72.175/28  | 169.63.72.161 |         
+| Washington DC | wdc04 | 169.63.121.159/27  | 169.63.121.129 |         
+| Washington DC | wdc04 |  52.116.73.231/29  | 52.116.73.225 |         
+| Washington DC | wdc04 | 169.47.179.231/29  | 169.47.179.225 |         
+| Washington DC | wdc04 |  169.63.86.31/29   | 169.63.86.25 |         
+| Washington DC | wdc04 | 169.63.111.119/29  | 169.63.111.113 |         
+| Washington DC | wdc04 |  169.63.121.55/29  | 169.63.121.49 |         
+| Washington DC | wdc04 |  169.63.121.63/29  | 169.63.121.57 |         
+| Washington DC | wdc04 | 169.63.123.167/29  | 169.63.123.161 |         
+| Washington DC | wdc04 | 169.63.125.223/29  | 169.63.125.217 |         
+| Washington DC | wdc06 | 169.59.138.255/24  | 169.59.138.1 |         
+| Washington DC | wdc06 | 169.59.144.255/24  | 169.59.144.1 |         
+| Washington DC | wdc06 | 169.59.158.255/24  | 169.59.158.1 |         
+| Washington DC | wdc06 | 169.63.128.191/27  | 169.63.128.161 |         
+| Washington DC | wdc06 | 169.63.135.191/28  | 169.63.135.177 |         
+| Washington DC | wdc06 | 169.63.139.255/26  | 169.63.139.193 |         
+| Washington DC | wdc06 | 169.63.172.127/25  | 169.63.172.1 |         
+| Washington DC | wdc06 | 169.59.145.239/29  | 169.59.145.233 |         
+| Washington DC | wdc06 |  169.60.65.55/29   | 169.60.65.49 |         
+| Washington DC | wdc06 |   169.60.89.7/29   | 169.60.89.1 |         
+| Washington DC | wdc06 |   169.60.93.7/29   | 169.60.93.1 |         
+| Washington DC | wdc06 |  169.60.95.151/29  | 169.60.95.145 |         
+| Washington DC | wdc06 | 169.63.129.119/29  | 169.63.129.113 |         
+| Washington DC | wdc06 | 169.63.141.239/29  | 169.63.141.233 |         
+| Washington DC | wdc06 | 169.63.149.199/29  | 169.63.149.193 |         
+| Washington DC | wdc07 | 52.117.104.255/24  | 52.117.104.1 |         
+| Washington DC | wdc07 | 150.239.194.255/24 | 150.239.194.1 |         
+| Washington DC | wdc07 |  169.61.123.95/28  | 169.61.123.81 |         
+| Washington DC | wdc07 |  169.62.36.255/24  | 169.62.36.1 |         
+| Washington DC | wdc07 |  169.62.42.63/27   | 169.62.42.33 |         
+| Washington DC | wdc07 |  169.62.54.191/26  | 169.62.54.129 |         
+| Washington DC | wdc07 |  169.62.60.127/25  | 169.62.60.1 |         
+| Washington DC | wdc07 |  52.117.76.47/29   | 52.117.76.41 |         
+| Washington DC | wdc07 |  52.117.85.71/29   | 52.117.85.65 |         
+| Washington DC | wdc07 |  169.61.73.231/29  | 169.61.73.225 |         
+| Washington DC | wdc07 |  169.61.95.15/29   | 169.61.95.9 |         
+| Washington DC | wdc07 |  169.61.113.39/29  | 169.61.113.33 |         
+| Washington DC | wdc07 |  169.61.113.47/29  | 169.61.113.41 |         
+| Washington DC | wdc07 | 169.61.122.159/29  | 169.61.122.153 |         
+| Washington DC | wdc07 |   169.62.6.87/29   | 169.62.6.81 |  
 {: caption="Table 17. us-east Public Subnets" caption-side="bottom"}  
 
 #### Private Subnets
@@ -543,46 +545,48 @@ If you use allowlists to control connections in your environment, you can use th
 
 | Location | Region | Data center | Subnet | First IP |
 | -- | -- | -- | -- | -- |
-| Washington DC | us-east | wdc04 |  10.65.119.255/25 | 10.65.119.129 |         
-| Washington DC | us-east | wdc04 |  10.65.145.255/26 | 10.65.145.193 |         
-| Washington DC | us-east | wdc04 |  10.211.67.255/24 | 10.211.67.1 |         
-| Washington DC | us-east | wdc04 |  10.211.96.255/24 | 10.211.96.1 |         
-| Washington DC | us-east | wdc04 | 10.211.126.255/24 | 10.211.126.1 |         
-| Washington DC | us-east | wdc04 |    10.65.0.7/29   | 10.65.0.1 |         
-| Washington DC | us-east | wdc04 |  10.65.99.103/29  | 10.65.99.97 |         
-| Washington DC | us-east | wdc04 |  10.65.145.95/29  | 10.65.145.89 |         
-| Washington DC | us-east | wdc04 |  10.65.152.223/29 | 10.65.152.217 |         
-| Washington DC | us-east | wdc04 |  10.65.179.159/29 | 10.65.179.153 |         
-| Washington DC | us-east | wdc04 |  10.65.218.247/29 | 10.65.218.241 |         
-| Washington DC | us-east | wdc04 |  10.65.224.15/29  | 10.65.224.9 |         
-| Washington DC | us-east | wdc04 |  10.65.224.23/29  | 10.65.224.17 |         
-| Washington DC | us-east | wdc06 | 10.188.150.255/24 | 10.188.150.1 |         
-| Washington DC | us-east | wdc06 | 10.188.160.127/26 | 10.188.160.65 |         
-| Washington DC | us-east | wdc06 |  10.189.7.127/25  | 10.189.7.1 |         
-| Washington DC | us-east | wdc06 |  10.189.91.255/24 | 10.189.91.1 |         
-| Washington DC | us-east | wdc06 | 10.189.159.255/24 | 10.189.159.1 |         
-| Washington DC | us-east | wdc06 |  10.188.34.31/29  | 10.188.34.25 |         
-| Washington DC | us-east | wdc06 |  10.188.35.231/29 | 10.188.35.225 |         
-| Washington DC | us-east | wdc06 |  10.188.53.127/29 | 10.188.53.121 |         
-| Washington DC | us-east | wdc06 | 10.188.137.247/29 | 10.188.137.241 |         
-| Washington DC | us-east | wdc06 | 10.188.140.143/29 | 10.188.140.137 |         
-| Washington DC | us-east | wdc06 |  10.188.199.95/29 | 10.188.199.89 |         
-| Washington DC | us-east | wdc06 |  10.189.13.23/29  | 10.189.13.17 |         
-| Washington DC | us-east | wdc06 |  10.189.45.223/29 | 10.189.45.217 |         
-| Washington DC | us-east | wdc07 |  10.39.58.255/24  | 10.39.58.1 |         
-| Washington DC | us-east | wdc07 |  10.39.62.255/24  | 10.39.62.1 |         
-| Washington DC | us-east | wdc07 |  10.190.86.191/26 | 10.190.86.129 |         
-| Washington DC | us-east | wdc07 | 10.191.126.127/25 | 10.191.126.1 |         
-| Washington DC | us-east | wdc07 | 10.191.213.255/24 | 10.191.213.1 |         
-| Washington DC | us-east | wdc07 |  10.190.22.175/29 | 10.190.22.169 |         
-| Washington DC | us-east | wdc07 | 10.190.123.143/29 | 10.190.123.137 |         
-| Washington DC | us-east | wdc07 |  10.190.166.39/29 | 10.190.166.33 |         
-| Washington DC | us-east | wdc07 | 10.190.233.215/29 | 10.190.233.209 |         
-| Washington DC | us-east | wdc07 |  10.191.11.127/29 | 10.191.11.121 |         
-| Washington DC | us-east | wdc07 |  10.191.12.175/29 | 10.191.12.169 |         
-| Washington DC | us-east | wdc07 |  10.191.49.247/29 | 10.191.49.241 |         
-| Washington DC | us-east | wdc07 |  10.191.115.7/29  | 10.191.115.1 |    
+| Washington DC | us-east | wdc04 |  10.65.119.255/25 | 10.65.119.129  |         
+| Washington DC | us-east | wdc04 |  10.65.145.255/26 | 10.65.145.193  |         
+| Washington DC | us-east | wdc04 |  10.211.67.255/24 | 10.211.67.1  |         
+| Washington DC | us-east | wdc04 |  10.211.96.255/24 | 10.211.96.1  |         
+| Washington DC | us-east | wdc04 | 10.211.126.255/24 | 10.211.126.1  |         
+| Washington DC | us-east | wdc04 |    10.65.0.7/29   | 10.65.0.1  |         
+| Washington DC | us-east | wdc04 |  10.65.99.103/29  | 10.65.99.97  |         
+| Washington DC | us-east | wdc04 |  10.65.145.95/29  | 10.65.145.89  |         
+| Washington DC | us-east | wdc04 |  10.65.152.223/29 | 10.65.152.217  |         
+| Washington DC | us-east | wdc04 |  10.65.179.159/29 | 10.65.179.153  |         
+| Washington DC | us-east | wdc04 |  10.65.218.247/29 | 10.65.218.241  |         
+| Washington DC | us-east | wdc04 |  10.65.224.15/29  | 10.65.224.9  |         
+| Washington DC | us-east | wdc04 |  10.65.224.23/29  | 10.65.224.17  |         
+| Washington DC | us-east | wdc06 | 10.188.150.255/24 | 10.188.150.1  |         
+| Washington DC | us-east | wdc06 | 10.188.160.127/26 | 10.188.160.65  |         
+| Washington DC | us-east | wdc06 |  10.189.7.127/25  | 10.189.7.1  |         
+| Washington DC | us-east | wdc06 |  10.189.91.255/24 | 10.189.91.1  |         
+| Washington DC | us-east | wdc06 | 10.189.159.255/24 | 10.189.159.1  |         
+| Washington DC | us-east | wdc06 |  10.188.34.31/29  | 10.188.34.25  |         
+| Washington DC | us-east | wdc06 |  10.188.35.231/29 | 10.188.35.225  |         
+| Washington DC | us-east | wdc06 |  10.188.53.127/29 | 10.188.53.121  |         
+| Washington DC | us-east | wdc06 | 10.188.137.247/29 | 10.188.137.241  |         
+| Washington DC | us-east | wdc06 | 10.188.140.143/29 | 10.188.140.137  |         
+| Washington DC | us-east | wdc06 |  10.188.199.95/29 | 10.188.199.89  |         
+| Washington DC | us-east | wdc06 |  10.189.13.23/29  | 10.189.13.17  |         
+| Washington DC | us-east | wdc06 |  10.189.45.223/29 | 10.189.45.217  |         
+| Washington DC | us-east | wdc07 |  10.39.58.255/24  | 10.39.58.1  |         
+| Washington DC | us-east | wdc07 |  10.39.62.255/24  | 10.39.62.1  |         
+| Washington DC | us-east | wdc07 |  10.190.86.191/26 | 10.190.86.129  |         
+| Washington DC | us-east | wdc07 | 10.191.126.127/25 | 10.191.126.1  |         
+| Washington DC | us-east | wdc07 | 10.191.213.255/24 | 10.191.213.1  |         
+| Washington DC | us-east | wdc07 |  10.190.22.175/29 | 10.190.22.169  |         
+| Washington DC | us-east | wdc07 | 10.190.123.143/29 | 10.190.123.137  |         
+| Washington DC | us-east | wdc07 |  10.190.166.39/29 | 10.190.166.33  |         
+| Washington DC | us-east | wdc07 | 10.190.233.215/29 | 10.190.233.209  |         
+| Washington DC | us-east | wdc07 |  10.191.11.127/29 | 10.191.11.121  |         
+| Washington DC | us-east | wdc07 |  10.191.12.175/29 | 10.191.12.169  |         
+| Washington DC | us-east | wdc07 |  10.191.49.247/29 | 10.191.49.241  |         
+| Washington DC | us-east | wdc07 |  10.191.115.7/29  | 10.191.115.1  |  
 {: caption="Table 18. us-east Private Subnets" caption-side="bottom"}   
+
+
 
 ### `eu-de` List
 {: #eu-de-list} 
@@ -592,81 +596,81 @@ If you use allowlists to control connections in your environment, you can use th
 
 | Location | Region | Data center | Subnet | First IP |
 | -- | -- | -- | -- | -- |
-| Frankfurt | eu-de | fra02 | 158.177.41.255/24  | 158.177.41.1 |        
-| Frankfurt | eu-de | fra02 | 158.177.56.255/24  | 158.177.56.1 |        
-| Frankfurt | eu-de | fra02 | 158.177.61.255/24  | 158.177.61.1 |        
-| Frankfurt | eu-de | fra02 |  158.177.77.63/27  | 158.177.77.33 |        
-| Frankfurt | eu-de | fra02 | 158.177.87.255/25  | 158.177.87.129 |        
-| Frankfurt | eu-de | fra02 | 158.177.155.63/26  | 158.177.155.1 |        
-| Frankfurt | eu-de | fra02 | 158.177.241.255/24 | 158.177.241.1 |        
-| Frankfurt | eu-de | fra02 | 158.177.110.111/29 | 158.177.110.105 |        
-| Frankfurt | eu-de | fra02 | 158.177.221.175/29 | 158.177.221.169 |        
-| Frankfurt | eu-de | fra02 |  159.122.89.23/29  | 159.122.89.17 |        
-| Frankfurt | eu-de | fra02 |  159.122.97.23/29  | 159.122.97.17 |        
-| Frankfurt | eu-de | fra02 |  159.122.97.47/29  | 159.122.97.41 |        
-| Frankfurt | eu-de | fra02 | 159.122.108.215/29 | 159.122.108.209 |        
-| Frankfurt | eu-de | fra02 | 159.122.108.223/29 | 159.122.108.217 |        
-| Frankfurt | eu-de | fra02 |  169.50.10.15/29   | 169.50.10.9 |        
-| Frankfurt | eu-de | fra02 |  169.50.13.207/29  | 169.50.13.201 |        
-| Frankfurt | eu-de | fra02 |  169.50.15.31/29   | 169.50.15.25 |        
-| Frankfurt | eu-de | fra02 |  169.50.15.191/29  | 169.50.15.185 |        
-| Frankfurt | eu-de | fra02 |  169.50.25.231/29  | 169.50.25.225 |        
-| Frankfurt | eu-de | fra02 |  169.50.35.111/29  | 169.50.35.105 |        
-| Frankfurt | eu-de | fra02 |  169.50.35.239/29  | 169.50.35.233 |        
-| Frankfurt | eu-de | fra02 |  169.50.53.247/29  | 169.50.53.241 |        
-| Frankfurt | eu-de | fra02 |  169.50.54.23/29   | 169.50.54.17 |        
-| Frankfurt | eu-de | fra04 |  161.156.2.255/24  | 161.156.2.1 |        
-| Frankfurt | eu-de | fra04 | 161.156.25.255/24  | 161.156.25.1 |        
-| Frankfurt | eu-de | fra04 | 161.156.51.255/24  | 161.156.51.1 |        
-| Frankfurt | eu-de | fra04 | 161.156.95.223/27  | 161.156.95.193 |        
-| Frankfurt | eu-de | fra04 |  161.156.97.63/26  | 161.156.97.1 |        
-| Frankfurt | eu-de | fra04 | 161.156.131.255/25 | 161.156.131.129 |        
-| Frankfurt | eu-de | fra04 | 161.156.152.255/24 | 161.156.152.1 |        
-| Frankfurt | eu-de | fra04 |  161.156.1.79/29   | 161.156.1.73 |        
-| Frankfurt | eu-de | fra04 |  161.156.8.47/29   | 161.156.8.41 |        
-| Frankfurt | eu-de | fra04 | 161.156.38.207/29  | 161.156.38.201 |        
-| Frankfurt | eu-de | fra04 | 161.156.67.247/29  | 161.156.67.241 |        
-| Frankfurt | eu-de | fra04 | 161.156.69.135/29  | 161.156.69.129 |        
-| Frankfurt | eu-de | fra04 | 161.156.69.143/29  | 161.156.69.137 |        
-| Frankfurt | eu-de | fra04 | 161.156.107.159/29 | 161.156.107.153 |        
-| Frankfurt | eu-de | fra04 | 161.156.111.55/29  | 161.156.111.49 |        
-| Frankfurt | eu-de | fra04 | 161.156.111.79/29  | 161.156.111.73 |        
-| Frankfurt | eu-de | fra04 | 161.156.122.239/29 | 161.156.122.233 |        
-| Frankfurt | eu-de | fra04 | 161.156.132.103/29 | 161.156.132.97 |        
-| Frankfurt | eu-de | fra04 | 161.156.148.215/29 | 161.156.148.209 |        
-| Frankfurt | eu-de | fra04 | 161.156.157.135/29 | 161.156.157.129 |        
-| Frankfurt | eu-de | fra04 | 161.156.177.183/29 | 161.156.177.177 |        
-| Frankfurt | eu-de | fra04 | 161.156.185.31/29  | 161.156.185.25 |        
-| Frankfurt | eu-de | fra04 | 161.156.190.127/29 | 161.156.190.121 |        
-| Frankfurt | eu-de | fra05 |  149.81.73.159/28  | 149.81.73.145 |        
-| Frankfurt | eu-de | fra05 |  149.81.80.255/27  | 149.81.80.225 |        
-| Frankfurt | eu-de | fra05 |  149.81.114.63/26  | 149.81.114.1 |        
-| Frankfurt | eu-de | fra05 | 149.81.132.127/25  | 149.81.132.1 |        
-| Frankfurt | eu-de | fra05 | 149.81.139.255/24  | 149.81.139.1 |        
-| Frankfurt | eu-de | fra05 | 149.81.150.255/24  | 149.81.150.1 |        
-| Frankfurt | eu-de | fra05 | 149.81.183.255/24  | 149.81.183.1 |        
-| Frankfurt | eu-de | fra05 | 149.81.208.255/24  | 149.81.208.1 |        
-| Frankfurt | eu-de | fra05 |  149.81.65.255/29  | 149.81.65.249 |        
-| Frankfurt | eu-de | fra05 |  149.81.77.207/29  | 149.81.77.201 |        
-| Frankfurt | eu-de | fra05 |  149.81.79.183/29  | 149.81.79.177 |        
-| Frankfurt | eu-de | fra05 |  149.81.83.215/29  | 149.81.83.209 |        
-| Frankfurt | eu-de | fra05 |  149.81.84.103/29  | 149.81.84.97 |        
-| Frankfurt | eu-de | fra05 |  149.81.87.143/29  | 149.81.87.137 |        
-| Frankfurt | eu-de | fra05 |  149.81.87.151/29  | 149.81.87.145 |        
-| Frankfurt | eu-de | fra05 |  149.81.98.167/29  | 149.81.98.161 |        
-| Frankfurt | eu-de | fra05 | 149.81.100.207/29  | 149.81.100.201 |        
-| Frankfurt | eu-de | fra05 | 149.81.101.119/29  | 149.81.101.113 |        
-| Frankfurt | eu-de | fra05 | 149.81.106.239/29  | 149.81.106.233 |        
-| Frankfurt | eu-de | fra05 | 149.81.114.175/29  | 149.81.114.169 |        
-| Frankfurt | eu-de | fra05 |  149.81.142.47/29  | 149.81.142.41 |        
-| Frankfurt | eu-de | fra05 |  149.81.148.79/29  | 149.81.148.73 |        
-| Frankfurt | eu-de | fra05 | 149.81.171.231/29  | 149.81.171.225 |        
-| Frankfurt | eu-de | fra05 | 149.81.180.207/29  | 149.81.180.201 |        
-| Paris | eu-de | par01 |  159.8.70.111/28   | 159.8.70.97 |        
-| Paris | eu-de | par01 |  159.8.90.127/26   | 159.8.90.65 |        
-| Paris | eu-de | par01 |  159.8.114.127/27  | 159.8.114.97 |        
-| Paris | eu-de | par01 |  159.8.78.239/29   | 159.8.78.233 |        
-| Paris | eu-de | par01 |   159.8.94.95/29   | 159.8.94.89 |        
+| Frankfurt | eu-de | fra02 | 158.177.41.255/24   | 158.177.41.1 |        
+| Frankfurt | eu-de | fra02 | 158.177.56.255/24   | 158.177.56.1 |        
+| Frankfurt | eu-de | fra02 | 158.177.61.255/24   | 158.177.61.1 |        
+| Frankfurt | eu-de | fra02 |  158.177.77.63/27   | 158.177.77.33 |        
+| Frankfurt | eu-de | fra02 | 158.177.87.255/25   | 158.177.87.129 |        
+| Frankfurt | eu-de | fra02 | 158.177.155.63/26   | 158.177.155.1 |        
+| Frankfurt | eu-de | fra02 | 158.177.241.255/24  | 158.177.241.1 |        
+| Frankfurt | eu-de | fra02 | 158.177.110.111/29  | 158.177.110.105 |        
+| Frankfurt | eu-de | fra02 | 158.177.221.175/29  | 158.177.221.169 |        
+| Frankfurt | eu-de | fra02 |  159.122.89.23/29   | 159.122.89.17 |        
+| Frankfurt | eu-de | fra02 |  159.122.97.23/29   | 159.122.97.17 |        
+| Frankfurt | eu-de | fra02 |  159.122.97.47/29   | 159.122.97.41 |        
+| Frankfurt | eu-de | fra02 | 159.122.108.215/29  | 159.122.108.209 |        
+| Frankfurt | eu-de | fra02 | 159.122.108.223/29  | 159.122.108.217 |        
+| Frankfurt | eu-de | fra02 |  169.50.10.15/29    | 169.50.10.9 |        
+| Frankfurt | eu-de | fra02 |  169.50.13.207/29   | 169.50.13.201 |        
+| Frankfurt | eu-de | fra02 |  169.50.15.31/29    | 169.50.15.25 |        
+| Frankfurt | eu-de | fra02 |  169.50.15.191/29   | 169.50.15.185 |        
+| Frankfurt | eu-de | fra02 |  169.50.25.231/29   | 169.50.25.225 |        
+| Frankfurt | eu-de | fra02 |  169.50.35.111/29   | 169.50.35.105 |        
+| Frankfurt | eu-de | fra02 |  169.50.35.239/29   | 169.50.35.233 |        
+| Frankfurt | eu-de | fra02 |  169.50.53.247/29   | 169.50.53.241 |        
+| Frankfurt | eu-de | fra02 |  169.50.54.23/29    | 169.50.54.17 |        
+| Frankfurt | eu-de | fra04 |  161.156.2.255/24   | 161.156.2.1 |        
+| Frankfurt | eu-de | fra04 | 161.156.25.255/24   | 161.156.25.1 |        
+| Frankfurt | eu-de | fra04 | 161.156.51.255/24   | 161.156.51.1 |        
+| Frankfurt | eu-de | fra04 | 161.156.95.223/27   | 161.156.95.193 |        
+| Frankfurt | eu-de | fra04 |  161.156.97.63/26   | 161.156.97.1 |        
+| Frankfurt | eu-de | fra04 | 161.156.131.255/25  | 161.156.131.129 |        
+| Frankfurt | eu-de | fra04 | 161.156.152.255/24  | 161.156.152.1 |        
+| Frankfurt | eu-de | fra04 |  161.156.1.79/29    | 161.156.1.73 |        
+| Frankfurt | eu-de | fra04 |  161.156.8.47/29    | 161.156.8.41 |        
+| Frankfurt | eu-de | fra04 | 161.156.38.207/29   | 161.156.38.201 |        
+| Frankfurt | eu-de | fra04 | 161.156.67.247/29   | 161.156.67.241 |        
+| Frankfurt | eu-de | fra04 | 161.156.69.135/29   | 161.156.69.129 |        
+| Frankfurt | eu-de | fra04 | 161.156.69.143/29   | 161.156.69.137 |        
+| Frankfurt | eu-de | fra04 | 161.156.107.159/29  | 161.156.107.153 |        
+| Frankfurt | eu-de | fra04 | 161.156.111.55/29   | 161.156.111.49 |        
+| Frankfurt | eu-de | fra04 | 161.156.111.79/29   | 161.156.111.73 |        
+| Frankfurt | eu-de | fra04 | 161.156.122.239/29  | 161.156.122.233 |        
+| Frankfurt | eu-de | fra04 | 161.156.132.103/29  | 161.156.132.97 |        
+| Frankfurt | eu-de | fra04 | 161.156.148.215/29  | 161.156.148.209 |        
+| Frankfurt | eu-de | fra04 | 161.156.157.135/29  | 161.156.157.129 |        
+| Frankfurt | eu-de | fra04 | 161.156.177.183/29  | 161.156.177.177 |        
+| Frankfurt | eu-de | fra04 | 161.156.185.31/29   | 161.156.185.25 |        
+| Frankfurt | eu-de | fra04 | 161.156.190.127/29  | 161.156.190.121 |        
+| Frankfurt | eu-de | fra05 |  149.81.73.159/28   | 149.81.73.145 |        
+| Frankfurt | eu-de | fra05 |  149.81.80.255/27   | 149.81.80.225 |        
+| Frankfurt | eu-de | fra05 |  149.81.114.63/26   | 149.81.114.1 |        
+| Frankfurt | eu-de | fra05 | 149.81.132.127/25   | 149.81.132.1 |        
+| Frankfurt | eu-de | fra05 | 149.81.139.255/24   | 149.81.139.1 |        
+| Frankfurt | eu-de | fra05 | 149.81.150.255/24   | 149.81.150.1 |        
+| Frankfurt | eu-de | fra05 | 149.81.183.255/24   | 149.81.183.1 |        
+| Frankfurt | eu-de | fra05 | 149.81.208.255/24   | 149.81.208.1 |        
+| Frankfurt | eu-de | fra05 |  149.81.65.255/29   | 149.81.65.249 |        
+| Frankfurt | eu-de | fra05 |  149.81.77.207/29   | 149.81.77.201 |        
+| Frankfurt | eu-de | fra05 |  149.81.79.183/29   | 149.81.79.177 |        
+| Frankfurt | eu-de | fra05 |  149.81.83.215/29   | 149.81.83.209 |        
+| Frankfurt | eu-de | fra05 |  149.81.84.103/29   | 149.81.84.97 |        
+| Frankfurt | eu-de | fra05 |  149.81.87.143/29   | 149.81.87.137 |        
+| Frankfurt | eu-de | fra05 |  149.81.87.151/29   | 149.81.87.145 |        
+| Frankfurt | eu-de | fra05 |  149.81.98.167/29   | 149.81.98.161 |        
+| Frankfurt | eu-de | fra05 | 149.81.100.207/29   | 149.81.100.201 |        
+| Frankfurt | eu-de | fra05 | 149.81.101.119/29   | 149.81.101.113 |        
+| Frankfurt | eu-de | fra05 | 149.81.106.239/29   | 149.81.106.233 |        
+| Frankfurt | eu-de | fra05 | 149.81.114.175/29   | 149.81.114.169 |        
+| Frankfurt | eu-de | fra05 |  149.81.142.47/29   | 149.81.142.41 |        
+| Frankfurt | eu-de | fra05 |  149.81.148.79/29   | 149.81.148.73 |        
+| Frankfurt | eu-de | fra05 | 149.81.171.231/29   | 149.81.171.225 |        
+| Frankfurt | eu-de | fra05 | 149.81.180.207/29   | 149.81.180.201 |        
+| Paris | eu-de | par01 |  159.8.70.111/28    | 159.8.70.97 |        
+| Paris | eu-de | par01 |  159.8.90.127/26    | 159.8.90.65 |        
+| Paris | eu-de | par01 |  159.8.114.127/27   | 159.8.114.97 |        
+| Paris | eu-de | par01 |  159.8.78.239/29    | 159.8.78.233 |        
+| Paris | eu-de | par01 |   159.8.94.95/29    | 159.8.94.89 |
 {: caption="Table 19. eu-de Public Subnets" caption-side="bottom"} 
 
 #### Private Subnets
@@ -674,79 +678,79 @@ If you use allowlists to control connections in your environment, you can use th
 
 | Location | Region | Data center | Subnet | First IP |
 | -- | -- | -- | -- | -- |
-| Frankfurt | eu-de | fra02 |  10.20.34.255/24   | 10.20.34.1 |         
-| Frankfurt | eu-de | fra02 | 10.134.228.255/24  | 10.134.228.1 |         
-| Frankfurt | eu-de | fra02 |   10.194.5.63/26   | 10.194.5.1 |         
-| Frankfurt | eu-de | fra02 |  10.194.98.255/25  | 10.194.98.129 |         
-| Frankfurt | eu-de | fra02 | 10.194.205.255/24  | 10.194.205.1 |         
-| Frankfurt | eu-de | fra02 | 10.215.194.255/24  | 10.215.194.1 |         
-| Frankfurt | eu-de | fra02 |  10.134.41.111/29  | 10.134.41.105 |         
-| Frankfurt | eu-de | fra02 |  10.134.57.143/29  | 10.134.57.137 |         
-| Frankfurt | eu-de | fra02 |  10.134.68.47/29   | 10.134.68.41 |         
-| Frankfurt | eu-de | fra02 | 10.134.191.167/29  | 10.134.191.161 |         
-| Frankfurt | eu-de | fra02 | 10.134.195.207/29  | 10.134.195.201 |         
-| Frankfurt | eu-de | fra02 | 10.134.199.247/29  | 10.134.199.241 |         
-| Frankfurt | eu-de | fra02 | 10.134.236.207/29  | 10.134.236.201 |         
-| Frankfurt | eu-de | fra02 | 10.134.247.207/29  | 10.134.247.201 |         
-| Frankfurt | eu-de | fra02 |  10.135.17.103/29  | 10.135.17.97 |         
-| Frankfurt | eu-de | fra02 |  10.135.61.239/29  | 10.135.61.233 |         
-| Frankfurt | eu-de | fra02 |  10.135.84.111/29  | 10.135.84.105 |         
-| Frankfurt | eu-de | fra02 |  10.135.87.103/29  | 10.135.87.97 |         
-| Frankfurt | eu-de | fra02 | 10.135.120.143/29  | 10.135.120.137 |         
-| Frankfurt | eu-de | fra02 |  10.135.123.31/29  | 10.135.123.25 |         
-| Frankfurt | eu-de | fra02 |  10.135.158.47/29  | 10.135.158.41 |         
-| Frankfurt | eu-de | fra02 |  10.135.180.7/29   | 10.135.180.1 |         
-| Frankfurt | eu-de | fra02 |  10.135.180.15/29  | 10.135.180.9 |         
-| Frankfurt | eu-de | fra04 |  10.21.72.255/24   | 10.21.72.1 |         
-| Frankfurt | eu-de | fra04 |  10.75.68.191/26   | 10.75.68.129 |         
-| Frankfurt | eu-de | fra04 |  10.75.134.127/25  | 10.75.134.1 |         
-| Frankfurt | eu-de | fra04 |  10.75.234.255/24  | 10.75.234.1 |         
-| Frankfurt | eu-de | fra04 | 10.240.146.255/24  | 10.240.146.1 |         
-| Frankfurt | eu-de | fra04 | 10.240.181.255/24  | 10.240.181.1 |         
-| Frankfurt | eu-de | fra04 |   10.75.35.55/29   | 10.75.35.49 |         
-| Frankfurt | eu-de | fra04 |  10.75.74.151/29   | 10.75.74.145 |         
-| Frankfurt | eu-de | fra04 |  10.75.80.239/29   | 10.75.80.233 |         
-| Frankfurt | eu-de | fra04 |   10.75.82.23/29   | 10.75.82.17 |         
-| Frankfurt | eu-de | fra04 |   10.75.82.39/29   | 10.75.82.33 |         
-| Frankfurt | eu-de | fra04 |   10.75.82.47/29   | 10.75.82.41 |         
-| Frankfurt | eu-de | fra04 |  10.75.127.79/29   | 10.75.127.73 |         
-| Frankfurt | eu-de | fra04 |  10.75.166.47/29   | 10.75.166.41 |         
-| Frankfurt | eu-de | fra04 |  10.75.166.79/29   | 10.75.166.73 |         
-| Frankfurt | eu-de | fra04 |  10.75.210.39/29   | 10.75.210.33 |         
-| Frankfurt | eu-de | fra04 |  10.75.219.103/29  | 10.75.219.97 |         
-| Frankfurt | eu-de | fra04 |  10.75.221.103/29  | 10.75.221.97 |         
-| Frankfurt | eu-de | fra04 |  10.240.20.103/29  | 10.240.20.97 |         
-| Frankfurt | eu-de | fra04 |  10.240.53.215/29  | 10.240.53.209 |         
-| Frankfurt | eu-de | fra04 |  10.240.160.31/29  | 10.240.160.25 |         
-| Frankfurt | eu-de | fra04 | 10.240.166.183/29  | 10.240.166.177 |         
-| Frankfurt | eu-de | fra04 |  10.240.228.71/29  | 10.240.228.65 |         
-| Frankfurt | eu-de | fra05 |  10.13.21.255/24   | 10.13.21.1 |         
-| Frankfurt | eu-de | fra05 |  10.13.175.255/24  | 10.13.175.1 |         
-| Frankfurt | eu-de | fra05 |  10.123.14.63/26   | 10.123.14.1 |         
-| Frankfurt | eu-de | fra05 |  10.123.55.127/25  | 10.123.55.1 |         
-| Frankfurt | eu-de | fra05 | 10.123.167.255/24  | 10.123.167.1 |         
-| Frankfurt | eu-de | fra05 | 10.123.241.255/24  | 10.123.241.1 |         
-| Frankfurt | eu-de | fra05 |  10.13.10.151/29   | 10.13.10.145 |         
-| Frankfurt | eu-de | fra05 |   10.13.35.71/29   | 10.13.35.65 |         
-| Frankfurt | eu-de | fra05 |  10.123.22.151/29  | 10.123.22.145 |         
-| Frankfurt | eu-de | fra05 |  10.123.53.15/29   | 10.123.53.9 |         
-| Frankfurt | eu-de | fra05 |  10.123.59.103/29  | 10.123.59.97 |         
-| Frankfurt | eu-de | fra05 |  10.123.60.167/29  | 10.123.60.161 |         
-| Frankfurt | eu-de | fra05 |  10.123.63.199/29  | 10.123.63.193 |         
-| Frankfurt | eu-de | fra05 |  10.123.64.199/29  | 10.123.64.193 |         
-| Frankfurt | eu-de | fra05 |  10.123.64.247/29  | 10.123.64.241 |         
-| Frankfurt | eu-de | fra05 |  10.123.87.191/29  | 10.123.87.185 |         
-| Frankfurt | eu-de | fra05 |  10.123.99.127/29  | 10.123.99.121 |         
-| Frankfurt | eu-de | fra05 | 10.123.108.111/29  | 10.123.108.105 |         
-| Frankfurt | eu-de | fra05 | 10.123.123.151/29  | 10.123.123.145 |         
-| Frankfurt | eu-de | fra05 |  10.123.179.15/29  | 10.123.179.9 |         
-| Frankfurt | eu-de | fra05 | 10.123.182.127/29  | 10.123.182.121 |         
-| Frankfurt | eu-de | fra05 |  10.123.208.95/29  | 10.123.208.89 |         
-| Frankfurt | eu-de | fra05 | 10.123.253.207/29  | 10.123.253.201 |         
-| Paris | eu-de | par01 | 10.126.152.127/25  | 10.126.152.1 |         
-| Paris | eu-de | par01 |  10.127.213.63/26  | 10.127.213.1 |         
-| Paris | eu-de | par01 |  10.126.23.255/29  | 10.126.23.249 |         
-| Paris | eu-de | par01 | 10.126.100.135/29  | 10.126.100.129 |   
+| Frankfurt | eu-de | fra02 |  10.20.34.255/24  | 10.20.34.1 |         
+| Frankfurt | eu-de | fra02 | 10.134.228.255/24 | 10.134.228.1 |         
+| Frankfurt | eu-de | fra02 |   10.194.5.63/26  | 10.194.5.1 |         
+| Frankfurt | eu-de | fra02 |  10.194.98.255/25 | 10.194.98.129 |         
+| Frankfurt | eu-de | fra02 | 10.194.205.255/24 | 10.194.205.1 |         
+| Frankfurt | eu-de | fra02 | 10.215.194.255/24 | 10.215.194.1 |         
+| Frankfurt | eu-de | fra02 |  10.134.41.111/29 | 10.134.41.105 |         
+| Frankfurt | eu-de | fra02 |  10.134.57.143/29 | 10.134.57.137 |         
+| Frankfurt | eu-de | fra02 |  10.134.68.47/29  | 10.134.68.41 |         
+| Frankfurt | eu-de | fra02 | 10.134.191.167/29 | 10.134.191.161 |         
+| Frankfurt | eu-de | fra02 | 10.134.195.207/29 | 10.134.195.201 |         
+| Frankfurt | eu-de | fra02 | 10.134.199.247/29 | 10.134.199.241 |         
+| Frankfurt | eu-de | fra02 | 10.134.236.207/29 | 10.134.236.201 |         
+| Frankfurt | eu-de | fra02 | 10.134.247.207/29 | 10.134.247.201 |         
+| Frankfurt | eu-de | fra02 |  10.135.17.103/29 | 10.135.17.97 |         
+| Frankfurt | eu-de | fra02 |  10.135.61.239/29 | 10.135.61.233 |         
+| Frankfurt | eu-de | fra02 |  10.135.84.111/29 | 10.135.84.105 |         
+| Frankfurt | eu-de | fra02 |  10.135.87.103/29 | 10.135.87.97 |         
+| Frankfurt | eu-de | fra02 | 10.135.120.143/29 | 10.135.120.137 |         
+| Frankfurt | eu-de | fra02 |  10.135.123.31/29 | 10.135.123.25 |         
+| Frankfurt | eu-de | fra02 |  10.135.158.47/29 | 10.135.158.41 |         
+| Frankfurt | eu-de | fra02 |  10.135.180.7/29  | 10.135.180.1 |         
+| Frankfurt | eu-de | fra02 |  10.135.180.15/29 | 10.135.180.9 |         
+| Frankfurt | eu-de | fra04 |  10.21.72.255/24  | 10.21.72.1 |         
+| Frankfurt | eu-de | fra04 |  10.75.68.191/26  | 10.75.68.129 |         
+| Frankfurt | eu-de | fra04 |  10.75.134.127/25 | 10.75.134.1 |         
+| Frankfurt | eu-de | fra04 |  10.75.234.255/24 | 10.75.234.1 |         
+| Frankfurt | eu-de | fra04 | 10.240.146.255/24 | 10.240.146.1 |         
+| Frankfurt | eu-de | fra04 | 10.240.181.255/24 | 10.240.181.1 |         
+| Frankfurt | eu-de | fra04 |   10.75.35.55/29  | 10.75.35.49 |         
+| Frankfurt | eu-de | fra04 |  10.75.74.151/29  | 10.75.74.145 |         
+| Frankfurt | eu-de | fra04 |  10.75.80.239/29  | 10.75.80.233 |         
+| Frankfurt | eu-de | fra04 |   10.75.82.23/29  | 10.75.82.17 |         
+| Frankfurt | eu-de | fra04 |   10.75.82.39/29  | 10.75.82.33 |         
+| Frankfurt | eu-de | fra04 |   10.75.82.47/29  | 10.75.82.41 |         
+| Frankfurt | eu-de | fra04 |  10.75.127.79/29  | 10.75.127.73 |         
+| Frankfurt | eu-de | fra04 |  10.75.166.47/29  | 10.75.166.41 |         
+| Frankfurt | eu-de | fra04 |  10.75.166.79/29  | 10.75.166.73 |         
+| Frankfurt | eu-de | fra04 |  10.75.210.39/29  | 10.75.210.33 |         
+| Frankfurt | eu-de | fra04 |  10.75.219.103/29 | 10.75.219.97 |         
+| Frankfurt | eu-de | fra04 |  10.75.221.103/29 | 10.75.221.97 |         
+| Frankfurt | eu-de | fra04 |  10.240.20.103/29 | 10.240.20.97 |         
+| Frankfurt | eu-de | fra04 |  10.240.53.215/29 | 10.240.53.209 |         
+| Frankfurt | eu-de | fra04 |  10.240.160.31/29 | 10.240.160.25 |         
+| Frankfurt | eu-de | fra04 | 10.240.166.183/29 | 10.240.166.177 |         
+| Frankfurt | eu-de | fra04 |  10.240.228.71/29 | 10.240.228.65 |         
+| Frankfurt | eu-de | fra05 |  10.13.21.255/24  | 10.13.21.1 |         
+| Frankfurt | eu-de | fra05 |  10.13.175.255/24 | 10.13.175.1 |         
+| Frankfurt | eu-de | fra05 |  10.123.14.63/26  | 10.123.14.1 |         
+| Frankfurt | eu-de | fra05 |  10.123.55.127/25 | 10.123.55.1 |         
+| Frankfurt | eu-de | fra05 | 10.123.167.255/24 | 10.123.167.1 |         
+| Frankfurt | eu-de | fra05 | 10.123.241.255/24 | 10.123.241.1 |         
+| Frankfurt | eu-de | fra05 |  10.13.10.151/29  | 10.13.10.145 |         
+| Frankfurt | eu-de | fra05 |   10.13.35.71/29  | 10.13.35.65 |         
+| Frankfurt | eu-de | fra05 |  10.123.22.151/29 | 10.123.22.145 |         
+| Frankfurt | eu-de | fra05 |  10.123.53.15/29  | 10.123.53.9 |         
+| Frankfurt | eu-de | fra05 |  10.123.59.103/29 | 10.123.59.97 |         
+| Frankfurt | eu-de | fra05 |  10.123.60.167/29 | 10.123.60.161 |         
+| Frankfurt | eu-de | fra05 |  10.123.63.199/29 | 10.123.63.193 |         
+| Frankfurt | eu-de | fra05 |  10.123.64.199/29 | 10.123.64.193 |         
+| Frankfurt | eu-de | fra05 |  10.123.64.247/29 | 10.123.64.241 |         
+| Frankfurt | eu-de | fra05 |  10.123.87.191/29 | 10.123.87.185 |         
+| Frankfurt | eu-de | fra05 |  10.123.99.127/29 | 10.123.99.121 |         
+| Frankfurt | eu-de | fra05 | 10.123.108.111/29 | 10.123.108.105 |         
+| Frankfurt | eu-de | fra05 | 10.123.123.151/29 | 10.123.123.145 |         
+| Frankfurt | eu-de | fra05 |  10.123.179.15/29 | 10.123.179.9 |         
+| Frankfurt | eu-de | fra05 | 10.123.182.127/29 | 10.123.182.121 |         
+| Frankfurt | eu-de | fra05 |  10.123.208.95/29 | 10.123.208.89 |         
+| Frankfurt | eu-de | fra05 | 10.123.253.207/29 | 10.123.253.201 |         
+| Paris| eu-de | par01 | 10.126.152.127/25 | 10.126.152.1 |         
+| Paris| eu-de | par01 |  10.127.213.63/26 | 10.127.213.1 |         
+| Paris| eu-de | par01 |  10.126.23.255/29 | 10.126.23.249 |         
+| Paris| eu-de | par01 | 10.126.100.135/29 | 10.126.100.129 |
 {: caption="Table 20. eu-de Private Subnets" caption-side="bottom"}  
 
 ### `us-south` List
@@ -768,8 +772,10 @@ If you use allowlists to control connections in your environment, you can use th
 | Dallas | us-south | dal10 | 150.238.244.255/24 | 150.238.244.1 |         
 | Dallas | us-south | dal10 | 150.239.46.255/24  | 150.239.46.1 |         
 | Dallas | us-south | dal10 | 150.239.63.255/24  | 150.239.63.1 |         
+| Dallas | us-south | dal10 | 150.240.131.255/24 | 150.240.131.1 |         
 | Dallas | us-south | dal10 |  169.46.57.31/27   | 169.46.57.1 |         
 | Dallas | us-south | dal10 | 169.47.212.191/27  | 169.47.212.161 |         
+| Dallas | us-south | dal10 | 169.48.177.159/28  | 169.48.177.145 |         
 | Dallas | us-south | dal10 | 169.61.212.255/26  | 169.61.212.193 |         
 | Dallas | us-south | dal10 | 169.61.219.239/28  | 169.61.219.225 |         
 | Dallas | us-south | dal10 | 169.63.201.255/25  | 169.63.201.129 |         
@@ -777,6 +783,7 @@ If you use allowlists to control connections in your environment, you can use th
 | Dallas | us-south | dal10 | 52.116.160.151/29  | 52.116.160.145 |         
 | Dallas | us-south | dal10 | 52.116.190.135/29  | 52.116.190.129 |         
 | Dallas | us-south | dal10 | 52.116.190.239/29  | 52.116.190.233 |         
+| Dallas | us-south | dal10 | 52.117.135.111/29  | 52.117.135.105 |         
 | Dallas | us-south | dal10 |  52.117.148.31/29  | 52.117.148.25 |         
 | Dallas | us-south | dal10 | 52.117.166.239/29  | 52.117.166.233 |         
 | Dallas | us-south | dal10 |  52.118.41.103/29  | 52.118.41.97 |         
@@ -833,9 +840,19 @@ If you use allowlists to control connections in your environment, you can use th
 | Dallas | us-south | dal10 | 169.48.163.135/29  | 169.48.163.129 |         
 | Dallas | us-south | dal10 | 169.48.164.151/29  | 169.48.164.145 |         
 | Dallas | us-south | dal10 |  169.48.171.87/29  | 169.48.171.81 |         
+| Dallas | us-south | dal10 | 169.48.173.135/29  | 169.48.173.129 |         
+| Dallas | us-south | dal10 |  169.48.176.15/29  | 169.48.176.9 |         
+| Dallas | us-south | dal10 |  169.60.43.79/29   | 169.60.43.73 |         
 | Dallas | us-south | dal10 |  169.60.61.223/29  | 169.60.61.217 |         
+| Dallas | us-south | dal10 | 169.60.198.143/29  | 169.60.198.137 |         
+| Dallas | us-south | dal10 |  169.60.200.95/29  | 169.60.200.89 |         
+| Dallas | us-south | dal10 | 169.60.202.255/29  | 169.60.202.249 |         
+| Dallas | us-south | dal10 | 169.60.224.175/29  | 169.60.224.169 |         
 | Dallas | us-south | dal10 | 169.60.229.175/29  | 169.60.229.169 |         
+| Dallas | us-south | dal10 |  169.60.240.47/29  | 169.60.240.41 |         
+| Dallas | us-south | dal10 |  169.60.241.23/29  | 169.60.241.17 |         
 | Dallas | us-south | dal10 | 169.61.193.127/29  | 169.61.193.121 |         
+| Dallas | us-south | dal10 | 169.61.196.215/29  | 169.61.196.209 |         
 | Dallas | us-south | dal10 | 169.61.214.175/29  | 169.61.214.169 |         
 | Dallas | us-south | dal10 | 169.61.216.143/29  | 169.61.216.137 |         
 | Dallas | us-south | dal10 |  169.61.235.63/29  | 169.61.235.57 |         
@@ -995,226 +1012,236 @@ If you use allowlists to control connections in your environment, you can use th
  
 | Location | Region | Data center | Subnet | First IP |
 | -- | -- | -- | -- | -- |
-| Dallas | us-south | dal10 |   10.5.5.255/24   | 10.5.5.1 |         
-| Dallas | us-south | dal10 |  10.5.124.255/24  | 10.5.124.1 |         
-| Dallas | us-south | dal10 |  10.5.204.255/24  | 10.5.204.1 |         
-| Dallas | us-south | dal10 |  10.23.68.255/24  | 10.23.68.1 |         
-| Dallas | us-south | dal10 |  10.38.177.255/24 | 10.38.177.1 |         
-| Dallas | us-south | dal10 |  10.95.123.255/24 | 10.95.123.1 |         
-| Dallas | us-south | dal10 |  10.95.170.255/25 | 10.95.170.129 |         
-| Dallas | us-south | dal10 |  10.95.225.255/24 | 10.95.225.1 |         
-| Dallas | us-south | dal10 |  10.171.25.255/24 | 10.171.25.1 |         
-| Dallas | us-south | dal10 | 10.171.209.191/26 | 10.171.209.129 |         
-| Dallas | us-south | dal10 | 10.177.109.127/25 | 10.177.109.1 |         
-| Dallas | us-south | dal10 | 10.177.238.255/24 | 10.177.238.1 |         
-| Dallas | us-south | dal10 | 10.177.253.255/26 | 10.177.253.193 |         
-| Dallas | us-south | dal10 |  10.221.69.255/24 | 10.221.69.1 |         
-| Dallas | us-south | dal10 |   10.171.1.55/29  | 10.171.1.49 |         
-| Dallas | us-south | dal10 |   10.171.9.95/29  | 10.171.9.89 |         
-| Dallas | us-south | dal10 |  10.171.13.119/29 | 10.171.13.113 |         
-| Dallas | us-south | dal10 |  10.171.13.223/29 | 10.171.13.217 |         
-| Dallas | us-south | dal10 |  10.171.20.215/29 | 10.171.20.209 |         
-| Dallas | us-south | dal10 |  10.171.31.135/29 | 10.171.31.129 |         
-| Dallas | us-south | dal10 |  10.171.31.151/29 | 10.171.31.145 |         
-| Dallas | us-south | dal10 |  10.171.33.23/29  | 10.171.33.17 |         
-| Dallas | us-south | dal10 |  10.171.49.63/29  | 10.171.49.57 |         
-| Dallas | us-south | dal10 |  10.171.51.151/29 | 10.171.51.145 |         
-| Dallas | us-south | dal10 |  10.171.53.47/29  | 10.171.53.41 |         
-| Dallas | us-south | dal10 |  10.171.62.47/29  | 10.171.62.41 |         
-| Dallas | us-south | dal10 |  10.171.68.23/29  | 10.171.68.17 |         
-| Dallas | us-south | dal10 |  10.171.70.207/29 | 10.171.70.201 |         
-| Dallas | us-south | dal10 |  10.171.70.255/29 | 10.171.70.249 |         
-| Dallas | us-south | dal10 |  10.171.82.255/29 | 10.171.82.249 |         
-| Dallas | us-south | dal10 | 10.171.108.255/29 | 10.171.108.249 |         
-| Dallas | us-south | dal10 | 10.171.112.103/29 | 10.171.112.97 |         
-| Dallas | us-south | dal10 | 10.171.115.191/29 | 10.171.115.185 |         
-| Dallas | us-south | dal10 |  10.171.131.39/29 | 10.171.131.33 |         
-| Dallas | us-south | dal10 |  10.171.131.47/29 | 10.171.131.41 |         
-| Dallas | us-south | dal10 |  10.171.164.23/29 | 10.171.164.17 |         
-| Dallas | us-south | dal10 |  10.171.166.79/29 | 10.171.166.73 |         
-| Dallas | us-south | dal10 | 10.171.168.159/29 | 10.171.168.153 |         
-| Dallas | us-south | dal10 |  10.171.172.7/29  | 10.171.172.1 |         
-| Dallas | us-south | dal10 | 10.171.176.119/29 | 10.171.176.113 |         
-| Dallas | us-south | dal10 |  10.171.178.31/29 | 10.171.178.25 |         
-| Dallas | us-south | dal10 |  10.171.205.15/29 | 10.171.205.9 |         
-| Dallas | us-south | dal10 | 10.171.207.183/29 | 10.171.207.177 |         
-| Dallas | us-south | dal10 | 10.171.223.199/29 | 10.171.223.193 |         
-| Dallas | us-south | dal10 |  10.171.233.47/29 | 10.171.233.41 |         
-| Dallas | us-south | dal10 | 10.171.234.175/29 | 10.171.234.169 |         
-| Dallas | us-south | dal10 | 10.171.238.239/29 | 10.171.238.233 |         
-| Dallas | us-south | dal10 | 10.171.241.215/29 | 10.171.241.209 |         
-| Dallas | us-south | dal10 |  10.171.253.39/29 | 10.171.253.33 |         
-| Dallas | us-south | dal10 |  10.176.13.71/29  | 10.176.13.65 |         
-| Dallas | us-south | dal10 |  10.176.18.23/29  | 10.176.18.17 |         
-| Dallas | us-south | dal10 |  10.176.18.31/29  | 10.176.18.25 |         
-| Dallas | us-south | dal10 |  10.176.18.47/29  | 10.176.18.41 |         
-| Dallas | us-south | dal10 |  10.176.25.15/29  | 10.176.25.9 |         
-| Dallas | us-south | dal10 |  10.176.31.71/29  | 10.176.31.65 |         
-| Dallas | us-south | dal10 |  10.176.33.111/29 | 10.176.33.105 |         
-| Dallas | us-south | dal10 |  10.176.35.159/29 | 10.176.35.153 |         
-| Dallas | us-south | dal10 |  10.176.39.87/29  | 10.176.39.81 |         
-| Dallas | us-south | dal10 |  10.176.61.39/29  | 10.176.61.33 |         
-| Dallas | us-south | dal10 |  10.176.69.191/29 | 10.176.69.185 |         
-| Dallas | us-south | dal10 | 10.176.120.207/29 | 10.176.120.201 |         
-| Dallas | us-south | dal10 |  10.176.136.55/29 | 10.176.136.49 |         
-| Dallas | us-south | dal10 |  10.176.158.87/29 | 10.176.158.81 |         
-| Dallas | us-south | dal10 | 10.176.202.175/29 | 10.176.202.169 |         
-| Dallas | us-south | dal10 | 10.176.205.239/29 | 10.176.205.233 |         
-| Dallas | us-south | dal10 |  10.176.212.79/29 | 10.176.212.73 |         
-| Dallas | us-south | dal10 | 10.176.222.223/29 | 10.176.222.217 |         
-| Dallas | us-south | dal10 | 10.176.227.167/29 | 10.176.227.161 |         
-| Dallas | us-south | dal10 |  10.176.248.55/29 | 10.176.248.49 |         
-| Dallas | us-south | dal10 |  10.177.46.199/29 | 10.177.46.193 |         
-| Dallas | us-south | dal10 |  10.177.65.15/29  | 10.177.65.9 |         
-| Dallas | us-south | dal10 |  10.177.143.63/29 | 10.177.143.57 |         
-| Dallas | us-south | dal10 | 10.177.144.191/29 | 10.177.144.185 |         
-| Dallas | us-south | dal10 | 10.177.146.239/29 | 10.177.146.233 |         
-| Dallas | us-south | dal10 | 10.177.165.119/29 | 10.177.165.113 |         
-| Dallas | us-south | dal10 | 10.177.165.143/29 | 10.177.165.137 |         
-| Dallas | us-south | dal10 |  10.177.194.15/29 | 10.177.194.9 |         
-| Dallas | us-south | dal10 |  10.177.200.23/29 | 10.177.200.17 |         
-| Dallas | us-south | dal10 |  10.177.204.71/29 | 10.177.204.65 |         
-| Dallas | us-south | dal10 |  10.177.212.79/29 | 10.177.212.73 |         
-| Dallas | us-south | dal10 | 10.177.212.199/29 | 10.177.212.193 |         
-| Dallas | us-south | dal10 | 10.177.255.207/29 | 10.177.255.201 |         
-| Dallas | us-south | dal10 | 10.177.255.231/29 | 10.177.255.225 |         
-| Dallas | us-south | dal12 |  10.48.97.255/24  | 10.48.97.1 |         
-| Dallas | us-south | dal12 |  10.48.107.255/24 | 10.48.107.1 |         
-| Dallas | us-south | dal12 |  10.48.129.255/24 | 10.48.129.1 |         
-| Dallas | us-south | dal12 |  10.74.184.191/26 | 10.74.184.129 |         
-| Dallas | us-south | dal12 |  10.74.213.127/25 | 10.74.213.1 |         
-| Dallas | us-south | dal12 |  10.74.239.255/24 | 10.74.239.1 |         
-| Dallas | us-south | dal12 | 10.184.148.255/25 | 10.184.148.129 |         
-| Dallas | us-south | dal12 | 10.184.210.255/24 | 10.184.210.1 |         
-| Dallas | us-south | dal12 |  10.185.6.255/26  | 10.185.6.193 |         
-| Dallas | us-south | dal12 | 10.185.146.255/24 | 10.185.146.1 |         
-| Dallas | us-south | dal12 | 10.185.241.255/24 | 10.185.241.1 |         
-| Dallas | us-south | dal12 |  10.241.47.255/24 | 10.241.47.1 |         
-| Dallas | us-south | dal12 | 10.241.186.255/24 | 10.241.186.1 |         
-| Dallas | us-south | dal12 | 10.241.187.255/24 | 10.241.187.1 |         
-| Dallas | us-south | dal12 | 10.241.222.255/24 | 10.241.222.1 |         
-| Dallas | us-south | dal12 |  10.48.47.167/29  | 10.48.47.161 |         
-| Dallas | us-south | dal12 |  10.48.63.167/29  | 10.48.63.161 |         
-| Dallas | us-south | dal12 |   10.48.71.71/29  | 10.48.71.65 |         
-| Dallas | us-south | dal12 |  10.74.42.255/29  | 10.74.42.249 |         
-| Dallas | us-south | dal12 |  10.74.44.191/29  | 10.74.44.185 |         
-| Dallas | us-south | dal12 |  10.74.53.159/29  | 10.74.53.153 |         
-| Dallas | us-south | dal12 |  10.74.57.255/29  | 10.74.57.249 |         
-| Dallas | us-south | dal12 |  10.74.64.191/29  | 10.74.64.185 |         
-| Dallas | us-south | dal12 |   10.74.86.39/29  | 10.74.86.33 |         
-| Dallas | us-south | dal12 |  10.74.87.231/29  | 10.74.87.225 |         
-| Dallas | us-south | dal12 |  10.74.87.239/29  | 10.74.87.233 |         
-| Dallas | us-south | dal12 |  10.74.87.247/29  | 10.74.87.241 |         
-| Dallas | us-south | dal12 |   10.74.94.31/29  | 10.74.94.25 |         
-| Dallas | us-south | dal12 |  10.74.103.47/29  | 10.74.103.41 |         
-| Dallas | us-south | dal12 |  10.74.104.167/29 | 10.74.104.161 |         
-| Dallas | us-south | dal12 |  10.74.123.15/29  | 10.74.123.9 |         
-| Dallas | us-south | dal12 |  10.74.135.15/29  | 10.74.135.9 |         
-| Dallas | us-south | dal12 |  10.74.153.135/29 | 10.74.153.129 |         
-| Dallas | us-south | dal12 |  10.74.168.151/29 | 10.74.168.145 |         
-| Dallas | us-south | dal12 |  10.74.171.255/29 | 10.74.171.249 |         
-| Dallas | us-south | dal12 |  10.74.178.207/29 | 10.74.178.201 |         
-| Dallas | us-south | dal12 |  10.74.181.71/29  | 10.74.181.65 |         
-| Dallas | us-south | dal12 |  10.74.181.87/29  | 10.74.181.81 |         
-| Dallas | us-south | dal12 |  10.74.189.87/29  | 10.74.189.81 |         
-| Dallas | us-south | dal12 |  10.74.196.247/29 | 10.74.196.241 |         
-| Dallas | us-south | dal12 |  10.74.203.151/29 | 10.74.203.145 |         
-| Dallas | us-south | dal12 |  10.74.204.247/29 | 10.74.204.241 |         
-| Dallas | us-south | dal12 |  10.74.205.31/29  | 10.74.205.25 |         
-| Dallas | us-south | dal12 |  10.74.224.215/29 | 10.74.224.209 |         
-| Dallas | us-south | dal12 |  10.74.226.111/29 | 10.74.226.105 |         
-| Dallas | us-south | dal12 |  10.74.230.223/29 | 10.74.230.217 |         
-| Dallas | us-south | dal12 |  10.74.234.255/29 | 10.74.234.249 |         
-| Dallas | us-south | dal12 |  10.74.237.215/29 | 10.74.237.209 |         
-| Dallas | us-south | dal12 |   10.184.5.71/29  | 10.184.5.65 |         
-| Dallas | us-south | dal12 |  10.184.12.183/29 | 10.184.12.177 |         
-| Dallas | us-south | dal12 |  10.184.16.191/29 | 10.184.16.185 |         
-| Dallas | us-south | dal12 |  10.184.41.63/29  | 10.184.41.57 |         
-| Dallas | us-south | dal12 |  10.184.121.39/29 | 10.184.121.33 |         
-| Dallas | us-south | dal12 | 10.184.129.199/29 | 10.184.129.193 |         
-| Dallas | us-south | dal12 | 10.184.168.199/29 | 10.184.168.193 |         
-| Dallas | us-south | dal12 |  10.184.180.15/29 | 10.184.180.9 |         
-| Dallas | us-south | dal12 | 10.184.250.175/29 | 10.184.250.169 |         
-| Dallas | us-south | dal12 |   10.185.5.63/29  | 10.185.5.57 |         
-| Dallas | us-south | dal12 |  10.185.11.175/29 | 10.185.11.169 |         
-| Dallas | us-south | dal12 |  10.185.35.103/29 | 10.185.35.97 |         
-| Dallas | us-south | dal12 |  10.185.44.55/29  | 10.185.44.49 |         
-| Dallas | us-south | dal12 |  10.185.89.215/29 | 10.185.89.209 |         
-| Dallas | us-south | dal12 |  10.185.89.231/29 | 10.185.89.225 |         
-| Dallas | us-south | dal12 | 10.185.177.239/29 | 10.185.177.233 |         
-| Dallas | us-south | dal12 |   10.241.69.7/29  | 10.241.69.1 |         
-| Dallas | us-south | dal12 |  10.241.111.79/29 | 10.241.111.73 |         
-| Dallas | us-south | dal13 |  10.36.35.255/24  | 10.36.35.1 |         
-| Dallas | us-south | dal13 |  10.36.46.255/24  | 10.36.46.1 |         
-| Dallas | us-south | dal13 |  10.36.143.255/24 | 10.36.143.1 |         
-| Dallas | us-south | dal13 |  10.36.157.255/24 | 10.36.157.1 |         
-| Dallas | us-south | dal13 | 10.186.201.255/24 | 10.186.201.1 |         
-| Dallas | us-south | dal13 |  10.187.55.63/26  | 10.187.55.1 |         
-| Dallas | us-south | dal13 |  10.208.7.255/24  | 10.208.7.1 |         
-| Dallas | us-south | dal13 |  10.208.16.127/25 | 10.208.16.1 |         
-| Dallas | us-south | dal13 | 10.208.206.255/24 | 10.208.206.1 |         
-| Dallas | us-south | dal13 | 10.209.179.255/26 | 10.209.179.193 |         
-| Dallas | us-south | dal13 |  10.220.14.255/25 | 10.220.14.129 |         
-| Dallas | us-south | dal13 |  10.220.18.255/24 | 10.220.18.1 |         
-| Dallas | us-south | dal13 |  10.220.91.255/24 | 10.220.91.1 |         
-| Dallas | us-south | dal13 | 10.220.117.255/24 | 10.220.117.1 |         
-| Dallas | us-south | dal13 | 10.220.119.255/24 | 10.220.119.1 |         
-| Dallas | us-south | dal13 | 10.220.152.255/24 | 10.220.152.1 |         
-| Dallas | us-south | dal13 |   10.36.53.7/29   | 10.36.53.1 |         
-| Dallas | us-south | dal13 |  10.36.94.119/29  | 10.36.94.113 |         
-| Dallas | us-south | dal13 |  10.36.126.95/29  | 10.36.126.89 |         
-| Dallas | us-south | dal13 |  10.36.127.23/29  | 10.36.127.17 |         
-| Dallas | us-south | dal13 |   10.73.22.15/29  | 10.73.22.9 |         
-| Dallas | us-south | dal13 |  10.73.84.143/29  | 10.73.84.137 |         
-| Dallas | us-south | dal13 |  10.73.84.255/29  | 10.73.84.249 |         
-| Dallas | us-south | dal13 |  10.73.104.159/29 | 10.73.104.153 |         
-| Dallas | us-south | dal13 |  10.73.136.167/29 | 10.73.136.161 |         
-| Dallas | us-south | dal13 |  10.73.136.183/29 | 10.73.136.177 |         
-| Dallas | us-south | dal13 |  10.73.136.191/29 | 10.73.136.185 |         
-| Dallas | us-south | dal13 |  10.73.209.23/29  | 10.73.209.17 |         
-| Dallas | us-south | dal13 |  10.73.209.39/29  | 10.73.209.33 |         
-| Dallas | us-south | dal13 |  10.73.209.55/29  | 10.73.209.49 |         
-| Dallas | us-south | dal13 |  10.186.70.135/29 | 10.186.70.129 |         
-| Dallas | us-south | dal13 | 10.186.108.207/29 | 10.186.108.201 |         
-| Dallas | us-south | dal13 | 10.186.109.135/29 | 10.186.109.129 |         
-| Dallas | us-south | dal13 |  10.186.124.55/29 | 10.186.124.49 |         
-| Dallas | us-south | dal13 | 10.186.237.119/29 | 10.186.237.113 |         
-| Dallas | us-south | dal13 | 10.186.244.143/29 | 10.186.244.137 |         
-| Dallas | us-south | dal13 |   10.187.3.55/29  | 10.187.3.49 |         
-| Dallas | us-south | dal13 |  10.187.46.95/29  | 10.187.46.89 |         
-| Dallas | us-south | dal13 |  10.187.61.103/29 | 10.187.61.97 |         
-| Dallas | us-south | dal13 |  10.187.63.63/29  | 10.187.63.57 |         
-| Dallas | us-south | dal13 |  10.187.64.55/29  | 10.187.64.49 |         
-| Dallas | us-south | dal13 |  10.187.64.63/29  | 10.187.64.57 |         
-| Dallas | us-south | dal13 |  10.187.75.247/29 | 10.187.75.241 |         
-| Dallas | us-south | dal13 |  10.187.78.63/29  | 10.187.78.57 |         
-| Dallas | us-south | dal13 |  10.187.92.175/29 | 10.187.92.169 |         
-| Dallas | us-south | dal13 |  10.187.134.79/29 | 10.187.134.73 |         
-| Dallas | us-south | dal13 |  10.187.134.95/29 | 10.187.134.89 |         
-| Dallas | us-south | dal13 | 10.187.145.119/29 | 10.187.145.113 |         
-| Dallas | us-south | dal13 | 10.187.158.199/29 | 10.187.158.193 |         
-| Dallas | us-south | dal13 | 10.187.158.239/29 | 10.187.158.233 |         
-| Dallas | us-south | dal13 |  10.208.40.175/29 | 10.208.40.169 |         
-| Dallas | us-south | dal13 | 10.208.142.199/29 | 10.208.142.193 |         
-| Dallas | us-south | dal13 |   10.209.0.47/29  | 10.209.0.41 |         
-| Dallas | us-south | dal13 |  10.209.9.199/29  | 10.209.9.193 |         
-| Dallas | us-south | dal13 |  10.209.17.39/29  | 10.209.17.33 |         
-| Dallas | us-south | dal13 |  10.209.45.247/29 | 10.209.45.241 |         
-| Dallas | us-south | dal13 |  10.209.53.167/29 | 10.209.53.161 |         
-| Dallas | us-south | dal13 |  10.209.76.95/29  | 10.209.76.89 |         
-| Dallas | us-south | dal13 |  10.209.86.151/29 | 10.209.86.145 |         
-| Dallas | us-south | dal13 |  10.209.104.79/29 | 10.209.104.73 |         
-| Dallas | us-south | dal13 |  10.209.200.23/29 | 10.209.200.17 |         
-| Dallas | us-south | dal13 | 10.209.222.199/29 | 10.209.222.193 |         
-| Dallas | us-south | dal13 | 10.209.222.247/29 | 10.209.222.241 |         
-| Dallas | us-south | dal13 | 10.209.233.215/29 | 10.209.233.209 |         
-| Dallas | us-south | dal13 | 10.209.236.207/29 | 10.209.236.201 |         
-| Dallas | us-south | dal13 | 10.209.239.199/29 | 10.209.239.193 |         
-| Dallas | us-south | dal13 | 10.209.239.207/29 | 10.209.239.201 |         
-| Dallas | us-south | dal13 |  10.220.5.151/29  | 10.220.5.145 |         
-| Dallas | us-south | dal13 |  10.220.30.23/29  | 10.220.30.17 |         
-| Dallas | us-south | dal13 |  10.220.30.31/29  | 10.220.30.25 |         
-| Dallas | us-south | dal13 | 10.220.162.167/29 | 10.220.162.161 |         
-| Dallas | us-south | dal13 | 10.220.202.239/29 | 10.220.202.233 |       
-{: caption="Table 22. us-south Private Subnets" caption-side="bottom"} 
-  
+| Dallas | us-south | dal10 |  10.5.5.255/24   | 10.5.5.1 |         
+| Dallas | us-south | dal10 | 10.5.124.255/24  | 10.5.124.1 |         
+| Dallas | us-south | dal10 | 10.5.204.255/24  | 10.5.204.1 |         
+| Dallas | us-south | dal10 | 10.23.68.255/24  | 10.23.68.1 |         
+| Dallas | us-south | dal10 | 10.38.177.255/24 | 10.38.177.1 |         
+| Dallas | us-south | dal10 | 10.95.108.191/26 | 10.95.108.129 |         
+| Dallas | us-south | dal10 | 10.95.123.255/24 | 10.95.123.1 |         
+| Dallas | us-south | dal10 | 10.95.170.255/25 | 10.95.170.129 |         
+| Dallas | us-south | dal10 | 10.95.225.255/24 | 10.95.225.1 |         
+| Dallas | us-south | dal10 | 10.171.25.255/24 | 10.171.25.1 |         
+| Dallas | us-south | dal10 | 0.171.209.191/26 | 0.171.209.129 |         
+| Dallas | us-south | dal10 | 0.177.109.127/25 | 0.177.109.1 |         
+| Dallas | us-south | dal10 | 0.177.238.255/24 | 0.177.238.1 |         
+| Dallas | us-south | dal10 | 0.177.253.255/26 | 0.177.253.193 |         
+| Dallas | us-south | dal10 | 10.221.69.255/24 | 10.221.69.1 |         
+| Dallas | us-south | dal10 | 10.93.16.247/29  | 10.93.16.241 |         
+| Dallas | us-south | dal10 |  10.93.21.79/29  | 10.93.21.73 |         
+| Dallas | us-south | dal10 | 10.93.27.127/29  | 10.93.27.121 |         
+| Dallas | us-south | dal10 | 10.93.28.127/29  | 10.93.28.121 |         
+| Dallas | us-south | dal10 |  10.93.51.55/29  | 10.93.51.49 |         
+| Dallas | us-south | dal10 |  10.93.71.15/29  | 10.93.71.9 |         
+| Dallas | us-south | dal10 | 10.93.107.231/29 | 10.93.107.225 |         
+| Dallas | us-south | dal10 | 10.93.116.23/29  | 10.93.116.17 |         
+| Dallas | us-south | dal10 | 10.93.184.63/29  | 10.93.184.57 |         
+| Dallas | us-south | dal10 | 10.93.203.63/29  | 10.93.203.57 |         
+| Dallas | us-south | dal10 | 10.93.250.215/29 | 10.93.250.209 |         
+| Dallas | us-south | dal10 |  10.171.1.55/29  | 10.171.1.49 |         
+| Dallas | us-south | dal10 |  10.171.9.95/29  | 10.171.9.89 |         
+| Dallas | us-south | dal10 | 10.171.13.119/29 | 10.171.13.113 |         
+| Dallas | us-south | dal10 | 10.171.13.223/29 | 10.171.13.217 |         
+| Dallas | us-south | dal10 | 10.171.20.215/29 | 10.171.20.209 |         
+| Dallas | us-south | dal10 | 10.171.31.135/29 | 10.171.31.129 |         
+| Dallas | us-south | dal10 | 10.171.31.151/29 | 10.171.31.145 |         
+| Dallas | us-south | dal10 | 10.171.33.23/29  | 10.171.33.17 |         
+| Dallas | us-south | dal10 | 10.171.49.63/29  | 10.171.49.57 |         
+| Dallas | us-south | dal10 | 10.171.51.151/29 | 10.171.51.145 |         
+| Dallas | us-south | dal10 | 10.171.53.47/29  | 10.171.53.41 |         
+| Dallas | us-south | dal10 | 10.171.62.47/29  | 10.171.62.41 |         
+| Dallas | us-south | dal10 | 10.171.68.23/29  | 10.171.68.17 |         
+| Dallas | us-south | dal10 | 10.171.70.207/29 | 10.171.70.201 |         
+| Dallas | us-south | dal10 | 10.171.70.255/29 | 10.171.70.249 |         
+| Dallas | us-south | dal10 | 10.171.82.255/29 | 10.171.82.249 |         
+| Dallas | us-south | dal10 | 0.171.108.255/29 | 0.171.108.249 |         
+| Dallas | us-south | dal10 | 0.171.112.103/29 | 0.171.112.97 |         
+| Dallas | us-south | dal10 | 0.171.115.191/29 | 0.171.115.185 |         
+| Dallas | us-south | dal10 | 10.171.131.39/29 | 10.171.131.33 |         
+| Dallas | us-south | dal10 | 10.171.131.47/29 | 10.171.131.41 |         
+| Dallas | us-south | dal10 | 10.171.164.23/29 | 10.171.164.17 |         
+| Dallas | us-south | dal10 | 10.171.166.79/29 | 10.171.166.73 |         
+| Dallas | us-south | dal10 | 0.171.168.159/29 | 0.171.168.153 |         
+| Dallas | us-south | dal10 | 10.171.172.7/29  | 10.171.172.1 |         
+| Dallas | us-south | dal10 | 0.171.176.119/29 | 0.171.176.113 |         
+| Dallas | us-south | dal10 | 10.171.178.31/29 | 10.171.178.25 |         
+| Dallas | us-south | dal10 | 10.171.205.15/29 | 10.171.205.9 |         
+| Dallas | us-south | dal10 | 0.171.207.183/29 | 0.171.207.177 |         
+| Dallas | us-south | dal10 | 0.171.223.199/29 | 0.171.223.193 |         
+| Dallas | us-south | dal10 | 10.171.233.47/29 | 10.171.233.41 |         
+| Dallas | us-south | dal10 | 0.171.234.175/29 | 0.171.234.169 |         
+| Dallas | us-south | dal10 | 0.171.238.239/29 | 0.171.238.233 |         
+| Dallas | us-south | dal10 | 0.171.241.215/29 | 0.171.241.209 |         
+| Dallas | us-south | dal10 | 10.171.253.39/29 | 10.171.253.33 |         
+| Dallas | us-south | dal10 | 10.176.13.71/29  | 10.176.13.65 |         
+| Dallas | us-south | dal10 | 10.176.18.23/29  | 10.176.18.17 |         
+| Dallas | us-south | dal10 | 10.176.18.31/29  | 10.176.18.25 |         
+| Dallas | us-south | dal10 | 10.176.18.47/29  | 10.176.18.41 |         
+| Dallas | us-south | dal10 | 10.176.25.15/29  | 10.176.25.9 |         
+| Dallas | us-south | dal10 | 10.176.31.71/29  | 10.176.31.65 |         
+| Dallas | us-south | dal10 | 10.176.33.111/29 | 10.176.33.105 |         
+| Dallas | us-south | dal10 | 10.176.35.159/29 | 10.176.35.153 |         
+| Dallas | us-south | dal10 | 10.176.39.87/29  | 10.176.39.81 |         
+| Dallas | us-south | dal10 | 10.176.61.39/29  | 10.176.61.33 |         
+| Dallas | us-south | dal10 | 10.176.69.191/29 | 10.176.69.185 |         
+| Dallas | us-south | dal10 | 0.176.120.207/29 | 0.176.120.201 |         
+| Dallas | us-south | dal10 | 10.176.136.55/29 | 10.176.136.49 |         
+| Dallas | us-south | dal10 | 10.176.158.87/29 | 10.176.158.81 |         
+| Dallas | us-south | dal10 | 0.176.202.175/29 | 0.176.202.169 |         
+| Dallas | us-south | dal10 | 0.176.205.239/29 | 0.176.205.233 |         
+| Dallas | us-south | dal10 | 10.176.212.79/29 | 10.176.212.73 |         
+| Dallas | us-south | dal10 | 0.176.222.223/29 | 0.176.222.217 |         
+| Dallas | us-south | dal10 | 0.176.227.167/29 | 0.176.227.161 |         
+| Dallas | us-south | dal10 | 10.176.248.55/29 | 10.176.248.49 |         
+| Dallas | us-south | dal10 | 10.177.46.199/29 | 10.177.46.193 |         
+| Dallas | us-south | dal10 | 10.177.65.15/29  | 10.177.65.9 |         
+| Dallas | us-south | dal10 | 10.177.143.63/29 | 10.177.143.57 |         
+| Dallas | us-south | dal10 | 0.177.144.191/29 | 0.177.144.185 |         
+| Dallas | us-south | dal10 | 0.177.146.239/29 | 0.177.146.233 |         
+| Dallas | us-south | dal10 | 0.177.165.119/29 | 0.177.165.113 |         
+| Dallas | us-south | dal10 | 0.177.165.143/29 | 0.177.165.137 |         
+| Dallas | us-south | dal10 | 10.177.194.15/29 | 10.177.194.9 |         
+| Dallas | us-south | dal10 | 10.177.200.23/29 | 10.177.200.17 |         
+| Dallas | us-south | dal10 | 10.177.204.71/29 | 10.177.204.65 |         
+| Dallas | us-south | dal10 | 10.177.212.79/29 | 10.177.212.73 |         
+| Dallas | us-south | dal10 | 0.177.212.199/29 | 0.177.212.193 |         
+| Dallas | us-south | dal10 | 0.177.255.207/29 | 0.177.255.201 |         
+| Dallas | us-south | dal10 | 0.177.255.231/29 | 0.177.255.225 |         
+| Dallas | us-south | dal12 | 10.48.97.255/24  | 10.48.97.1 |         
+| Dallas | us-south | dal12 | 10.48.107.255/24 | 10.48.107.1 |         
+| Dallas | us-south | dal12 | 10.48.129.255/24 | 10.48.129.1 |         
+| Dallas | us-south | dal12 | 10.74.184.191/26 | 10.74.184.129 |         
+| Dallas | us-south | dal12 | 10.74.213.127/25 | 10.74.213.1 |         
+| Dallas | us-south | dal12 | 10.74.239.255/24 | 10.74.239.1 |         
+| Dallas | us-south | dal12 | 0.184.148.255/25 | 0.184.148.129 |         
+| Dallas | us-south | dal12 | 0.184.210.255/24 | 0.184.210.1 |         
+| Dallas | us-south | dal12 | 10.185.6.255/26  | 10.185.6.193 |         
+| Dallas | us-south | dal12 | 0.185.146.255/24 | 0.185.146.1 |         
+| Dallas | us-south | dal12 | 0.185.241.255/24 | 0.185.241.1 |         
+| Dallas | us-south | dal12 | 10.241.47.255/24 | 10.241.47.1 |         
+| Dallas | us-south | dal12 | 0.241.186.255/24 | 0.241.186.1 |         
+| Dallas | us-south | dal12 | 0.241.187.255/24 | 0.241.187.1 |         
+| Dallas | us-south | dal12 | 0.241.222.255/24 | 0.241.222.1 |         
+| Dallas | us-south | dal12 | 10.48.47.167/29  | 10.48.47.161 |         
+| Dallas | us-south | dal12 | 10.48.63.167/29  | 10.48.63.161 |         
+| Dallas | us-south | dal12 |  10.48.71.71/29  | 10.48.71.65 |         
+| Dallas | us-south | dal12 | 10.74.42.255/29  | 10.74.42.249 |         
+| Dallas | us-south | dal12 | 10.74.44.191/29  | 10.74.44.185 |         
+| Dallas | us-south | dal12 | 10.74.53.159/29  | 10.74.53.153 |         
+| Dallas | us-south | dal12 | 10.74.57.255/29  | 10.74.57.249 |         
+| Dallas | us-south | dal12 | 10.74.64.191/29  | 10.74.64.185 |         
+| Dallas | us-south | dal12 |  10.74.86.39/29  | 10.74.86.33 |         
+| Dallas | us-south | dal12 | 10.74.87.231/29  | 10.74.87.225 |         
+| Dallas | us-south | dal12 | 10.74.87.239/29  | 10.74.87.233 |         
+| Dallas | us-south | dal12 | 10.74.87.247/29  | 10.74.87.241 |         
+| Dallas | us-south | dal12 |  10.74.94.31/29  | 10.74.94.25 |         
+| Dallas | us-south | dal12 | 10.74.103.47/29  | 10.74.103.41 |         
+| Dallas | us-south | dal12 | 10.74.104.167/29 | 10.74.104.161 |         
+| Dallas | us-south | dal12 | 10.74.123.15/29  | 10.74.123.9 |         
+| Dallas | us-south | dal12 | 10.74.135.15/29  | 10.74.135.9 |         
+| Dallas | us-south | dal12 | 10.74.153.135/29 | 10.74.153.129 |         
+| Dallas | us-south | dal12 | 10.74.168.151/29 | 10.74.168.145 |         
+| Dallas | us-south | dal12 | 10.74.171.255/29 | 10.74.171.249 |         
+| Dallas | us-south | dal12 | 10.74.178.207/29 | 10.74.178.201 |         
+| Dallas | us-south | dal12 | 10.74.181.71/29  | 10.74.181.65 |         
+| Dallas | us-south | dal12 | 10.74.181.87/29  | 10.74.181.81 |         
+| Dallas | us-south | dal12 | 10.74.189.87/29  | 10.74.189.81 |         
+| Dallas | us-south | dal12 | 10.74.196.247/29 | 10.74.196.241 |         
+| Dallas | us-south | dal12 | 10.74.203.151/29 | 10.74.203.145 |         
+| Dallas | us-south | dal12 | 10.74.204.247/29 | 10.74.204.241 |         
+| Dallas | us-south | dal12 | 10.74.205.31/29  | 10.74.205.25 |         
+| Dallas | us-south | dal12 | 10.74.224.215/29 | 10.74.224.209 |         
+| Dallas | us-south | dal12 | 10.74.226.111/29 | 10.74.226.105 |         
+| Dallas | us-south | dal12 | 10.74.230.223/29 | 10.74.230.217 |         
+| Dallas | us-south | dal12 | 10.74.234.255/29 | 10.74.234.249 |         
+| Dallas | us-south | dal12 | 10.74.237.215/29 | 10.74.237.209 |         
+| Dallas | us-south | dal12 |  10.184.5.71/29  | 10.184.5.65 |         
+| Dallas | us-south | dal12 | 10.184.12.183/29 | 10.184.12.177 |         
+| Dallas | us-south | dal12 | 10.184.16.191/29 | 10.184.16.185 |         
+| Dallas | us-south | dal12 | 10.184.41.63/29  | 10.184.41.57 |         
+| Dallas | us-south | dal12 | 10.184.121.39/29 | 10.184.121.33 |         
+| Dallas | us-south | dal12 | 0.184.129.199/29 | 0.184.129.193 |         
+| Dallas | us-south | dal12 | 0.184.168.199/29 | 0.184.168.193 |         
+| Dallas | us-south | dal12 | 10.184.180.15/29 | 10.184.180.9 |         
+| Dallas | us-south | dal12 | 0.184.250.175/29 | 0.184.250.169 |         
+| Dallas | us-south | dal12 |  10.185.5.63/29  | 10.185.5.57 |         
+| Dallas | us-south | dal12 | 10.185.11.175/29 | 10.185.11.169 |         
+| Dallas | us-south | dal12 | 10.185.35.103/29 | 10.185.35.97 |         
+| Dallas | us-south | dal12 | 10.185.44.55/29  | 10.185.44.49 |         
+| Dallas | us-south | dal12 | 10.185.89.215/29 | 10.185.89.209 |         
+| Dallas | us-south | dal12 | 10.185.89.231/29 | 10.185.89.225 |         
+| Dallas | us-south | dal12 | 0.185.177.239/29 | 0.185.177.233 |         
+| Dallas | us-south | dal12 |  10.241.69.7/29  | 10.241.69.1 |         
+| Dallas | us-south | dal12 | 10.241.111.79/29 | 10.241.111.73 |         
+| Dallas | us-south | dal13 | 10.36.35.255/24  | 10.36.35.1 |         
+| Dallas | us-south | dal13 | 10.36.46.255/24  | 10.36.46.1 |         
+| Dallas | us-south | dal13 | 10.36.143.255/24 | 10.36.143.1 |         
+| Dallas | us-south | dal13 | 10.36.157.255/24 | 10.36.157.1 |         
+| Dallas | us-south | dal13 | 0.186.201.255/24 | 0.186.201.1 |         
+| Dallas | us-south | dal13 | 10.187.55.63/26  | 10.187.55.1 |         
+| Dallas | us-south | dal13 | 10.208.7.255/24  | 10.208.7.1 |         
+| Dallas | us-south | dal13 | 10.208.16.127/25 | 10.208.16.1 |         
+| Dallas | us-south | dal13 | 0.208.206.255/24 | 0.208.206.1 |         
+| Dallas | us-south | dal13 | 0.209.179.255/26 | 0.209.179.193 |         
+| Dallas | us-south | dal13 | 10.220.14.255/25 | 10.220.14.129 |         
+| Dallas | us-south | dal13 | 10.220.18.255/24 | 10.220.18.1 |         
+| Dallas | us-south | dal13 | 10.220.91.255/24 | 10.220.91.1 |         
+| Dallas | us-south | dal13 | 0.220.117.255/24 | 0.220.117.1 |         
+| Dallas | us-south | dal13 | 0.220.119.255/24 | 0.220.119.1 |         
+| Dallas | us-south | dal13 | 0.220.152.255/24 | 0.220.152.1 |         
+| Dallas | us-south | dal13 |  10.36.53.7/29   | 10.36.53.1 |         
+| Dallas | us-south | dal13 | 10.36.94.119/29  | 10.36.94.113 |         
+| Dallas | us-south | dal13 | 10.36.126.95/29  | 10.36.126.89 |         
+| Dallas | us-south | dal13 | 10.36.127.23/29  | 10.36.127.17 |         
+| Dallas | us-south | dal13 |  10.73.22.15/29  | 10.73.22.9 |         
+| Dallas | us-south | dal13 | 10.73.84.143/29  | 10.73.84.137 |         
+| Dallas | us-south | dal13 | 10.73.84.255/29  | 10.73.84.249 |         
+| Dallas | us-south | dal13 | 10.73.104.159/29 | 10.73.104.153 |         
+| Dallas | us-south | dal13 | 10.73.136.167/29 | 10.73.136.161 |         
+| Dallas | us-south | dal13 | 10.73.136.183/29 | 10.73.136.177 |         
+| Dallas | us-south | dal13 | 10.73.136.191/29 | 10.73.136.185 |         
+| Dallas | us-south | dal13 | 10.73.209.23/29  | 10.73.209.17 |         
+| Dallas | us-south | dal13 | 10.73.209.39/29  | 10.73.209.33 |         
+| Dallas | us-south | dal13 | 10.73.209.55/29  | 10.73.209.49 |         
+| Dallas | us-south | dal13 | 10.186.70.135/29 | 10.186.70.129 |         
+| Dallas | us-south | dal13 | 0.186.108.207/29 | 0.186.108.201 |         
+| Dallas | us-south | dal13 | 0.186.109.135/29 | 0.186.109.129 |         
+| Dallas | us-south | dal13 | 10.186.124.55/29 | 10.186.124.49 |         
+| Dallas | us-south | dal13 | 0.186.237.119/29 | 0.186.237.113 |         
+| Dallas | us-south | dal13 | 0.186.244.143/29 | 0.186.244.137 |         
+| Dallas | us-south | dal13 |  10.187.3.55/29  | 10.187.3.49 |         
+| Dallas | us-south | dal13 | 10.187.46.95/29  | 10.187.46.89 |         
+| Dallas | us-south | dal13 | 10.187.61.103/29 | 10.187.61.97 |         
+| Dallas | us-south | dal13 | 10.187.63.63/29  | 10.187.63.57 |         
+| Dallas | us-south | dal13 | 10.187.64.55/29  | 10.187.64.49 |         
+| Dallas | us-south | dal13 | 10.187.64.63/29  | 10.187.64.57 |         
+| Dallas | us-south | dal13 | 10.187.75.247/29 | 10.187.75.241 |         
+| Dallas | us-south | dal13 | 10.187.78.63/29  | 10.187.78.57 |         
+| Dallas | us-south | dal13 | 10.187.92.175/29 | 10.187.92.169 |         
+| Dallas | us-south | dal13 | 10.187.134.79/29 | 10.187.134.73 |         
+| Dallas | us-south | dal13 | 10.187.134.95/29 | 10.187.134.89 |         
+| Dallas | us-south | dal13 | 0.187.145.119/29 | 0.187.145.113 |         
+| Dallas | us-south | dal13 | 0.187.158.199/29 | 0.187.158.193 |         
+| Dallas | us-south | dal13 | 0.187.158.239/29 | 0.187.158.233 |         
+| Dallas | us-south | dal13 | 10.208.40.175/29 | 10.208.40.169 |         
+| Dallas | us-south | dal13 | 0.208.142.199/29 | 0.208.142.193 |         
+| Dallas | us-south | dal13 |  10.209.0.47/29  | 10.209.0.41 |         
+| Dallas | us-south | dal13 | 10.209.9.199/29  | 10.209.9.193 |         
+| Dallas | us-south | dal13 | 10.209.17.39/29  | 10.209.17.33 |         
+| Dallas | us-south | dal13 | 10.209.45.247/29 | 10.209.45.241 |         
+| Dallas | us-south | dal13 | 10.209.53.167/29 | 10.209.53.161 |         
+| Dallas | us-south | dal13 | 10.209.76.95/29  | 10.209.76.89 |         
+| Dallas | us-south | dal13 | 10.209.86.151/29 | 10.209.86.145 |         
+| Dallas | us-south | dal13 | 10.209.104.79/29 | 10.209.104.73 |         
+| Dallas | us-south | dal13 | 10.209.200.23/29 | 10.209.200.17 |         
+| Dallas | us-south | dal13 | 0.209.222.199/29 | 0.209.222.193 |         
+| Dallas | us-south | dal13 | 0.209.222.247/29 | 0.209.222.241 |         
+| Dallas | us-south | dal13 | 0.209.233.215/29 | 0.209.233.209 |         
+| Dallas | us-south | dal13 | 0.209.236.207/29 | 0.209.236.201 |         
+| Dallas | us-south | dal13 | 0.209.239.199/29 | 0.209.239.193 |         
+| Dallas | us-south | dal13 | 0.209.239.207/29 | 0.209.239.201 |         
+| Dallas | us-south | dal13 | 10.220.5.151/29  | 10.220.5.145 |         
+| Dallas | us-south | dal13 | 10.220.30.23/29  | 10.220.30.17 |         
+| Dallas | us-south | dal13 | 10.220.30.31/29  | 10.220.30.25 |         
+| Dallas | us-south | dal13 | 0.220.162.167/29 | 0.220.162.161 |         
+| Dallas | us-south | dal13 | 0.220.202.239/29 | 0.220.202.233 |
