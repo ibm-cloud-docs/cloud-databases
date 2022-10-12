@@ -1245,3 +1245,4 @@ If you use allowlists to control connections in your environment, you can use th
 | Dallas | us-south | dal13 | 10.220.30.31/29  | 10.220.30.25 |         
 | Dallas | us-south | dal13 | 0.220.162.167/29 | 0.220.162.161 |         
 | Dallas | us-south | dal13 | 0.220.202.239/29 | 0.220.202.233 |
+{: caption="Table 22. us-south Private Subnets" caption-side="bottom"}  
