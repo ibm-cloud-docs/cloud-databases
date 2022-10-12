@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-09-03"
+lastupdated: "2022-10-11"
 
 subcollection: cloud-databases
 
@@ -21,6 +21,8 @@ keywords: allowlist, ip addresses, blocklist, whitelist, cloud databases allowli
 # Allowlisting
 {: #allowlisting} 
 
+{{site.data.keyword.databases-for}} now supports Context-based restrictions (CBR), which give account owners and administrators the ability to define and enforce access restrictions for {{site.data.keyword.cloud}} resources based on the context of access requests. Access to {{site.data.keyword.databases-for}} resources can be controlled with CBR and identity and access management (IAM) policies. CBRs check that an access request comes from an allowed context that you configure. Since both IAM access and CBR enforce access, CBR offers protection even in the face of compromised or mismanaged credentials. For more information, see [Protecting Cloud Databases resources with context-based restrictions](/docs/cloud-databases?topic=cloud-databases-cbr).{: .tip}
+
 To restrict access to your databases, you can allowlist specific IP addresses or ranges of IP addresses on your deployment.
 
 If you use allowlists in your environment, you can allowlist our services by using the list of subnets for each region.
@@ -28,16 +30,16 @@ If you use allowlists in your environment, you can allowlist our services by usi
 While IBM values the use of inclusive language, terms that are outside of IBM's direct influence are sometimes required for the sake of maintaining user understanding. As other industry leaders join IBM in embracing the use of inclusive language, IBM continues to update terminology to reflect those changes. We updated documentation to reflect changes in terminology from `whitelist` to `allowlist`. You might encounter continued references to this former terminology while we work to implement these deeper changes to code, API, and CLI commands. 
 {: .note}
 
-Each deployment is limited to 100 allowlist entries. 
-{: .important}
-
 ## Using IP allowlists on your Deployment
 {: #ip-allowlist} 
 
 When you create an allowlist, only IP addresses that match the allowlist or are in the range of IP addresses in the allowlist can connect to your deployment. Allowlists can be enabled for both public endpoints and private endpoints. When no IP addresses are in the allowlist, the allowlist is disabled and the deployment accepts connections from any IP address.
 
+Each deployment is limited to 100 allowlist entries. 
+{: .important}
+
 Even if not explicitly allowlisted, {{site.data.keyword.cloud_notm}} management services are still able to connect.
-{: .tip}
+{: .note}
 
 ### Setting an allowlist
 {: #set-allowlist} 
