@@ -71,23 +71,23 @@ Before beginning this tutorial, make sure you have created or installed the foll
 1. After you create your network zone (allowlist), create a CBR rule and add the network zone you created in the previous step. The following example creates a rule that uses the `cluster` API type. Replace `NETWORK-ZONE-ID` with the ID of the `allow-client-ip` network zone that you created in step 1.
 
     ```sh
-    ibmcloud cbr rule-create --api-types crn:v1:bluemix:public:containers-kubernetes::::api-type:cluster --description "privateAccess=allowAll, publicAccess=oneIP" --service-name containers-kubernetes --service-instance CLUSTER-ID --context-attributes endpointType=private --context-attributes endpointType=public,networkZoneId=NETWORK-ZONE-ID
+    ibmcloud cbr rule-create --enforcement-mode enabled --context-attributes "networkZoneId=<ZONE-ID>" --resource-group-id "<RESOURCE_GROUP_ID>" --service-name "<SERVICE-NAME>" --service-instance "<SERVICE-INSTANCE>" --api-types crn:v1:bluemix:public:context-based-restrictions::::api-type:data-plane --description "<DESCRIPTION>"
     ```
     {: pre}
     
     Understanding the command options.
     
-    `--api-types crn:v1:bluemix:public:containers-kubernetes::::api-type:cluster`
-    :   Set the `crn:v1:bluemix:public:containers-kubernetes::::api-type:cluster` API to allow only resources in the network zone you created earlier to access only the `cluster` APIs, which include the APIs for various `kubectl` commands.
+    `--zone-id (string)`
+    :   Shorthand for adding context attribute `networkZoneId` to the first context.
     
-    `--service-instance CLUSTER-ID`
-    :   Scope the rule to a single cluster so that only resources in the network zone you created earlier can access only the `CLUSTER-ID`.
+    `--resource-group-id (string)`
+    :   Shorthand for creating {{site.data.keyword.cloud_notm}} resource attribute `resourceGroupId`.
+
+    `--service-name (string)`
+    :   Shorthand for creating {{site.data.keyword.cloud_notm}} resource attribute `serviceName`.
     
-    `--context-attributes endpointType=private`
-    :   Set the context attribute `endpointType=private` without associating a network zone allows all private traffic to the cluster.
-    
-    `--context-attributes endpointType=public,networkZoneId=all-client-ip`
-    :   Set the context attribute `endpointType=public` and associate the `networkZoneId=allow-client-ip` that you created earlier to allow only the resources in the `allow-client-ip` zone to access the cluster over the public network.
+    `--service-instance SERVICE_INSTANCE_GUID (string)`
+    :   GUID of the service instance. This option is exclusive with the `--file` option.
     
     
 1. Verify the rule was created.
