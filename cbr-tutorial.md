@@ -48,11 +48,11 @@ Before beginning this tutorial, make sure you have created or installed the foll
 {: #cbr-tutorial-create-zone}
 {: step}
 
-[Provion your service from the {{site.data.keyword.cloud_notm}} Catalog](https://cloud.ibm.com/catalog/services/databases-for-mysql). 
+[Provision your service from the {{site.data.keyword.cloud_notm}} Catalog](https://cloud.ibm.com/catalog/services/databases-for-mysql) and choose your IP address(es) from the [{{site.data.keyword.databases-for}} Allowlist page](/docs/databases-for-mysql?topic=cloud-databases-allowlisting). 
 1. Run the following example command to create a network that includes only one client IP that you want to use.
 
     ```sh
-    ibmcloud cbr zone-create --addresses 129.XX.XX.XX --description "Allow only client IP" --name allow-client-ip
+    ibmcloud cbr zone-create --addresses=169.63.121.159/27 --name=tutorial_zone
     ```
     {: pre}
     
