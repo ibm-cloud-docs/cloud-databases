@@ -29,10 +29,9 @@ With context-based restrictions, account owners and administrators can define an
 ## Understanding the scenario
 {: #cbr-tutorial-scenario}
 
-In this example scenario, you use context-based restrictions to restrict traffic to your cluster by allowing only an individual IP address to connect to the `cluster` APIs over the public network while still allowing all private traffic.
+In this example scenario, you use context-based restrictions to restrict traffic to your {{site.data.keyword.databases-for-mysql_full}} cluster by allowing only an individual IP address from the [{{site.data.keyword.databases-for}} Allowlist page](/docs/databases-for-mysql?topic=cloud-databases-allowlisting) to connect to your deployment.
 
-In the following steps, you start by creating a network zone, or allowlist, that includes a single IP address. Then, you create a context-based restrictions rule for your cluster that allows all private network access and allowlists the network zone that contains the individual IP address. When you create the rule, you associate it with the network zone that contains the individual IP address.
-
+In the following steps, you start by creating a network zone, or allowlist, that includes a single IP address. Then, you create a context-based restrictions rule for your deployment. When you create the rule, you associate it with the network zone that contains the individual IP address.
 
 ## Prerequisites
 {: #cbr-tutorial-prereqs}
@@ -49,7 +48,7 @@ Before beginning this tutorial, make sure you have created or installed the foll
 {: #cbr-tutorial-create-zone}
 {: step}
 
-[Log in to your account. Target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+[Provion your service from the {{site.data.keyword.cloud_notm}} Catalog](https://cloud.ibm.com/catalog/services/databases-for-mysql). 
 1. Run the following example command to create a network that includes only one client IP that you want to use.
 
     ```sh
@@ -61,7 +60,7 @@ Before beginning this tutorial, make sure you have created or installed the foll
     ```sh
     ibmcloud cbr zones
     ```
-    { :pre}
+    {: pre}
 
 
 
