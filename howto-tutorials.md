@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2022
-lastupdated: "2022-06-13"
+lastupdated: "2022-10-14"
 
 keywords: kubernetes, tutorial, setup, terraform, IBM Cloud Databases, ICD
 
@@ -35,7 +35,7 @@ Before you begin, it's a good idea to install some necessary productivity tools:
 - [jq](https://stedolan.github.io/jq/) - a lightweight and flexible command-line JSON processor
 - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) - an open source-distributed version control system
 
-To avoid the installation of these tools, you can also use the [{{site.data.keyword.cloud-sh_short}}](https://cloud.ibm.com/sh) from the {{site.data.keyword.cloud_notm}} console. {: tip}
+To avoid the installation of these tools, you can also use the [{{site.data.keyword.cloud_notm}}](https://www.ibm.com/cloud/cloud-shell) from the {{site.data.keyword.cloud_notm}} console. {: tip}
 
 ## IBM Solutions Tutorials
 {: #tutorial-solutions}
