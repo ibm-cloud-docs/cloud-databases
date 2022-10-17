@@ -123,6 +123,6 @@ docker run -p 8080:8080 database-hello-world:1.0
 ```
 {: pre}
 
-Visit http://localhost:8080 to see the same page from the previous step.
+Open a browser and visit http://localhost:8080 to see the same welcomepage from the previous step.
 
 Congratulations, you've created an app with a front end that feeds data into your {{site.data.keyword.databases-for}} deployment!
