@@ -19,13 +19,13 @@ subcollection: cloud-databases
 {:note: .note}
 {:important: .important}
 
-# Creating a {{site.data.keyword.databases-for}} instance Tutorial
+# Deploying and Connecting {{site.data.keyword.databases-for}} Instance 
 {: #create-instance-tutorial}
 
 ## Objectives
 {: #create-instance-tutorial-objectives}
 
-This tutorial guides you through the process of deploying a {{site.data.keyword.databases-for}} instance and connecting it to a web front-end by creating a webpage that allows visitors to input a word and its definition. These values are then stored in a database running on {{site.data.keyword.databases-for}}. You will install the database infrastructure using [Terraform](https://www.terraform.io/){: external} and your web application uses the popular [Express](https://www.terraform.io/){: external} framework. The application can then be run locally, or by using [Docker](https://www.docker.com/){: external}.
+This tutorial guides you through the process of deploying a {{site.data.keyword.databases-for}} instance and connecting it to a web front end by creating a webpage that allows visitors to input a word and its definition. These values are then stored in a database running on {{site.data.keyword.databases-for}}. You install the database infrastructure by using [Terraform](https://www.terraform.io/){: external} and your web application uses the popular [Express](https://www.terraform.io/){: external} framework. The application can then be run locally, or by using [Docker](https://www.docker.com/){: external}.
 
 ## Getting productive 
 {: #create-instance-tutorial-getting-started}
@@ -35,7 +35,7 @@ To begin the deployment process, install some must-have productivity tools:
 * You need to have an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/registration).
 * [Node.js and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm){: external} - to install packages to and from public npm registries
 * [Terraform](https://www.terraform.io/){: external} - to codify and deploy infrastructure
-* *Optional* [Docker](https://www.docker.com/){: external} - to run your application non-locally
+* *Optional* [Docker](https://www.docker.com/){: external} - to run your application nonlocally
 
 ## Step 1: Obtain an API key to deploy infrastructure to your account
 {: #create-instance-tutorial-step-1}
@@ -57,7 +57,7 @@ git clone https://github.com/IBM-Cloud/clouddatabases-helloworld-examples.git
 ## Step 3: Install the infrastructure
 {: #create-instance-tutorial-step-2}
 
-1. Open the [appropriate service folder](https://github.com/IBM-Cloud/clouddatabases-helloworld-examples){: external} folder in the GitHub tutorial repository.
+1. Open the [appropriate service folder](https://github.com/IBM-Cloud/clouddatabases-helloworld-examples){: .external} folder in the GitHub tutorial repository.
 
 1. Create a document named `terraform.tfvars` with the following fields:
 
@@ -68,7 +68,7 @@ git clone https://github.com/IBM-Cloud/clouddatabases-helloworld-examples.git
    ```
    {: pre}
    
-   The `terraform.tfvars` document contains variables that you may want to keep secret so it is ignored by the GitHub repository.{: .note}
+   The `terraform.tfvars` document contains variables that you might want to keep secret so it is ignored by the GitHub repository.{: .note}
 
 1. Install the infrastructure with the following command:
 
@@ -78,7 +78,7 @@ git clone https://github.com/IBM-Cloud/clouddatabases-helloworld-examples.git
    ```
    {: pre}
    
-   The Terraform script will output configuration data that is needed to run the application, so copy it into the root folder:
+   The Terraform script outputs configuration data that is needed to run the application, so copy it into the root folder:
    
    ```sh
    terraform output -json >../config.json
@@ -88,7 +88,7 @@ git clone https://github.com/IBM-Cloud/clouddatabases-helloworld-examples.git
 ## Step 4: Run your app locally
 {: #create-instance-tutorial-step-3}
 
-1. To connect to the database from your local machine, ensure that you are in the your service folder, then install the node dependencies and run the service with the following command:
+1. To connect to the database from your local machine, ensure that you are in your service folder, then install the node dependencies and run the service with the following command:
 
    ```sh
    npm install
@@ -96,7 +96,7 @@ git clone https://github.com/IBM-Cloud/clouddatabases-helloworld-examples.git
    ```
    {: pre}
    
-   If successful, the output will show you are connected:
+   If successful, the output shows you are connected:
    
    
    ```sh
@@ -113,9 +113,9 @@ git clone https://github.com/IBM-Cloud/clouddatabases-helloworld-examples.git
 ## Step 5 (optional): Run the app from a Docker container
 {: #create-instance-tutorial-step-3}
 
-The first step towards hosting your application from a service like Code Engine is to containerize the app code inside a Docker container and run it from there.
+The first step toward hosting your application from a service like Code Engine is to containerize the app code inside a Docker container and run it from there.
 
-Make sure you are logged into your Docker account. In the database, enter the following command:
+Make sure you are logged in to your Docker account. In the database, enter the following command:
 
 ```sh
 docker build -t database-hello-world:1.0 . 
@@ -125,4 +125,4 @@ docker run -p 8080:8080 database-hello-world:1.0
 
 Visit http://localhost:8080 to see the same page from the previous step.
 
-Congratulations, you've created an app with a front-end that feeds data into your {{site.data.keyword.databases-for}} deployment!
+Congratulations, you've created an app with a front end that feeds data into your {{site.data.keyword.databases-for}} deployment!
