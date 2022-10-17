@@ -19,7 +19,7 @@ subcollection: cloud-databases
 {:note: .note}
 {:important: .important}
 
-# Deploying and Connecting {{site.data.keyword.databases-for}} Instance 
+# Deploying and Connecting a {{site.data.keyword.databases-for}} Instance 
 {: #create-instance-tutorial}
 
 ## Objectives
@@ -57,9 +57,9 @@ git clone https://github.com/IBM-Cloud/clouddatabases-helloworld-examples.git
 ## Step 3: Install the infrastructure
 {: #create-instance-tutorial-step-2}
 
-1. Open the [appropriate service folder](https://github.com/IBM-Cloud/clouddatabases-helloworld-examples){: .external} folder in the GitHub tutorial repository.
+1. From the main GitHub project folder, navigate into the service folder of your choice, for example, MySQL.
 
-1. Create a document named `terraform.tfvars` with the following fields:
+1. On your machine, create a document named `terraform.tfvars`, with the following fields:
 
    ```sh
    ibmcloud_api_key = "<your_api_key_from_step_1>"
