@@ -2,7 +2,7 @@
 
 copyright:
   years:  2022
-lastupdated: "2022-10-11"
+lastupdated: "2022-10-17"
 
 keywords: restricting access to cloud databases, restricting access to ICD, DataStax cbr, Elasticsearch cbr, EnterpriseDB cbr, etcd cbr, mongodb cbr, postgresql cbr, redis cbr, mysql cbr, rabbitmq cbr
 
