@@ -119,14 +119,14 @@ In this step, you deploy an instance of the database service you want to use. Th
 
 The first step toward hosting your application from a service like [Code Engine](https://www.ibm.com/cloud/code-engine){: .external} is to containerize the app code inside a Docker container and run it from there.
 
-Make sure you are logged in to your Docker account. In the database, enter the following command:
+1. Make sure you are logged in to your Docker account. In the database, enter the following command:
 
-```sh
-docker build -t database-hello-world:1.0 . 
-docker run -p 8080:8080 database-hello-world:1.0
-```
-{: pre}
+   ```sh
+   docker build -t database-hello-world:1.0 . 
+   docker run -p 8080:8080 database-hello-world:1.0
+   ```
+   {: pre}
 
-Open a browser and visit http://localhost:8080 to see the same welcome page from the previous step.
+1. Open a browser and visit http://localhost:8080 to see the same welcome page from the [Step 4](#step-4-run-your-app-locally).
 
 Congratulations, you've created an app with a front end that feeds data into your {{site.data.keyword.databases-for}} deployment!
