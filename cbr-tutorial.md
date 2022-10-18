@@ -26,7 +26,7 @@ completion-time: 30m
 With context-based restrictions, account owners and administrators can define and enforce access restrictions for {{site.data.keyword.cloud}} resources, based on the context of access requests. Access to {{site.data.keyword.databases-for}} resources can be controlled with context-based restrictions and identity and access management policies. For more information, see [Protecting {{site.data.keyword.databases-for}} resources with context-based restrictions](/docs/cloud-databases?topic=cloud-databases-cbr).
 {: shortdesc}
 
-## Understanding the scenario
+## Restrict traffic to your deployment by using [{{site.data.keyword.databases-for}} Allowlisting](/docs/databases-for-mysql?topic=cloud-databases-allowlisting).
 {: #cbr-tutorial-scenario}
 
 In this example scenario, you use context-based restrictions to restrict traffic to your {{site.data.keyword.databases-for-mysql_full}} cluster by allowing only an individual IP address from the [{{site.data.keyword.databases-for}} Allowlist page](/docs/databases-for-mysql?topic=cloud-databases-allowlisting) to connect to your deployment.
