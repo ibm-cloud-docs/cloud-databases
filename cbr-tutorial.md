@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-10-11"
+lastupdated: "2022-10-18"
 
 keywords: cbr, context based restrictions, security, cbr scenario, cloud databases
 
@@ -49,7 +49,7 @@ Before beginning this tutorial, make sure you have created or installed the foll
 {: step}
 
 [Provision your service from the {{site.data.keyword.cloud_notm}} Catalog](https://cloud.ibm.com/catalog/services/databases-for-mysql) and choose your IP address(es) from the [{{site.data.keyword.databases-for}} Allowlist page](/docs/databases-for-mysql?topic=cloud-databases-allowlisting). 
-1. Run the following example command to create a network that includes only one client IP that you want to use.
+1. Run the following example command to create a network that includes only one IP address.
 
     ```sh
     ibmcloud cbr zone-create --addresses=169.63.121.159/27 --name=tutorial_zone
@@ -68,7 +68,7 @@ Before beginning this tutorial, make sure you have created or installed the foll
 {: #cbr-tutorial-create-rule}
 {: step}
 
-1. After you create your network zone (allowlist), create a CBR rule and add the network zone you created in the previous step. The following example creates a rule that uses the `cluster` API type. Replace `NETWORK-ZONE-ID` with the ID of the `allow-client-ip` network zone that you created in step 1.
+1. After you create your network zone (allowlist), create a CBR rule and add the network zone you created in the previous step. The following example creates a rule that uses the `cluster` API type. Replace `NETWORK-ZONE-ID` with the ID of the `allow-client-ip` network zone that you created in [Step 1](#creating-your-network-zone).
 
     ```sh
     ibmcloud cbr rule-create --enforcement-mode enabled --context-attributes "networkZoneId=<ZONE-ID>" --resource-group-id "<RESOURCE_GROUP_ID>" --service-name "<SERVICE-NAME>" --service-instance "<SERVICE-INSTANCE>" --api-types crn:v1:bluemix:public:context-based-restrictions::::api-type:data-plane --description "<DESCRIPTION>"
@@ -100,103 +100,13 @@ Before beginning this tutorial, make sure you have created or installed the foll
 {: #cbr-tutorial-create-test}
 {: step}
 
-To test your context-based restrictions setup, you can try...
+To test your context-based restrictions setup, try connecting to your deployment  from an IP address other than the individual IP address that you allowlisted in your network zone. With this setup, only the individual IP address in your network zone can connect to your deployment.
 
 ## Additional scenarios
 {: #cbr-tutorial-create-additional-scenarios}
 
 Now that you've created a simple CBR network zone and rule, review the following more advanced examples to further control access to your {{site.data.keyword.databases-for}} resources.
 
-### Allowing different IPs to access the public and private service endpoints
-{: #cbr-tutorial-scenarios-pub-priv-one-ip}
-
-In this scenario, you allow different IP addresses or CIDRs to access the public and private service endpoints of your {{site.data.keyword.databases-for}} clusters by creating separate network zones for each IP address. Then, you create a rule that allows each network zone to access the public or private service endpoints.
-
-1. Create a network zone for a public IP address or CIDR and another for a private IP address or CIDR that you want to allow to access your {{site.data.keyword.databases-for}} clusters.
-
-    Example commands to create separate network zones called `public-IP-zone` and `private-IP-zone`. In this example, each zone contains multiple IP addresses or CIDRs, separated by a comma, that you want to allow to access your clusters. 
-
-    ```sh
-    ibmcloud cbr zone-create --addresses 1.2.3.4,12.12.12.0/24 --description "Allowed Public IP Addresses Zone" --name "public-ip-zone"
-    ```
-    {: pre}
-
-    ```sh
-    ibmcloud cbr zone-create --addresses 10.20.20.20,10.10.10.0/24 --description "Allowed Private IP Addresses Zone" --name "private-ip-zone"
-    ```
-    {: pre}
-    
-1. Get the IDs of the `private-ip-zone` and `public-ip-zone` zones you created in the previous step.
-    ```sh
-    ibmcloud cbr zones 
-    ```
-    {: pre}
-    
-1. Create a rule that allows the `private-ip-zone` to connect to your cluster's private service endpoint and that also allows the `public-ip-zone` to connect to your cluster's public service endpoint only. This rule applies to the cluster specified with the `--service-instance` option. If you want to apply the rule to all clusters in your account, do not specify a cluster. 
-    ```sh
-    ibmcloud cbr rule-create --context-attributes "endpointType=public,networkZoneId=PUBLIC-IP-ZONE-ID" --context-attributes "endpointType=private,networkZoneId=PRIVATE-IP-ZONE-ID" --description "Separate private and public IPs for cluster and management rule" --service-name containers-kubernetes --service-instance CLUSTER-ID
-    ```
-    {: pre}
-
-
-### Allowing different IPs to access different API types over the public and private service endpoints
-{: #cbr-tutorial-scenarios-pub-priv-api-types}
-
-Similar to the previous scenario, in this scenario you allow different IP addresses to access the respective public or private service endpoint for {{site.data.keyword.databases-for}} clusters. However, in this scenario, access is further restricted by specific API types for the `cluster` and `management` APIs. For more information about the API types, see [Protecting specific APIs](/docs/containers?topic=containers-cbr&interface=cli#protect-api-types-cbr).
-
-1. Create four network zones, one for each of the IP addresses you want to allow to access either the public or private `cluster` APIs or the public or private `management` apis. Note that you can include multiple IP addresses or CIDRs, separated by a comma, that you want to allow to access your clusters. 
-
-    ```sh
-    ibmcloud cbr zone-create --addresses 1.2.3.4,12.12.12.0/24 --description "Allowed Public IP Addresses for IKS and ROKS APIs" --name "public-mgmt-zone"
-    ```
-    {: pre}
-    
-    ```sh
-    ibmcloud cbr zone-create --addresses 10.20.20.20,10.10.10.0/24 --description "Allowed Private IP Addresses IKS and ROKS APIs" --name "private-mgmt-zone"
-    ```
-    {: pre}
-    
-    ```sh
-    ibmcloud cbr zone-create --addresses 11.11.11.0/24 --description "Allowed Public IP Addresses for cluster apiserver" --name "public-cluster-zone"
-    ```
-    {: pre}
-    
-    ```sh
-    ibmcloud cbr zone-create --addresses 10.30.30.30 --description "Allowed Private IP Addresses for cluster apiserver" --name "private-cluster-zone"
-    ```
-    {: pre}
-
-
-1. Get the IDs of the zones you created in the previous step.
-    ```sh
-    ibmcloud cbr zones 
-    ```
-    {: pre}
-    
-    Example output
-    
-    ```sh
-    OK
-    id                                 name                   address_count   
-    c14c0839c13d8aa0afa8383e2be2e124   public-mgmt-zone       2   
-    f9676ca6ef37685315fa254b89d73159   public-cluster-zone    1   
-    c14c0839c13d8aa0afa8383e2be2e843   private-cluster-zone   1   
-    b53353de929de39ac2381f9b4cde8507   private-mgmt-zone      2 
-    ```
-    {: pre}
-    
-1. Create a rule that protects access to the public and private `cluster` and `management` APIs by using the zones you created earlier.
-
-    ```sh
-    ibmcloud cbr rule-create --api-types crn:v1:bluemix:public:containers-kubernetes::::api-type:management --context-attributes "endpointType=public,networkZoneId=PUBLIC-MGMT-ZONE-ID" --context-attributes "endpointType=private,networkZoneId=PRIVATE-MGMT-ZONE-ID" --description "Separate private and public IPs for the management APIs" --service-name containers-kubernetes
-    ```
-    {: pre}
-    
-    ```sh
-    ibmcloud cbr rule-create --api-types crn:v1:bluemix:public:containers-kubernetes::::api-type:cluster --context-attributes "endpointType=public,networkZoneId=PUBLIC-CLUSTER-ZONE-ID" --context-attributes "endpointType=private,networkZoneId=PRIVATE-CLUSTER-ZONE-ID" --description "Separate private and public IPs for cluster APIs" --service-name containers-kubernetes
-    ```
-    {: pre}
-
-
-
+### {{site.data.keyword.databases-for}} as a Service Reference for a Key Protect instance
+{: #cbr-tutorial-key-protect-instance}
 
