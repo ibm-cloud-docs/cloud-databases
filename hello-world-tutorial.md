@@ -25,7 +25,7 @@ subcollection: cloud-databases
 ## Objectives
 {: #create-instance-tutorial-objectives}
 
-This tutorial guides you through the process of deploying a {{site.data.keyword.databases-for}} instance and connecting it to a web front end by creating a webpage that allows visitors to input a word and its definition. These values are then stored in a database running on {{site.data.keyword.databases-for}}. You install the database infrastructure by using [Terraform](https://www.terraform.io/){: external} and your web application uses the popular [Express](https://www.terraform.io/){: external} framework. The application can then be run locally, or by using [Docker](https://www.docker.com/){: external}.
+This tutorial guides you through the process of deploying a {{site.data.keyword.databases-for}} instance and connecting it to a web front end by creating a webpage that allows visitors to input a word and its definition. These values are then stored in a database running on {{site.data.keyword.databases-for}}. You install the database infrastructure by using [Terraform](https://www.terraform.io/){: external} and your web application uses the popular [Express](https://www.terraform.io/){: external} framework. The application can then be run locally, or by using [Docker](https://www.docker.com/){: external}. 
 
 ## Getting productive 
 {: #create-instance-tutorial-getting-started}
