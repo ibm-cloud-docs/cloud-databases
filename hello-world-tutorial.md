@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-10-18"
+lastupdated: "2022-10-19"
 
 keywords: instance tutorial, provision tutorial, docker
 
@@ -59,7 +59,7 @@ git clone https://github.com/IBM-Cloud/clouddatabases-helloworld-examples.git
 
 In this step, you deploy an instance of the database service you want to use. The GitHub repository contains folders for various {{site.data.keyword.databases-for}} resources.
 
-1. From the main GitHub project folder, navigate into the service folder of your choice, for example, mysql.
+1. From the main GitHub project folder, navigate into the `terraform` service folder of your choice, for example, `mysql/terraform`.
 
 1. On your machine, create a document that is named `terraform.tfvars`, with the following fields:
 
@@ -119,7 +119,7 @@ In this step, you deploy an instance of the database service you want to use. Th
 
 The first step toward hosting your application from a service like [Code Engine](https://www.ibm.com/cloud/code-engine){: .external} is to containerize the app code inside a Docker container and run it from there.
 
-1. Make sure you are logged in to your Docker account. In the database, enter the following command:
+1. Make sure you are logged in to your Docker account. In the service folder of your chosen database, enter the following command:
 
    ```sh
    docker build -t database-hello-world:1.0 . 
