@@ -43,6 +43,7 @@ toc:
           label: Tutorials
           topics: 
           - howto-tutorials.md
+          - hello-world-tutorial.md
           - terra-postgres-tutorial.md
           - terra-mongodb-tutorial.md
           - k8-tutorial.md
