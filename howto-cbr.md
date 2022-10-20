@@ -152,6 +152,7 @@ Rules restrict access to specific cloud resources based on resource attributes a
 
 ### Creating rules in the CLI
 {: #rules-cli}
+{: cli}
 
 To create rules in the CLI, [install the context-based restrictions CLI plug-in](/docs/account?topic=cli-cbr-plugin#install-cbr-plugin).
 
