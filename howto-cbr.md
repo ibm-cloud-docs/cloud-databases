@@ -181,7 +181,8 @@ ibmcloud cbr rule-update <RULE-ID> --enforcement-mode disabled --context-attribu
 ```
 {: .pre}
 
-The `rule-update` command is an overwrite. Include all of the fields required as if you are creating the rule from scratch. If you omit any required fields, the rule overwrites those missing fields as empty, and the rule might fail because some of those fields are required, regardless of whether they are changing the rule. {: .important}
+The `rule-update` command is an overwrite. Include all of the fields required as if you are creating the rule from scratch. If you omit any required fields, the rule overwrites those missing fields as empty, and the rule might fail because some of those fields are required, regardless of whether they are changing the rule. 
+{: .important}
 
 Updating requires the `RULE-ID`, not the rule name. Use the following command to list your rules and retrieve the relevant `RULE-ID`:
 ```sh
