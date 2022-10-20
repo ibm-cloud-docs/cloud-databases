@@ -31,7 +31,7 @@ With context-based restrictions, account owners and administrators can define an
 
 In this example scenario, you use context-based restrictions to restrict traffic to your {{site.data.keyword.databases-for-mysql_full}} cluster in the `in-che` region by allowing only the set of subnets from the [{{site.data.keyword.databases-for}} Allowlist page](/docs/databases-for-mysql?topic=cloud-databases-allowlisting) to connect to your deployment.
 
-In the following steps, you start by creating a network zone, or allowlist, that includes a your subnets. Then, you create a context-based restrictions rule for your deployment. When you create the rule, you associate it with the network zone that contains the individual IP address.
+In the following steps, you start by creating a network zone, or allowlist, that includes your subnets. Then, you create a context-based restrictions rule for your deployment. When you create the rule, you associate it with the network zone that contains the individual IP address.
 
 ## Prerequisites
 {: #cbr-tutorial-prereqs}
