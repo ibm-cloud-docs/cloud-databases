@@ -2,7 +2,7 @@
 
 copyright:
   years:  2022
-lastupdated: "2022-10-17"
+lastupdated: "2022-10-20"
 
 keywords: restricting access to cloud databases, restricting access to ICD, DataStax cbr, Elasticsearch cbr, EnterpriseDB cbr, etcd cbr, mongodb cbr, postgresql cbr, redis cbr, mysql cbr, rabbitmq cbr
 
@@ -18,50 +18,45 @@ subcollection: cloud-databases
 {:note: .note}
 {:important: .important}	
 {:experimental: .experimental}
+{{site.data.keyword.attribute-definition-list}}
 
-This document outlines the process for using context-based restrictions (CBR) to protect your {{site.data.keyword.databases-for}} resources. Use this document to prepare your resources for context-based restrictions. {{site.data.keyword.databases-for}} does not offer CBR enforcement of the control-plane in this current phase of implementation.{: .important}
+This document outlines the process for using context-based restrictions to protect your {{site.data.keyword.databases-for}} resources. Use this document to prepare your resources for context-based restrictions. {{site.data.keyword.databases-for}} doesn't offer scoping rules to the control plane API in this current phase of implementation.{: .important}
 
 # Protecting {{site.data.keyword.databases-for}} resources with context-based restrictions
 {: #cbr}
 
-Context-based restrictions (CBR) give account owners and administrators the ability to define and enforce access restrictions for {{site.data.keyword.cloud}} resources based on the context of access requests. Access to {{site.data.keyword.databases-for}} resources can be controlled with CBR and identity and access management (IAM) policies.
+Context-based restrictions give account owners and administrators the ability to define and enforce access restrictions for {{site.data.keyword.cloud}} resources based on the context of access requests. Access to {{site.data.keyword.databases-for}} resources can be controlled with context-based restrictions and Identity and Access Management (IAM) policies.
 {: shortdesc}
 
-These restrictions work with traditional IAM policies, which are based on identity, to provide an extra layer of protection. Unlike IAM policies, CBRs don't assign access. CBRs check that an access request comes from an allowed context that you configure. Since both IAM access and CBR enforce access, CBR offers protection even in the face of compromised or mismanaged credentials. For more information, see [What are context-based restrictions](/docs/account?topic=account-context-restrictions-whatis).
+These restrictions work with traditional IAM policies, which are based on identity, to provide an extra layer of protection. Unlike IAM policies, context-based restrictions don't assign access. Context-based restrictions check that an access request comes from an allowed context that you configure. Since both IAM access and context-based restrictions enforce access, context-based restrictions offer protection even in the face of compromised or mismanaged credentials. For more information, see [What are context-based restrictions](/docs/account?topic=account-context-restrictions-whatis).
 
-A user must have the Administrator role on the {{site.data.keyword.databases-for}} service to create, update, or delete rules. A user must also have either the Editor or Administrator role on the CBR service to create, update, or delete network zones. A user with the Viewer role on the CBR service can only add network zones to a rule. 
+A user must have the Administrator role on the {{site.data.keyword.databases-for}} service to create, update, or delete rules. A user must also have either the Editor or Administrator role on the context-based restrictions service to create, update, or delete network zones. A user with the Viewer role on the context-based restrictions service can only add network zones to a rule. 
 {: note}
 
-Any {{site.data.keyword.cloudaccesstraillong_notm}} or audit log events generated come from the context-based restrictions service, not {{site.data.keyword.databases-for}}. {{site.data.keyword.databases-for}} supports audit events only for customer interactions with CBR-protected platform endpoint calls. {{site.data.keyword.databases-for}} does not support audit events when you enable CBR rules on the data-plane for your instances. For more information, see [Monitoring context-based restrictions](/docs/account?topic=account-cbr-monitor).
+Any {{site.data.keyword.cloudaccesstraillong_notm}} or audit log events generated come from the context-based restrictions service, not {{site.data.keyword.databases-for}}. {{site.data.keyword.databases-for}} supports audit events only for customer interactions with context-based restrictions-protected platform endpoint calls. {{site.data.keyword.databases-for}} does not support audit events when you enable context-based restrictions rules on the control plane API for your instances. For more information, see [Monitoring context-based restrictions](/docs/account?topic=account-cbr-monitor).
 
 To get started protecting your {{site.data.keyword.databases-for}} resources with context-based restrictions, see the tutorial for [Leveraging context-based restrictions to secure your resources](/docs/account?topic=account-context-restrictions-tutorial).
 
 ## How {{site.data.keyword.databases-for}} integrates with context-based restrictions
 {: #cbr-overview}
 
-You can create context-based restrictions (CBR) for {{site.data.keyword.databases-for}} resources or for specific APIs.
+You can create context-based restrictions for the {{site.data.keyword.databases-for}} service, specific resources, and specific APIs.
 
 ### Protecting {{site.data.keyword.databases-for}} resources
 {: #cbr-overview-protect-services}
 
-You can create CBR rules to protect specific **regions**, **resource groups**, and **instances**.
+You can create context-based restrictions rules to protect specific **regions**, **resource groups**, and **instances**.
 
-**Region**
-   Protects {{site.data.keyword.databases-for}} resources in a specific region. If you include a region in your CBR rule, resources in the network zones that you associate with the rule can interact only with resources in that region.
-   If you use the CLI, you can specify the `--region` option to protect resources in a specific region.
-   If you use the UI, you can specify *Region* in the resource attributes. 
+Region
+:   Protects {{site.data.keyword.databases-for}} resources in a specific region. If you include a region in your context-based restrictions rule, resources in the network zones that  you associate with the rule can interact only with resources in that region. If you use the CLI, you can specify the `--region` option to protect resources in a specific region. If you use the UI, you can specify *Region* in the resource attributes. 
 
-**Resource groups**
-   Protects a specific resource group. If you include a resource group in your CBR rule, resources in the network zones that you associate with the rule can interact only with resources in that resource group. Note that scoping a rule to a specific resource group is available only for rules that protect the cluster API type.
-   If you use the CLI, you can specify the `resource-group-id` option to protect resources in a specific resource group.
-   If you use the UI, you can specify the *Resource group* in the resource attributes.
+Resource groups
+:   Protects a specific resource group. If you include a resource group in your context-based restrictions rule, resources in the network zones that you associate with the rule can interact only with resources in that resource group. Note that scoping a rule to a specific resource group is available only for rules that protect the cluster API type. If you use the CLI, you can specify the `resource-group-id` option to protect resources in a specific resource group. If you use the UI, you can specify the *Resource group* in the resource attributes.
 
-**Instance**
-   Protects a specific instance. If you include an instance in your CBR rule, resources in the network zones that you associate with the rule can interact only with resources in that instance. Note that scoping a rule to a specific instance is available only for rules that protect the cluster API type.
-   If you use the CLI, you can specify the `--service-instance` option to protect instances in a specific resource group.
-   If you use the UI, you can specify the *Service instance* in the resource attributes.
+Instance
+:   Protects a specific instance. If you include an instance in your context-based restrictions rule, resources in the network zones that you associate with the rule can interact only with resources in that instance. Note that scoping a rule to a specific instance is available only for rules that protect the cluster API type. If you use the CLI, you can specify the `--service-instance` option to protect instances in a specific resource group. If you use the UI, you can specify the *Service instance* in the resource attributes.
 
-## Creating network zones 
+## Creating network zones
 {: #network-zone}
 
 A network zone represents an allowlist of IP addresses where an access request is created. It defines a set of one or more network locations that are specified by the following attributes:
@@ -75,19 +70,27 @@ Make sure to add {{site.data.keyword.databases-for}} to network zones for rules 
 
 ### Creating network zones in the UI
 {: #network-zone-ui}
+{: ui}
 
-1. Navigate to *Context-based restrictions* in the *Manage* section of the {{site.data.keyword.cloud}} Dashboard.
-1. Select *Create a network zone*.
-1. Name your network zone.
-1. Enter your *Allowed IP addresses.* You can enter a single IP address, a range of IP addresses, or a single CIDR. **The *Denied IP addresses* field is optional and should only include exceptions that are contained within the IP ranges you provide in the allowed IP addresses field.**
+1. Go to **Manage** > **Context-based restrictions** in the {{site.data.keyword.cloud}} console.
+1. Select **Network zones**.
+1. Click **Create**.
+1. Name your network zone and provide a description.
+1. Enter your *Allowed IP addresses.* You can enter a single IP address, a range of IP addresses, or a single CIDR.
+
+   The **Denied IP addresses** field is optional and should include only exceptions that are contained within the IP ranges you provide in the allowed IP addresses field.
+   {: note}
+
 1. Choose your *Allowed VPCs*, selecting as many as you like. 
 
-{{site.data.keyword.databases-for}} does not support *Reference a service*. Selecting a service results in an error when you create a rule.{: .note}
+   {{site.data.keyword.databases-for}} does not support *Reference a service*. Selecting a service results in an error when you create a rule.
+   {: .note}
 
 ### Creating network zones in the CLI
 {: #network-zone-cli}
+{: cli}
 
-To create network zones in the CLI, [install the CBR CLI plug-in](/docs/account?topic=cli-cbr-plugin#install-cbr-plugin). You can use the `cbr-zone-create` command to add resources to network zones. For more information, see the [CBR CLI reference](https://test.cloud.ibm.com/docs/account?topic=cli-cbr-plugin#cbr-zones-cli). 
+To create network zones in the CLI, [install the context-based restrictions CLI plug-in](/docs/account?topic=cli-cbr-plugin#install-cbr-plugin). You can use the `cbr-zone-create` command to add resources to network zones. For more information, see the [context-based restrictions CLI reference](https://test.cloud.ibm.com/docs/account?topic=cli-cbr-plugin#cbr-zones-cli).
 
 Create a zone using a command like:
 
@@ -116,47 +119,41 @@ ibmcloud cbr zone-delete <ZONE-ID>
 ```
 {: .pre}
 
-## Creating rules 
+## Creating rules
 {: #rules}
 
 Rules restrict access to specific cloud resources based on resource attributes and contexts.
 
 ### Creating rules in the UI
 {: #rules-ui}
+{: ui}
 
-#### Step 1: Select your resources
-{: #rules-ui-select-resources}
+1. Go to **Manage** > **Context-based restrictions** in the {{site.data.keyword.cloud}} console.
+1. Select **Rules**.
+1. Click **Create**.
+1. Protect **All APIs** by default, or select **Specific APIs**.
+   {{site.data.keyword.databases-for}} does not currently support **Control plane** as an option.
+   {: .note}
 
-**Service** - Select which resources to target from the list provided.
+1. Click **Next**.
+1. Scope the rule to **All resources** or **Specific resources**. See [Protecting Cloud Databases resources](/docs/cloud-databases?topic=cloud-databases-cbr#cbr-overview-protect-services) for more information about how you can target specific resources.
+1. Click **Continue**.
+1. Define the allowed endpoint types.
+   - Keep the toggle set to **No** to allow all endpoint types.
+   - Set the toggle to **Yes** to allow only specific endpoint types, then choose from the list.
+1. Select a network zone or zones that you have already created, or create a new network zone by clicking **Create**.
+   Contexts define from where your resources can be accessed, effectively linking your network zone to your rule.
+   {: tip}
 
-**APIs** - Select **Specific APIs**, then **Data plane**.
-
-{{site.data.keyword.databases-for}} does not currently support **Control plane** as an option.{: .note}
-
-**Resources** - Choose the scope of your restrictions, either *All resources* or *Specific resources*. If you choose *Specific resources*, you have the option of specifying *Region*, *Resource group*, or *Service instance*.
-
-#### Step 2: Add a context
-{: #rules-ui-add-context}
-
-Contexts define from where your resources can be accessed, effectively linking your network zone to your rule.
-
-* Select a network zone from the list provided, then click *Add*. You will see the Context added to the righthand menu. 
-
-* **Endpoint types** To specify public, private, or direct endpoints, select *Yes* to allow only specific endpoint types, then choose from the available list. 
-
-#### Step 3: Describe your rule
-{: #rules-ui-describe-rule}
-
-While naming your rule is optional, it's recommended. 
-
-* Enforce your rule by selecting *Enabled*.
-
-* Click **Create** and your rule is now enforced in your designated network zone.
+1. Click **Add** to add your configuraiton to the summary panel.
+1. Click **Next**.
+1. Name your rule.
+1. Select how you want to enforce the rule.
 
 ### Creating rules in the CLI
 {: #rules-cli}
 
-To create rules in the CLI, [install the CBR CLI plug-in](/docs/account?topic=cli-cbr-plugin#install-cbr-plugin).
+To create rules in the CLI, [install the context-based restrictions CLI plug-in](/docs/account?topic=cli-cbr-plugin#install-cbr-plugin).
 
 To create a rule in the CLI, you need the appropriate {{site.data.keyword.databases-for}} `service_name`:
 * `databases-for-etcd`
