@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-08-03"
+lastupdated: "2022-10-20"
 
 subcollection: cloud-databases
 
@@ -15,6 +15,7 @@ keywords: backups
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
+{{site.data.keyword.attribute-definition-list}}
 
 # Managing {{site.data.keyword.databases-for}} backups
 {: #dashboard-backups}
@@ -32,6 +33,7 @@ Backups for {{site.data.keyword.databases-for}} deployments are accessible from 
 
 ## Backups in the UI
 {: #backup-ui}
+{: ui}
 
 The backup types have their respective tabs, either _On-demand_ or _Automatic_. Each backup is listed with its type and when the backup was taken. Click the timestamp to change its format between elapsed time, local time, and Coordinated Universal Time. 
 
@@ -41,6 +43,7 @@ Click the backup to reveal information for that specific backup, including its f
 
 ## Backups in the CLI
 {: #backup-ui-cli}
+{: cli}
 
 You can access the list of backups and individual backup information from the {{site.data.keyword.databases-for}} CLI plug-in and the {{site.data.keyword.databases-for}} API.
 
@@ -62,11 +65,13 @@ ibmcloud cdb backup-show crn:v1:staging:public:cloud-databases:us-south:a/628401
 
 ## Backups in the {{site.data.keyword.databases-for}} API
 {: #backup-ui-api}
+{: api}
 
 For backups information in the {{site.data.keyword.databases-for}} API, use the [`/deployments/{id}/backups`](https://cloud.ibm.com/apidocs/cloud-databases-api#get-currently-available-backups-from-a-deployment) endpoint to list the deployment's backups. To get information about a specific backup, use the [`/backups/{backup_id}`](https://{DomainName}/apidocs/cloud-databases-api#get-information-about-a-backup) endpoint.
 
 ## Taking an on-demand backup
 {: #ondemand-backup}
+{: cli}
 
 If you plan to make major changes to your deployment, like scaling or removing databases, tables, collections, on-demand backups are useful. It can also be useful if you need to back up on a schedule. On-demand backups are kept for 30 days. 
 
@@ -95,6 +100,7 @@ Do not delete the source deployment while the backup is restoring. Before you de
 
 ### Restoring a backup in the UI
 {: #restore-backup-ui}
+{: ui}
 
 To restore a backup to a new service instance,
 
@@ -108,6 +114,7 @@ To restore a backup to a new service instance,
 
 ### Restoring a backup in the CLI
 {: #restore-backup-cli}
+{: cli}
 
 The Resource Controller supports provisioning of database deployments, and provisioning and restoring are the responsibility of the Resource Controller CLI. Use the [`resource service-instance-create`](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_create) command.
 
@@ -130,6 +137,7 @@ A pre-formatted command for a specific backup is available in detailed view of t
 
 ### Restoring a backup through the API
 {: #restore-backup-api}
+{: api}
 
 The Resource Controller supports provisioning of database deployments, and provisioning and restoring are the responsibility of the Resource Controller API. You need to complete [the necessary steps to use the resource controller API](/docs/cloud-databases?topic=cloud-databases-provisioning#provisioning-through-the-resource-controller-api) before you can use it to restore from a backup. 
 
@@ -160,8 +168,8 @@ If you need to adjust resources or use a Key Protect key, add any of the optiona
 {: #backup-restoration}
 
 * {{site.data.keyword.cloud_notm}} Databases are not responsible for restoration, timeliness, or validity of said backups.
-* Actions that you take as a user can compromise the integrity of backups, such as under-allocating memory and disk. Users can monitor that backups are successful by using the API, and periodically restore a backup to ensure validity and integrity. Users can retrieve the most recent-scheduled backup details from the [Cloud Databases CLI plug-in](#backups-in-the-cli) and the [Cloud Databases API](#backups-in-the-api).
-* As a managed service, {{site.data.keyword.databases-for}} monitors the state of your backups and can attempt to remediate when possible. If you encounter issues you cannot recover from, you can contact support for more help.
+* Actions that you take as a user can compromise the integrity of backups, such as under-allocating memory and disk. Users can monitor that backups are successful by using the API, and periodically restore a backup to ensure validity and integrity. Users can retrieve the most recent-scheduled backup details from the [Cloud Databases CLI plug-in](#backups-in-the-cli) and the [Cloud Databases API](#restoring-a-backup-through-the-api).
+* As a managed service, {{site.data.keyword.databases-for}} monitors the state of your backups and can attempt to remediate when possible. If you encounter issues from which you cannot recover, contact support for more help.
 
 ## Backup Locations
 {: #backup-locations}
