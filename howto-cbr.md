@@ -20,7 +20,7 @@ subcollection: cloud-databases
 {:experimental: .experimental}
 {{site.data.keyword.attribute-definition-list}}
 
-This document outlines the process for using context-based restrictions to protect your {{site.data.keyword.databases-for}} resources. Use this document to prepare your resources for context-based restrictions. {{site.data.keyword.databases-for}} doesn't offer scoping rules to the control plane API in this current phase of implementation.{: .important}
+This document outlines the process for using context-based restrictions to protect your {{site.data.keyword.databases-for}} resources. Use this document to prepare your resources for context-based restrictions. {{site.data.keyword.databases-for}} doesn't offer scoping rules to the data plane in this current phase of implementation.{: .important}
 
 # Protecting {{site.data.keyword.databases-for}} resources with context-based restrictions
 {: #cbr}
