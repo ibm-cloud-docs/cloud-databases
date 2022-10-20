@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-07-14"
+lastupdated: "2022-10-20"
 
 keywords: provision cloud databases, terraform, provisioning parameters, cli, resource controller api
 
@@ -16,6 +16,7 @@ subcollection: cloud-databases
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{{site.data.keyword.attribute-definition-list}}
 
 # Provisioning
 {: #provisioning}
@@ -58,6 +59,7 @@ After you select the appropriate settings, click **Create** to start the provisi
 
 ## Using the CLI
 {: #use-cli}
+{: cli}
 
 The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your console or CLI. For more information, see [Download and install {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli).
 
@@ -89,7 +91,7 @@ ibmcloud resource service-instance-create <service-name> --service-endpoints <en
 ```
 {: .pre}
 
-The `service-instance-create` command supports a `-p` flag, which allows JSON-formatted [parameters](#provisioning-parameters) to be passed to the provisioning process. Some parameter values are CRNs (Cloud Resource Name), which uniquely identify a resource in the cloud. All parameter names and values are passed as strings.
+The `service-instance-create` command supports a `-p` flag, which allows JSON-formatted parameters to be passed to the provisioning process. Some parameter values are Cloud Resource Names (CRNs), which uniquely identify a resource in the cloud. All parameter names and values are passed as strings.
 
 For example, if a database is being provisioned from a particular backup and the new database deployment needs a total of 9 GB of memory across three members, then the command to provision 3 GB per member looks like
 
@@ -104,6 +106,7 @@ ibmcloud resource service-instance-create example-database <service-name> standa
 
 ## Provisioning through the Resource Controller API
 {: #provision-controller-api}
+{: api}
 
 You can provision new deployments by using the Resource Controller API. However, to use the Resource Controller API, you need some additional preparation.
 
