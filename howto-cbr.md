@@ -132,7 +132,7 @@ Rules restrict access to specific cloud resources based on resource attributes a
 1. Select **Rules**.
 1. Click **Create**.
 1. Protect **All APIs** by default, or select **Specific APIs**.
-   {{site.data.keyword.databases-for}} does not currently support **Control plane** as an option.
+   {{site.data.keyword.databases-for}} does not currently support **Data plane** as an option.
    {: .note}
 
 1. Click **Next**.
