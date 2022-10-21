@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-10-18"
+lastupdated: "2022-10-21"
 
 keywords: cbr, context based restrictions, security, cbr scenario, cloud databases
 
@@ -44,9 +44,10 @@ Before beginning this tutorial, make sure you have created or installed the foll
 - Review the [What are context-based restrictions](/docs/account?topic=account-context-restrictions-whatis) docs to get an understanding of concepts of network zones and rules.
 - Review the [Protecting {{site.data.keyword.databases-for}} resources with context-based restrictions](/docs/cloud-databases?topic=cloud-databases-cbr) docs to understand how you can leverage CBR for your {{site.data.keyword.databases-for}} resources.
 
-## Creating your network zone
-{: #cbr-tutorial-create-zone}
+## Creating your network zone in the CLI
+{: #cbr-tutorial-create-zone-cli}
 {: step}
+{: cli}
 
 [Provision your service from the {{site.data.keyword.cloud_notm}} Catalog](https://cloud.ibm.com/catalog/services/databases-for-mysql) and choose your IP address(es) from the [{{site.data.keyword.databases-for}} Allowlist page](/docs/databases-for-mysql?topic=cloud-databases-allowlisting). 
 1. Run the following example command to create a network that includes only one IP address.
@@ -62,11 +63,17 @@ Before beginning this tutorial, make sure you have created or installed the foll
     ```
     {: pre}
 
+## Creating your network zone in the UI
+{: #cbr-tutorial-create-zone-ui}
+{: step}
+{: ui}
 
+[Provision your service from the {{site.data.keyword.cloud_notm}} Catalog](https://cloud.ibm.com/catalog/services/databases-for-mysql) and choose your IP address(es) from the [{{site.data.keyword.databases-for}} Allowlist page](/docs/databases-for-mysql?topic=cloud-databases-allowlisting). 
 
-## Creating your CBR rule
+## Creating your CBR rule in the CLI
 {: #cbr-tutorial-create-rule}
 {: step}
+{: cli}
 
 1. After you create your network zone (allowlist), create a CBR rule and add the network zone you created in the previous step. The following example creates a rule that uses the `data-plane` API type. Replace `NETWORK-ZONE-ID` with the ID of the `tutorial_zone` network zone that you created in [Step 1](#creating-your-network-zone).
 
@@ -104,6 +111,15 @@ Before beginning this tutorial, make sure you have created or installed the foll
     ibmcloud cbr rules
     ```
     {: pre}
+
+## Creating your CBR rule in the UI
+{: #cbr-tutorial-create-rule-ui}
+{: step}
+{: ui}
+
+1. After you create your network zone (allowlist), create a CBR rule and add the network zone you created in the previous step. The following example creates a rule that uses the `data-plane` API type. Replace `NETWORK-ZONE-ID` with the ID of the `tutorial_zone` network zone that you created in [Step 1](#creating-your-network-zone).
+    
+1. Verify the rule was created.
     
 ## Testing your context-based restrictions
 {: #cbr-tutorial-create-test}
