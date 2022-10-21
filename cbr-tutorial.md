@@ -50,7 +50,7 @@ Before beginning this tutorial, make sure you have created or installed the foll
 {: cli}
 
 [Provision your service from the {{site.data.keyword.cloud_notm}} Catalog](https://cloud.ibm.com/catalog/services/databases-for-mysql) and choose your IP address(es) from the [{{site.data.keyword.databases-for}} Allowlist page](/docs/databases-for-mysql?topic=cloud-databases-allowlisting). 
-1. Run the following example command to create a network that includes only one IP address.
+1. Run the following example command to create a network that includes a range of allowed IP addresses.
 
     ```sh
     ibmcloud cbr zone-create --addresses=169.38.95.127/27,169.38.121.159/28,169.38.132.127/25,169.38.136.255/26,169.38.73.151/29,169.38.105.79/29,10.162.8.127/26,10.163.20.127/25,10.162.115.103/29,10.162.132.79/29 --name=tutorial_zone
@@ -67,6 +67,13 @@ Before beginning this tutorial, make sure you have created or installed the foll
 {: #cbr-tutorial-create-zone-ui}
 {: step}
 {: ui}
+
+1. Go to Manage > Context-based restrictions in the IBM Cloud® console.
+1. Select Network zones.
+1. Click Create.
+1. Name your network zone and provide a description.
+1. Enter your Allowed IP addresses: `169.38.95.127/27,169.38.121.159/28,169.38.132.127/25,169.38.136.255/26,169.38.73.151/29,169.38.105.79/29,10.162.8.127/26,10.163.20.127/25,10.162.115.103/29,10.162.132.79/29`
+1. Choose your Allowed VPCs, selecting as many as you like.
 
 [Provision your service from the {{site.data.keyword.cloud_notm}} Catalog](https://cloud.ibm.com/catalog/services/databases-for-mysql) and choose your IP address(es) from the [{{site.data.keyword.databases-for}} Allowlist page](/docs/databases-for-mysql?topic=cloud-databases-allowlisting). 
 
