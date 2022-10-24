@@ -26,7 +26,7 @@ completion-time: 30m
 With context-based restrictions, account owners and administrators can define and enforce access restrictions for {{site.data.keyword.cloud}} resources, based on the context of access requests. Access to {{site.data.keyword.databases-for}} resources can be controlled with context-based restrictions and identity and access management policies. For more information, see [Protecting {{site.data.keyword.databases-for}} resources with context-based restrictions](/docs/cloud-databases?topic=cloud-databases-cbr).
 {: shortdesc}
 
-## Restrict traffic to your deployment by using {{site.data.keyword.databases-for}} Allowlisting.
+## Restrict traffic to your deployment by using {{site.data.keyword.databases-for}} Allowlisting
 {: #cbr-tutorial-scenario}
 
 In this example scenario, you use context-based restrictions to restrict traffic to your {{site.data.keyword.databases-for-mysql_full}} cluster in the `in-che` region by allowing only the set of subnets from the [{{site.data.keyword.databases-for}} Allowlist page](/docs/databases-for-mysql?topic=cloud-databases-allowlisting) to connect to your deployment.
@@ -47,9 +47,8 @@ Before beginning this tutorial, make sure you have created or installed the foll
 ## Creating your network zone in the CLI
 {: #cbr-tutorial-create-zone-cli}
 {: step}
-{: cli}
 
-[Provision your service from the {{site.data.keyword.cloud_notm}} Catalog](https://cloud.ibm.com/catalog/services/databases-for-mysql) and choose your IP address(es) from the [{{site.data.keyword.databases-for}} Allowlist page](/docs/databases-for-mysql?topic=cloud-databases-allowlisting). 
+[Provision your service from the {{site.data.keyword.cloud_notm}} Catalog](https://cloud.ibm.com/catalog/services/databases-for-mysql) and choose your IP addresses from the [{{site.data.keyword.databases-for}} Allowlist page](/docs/databases-for-mysql?topic=cloud-databases-allowlisting). 
 1. Run the following example command to create a network that includes a range of allowed IP addresses.
 
     ```sh
@@ -66,9 +65,8 @@ Before beginning this tutorial, make sure you have created or installed the foll
 ## Creating your CBR rule in the CLI
 {: #cbr-tutorial-create-rule}
 {: step}
-{: cli}
 
-1. After you create your network zone (allowlist), create a CBR rule and add the network zone you created in the previous step. The following example creates a rule that uses the `data-plane` API type. Replace `NETWORK-ZONE-ID` with the ID of the `tutorial_zone` network zone that you created in [Step 1](#creating-your-network-zone).
+1. After you create your network zone (allowlist), create a context-based restrictions rule and add the network zone you created in the previous step. The following example creates a rule that uses the `data-plane` API type. Replace `NETWORK-ZONE-ID` with the ID of the `tutorial_zone` network zone that you created in [Step 1](#creating-your-network-zone).
 
     ```sh
     ibmcloud cbr rule-create --enforcement-mode enabled --context-attributes networkZoneId=<ZONE-ID> --resource-group-id <RESOURCE_GROUP_ID> --service-name databases-for-mysql --service-instance <SERVICE-INSTANCE> --api-types crn:v1:bluemix:public:context-based-restrictions::::api-type:data-plane --description <DESCRIPTION>
@@ -109,7 +107,7 @@ Before beginning this tutorial, make sure you have created or installed the foll
 {: #cbr-tutorial-create-test}
 {: step}
 
-To test your context-based restrictions setup, try connecting to your deployment from an IP address other than the individual IP addresses, subnets, and VPCs that you allowlisted in your network zone. With this setup, only the individual IP address in your network zone can connect to your deployment.
+To test your context-based restrictions setup, try connecting to your deployment from an IP address other than the IP addresses that you allowlisted in your network zone. With this setup, only the IP addresses in your network zone can connect to your deployment.
 
 ## Additional scenarios
 {: #cbr-tutorial-create-additional-scenarios}
