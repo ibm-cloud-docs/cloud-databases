@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-10-24"
+lastupdated: "2022-10-26"
 
 keywords: cbr, context based restrictions, security, cbr scenario, cloud databases
 
@@ -66,7 +66,7 @@ Before beginning this tutorial, make sure you have created or installed the foll
 {: #cbr-tutorial-create-rule}
 {: step}
 
-1. After you create your network zone (allowlist), create a context-based restrictions rule and add the network zone you created in the previous step. The following example creates a rule that uses the `data-plane` API type. Replace `NETWORK-ZONE-ID` with the ID of the `tutorial_zone` network zone that you created in [Step 1](#creating-your-network-zone).
+1. After you create your network zone (allowlist), create a context-based restrictions rule and add the network zone you created in the previous step. The following example creates a rule that uses the `data-plane` API type. Replace `ZONE-ID` with the ID of the `tutorial_zone` network zone that you created in [Step 1](#creating-your-network-zone).
 
     ```sh
     ibmcloud cbr rule-create --enforcement-mode enabled --context-attributes networkZoneId=<ZONE-ID> --resource-group-id <RESOURCE_GROUP_ID> --service-name databases-for-mysql --service-instance <SERVICE-INSTANCE> --api-types crn:v1:bluemix:public:context-based-restrictions::::api-type:data-plane --description <DESCRIPTION>
@@ -108,11 +108,3 @@ Before beginning this tutorial, make sure you have created or installed the foll
 {: step}
 
 To test your context-based restrictions setup, try connecting to your deployment from an IP address other than the IP addresses that you allowlisted in your network zone. With this setup, only the IP addresses in your network zone can connect to your deployment.
-
-## Additional scenarios
-{: #cbr-tutorial-create-additional-scenarios}
-
-Now that you've created a simple CBR network zone and rule, review the following more advanced examples to further control access to your {{site.data.keyword.databases-for}} resources.
-
-### {{site.data.keyword.databases-for}} as a Service Reference for a Key Protect instance
-{: #cbr-tutorial-key-protect-instance}
