@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2022
-lastupdated: "2022-09-14"
+lastupdated: "2022-11-01"
 
 subcollection: cloud-databases
 
@@ -17,11 +17,12 @@ keywords: bring your own key, byok, cryptoshredding, key rotation, key rotation 
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{{site.data.keyword.attribute-definition-list}}
 
 # Key Protect Integration
 {: #key-protect}
 
-The data that you store in {{site.data.keyword.cloud}} Databases is encrypted by default by using randomly generated keys. If you need to control the encryption keys, you can Bring Your Own Key (BYOK) through [{{site.data.keyword.keymanagementservicelong_notm}}](/docs/key-protect?topic=key-protect-integrate-services), and use one of your own keys to encrypt your databases and backups.
+The data that you store in {{site.data.keyword.cloud}} Databases is encrypted by default by using randomly generated keys. To control the encryption keys, you can Bring Your Own Key (BYOK) through [{{site.data.keyword.keymanagementservicelong_notm}}](/docs/key-protect?topic=key-protect-integrate-services) and use one of your own keys to encrypt your databases and backups.
 
 This document covers the integration of Key Protect with Cloud Databases, which includes {{site.data.keyword.databases-for-cassandra}},{{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-enterprisedb}}, {{site.data.keyword.databases-for-etcd}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-redis}}, {{site.data.keyword.messages-for-rabbitmq}}, {{site.data.keyword.databases-for-mysql_full}}, and {{site.data.keyword.databases-for-mysql_full}}.
 {: .note}
@@ -58,7 +59,15 @@ If the service authorization is not present before provisioning your deployment 
 
 After you grant your {{site.data.keyword.databases-for}} deployments permission to use your keys, you supply the [key name or CRN](/docs/key-protect?topic=key-protect-view-keys) when you provision a deployment. The deployment uses your encryption key to encrypt your data.
 
+## Using the Key Protect Key in the UI
+{: #key-using-ui}
+{: ui}
+
 If provisioning from the catalog page, select the Key Protect instance and key from the dropdown menus.
+
+## Using the Key Protect Key in the CLI
+{: #key-using-cli}
+{: cli}
 
 In the CLI, use the `disk_encryption_key_crn` parameter in the parameters JSON object.
 ```sh
@@ -67,6 +76,13 @@ ibmcloud resource service-instance-create example-database <service-name> standa
   "disk_encryption_key_crn": "crn:v1:<...>:key:<id>"
 }'
 ```
+
+The Key Protect key needs to be identified by its full CRN, not just its ID. A key protect CRN is in the format `crn:v1:<...>:key:<id>`.
+{: .tip}
+
+## Using the Key Protect Key in the API
+{: #key-using-api}
+{: api}
 
 In the API, use the `disk_encryption_key` parameter in the body of the request.
 ```sh
@@ -83,7 +99,7 @@ curl -X POST \
   }'
 ```
 
-If you provision a deployment through the CLI or API, the key protect key needs to be identified by its full CRN, not just its ID. A key protect CRN is in the format `crn:v1:<...>:key:<id>`.
+The Key Protect key needs to be identified by its full CRN, not just its ID. A key protect CRN is in the format `crn:v1:<...>:key:<id>`.
 {: .tip}
 
 ## Key Rotation
@@ -111,17 +127,20 @@ Cryptoshredding is a destructive action. When the key is deleted, your data is u
 
 If you use Key Protect, when you provision a database you can also designate a key to encrypt the Cloud Object Storage disk that holds your deployment's backups. 
 
-BYOK for backups is available only in US regions `us-south` and `us-east`.{: .note}
+BYOK for backups is available only in US regions `us-south` and `us-east`.
+{: .note}
 
-Only keys in the `us-south` are durable to region failures. To ensure that your backups are available even if a region failure occurs, you must use a key from `us-south`, regardless of your deployment's location.{: .important}
+Only keys in the `us-south` are durable to region failures. To ensure that your backups are available even if a region failure occurs, you must use a key from `us-south`, regardless of your deployment's location.
+{: .important}
 
 ### Granting the delegation authorization
 {: #grant-auth}
 
 To enable your deployment to use the Key Protect key, you need to [Enable authorization to be delegated](/docs/account?topic=account-serviceauth) when granting the service authorizations. If the delegation authorization is not present before provisioning your deployment with a key, the provision fails.
 
-### Using the Key at Provision
-{: #key-provision}
+### Using the Key at Provision in the CLI
+{: #key-provision-cli}
+{: cli}
 
 After the appropriate authorization and delegation is granted, you supply the [key name or CRN](/docs/key-protect?topic=key-protect-view-keys) when you provision a deployment.
 
@@ -132,6 +151,10 @@ ibmcloud resource service-instance-create example-database <service-name> standa
   "backup_encryption_key_crn": "crn:v1:<...>:key:<id>"
 }'
 ```
+
+### Using the Key at Provision in the API
+{: #key-provision-api}
+{: api}
 
 In the API, use the `backup_encryption_key_crn` parameter in the body of the request.
 ```sh
@@ -177,4 +200,4 @@ If you do require that the same key to be used for multiple deployment's backups
 - If you delete both the Cloud Object Storage authorization **AND** the Cloud Databases delegator authorization, all deployments that use the same key will immediately not have the ability to back up and the correct authorizations will not be able to be re-created, effectively destroying the backups for all deployments that use that key.
 
 Use caution if you reuse keys.
-
+{: .important}
