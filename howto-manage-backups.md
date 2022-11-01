@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-10-20"
+lastupdated: "2022-11-01"
 
 subcollection: cloud-databases
 
@@ -187,7 +187,6 @@ Backup location differs per database region. Ensure that the backup region locat
 | Sydney	| AP Cross Regional Object Storage |
 | Toronto |	Montreal Object Storage |
 | Chennai |	Chennai Object Storage |
-| Seoul |	Seoul Object Storage |
 | Sao Paolo | Sao Paolo Object Storage |
 {: caption="Table 1. Database and Backup Regions" caption-side="bottom"}
 
