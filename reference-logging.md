@@ -42,7 +42,7 @@ Currently, {{site.data.keyword.loganalysisfull}} integration is available for {{
 | `par01` | `eu-de` |
 {: caption="Table 1. Log Analysis regions" caption-side="top"}
 
-Platform logs from your deployments appear in a Log Analysis instance in the same region, except for `jp-osa`. Deployments in `jp-osa` have their logs forwarded to `jp-tok`. If you have deployments in multiple regions, you must set up Log Analysis in multiple regions.  
+Platform logs from your deployments appear in a Log Analysis instance in the same region, except for `jp-osa`. Deployments in `jp-osa` have their logs forwarded to `jp-tok`. If you have deployments in multiple regions, you must set up Log Analysis in multiple regions.
 
 ## Provisioning {{site.data.keyword.loganalysisfull}}
 {: #provisioning-logging}
