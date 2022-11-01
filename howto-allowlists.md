@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-10-11"
+lastupdated: "2022-11-01"
 
 subcollection: cloud-databases
 
@@ -17,6 +17,7 @@ keywords: allowlist, ip addresses, blocklist, whitelist, cloud databases allowli
 {:tip: .tip}
 {:note: .note}
 {:important: .important}	
+{{site.data.keyword.attribute-definition-list}}
 
 # Allowlisting
 {: #allowlisting} 
@@ -41,8 +42,9 @@ Each deployment is limited to 100 allowlist entries.
 Even if not explicitly allowlisted, {{site.data.keyword.cloud_notm}} management services are still able to connect.
 {: .note}
 
-### Setting an allowlist
-{: #set-allowlist} 
+### Setting an allowlist in the UI
+{: #set-allowlist-ui}
+{: ui} 
 
 The UI for managing allowlists is on the _Settings_ tab of your _Deployment Overview_.
 
@@ -63,6 +65,7 @@ The _Description_ can be any user-significant text for identifying the allowlist
 
 ### Setting an allowlist through the CLI
 {: #set-allowlist-cli} 
+{: cli}
 
 The {{site.data.keyword.databases-for}} CLI plug-in offers a set of commands for managing allowlists. Use [`cdb deployment-whitelist-add`](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-allowlist-add) to add an allowlist. For example,
 ```bash
@@ -88,6 +91,7 @@ More information is on the {{site.data.keyword.databases-for}} CLI plug-in [refe
 
 ### Setting an allowlist through the API
 {: #set-allowlist-api} 
+{: api}
 
 To use the {{site.data.keyword.databases-for}} API to manage your allowlist with the [`/deployments/{id}/whitelists/`](https://cloud.ibm.com/apidocs/cloud-databases-api#retrieve-the-allowlisted-addresses-and-ranges-for-) endpoint. You can retrieve the current allowlist, add entries to the allowlist, and also bulk upload IP addresses to the allowlist from the API. 
 
@@ -295,36 +299,6 @@ If you use allowlists to control connections in your environment, you can use th
 | London | eu-gb | lon06 |  10.72.127.111/29 | 10.72.127.105 |         
 | London | eu-gb | lon06 |  10.72.187.247/29 | 10.72.187.241 |
 {: caption="Table 8. eu-gb Private Subnets" caption-side="bottom"}
-
-### `kr-seo` List
-{: #kr-seo-list} 
-
-`SEO01` Data Center is scheduled to close on 28 October 2022. For more information (including recommended data centers to which you can migrate), see [Migrating resources to a different data center](/docs/cloud-databases?topic=cloud-databases-migrate-data-center).
-{: .important}
-
-#### Public Subnets
-{: #kr-seo-public-list} 
-
-| Location | Region | Data center | Subnet | First IP |
-| -- | -- | -- | -- | -- |
-| Seoul | kr-seo | seo01 |  169.56.80.143/28 | 169.56.80.129 |          
-| Seoul | kr-seo | seo01 |  169.56.106.63/26 | 169.56.106.1 |          
-| Seoul | kr-seo | seo01 | 169.56.120.127/27 | 169.56.120.97 |          
-| Seoul | kr-seo | seo01 | 169.56.179.255/25 | 169.56.179.129 |          
-| Seoul | kr-seo | seo01 |  169.56.67.239/29 | 169.56.67.233 |          
-| Seoul | kr-seo | seo01 |  169.56.164.71/29 | 169.56.164.65 | 
-{: caption="Table 9. eu-gb Public Subnets" caption-side="bottom"}
-
-#### Private Subnets
-{: #kr-seo-private-list} 
-
-| Location | Region | Data center | Subnet | First IP |
-| -- | -- | -- | -- | -- |
-| Seoul | kr-seo | seo01 | 10.178.123.255/26 | 10.178.123.193 |       
-| Seoul | kr-seo | seo01 | 10.178.226.127/25 | 10.178.226.1 |       
-| Seoul | kr-seo | seo01 | 10.178.124.175/29 | 10.178.124.169 |       
-| Seoul | kr-seo | seo01 |  10.178.238.55/29 | 10.178.238.49 |
-{: caption="Table 10. seo Private Subnets" caption-side="bottom"}
 
 ### `au-syd` List
 {: #au-syd-list} 
