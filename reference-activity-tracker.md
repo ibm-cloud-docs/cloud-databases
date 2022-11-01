@@ -33,7 +33,6 @@ Currently, {{site.data.keyword.at_short}} integration is available for {{site.da
 | `jp-tok` | `jp-tok` |
 | `jp-osa` | `jp-tok` |
 | `eu-gb` | `eu-gb` |
-| `seo01` | `jp-tok` |
 | `che01` | `che01` |
 | `eu-de` | `eu-de` |
 | `au-syd` | `au-syd` |
@@ -42,11 +41,7 @@ Currently, {{site.data.keyword.at_short}} integration is available for {{site.da
 | `par01` | `eu-de` |
 {: caption="Table 1. Activity Tracker regions" caption-side="bottom"}
 
-`SEO01` Data Center is scheduled to close on 28 October 2022. See [Migrating resources to a different data center
-](/docs/cloud-databases?topic=cloud-databases-migrate-data-center) for more information, including recommended data centers to which you can migrate.
-{: .important}
-
-Events from your deployments appear in an Activity Tracker instance in the same region, except in the cases of `seo01` and `jp-osa`. Events for deployments in `seo01` are forwarded to `jp-tok` while `jp-osa` events are forwarded to `jp-tok`. If you have deployments in multiple regions, you must set up the Activity Tracker in multiple regions. 
+Events from your deployments appear in an Activity Tracker instance in the same region, except in the case of `jp-osa`. Events for deployments in `jp-osa` are forwarded to `jp-tok`. If you have deployments in multiple regions, you must set up the Activity Tracker in multiple regions. 
 
 ## Activity Tracker
 {: #activity-tracker-provision}

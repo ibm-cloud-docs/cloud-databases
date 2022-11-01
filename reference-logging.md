@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2022
-lastupdated: "2022-07-20"
+lastupdated: "2022-11-01"
 
 subcollection: cloud-databases
 
@@ -32,7 +32,6 @@ Currently, {{site.data.keyword.loganalysisfull}} integration is available for {{
 | `us-south` | `us-south` |
 | `jp-tok` | `jp-tok` |
 | `eu-gb` | `eu-gb` |
-| `seo01` | `jp-tok` |
 | `che01` | `che01` |
 | `eu-de` | `eu-de` |
 | `au-syd` | `au-syd` |
@@ -43,11 +42,7 @@ Currently, {{site.data.keyword.loganalysisfull}} integration is available for {{
 | `par01` | `eu-de` |
 {: caption="Table 1. Log Analysis regions" caption-side="top"}
 
-`SEO01` Data Center is scheduled to close on October 28, 2002. See [Migrating resources to a different data center
-](/docs/cloud-databases?topic=cloud-databases-migrate-data-center) for more information, including recommended data centers to which you can migrate.
-{: .important}
-
-Platform logs from your deployments appear in a Log Analysis instance in the same region, except for `seo01` and `jp-osa`. Deployments in `seo01` have their logs forwarded to `jp-tok`. Deployments in `jp-osa` have their logs forwarded to `jp-tok`. If you have deployments in multiple regions, you must set up Log Analysis in multiple regions.  
+Platform logs from your deployments appear in a Log Analysis instance in the same region, except for `jp-osa`. Deployments in `jp-osa` have their logs forwarded to `jp-tok`. If you have deployments in multiple regions, you must set up Log Analysis in multiple regions.  
 
 ## Provisioning {{site.data.keyword.loganalysisfull}}
 {: #provisioning-logging}
