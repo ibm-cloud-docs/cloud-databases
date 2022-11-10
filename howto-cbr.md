@@ -2,7 +2,7 @@
 
 copyright:
   years:  2022
-lastupdated: "2022-10-20"
+lastupdated: "2022-11-10"
 
 keywords: restricting access to cloud databases, restricting access to ICD, DataStax cbr, Elasticsearch cbr, EnterpriseDB cbr, etcd cbr, mongodb cbr, postgresql cbr, redis cbr, mysql cbr, rabbitmq cbr
 
@@ -20,7 +20,7 @@ subcollection: cloud-databases
 {:experimental: .experimental}
 {{site.data.keyword.attribute-definition-list}}
 
-This document outlines the process for using context-based restrictions to protect your {{site.data.keyword.databases-for}} resources. Use this document to prepare your resources for context-based restrictions. {{site.data.keyword.databases-for}} doesn't offer scoping rules to the data plane in this current phase of implementation.{: .important}
+This document outlines the process for using context-based restrictions to protect your {{site.data.keyword.databases-for}} resources. Use this document to prepare your resources for context-based restrictions. {{site.data.keyword.databases-for}} doesn't offer scoping rules to the control plane in this current phase of implementation.{: .important}
 
 # Protecting {{site.data.keyword.databases-for}} resources with context-based restrictions
 {: #cbr}
@@ -51,7 +51,7 @@ Region
 :   Protects {{site.data.keyword.databases-for}} resources in a specific region. If you include a region in your context-based restrictions rule, resources in the network zones that  you associate with the rule can interact only with resources in that region. If you use the CLI, you can specify the `--region` option to protect resources in a specific region. If you use the UI, you can specify *Region* in the resource attributes. 
 
 Resource groups
-:   Protects a specific resource group. If you include a resource group in your context-based restrictions rule, resources in the network zones that you associate with the rule can interact only with resources in that resource group. Note that scoping a rule to a specific resource group is available only for rules that protect the cluster API type. If you use the CLI, you can specify the `resource-group-id` option to protect resources in a specific resource group. If you use the UI, you can specify the *Resource group* in the resource attributes.
+:   Protects a specific resource group. If you include a resource group in your context-based restrictions rule, resources in the network zones that you associate with the rule can interact only with resources in that resource group. Note that scoping a rule to a specific resource group is available only for rules that protect the cluster API type. If you use the CLI, you can specify the `--resource-group-id` option to protect resources in a specific resource group. If you use the UI, you can specify the *Resource group* in the resource attributes.
 
 Instance
 :   Protects a specific instance. If you include an instance in your context-based restrictions rule, resources in the network zones that you associate with the rule can interact only with resources in that instance. Note that scoping a rule to a specific instance is available only for rules that protect the cluster API type. If you use the CLI, you can specify the `--service-instance` option to protect instances in a specific resource group. If you use the UI, you can specify the *Service instance* in the resource attributes.
@@ -63,10 +63,6 @@ A network zone represents an allowlist of IP addresses where an access request i
 
 * IP addresses, which include individual addresses, ranges, or subnets.
 * VPCs
-* Service references, which allow access from other {{site.data.keyword.cloud_notm}} services.
-
-Make sure to add {{site.data.keyword.databases-for}} to network zones for rules that target other {{site.data.keyword.cloud_notm}} resources, or some operations in your workflow might fail. 
-{: important}
 
 ### Creating network zones in the UI
 {: #network-zone-ui}
