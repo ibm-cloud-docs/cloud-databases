@@ -2,7 +2,7 @@
 
 copyright:
   years:  2022
-lastupdated: "2022-10-20"
+lastupdated: "2022-11-10"
 
 keywords: restricting access to cloud databases, restricting access to ICD, DataStax cbr, Elasticsearch cbr, EnterpriseDB cbr, etcd cbr, mongodb cbr, postgresql cbr, redis cbr, mysql cbr, rabbitmq cbr
 
@@ -20,7 +20,7 @@ subcollection: cloud-databases
 {:experimental: .experimental}
 {{site.data.keyword.attribute-definition-list}}
 
-This document outlines the process for using context-based restrictions to protect your {{site.data.keyword.databases-for}} resources. Use this document to prepare your resources for context-based restrictions. {{site.data.keyword.databases-for}} doesn't offer scoping rules to the data plane in this current phase of implementation.{: .important}
+This document outlines the process for using context-based restrictions to protect your {{site.data.keyword.databases-for}} resources. Use this document to prepare your resources for context-based restrictions. {{site.data.keyword.databases-for}} doesn't offer scoping rules to the control plane in this current phase of implementation.{: .important}
 
 # Protecting {{site.data.keyword.databases-for}} resources with context-based restrictions
 {: #cbr}
@@ -63,10 +63,6 @@ A network zone represents an allowlist of IP addresses where an access request i
 
 * IP addresses, which include individual addresses, ranges, or subnets.
 * VPCs
-* Service references, which allow access from other {{site.data.keyword.cloud_notm}} services.
-
-Make sure to add {{site.data.keyword.databases-for}} to network zones for rules that target other {{site.data.keyword.cloud_notm}} resources, or some operations in your workflow might fail. 
-{: important}
 
 ### Creating network zones in the UI
 {: #network-zone-ui}
