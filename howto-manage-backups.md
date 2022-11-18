@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-11-01"
+lastupdated: "2022-11-18"
 
 subcollection: cloud-databases
 
@@ -10,11 +10,6 @@ keywords: backups
 
 ---
 
-{:external: .external target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
 {{site.data.keyword.attribute-definition-list}}
 
 # Managing {{site.data.keyword.databases-for}} backups
@@ -29,7 +24,8 @@ Backups for {{site.data.keyword.databases-for}} deployments are accessible from 
 - Daily backup scheduling is not configurable.
 - Backups are restorable to other regions, except for `eu-de` and `par-01`, which can restore backups only between each other. For example, `par-01` backups can be restored to `eu-de`, and vice versa.
 - Backup storage is encrypted. To manage the encryption keys, see [Key Protect integration](/docs/cloud-databases?topic=cloud-databases-key-protect#byok-for-backups). Otherwise, backups are encrypted with a key that is automatically generated for your deployment.
-- Backups are restorable across accounts, but only through the API and only if the user that is running the restore has access to both the source and destination accounts. 
+- Backups are restorable across accounts, but only through the API and only if the user that is running the restore has access to both the source and destination accounts.
+- {{site.data.keyword.databases-for}} backups are not downloadable for clients. If you need a local backup, use the appropriate software. For example, [pg_dump](https://www.postgresql.org/docs/9.6/static/backup-dump.html){: .external} is an effective tool for managing PostgreSQL backups.
 
 ## Backups in the UI
 {: #backup-ui}
