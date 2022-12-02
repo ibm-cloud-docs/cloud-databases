@@ -2,7 +2,7 @@
 
 copyright:
   years:  2022
-lastupdated: "2022-11-10"
+lastupdated: "2022-12-02"
 
 keywords: restricting access to cloud databases, restricting access to ICD, DataStax cbr, Elasticsearch cbr, EnterpriseDB cbr, etcd cbr, mongodb cbr, postgresql cbr, redis cbr, mysql cbr, rabbitmq cbr
 
@@ -30,12 +30,12 @@ Context-based restrictions give account owners and administrators the ability to
 
 These restrictions work with traditional IAM policies, which are based on identity, to provide an extra layer of protection. Unlike IAM policies, context-based restrictions don't assign access. Context-based restrictions check that an access request comes from an allowed context that you configure. Since both IAM access and context-based restrictions enforce access, context-based restrictions offer protection even in the face of compromised or mismanaged credentials. For more information, see [What are context-based restrictions](/docs/account?topic=account-context-restrictions-whatis).
 
-A user must have the Administrator role on the {{site.data.keyword.databases-for}} service to create, update, or delete rules. A user must also have either the Editor or Administrator role on the context-based restrictions service to create, update, or delete network zones. A user with the Viewer role on the context-based restrictions service can only add network zones to a rule. 
+A user must have the Administrator role on the {{site.data.keyword.databases-for}} service to create, update, or delete rules. A user must also have either the Editor or Administrator role on the context-based restrictions service to create, update, or delete network zones. A user with the Viewer role on the context-based restrictions service can add network zones to a rule. 
 {: note}
 
 Any {{site.data.keyword.cloudaccesstraillong_notm}} or audit log events generated come from the context-based restrictions service, not {{site.data.keyword.databases-for}}. {{site.data.keyword.databases-for}} supports audit events only for customer interactions with context-based restrictions-protected platform endpoint calls. {{site.data.keyword.databases-for}} does not support audit events when you enable context-based restrictions rules on the control plane API for your instances. For more information, see [Monitoring context-based restrictions](/docs/account?topic=account-cbr-monitor).
 
-To get started protecting your {{site.data.keyword.databases-for}} resources with context-based restrictions, see the tutorial for [Leveraging context-based restrictions to secure your resources](/docs/account?topic=account-context-restrictions-tutorial).
+To start protecting your {{site.data.keyword.databases-for}} resources with context-based restrictions, see the tutorial for [Leveraging context-based restrictions to secure your resources](/docs/account?topic=account-context-restrictions-tutorial).
 
 ## How {{site.data.keyword.databases-for}} integrates with context-based restrictions
 {: #cbr-overview}
@@ -48,13 +48,13 @@ You can create context-based restrictions for the {{site.data.keyword.databases-
 You can create context-based restrictions rules to protect specific **regions**, **resource groups**, and **instances**.
 
 Region
-:   Protects {{site.data.keyword.databases-for}} resources in a specific region. If you include a region in your context-based restrictions rule, resources in the network zones that  you associate with the rule can interact only with resources in that region. If you use the CLI, you can specify the `--region` option to protect resources in a specific region. If you use the UI, you can specify *Region* in the resource attributes. 
+:   Protects {{site.data.keyword.databases-for}} resources in a specific region. If you include a region in your context-based restrictions rule, resources in the network zones that you associate with the rule can interact with resources only in that region. If you use the CLI, you can specify the `--region` option to protect resources in a specific region. If you use the UI, you can specify *Region* in the resource attributes. 
 
 Resource groups
-:   Protects a specific resource group. If you include a resource group in your context-based restrictions rule, resources in the network zones that you associate with the rule can interact only with resources in that resource group. Note that scoping a rule to a specific resource group is available only for rules that protect the cluster API type. If you use the CLI, you can specify the `--resource-group-id` option to protect resources in a specific resource group. If you use the UI, you can specify the *Resource group* in the resource attributes.
+:   Protects a specific resource group. If you include a resource group in your context-based restrictions rule, resources in the network zones that you associate with the rule can interact only with resources in that resource group. Scoping a rule to a specific resource group is available only for rules that protect the cluster API type. If you use the CLI, you can specify the `--resource-group-id` option to protect resources in a specific resource group. If you use the UI, you can specify the *Resource group* in the resource attributes.
 
 Instance
-:   Protects a specific instance. If you include an instance in your context-based restrictions rule, resources in the network zones that you associate with the rule can interact only with resources in that instance. Note that scoping a rule to a specific instance is available only for rules that protect the cluster API type. If you use the CLI, you can specify the `--service-instance` option to protect instances in a specific resource group. If you use the UI, you can specify the *Service instance* in the resource attributes.
+:   Protects a specific instance. If you include an instance in your context-based restrictions rule, resources in the network zones that you associate with the rule can interact only with resources in that instance. Scoping a rule to a specific instance is available only for rules that protect the cluster API type. If you use the CLI, you can specify the `--service-instance` option to protect instances in a specific resource group. If you use the UI, you can specify the *Service instance* in the resource attributes.
 
 ## Creating network zones
 {: #network-zone}
@@ -132,7 +132,7 @@ Rules restrict access to specific cloud resources based on resource attributes a
    {: .note}
 
 1. Click **Next**.
-1. Scope the rule to **All resources** or **Specific resources**. See [Protecting Cloud Databases resources](/docs/cloud-databases?topic=cloud-databases-cbr#cbr-overview-protect-services) for more information about how you can target specific resources.
+1. Scope the rule to **All resources** or **Specific resources**. For more information, see [Protecting {{site.data.keyword.databases-for}} resources](/docs/cloud-databases?topic=cloud-databases-cbr#cbr-overview-protect-services).
 1. Click **Continue**.
 1. Define the allowed endpoint types.
    - Keep the toggle set to **No** to allow all endpoint types.
@@ -141,10 +141,10 @@ Rules restrict access to specific cloud resources based on resource attributes a
    Contexts define from where your resources can be accessed, effectively linking your network zone to your rule.
    {: tip}
 
-1. Click **Add** to add your configuraiton to the summary panel.
+1. Click **Add** to add your configuration to the summary.
 1. Click **Next**.
 1. Name your rule.
-1. Select how you want to enforce the rule.
+1. Select how you want to enforce the rule. *Report-only* is not available for {{site.data.keyword.databases-for}}.
 
 ### Creating rules in the CLI
 {: #rules-cli}
@@ -177,7 +177,7 @@ ibmcloud cbr rule-update <RULE-ID> --enforcement-mode disabled --context-attribu
 ```
 {: .pre}
 
-The `rule-update` command is an overwrite. Include all of the fields required as if you are creating the rule from scratch. If you omit any required fields, the rule overwrites those missing fields as empty, and the rule might fail because some of those fields are required, regardless of whether they are changing the rule. 
+The `rule-update` command is an overwrite. Include all of the fields that are required as if you are creating the rule from scratch. If you omit any required fields, the rule overwrites those missing fields as empty, and the rule might fail because some of those fields are required, regardless of whether they are changing the rule. 
 {: .important}
 
 Updating requires the `RULE-ID`, not the rule name. Use the following command to list your rules and retrieve the relevant `RULE-ID`:
@@ -195,6 +195,6 @@ ibmcloud cbr rule-delete <RULE-ID>
 ### Verifying your rule
 {: #rules-ui-verify}
 
-To verify that your rule has been applied, go to the {{site.data.keyword.cloud}} Dashboard and select the relevant instance from your *Resource List*. Within the **Recent Tasks** panel, you will see your rule's status.
+To verify that your rule is applied, go to the {{site.data.keyword.cloud}} Dashboard and select the relevant instance from your *Resource List*. Within **Recent Tasks**, you see your rule's status.
 
 The task of creating or modifying a rule goes into your instance's task queue. Depending on workload, it might take some time for your rule enforcement to complete.{: .note}
