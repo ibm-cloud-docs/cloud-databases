@@ -170,6 +170,9 @@ ibmcloud cbr rule-create --enforcement-mode enabled --context-attributes "networ
 ```
 {: .pre}
 
+*Report-only* is not available for {{site.data.keyword.databases-for}}.
+{: .note}
+
 Update a rule using a command like:
 
 ```sh
