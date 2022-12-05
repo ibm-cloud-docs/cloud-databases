@@ -2,7 +2,7 @@
 
 copyright:
   years:  2022
-lastupdated: "2022-12-02"
+lastupdated: "2022-12-05"
 
 keywords: restricting access to cloud databases, restricting access to ICD, DataStax cbr, Elasticsearch cbr, EnterpriseDB cbr, etcd cbr, mongodb cbr, postgresql cbr, redis cbr, mysql cbr, rabbitmq cbr
 
@@ -128,7 +128,7 @@ Rules restrict access to specific cloud resources based on resource attributes a
 1. Select **Rules**.
 1. Click **Create**.
 1. Protect **All APIs** by default, or select **Specific APIs**.
-   {{site.data.keyword.databases-for}} does not currently support **Data plane** as an option.
+   {{site.data.keyword.databases-for}} does not currently support **Control plane** as an option.
    {: .note}
 
 1. Click **Next**.
