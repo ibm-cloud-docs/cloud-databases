@@ -128,7 +128,7 @@ ibmcloud sat location get --location <location name> --output=json -q | jq -r .s
 If successful, the command output reports `normal`.
 
 ### Obtaining `Normal` state
-{: #norm-state}
+{: #aws-norm-state}
 
 To get to this state, attach a minimum of three 4x16 hosts to your location and assign them to the Control plane. After that step is complete, provisioning of the Control plane begins. Upon successful completion, the location state is going to report as `Normal`, as shown: 
 
