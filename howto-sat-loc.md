@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-07-29"
+lastupdated: "2022-12-09"
 
 keywords: IBM Cloud, databases, ICD
 
@@ -66,7 +66,7 @@ ICD enabled by {{site.data.keyword.cloud_notm}} Satellite supports Satellite loc
 ![An Overview of ICD enabled by {{site.data.keyword.cloud_notm}} Satellite](images/sat_on_icd.svg){: caption="Image 1. An Overview of ICD enabled by {{site.data.keyword.cloud_notm}} Satellite" caption-side="bottom"}
 
 ## Before you begin
-{: #before-begin}
+{: #satellite-before-begin}
 
 ICD enabled by {{site.data.keyword.cloud_notm}} Satellite does not yet provide the Security and Compliance integration, Activity Tracking, or Metrics Monitoring of a standard {{site.data.keyword.cloud}} Databases deployment.
 {: .important}
