@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2022
-lastupdated: "2022-11-08"
+lastupdated: "2022-12-09"
 
 subcollection: cloud-databases
 
@@ -110,7 +110,7 @@ Key Protect offers manual and automatic [key rotation](/docs/key-protect?topic=k
 For more information, see [Rotating manually or automatically](/docs/key-protect?topic=key-protect-key-rotation#compare-key-rotation-options).
 
 ## Deleting the Deployment
-{: #deleting-deployment}
+{: #key-protect-deleting-deployment}
 
 If you delete a deployment that is protected with a Key Protect key, the deployment remains registered against the key during the soft-deletion period (up to 9 days). To delete the key in the soft-deletion period, [force delete](/docs/key-protect?topic=key-protect-delete-keys) the key. After the soft-deletion period, the key can be deleted without the force. To determine when you can delete the key, check the [association between the key and your deployment](/docs/key-protect?topic=key-protect-view-protected-resources).
 
