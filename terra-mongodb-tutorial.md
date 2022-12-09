@@ -2,7 +2,7 @@
 
 copyright:
    years: 2022
-lastupdated: "2022-05-26"
+lastupdated: "2022-12-09"
 
 keywords: IBM Cloud Databases, ICD, terraform, terraform mongodbee, mongodb, mongodbee
 
@@ -41,13 +41,13 @@ In this tutorial, you provision your database by using Terraform, a service that
 To support a multi-cloud approach, Terraform works with providers. A provider is responsible for understanding API interactions and exposing resources. {{site.data.keyword.cloud}} has its provider for Terraform, enabling users of {{site.data.keyword.cloud}} to manage resources with Terraform. Although Terraform is categorized as infrastructure as code, it is not limited to Infrastructure-As-A-Service resources. For more information, see [ibm_database](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database).
 
 ## Step 1: Install Terraform
-{: #tutorial-provision-postgres-install-cli}
+{: #tutorial-provision-mongodbee-install-cli}
 {: step}
 
 Follow the steps at [Install Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli?in=terraform/docker-get-started){: external} to install Terraform.
 
 ## Step 2: Configure the {{site.data.keyword.cloud}} Provider plug-in
-{: #tutorial-provision-postgres-config-provider}
+{: #tutorial-provision-mongodbee-config-provider}
 {: step}
 
 1. [Create or retrieve an {{site.data.keyword.cloud}} API key.](/docs/account?topic=account-userapikey#create_user_key) The API key is used to authenticate with the {{site.data.keyword.cloud}} platform and to determine your permissions for {{site.data.keyword.cloud}} services.
