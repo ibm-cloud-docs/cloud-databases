@@ -61,7 +61,7 @@ ICD enabled by {{site.data.keyword.cloud_notm}} Satellite supports Satellite loc
 {: shortdesc}
 
 ## An Overview
-{: #before-begin}
+{: #satellite-before-begin}
 
 ![An Overview of ICD enabled by {{site.data.keyword.cloud_notm}} Satellite](images/sat_on_icd.svg){: caption="Image 1. An Overview of ICD enabled by {{site.data.keyword.cloud_notm}} Satellite" caption-side="bottom"}
 
