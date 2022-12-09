@@ -81,7 +81,7 @@ In this step, you deploy an instance of the database service you want to use. Th
    {: pre}
 
 ## Step 4: Run your app locally
-{: #create-instance-tutorial-step-3}
+{: #create-instance-tutorial-step-4}
 
 1. To connect to the database from your local machine, ensure that you are in your service folder, then install the node dependencies and run the service with the following commands:
 
@@ -108,7 +108,7 @@ In this step, you deploy an instance of the database service you want to use. Th
 1. To test the interface, enter a word and its definition. The data pair is added to the database and appears in a list at the bottom of the page.
 
 ## Step 5 (optional): Run the app from a Docker container
-{: #create-instance-tutorial-step-3}
+{: #create-instance-tutorial-step-5}
 
 The first step toward hosting your application from a service like [Code Engine](https://www.ibm.com/cloud/code-engine){: .external} is to containerize the app code inside a Docker container and run it from there.
 
