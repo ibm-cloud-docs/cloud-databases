@@ -2,7 +2,7 @@
 
 copyright:
    years: 2022
-lastupdated: "2022-05-26"
+lastupdated: "2022-12-09"
 
 keywords: IBM Cloud Databases, ICD, terraform, postgresql terraform, postgresql
 
@@ -137,7 +137,7 @@ Create a Terraform configuration file that is named `postgres.tf`.
    - **Timeouts** - Create, update, and delete values for this resource. ICD `create` typically takes in the range of 30 - 45 minutes. `delete` and `update` typically take 1 minute. Provisioning times are unpredictable. If the deployment fails due to a timeout, import the database resource once the `create` is complete.
 
 ## Step 4: Test your configuration
-{: #tutorial-provision-mongodb-test}
+{: #tutorial-provision-postgres-test}
 {: step}
 
 Now that you configured the {{site.data.keyword.cloud}} Provider plug-in for your resource, you can use Terraform on {{site.data.keyword.cloud}} to initialize, run, plan, and apply commands to provision the resource. You need the following commands:
