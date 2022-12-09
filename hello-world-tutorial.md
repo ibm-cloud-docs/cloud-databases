@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-10-19"
+lastupdated: "2022-12-09"
 
 keywords: instance tutorial, provision tutorial, docker
 
@@ -10,14 +10,7 @@ subcollection: cloud-databases
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: .external target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
+{{site.data.keyword.attribute-definition-list}}
 
 # Deploying and Connecting a {{site.data.keyword.databases-for}} Instance 
 {: #create-instance-tutorial}
@@ -55,7 +48,7 @@ git clone https://github.com/IBM-Cloud/clouddatabases-helloworld-examples.git
 {: pre}
 
 ## Step 3: Install the infrastructure
-{: #create-instance-tutorial-step-2}
+{: #create-instance-tutorial-step-3}
 
 In this step, you deploy an instance of the database service you want to use. The GitHub repository contains folders for various {{site.data.keyword.databases-for}} resources.
 
