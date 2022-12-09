@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-06-30"
+lastupdated: "2022-12-09"
 
 keywords: IBM Cloud, databases, ICD
 
@@ -139,7 +139,7 @@ Begin by configuring IAM Authorizations:
 
 ## Ensure location readiness
 {: step}
-{: #loc-readiness}
+{: #onprem-loc-readiness}
 
 Your location needs to report `Normal` before you provision your ICD Satellite Deployment. This status can be confirmed in the UI, as shown here:
 
