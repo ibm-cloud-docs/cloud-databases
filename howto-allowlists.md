@@ -215,8 +215,6 @@ If you use allowlists to control connections in your environment, you can use th
 | Sao Paolo | br-sao | sao05 |  10.15.18.191/29  | 10.15.18.185 |   
 {: caption="Table 6. br-sao Private Subnets" caption-side="bottom"}
 
-
-
 ### `eu-gb` List
 {: #eu-gb-list} 
 
@@ -257,7 +255,7 @@ If you use allowlists to control connections in your environment, you can use th
 | London | eu-gb | lon06 | 158.176.113.143/29 | 158.176.113.137 |         
 | London | eu-gb | lon06 | 158.176.122.239/29 | 158.176.122.233 |         
 | London | eu-gb | lon06 | 158.176.124.223/29 | 158.176.124.217 |         
-| London | eu-gb | lon06 | 158.176.131.15/29  | 158.176.131.9 |   
+| London | eu-gb | lon06 | 158.176.131.15/29  | 158.176.131.9 |
 {: caption="Table 7. eu-gb Public Subnets" caption-side="bottom"}
 
 #### Private Subnets
