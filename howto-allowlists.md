@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-11-02"
+lastupdated: "2022-12-14"
 
 subcollection: cloud-databases
 
@@ -10,19 +10,12 @@ keywords: allowlist, ip addresses, blocklist, whitelist, cloud databases allowli
 
 ---
 
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}	
 {{site.data.keyword.attribute-definition-list}}
 
 # Allowlisting
 {: #allowlisting} 
 
-{{site.data.keyword.databases-for}} now supports Context-based restrictions (CBR), which give account owners and administrators the ability to define and enforce access restrictions for {{site.data.keyword.cloud}} resources based on the context of access requests. Access to {{site.data.keyword.databases-for}} resources can be controlled with CBR and identity and access management (IAM) policies. CBRs check that an access request comes from an allowed context that you configure. Since both IAM access and CBR enforce access, CBR offers protection even in the face of compromised or mismanaged credentials. For more information, see [Protecting Cloud Databases resources with context-based restrictions](/docs/cloud-databases?topic=cloud-databases-cbr).{: .tip}
+{{site.data.keyword.databases-for}} now supports context-based restrictions, which give account owners and administrators the ability to define and enforce access restrictions for {{site.data.keyword.cloud}} resources based on the context of access requests. Access to {{site.data.keyword.databases-for}} resources can be controlled with context-based restrictions and identity and access management (IAM) policies. Context-based restrictions check that an access request comes from an allowed context that you configure. Since both IAM access and context-based restrictions enforce access, context-based restrictions offer protection even in the face of compromised or mismanaged credentials. For more information, see [Protecting Cloud Databases resources with context-based restrictions](/docs/cloud-databases?topic=cloud-databases-cbr).{: .tip}
 
 To restrict access to your databases, you can allowlist specific IP addresses or ranges of IP addresses on your deployment.
 
@@ -185,22 +178,22 @@ If you use allowlists to control connections in your environment, you can use th
 
 | Location | Region | Data center | Subnet | First IP |
 | -- | -- | -- | -- | -- |
-| Sao Paolo | br-sao | sao01 | 169.57.154.239/28 | 169.57.154.225  |        
-| Sao Paolo | br-sao | sao01 |  169.57.191.63/26 | 169.57.191.1  |        
-| Sao Paolo | br-sao | sao01 | 169.57.198.255/25 | 169.57.198.129  |        
-| Sao Paolo | br-sao | sao01 | 169.57.225.127/27 | 169.57.225.97  |        
-| Sao Paolo | br-sao | sao01 |  169.57.167.95/29 | 169.57.167.89  |        
-| Sao Paolo | br-sao | sao01 |  169.57.199.23/29 | 169.57.199.17  |        
-| Sao Paolo | br-sao | sao04 |  163.107.67.63/28 | 163.107.67.49  |        
-| Sao Paolo | br-sao | sao04 |  163.107.69.63/27 | 163.107.69.33  |        
-| Sao Paolo | br-sao | sao04 | 163.107.72.127/26 | 163.107.72.65  |        
-| Sao Paolo | br-sao | sao04 |  163.107.68.87/29 | 163.107.68.81  |        
-| Sao Paolo | br-sao | sao04 |  163.107.68.95/29 | 163.107.68.89  |        
-| Sao Paolo | br-sao | sao05 |  163.109.68.63/26 | 163.109.68.1  |        
-| Sao Paolo | br-sao | sao05 |  163.109.68.95/27 | 163.109.68.65  |        
-| Sao Paolo | br-sao | sao05 | 163.109.68.175/28 | 163.109.68.161  |        
-| Sao Paolo | br-sao | sao05 | 163.109.65.119/29 | 163.109.65.113  |        
-| Sao Paolo | br-sao | sao05 | 163.109.65.127/29 | 163.109.65.121  | 
+| Sao Paolo | br-sao |sao01 | 169.57.154.239/28 | 169.57.154.225 |         
+| Sao Paolo | br-sao |sao01 |  169.57.191.63/26 | 169.57.191.1 |         
+| Sao Paolo | br-sao |sao01 | 169.57.198.255/25 | 169.57.198.129 |         
+| Sao Paolo | br-sao |sao01 | 169.57.225.127/27 | 169.57.225.97 |         
+| Sao Paolo | br-sao |sao01 |  169.57.167.95/29 | 169.57.167.89 |         
+| Sao Paolo | br-sao |sao01 |  169.57.199.23/29 | 169.57.199.17 |         
+| Sao Paolo | br-sao |sao04 |  163.107.67.63/28 | 163.107.67.49 |         
+| Sao Paolo | br-sao |sao04 |  163.107.69.63/27 | 163.107.69.33 |         
+| Sao Paolo | br-sao |sao04 | 163.107.72.127/26 | 163.107.72.65 |         
+| Sao Paolo | br-sao |sao04 |  163.107.68.87/29 | 163.107.68.81 |         
+| Sao Paolo | br-sao |sao04 |  163.107.68.95/29 | 163.107.68.89 |         
+| Sao Paolo | br-sao |sao05 |  163.109.68.63/26 | 163.109.68.1 |         
+| Sao Paolo | br-sao |sao05 |  163.109.68.95/27 | 163.109.68.65 |         
+| Sao Paolo | br-sao |sao05 | 163.109.68.175/28 | 163.109.68.161 |         
+| Sao Paolo | br-sao |sao05 | 163.109.65.119/29 | 163.109.65.113 |         
+| Sao Paolo | br-sao |sao05 | 163.109.65.127/29 | 163.109.65.121 |  
 {: caption="Table 5. br-sao Public Subnets" caption-side="bottom"}
 
 #### Private Subnets
@@ -219,8 +212,10 @@ If you use allowlists to control connections in your environment, you can use th
 | Sao Paolo | br-sao | sao05 |  10.15.20.191/26  | 10.15.20.129 |         
 | Sao Paolo | br-sao | sao05 |  10.15.31.127/25  | 10.15.31.1 |         
 | Sao Paolo | br-sao | sao05 |  10.15.18.183/29  | 10.15.18.177 |         
-| Sao Paolo | br-sao | sao05 |  10.15.18.191/29  | 10.15.18.185 |  
+| Sao Paolo | br-sao | sao05 |  10.15.18.191/29  | 10.15.18.185 |   
 {: caption="Table 6. br-sao Private Subnets" caption-side="bottom"}
+
+
 
 ### `eu-gb` List
 {: #eu-gb-list} 
