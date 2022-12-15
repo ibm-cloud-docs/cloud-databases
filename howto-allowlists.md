@@ -652,6 +652,7 @@ If you use allowlists to control connections in your environment, you can use th
 | -- | -- | -- | -- | -- |
 | Frankfurt | eu-de | fra02 |  10.20.34.255/24  | 10.20.34.1 |         
 | Frankfurt | eu-de | fra02 | 10.134.228.255/24 | 10.134.228.1 |         
+| Frankfurt | eu-de | fra02 |  10.135.51.255/24 | 10.135.51.1 |         
 | Frankfurt | eu-de | fra02 |   10.194.5.63/26  | 10.194.5.1 |         
 | Frankfurt | eu-de | fra02 |  10.194.98.255/25 | 10.194.98.129 |         
 | Frankfurt | eu-de | fra02 | 10.194.205.255/24 | 10.194.205.1 |         
@@ -674,6 +675,7 @@ If you use allowlists to control connections in your environment, you can use th
 | Frankfurt | eu-de | fra02 |  10.135.180.7/29  | 10.135.180.1 |         
 | Frankfurt | eu-de | fra02 |  10.135.180.15/29 | 10.135.180.9 |         
 | Frankfurt | eu-de | fra04 |  10.21.72.255/24  | 10.21.72.1 |         
+| Frankfurt | eu-de | fra04 |  10.75.27.255/24  | 10.75.27.1 |         
 | Frankfurt | eu-de | fra04 |  10.75.68.191/26  | 10.75.68.129 |         
 | Frankfurt | eu-de | fra04 |  10.75.134.127/25 | 10.75.134.1 |         
 | Frankfurt | eu-de | fra04 |  10.75.234.255/24 | 10.75.234.1 |         
@@ -698,6 +700,7 @@ If you use allowlists to control connections in your environment, you can use th
 | Frankfurt | eu-de | fra04 |  10.240.228.71/29 | 10.240.228.65 |         
 | Frankfurt | eu-de | fra05 |  10.13.21.255/24  | 10.13.21.1 |         
 | Frankfurt | eu-de | fra05 |  10.13.175.255/24 | 10.13.175.1 |         
+| Frankfurt | eu-de | fra05 |  10.13.224.255/24 | 10.13.224.1 |         
 | Frankfurt | eu-de | fra05 |  10.123.14.63/26  | 10.123.14.1 |         
 | Frankfurt | eu-de | fra05 |  10.123.55.127/25 | 10.123.55.1 |         
 | Frankfurt | eu-de | fra05 | 10.123.167.255/24 | 10.123.167.1 |         
