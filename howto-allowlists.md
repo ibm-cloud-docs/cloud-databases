@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-11-02"
+lastupdated: "2022-12-15"
 
 subcollection: cloud-databases
 
@@ -10,19 +10,12 @@ keywords: allowlist, ip addresses, blocklist, whitelist, cloud databases allowli
 
 ---
 
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}	
 {{site.data.keyword.attribute-definition-list}}
 
 # Allowlisting
 {: #allowlisting} 
 
-{{site.data.keyword.databases-for}} now supports Context-based restrictions (CBR), which give account owners and administrators the ability to define and enforce access restrictions for {{site.data.keyword.cloud}} resources based on the context of access requests. Access to {{site.data.keyword.databases-for}} resources can be controlled with CBR and identity and access management (IAM) policies. CBRs check that an access request comes from an allowed context that you configure. Since both IAM access and CBR enforce access, CBR offers protection even in the face of compromised or mismanaged credentials. For more information, see [Protecting Cloud Databases resources with context-based restrictions](/docs/cloud-databases?topic=cloud-databases-cbr).{: .tip}
+{{site.data.keyword.databases-for}} now supports context-based restrictions, which give account owners and administrators the ability to define and enforce access restrictions for {{site.data.keyword.cloud}} resources based on the context of access requests. Access to {{site.data.keyword.databases-for}} resources can be controlled with context-based restrictions and identity and access management (IAM) policies. Context-based restrictions check that an access request comes from an allowed context that you configure. Since both IAM access and context-based restrictions enforce access, context-based restrictions offer protection even in the face of compromised or mismanaged credentials. For more information, see [Protecting Cloud Databases resources with context-based restrictions](/docs/cloud-databases?topic=cloud-databases-cbr).{: .tip}
 
 To restrict access to your databases, you can allowlist specific IP addresses or ranges of IP addresses on your deployment.
 
@@ -185,22 +178,22 @@ If you use allowlists to control connections in your environment, you can use th
 
 | Location | Region | Data center | Subnet | First IP |
 | -- | -- | -- | -- | -- |
-| Sao Paolo | br-sao | sao01 | 169.57.154.239/28 | 169.57.154.225  |        
-| Sao Paolo | br-sao | sao01 |  169.57.191.63/26 | 169.57.191.1  |        
-| Sao Paolo | br-sao | sao01 | 169.57.198.255/25 | 169.57.198.129  |        
-| Sao Paolo | br-sao | sao01 | 169.57.225.127/27 | 169.57.225.97  |        
-| Sao Paolo | br-sao | sao01 |  169.57.167.95/29 | 169.57.167.89  |        
-| Sao Paolo | br-sao | sao01 |  169.57.199.23/29 | 169.57.199.17  |        
-| Sao Paolo | br-sao | sao04 |  163.107.67.63/28 | 163.107.67.49  |        
-| Sao Paolo | br-sao | sao04 |  163.107.69.63/27 | 163.107.69.33  |        
-| Sao Paolo | br-sao | sao04 | 163.107.72.127/26 | 163.107.72.65  |        
-| Sao Paolo | br-sao | sao04 |  163.107.68.87/29 | 163.107.68.81  |        
-| Sao Paolo | br-sao | sao04 |  163.107.68.95/29 | 163.107.68.89  |        
-| Sao Paolo | br-sao | sao05 |  163.109.68.63/26 | 163.109.68.1  |        
-| Sao Paolo | br-sao | sao05 |  163.109.68.95/27 | 163.109.68.65  |        
-| Sao Paolo | br-sao | sao05 | 163.109.68.175/28 | 163.109.68.161  |        
-| Sao Paolo | br-sao | sao05 | 163.109.65.119/29 | 163.109.65.113  |        
-| Sao Paolo | br-sao | sao05 | 163.109.65.127/29 | 163.109.65.121  | 
+| Sao Paolo | br-sao |sao01 | 169.57.154.239/28 | 169.57.154.225 |         
+| Sao Paolo | br-sao |sao01 |  169.57.191.63/26 | 169.57.191.1 |         
+| Sao Paolo | br-sao |sao01 | 169.57.198.255/25 | 169.57.198.129 |         
+| Sao Paolo | br-sao |sao01 | 169.57.225.127/27 | 169.57.225.97 |         
+| Sao Paolo | br-sao |sao01 |  169.57.167.95/29 | 169.57.167.89 |         
+| Sao Paolo | br-sao |sao01 |  169.57.199.23/29 | 169.57.199.17 |         
+| Sao Paolo | br-sao |sao04 |  163.107.67.63/28 | 163.107.67.49 |         
+| Sao Paolo | br-sao |sao04 |  163.107.69.63/27 | 163.107.69.33 |         
+| Sao Paolo | br-sao |sao04 | 163.107.72.127/26 | 163.107.72.65 |         
+| Sao Paolo | br-sao |sao04 |  163.107.68.87/29 | 163.107.68.81 |         
+| Sao Paolo | br-sao |sao04 |  163.107.68.95/29 | 163.107.68.89 |         
+| Sao Paolo | br-sao |sao05 |  163.109.68.63/26 | 163.109.68.1 |         
+| Sao Paolo | br-sao |sao05 |  163.109.68.95/27 | 163.109.68.65 |         
+| Sao Paolo | br-sao |sao05 | 163.109.68.175/28 | 163.109.68.161 |         
+| Sao Paolo | br-sao |sao05 | 163.109.65.119/29 | 163.109.65.113 |         
+| Sao Paolo | br-sao |sao05 | 163.109.65.127/29 | 163.109.65.121 |  
 {: caption="Table 5. br-sao Public Subnets" caption-side="bottom"}
 
 #### Private Subnets
@@ -219,7 +212,7 @@ If you use allowlists to control connections in your environment, you can use th
 | Sao Paolo | br-sao | sao05 |  10.15.20.191/26  | 10.15.20.129 |         
 | Sao Paolo | br-sao | sao05 |  10.15.31.127/25  | 10.15.31.1 |         
 | Sao Paolo | br-sao | sao05 |  10.15.18.183/29  | 10.15.18.177 |         
-| Sao Paolo | br-sao | sao05 |  10.15.18.191/29  | 10.15.18.185 |  
+| Sao Paolo | br-sao | sao05 |  10.15.18.191/29  | 10.15.18.185 |   
 {: caption="Table 6. br-sao Private Subnets" caption-side="bottom"}
 
 ### `eu-gb` List
@@ -262,7 +255,7 @@ If you use allowlists to control connections in your environment, you can use th
 | London | eu-gb | lon06 | 158.176.113.143/29 | 158.176.113.137 |         
 | London | eu-gb | lon06 | 158.176.122.239/29 | 158.176.122.233 |         
 | London | eu-gb | lon06 | 158.176.124.223/29 | 158.176.124.217 |         
-| London | eu-gb | lon06 | 158.176.131.15/29  | 158.176.131.9 |   
+| London | eu-gb | lon06 | 158.176.131.15/29  | 158.176.131.9 |
 {: caption="Table 7. eu-gb Public Subnets" caption-side="bottom"}
 
 #### Private Subnets
@@ -329,7 +322,7 @@ If you use allowlists to control connections in your environment, you can use th
 | Sydney | au-syd | syd05 |  135.90.67.31/29   | 135.90.67.25 |         
 | Sydney | au-syd | syd05 |  135.90.67.135/29  | 135.90.67.129 |         
 | Sydney | au-syd | syd05 |  135.90.68.39/29   | 135.90.68.33 |  
-{: caption="Table 11. au-syd Public Subnets" caption-side="bottom"}        
+{: caption="Table 9. au-syd Public Subnets" caption-side="bottom"}        
 
 #### Private Subnets
 {: #au-syd-private-list} 
@@ -351,7 +344,7 @@ If you use allowlists to control connections in your environment, you can use th
 | Sydney | au-syd | syd05 |  10.195.7.239/29  | 10.195.7.233 |          
 | Sydney | au-syd | syd05 |  10.195.7.247/29  | 10.195.7.241 |          
 | Sydney | au-syd | syd05 |  10.195.46.111/29 | 10.195.46.105 |  
-{: caption="Table 12. au-syd Private Subnets" caption-side="bottom"}
+{: caption="Table 10. au-syd Private Subnets" caption-side="bottom"}
 
 ### `jp-tok` List
 {: #jp-tok-list} 
@@ -388,7 +381,7 @@ If you use allowlists to control connections in your environment, you can use th
 | Tokyo | jp-tok | tok05 | 165.192.70.175/29  | 165.192.70.169 |         
 | Tokyo | jp-tok | tok05 | 165.192.71.239/29  | 165.192.71.233 |         
 | Tokyo | jp-tok | tok05 | 165.192.148.63/29  | 165.192.148.57 |       
-{: caption="Table 13. tok Public Subnets" caption-side="bottom"}
+{: caption="Table 11. tok Public Subnets" caption-side="bottom"}
 
 #### Private Subnets
 {: #jp-tok-private-list} 
@@ -416,7 +409,7 @@ If you use allowlists to control connections in your environment, you can use th
 | Tokyo | jp-tok | tok05 |  10.193.19.39/29  | 10.193.19.33 |         
 | Tokyo | jp-tok | tok05 |  10.193.76.255/29 | 10.193.76.249 |         
 | Tokyo | jp-tok | tok05 | 10.193.103.175/29 | 10.193.103.169 |
-{: caption="Table 14. tok Private Subnets" caption-side="bottom"}  
+{: caption="Table 12. tok Private Subnets" caption-side="bottom"}  
 
 ### `jp-osa` List
 {: #jp-osa-list} 
@@ -441,7 +434,7 @@ If you use allowlists to control connections in your environment, you can use th
 | Osaka | jp-osa | osa23 | 163.73.71.63/26  | 163.73.71.1 |      
 | Osaka | jp-osa | osa23 | 163.73.67.191/29 | 163.73.67.185 |      
 | Osaka | jp-osa | osa23 | 163.73.67.231/29 | 163.73.67.225 |
-{: caption="Table 15. jp-osa Public Subnets" caption-side="bottom"} 
+{: caption="Table 13. jp-osa Public Subnets" caption-side="bottom"} 
 
 #### Private Subnets
 {: #jp-osa-private-list} 
@@ -457,7 +450,7 @@ If you use allowlists to control connections in your environment, you can use th
 | Osaka | jp-osa | osa23 | 10.10.12.255/26 | 10.10.12.193 |        
 | Osaka | jp-osa | osa23 |   10.10.8.7/29  | 10.10.8.1 |        
 | Osaka | jp-osa | osa23 |  10.10.8.15/29  | 10.10.8.9 |
-{: caption="Table 16. jp-osa Private Subnets" caption-side="bottom"}  
+{: caption="Table 14. jp-osa Private Subnets" caption-side="bottom"}  
 
 ### `us-east` List
 {: #us-east-list} 
@@ -467,98 +460,103 @@ If you use allowlists to control connections in your environment, you can use th
 
 | Location | Region | Data center | Subnet | First IP |
 | -- | -- | -- | -- | -- |
-| Washington DC | us-east | wdc04 |  52.116.78.127/25  | 52.116.78.1 |          
-| Washington DC | us-east | wdc04 | 52.116.115.255/24  | 52.116.115.1 |          
-| Washington DC | us-east | wdc04 | 150.239.70.255/24  | 150.239.70.1 |          
-| Washington DC | us-east | wdc04 | 150.239.101.255/24 | 150.239.101.1 |          
-| Washington DC | us-east | wdc04 |  169.47.179.63/26  | 169.47.179.1 |          
-| Washington DC | us-east | wdc04 |  169.63.72.175/28  | 169.63.72.161 |          
-| Washington DC | us-east | wdc04 | 169.63.121.159/27  | 169.63.121.129 |          
-| Washington DC | us-east | wdc04 |  52.116.73.231/29  | 52.116.73.225 |          
-| Washington DC | us-east | wdc04 | 169.47.179.231/29  | 169.47.179.225 |          
-| Washington DC | us-east | wdc04 |  169.63.86.31/29   | 169.63.86.25 |          
-| Washington DC | us-east | wdc04 | 169.63.111.119/29  | 169.63.111.113 |          
-| Washington DC | us-east | wdc04 |  169.63.121.55/29  | 169.63.121.49 |          
-| Washington DC | us-east | wdc04 |  169.63.121.63/29  | 169.63.121.57 |          
-| Washington DC | us-east | wdc04 | 169.63.123.167/29  | 169.63.123.161 |          
-| Washington DC | us-east | wdc04 | 169.63.125.223/29  | 169.63.125.217 |          
-| Washington DC | us-east | wdc06 | 169.59.138.255/24  | 169.59.138.1 |          
-| Washington DC | us-east | wdc06 | 169.59.144.255/24  | 169.59.144.1 |          
-| Washington DC | us-east | wdc06 | 169.59.158.255/24  | 169.59.158.1 |          
-| Washington DC | us-east | wdc06 | 169.63.128.191/27  | 169.63.128.161 |          
-| Washington DC | us-east | wdc06 | 169.63.135.191/28  | 169.63.135.177 |          
-| Washington DC | us-east | wdc06 | 169.63.139.255/26  | 169.63.139.193 |          
-| Washington DC | us-east | wdc06 | 169.63.172.127/25  | 169.63.172.1 |          
-| Washington DC | us-east | wdc06 | 169.59.145.239/29  | 169.59.145.233 |          
-| Washington DC | us-east | wdc06 |  169.60.65.55/29   | 169.60.65.49 |          
-| Washington DC | us-east | wdc06 |   169.60.89.7/29   | 169.60.89.1 |          
-| Washington DC | us-east | wdc06 |   169.60.93.7/29   | 169.60.93.1 |          
-| Washington DC | us-east | wdc06 |  169.60.95.151/29  | 169.60.95.145 |          
-| Washington DC | us-east | wdc06 | 169.63.129.119/29  | 169.63.129.113 |          
-| Washington DC | us-east | wdc06 | 169.63.141.239/29  | 169.63.141.233 |          
-| Washington DC | us-east | wdc06 | 169.63.149.199/29  | 169.63.149.193 |          
-| Washington DC | us-east | wdc07 | 52.117.104.255/24  | 52.117.104.1 |          
-| Washington DC | us-east | wdc07 | 150.239.194.255/24 | 150.239.194.1 |          
-| Washington DC | us-east | wdc07 |  169.61.123.95/28  | 169.61.123.81 |          
-| Washington DC | us-east | wdc07 |  169.62.36.255/24  | 169.62.36.1 |          
-| Washington DC | us-east | wdc07 |  169.62.42.63/27   | 169.62.42.33 |          
-| Washington DC | us-east | wdc07 |  169.62.54.191/26  | 169.62.54.129 |          
-| Washington DC | us-east | wdc07 |  169.62.60.127/25  | 169.62.60.1 |          
-| Washington DC | us-east | wdc07 |  52.117.76.47/29   | 52.117.76.41 |          
-| Washington DC | us-east | wdc07 |  52.117.85.71/29   | 52.117.85.65 |          
-| Washington DC | us-east | wdc07 |  169.61.73.231/29  | 169.61.73.225 |          
-| Washington DC | us-east | wdc07 |  169.61.95.15/29   | 169.61.95.9 |          
-| Washington DC | us-east | wdc07 |  169.61.113.39/29  | 169.61.113.33 |          
-| Washington DC | us-east | wdc07 |  169.61.113.47/29  | 169.61.113.41 |          
-| Washington DC | us-east | wdc07 | 169.61.122.159/29  | 169.61.122.153 |          
-| Washington DC | us-east | wdc07 |   169.62.6.87/29   | 169.62.6.81 |   
-{: caption="Table 17. us-east Public Subnets" caption-side="bottom"}  
+| Washington DC | us-east |  wdc04 |  52.116.78.127/25  | 52.116.78.1 |         
+| Washington DC | us-east |  wdc04 | 52.116.115.255/24  | 52.116.115.1 |         
+| Washington DC | us-east |  wdc04 | 150.239.70.255/24  | 150.239.70.1 |         
+| Washington DC | us-east |  wdc04 | 150.239.101.255/24 | 150.239.101.1 |         
+| Washington DC | us-east |  wdc04 |  169.47.179.63/26  | 169.47.179.1 |         
+| Washington DC | us-east |  wdc04 |  169.63.72.175/28  | 169.63.72.161 |         
+| Washington DC | us-east |  wdc04 | 169.63.121.159/27  | 169.63.121.129 |         
+| Washington DC | us-east |  wdc04 |  52.116.73.231/29  | 52.116.73.225 |         
+| Washington DC | us-east |  wdc04 | 169.47.179.231/29  | 169.47.179.225 |         
+| Washington DC | us-east |  wdc04 |  169.63.86.31/29   | 169.63.86.25 |         
+| Washington DC | us-east |  wdc04 | 169.63.111.119/29  | 169.63.111.113 |         
+| Washington DC | us-east |  wdc04 |  169.63.121.55/29  | 169.63.121.49 |         
+| Washington DC | us-east |  wdc04 |  169.63.121.63/29  | 169.63.121.57 |         
+| Washington DC | us-east |  wdc04 | 169.63.123.167/29  | 169.63.123.161 |         
+| Washington DC | us-east |  wdc04 | 169.63.125.223/29  | 169.63.125.217 |         
+| Washington DC | us-east |  wdc06 | 169.59.138.255/24  | 169.59.138.1 |         
+| Washington DC | us-east |  wdc06 | 169.59.144.255/24  | 169.59.144.1 |         
+| Washington DC | us-east |  wdc06 | 169.59.158.255/24  | 169.59.158.1 |         
+| Washington DC | us-east |  wdc06 | 169.59.183.255/24  | 169.59.183.1 |         
+| Washington DC | us-east |  wdc06 | 169.63.128.191/27  | 169.63.128.161 |         
+| Washington DC | us-east |  wdc06 | 169.63.135.191/28  | 169.63.135.177 |         
+| Washington DC | us-east |  wdc06 | 169.63.139.255/26  | 169.63.139.193 |         
+| Washington DC | us-east |  wdc06 | 169.63.172.127/25  | 169.63.172.1 |         
+| Washington DC | us-east |  wdc06 | 169.59.145.239/29  | 169.59.145.233 |         
+| Washington DC | us-east |  wdc06 |  169.60.65.55/29   | 169.60.65.49 |         
+| Washington DC | us-east |  wdc06 |   169.60.89.7/29   | 169.60.89.1 |         
+| Washington DC | us-east |  wdc06 |   169.60.93.7/29   | 169.60.93.1 |         
+| Washington DC | us-east |  wdc06 |  169.60.95.151/29  | 169.60.95.145 |         
+| Washington DC | us-east |  wdc06 | 169.63.129.119/29  | 169.63.129.113 |         
+| Washington DC | us-east |  wdc06 | 169.63.141.239/29  | 169.63.141.233 |         
+| Washington DC | us-east |  wdc06 | 169.63.149.199/29  | 169.63.149.193 |         
+| Washington DC | us-east |  wdc07 | 52.117.104.255/24  | 52.117.104.1 |         
+| Washington DC | us-east |  wdc07 | 150.239.194.255/24 | 150.239.194.1 |         
+| Washington DC | us-east |  wdc07 | 150.239.231.255/24 | 150.239.231.1 |         
+| Washington DC | us-east |  wdc07 |  169.61.123.95/28  | 169.61.123.81 |         
+| Washington DC | us-east |  wdc07 |  169.62.36.255/24  | 169.62.36.1 |         
+| Washington DC | us-east |  wdc07 |  169.62.42.63/27   | 169.62.42.33 |         
+| Washington DC | us-east |  wdc07 |  169.62.54.191/26  | 169.62.54.129 |         
+| Washington DC | us-east |  wdc07 |  169.62.60.127/25  | 169.62.60.1 |         
+| Washington DC | us-east |  wdc07 |  52.117.76.47/29   | 52.117.76.41 |         
+| Washington DC | us-east |  wdc07 |  52.117.85.71/29   | 52.117.85.65 |         
+| Washington DC | us-east |  wdc07 |  169.61.73.231/29  | 169.61.73.225 |         
+| Washington DC | us-east |  wdc07 |  169.61.95.15/29   | 169.61.95.9 |         
+| Washington DC | us-east |  wdc07 |  169.61.113.39/29  | 169.61.113.33 |         
+| Washington DC | us-east |  wdc07 |  169.61.113.47/29  | 169.61.113.41 |         
+| Washington DC | us-east |  wdc07 | 169.61.122.159/29  | 169.61.122.153 |         
+| Washington DC | us-east |  wdc07 |   169.62.6.87/29   | 169.62.6.81 | 
+{: caption="Table 15. us-east Public Subnets" caption-side="bottom"}  
 
 #### Private Subnets
 {: #us-east-private-list} 
 
 | Location | Region | Data center | Subnet | First IP |
 | -- | -- | -- | -- | -- |
-| Washington DC | us-east | wdc04 |  10.65.119.255/25 | 10.65.119.129  |         
-| Washington DC | us-east | wdc04 |  10.65.145.255/26 | 10.65.145.193  |         
-| Washington DC | us-east | wdc04 |  10.211.67.255/24 | 10.211.67.1  |         
-| Washington DC | us-east | wdc04 |  10.211.96.255/24 | 10.211.96.1  |         
-| Washington DC | us-east | wdc04 | 10.211.126.255/24 | 10.211.126.1  |         
-| Washington DC | us-east | wdc04 |    10.65.0.7/29   | 10.65.0.1  |         
-| Washington DC | us-east | wdc04 |  10.65.99.103/29  | 10.65.99.97  |         
-| Washington DC | us-east | wdc04 |  10.65.145.95/29  | 10.65.145.89  |         
-| Washington DC | us-east | wdc04 |  10.65.152.223/29 | 10.65.152.217  |         
-| Washington DC | us-east | wdc04 |  10.65.179.159/29 | 10.65.179.153  |         
-| Washington DC | us-east | wdc04 |  10.65.218.247/29 | 10.65.218.241  |         
-| Washington DC | us-east | wdc04 |  10.65.224.15/29  | 10.65.224.9  |         
-| Washington DC | us-east | wdc04 |  10.65.224.23/29  | 10.65.224.17  |         
-| Washington DC | us-east | wdc06 | 10.188.150.255/24 | 10.188.150.1  |         
-| Washington DC | us-east | wdc06 | 10.188.160.127/26 | 10.188.160.65  |         
-| Washington DC | us-east | wdc06 |  10.189.7.127/25  | 10.189.7.1  |         
-| Washington DC | us-east | wdc06 |  10.189.91.255/24 | 10.189.91.1  |         
-| Washington DC | us-east | wdc06 | 10.189.159.255/24 | 10.189.159.1  |         
-| Washington DC | us-east | wdc06 |  10.188.34.31/29  | 10.188.34.25  |         
-| Washington DC | us-east | wdc06 |  10.188.35.231/29 | 10.188.35.225  |         
-| Washington DC | us-east | wdc06 |  10.188.53.127/29 | 10.188.53.121  |         
-| Washington DC | us-east | wdc06 | 10.188.137.247/29 | 10.188.137.241  |         
-| Washington DC | us-east | wdc06 | 10.188.140.143/29 | 10.188.140.137  |         
-| Washington DC | us-east | wdc06 |  10.188.199.95/29 | 10.188.199.89  |         
-| Washington DC | us-east | wdc06 |  10.189.13.23/29  | 10.189.13.17  |         
-| Washington DC | us-east | wdc06 |  10.189.45.223/29 | 10.189.45.217  |         
-| Washington DC | us-east | wdc07 |  10.39.58.255/24  | 10.39.58.1  |         
-| Washington DC | us-east | wdc07 |  10.39.62.255/24  | 10.39.62.1  |         
-| Washington DC | us-east | wdc07 |  10.190.86.191/26 | 10.190.86.129  |         
-| Washington DC | us-east | wdc07 | 10.191.126.127/25 | 10.191.126.1  |         
-| Washington DC | us-east | wdc07 | 10.191.213.255/24 | 10.191.213.1  |         
-| Washington DC | us-east | wdc07 |  10.190.22.175/29 | 10.190.22.169  |         
-| Washington DC | us-east | wdc07 | 10.190.123.143/29 | 10.190.123.137  |         
-| Washington DC | us-east | wdc07 |  10.190.166.39/29 | 10.190.166.33  |         
-| Washington DC | us-east | wdc07 | 10.190.233.215/29 | 10.190.233.209  |         
-| Washington DC | us-east | wdc07 |  10.191.11.127/29 | 10.191.11.121  |         
-| Washington DC | us-east | wdc07 |  10.191.12.175/29 | 10.191.12.169  |         
-| Washington DC | us-east | wdc07 |  10.191.49.247/29 | 10.191.49.241  |         
-| Washington DC | us-east | wdc07 |  10.191.115.7/29  | 10.191.115.1  |  
-{: caption="Table 18. us-east Private Subnets" caption-side="bottom"}   
+| Washington DC | us-east | wdc04 |  10.65.53.255/24  | 10.65.53.1 |         
+| Washington DC | us-east | wdc04 |  10.65.119.255/25 | 10.65.119.129 |         
+| Washington DC | us-east | wdc04 |  10.65.145.255/26 | 10.65.145.193 |         
+| Washington DC | us-east | wdc04 |  10.211.67.255/24 | 10.211.67.1 |         
+| Washington DC | us-east | wdc04 |  10.211.96.255/24 | 10.211.96.1 |         
+| Washington DC | us-east | wdc04 | 10.211.126.255/24 | 10.211.126.1 |         
+| Washington DC | us-east | wdc04 |    10.65.0.7/29   | 10.65.0.1 |         
+| Washington DC | us-east | wdc04 |  10.65.99.103/29  | 10.65.99.97 |         
+| Washington DC | us-east | wdc04 |  10.65.145.95/29  | 10.65.145.89 |         
+| Washington DC | us-east | wdc04 |  10.65.152.223/29 | 10.65.152.217 |         
+| Washington DC | us-east | wdc04 |  10.65.179.159/29 | 10.65.179.153 |         
+| Washington DC | us-east | wdc04 |  10.65.218.247/29 | 10.65.218.241 |         
+| Washington DC | us-east | wdc04 |  10.65.224.15/29  | 10.65.224.9 |         
+| Washington DC | us-east | wdc04 |  10.65.224.23/29  | 10.65.224.17 |         
+| Washington DC | us-east | wdc06 | 10.188.150.255/24 | 10.188.150.1 |         
+| Washington DC | us-east | wdc06 | 10.188.160.127/26 | 10.188.160.65 |         
+| Washington DC | us-east | wdc06 |  10.189.7.127/25  | 10.189.7.1 |         
+| Washington DC | us-east | wdc06 |  10.189.91.255/24 | 10.189.91.1 |         
+| Washington DC | us-east | wdc06 | 10.189.159.255/24 | 10.189.159.1 |         
+| Washington DC | us-east | wdc06 | 10.189.223.255/24 | 10.189.223.1 |         
+| Washington DC | us-east | wdc06 |  10.188.34.31/29  | 10.188.34.25 |         
+| Washington DC | us-east | wdc06 |  10.188.35.231/29 | 10.188.35.225 |         
+| Washington DC | us-east | wdc06 |  10.188.53.127/29 | 10.188.53.121 |         
+| Washington DC | us-east | wdc06 | 10.188.137.247/29 | 10.188.137.241 |         
+| Washington DC | us-east | wdc06 | 10.188.140.143/29 | 10.188.140.137 |         
+| Washington DC | us-east | wdc06 |  10.188.199.95/29 | 10.188.199.89 |         
+| Washington DC | us-east | wdc06 |  10.189.13.23/29  | 10.189.13.17 |         
+| Washington DC | us-east | wdc06 |  10.189.45.223/29 | 10.189.45.217 |         
+| Washington DC | us-east | wdc07 |  10.39.58.255/24  | 10.39.58.1 |         
+| Washington DC | us-east | wdc07 |  10.39.62.255/24  | 10.39.62.1 |         
+| Washington DC | us-east | wdc07 |  10.39.119.255/24 | 10.39.119.1 |         
+| Washington DC | us-east | wdc07 |  10.190.86.191/26 | 10.190.86.129 |         
+| Washington DC | us-east | wdc07 | 10.191.126.127/25 | 10.191.126.1 |         
+| Washington DC | us-east | wdc07 | 10.191.213.255/24 | 10.191.213.1 |         
+| Washington DC | us-east | wdc07 |  10.190.22.175/29 | 10.190.22.169 |         
+| Washington DC | us-east | wdc07 | 10.190.123.143/29 | 10.190.123.137 |         
+| Washington DC | us-east | wdc07 |  10.190.166.39/29 | 10.190.166.33 |         
+| Washington DC | us-east | wdc07 | 10.190.233.215/29 | 10.190.233.209 |         
+| Washington DC | us-east | wdc07 |  10.191.11.127/29 | 10.191.11.121 |         
+| Washington DC | us-east | wdc07 |  10.191.12.175/29 | 10.191.12.169 |         
+| Washington DC | us-east | wdc07 |  10.191.49.247/29 | 10.191.49.241 |         
+| Washington DC | us-east | wdc07 |  10.191.115.7/29  | 10.191.115.1 |
+{: caption="Table 16. us-east Private Subnets" caption-side="bottom"}  
 
 ### `eu-de` List
 {: #eu-de-list} 
@@ -568,82 +566,84 @@ If you use allowlists to control connections in your environment, you can use th
 
 | Location | Region | Data center | Subnet | First IP |
 | -- | -- | -- | -- | -- |
-| Frankfurt | eu-de | fra02 | 158.177.41.255/24  | 158.177.41.1 |         
-| Frankfurt | eu-de | fra02 | 158.177.56.255/24  | 158.177.56.1 |         
-| Frankfurt | eu-de | fra02 | 158.177.61.255/24  | 158.177.61.1 |         
-| Frankfurt | eu-de | fra02 |  158.177.77.63/27  | 158.177.77.33 |         
-| Frankfurt | eu-de | fra02 | 158.177.87.255/25  | 158.177.87.129 |         
-| Frankfurt | eu-de | fra02 | 158.177.155.63/26  | 158.177.155.1 |         
-| Frankfurt | eu-de | fra02 | 158.177.241.255/24 | 158.177.241.1 |         
-| Frankfurt | eu-de | fra02 | 158.177.110.111/29 | 158.177.110.105 |         
-| Frankfurt | eu-de | fra02 | 158.177.221.175/29 | 158.177.221.169 |         
-| Frankfurt | eu-de | fra02 |  159.122.89.23/29  | 159.122.89.17 |         
-| Frankfurt | eu-de | fra02 |  159.122.97.23/29  | 159.122.97.17 |         
-| Frankfurt | eu-de | fra02 |  159.122.97.47/29  | 159.122.97.41 |         
-| Frankfurt | eu-de | fra02 | 159.122.108.215/29 | 159.122.108.209 |         
-| Frankfurt | eu-de | fra02 | 159.122.108.223/29 | 159.122.108.217 |         
-| Frankfurt | eu-de | fra02 |  169.50.10.15/29   | 169.50.10.9 |         
-| Frankfurt | eu-de | fra02 |  169.50.13.207/29  | 169.50.13.201 |         
-| Frankfurt | eu-de | fra02 |  169.50.15.31/29   | 169.50.15.25 |         
-| Frankfurt | eu-de | fra02 |  169.50.15.191/29  | 169.50.15.185 |         
-| Frankfurt | eu-de | fra02 |  169.50.25.231/29  | 169.50.25.225 |         
-| Frankfurt | eu-de | fra02 |  169.50.35.111/29  | 169.50.35.105 |         
-| Frankfurt | eu-de | fra02 |  169.50.35.239/29  | 169.50.35.233 |         
-| Frankfurt | eu-de | fra02 |  169.50.53.247/29  | 169.50.53.241 |         
-| Frankfurt | eu-de | fra02 |  169.50.54.23/29   | 169.50.54.17 |         
-| Frankfurt | eu-de | fra04 |  161.156.2.255/24  | 161.156.2.1 |         
-| Frankfurt | eu-de | fra04 | 161.156.25.255/24  | 161.156.25.1 |         
-| Frankfurt | eu-de | fra04 | 161.156.51.255/24  | 161.156.51.1 |         
-| Frankfurt | eu-de | fra04 | 161.156.95.223/27  | 161.156.95.193 |         
-| Frankfurt | eu-de | fra04 |  161.156.97.63/26  | 161.156.97.1 |         
-| Frankfurt | eu-de | fra04 | 161.156.131.255/25 | 161.156.131.129 |         
-| Frankfurt | eu-de | fra04 | 161.156.152.255/24 | 161.156.152.1 |         
-| Frankfurt | eu-de | fra04 |  161.156.1.79/29   | 161.156.1.73 |         
-| Frankfurt | eu-de | fra04 |  161.156.8.47/29   | 161.156.8.41 |         
-| Frankfurt | eu-de | fra04 | 161.156.38.207/29  | 161.156.38.201 |         
-| Frankfurt | eu-de | fra04 | 161.156.67.247/29  | 161.156.67.241 |         
-| Frankfurt | eu-de | fra04 | 161.156.69.135/29  | 161.156.69.129 |         
-| Frankfurt | eu-de | fra04 | 161.156.69.143/29  | 161.156.69.137 |         
-| Frankfurt | eu-de | fra04 | 161.156.107.159/29 | 161.156.107.153 |         
-| Frankfurt | eu-de | fra04 | 161.156.111.55/29  | 161.156.111.49 |         
-| Frankfurt | eu-de | fra04 | 161.156.111.79/29  | 161.156.111.73 |         
-| Frankfurt | eu-de | fra04 | 161.156.122.239/29 | 161.156.122.233 |         
-| Frankfurt | eu-de | fra04 | 161.156.132.103/29 | 161.156.132.97 |         
-| Frankfurt | eu-de | fra04 | 161.156.148.215/29 | 161.156.148.209 |         
-| Frankfurt | eu-de | fra04 | 161.156.157.135/29 | 161.156.157.129 |         
-| Frankfurt | eu-de | fra04 | 161.156.177.183/29 | 161.156.177.177 |         
-| Frankfurt | eu-de | fra04 | 161.156.185.31/29  | 161.156.185.25 |         
-| Frankfurt | eu-de | fra04 | 161.156.190.127/29 | 161.156.190.121 |         
-| Frankfurt | eu-de | fra05 |  149.81.73.159/28  | 149.81.73.145 |         
-| Frankfurt | eu-de | fra05 |  149.81.80.255/27  | 149.81.80.225 |         
-| Frankfurt | eu-de | fra05 |  149.81.114.63/26  | 149.81.114.1 |         
-| Frankfurt | eu-de | fra05 | 149.81.132.127/25  | 149.81.132.1 |         
-| Frankfurt | eu-de | fra05 | 149.81.139.255/24  | 149.81.139.1 |         
-| Frankfurt | eu-de | fra05 | 149.81.150.255/24  | 149.81.150.1 |         
-| Frankfurt | eu-de | fra05 | 149.81.183.255/24  | 149.81.183.1 |         
-| Frankfurt | eu-de | fra05 | 149.81.208.255/24  | 149.81.208.1 |         
-| Frankfurt | eu-de | fra05 |  149.81.65.255/29  | 149.81.65.249 |         
-| Frankfurt | eu-de | fra05 |  149.81.77.207/29  | 149.81.77.201 |         
-| Frankfurt | eu-de | fra05 |  149.81.79.183/29  | 149.81.79.177 |         
-| Frankfurt | eu-de | fra05 |  149.81.83.215/29  | 149.81.83.209 |         
-| Frankfurt | eu-de | fra05 |  149.81.84.103/29  | 149.81.84.97 |         
-| Frankfurt | eu-de | fra05 |  149.81.87.143/29  | 149.81.87.137 |         
-| Frankfurt | eu-de | fra05 |  149.81.87.151/29  | 149.81.87.145 |         
-| Frankfurt | eu-de | fra05 |  149.81.98.167/29  | 149.81.98.161 |         
-| Frankfurt | eu-de | fra05 | 149.81.100.207/29  | 149.81.100.201 |         
-| Frankfurt | eu-de | fra05 | 149.81.101.119/29  | 149.81.101.113 |         
-| Frankfurt | eu-de | fra05 | 149.81.106.239/29  | 149.81.106.233 |         
-| Frankfurt | eu-de | fra05 | 149.81.114.175/29  | 149.81.114.169 |         
-| Frankfurt | eu-de | fra05 |  149.81.142.47/29  | 149.81.142.41 |         
-| Frankfurt | eu-de | fra05 |  149.81.148.79/29  | 149.81.148.73 |         
-| Frankfurt | eu-de | fra05 | 149.81.171.231/29  | 149.81.171.225 |         
-| Frankfurt | eu-de | fra05 | 149.81.180.207/29  | 149.81.180.201 |         
-| Paris | eu-de | par01 |  159.8.70.111/28   | 159.8.70.97 |         
-| Paris | eu-de | par01 |  159.8.90.127/26   | 159.8.90.65 |         
-| Paris | eu-de | par01 |  159.8.114.127/27  | 159.8.114.97 |         
-| Paris | eu-de | par01 |  159.8.78.239/29   | 159.8.78.233 |         
-| Paris | eu-de | par01 |   159.8.94.95/29   | 159.8.94.89 |  
-{: caption="Table 19. eu-de Public Subnets" caption-side="bottom"} 
+| Frankfurt | eu-de | fra02 | 158.177.41.255/24  | 158.177.41.1 |        
+| Frankfurt | eu-de | fra02 | 158.177.56.255/24  | 158.177.56.1 |        
+| Frankfurt | eu-de | fra02 | 158.177.61.255/24  | 158.177.61.1 |        
+| Frankfurt | eu-de | fra02 |  158.177.77.63/27  | 158.177.77.33 |        
+| Frankfurt | eu-de | fra02 | 158.177.87.255/25  | 158.177.87.129 |        
+| Frankfurt | eu-de | fra02 | 158.177.155.63/26  | 158.177.155.1 |        
+| Frankfurt | eu-de | fra02 | 158.177.241.255/24 | 158.177.241.1 |        
+| Frankfurt | eu-de | fra02 | 158.177.110.111/29 | 158.177.110.105 |        
+| Frankfurt | eu-de | fra02 | 158.177.221.175/29 | 158.177.221.169 |        
+| Frankfurt | eu-de | fra02 |  159.122.89.23/29  | 159.122.89.17 |        
+| Frankfurt | eu-de | fra02 |  159.122.97.23/29  | 159.122.97.17 |        
+| Frankfurt | eu-de | fra02 |  159.122.97.47/29  | 159.122.97.41 |        
+| Frankfurt | eu-de | fra02 | 159.122.108.215/29 | 159.122.108.209 |        
+| Frankfurt | eu-de | fra02 | 159.122.108.223/29 | 159.122.108.217 |        
+| Frankfurt | eu-de | fra02 |  169.50.10.15/29   | 169.50.10.9 |        
+| Frankfurt | eu-de | fra02 |  169.50.13.207/29  | 169.50.13.201 |        
+| Frankfurt | eu-de | fra02 |  169.50.15.31/29   | 169.50.15.25 |        
+| Frankfurt | eu-de | fra02 |  169.50.15.191/29  | 169.50.15.185 |        
+| Frankfurt | eu-de | fra02 |  169.50.25.231/29  | 169.50.25.225 |        
+| Frankfurt | eu-de | fra02 |  169.50.35.111/29  | 169.50.35.105 |        
+| Frankfurt | eu-de | fra02 |  169.50.35.239/29  | 169.50.35.233 |        
+| Frankfurt | eu-de | fra02 |  169.50.53.247/29  | 169.50.53.241 |        
+| Frankfurt | eu-de | fra02 |  169.50.54.23/29   | 169.50.54.17 |        
+| Frankfurt | eu-de | fra04 |  161.156.2.255/24  | 161.156.2.1 |        
+| Frankfurt | eu-de | fra04 | 161.156.25.255/24  | 161.156.25.1 |        
+| Frankfurt | eu-de | fra04 | 161.156.51.255/24  | 161.156.51.1 |        
+| Frankfurt | eu-de | fra04 | 161.156.56.255/24  | 161.156.56.1 |        
+| Frankfurt | eu-de | fra04 | 161.156.95.223/27  | 161.156.95.193 |        
+| Frankfurt | eu-de | fra04 |  161.156.97.63/26  | 161.156.97.1 |        
+| Frankfurt | eu-de | fra04 | 161.156.131.255/25 | 161.156.131.129 |        
+| Frankfurt | eu-de | fra04 | 161.156.152.255/24 | 161.156.152.1 |        
+| Frankfurt | eu-de | fra04 |  161.156.1.79/29   | 161.156.1.73 |        
+| Frankfurt | eu-de | fra04 |  161.156.8.47/29   | 161.156.8.41 |        
+| Frankfurt | eu-de | fra04 | 161.156.38.207/29  | 161.156.38.201 |        
+| Frankfurt | eu-de | fra04 | 161.156.67.247/29  | 161.156.67.241 |        
+| Frankfurt | eu-de | fra04 | 161.156.69.135/29  | 161.156.69.129 |        
+| Frankfurt | eu-de | fra04 | 161.156.69.143/29  | 161.156.69.137 |        
+| Frankfurt | eu-de | fra04 | 161.156.107.159/29 | 161.156.107.153 |        
+| Frankfurt | eu-de | fra04 | 161.156.111.55/29  | 161.156.111.49 |        
+| Frankfurt | eu-de | fra04 | 161.156.111.79/29  | 161.156.111.73 |        
+| Frankfurt | eu-de | fra04 | 161.156.122.239/29 | 161.156.122.233 |        
+| Frankfurt | eu-de | fra04 | 161.156.132.103/29 | 161.156.132.97 |        
+| Frankfurt | eu-de | fra04 | 161.156.148.215/29 | 161.156.148.209 |        
+| Frankfurt | eu-de | fra04 | 161.156.157.135/29 | 161.156.157.129 |        
+| Frankfurt | eu-de | fra04 | 161.156.177.183/29 | 161.156.177.177 |        
+| Frankfurt | eu-de | fra04 | 161.156.185.31/29  | 161.156.185.25 |        
+| Frankfurt | eu-de | fra04 | 161.156.190.127/29 | 161.156.190.121 |        
+| Frankfurt | eu-de | fra05 |  149.81.73.159/28  | 149.81.73.145 |        
+| Frankfurt | eu-de | fra05 |  149.81.80.255/27  | 149.81.80.225 |        
+| Frankfurt | eu-de | fra05 |  149.81.114.63/26  | 149.81.114.1 |        
+| Frankfurt | eu-de | fra05 | 149.81.132.127/25  | 149.81.132.1 |        
+| Frankfurt | eu-de | fra05 | 149.81.139.255/24  | 149.81.139.1 |        
+| Frankfurt | eu-de | fra05 | 149.81.150.255/24  | 149.81.150.1 |        
+| Frankfurt | eu-de | fra05 | 149.81.183.255/24  | 149.81.183.1 |        
+| Frankfurt | eu-de | fra05 | 149.81.208.255/24  | 149.81.208.1 |        
+| Frankfurt | eu-de | fra05 | 149.81.225.255/24  | 149.81.225.1 |        
+| Frankfurt | eu-de | fra05 |  149.81.65.255/29  | 149.81.65.249 |        
+| Frankfurt | eu-de | fra05 |  149.81.77.207/29  | 149.81.77.201 |        
+| Frankfurt | eu-de | fra05 |  149.81.79.183/29  | 149.81.79.177 |        
+| Frankfurt | eu-de | fra05 |  149.81.83.215/29  | 149.81.83.209 |        
+| Frankfurt | eu-de | fra05 |  149.81.84.103/29  | 149.81.84.97 |        
+| Frankfurt | eu-de | fra05 |  149.81.87.143/29  | 149.81.87.137 |        
+| Frankfurt | eu-de | fra05 |  149.81.87.151/29  | 149.81.87.145 |        
+| Frankfurt | eu-de | fra05 |  149.81.98.167/29  | 149.81.98.161 |        
+| Frankfurt | eu-de | fra05 | 149.81.100.207/29  | 149.81.100.201 |        
+| Frankfurt | eu-de | fra05 | 149.81.101.119/29  | 149.81.101.113 |        
+| Frankfurt | eu-de | fra05 | 149.81.106.239/29  | 149.81.106.233 |        
+| Frankfurt | eu-de | fra05 | 149.81.114.175/29  | 149.81.114.169 |        
+| Frankfurt | eu-de | fra05 |  149.81.142.47/29  | 149.81.142.41 |        
+| Frankfurt | eu-de | fra05 |  149.81.148.79/29  | 149.81.148.73 |        
+| Frankfurt | eu-de | fra05 | 149.81.171.231/29  | 149.81.171.225 |        
+| Frankfurt | eu-de | fra05 | 149.81.180.207/29  | 149.81.180.201 |        
+| Paris | eu-de | par01 |  159.8.70.111/28   | 159.8.70.97 |        
+| Paris | eu-de | par01 |  159.8.90.127/26   | 159.8.90.65 |        
+| Paris | eu-de | par01 |  159.8.114.127/27  | 159.8.114.97 |        
+| Paris | eu-de | par01 |  159.8.78.239/29   | 159.8.78.233 |        
+| Paris | eu-de | par01 |   159.8.94.95/29   | 159.8.94.89 |
+{: caption="Table 17. eu-de Public Subnets" caption-side="bottom"} 
 
 #### Private Subnets
 {: #eu-de-private-list} 
@@ -652,6 +652,7 @@ If you use allowlists to control connections in your environment, you can use th
 | -- | -- | -- | -- | -- |
 | Frankfurt | eu-de | fra02 |  10.20.34.255/24  | 10.20.34.1 |         
 | Frankfurt | eu-de | fra02 | 10.134.228.255/24 | 10.134.228.1 |         
+| Frankfurt | eu-de | fra02 |  10.135.51.255/24 | 10.135.51.1 |         
 | Frankfurt | eu-de | fra02 |   10.194.5.63/26  | 10.194.5.1 |         
 | Frankfurt | eu-de | fra02 |  10.194.98.255/25 | 10.194.98.129 |         
 | Frankfurt | eu-de | fra02 | 10.194.205.255/24 | 10.194.205.1 |         
@@ -674,6 +675,7 @@ If you use allowlists to control connections in your environment, you can use th
 | Frankfurt | eu-de | fra02 |  10.135.180.7/29  | 10.135.180.1 |         
 | Frankfurt | eu-de | fra02 |  10.135.180.15/29 | 10.135.180.9 |         
 | Frankfurt | eu-de | fra04 |  10.21.72.255/24  | 10.21.72.1 |         
+| Frankfurt | eu-de | fra04 |  10.75.27.255/24  | 10.75.27.1 |         
 | Frankfurt | eu-de | fra04 |  10.75.68.191/26  | 10.75.68.129 |         
 | Frankfurt | eu-de | fra04 |  10.75.134.127/25 | 10.75.134.1 |         
 | Frankfurt | eu-de | fra04 |  10.75.234.255/24 | 10.75.234.1 |         
@@ -698,6 +700,7 @@ If you use allowlists to control connections in your environment, you can use th
 | Frankfurt | eu-de | fra04 |  10.240.228.71/29 | 10.240.228.65 |         
 | Frankfurt | eu-de | fra05 |  10.13.21.255/24  | 10.13.21.1 |         
 | Frankfurt | eu-de | fra05 |  10.13.175.255/24 | 10.13.175.1 |         
+| Frankfurt | eu-de | fra05 |  10.13.224.255/24 | 10.13.224.1 |         
 | Frankfurt | eu-de | fra05 |  10.123.14.63/26  | 10.123.14.1 |         
 | Frankfurt | eu-de | fra05 |  10.123.55.127/25 | 10.123.55.1 |         
 | Frankfurt | eu-de | fra05 | 10.123.167.255/24 | 10.123.167.1 |         
@@ -723,7 +726,7 @@ If you use allowlists to control connections in your environment, you can use th
 | Paris | eu-de | par01 |  10.127.213.63/26 | 10.127.213.1 |         
 | Paris | eu-de | par01 |  10.126.23.255/29 | 10.126.23.249 |         
 | Paris | eu-de | par01 | 10.126.100.135/29 | 10.126.100.129 |
-{: caption="Table 20. eu-de Private Subnets" caption-side="bottom"} 
+{: caption="Table 18. eu-de Private Subnets" caption-side="bottom"} 
 
 ### `us-south` List
 {: #us-south-list}
@@ -855,6 +858,7 @@ If you use allowlists to control connections in your environment, you can use th
 | Dallas | us-south | dal12 | 52.118.193.255/24  | 52.118.193.1 |         
 | Dallas | us-south | dal12 | 52.118.197.255/24  | 52.118.197.1 |         
 | Dallas | us-south | dal12 | 52.118.203.255/24  | 52.118.203.1 |         
+| Dallas | us-south | dal12 | 52.118.233.255/24  | 52.118.233.1 |         
 | Dallas | us-south | dal12 | 150.239.149.255/24 | 150.239.149.1 |         
 | Dallas | us-south | dal12 | 150.239.187.255/24 | 150.239.187.1 |         
 | Dallas | us-south | dal12 | 169.47.108.255/26  | 169.47.108.193 |         
@@ -992,7 +996,7 @@ If you use allowlists to control connections in your environment, you can use th
 | Dallas | us-south | dal13 | 169.62.240.223/29  | 169.62.240.217 |         
 | Dallas | us-south | dal13 | 169.62.240.231/29  | 169.62.240.225 |         
 | Dallas | us-south | dal13 |  174.36.70.143/29  | 174.36.70.137 |
-{: caption="Table 21. us-south Public Subnets" caption-side="bottom"} 
+{: caption="Table 19. us-south Public Subnets" caption-side="bottom"} 
 
 #### Private Subnets
 {: #us-south-private-list}
@@ -1110,6 +1114,7 @@ If you use allowlists to control connections in your environment, you can use th
 | Dallas | us-south | dal12 |  10.48.97.255/24  | 10.48.97.1 |         
 | Dallas | us-south | dal12 |  10.48.107.255/24 | 10.48.107.1 |         
 | Dallas | us-south | dal12 |  10.48.129.255/24 | 10.48.129.1 |         
+| Dallas | us-south | dal12 |  10.48.152.255/24 | 10.48.152.1 |         
 | Dallas | us-south | dal12 |  10.74.184.191/26 | 10.74.184.129 |         
 | Dallas | us-south | dal12 |  10.74.213.127/25 | 10.74.213.1 |         
 | Dallas | us-south | dal12 |  10.74.239.255/24 | 10.74.239.1 |         
@@ -1244,5 +1249,5 @@ If you use allowlists to control connections in your environment, you can use th
 | Dallas | us-south | dal13 |  10.220.30.23/29  | 10.220.30.17 |         
 | Dallas | us-south | dal13 |  10.220.30.31/29  | 10.220.30.25 |         
 | Dallas | us-south | dal13 | 10.220.162.167/29 | 10.220.162.161 |         
-| Dallas | us-south | dal13 | 10.220.202.239/29 | 10.220.202.233 | 
-{: caption="Table 22. us-south Private Subnets" caption-side="bottom"}  
+| Dallas | us-south | dal13 | 10.220.202.239/29 | 10.220.202.233 |
+{: caption="Table 20. us-south Private Subnets" caption-side="bottom"}  
