@@ -1,20 +1,14 @@
 ---
 copyright:
-  years: 2019, 2022
-lastupdated: "2022-10-14"
+  years: 2019, 2023
+lastupdated: "2023-01-03"
 
 keywords: kubernetes, tutorial, setup, terraform, IBM Cloud Databases, ICD
 
 subcollection: cloud-databases
 ---
 
-{:external: .external target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:tip: .tip}
-{:note: .note}
+{{site.data.keyword.attribute-definition-list}}
 
 # Getting Started with {{site.data.keyword.databases-for}} tutorials 
 {: #tutorial-getting-started}
@@ -40,10 +34,10 @@ To avoid the installation of these tools, you can also use the [{{site.data.keyw
 ## IBM Solutions Tutorials
 {: #tutorial-solutions}
 
-### Moving a VM based app to Kubernetes
+### Moving a VM-based app to Kubernetes
 {: #tutorial-solutions-terraform-app}
 
-For a detailed tutorial on moving a VM based app to a Kubernetes cluster by using Kubernetes Service, check out [Moving a VM based app to Kubernetes
+For a detailed tutorial on moving a VM-based app to a Kubernetes cluster by using Kubernetes Service, check out [Moving a VM-based app to Kubernetes
 ](/docs/solution-tutorials?topic=solution-tutorials-vm-to-containers-and-kubernetes). This tutorial walks you through storing app pod data in an {{site.data.keyword.databases-for}} service, allowing {{site.data.keyword.databases-for}} to easily configure and manage your database-as-a-service (DBaaS) with built-in backups and scaling.
 
 ### Modern web application with MEAN stack
@@ -58,6 +52,11 @@ Use [Databases for PostgreSQL](/docs/databases-for-postgresql) to set up isolate
 
 ## {{site.data.keyword.databases-for}} Tutorials
 {: #tutorial-icd}
+
+### Deploying and Connecting a Cloud Databases Instance
+{: #deploying-icd-instance}
+
+This [tutorial](/docs/cloud-databases?topic=cloud-databases-create-instance-tutorial) guides you through the process of deploying a {{site.data.keyword.databases-for}} instance and connecting it to a web front end. These values are then stored in a database running on {{site.data.keyword.databases-for}}. You install the database infrastructure by using Terraform and your web application uses the popular Express framework. The application can then be run locally, or by using Docker.
 
 ### An example {{site.data.keyword.containershort_notm}} Application
 {: #example-k8s-app}
