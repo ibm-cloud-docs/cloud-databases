@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2022
-lastupdated: "2022-12-15"
+  years: 2019, 2023
+lastupdated: "2023-01-18"
 
 subcollection: cloud-databases
 
@@ -61,13 +61,13 @@ The _Description_ can be any user-significant text for identifying the allowlist
 {: cli}
 
 The {{site.data.keyword.databases-for}} CLI plug-in offers a set of commands for managing allowlists. Use [`cdb deployment-whitelist-add`](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-allowlist-add) to add an allowlist. For example,
-```bash
+```sh
 ibmcloud cdb deployment-whitelist-add example-deployment 198.51.100.1 "Allowlisted for testing"
 ```
 {: .pre}
 
 for a single IP address and 
-```bash
+```sh
 ibmcloud cdb deployment-whitelist-add example-deployment 198.51.100.0/24 "Testing range is now open" 
 ```
 {: .pre}
@@ -75,7 +75,7 @@ ibmcloud cdb deployment-whitelist-add example-deployment 198.51.100.0/24 "Testin
 for an IP range.
 
 Use [`cdb deployment-whitelist-list`](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-allowlist-list) to view the current allowlist. For example,
-```bash
+```sh
 ibmcloud cdb deployment-whitelist-list <deployment name or CRN>
 ```
 {: .pre}
@@ -98,7 +98,7 @@ From the UI, remove an IP address or netmask from the allowlist by clicking _Rem
 ## Allowlist {{site.data.keyword.databases-for}} in your Environment
 {: #allowlist-ips}
 
-If you use allowlists to control connections in your environment, you can use the following IP lists to allowlist {{site.data.keyword.databases-for}} deployments. We recommend you allowlist all of the subnet ranges for the _entire_ region that your deployments live in.
+If you use allowlists to control connections in your environment, use the following IP lists to allowlist {{site.data.keyword.databases-for}} deployments. We recommend you allowlist all of the subnet ranges for the _entire_ region that your deployments live in.
 
 ### `in-che` List
 {: #che01-list} 
@@ -108,12 +108,12 @@ If you use allowlists to control connections in your environment, you can use th
 
 | Location | Region | Data center | Subnet | First IP |
 | -- | -- | -- | -- | -- |
-| Chennai | in-che | che01 |  169.38.95.127/27 | 169.38.95.97 |
-| Chennai | in-che | che01 | 169.38.121.159/28 | 169.38.121.145 |
-| Chennai | in-che | che01 | 169.38.132.127/25 | 169.38.132.1 |
-| Chennai | in-che | che01 | 169.38.136.255/26 | 169.38.136.193 |
-| Chennai | in-che | che01 |  169.38.73.151/29 | 169.38.73.145 |
-| Chennai | in-che | che01 |  169.38.105.79/29 | 169.38.105.73 |
+| Chennai | in-che | che01 |  169.38.95.127/27 | 169.38.95.97 |         
+| Chennai | in-che | che01 | 169.38.121.159/28 | 169.38.121.145 |         
+| Chennai | in-che | che01 | 169.38.132.127/25 | 169.38.132.1 |         
+| Chennai | in-che | che01 | 169.38.136.255/26 | 169.38.136.193 |         
+| Chennai | in-che | che01 |  169.38.73.151/29 | 169.38.73.145 |         
+| Chennai | in-che | che01 |  169.38.105.79/29 | 169.38.105.73 |   
 {: caption="Table 1. in-che Public Subnets" caption-side="bottom"}
 
 #### Private Subnets
@@ -122,7 +122,7 @@ If you use allowlists to control connections in your environment, you can use th
 | Location | Region | Data center | Subnet | First IP |
 | -- | -- | -- | -- | -- |
 | Chennai | in-che | che01 |  10.162.8.127/26  | 10.162.8.65 |         
-| Chennai | in-che | che01 |  10.163.20.127/25 | 10.163.20.1 |         
+| Chennai | in-che | che01 |  10.163.20.127/25 | 10.163.20.1 |  
 | Chennai | in-che | che01 | 10.162.115.103/29 | 10.162.115.97 |         
 | Chennai | in-che | che01 |  10.162.132.79/29 | 10.162.132.73 |  
 {: caption="Table 2. in-che Private Subnets" caption-side="bottom"}
@@ -460,53 +460,53 @@ If you use allowlists to control connections in your environment, you can use th
 
 | Location | Region | Data center | Subnet | First IP |
 | -- | -- | -- | -- | -- |
-| Washington DC | us-east |  wdc04 |  52.116.78.127/25  | 52.116.78.1 |         
-| Washington DC | us-east |  wdc04 | 52.116.115.255/24  | 52.116.115.1 |         
-| Washington DC | us-east |  wdc04 | 150.239.70.255/24  | 150.239.70.1 |         
-| Washington DC | us-east |  wdc04 | 150.239.101.255/24 | 150.239.101.1 |         
-| Washington DC | us-east |  wdc04 |  169.47.179.63/26  | 169.47.179.1 |         
-| Washington DC | us-east |  wdc04 |  169.63.72.175/28  | 169.63.72.161 |         
-| Washington DC | us-east |  wdc04 | 169.63.121.159/27  | 169.63.121.129 |         
-| Washington DC | us-east |  wdc04 |  52.116.73.231/29  | 52.116.73.225 |         
-| Washington DC | us-east |  wdc04 | 169.47.179.231/29  | 169.47.179.225 |         
-| Washington DC | us-east |  wdc04 |  169.63.86.31/29   | 169.63.86.25 |         
-| Washington DC | us-east |  wdc04 | 169.63.111.119/29  | 169.63.111.113 |         
-| Washington DC | us-east |  wdc04 |  169.63.121.55/29  | 169.63.121.49 |         
-| Washington DC | us-east |  wdc04 |  169.63.121.63/29  | 169.63.121.57 |         
-| Washington DC | us-east |  wdc04 | 169.63.123.167/29  | 169.63.123.161 |         
-| Washington DC | us-east |  wdc04 | 169.63.125.223/29  | 169.63.125.217 |         
-| Washington DC | us-east |  wdc06 | 169.59.138.255/24  | 169.59.138.1 |         
-| Washington DC | us-east |  wdc06 | 169.59.144.255/24  | 169.59.144.1 |         
-| Washington DC | us-east |  wdc06 | 169.59.158.255/24  | 169.59.158.1 |         
-| Washington DC | us-east |  wdc06 | 169.59.183.255/24  | 169.59.183.1 |         
-| Washington DC | us-east |  wdc06 | 169.63.128.191/27  | 169.63.128.161 |         
-| Washington DC | us-east |  wdc06 | 169.63.135.191/28  | 169.63.135.177 |         
-| Washington DC | us-east |  wdc06 | 169.63.139.255/26  | 169.63.139.193 |         
-| Washington DC | us-east |  wdc06 | 169.63.172.127/25  | 169.63.172.1 |         
-| Washington DC | us-east |  wdc06 | 169.59.145.239/29  | 169.59.145.233 |         
-| Washington DC | us-east |  wdc06 |  169.60.65.55/29   | 169.60.65.49 |         
-| Washington DC | us-east |  wdc06 |   169.60.89.7/29   | 169.60.89.1 |         
-| Washington DC | us-east |  wdc06 |   169.60.93.7/29   | 169.60.93.1 |         
-| Washington DC | us-east |  wdc06 |  169.60.95.151/29  | 169.60.95.145 |         
-| Washington DC | us-east |  wdc06 | 169.63.129.119/29  | 169.63.129.113 |         
-| Washington DC | us-east |  wdc06 | 169.63.141.239/29  | 169.63.141.233 |         
-| Washington DC | us-east |  wdc06 | 169.63.149.199/29  | 169.63.149.193 |         
-| Washington DC | us-east |  wdc07 | 52.117.104.255/24  | 52.117.104.1 |         
-| Washington DC | us-east |  wdc07 | 150.239.194.255/24 | 150.239.194.1 |         
-| Washington DC | us-east |  wdc07 | 150.239.231.255/24 | 150.239.231.1 |         
-| Washington DC | us-east |  wdc07 |  169.61.123.95/28  | 169.61.123.81 |         
-| Washington DC | us-east |  wdc07 |  169.62.36.255/24  | 169.62.36.1 |         
-| Washington DC | us-east |  wdc07 |  169.62.42.63/27   | 169.62.42.33 |         
-| Washington DC | us-east |  wdc07 |  169.62.54.191/26  | 169.62.54.129 |         
-| Washington DC | us-east |  wdc07 |  169.62.60.127/25  | 169.62.60.1 |         
-| Washington DC | us-east |  wdc07 |  52.117.76.47/29   | 52.117.76.41 |         
-| Washington DC | us-east |  wdc07 |  52.117.85.71/29   | 52.117.85.65 |         
-| Washington DC | us-east |  wdc07 |  169.61.73.231/29  | 169.61.73.225 |         
-| Washington DC | us-east |  wdc07 |  169.61.95.15/29   | 169.61.95.9 |         
-| Washington DC | us-east |  wdc07 |  169.61.113.39/29  | 169.61.113.33 |         
-| Washington DC | us-east |  wdc07 |  169.61.113.47/29  | 169.61.113.41 |         
-| Washington DC | us-east |  wdc07 | 169.61.122.159/29  | 169.61.122.153 |         
-| Washington DC | us-east |  wdc07 |   169.62.6.87/29   | 169.62.6.81 | 
+| Washington DC | us-east | wdc04 |  52.116.78.127/25  | 52.116.78.1 |         
+| Washington DC | us-east | wdc04 | 52.116.115.255/24  | 52.116.115.1 |         
+| Washington DC | us-east | wdc04 | 150.239.70.255/24  | 150.239.70.1 |         
+| Washington DC | us-east | wdc04 | 150.239.101.255/24 | 150.239.101.1 |         
+| Washington DC | us-east | wdc04 |  169.47.179.63/26  | 169.47.179.1 |         
+| Washington DC | us-east | wdc04 |  169.63.72.175/28  | 169.63.72.161 |         
+| Washington DC | us-east | wdc04 | 169.63.121.159/27  | 169.63.121.129 |         
+| Washington DC | us-east | wdc04 |  52.116.73.231/29  | 52.116.73.225 |         
+| Washington DC | us-east | wdc04 | 169.47.179.231/29  | 169.47.179.225 |         
+| Washington DC | us-east | wdc04 |  169.63.86.31/29   | 169.63.86.25 |         
+| Washington DC | us-east | wdc04 | 169.63.111.119/29  | 169.63.111.113 |         
+| Washington DC | us-east | wdc04 |  169.63.121.55/29  | 169.63.121.49 |         
+| Washington DC | us-east | wdc04 |  169.63.121.63/29  | 169.63.121.57 |         
+| Washington DC | us-east | wdc04 | 169.63.123.167/29  | 169.63.123.161 |         
+| Washington DC | us-east | wdc04 | 169.63.125.223/29  | 169.63.125.217 |         
+| Washington DC | us-east | wdc06 | 169.59.138.255/24  | 169.59.138.1 |         
+| Washington DC | us-east | wdc06 | 169.59.144.255/24  | 169.59.144.1 |         
+| Washington DC | us-east | wdc06 | 169.59.158.255/24  | 169.59.158.1 |         
+| Washington DC | us-east | wdc06 | 169.59.183.255/24  | 169.59.183.1 |         
+| Washington DC | us-east | wdc06 | 169.63.128.191/27  | 169.63.128.161 |         
+| Washington DC | us-east | wdc06 | 169.63.135.191/28  | 169.63.135.177 |         
+| Washington DC | us-east | wdc06 | 169.63.139.255/26  | 169.63.139.193 |         
+| Washington DC | us-east | wdc06 | 169.63.172.127/25  | 169.63.172.1 |         
+| Washington DC | us-east | wdc06 | 169.59.145.239/29  | 169.59.145.233 |         
+| Washington DC | us-east | wdc06 |  169.60.65.55/29   | 169.60.65.49 |         
+| Washington DC | us-east | wdc06 |   169.60.89.7/29   | 169.60.89.1 |         
+| Washington DC | us-east | wdc06 |   169.60.93.7/29   | 169.60.93.1 |         
+| Washington DC | us-east | wdc06 |  169.60.95.151/29  | 169.60.95.145 |         
+| Washington DC | us-east | wdc06 | 169.63.129.119/29  | 169.63.129.113 |         
+| Washington DC | us-east | wdc06 | 169.63.141.239/29  | 169.63.141.233 |         
+| Washington DC | us-east | wdc06 | 169.63.149.199/29  | 169.63.149.193 |         
+| Washington DC | us-east | wdc07 | 52.117.104.255/24  | 52.117.104.1 |         
+| Washington DC | us-east | wdc07 | 150.239.194.255/24 | 150.239.194.1 |         
+| Washington DC | us-east | wdc07 | 150.239.231.255/24 | 150.239.231.1 |         
+| Washington DC | us-east | wdc07 |  169.61.123.95/28  | 169.61.123.81 |         
+| Washington DC | us-east | wdc07 |  169.62.36.255/24  | 169.62.36.1 |         
+| Washington DC | us-east | wdc07 |  169.62.42.63/27   | 169.62.42.33 |         
+| Washington DC | us-east | wdc07 |  169.62.54.191/26  | 169.62.54.129 |         
+| Washington DC | us-east | wdc07 |  169.62.60.127/25  | 169.62.60.1 |         
+| Washington DC | us-east | wdc07 |  52.117.76.47/29   | 52.117.76.41 |         
+| Washington DC | us-east | wdc07 |  52.117.85.71/29   | 52.117.85.65 |         
+| Washington DC | us-east | wdc07 |  169.61.73.231/29  | 169.61.73.225 |         
+| Washington DC | us-east | wdc07 |  169.61.95.15/29   | 169.61.95.9 |         
+| Washington DC | us-east | wdc07 |  169.61.113.39/29  | 169.61.113.33 |         
+| Washington DC | us-east | wdc07 |  169.61.113.47/29  | 169.61.113.41 |         
+| Washington DC | us-east | wdc07 | 169.61.122.159/29  | 169.61.122.153 |         
+| Washington DC | us-east | wdc07 |   169.62.6.87/29   | 169.62.6.81 |
 {: caption="Table 15. us-east Public Subnets" caption-side="bottom"}  
 
 #### Private Subnets
@@ -736,266 +736,266 @@ If you use allowlists to control connections in your environment, you can use th
 
 | Location | Region | Data center | Subnet | First IP |
 | -- | -- | -- | -- | -- |
-| Dallas | us-south | dal10 | 52.116.167.255/24  | 52.116.167.1 |         
-| Dallas | us-south | dal10 | 52.116.179.175/28  | 52.116.179.161 |         
-| Dallas | us-south | dal10 |  52.116.190.63/26  | 52.116.190.1 |         
-| Dallas | us-south | dal10 | 52.117.150.127/25  | 52.117.150.1 |         
-| Dallas | us-south | dal10 | 52.117.184.255/24  | 52.117.184.1 |         
-| Dallas | us-south | dal10 |  52.118.10.255/24  | 52.118.10.1 |         
-| Dallas | us-south | dal10 |  52.118.48.255/24  | 52.118.48.1 |         
-| Dallas | us-south | dal10 | 52.118.138.255/24  | 52.118.138.1 |         
-| Dallas | us-south | dal10 | 52.118.163.127/25  | 52.118.163.1 |         
-| Dallas | us-south | dal10 | 150.238.244.255/24 | 150.238.244.1 |         
-| Dallas | us-south | dal10 |  150.239.18.63/26  | 150.239.18.1 |         
-| Dallas | us-south | dal10 | 150.239.46.255/24  | 150.239.46.1 |         
-| Dallas | us-south | dal10 | 150.239.63.255/24  | 150.239.63.1 |         
-| Dallas | us-south | dal10 | 150.240.131.255/24 | 150.240.131.1 |         
-| Dallas | us-south | dal10 |  169.46.57.31/27   | 169.46.57.1 |         
-| Dallas | us-south | dal10 | 169.47.212.191/27  | 169.47.212.161 |         
-| Dallas | us-south | dal10 | 169.48.177.159/28  | 169.48.177.145 |         
-| Dallas | us-south | dal10 |  169.60.22.255/27  | 169.60.22.225 |         
-| Dallas | us-south | dal10 | 169.61.212.255/26  | 169.61.212.193 |         
-| Dallas | us-south | dal10 | 169.61.219.239/28  | 169.61.219.225 |         
-| Dallas | us-south | dal10 | 169.63.201.255/25  | 169.63.201.129 |         
-| Dallas | us-south | dal10 | 169.63.204.255/24  | 169.63.204.1 |         
-| Dallas | us-south | dal10 | 52.116.160.151/29  | 52.116.160.145 |         
-| Dallas | us-south | dal10 | 52.116.190.135/29  | 52.116.190.129 |         
-| Dallas | us-south | dal10 | 52.116.190.239/29  | 52.116.190.233 |         
-| Dallas | us-south | dal10 | 52.117.135.111/29  | 52.117.135.105 |         
-| Dallas | us-south | dal10 |  52.117.148.31/29  | 52.117.148.25 |         
-| Dallas | us-south | dal10 | 52.117.166.239/29  | 52.117.166.233 |         
-| Dallas | us-south | dal10 |  52.118.41.103/29  | 52.118.41.97 |         
-| Dallas | us-south | dal10 | 52.118.153.159/29  | 52.118.153.153 |         
-| Dallas | us-south | dal10 |  150.238.4.151/29  | 150.238.4.145 |         
-| Dallas | us-south | dal10 | 150.238.229.39/29  | 150.238.229.33 |         
-| Dallas | us-south | dal10 | 150.238.247.167/29 | 150.238.247.161 |         
-| Dallas | us-south | dal10 |  169.46.13.239/29  | 169.46.13.233 |         
-| Dallas | us-south | dal10 |  169.46.17.87/29   | 169.46.17.81 |         
-| Dallas | us-south | dal10 |  169.46.18.23/29   | 169.46.18.17 |         
-| Dallas | us-south | dal10 |  169.46.21.175/29  | 169.46.21.169 |         
-| Dallas | us-south | dal10 |  169.46.21.183/29  | 169.46.21.177 |         
-| Dallas | us-south | dal10 |  169.46.25.103/29  | 169.46.25.97 |         
-| Dallas | us-south | dal10 |  169.46.31.175/29  | 169.46.31.169 |         
-| Dallas | us-south | dal10 |  169.46.39.199/29  | 169.46.39.193 |         
-| Dallas | us-south | dal10 |   169.46.40.7/29   | 169.46.40.1 |         
-| Dallas | us-south | dal10 |  169.46.42.215/29  | 169.46.42.209 |         
-| Dallas | us-south | dal10 |  169.46.50.239/29  | 169.46.50.233 |         
-| Dallas | us-south | dal10 |  169.46.51.63/29   | 169.46.51.57 |         
-| Dallas | us-south | dal10 |  169.46.51.111/29  | 169.46.51.105 |         
-| Dallas | us-south | dal10 |  169.46.60.23/29   | 169.46.60.17 |         
-| Dallas | us-south | dal10 |  169.46.65.191/29  | 169.46.65.185 |         
-| Dallas | us-south | dal10 |  169.46.71.143/29  | 169.46.71.137 |         
-| Dallas | us-south | dal10 |  169.46.76.71/29   | 169.46.76.65 |         
-| Dallas | us-south | dal10 |  169.46.78.15/29   | 169.46.78.9 |         
-| Dallas | us-south | dal10 |  169.46.81.175/29  | 169.46.81.169 |         
-| Dallas | us-south | dal10 |  169.46.91.55/29   | 169.46.91.49 |         
-| Dallas | us-south | dal10 |  169.46.97.79/29   | 169.46.97.73 |         
-| Dallas | us-south | dal10 |  169.46.99.103/29  | 169.46.99.97 |         
-| Dallas | us-south | dal10 |  169.46.99.175/29  | 169.46.99.169 |         
-| Dallas | us-south | dal10 |  169.46.110.7/29   | 169.46.110.1 |         
-| Dallas | us-south | dal10 |  169.46.110.87/29  | 169.46.110.81 |         
-| Dallas | us-south | dal10 | 169.46.120.183/29  | 169.46.120.177 |         
-| Dallas | us-south | dal10 | 169.46.121.215/29  | 169.46.121.209 |         
-| Dallas | us-south | dal10 |  169.47.193.79/29  | 169.47.193.73 |         
-| Dallas | us-south | dal10 |  169.47.194.95/29  | 169.47.194.89 |         
-| Dallas | us-south | dal10 |  169.47.195.47/29  | 169.47.195.41 |         
-| Dallas | us-south | dal10 | 169.47.195.111/29  | 169.47.195.105 |         
-| Dallas | us-south | dal10 | 169.47.197.207/29  | 169.47.197.201 |         
-| Dallas | us-south | dal10 | 169.47.203.167/29  | 169.47.203.161 |         
-| Dallas | us-south | dal10 |  169.47.205.31/29  | 169.47.205.25 |         
-| Dallas | us-south | dal10 | 169.47.214.167/29  | 169.47.214.161 |         
-| Dallas | us-south | dal10 | 169.47.228.255/29  | 169.47.228.249 |         
-| Dallas | us-south | dal10 | 169.47.229.119/29  | 169.47.229.113 |         
-| Dallas | us-south | dal10 | 169.47.233.167/29  | 169.47.233.161 |         
-| Dallas | us-south | dal10 | 169.47.236.111/29  | 169.47.236.105 |         
-| Dallas | us-south | dal10 |  169.47.246.39/29  | 169.47.246.33 |         
-| Dallas | us-south | dal10 |  169.47.251.87/29  | 169.47.251.81 |         
-| Dallas | us-south | dal10 | 169.47.252.135/29  | 169.47.252.129 |         
-| Dallas | us-south | dal10 |  169.48.135.79/29  | 169.48.135.73 |         
-| Dallas | us-south | dal10 |  169.48.139.79/29  | 169.48.139.73 |         
-| Dallas | us-south | dal10 | 169.48.140.143/29  | 169.48.140.137 |         
-| Dallas | us-south | dal10 | 169.48.161.199/29  | 169.48.161.193 |         
-| Dallas | us-south | dal10 | 169.48.163.135/29  | 169.48.163.129 |         
-| Dallas | us-south | dal10 | 169.48.164.151/29  | 169.48.164.145 |         
-| Dallas | us-south | dal10 |  169.48.171.87/29  | 169.48.171.81 |         
-| Dallas | us-south | dal10 | 169.48.173.135/29  | 169.48.173.129 |         
-| Dallas | us-south | dal10 |  169.48.176.15/29  | 169.48.176.9 |         
-| Dallas | us-south | dal10 | 169.48.177.103/29  | 169.48.177.97 |         
-| Dallas | us-south | dal10 | 169.48.184.175/29  | 169.48.184.169 |         
-| Dallas | us-south | dal10 |  169.60.28.103/29  | 169.60.28.97 |         
-| Dallas | us-south | dal10 |  169.60.31.55/29   | 169.60.31.49 |         
-| Dallas | us-south | dal10 |  169.60.37.167/29  | 169.60.37.161 |         
-| Dallas | us-south | dal10 |  169.60.43.79/29   | 169.60.43.73 |         
-| Dallas | us-south | dal10 |  169.60.61.223/29  | 169.60.61.217 |         
-| Dallas | us-south | dal10 | 169.60.193.191/29  | 169.60.193.185 |         
-| Dallas | us-south | dal10 |  169.60.196.47/29  | 169.60.196.41 |         
-| Dallas | us-south | dal10 | 169.60.198.143/29  | 169.60.198.137 |         
-| Dallas | us-south | dal10 | 169.60.199.127/29  | 169.60.199.121 |         
-| Dallas | us-south | dal10 |  169.60.200.95/29  | 169.60.200.89 |         
-| Dallas | us-south | dal10 | 169.60.202.255/29  | 169.60.202.249 |         
-| Dallas | us-south | dal10 |  169.60.206.7/29   | 169.60.206.1 |         
-| Dallas | us-south | dal10 | 169.60.224.175/29  | 169.60.224.169 |         
-| Dallas | us-south | dal10 | 169.60.229.175/29  | 169.60.229.169 |         
-| Dallas | us-south | dal10 | 169.60.235.247/29  | 169.60.235.241 |         
-| Dallas | us-south | dal10 | 169.60.239.175/29  | 169.60.239.169 |         
-| Dallas | us-south | dal10 |  169.60.240.47/29  | 169.60.240.41 |         
-| Dallas | us-south | dal10 |  169.60.241.23/29  | 169.60.241.17 |         
-| Dallas | us-south | dal10 | 169.61.193.127/29  | 169.61.193.121 |         
-| Dallas | us-south | dal10 | 169.61.196.215/29  | 169.61.196.209 |         
-| Dallas | us-south | dal10 | 169.61.214.175/29  | 169.61.214.169 |         
-| Dallas | us-south | dal10 | 169.61.216.143/29  | 169.61.216.137 |         
-| Dallas | us-south | dal10 |  169.61.218.23/29  | 169.61.218.17 |         
-| Dallas | us-south | dal10 |  169.61.235.63/29  | 169.61.235.57 |         
-| Dallas | us-south | dal10 | 169.63.194.159/29  | 169.63.194.153 |         
-| Dallas | us-south | dal10 |  169.63.195.39/29  | 169.63.195.33 |         
-| Dallas | us-south | dal10 | 169.63.218.119/29  | 169.63.218.113 |         
-| Dallas | us-south | dal10 |  169.63.220.39/29  | 169.63.220.33 |         
-| Dallas | us-south | dal12 |  50.22.135.255/24  | 50.22.135.1 |         
-| Dallas | us-south | dal12 | 52.116.212.255/24  | 52.116.212.1 |         
-| Dallas | us-south | dal12 | 52.116.218.191/27  | 52.116.218.161 |         
-| Dallas | us-south | dal12 | 52.116.229.255/25  | 52.116.229.129 |         
-| Dallas | us-south | dal12 | 52.116.252.255/24  | 52.116.252.1 |         
-| Dallas | us-south | dal12 | 52.118.193.255/24  | 52.118.193.1 |         
-| Dallas | us-south | dal12 | 52.118.197.255/24  | 52.118.197.1 |         
-| Dallas | us-south | dal12 | 52.118.203.255/24  | 52.118.203.1 |         
-| Dallas | us-south | dal12 | 52.118.233.255/24  | 52.118.233.1 |         
-| Dallas | us-south | dal12 | 150.239.149.255/24 | 150.239.149.1 |         
-| Dallas | us-south | dal12 | 150.239.187.255/24 | 150.239.187.1 |         
-| Dallas | us-south | dal12 | 169.47.108.255/26  | 169.47.108.193 |         
-| Dallas | us-south | dal12 | 169.48.215.191/27  | 169.48.215.161 |         
-| Dallas | us-south | dal12 | 169.59.194.255/24  | 169.59.194.1 |         
-| Dallas | us-south | dal12 | 169.59.234.255/24  | 169.59.234.1 |         
-| Dallas | us-south | dal12 | 169.61.157.255/25  | 169.61.157.129 |         
-| Dallas | us-south | dal12 |  169.61.167.31/28  | 169.61.167.17 |         
-| Dallas | us-south | dal12 |  169.61.169.63/28  | 169.61.169.49 |         
-| Dallas | us-south | dal12 |  169.63.57.127/26  | 169.63.57.65 |         
-| Dallas | us-south | dal12 |  50.22.153.191/29  | 50.22.153.185 |         
-| Dallas | us-south | dal12 | 52.116.234.199/29  | 52.116.234.193 |         
-| Dallas | us-south | dal12 | 52.116.244.119/29  | 52.116.244.113 |         
-| Dallas | us-south | dal12 |  52.116.254.31/29  | 52.116.254.25 |         
-| Dallas | us-south | dal12 |  169.47.101.7/29   | 169.47.101.1 |         
-| Dallas | us-south | dal12 |  169.47.101.15/29  | 169.47.101.9 |         
-| Dallas | us-south | dal12 |  169.47.101.63/29  | 169.47.101.57 |         
-| Dallas | us-south | dal12 |  169.47.107.95/29  | 169.47.107.89 |         
-| Dallas | us-south | dal12 | 169.47.107.151/29  | 169.47.107.145 |         
-| Dallas | us-south | dal12 |  169.47.109.87/29  | 169.47.109.81 |         
-| Dallas | us-south | dal12 |  169.47.111.79/29  | 169.47.111.73 |         
-| Dallas | us-south | dal12 | 169.47.113.223/29  | 169.47.113.217 |         
-| Dallas | us-south | dal12 |  169.47.124.95/29  | 169.47.124.89 |         
-| Dallas | us-south | dal12 | 169.48.207.175/29  | 169.48.207.169 |         
-| Dallas | us-south | dal12 |  169.48.216.47/29  | 169.48.216.41 |         
-| Dallas | us-south | dal12 | 169.48.218.143/29  | 169.48.218.137 |         
-| Dallas | us-south | dal12 | 169.48.222.135/29  | 169.48.222.129 |         
-| Dallas | us-south | dal12 | 169.48.236.183/29  | 169.48.236.177 |         
-| Dallas | us-south | dal12 | 169.48.240.199/29  | 169.48.240.193 |         
-| Dallas | us-south | dal12 | 169.48.241.167/29  | 169.48.241.161 |         
-| Dallas | us-south | dal12 |  169.59.203.47/29  | 169.59.203.41 |         
-| Dallas | us-south | dal12 | 169.59.203.247/29  | 169.59.203.241 |         
-| Dallas | us-south | dal12 | 169.59.225.191/29  | 169.59.225.185 |         
-| Dallas | us-south | dal12 | 169.59.255.119/29  | 169.59.255.113 |         
-| Dallas | us-south | dal12 | 169.61.133.159/29  | 169.61.133.153 |         
-| Dallas | us-south | dal12 | 169.61.133.223/29  | 169.61.133.217 |         
-| Dallas | us-south | dal12 | 169.61.136.175/29  | 169.61.136.169 |         
-| Dallas | us-south | dal12 | 169.61.138.231/29  | 169.61.138.225 |         
-| Dallas | us-south | dal12 |  169.61.139.79/29  | 169.61.139.73 |         
-| Dallas | us-south | dal12 | 169.61.139.103/29  | 169.61.139.97 |         
-| Dallas | us-south | dal12 | 169.61.150.223/29  | 169.61.150.217 |         
-| Dallas | us-south | dal12 | 169.61.170.151/29  | 169.61.170.145 |         
-| Dallas | us-south | dal12 | 169.61.178.111/29  | 169.61.178.105 |         
-| Dallas | us-south | dal12 | 169.61.190.103/29  | 169.61.190.97 |         
-| Dallas | us-south | dal12 |   169.63.1.79/29   | 169.63.1.73 |         
-| Dallas | us-south | dal12 |   169.63.2.79/29   | 169.63.2.73 |         
-| Dallas | us-south | dal12 |  169.63.18.71/29   | 169.63.18.65 |         
-| Dallas | us-south | dal12 |  169.63.21.175/29  | 169.63.21.169 |         
-| Dallas | us-south | dal12 |  169.63.21.191/29  | 169.63.21.185 |         
-| Dallas | us-south | dal12 |   169.63.25.7/29   | 169.63.25.1 |         
-| Dallas | us-south | dal12 |  169.63.26.15/29   | 169.63.26.9 |         
-| Dallas | us-south | dal12 |  169.63.26.255/29  | 169.63.26.249 |         
-| Dallas | us-south | dal12 |   169.63.27.7/29   | 169.63.27.1 |         
-| Dallas | us-south | dal12 |  169.63.29.47/29   | 169.63.29.41 |         
-| Dallas | us-south | dal12 |   169.63.31.7/29   | 169.63.31.1 |         
-| Dallas | us-south | dal12 |  169.63.34.207/29  | 169.63.34.201 |         
-| Dallas | us-south | dal12 |  169.63.47.87/29   | 169.63.47.81 |         
-| Dallas | us-south | dal12 |  169.63.54.175/29  | 169.63.54.169 |         
-| Dallas | us-south | dal12 |  169.63.55.143/29  | 169.63.55.137 |         
-| Dallas | us-south | dal12 |  169.63.58.71/29   | 169.63.58.65 |         
-| Dallas | us-south | dal12 |  169.63.58.79/29   | 169.63.58.73 |         
-| Dallas | us-south | dal13 |  52.116.16.127/25  | 52.116.16.1 |         
-| Dallas | us-south | dal13 |  52.116.24.63/27   | 52.116.24.33 |         
-| Dallas | us-south | dal13 |  52.116.47.255/24  | 52.116.47.1 |         
-| Dallas | us-south | dal13 |  52.116.60.255/24  | 52.116.60.1 |         
-| Dallas | us-south | dal13 |  52.117.49.255/24  | 52.117.49.1 |         
-| Dallas | us-south | dal13 | 52.117.198.191/26  | 52.117.198.129 |         
-| Dallas | us-south | dal13 | 52.117.202.255/25  | 52.117.202.129 |         
-| Dallas | us-south | dal13 | 52.117.205.255/24  | 52.117.205.1 |         
-| Dallas | us-south | dal13 | 52.117.230.255/24  | 52.117.230.1 |         
-| Dallas | us-south | dal13 | 52.117.235.255/24  | 52.117.235.1 |         
-| Dallas | us-south | dal13 | 52.117.254.255/24  | 52.117.254.1 |         
-| Dallas | us-south | dal13 | 67.228.229.255/24  | 67.228.229.1 |         
-| Dallas | us-south | dal13 | 67.228.234.255/24  | 67.228.234.1 |         
-| Dallas | us-south | dal13 | 150.238.107.255/24 | 150.238.107.1 |         
-| Dallas | us-south | dal13 | 150.238.113.255/24 | 150.238.113.1 |         
-| Dallas | us-south | dal13 |  169.48.76.63/27   | 169.48.76.33 |         
-| Dallas | us-south | dal13 |  169.59.14.255/24  | 169.59.14.1 |         
-| Dallas | us-south | dal13 |  169.61.32.159/29  | 169.61.32.153 |         
-| Dallas | us-south | dal13 | 169.62.218.223/28  | 169.62.218.209 |         
-| Dallas | us-south | dal13 |  169.62.237.63/26  | 169.62.237.1 |         
-| Dallas | us-south | dal13 |  52.116.17.159/29  | 52.116.17.153 |         
-| Dallas | us-south | dal13 |  52.116.19.183/29  | 52.116.19.177 |         
-| Dallas | us-south | dal13 |  52.116.19.191/29  | 52.116.19.185 |         
-| Dallas | us-south | dal13 |  52.116.25.247/29  | 52.116.25.241 |         
-| Dallas | us-south | dal13 |  52.116.32.39/29   | 52.116.32.33 |         
-| Dallas | us-south | dal13 |  52.116.54.239/29  | 52.116.54.233 |         
-| Dallas | us-south | dal13 |  52.117.22.247/29  | 52.117.22.241 |         
-| Dallas | us-south | dal13 |  52.117.23.143/29  | 52.117.23.137 |         
-| Dallas | us-south | dal13 |  52.117.31.119/29  | 52.117.31.113 |         
-| Dallas | us-south | dal13 |  52.117.35.231/29  | 52.117.35.225 |         
-| Dallas | us-south | dal13 |  52.117.55.95/29   | 52.117.55.89 |         
-| Dallas | us-south | dal13 |  52.117.55.119/29  | 52.117.55.113 |         
-| Dallas | us-south | dal13 |  52.117.62.127/29  | 52.117.62.121 |         
-| Dallas | us-south | dal13 | 52.117.234.183/29  | 52.117.234.177 |         
-| Dallas | us-south | dal13 | 52.117.252.207/29  | 52.117.252.201 |         
-| Dallas | us-south | dal13 | 150.238.100.247/29 | 150.238.100.241 |         
-| Dallas | us-south | dal13 |  169.48.71.167/29  | 169.48.71.161 |         
-| Dallas | us-south | dal13 |  169.48.71.175/29  | 169.48.71.169 |         
-| Dallas | us-south | dal13 |  169.48.78.95/29   | 169.48.78.89 |         
-| Dallas | us-south | dal13 |  169.48.96.71/29   | 169.48.96.65 |         
-| Dallas | us-south | dal13 |  169.48.98.199/29  | 169.48.98.193 |         
-| Dallas | us-south | dal13 |  169.48.98.231/29  | 169.48.98.225 |         
-| Dallas | us-south | dal13 |  169.48.99.119/29  | 169.48.99.113 |         
-| Dallas | us-south | dal13 |  169.48.107.79/29  | 169.48.107.73 |         
-| Dallas | us-south | dal13 | 169.48.114.247/29  | 169.48.114.241 |         
-| Dallas | us-south | dal13 | 169.48.123.151/29  | 169.48.123.145 |         
-| Dallas | us-south | dal13 |  169.59.10.199/29  | 169.59.10.193 |         
-| Dallas | us-south | dal13 | 169.60.131.167/29  | 169.60.131.161 |         
-| Dallas | us-south | dal13 |  169.60.137.87/29  | 169.60.137.81 |         
-| Dallas | us-south | dal13 | 169.60.138.223/29  | 169.60.138.217 |         
-| Dallas | us-south | dal13 | 169.60.150.239/29  | 169.60.150.233 |         
-| Dallas | us-south | dal13 | 169.60.159.183/29  | 169.60.159.177 |         
-| Dallas | us-south | dal13 |  169.60.164.31/29  | 169.60.164.25 |         
-| Dallas | us-south | dal13 |  169.60.184.63/29  | 169.60.184.57 |         
-| Dallas | us-south | dal13 |  169.60.186.71/29  | 169.60.186.65 |         
-| Dallas | us-south | dal13 |  169.61.23.199/29  | 169.61.23.193 |         
-| Dallas | us-south | dal13 |  169.61.48.207/29  | 169.61.48.201 |         
-| Dallas | us-south | dal13 |  169.61.48.239/29  | 169.61.48.233 |         
-| Dallas | us-south | dal13 |  169.61.49.143/29  | 169.61.49.137 |         
-| Dallas | us-south | dal13 |  169.61.56.223/29  | 169.61.56.217 |         
-| Dallas | us-south | dal13 |  169.61.59.103/29  | 169.61.59.97 |         
-| Dallas | us-south | dal13 |  169.61.60.39/29   | 169.61.60.33 |         
-| Dallas | us-south | dal13 |  169.61.60.47/29   | 169.61.60.41 |         
-| Dallas | us-south | dal13 | 169.62.134.103/29  | 169.62.134.97 |         
-| Dallas | us-south | dal13 |  169.62.144.71/29  | 169.62.144.65 |         
-| Dallas | us-south | dal13 |  169.62.151.47/29  | 169.62.151.41 |         
-| Dallas | us-south | dal13 |  169.62.158.95/29  | 169.62.158.89 |         
-| Dallas | us-south | dal13 | 169.62.184.207/29  | 169.62.184.201 |         
-| Dallas | us-south | dal13 | 169.62.187.159/29  | 169.62.187.153 |         
-| Dallas | us-south | dal13 | 169.62.193.183/29  | 169.62.193.177 |         
-| Dallas | us-south | dal13 |  169.62.206.31/29  | 169.62.206.25 |         
-| Dallas | us-south | dal13 | 169.62.238.151/29  | 169.62.238.145 |         
-| Dallas | us-south | dal13 |  169.62.239.47/29  | 169.62.239.41 |         
-| Dallas | us-south | dal13 | 169.62.240.223/29  | 169.62.240.217 |         
-| Dallas | us-south | dal13 | 169.62.240.231/29  | 169.62.240.225 |         
-| Dallas | us-south | dal13 |  174.36.70.143/29  | 174.36.70.137 |
+| Dallas | us-south |  dal10 | 52.116.167.255/24  | 52.116.167.1 |         
+| Dallas | us-south |  dal10 | 52.116.179.175/28  | 52.116.179.161 |         
+| Dallas | us-south |  dal10 |  52.116.190.63/26  | 52.116.190.1 |         
+| Dallas | us-south |  dal10 | 52.117.150.127/25  | 52.117.150.1 |         
+| Dallas | us-south |  dal10 | 52.117.184.255/24  | 52.117.184.1 |         
+| Dallas | us-south |  dal10 |  52.118.10.255/24  | 52.118.10.1 |         
+| Dallas | us-south |  dal10 |  52.118.48.255/24  | 52.118.48.1 |         
+| Dallas | us-south |  dal10 | 52.118.138.255/24  | 52.118.138.1 |         
+| Dallas | us-south |  dal10 | 52.118.163.127/25  | 52.118.163.1 |         
+| Dallas | us-south |  dal10 | 150.238.244.255/24 | 150.238.244.1 |         
+| Dallas | us-south |  dal10 |  150.239.18.63/26  | 150.239.18.1 |         
+| Dallas | us-south |  dal10 | 150.239.46.255/24  | 150.239.46.1 |         
+| Dallas | us-south |  dal10 | 150.239.63.255/24  | 150.239.63.1 |         
+| Dallas | us-south |  dal10 | 150.240.131.255/24 | 150.240.131.1 |         
+| Dallas | us-south |  dal10 |  169.46.57.31/27   | 169.46.57.1 |         
+| Dallas | us-south |  dal10 | 169.47.212.191/27  | 169.47.212.161 |         
+| Dallas | us-south |  dal10 | 169.48.177.159/28  | 169.48.177.145 |         
+| Dallas | us-south |  dal10 |  169.60.22.255/27  | 169.60.22.225 |         
+| Dallas | us-south |  dal10 | 169.61.212.255/26  | 169.61.212.193 |         
+| Dallas | us-south |  dal10 | 169.61.219.239/28  | 169.61.219.225 |         
+| Dallas | us-south |  dal10 | 169.63.201.255/25  | 169.63.201.129 |         
+| Dallas | us-south |  dal10 | 169.63.204.255/24  | 169.63.204.1 |         
+| Dallas | us-south |  dal10 | 52.116.160.151/29  | 52.116.160.145 |         
+| Dallas | us-south |  dal10 | 52.116.190.135/29  | 52.116.190.129 |         
+| Dallas | us-south |  dal10 | 52.116.190.239/29  | 52.116.190.233 |         
+| Dallas | us-south |  dal10 | 52.117.135.111/29  | 52.117.135.105 |         
+| Dallas | us-south |  dal10 |  52.117.148.31/29  | 52.117.148.25 |         
+| Dallas | us-south |  dal10 | 52.117.166.239/29  | 52.117.166.233 |         
+| Dallas | us-south |  dal10 |  52.118.41.103/29  | 52.118.41.97 |         
+| Dallas | us-south |  dal10 | 52.118.153.159/29  | 52.118.153.153 |         
+| Dallas | us-south |  dal10 |  150.238.4.151/29  | 150.238.4.145 |         
+| Dallas | us-south |  dal10 | 150.238.229.39/29  | 150.238.229.33 |         
+| Dallas | us-south |  dal10 | 150.238.247.167/29 | 150.238.247.161 |         
+| Dallas | us-south |  dal10 |  169.46.13.239/29  | 169.46.13.233 |         
+| Dallas | us-south |  dal10 |  169.46.17.87/29   | 169.46.17.81 |         
+| Dallas | us-south |  dal10 |  169.46.18.23/29   | 169.46.18.17 |         
+| Dallas | us-south |  dal10 |  169.46.21.175/29  | 169.46.21.169 |         
+| Dallas | us-south |  dal10 |  169.46.21.183/29  | 169.46.21.177 |         
+| Dallas | us-south |  dal10 |  169.46.25.103/29  | 169.46.25.97 |         
+| Dallas | us-south |  dal10 |  169.46.31.175/29  | 169.46.31.169 |         
+| Dallas | us-south |  dal10 |  169.46.39.199/29  | 169.46.39.193 |         
+| Dallas | us-south |  dal10 |   169.46.40.7/29   | 169.46.40.1 |         
+| Dallas | us-south |  dal10 |  169.46.42.215/29  | 169.46.42.209 |         
+| Dallas | us-south |  dal10 |  169.46.50.239/29  | 169.46.50.233 |         
+| Dallas | us-south |  dal10 |  169.46.51.63/29   | 169.46.51.57 |         
+| Dallas | us-south |  dal10 |  169.46.51.111/29  | 169.46.51.105 |         
+| Dallas | us-south |  dal10 |  169.46.60.23/29   | 169.46.60.17 |         
+| Dallas | us-south |  dal10 |  169.46.65.191/29  | 169.46.65.185 |         
+| Dallas | us-south |  dal10 |  169.46.71.143/29  | 169.46.71.137 |         
+| Dallas | us-south |  dal10 |  169.46.76.71/29   | 169.46.76.65 |         
+| Dallas | us-south |  dal10 |  169.46.78.15/29   | 169.46.78.9 |         
+| Dallas | us-south |  dal10 |  169.46.81.175/29  | 169.46.81.169 |         
+| Dallas | us-south |  dal10 |  169.46.91.55/29   | 169.46.91.49 |         
+| Dallas | us-south |  dal10 |  169.46.97.79/29   | 169.46.97.73 |         
+| Dallas | us-south |  dal10 |  169.46.99.103/29  | 169.46.99.97 |         
+| Dallas | us-south |  dal10 |  169.46.99.175/29  | 169.46.99.169 |         
+| Dallas | us-south |  dal10 |  169.46.110.7/29   | 169.46.110.1 |         
+| Dallas | us-south |  dal10 |  169.46.110.87/29  | 169.46.110.81 |         
+| Dallas | us-south |  dal10 | 169.46.120.183/29  | 169.46.120.177 |         
+| Dallas | us-south |  dal10 | 169.46.121.215/29  | 169.46.121.209 |         
+| Dallas | us-south |  dal10 |  169.47.193.79/29  | 169.47.193.73 |         
+| Dallas | us-south |  dal10 |  169.47.194.95/29  | 169.47.194.89 |         
+| Dallas | us-south |  dal10 |  169.47.195.47/29  | 169.47.195.41 |         
+| Dallas | us-south |  dal10 | 169.47.195.111/29  | 169.47.195.105 |         
+| Dallas | us-south |  dal10 | 169.47.197.207/29  | 169.47.197.201 |         
+| Dallas | us-south |  dal10 | 169.47.203.167/29  | 169.47.203.161 |         
+| Dallas | us-south |  dal10 |  169.47.205.31/29  | 169.47.205.25 |         
+| Dallas | us-south |  dal10 | 169.47.214.167/29  | 169.47.214.161 |         
+| Dallas | us-south |  dal10 | 169.47.228.255/29  | 169.47.228.249 |         
+| Dallas | us-south |  dal10 | 169.47.229.119/29  | 169.47.229.113 |         
+| Dallas | us-south |  dal10 | 169.47.233.167/29  | 169.47.233.161 |         
+| Dallas | us-south |  dal10 | 169.47.236.111/29  | 169.47.236.105 |         
+| Dallas | us-south |  dal10 |  169.47.246.39/29  | 169.47.246.33 |         
+| Dallas | us-south |  dal10 |  169.47.251.87/29  | 169.47.251.81 |         
+| Dallas | us-south |  dal10 | 169.47.252.135/29  | 169.47.252.129 |         
+| Dallas | us-south |  dal10 |  169.48.135.79/29  | 169.48.135.73 |         
+| Dallas | us-south |  dal10 |  169.48.139.79/29  | 169.48.139.73 |         
+| Dallas | us-south |  dal10 | 169.48.140.143/29  | 169.48.140.137 |         
+| Dallas | us-south |  dal10 | 169.48.161.199/29  | 169.48.161.193 |         
+| Dallas | us-south |  dal10 | 169.48.163.135/29  | 169.48.163.129 |         
+| Dallas | us-south |  dal10 | 169.48.164.151/29  | 169.48.164.145 |         
+| Dallas | us-south |  dal10 |  169.48.171.87/29  | 169.48.171.81 |         
+| Dallas | us-south |  dal10 | 169.48.173.135/29  | 169.48.173.129 |         
+| Dallas | us-south |  dal10 |  169.48.176.15/29  | 169.48.176.9 |         
+| Dallas | us-south |  dal10 | 169.48.177.103/29  | 169.48.177.97 |         
+| Dallas | us-south |  dal10 | 169.48.184.175/29  | 169.48.184.169 |         
+| Dallas | us-south |  dal10 |  169.60.28.103/29  | 169.60.28.97 |         
+| Dallas | us-south |  dal10 |  169.60.31.55/29   | 169.60.31.49 |         
+| Dallas | us-south |  dal10 |  169.60.37.167/29  | 169.60.37.161 |         
+| Dallas | us-south |  dal10 |  169.60.43.79/29   | 169.60.43.73 |         
+| Dallas | us-south |  dal10 |  169.60.61.223/29  | 169.60.61.217 |         
+| Dallas | us-south |  dal10 | 169.60.193.191/29  | 169.60.193.185 |         
+| Dallas | us-south |  dal10 |  169.60.196.47/29  | 169.60.196.41 |         
+| Dallas | us-south |  dal10 | 169.60.198.143/29  | 169.60.198.137 |         
+| Dallas | us-south |  dal10 | 169.60.199.127/29  | 169.60.199.121 |         
+| Dallas | us-south |  dal10 |  169.60.200.95/29  | 169.60.200.89 |         
+| Dallas | us-south |  dal10 | 169.60.202.255/29  | 169.60.202.249 |         
+| Dallas | us-south |  dal10 |  169.60.206.7/29   | 169.60.206.1 |         
+| Dallas | us-south |  dal10 | 169.60.224.175/29  | 169.60.224.169 |         
+| Dallas | us-south |  dal10 | 169.60.229.175/29  | 169.60.229.169 |         
+| Dallas | us-south |  dal10 | 169.60.235.247/29  | 169.60.235.241 |         
+| Dallas | us-south |  dal10 | 169.60.239.175/29  | 169.60.239.169 |         
+| Dallas | us-south |  dal10 |  169.60.240.47/29  | 169.60.240.41 |         
+| Dallas | us-south |  dal10 |  169.60.241.23/29  | 169.60.241.17 |         
+| Dallas | us-south |  dal10 | 169.61.193.127/29  | 169.61.193.121 |         
+| Dallas | us-south |  dal10 | 169.61.196.215/29  | 169.61.196.209 |         
+| Dallas | us-south |  dal10 | 169.61.214.175/29  | 169.61.214.169 |         
+| Dallas | us-south |  dal10 | 169.61.216.143/29  | 169.61.216.137 |         
+| Dallas | us-south |  dal10 |  169.61.218.23/29  | 169.61.218.17 |         
+| Dallas | us-south |  dal10 |  169.61.235.63/29  | 169.61.235.57 |         
+| Dallas | us-south |  dal10 | 169.63.194.159/29  | 169.63.194.153 |         
+| Dallas | us-south |  dal10 |  169.63.195.39/29  | 169.63.195.33 |         
+| Dallas | us-south |  dal10 | 169.63.218.119/29  | 169.63.218.113 |         
+| Dallas | us-south |  dal10 |  169.63.220.39/29  | 169.63.220.33 |         
+| Dallas | us-south |  dal12 |  50.22.135.255/24  | 50.22.135.1 |         
+| Dallas | us-south |  dal12 | 52.116.212.255/24  | 52.116.212.1 |         
+| Dallas | us-south |  dal12 | 52.116.218.191/27  | 52.116.218.161 |         
+| Dallas | us-south |  dal12 | 52.116.229.255/25  | 52.116.229.129 |         
+| Dallas | us-south |  dal12 | 52.116.252.255/24  | 52.116.252.1 |         
+| Dallas | us-south |  dal12 | 52.118.193.255/24  | 52.118.193.1 |         
+| Dallas | us-south |  dal12 | 52.118.197.255/24  | 52.118.197.1 |         
+| Dallas | us-south |  dal12 | 52.118.203.255/24  | 52.118.203.1 |         
+| Dallas | us-south |  dal12 | 52.118.233.255/24  | 52.118.233.1 |         
+| Dallas | us-south |  dal12 | 150.239.149.255/24 | 150.239.149.1 |         
+| Dallas | us-south |  dal12 | 150.239.187.255/24 | 150.239.187.1 |         
+| Dallas | us-south |  dal12 | 169.47.108.255/26  | 169.47.108.193 |         
+| Dallas | us-south |  dal12 | 169.48.215.191/27  | 169.48.215.161 |         
+| Dallas | us-south |  dal12 | 169.59.194.255/24  | 169.59.194.1 |         
+| Dallas | us-south |  dal12 | 169.59.234.255/24  | 169.59.234.1 |         
+| Dallas | us-south |  dal12 | 169.61.157.255/25  | 169.61.157.129 |         
+| Dallas | us-south |  dal12 |  169.61.167.31/28  | 169.61.167.17 |         
+| Dallas | us-south |  dal12 |  169.61.169.63/28  | 169.61.169.49 |         
+| Dallas | us-south |  dal12 |  169.63.57.127/26  | 169.63.57.65 |         
+| Dallas | us-south |  dal12 |  50.22.153.191/29  | 50.22.153.185 |         
+| Dallas | us-south |  dal12 | 52.116.234.199/29  | 52.116.234.193 |         
+| Dallas | us-south |  dal12 | 52.116.244.119/29  | 52.116.244.113 |         
+| Dallas | us-south |  dal12 |  52.116.254.31/29  | 52.116.254.25 |         
+| Dallas | us-south |  dal12 |  169.47.101.7/29   | 169.47.101.1 |         
+| Dallas | us-south |  dal12 |  169.47.101.15/29  | 169.47.101.9 |         
+| Dallas | us-south |  dal12 |  169.47.101.63/29  | 169.47.101.57 |         
+| Dallas | us-south |  dal12 |  169.47.107.95/29  | 169.47.107.89 |         
+| Dallas | us-south |  dal12 | 169.47.107.151/29  | 169.47.107.145 |         
+| Dallas | us-south |  dal12 |  169.47.109.87/29  | 169.47.109.81 |         
+| Dallas | us-south |  dal12 |  169.47.111.79/29  | 169.47.111.73 |         
+| Dallas | us-south |  dal12 | 169.47.113.223/29  | 169.47.113.217 |         
+| Dallas | us-south |  dal12 |  169.47.124.95/29  | 169.47.124.89 |         
+| Dallas | us-south |  dal12 | 169.48.207.175/29  | 169.48.207.169 |         
+| Dallas | us-south |  dal12 |  169.48.216.47/29  | 169.48.216.41 |         
+| Dallas | us-south |  dal12 | 169.48.218.143/29  | 169.48.218.137 |         
+| Dallas | us-south |  dal12 | 169.48.222.135/29  | 169.48.222.129 |         
+| Dallas | us-south |  dal12 | 169.48.236.183/29  | 169.48.236.177 |         
+| Dallas | us-south |  dal12 | 169.48.240.199/29  | 169.48.240.193 |         
+| Dallas | us-south |  dal12 | 169.48.241.167/29  | 169.48.241.161 |         
+| Dallas | us-south |  dal12 |  169.59.203.47/29  | 169.59.203.41 |         
+| Dallas | us-south |  dal12 | 169.59.203.247/29  | 169.59.203.241 |         
+| Dallas | us-south |  dal12 | 169.59.225.191/29  | 169.59.225.185 |         
+| Dallas | us-south |  dal12 | 169.59.255.119/29  | 169.59.255.113 |         
+| Dallas | us-south |  dal12 | 169.61.133.159/29  | 169.61.133.153 |         
+| Dallas | us-south |  dal12 | 169.61.133.223/29  | 169.61.133.217 |         
+| Dallas | us-south |  dal12 | 169.61.136.175/29  | 169.61.136.169 |         
+| Dallas | us-south |  dal12 | 169.61.138.231/29  | 169.61.138.225 |         
+| Dallas | us-south |  dal12 |  169.61.139.79/29  | 169.61.139.73 |         
+| Dallas | us-south |  dal12 | 169.61.139.103/29  | 169.61.139.97 |         
+| Dallas | us-south |  dal12 | 169.61.150.223/29  | 169.61.150.217 |         
+| Dallas | us-south |  dal12 | 169.61.170.151/29  | 169.61.170.145 |         
+| Dallas | us-south |  dal12 | 169.61.178.111/29  | 169.61.178.105 |         
+| Dallas | us-south |  dal12 | 169.61.190.103/29  | 169.61.190.97 |         
+| Dallas | us-south |  dal12 |   169.63.1.79/29   | 169.63.1.73 |         
+| Dallas | us-south |  dal12 |   169.63.2.79/29   | 169.63.2.73 |         
+| Dallas | us-south |  dal12 |  169.63.18.71/29   | 169.63.18.65 |         
+| Dallas | us-south |  dal12 |  169.63.21.175/29  | 169.63.21.169 |         
+| Dallas | us-south |  dal12 |  169.63.21.191/29  | 169.63.21.185 |         
+| Dallas | us-south |  dal12 |   169.63.25.7/29   | 169.63.25.1 |         
+| Dallas | us-south |  dal12 |  169.63.26.15/29   | 169.63.26.9 |         
+| Dallas | us-south |  dal12 |  169.63.26.255/29  | 169.63.26.249 |         
+| Dallas | us-south |  dal12 |   169.63.27.7/29   | 169.63.27.1 |         
+| Dallas | us-south |  dal12 |  169.63.29.47/29   | 169.63.29.41 |         
+| Dallas | us-south |  dal12 |   169.63.31.7/29   | 169.63.31.1 |         
+| Dallas | us-south |  dal12 |  169.63.34.207/29  | 169.63.34.201 |         
+| Dallas | us-south |  dal12 |  169.63.47.87/29   | 169.63.47.81 |         
+| Dallas | us-south |  dal12 |  169.63.54.175/29  | 169.63.54.169 |         
+| Dallas | us-south |  dal12 |  169.63.55.143/29  | 169.63.55.137 |         
+| Dallas | us-south |  dal12 |  169.63.58.71/29   | 169.63.58.65 |         
+| Dallas | us-south |  dal12 |  169.63.58.79/29   | 169.63.58.73 |         
+| Dallas | us-south |  dal13 |  52.116.16.127/25  | 52.116.16.1 |         
+| Dallas | us-south |  dal13 |  52.116.24.63/27   | 52.116.24.33 |         
+| Dallas | us-south |  dal13 |  52.116.47.255/24  | 52.116.47.1 |         
+| Dallas | us-south |  dal13 |  52.116.60.255/24  | 52.116.60.1 |         
+| Dallas | us-south |  dal13 |  52.117.49.255/24  | 52.117.49.1 |         
+| Dallas | us-south |  dal13 | 52.117.198.191/26  | 52.117.198.129 |         
+| Dallas | us-south |  dal13 | 52.117.202.255/25  | 52.117.202.129 |         
+| Dallas | us-south |  dal13 | 52.117.205.255/24  | 52.117.205.1 |         
+| Dallas | us-south |  dal13 | 52.117.230.255/24  | 52.117.230.1 |         
+| Dallas | us-south |  dal13 | 52.117.235.255/24  | 52.117.235.1 |         
+| Dallas | us-south |  dal13 | 52.117.254.255/24  | 52.117.254.1 |         
+| Dallas | us-south |  dal13 | 67.228.229.255/24  | 67.228.229.1 |         
+| Dallas | us-south |  dal13 | 67.228.234.255/24  | 67.228.234.1 |         
+| Dallas | us-south |  dal13 | 150.238.107.255/24 | 150.238.107.1 |         
+| Dallas | us-south |  dal13 | 150.238.113.255/24 | 150.238.113.1 |         
+| Dallas | us-south |  dal13 |  169.48.76.63/27   | 169.48.76.33 |         
+| Dallas | us-south |  dal13 |  169.59.14.255/24  | 169.59.14.1 |         
+| Dallas | us-south |  dal13 |  169.61.32.159/29  | 169.61.32.153 |         
+| Dallas | us-south |  dal13 | 169.62.218.223/28  | 169.62.218.209 |         
+| Dallas | us-south |  dal13 |  169.62.237.63/26  | 169.62.237.1 |         
+| Dallas | us-south |  dal13 |  52.116.17.159/29  | 52.116.17.153 |         
+| Dallas | us-south |  dal13 |  52.116.19.183/29  | 52.116.19.177 |         
+| Dallas | us-south |  dal13 |  52.116.19.191/29  | 52.116.19.185 |         
+| Dallas | us-south |  dal13 |  52.116.25.247/29  | 52.116.25.241 |         
+| Dallas | us-south |  dal13 |  52.116.32.39/29   | 52.116.32.33 |         
+| Dallas | us-south |  dal13 |  52.116.54.239/29  | 52.116.54.233 |         
+| Dallas | us-south |  dal13 |  52.117.22.247/29  | 52.117.22.241 |         
+| Dallas | us-south |  dal13 |  52.117.23.143/29  | 52.117.23.137 |         
+| Dallas | us-south |  dal13 |  52.117.31.119/29  | 52.117.31.113 |         
+| Dallas | us-south |  dal13 |  52.117.35.231/29  | 52.117.35.225 |         
+| Dallas | us-south |  dal13 |  52.117.55.95/29   | 52.117.55.89 |         
+| Dallas | us-south |  dal13 |  52.117.55.119/29  | 52.117.55.113 |         
+| Dallas | us-south |  dal13 |  52.117.62.127/29  | 52.117.62.121 |         
+| Dallas | us-south |  dal13 | 52.117.234.183/29  | 52.117.234.177 |         
+| Dallas | us-south |  dal13 | 52.117.252.207/29  | 52.117.252.201 |         
+| Dallas | us-south |  dal13 | 150.238.100.247/29 | 150.238.100.241 |         
+| Dallas | us-south |  dal13 |  169.48.71.167/29  | 169.48.71.161 |         
+| Dallas | us-south |  dal13 |  169.48.71.175/29  | 169.48.71.169 |         
+| Dallas | us-south |  dal13 |  169.48.78.95/29   | 169.48.78.89 |         
+| Dallas | us-south |  dal13 |  169.48.96.71/29   | 169.48.96.65 |         
+| Dallas | us-south |  dal13 |  169.48.98.199/29  | 169.48.98.193 |         
+| Dallas | us-south |  dal13 |  169.48.98.231/29  | 169.48.98.225 |         
+| Dallas | us-south |  dal13 |  169.48.99.119/29  | 169.48.99.113 |         
+| Dallas | us-south |  dal13 |  169.48.107.79/29  | 169.48.107.73 |         
+| Dallas | us-south |  dal13 | 169.48.114.247/29  | 169.48.114.241 |         
+| Dallas | us-south |  dal13 | 169.48.123.151/29  | 169.48.123.145 |         
+| Dallas | us-south |  dal13 |  169.59.10.199/29  | 169.59.10.193 |         
+| Dallas | us-south |  dal13 | 169.60.131.167/29  | 169.60.131.161 |         
+| Dallas | us-south |  dal13 |  169.60.137.87/29  | 169.60.137.81 |         
+| Dallas | us-south |  dal13 | 169.60.138.223/29  | 169.60.138.217 |         
+| Dallas | us-south |  dal13 | 169.60.150.239/29  | 169.60.150.233 |         
+| Dallas | us-south |  dal13 | 169.60.159.183/29  | 169.60.159.177 |         
+| Dallas | us-south |  dal13 |  169.60.164.31/29  | 169.60.164.25 |         
+| Dallas | us-south |  dal13 |  169.60.184.63/29  | 169.60.184.57 |         
+| Dallas | us-south |  dal13 |  169.60.186.71/29  | 169.60.186.65 |         
+| Dallas | us-south |  dal13 |  169.61.23.199/29  | 169.61.23.193 |         
+| Dallas | us-south |  dal13 |  169.61.48.207/29  | 169.61.48.201 |         
+| Dallas | us-south |  dal13 |  169.61.48.239/29  | 169.61.48.233 |         
+| Dallas | us-south |  dal13 |  169.61.49.143/29  | 169.61.49.137 |         
+| Dallas | us-south |  dal13 |  169.61.56.223/29  | 169.61.56.217 |         
+| Dallas | us-south |  dal13 |  169.61.59.103/29  | 169.61.59.97 |         
+| Dallas | us-south |  dal13 |  169.61.60.39/29   | 169.61.60.33 |         
+| Dallas | us-south |  dal13 |  169.61.60.47/29   | 169.61.60.41 |         
+| Dallas | us-south |  dal13 | 169.62.134.103/29  | 169.62.134.97 |         
+| Dallas | us-south |  dal13 |  169.62.144.71/29  | 169.62.144.65 |         
+| Dallas | us-south |  dal13 |  169.62.151.47/29  | 169.62.151.41 |         
+| Dallas | us-south |  dal13 |  169.62.158.95/29  | 169.62.158.89 |         
+| Dallas | us-south |  dal13 | 169.62.184.207/29  | 169.62.184.201 |         
+| Dallas | us-south |  dal13 | 169.62.187.159/29  | 169.62.187.153 |         
+| Dallas | us-south |  dal13 | 169.62.193.183/29  | 169.62.193.177 |         
+| Dallas | us-south |  dal13 |  169.62.206.31/29  | 169.62.206.25 |         
+| Dallas | us-south |  dal13 | 169.62.238.151/29  | 169.62.238.145 |         
+| Dallas | us-south |  dal13 |  169.62.239.47/29  | 169.62.239.41 |         
+| Dallas | us-south |  dal13 | 169.62.240.223/29  | 169.62.240.217 |         
+| Dallas | us-south |  dal13 | 169.62.240.231/29  | 169.62.240.225 |         
+| Dallas | us-south |  dal13 |  174.36.70.143/29  | 174.36.70.137 |   
 {: caption="Table 19. us-south Public Subnets" caption-side="bottom"} 
 
 #### Private Subnets
