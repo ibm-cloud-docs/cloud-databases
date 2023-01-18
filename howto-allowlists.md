@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2022
-lastupdated: "2022-12-15"
+  years: 2019, 2023
+lastupdated: "2023-01-18"
 
 subcollection: cloud-databases
 
@@ -61,13 +61,13 @@ The _Description_ can be any user-significant text for identifying the allowlist
 {: cli}
 
 The {{site.data.keyword.databases-for}} CLI plug-in offers a set of commands for managing allowlists. Use [`cdb deployment-whitelist-add`](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-allowlist-add) to add an allowlist. For example,
-```bash
+```sh
 ibmcloud cdb deployment-whitelist-add example-deployment 198.51.100.1 "Allowlisted for testing"
 ```
 {: .pre}
 
 for a single IP address and 
-```bash
+```sh
 ibmcloud cdb deployment-whitelist-add example-deployment 198.51.100.0/24 "Testing range is now open" 
 ```
 {: .pre}
@@ -75,7 +75,7 @@ ibmcloud cdb deployment-whitelist-add example-deployment 198.51.100.0/24 "Testin
 for an IP range.
 
 Use [`cdb deployment-whitelist-list`](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-allowlist-list) to view the current allowlist. For example,
-```bash
+```sh
 ibmcloud cdb deployment-whitelist-list <deployment name or CRN>
 ```
 {: .pre}
@@ -98,7 +98,7 @@ From the UI, remove an IP address or netmask from the allowlist by clicking _Rem
 ## Allowlist {{site.data.keyword.databases-for}} in your Environment
 {: #allowlist-ips}
 
-If you use allowlists to control connections in your environment, you can use the following IP lists to allowlist {{site.data.keyword.databases-for}} deployments. We recommend you allowlist all of the subnet ranges for the _entire_ region that your deployments live in.
+If you use allowlists to control connections in your environment, use the following IP lists to allowlist {{site.data.keyword.databases-for}} deployments. We recommend you allowlist all of the subnet ranges for the _entire_ region that your deployments live in.
 
 ### `in-che` List
 {: #che01-list} 
@@ -108,12 +108,12 @@ If you use allowlists to control connections in your environment, you can use th
 
 | Location | Region | Data center | Subnet | First IP |
 | -- | -- | -- | -- | -- |
-| Chennai | in-che | che01 |  169.38.95.127/27 | 169.38.95.97 |
-| Chennai | in-che | che01 | 169.38.121.159/28 | 169.38.121.145 |
-| Chennai | in-che | che01 | 169.38.132.127/25 | 169.38.132.1 |
-| Chennai | in-che | che01 | 169.38.136.255/26 | 169.38.136.193 |
-| Chennai | in-che | che01 |  169.38.73.151/29 | 169.38.73.145 |
-| Chennai | in-che | che01 |  169.38.105.79/29 | 169.38.105.73 |
+| Chennai | in-che | che01 |  169.38.95.127/27 | 169.38.95.97 |         
+| Chennai | in-che | che01 | 169.38.121.159/28 | 169.38.121.145 |         
+| Chennai | in-che | che01 | 169.38.132.127/25 | 169.38.132.1 |         
+| Chennai | in-che | che01 | 169.38.136.255/26 | 169.38.136.193 |         
+| Chennai | in-che | che01 |  169.38.73.151/29 | 169.38.73.145 |         
+| Chennai | in-che | che01 |  169.38.105.79/29 | 169.38.105.73 |   
 {: caption="Table 1. in-che Public Subnets" caption-side="bottom"}
 
 #### Private Subnets
@@ -122,7 +122,7 @@ If you use allowlists to control connections in your environment, you can use th
 | Location | Region | Data center | Subnet | First IP |
 | -- | -- | -- | -- | -- |
 | Chennai | in-che | che01 |  10.162.8.127/26  | 10.162.8.65 |         
-| Chennai | in-che | che01 |  10.163.20.127/25 | 10.163.20.1 |         
+| Chennai | in-che | che01 |  10.163.20.127/25 | 10.163.20.1 |  
 | Chennai | in-che | che01 | 10.162.115.103/29 | 10.162.115.97 |         
 | Chennai | in-che | che01 |  10.162.132.79/29 | 10.162.132.73 |  
 {: caption="Table 2. in-che Private Subnets" caption-side="bottom"}
@@ -460,53 +460,53 @@ If you use allowlists to control connections in your environment, you can use th
 
 | Location | Region | Data center | Subnet | First IP |
 | -- | -- | -- | -- | -- |
-| Washington DC | us-east |  wdc04 |  52.116.78.127/25  | 52.116.78.1 |         
-| Washington DC | us-east |  wdc04 | 52.116.115.255/24  | 52.116.115.1 |         
-| Washington DC | us-east |  wdc04 | 150.239.70.255/24  | 150.239.70.1 |         
-| Washington DC | us-east |  wdc04 | 150.239.101.255/24 | 150.239.101.1 |         
-| Washington DC | us-east |  wdc04 |  169.47.179.63/26  | 169.47.179.1 |         
-| Washington DC | us-east |  wdc04 |  169.63.72.175/28  | 169.63.72.161 |         
-| Washington DC | us-east |  wdc04 | 169.63.121.159/27  | 169.63.121.129 |         
-| Washington DC | us-east |  wdc04 |  52.116.73.231/29  | 52.116.73.225 |         
-| Washington DC | us-east |  wdc04 | 169.47.179.231/29  | 169.47.179.225 |         
-| Washington DC | us-east |  wdc04 |  169.63.86.31/29   | 169.63.86.25 |         
-| Washington DC | us-east |  wdc04 | 169.63.111.119/29  | 169.63.111.113 |         
-| Washington DC | us-east |  wdc04 |  169.63.121.55/29  | 169.63.121.49 |         
-| Washington DC | us-east |  wdc04 |  169.63.121.63/29  | 169.63.121.57 |         
-| Washington DC | us-east |  wdc04 | 169.63.123.167/29  | 169.63.123.161 |         
-| Washington DC | us-east |  wdc04 | 169.63.125.223/29  | 169.63.125.217 |         
-| Washington DC | us-east |  wdc06 | 169.59.138.255/24  | 169.59.138.1 |         
-| Washington DC | us-east |  wdc06 | 169.59.144.255/24  | 169.59.144.1 |         
-| Washington DC | us-east |  wdc06 | 169.59.158.255/24  | 169.59.158.1 |         
-| Washington DC | us-east |  wdc06 | 169.59.183.255/24  | 169.59.183.1 |         
-| Washington DC | us-east |  wdc06 | 169.63.128.191/27  | 169.63.128.161 |         
-| Washington DC | us-east |  wdc06 | 169.63.135.191/28  | 169.63.135.177 |         
-| Washington DC | us-east |  wdc06 | 169.63.139.255/26  | 169.63.139.193 |         
-| Washington DC | us-east |  wdc06 | 169.63.172.127/25  | 169.63.172.1 |         
-| Washington DC | us-east |  wdc06 | 169.59.145.239/29  | 169.59.145.233 |         
-| Washington DC | us-east |  wdc06 |  169.60.65.55/29   | 169.60.65.49 |         
-| Washington DC | us-east |  wdc06 |   169.60.89.7/29   | 169.60.89.1 |         
-| Washington DC | us-east |  wdc06 |   169.60.93.7/29   | 169.60.93.1 |         
-| Washington DC | us-east |  wdc06 |  169.60.95.151/29  | 169.60.95.145 |         
-| Washington DC | us-east |  wdc06 | 169.63.129.119/29  | 169.63.129.113 |         
-| Washington DC | us-east |  wdc06 | 169.63.141.239/29  | 169.63.141.233 |         
-| Washington DC | us-east |  wdc06 | 169.63.149.199/29  | 169.63.149.193 |         
-| Washington DC | us-east |  wdc07 | 52.117.104.255/24  | 52.117.104.1 |         
-| Washington DC | us-east |  wdc07 | 150.239.194.255/24 | 150.239.194.1 |         
-| Washington DC | us-east |  wdc07 | 150.239.231.255/24 | 150.239.231.1 |         
-| Washington DC | us-east |  wdc07 |  169.61.123.95/28  | 169.61.123.81 |         
-| Washington DC | us-east |  wdc07 |  169.62.36.255/24  | 169.62.36.1 |         
-| Washington DC | us-east |  wdc07 |  169.62.42.63/27   | 169.62.42.33 |         
-| Washington DC | us-east |  wdc07 |  169.62.54.191/26  | 169.62.54.129 |         
-| Washington DC | us-east |  wdc07 |  169.62.60.127/25  | 169.62.60.1 |         
-| Washington DC | us-east |  wdc07 |  52.117.76.47/29   | 52.117.76.41 |         
-| Washington DC | us-east |  wdc07 |  52.117.85.71/29   | 52.117.85.65 |         
-| Washington DC | us-east |  wdc07 |  169.61.73.231/29  | 169.61.73.225 |         
-| Washington DC | us-east |  wdc07 |  169.61.95.15/29   | 169.61.95.9 |         
-| Washington DC | us-east |  wdc07 |  169.61.113.39/29  | 169.61.113.33 |         
-| Washington DC | us-east |  wdc07 |  169.61.113.47/29  | 169.61.113.41 |         
-| Washington DC | us-east |  wdc07 | 169.61.122.159/29  | 169.61.122.153 |         
-| Washington DC | us-east |  wdc07 |   169.62.6.87/29   | 169.62.6.81 | 
+| Washington DC | us-east | wdc04 |  52.116.78.127/25  | 52.116.78.1 |         
+| Washington DC | us-east | wdc04 | 52.116.115.255/24  | 52.116.115.1 |         
+| Washington DC | us-east | wdc04 | 150.239.70.255/24  | 150.239.70.1 |         
+| Washington DC | us-east | wdc04 | 150.239.101.255/24 | 150.239.101.1 |         
+| Washington DC | us-east | wdc04 |  169.47.179.63/26  | 169.47.179.1 |         
+| Washington DC | us-east | wdc04 |  169.63.72.175/28  | 169.63.72.161 |         
+| Washington DC | us-east | wdc04 | 169.63.121.159/27  | 169.63.121.129 |         
+| Washington DC | us-east | wdc04 |  52.116.73.231/29  | 52.116.73.225 |         
+| Washington DC | us-east | wdc04 | 169.47.179.231/29  | 169.47.179.225 |         
+| Washington DC | us-east | wdc04 |  169.63.86.31/29   | 169.63.86.25 |         
+| Washington DC | us-east | wdc04 | 169.63.111.119/29  | 169.63.111.113 |         
+| Washington DC | us-east | wdc04 |  169.63.121.55/29  | 169.63.121.49 |         
+| Washington DC | us-east | wdc04 |  169.63.121.63/29  | 169.63.121.57 |         
+| Washington DC | us-east | wdc04 | 169.63.123.167/29  | 169.63.123.161 |         
+| Washington DC | us-east | wdc04 | 169.63.125.223/29  | 169.63.125.217 |         
+| Washington DC | us-east | wdc06 | 169.59.138.255/24  | 169.59.138.1 |         
+| Washington DC | us-east | wdc06 | 169.59.144.255/24  | 169.59.144.1 |         
+| Washington DC | us-east | wdc06 | 169.59.158.255/24  | 169.59.158.1 |         
+| Washington DC | us-east | wdc06 | 169.59.183.255/24  | 169.59.183.1 |         
+| Washington DC | us-east | wdc06 | 169.63.128.191/27  | 169.63.128.161 |         
+| Washington DC | us-east | wdc06 | 169.63.135.191/28  | 169.63.135.177 |         
+| Washington DC | us-east | wdc06 | 169.63.139.255/26  | 169.63.139.193 |         
+| Washington DC | us-east | wdc06 | 169.63.172.127/25  | 169.63.172.1 |         
+| Washington DC | us-east | wdc06 | 169.59.145.239/29  | 169.59.145.233 |         
+| Washington DC | us-east | wdc06 |  169.60.65.55/29   | 169.60.65.49 |         
+| Washington DC | us-east | wdc06 |   169.60.89.7/29   | 169.60.89.1 |         
+| Washington DC | us-east | wdc06 |   169.60.93.7/29   | 169.60.93.1 |         
+| Washington DC | us-east | wdc06 |  169.60.95.151/29  | 169.60.95.145 |         
+| Washington DC | us-east | wdc06 | 169.63.129.119/29  | 169.63.129.113 |         
+| Washington DC | us-east | wdc06 | 169.63.141.239/29  | 169.63.141.233 |         
+| Washington DC | us-east | wdc06 | 169.63.149.199/29  | 169.63.149.193 |         
+| Washington DC | us-east | wdc07 | 52.117.104.255/24  | 52.117.104.1 |         
+| Washington DC | us-east | wdc07 | 150.239.194.255/24 | 150.239.194.1 |         
+| Washington DC | us-east | wdc07 | 150.239.231.255/24 | 150.239.231.1 |         
+| Washington DC | us-east | wdc07 |  169.61.123.95/28  | 169.61.123.81 |         
+| Washington DC | us-east | wdc07 |  169.62.36.255/24  | 169.62.36.1 |         
+| Washington DC | us-east | wdc07 |  169.62.42.63/27   | 169.62.42.33 |         
+| Washington DC | us-east | wdc07 |  169.62.54.191/26  | 169.62.54.129 |         
+| Washington DC | us-east | wdc07 |  169.62.60.127/25  | 169.62.60.1 |         
+| Washington DC | us-east | wdc07 |  52.117.76.47/29   | 52.117.76.41 |         
+| Washington DC | us-east | wdc07 |  52.117.85.71/29   | 52.117.85.65 |         
+| Washington DC | us-east | wdc07 |  169.61.73.231/29  | 169.61.73.225 |         
+| Washington DC | us-east | wdc07 |  169.61.95.15/29   | 169.61.95.9 |         
+| Washington DC | us-east | wdc07 |  169.61.113.39/29  | 169.61.113.33 |         
+| Washington DC | us-east | wdc07 |  169.61.113.47/29  | 169.61.113.41 |         
+| Washington DC | us-east | wdc07 | 169.61.122.159/29  | 169.61.122.153 |         
+| Washington DC | us-east | wdc07 |   169.62.6.87/29   | 169.62.6.81 |
 {: caption="Table 15. us-east Public Subnets" caption-side="bottom"}  
 
 #### Private Subnets
