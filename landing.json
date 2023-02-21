@@ -1,0 +1,33 @@
+{
+    "title": "IBM Cloud® Databases",
+    "lastupdated": "2023-02-21",
+    "introduction": "The IBM Cloud® Databases portfolio includes nine database-as-a-service offerings on the IBM Cloud. In addition to the comprehensive information in the IBM Cloud® Databases docs, links to additional sources of information are provided below.",
+    "section_devtools": {
+      "api": "/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction", 
+      "cli": "/docs/databases-cli-plugin", 
+      "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database"
+    },
+    "section_recommended": [
+      {
+        "title": "Getting to production for IBM Cloud® Databases",
+        "description": "Prework and a sample checklist",
+        "href": "/docs/cloud-databases?topic=cloud-databases-best-practices&interface=ui"
+      },
+      {
+        "title": "Provisioning an IBM Cloud® Databases deployment",
+        "description": "To create an IBM Cloud® Databases deployment, first create an IBM Cloud service instance.",
+        "href": "/docs/cloud-databases?topic=cloud-databases-provisioning&interface=ui"
+      },
+      {
+        "title": "Protecting Cloud Databases resources with context-based restrictions",
+        "description": "Context-based restrictions give account owners and administrators the ability to define and enforce access restrictions for IBM Cloud® resources based on the context of access requests. Access to Cloud Databases resources can be controlled with context-based restrictions and Identity and Access Management (IAM) policies.",
+        "href": "/docs/cloud-databases?topic=cloud-databases-cbr&interface=ui"
+      }
+    ],
+    "section_learn": {
+      "developer": "https://developer.ibm.com/depmodels/cloud/",
+      "architecture": "https://www.ibm.com/cloud/architecture",
+      "training": "https://www.ibm.com/training/cloud",
+      "community": "https://community.ibm.com/community/user/publiccloud/home"
+    }
+  }
