@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-01-18"
+lastupdated: "2023-03-06"
 
 subcollection: cloud-databases
 
@@ -17,9 +17,9 @@ keywords: allowlist, ip addresses, blocklist, whitelist, cloud databases allowli
 
 {{site.data.keyword.databases-for}} now supports context-based restrictions, which give account owners and administrators the ability to define and enforce access restrictions for {{site.data.keyword.cloud}} resources based on the context of access requests. Access to {{site.data.keyword.databases-for}} resources can be controlled with context-based restrictions and identity and access management (IAM) policies. Context-based restrictions check that an access request comes from an allowed context that you configure. Since both IAM access and context-based restrictions enforce access, context-based restrictions offer protection even in the face of compromised or mismanaged credentials. For more information, see [Protecting Cloud Databases resources with context-based restrictions](/docs/cloud-databases?topic=cloud-databases-cbr).{: .tip}
 
-To restrict access to your databases, you can allowlist specific IP addresses or ranges of IP addresses on your deployment.
+To restrict access to your databases, allowlist specific IP addresses or ranges of IP addresses on your deployment.
 
-If you use allowlists in your environment, you can allowlist our services by using the list of subnets for each region.
+If you use allowlists in your environment, allowlist our services by using the list of subnets for each region.
 
 While IBM values the use of inclusive language, terms that are outside of IBM's direct influence are sometimes required for the sake of maintaining user understanding. As other industry leaders join IBM in embracing the use of inclusive language, IBM continues to update terminology to reflect those changes. We updated documentation to reflect changes in terminology from `whitelist` to `allowlist`. You might encounter continued references to this former terminology while we work to implement these deeper changes to code, API, and CLI commands. 
 {: .note}
@@ -149,25 +149,26 @@ If you use allowlists to control connections in your environment, use the follow
 | Toronto | ca-tor | tor05 |  163.75.68.95/27  | 163.75.68.65 |         
 | Toronto | ca-tor | tor05 |  163.75.75.63/26  | 163.75.75.1 |         
 | Toronto | ca-tor | tor05 |   163.75.67.7/29  | 163.75.67.1 |         
-| Toronto | ca-tor | tor05 |  163.75.67.119/29 | 163.75.67.113 |
-{: caption="Table 3. tor Public Subnets" caption-side="bottom"}
+| Toronto | ca-tor | tor05 |  163.75.67.119/29 | 163.75.67.113 |  
+{: caption="Table 3. ca-tor Public Subnets" caption-side="bottom"}  
 
 #### Private Subnets
 {: #ca-tor-private-list} 
 
 | Location | Region | Data center | Subnet | First IP |
 | -- | -- | -- | -- | -- |
-| Toronto | ca-tor | tor01 | 10.114.100.127/26 | 10.114.100.65  |        
-| Toronto | ca-tor | tor01 |  10.114.79.63/29  | 10.114.79.57   |       
-| Toronto | ca-tor | tor01 |  10.115.88.79/29  | 10.115.88.73   |       
-| Toronto | ca-tor | tor04 |  10.11.22.127/25  | 10.11.22.1     |     
-| Toronto | ca-tor | tor04 |  10.11.25.191/26  | 10.11.25.129   |       
-| Toronto | ca-tor | tor04 |   10.11.12.47/29  | 10.11.12.41    |      
-| Toronto | ca-tor | tor04 |   10.11.12.55/29  | 10.11.12.49    |      
-| Toronto | ca-tor | tor05 |  10.243.14.255/26 | 10.243.14.193  |        
-| Toronto | ca-tor | tor05 | 10.243.102.255/25 | 10.243.102.129 |         
-| Toronto | ca-tor | tor05 |  10.243.23.135/29 | 10.243.23.129  |        
-| Toronto | ca-tor | tor05 |  10.243.23.159/29 | 10.243.23.153  |
+| Toronto | ca-tor | tor01 | 10.114.100.127/26 | 10.114.100.65 |        
+| Toronto | ca-tor | tor01 | 10.114.225.127/25 | 10.114.225.1 |        
+| Toronto | ca-tor | tor01 |  10.114.79.63/29  | 10.114.79.57 |        
+| Toronto | ca-tor | tor01 |  10.115.88.79/29  | 10.115.88.73 |        
+| Toronto | ca-tor | tor04 |  10.11.22.127/25  | 10.11.22.1 |        
+| Toronto | ca-tor | tor04 |  10.11.25.191/26  | 10.11.25.129 |        
+| Toronto | ca-tor | tor04 |   10.11.12.47/29  | 10.11.12.41 |        
+| Toronto | ca-tor | tor04 |   10.11.12.55/29  | 10.11.12.49 |        
+| Toronto | ca-tor | tor05 |  10.243.14.255/26 | 10.243.14.193 |        
+| Toronto | ca-tor | tor05 | 10.243.102.255/25 | 10.243.102.129 |        
+| Toronto | ca-tor | tor05 |  10.243.23.135/29 | 10.243.23.129 |        
+| Toronto | ca-tor | tor05 |  10.243.23.159/29 | 10.243.23.153 |   
 {: caption="Table 4. ca-tor Private Subnets" caption-side="bottom"}
 
 ### `br-sao` List
