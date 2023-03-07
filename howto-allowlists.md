@@ -422,21 +422,21 @@ If you use allowlists to control connections in your environment, use the follow
 
 | Location | Region | Data center | Subnet | First IP |
 | -- | -- | -- | -- | -- |
-| Osaka | jp-osa | osa21 | 163.68.68.127/28 | 163.68.68.113 |      
-| Osaka | jp-osa | osa21 | 163.68.73.127/27 | 163.68.73.97 |      
-| Osaka | jp-osa | osa21 | 163.68.96.191/26 | 163.68.96.129 |      
-| Osaka | jp-osa | osa21 | 163.68.67.119/29 | 163.68.67.113 |      
-| Osaka | jp-osa | osa21 | 163.68.70.63/29  | 163.68.70.57 |      
-| Osaka | jp-osa | osa22 | 163.69.65.111/28 | 163.69.65.97 |      
-| Osaka | jp-osa | osa22 | 163.69.68.31/27  | 163.69.68.1 |      
-| Osaka | jp-osa | osa22 | 163.69.71.255/26 | 163.69.71.193 |      
-| Osaka | jp-osa | osa22 | 163.69.65.55/29  | 163.69.65.49 |      
-| Osaka | jp-osa | osa22 | 163.69.65.63/29  | 163.69.65.57 |      
-| Osaka | jp-osa | osa23 | 163.73.65.175/28 | 163.73.65.161 |      
-| Osaka | jp-osa | osa23 | 163.73.68.95/27  | 163.73.68.65 |      
-| Osaka | jp-osa | osa23 | 163.73.71.63/26  | 163.73.71.1 |      
-| Osaka | jp-osa | osa23 | 163.73.67.191/29 | 163.73.67.185 |      
-| Osaka | jp-osa | osa23 | 163.73.67.231/29 | 163.73.67.225 |
+| Osaka | jp-osa | osa21 | 163.68.68.127/28 | 163.68.68.113  |         
+| Osaka | jp-osa | osa21 | 163.68.73.127/27 | 163.68.73.97  |         
+| Osaka | jp-osa | osa21 | 163.68.96.191/26 | 163.68.96.129  |         
+| Osaka | jp-osa | osa21 | 163.68.67.119/29 | 163.68.67.113  |         
+| Osaka | jp-osa | osa21 | 163.68.70.63/29  | 163.68.70.57  |         
+| Osaka | jp-osa | osa22 | 163.69.65.111/28 | 163.69.65.97  |         
+| Osaka | jp-osa | osa22 | 163.69.68.31/27  | 163.69.68.1  |         
+| Osaka | jp-osa | osa22 | 163.69.71.255/26 | 163.69.71.193  |         
+| Osaka | jp-osa | osa22 | 163.69.65.55/29  | 163.69.65.49  |         
+| Osaka | jp-osa | osa22 | 163.69.65.63/29  | 163.69.65.57  |         
+| Osaka | jp-osa | osa23 | 163.73.65.175/28 | 163.73.65.161  |         
+| Osaka | jp-osa | osa23 | 163.73.68.95/27  | 163.73.68.65  |         
+| Osaka | jp-osa | osa23 | 163.73.71.63/26  | 163.73.71.1  |         
+| Osaka | jp-osa | osa23 | 163.73.67.191/29 | 163.73.67.185  |         
+| Osaka | jp-osa | osa23 | 163.73.67.231/29 | 163.73.67.225  |   
 {: caption="Table 13. jp-osa Public Subnets" caption-side="bottom"} 
 
 #### Private Subnets
@@ -444,15 +444,15 @@ If you use allowlists to control connections in your environment, use the follow
 
 | Location | Region | Data center | Subnet | First IP |
 | -- | -- | -- | -- | -- |
-| Osaka | jp-osa | osa21 |  10.8.22.255/26 | 10.8.22.193 |        
-| Osaka | jp-osa | osa21 |  10.8.16.159/29 | 10.8.16.153 |        
-| Osaka | jp-osa | osa21 |  10.8.16.167/29 | 10.8.16.161 |        
-| Osaka | jp-osa | osa22 |  10.9.12.127/26 | 10.9.12.65 |        
-| Osaka | jp-osa | osa22 |  10.9.6.207/29  | 10.9.6.201 |   
-| Osaka | jp-osa | osa22 |  10.9.6.215/29  | 10.9.6.209 |        
-| Osaka | jp-osa | osa23 | 10.10.12.255/26 | 10.10.12.193 |        
-| Osaka | jp-osa | osa23 |   10.10.8.7/29  | 10.10.8.1 |        
-| Osaka | jp-osa | osa23 |  10.10.8.15/29  | 10.10.8.9 |
+| Osaka | jp-osa | osa21 |  10.8.22.255/26 | 10.8.22.193  |         
+| Osaka | jp-osa | osa21 |  10.8.16.159/29 | 10.8.16.153  |         
+| Osaka | jp-osa | osa21 |  10.8.16.167/29 | 10.8.16.161  |         
+| Osaka | jp-osa | osa22 |  10.9.12.127/26 | 10.9.12.65  |         
+| Osaka | jp-osa | osa22 |  10.9.6.207/29  | 10.9.6.201  |         
+| Osaka | jp-osa | osa22 |  10.9.6.215/29  | 10.9.6.209  |         
+| Osaka | jp-osa | osa23 | 10.10.12.255/26 | 10.10.12.193  |         
+| Osaka | jp-osa | osa23 |   10.10.8.7/29  | 10.10.8.1  |         
+| Osaka | jp-osa | osa23 |  10.10.8.15/29  | 10.10.8.9  |
 {: caption="Table 14. jp-osa Private Subnets" caption-side="bottom"}  
 
 ### `us-east` List
