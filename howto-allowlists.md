@@ -558,7 +558,7 @@ If you use allowlists to control connections in your environment, use the follow
 | Washington DC | us-east | wdc07 |  10.191.11.127/29 | 10.191.11.121 |         
 | Washington DC | us-east | wdc07 |  10.191.12.175/29 | 10.191.12.169 |         
 | Washington DC | us-east | wdc07 |  10.191.49.247/29 | 10.191.49.241 |         
-| Washington DC | us-east | wdc07 |  10.191.115.7/29  | 10.191.115.1 |
+| Washington DC | us-east | wdc07 |  10.191.115.7/29  | 10.191.115.1 |    
 {: caption="Table 16. us-east Private Subnets" caption-side="bottom"}  
 
 ### `eu-de` List
