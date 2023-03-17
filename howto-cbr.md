@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years:  2022
-lastupdated: "2022-12-05"
+  years:  2022, 2023
+lastupdated: "2023-03-17"
 
 keywords: restricting access to cloud databases, restricting access to ICD, DataStax cbr, Elasticsearch cbr, EnterpriseDB cbr, etcd cbr, mongodb cbr, postgresql cbr, redis cbr, mysql cbr, rabbitmq cbr
 
@@ -10,14 +10,6 @@ subcollection: cloud-databases
 
 ---
 
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}	
-{:experimental: .experimental}
 {{site.data.keyword.attribute-definition-list}}
 
 This document outlines the process for using context-based restrictions to protect your {{site.data.keyword.databases-for}} resources. Use this document to prepare your resources for context-based restrictions. {{site.data.keyword.databases-for}} doesn't offer scoping rules to the control plane in this current phase of implementation.{: .important}
@@ -88,14 +80,14 @@ A network zone represents an allowlist of IP addresses where an access request i
 
 To create network zones in the CLI, [install the context-based restrictions CLI plug-in](/docs/account?topic=cli-cbr-plugin#install-cbr-plugin). You can use the `cbr-zone-create` command to add resources to network zones. For more information, see the [context-based restrictions CLI reference](https://test.cloud.ibm.com/docs/account?topic=cli-cbr-plugin#cbr-zones-cli).
 
-Create a zone using a command like:
+Create a zone by using a command like:
 
 ```sh
 ibmcloud cbr zone-create --addresses=1.1.1.1,5.5.5.5 --name=<NAME>
 ```
 {: .pre}
 
-Update a zone using a command like:
+Update a zone by using a command like:
 ```sh
 ibmcloud cbr zone-update <ZONE-ID> --addresses=1.2.3.4 --name=<NAME>
 ```
@@ -109,7 +101,7 @@ ibmcloud cbr zones
 
 The `zone-update` command is an overwrite. Include all of the fields that are required as if you are creating the rule from scratch. If you omit any required fields, the rule overwrites those missing fields as empty, and the rule might fail because some of those fields are required, regardless of whether they are changing the rule. {: .important}
 
-Delete a zone using a command like:
+Delete a zone by using a command like:
 ```sh
 ibmcloud cbr zone-delete <ZONE-ID>
 ```
@@ -127,7 +119,7 @@ Rules restrict access to specific cloud resources based on resource attributes a
 1. Go to **Manage** > **Context-based restrictions** in the {{site.data.keyword.cloud}} console.
 1. Select **Rules**.
 1. Click **Create**.
-1. Protect **All APIs** by default, or select **Specific APIs**.
+1. Select **Specific APIs** and then select `Data plane`. Any other selection results in an error.
    {{site.data.keyword.databases-for}} does not currently support **Control plane** as an option.
    {: .note}
 
@@ -163,7 +155,7 @@ To create a rule in the CLI, you need the appropriate {{site.data.keyword.databa
 * `databases-for-enterprisedb`
 * `database-for-mysql`
 
-Create a rule using a command like:
+Create a rule by using a command like:
 
 ```sh
 ibmcloud cbr rule-create --enforcement-mode enabled --context-attributes "networkZoneId=<ZONE-ID>" --resource-group-id <RESOURCE_GROUP_ID> --service-name <SERVICE-NAME> --service-instance <SERVICE-INSTANCE> --api-types crn:v1:bluemix:public:context-based-restrictions::::api-type:data-plane --description <DESCRIPTION>
@@ -173,7 +165,7 @@ ibmcloud cbr rule-create --enforcement-mode enabled --context-attributes "networ
 *Report-only* is not available for {{site.data.keyword.databases-for}}.
 {: .note}
 
-Update a rule using a command like:
+Update a rule by using a command like:
 
 ```sh
 ibmcloud cbr rule-update <RULE-ID> --enforcement-mode disabled --context-attributes="networkZoneId=<ZONE-ID>" --resource-group-id   <RESOURCE_GROUP_ID> --service-name <SERVICE_NAME> --api-types crn:v1:bluemix:public:context-based-restrictions::::api-type:data-plane --description    <DESCRIPTION>
@@ -189,7 +181,7 @@ ibmcloud cbr rules
 ```
 {: .pre}
 
-Delete a rule using a command like:
+Delete a rule by using a command like:
 ```sh
 ibmcloud cbr rule-delete <RULE-ID>
 ```
