@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2022
-lastupdated: "2022-11-18"
+  years: 2019, 2023
+lastupdated: "2023-03-17"
 
 subcollection: cloud-databases
 
@@ -26,6 +26,7 @@ Backups for {{site.data.keyword.databases-for}} deployments are accessible from 
 - Backup storage is encrypted. To manage the encryption keys, see [Key Protect integration](/docs/cloud-databases?topic=cloud-databases-key-protect#byok-for-backups). Otherwise, backups are encrypted with a key that is automatically generated for your deployment.
 - Backups are restorable across accounts, but only through the API and only if the user that is running the restore has access to both the source and destination accounts.
 - {{site.data.keyword.databases-for}} backups are not downloadable. If you need a local backup, use the appropriate software. For example, [pg_dump](https://www.postgresql.org/docs/9.6/static/backup-dump.html){: .external} is an effective tool for managing PostgreSQL backups.
+- {{site.data.keyword.databases-for-cassandra_full}} does not support re-enablement. Once a deployment is disabled, that deployment must be restored from a backup.
 
 ## Backups in the UI
 {: #backup-ui}
