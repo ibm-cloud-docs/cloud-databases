@@ -2,7 +2,7 @@
 
 copyright:
   years:  2022, 2023
-lastupdated: "2023-03-17"
+lastupdated: "2023-03-20"
 
 keywords: restricting access to cloud databases, restricting access to ICD, DataStax cbr, Elasticsearch cbr, EnterpriseDB cbr, etcd cbr, mongodb cbr, postgresql cbr, redis cbr, mysql cbr, rabbitmq cbr
 
@@ -120,6 +120,7 @@ Rules restrict access to specific cloud resources based on resource attributes a
 1. Select **Rules**.
 1. Click **Create**.
 1. Select **Specific APIs** and then select `Data plane`. Any other selection results in an error.
+   
    {{site.data.keyword.databases-for}} does not currently support **Control plane** as an option.
    {: .note}
 
@@ -130,6 +131,7 @@ Rules restrict access to specific cloud resources based on resource attributes a
    - Keep the toggle set to **No** to allow all endpoint types.
    - Set the toggle to **Yes** to allow only specific endpoint types, then choose from the list.
 1. Select a network zone or zones that you have already created, or create a new network zone by clicking **Create**.
+   
    Contexts define from where your resources can be accessed, effectively linking your network zone to your rule.
    {: tip}
 
