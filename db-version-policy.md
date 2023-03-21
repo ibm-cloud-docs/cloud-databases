@@ -1,20 +1,15 @@
 ---
 copyright:
-  years: 2018, 2022
-lastupdated: "2022-10-28"
+  years: 2018, 2023
+lastupdated: "2023-03-21"
 
 subcollection: cloud-databases
 
-keywords: version for cloud-databases, database version, end of life, major version, minor version, deprecate, deprecation
+keywords: version for cloud-databases, database version, end of life, major version, minor version, deprecate, deprecation, version number, deprecated, eol
 
 ---
 
-{:external: .external target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-
+{{site.data.keyword.attribute-definition-list}}
 
 # Database Versioning Policy
 {: #versioning-policy}
