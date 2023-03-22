@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-20"
+lastupdated: "2023-03-22"
 
 subcollection: cloud-databases
 
@@ -19,7 +19,7 @@ keywords: deprovision cloud databases, databases with terraform, deprovisioning 
 
 {{site.data.keyword.cloud_notm}} keeps the deployment in the soft delete state for three days before it issues a delete. The soft delete state addresses use cases when you accidentally delete an instance. You can re-enable an existing soft-deleted instance on your own.
 
-Because a soft delete is essentially a disablement, no {{site.data.keyword.databases-for-cassandra_full}} deployment can recover from a soft delete. Once a {{site.data.keyword.databases-for-cassandra_full}} deployment is deleted, that deployment must be restored from a backup.
+Because a soft delete is essentially a disablement, no {{site.data.keyword.databases-for-cassandra_full}} deployment can recover from a soft delete. Once an {{site.data.keyword.databases-for-cassandra_full}} deployment is deleted, that deployment must be restored from a backup.
 {: note}
 
 ## Deleting your Deployment in the User Interface 
