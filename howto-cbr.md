@@ -137,7 +137,10 @@ Rules restrict access to specific cloud resources based on resource attributes a
 1. Click **Add** to add your configuration to the summary.
 1. Click **Next**.
 1. Name your rule.
-1. Select how you want to enforce the rule. *Report-only* is not available for {{site.data.keyword.databases-for}}.
+1. Select how you want to enforce the rule. 
+   
+   *Report-only* is not available for {{site.data.keyword.databases-for}}.
+   {: important}
 
 ### Creating rules in the CLI
 {: #rules-cli}
