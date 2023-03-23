@@ -71,7 +71,7 @@ A network zone represents an allowlist of IP addresses where an access request i
 
 1. Choose your *Allowed VPCs*, selecting as many as you like. 
 
-1. *Reference a service*: {{site.data.keyword.databases-for}} does not support targeting services. However, {{site.data.keyword.databases-for}} can be targeted as a service by other {{site.data.keyword.cloud}} services. To apply this, under *Service type*, choose the service that will reference {{site.data.keyword.databases-for}}. Then, under *Service*, choose the specific {{site.data.keyword.databases-for}} to target.
+1. **Reference a service**: {{site.data.keyword.databases-for}} does not support targeting services. However, {{site.data.keyword.databases-for}} can be targeted as a service by other {{site.data.keyword.cloud}} services. Under *Service type*, choose the service that references {{site.data.keyword.databases-for}}. Under *Service*, choose the specific {{site.data.keyword.databases-for}} to target.
 
 ### Creating network zones in the CLI
 {: #network-zone-cli}
