@@ -47,6 +47,7 @@ toc:
           - k8-tutorial.md
           - truck-tracker-tutorial.md
           - bi-tutorial.md
+          - disk-util-alerts-tutorial.md
       - topicgroup: 
           label: Logging and monitoring
           topics: 
