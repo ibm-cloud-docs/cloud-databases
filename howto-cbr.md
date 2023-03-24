@@ -2,7 +2,7 @@
 
 copyright:
   years:  2022, 2023
-lastupdated: "2023-03-23"
+lastupdated: "2023-03-24"
 
 keywords: restricting access to cloud databases, restricting access to ICD, DataStax cbr, Elasticsearch cbr, EnterpriseDB cbr, etcd cbr, mongodb cbr, postgresql cbr, redis cbr, mysql cbr, rabbitmq cbr
 
@@ -71,7 +71,7 @@ A network zone represents an allowlist of IP addresses where an access request i
 
 1. Choose your *Allowed VPCs*, selecting as many as you like. 
 
-1. **Reference a service**: {{site.data.keyword.databases-for}} does not support targeting services. However, {{site.data.keyword.databases-for}} can be targeted as a service by other {{site.data.keyword.cloud}} services. Under *Service type*, choose the service that references {{site.data.keyword.databases-for}}. Under *Service*, choose the specific {{site.data.keyword.databases-for}} to target.
+1. **Reference a service**: {{site.data.keyword.databases-for}} does not support targeting other {{site.data.keyword.cloud}} services. However, {{site.data.keyword.databases-for}} can be targeted as a service by other {{site.data.keyword.cloud}} services. Under *Service type*, choose the service that references {{site.data.keyword.databases-for}}. Under *Service*, choose the specific {{site.data.keyword.databases-for}} to target.
 
 ### Creating network zones in the CLI
 {: #network-zone-cli}
@@ -109,7 +109,10 @@ ibmcloud cbr zone-delete <ZONE-ID>
 ## Creating rules
 {: #rules}
 
-Rules restrict access to specific cloud resources based on resource attributes and contexts.
+Rules restrict access to specific cloud resources based on resource attributes and contexts. A created rule can accept up to 2,000 IP/CIDR values for private endpoints and up to 2,000 IP/CIDR values for public endpoints. This limit is specfic to {{site.data.keyword.databases-for}}. Other {{site.data.keyword.cloud}} service limits may vary.
+
+{{site.data.keyword.databases-for}} does not support IPv6 addresses. If an IPv6 address is included, it will be ignored. 
+
 
 ### Creating rules in the UI
 {: #rules-ui}
