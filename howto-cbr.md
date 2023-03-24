@@ -71,7 +71,7 @@ A network zone represents an allowlist of IP addresses where an access request i
 
 1. Choose your *Allowed VPCs*, selecting as many as you like. 
 
-1. **Reference a service**: {{site.data.keyword.databases-for}} does not support targeting other {{site.data.keyword.cloud}} services. However, {{site.data.keyword.databases-for}} can be targeted as a service by other {{site.data.keyword.cloud}} services. Under *Service type*, choose the service that references {{site.data.keyword.databases-for}}. Under *Service*, choose the specific {{site.data.keyword.databases-for}} to target.
+1. **Reference a service**: You can select {{site.data.keyword.databases-for}} as a source service for context-based restrictions, but not as a target service. For example, you can provision a {{site.data.keyword.databases-for}} deployment using BYOK from {{site.data.keyword.keymanagementservicefull}}. In this example, {{site.data.keyword.databases-for}} is the source formation and {{site.data.keyword.keymanagementservicefull}} is the target formation. For *Service Type*, IAM services is autoselected. In the *Service* dropdown, select a specific {{site.data.keyword.databases-for}} service.
 
 ### Creating network zones in the CLI
 {: #network-zone-cli}
