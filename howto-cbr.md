@@ -2,7 +2,7 @@
 
 copyright:
   years:  2022, 2023
-lastupdated: "2023-03-20"
+lastupdated: "2023-03-24"
 
 keywords: restricting access to cloud databases, restricting access to ICD, DataStax cbr, Elasticsearch cbr, EnterpriseDB cbr, etcd cbr, mongodb cbr, postgresql cbr, redis cbr, mysql cbr, rabbitmq cbr
 
@@ -71,8 +71,7 @@ A network zone represents an allowlist of IP addresses where an access request i
 
 1. Choose your *Allowed VPCs*, selecting as many as you like. 
 
-   {{site.data.keyword.databases-for}} does not support *Reference a service*. Selecting a service results in an error when you create a rule.
-   {: .note}
+1. **Reference a service**: You can select {{site.data.keyword.databases-for}} as a source service for context-based restrictions, but not as a target service. For example, you can provision a {{site.data.keyword.databases-for}} deployment using BYOK from {{site.data.keyword.keymanagementservicefull}}. In this example, {{site.data.keyword.databases-for}} is the source formation and {{site.data.keyword.keymanagementservicefull}} is the target formation. For *Service Type*, IAM services is autoselected. In the *Service* dropdown, select a specific {{site.data.keyword.databases-for}} service.
 
 ### Creating network zones in the CLI
 {: #network-zone-cli}
@@ -110,7 +109,10 @@ ibmcloud cbr zone-delete <ZONE-ID>
 ## Creating rules
 {: #rules}
 
-Rules restrict access to specific cloud resources based on resource attributes and contexts.
+Rules restrict access to specific cloud resources based on resource attributes and contexts. A created rule can accept up to 2,000 IP/CIDR values for private endpoints and up to 2,000 IP/CIDR values for public endpoints. This limit is specfic to {{site.data.keyword.databases-for}}. Other {{site.data.keyword.cloud}} service limits may vary.
+
+{{site.data.keyword.databases-for}} does not support IPv6 addresses. If an IPv6 address is included, it will be ignored. 
+
 
 ### Creating rules in the UI
 {: #rules-ui}
@@ -138,7 +140,10 @@ Rules restrict access to specific cloud resources based on resource attributes a
 1. Click **Add** to add your configuration to the summary.
 1. Click **Next**.
 1. Name your rule.
-1. Select how you want to enforce the rule. *Report-only* is not available for {{site.data.keyword.databases-for}}.
+1. Select how you want to enforce the rule. 
+   
+   *Report-only* is not available for {{site.data.keyword.databases-for}}.
+   {: important}
 
 ### Creating rules in the CLI
 {: #rules-cli}
@@ -165,7 +170,7 @@ ibmcloud cbr rule-create --enforcement-mode enabled --context-attributes "networ
 {: .pre}
 
 *Report-only* is not available for {{site.data.keyword.databases-for}}.
-{: .note}
+{: .important}
 
 Update a rule by using a command like:
 
