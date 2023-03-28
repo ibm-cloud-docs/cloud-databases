@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-02"
+lastupdated: "2023-03-28"
 
 keywords: guidance, recommendations, best practices, initial steps, setup
 
@@ -23,7 +23,7 @@ subcollection: cloud-databases
 - [ ] Make sure that [IAM access policies and resource groups](/docs/account?topic=account-iamoverview) are set up correctly for your business protocols.
 - [ ] Ensure that your account is [VRF-enabled](/docs/account?topic=account-vrf-service-endpoint#before-service-endpoint-enablement).
 - [ ] Understand your database's high availability model. This is covered in the "High-Availability" section of each database's documentation. 
-- [ ] To ensure you receive messages, enroll in [IBM Cloud notifications](https://cloud.ibm.com/docs/account?topic=account-email-prefs), specifically the "Resource Activity" notification. We directly notify you when your database version is approaching end of life. In addition, you may bookmark our [Database Version Lifecycle policy](/docs/cloud-databases?topic=cloud-databases-versioning-policy), which is kept up to date with end of life dates and resources for all databases.
+- [ ] To ensure you receive messages, enroll in [IBM Cloud notifications](https://cloud.ibm.com/docs/account?topic=account-email-prefs), specifically the "Resource Activity" notification. We directly notify you when your database version is approaching end of life. In addition, you can bookmark our [Database Version Lifecycle policy](/docs/cloud-databases?topic=cloud-databases-versioning-policy), which is kept up to date with end of life dates and resources for all databases.
 
 
 ## Sample "Getting to production" checklist
@@ -40,9 +40,13 @@ subcollection: cloud-databases
 - [ ] Set up monitoring with {{site.data.keyword.monitoringfull}}, {{site.data.keyword.at_full}}, and {{site.data.keyword.loganalysisfull}}. At minimum, set alerts on:
    * [{{site.data.keyword.monitoringlong_notm}}](/docs/monitoring) - when disk usage is greater than 80% of provisioned capacity (we encourage you to use auto scaling for disk capacity). We also encourage you to use, understand, and alert on all provided metrics like disk I/O or CPU usage. 
    * [{{site.data.keyword.at_full_notm}}](/docs/cloud-databases?topic=cloud-databases-activity-tracker) audit events for control plane actions, such as failed backups, IP allowlist updates, and auto scaling.  
-   * [{{site.data.keyword.loganalysisfull_notm}}](/docs/cloud-databases?topic=cloud-databases-logging) - any particular database-specific logs you wish to be notified about, such as slow query logs. 
+   * [{{site.data.keyword.loganalysisfull_notm}}](/docs/cloud-databases?topic=cloud-databases-logging) - any particular database-specific logs you want to be notified about, such as slow query logs. 
    * If available, turn on granular in-database auditing (only available for {{site.data.keyword.databases-for-postgresql}} and {{site.data.keyword.databases-for-mongodb}} Enterprise Edition).
-- [ ] Set up an [IP allowlist](/docs/cloud-databases?topic=cloud-databases-allowlisting) for your instance.
+- [ ] Set up an [IP allowlist](/docs/cloud-databases?topic=cloud-databases-allowlisting) for your instance. 
+
+{{site.data.keyword.databases-for}} now supports context-based restrictions, which give account owners and administrators the ability to define and enforce access restrictions for {{site.data.keyword.cloud}} resources based on the context of access requests. Access to {{site.data.keyword.databases-for}} resources can be controlled with context-based restrictions and identity and access management (IAM) policies Context-based restrictions check that an access request comes from an allowed context that you configure. Since both IAM access and context-based restrictions enforce access,context-based restrictions offer protection even in the face of compromised or mismanaged credentials. For more information, see [Protecting Cloud Databases resources with context-based restrictions](/docs/cloud-databases?topic=cloud-databases-cbr).
+{: .tip}
+
 - [ ] Set [Private Endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints#private-endpoints). You might also choose to disable public endpoints (highly recommended if no connection is expected from outside {{site.data.keyword.cloud}}).
 - [ ] Make sure that your application uses TLS for connecting to the database. Insecure connections to {{site.data.keyword.databases-for}} are not allowed.
 - [ ] Thoroughly load test, and then load test again.
