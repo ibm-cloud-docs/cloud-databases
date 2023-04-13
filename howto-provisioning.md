@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2022
-lastupdated: "2022-11-01"
+  years: 2019, 2023
+lastupdated: "2023-04-13"
 
 keywords: provision cloud databases, terraform, provisioning parameters, cli, resource controller api
 
@@ -10,20 +10,14 @@ subcollection: cloud-databases
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: .external target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:tip: .tip}
 {{site.data.keyword.attribute-definition-list}}
 
 # Provisioning
 {: #provisioning}
 
-To create an {{site.data.keyword.cloud}} Databases deployment, first create an {{site.data.keyword.cloud_notm}} service instance. The service type is determined by the service ID and you need to specify the appropriate service ID when you create a new {{site.data.keyword.databases-for}} deployment.
+To create an {{site.data.keyword.cloud}} Databases deployment, first create an {{site.data.keyword.cloud_notm}} service instance. The service type is determined by the service ID. Specify the appropriate service ID when you create a new {{site.data.keyword.databases-for}} deployment.
 
-Provision a deployment by going to the service's catalog page, or by specifying the service ID to the CLI, API, or Terraform.
+Provision a deployment by going to the service's catalog page, or by specifying the service ID in the CLI, API, or Terraform.
 
 | Deployment Type | Service ID |
 | ---------- | ----- | 
@@ -76,6 +70,7 @@ ibmcloud resource service-instance-create <service-name> <service-id> <service-p
 More information about this command, in general, is available in the [CLI reference for resource groups](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_create).
 
 When the command is run, provisioning the database deployment begins. The database takes some time to deploy. You can check on its progress on your {{site.data.keyword.cloud_notm}} Dashboard. You can also run:
+
 ```sh
 ibmcloud resource service-instance <service-name>
 ```
@@ -146,9 +141,16 @@ If you use Terraform to manage your infrastructure, the [{{site.data.keyword.clo
 
 * `backup_id`- A CRN of a backup resource to restore from. The backup must be created by a database deployment with the same service ID. The backup is loaded after provisioning and the new deployment starts up that uses that data. A backup CRN is in the format `crn:v1:<...>:backup:<uuid>`. If omitted, the database is provisioned empty.
 * `version` - The version of the database to be provisioned. If omitted, the database is created with the most recent major and minor version.
-* `disk_encryption_key_crn` - The CRN of a [Key Protect key](/docs/key-protect?topic=key-protect-view-keys), which is then used for disk encryption. A key protect CRN is in the format `crn:v1:<...>:key:<id>`.
-* `backup_encryption_key_crn` - The CRN of a [Key Protect key](/docs/key-protect?topic=key-protect-view-keys), which is then used for backup encryption. A key protect CRN is in the format `crn:v1:<...>:key:<id>`. Note: to use a key for your backups, you must first [enable the service-to-service delegation](/docs/cloud-databases?topic=cloud-databases-key-protect#byok-for-backups).
+* `disk_encryption_key_crn` - The CRN of a KMS key (for example, [{{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-get-started) or [{{site.data.keyword.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-about)), which is then used for disk encryption. A KMS key CRN is in the format `crn:v1:<...>:key:<id>`.
+* `backup_encryption_key_crn` - The CRN of a [KMS key](for example, [{{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-get-started) or [{{site.data.keyword.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-about)), which is then used for backup encryption. A KMS key CRN is in the format `crn:v1:<...>:key:<id>`. 
+   
+   To use a key for your backups, you must first [enable the service-to-service delegation](/docs/cloud-databases?topic=cloud-databases-key-protect#byok-for-backups).
+   {: note}
+
 * `members_memory_allocation_mb` -  Total amount of memory to be shared between the database members within the database. For example, if the value is "6144", and there are three database members, then the deployment gets 6 GB of RAM total, giving 2 GB of RAM per member. If omitted, the default value is used for the database type is used.
 * `members_disk_allocation_mb` - Total amount of disk to be shared between the database members within the database. For example, if the value is "30720", and there are three members, then the deployment gets 30 GB of disk total, giving 10 GB of disk per member. If omitted, the default value for the database type is used.
 * `members_cpu_allocation_count` - Enables and allocates the number of specified dedicated cores to your deployment. For example, to use two dedicated cores per member, use `"members_cpu_allocation_count":"2"`. If omitted, the default value "Shared CPU" uses compute resources on shared hosts.
-* `service-endpoints` - Selects the types [Service Endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints) supported on your deployment. Options are `public`, `private`, or `public-and-private`. If omitted, the default is `public`. Note in the CLI, `service-endpoints` is a flag, and not a parameter.
+* `service-endpoints` - Selects the types [Service Endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints) supported on your deployment. Options are `public`, `private`, or `public-and-private`. If omitted, the default is `public`. 
+   
+   In the CLI, `service-endpoints` is a flag, not a parameter.
+   {: note}
