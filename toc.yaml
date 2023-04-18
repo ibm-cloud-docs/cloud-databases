@@ -13,7 +13,6 @@ toc:
       id: learn
       topics:
       - index.md
-      - learn-size-guidance.md
       - learn-getting-to-production.md
   - navgroup: 
       id: howto
