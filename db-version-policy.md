@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018, 2023
-lastupdated: "2023-03-22"
+lastupdated: "2023-04-20"
 
 subcollection: cloud-databases
 
@@ -75,11 +75,9 @@ Any actions taken after a database EOL date happen over several days after the E
 You receive multiple notifications when a major version reaches its End of life. You can typically expect:
 * A blog post, for example: [Messages for RabbitMQ 3.8 End of Life in July 2022](https://www.ibm.com/cloud/blog/announcements/messages-for-rabbitmq-38-end-of-life-in-july-2022) 
 * An announcement in your service's Release Notes, for example: [IBM Cloud® Messages for RabbitMQ 3.8 End of Life in July 2022](https://cloud.ibm.com/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-relnotes#messages-for-rabbitmq-25jan2022)
-* A notification by email through the {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} API. This email contains a *Notifications* link that takes you to a Notifications Management page. **Make sure that these announcements are not being caught by your email service's spam filter.**
-   For more information, see [Setting up Distribution Lists for IBM Cloud Notifications](https://www.ibm.com/cloud/blog/announcements/setting-up-distribution-lists-for-ibm-cloud-notifications).
-   ![RabbitMQ Service Announcement Example](images/api-announce.png){: caption="Figure 1. Rabbit MQ Service Announcement Example" caption-side="bottom"}
+* A notification by email through the {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} API. This email contains a *Notifications* link that takes you to a Notifications Management page. **Make sure that these announcements are not being caught by your email service's spam filter.** For more information, see [Setting up Distribution Lists for IBM Cloud Notifications](https://www.ibm.com/cloud/blog/announcements/setting-up-distribution-lists-for-ibm-cloud-notifications).
 
-For more information, see [Programmatic Methods for Checking Version Status](#programmatic-methods-for-checking-version-status).
+For more information, see [Programmatic Methods for Checking Version Status](#-major-version-eol-check-version-status).
 
 ### Programmatic Methods for Checking Version Status
 {: #-major-version-eol-check-version-status}
