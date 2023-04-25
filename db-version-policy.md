@@ -81,10 +81,11 @@ For more information, see [Programmatic Methods for Checking Version Status](#-m
 {: #-major-version-eol-check-version-status}
 
 The following [{{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} `deployables` command](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployables-show) shows deployable database types, specifically the available versions of databases, and their `preferred` or `stable` status.
-```shell
+
+```sh
 ibmcloud cdb deployables-show [--stable] [--preferred] [--json]
 ```
-
+{: pre}
 
 Check the status of a major version by reviewing the output of the `deployable` command, specifically *Status* and *Preferred*. The following output example shows that version 4.4 is the `Preferred` version and version 4.2's *Status* is `deprecated`.
 
@@ -96,9 +97,10 @@ Version   Status       Preferred
 ```
 
 The {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} API `deployables` endpoint returns all deployable databases. Use the `version` parameter to return the version number.
-```text
+```sh
 GET /v5/ibm/deployables
 ```
+{: pre}
 
 ## Minor versions
 {: #minor-versions}
