@@ -2,7 +2,7 @@
 
 copyright:
   years:  2022, 2023
-lastupdated: "2023-03-27"
+lastupdated: "2023-04-25"
 
 keywords: restricting access to cloud databases, restricting access to ICD, DataStax cbr, Elasticsearch cbr, EnterpriseDB cbr, etcd cbr, mongodb cbr, postgresql cbr, redis cbr, mysql cbr, rabbitmq cbr
 
@@ -193,6 +193,69 @@ Delete a rule by using a command like:
 ibmcloud cbr rule-delete <RULE-ID>
 ```
 {: .pre}
+
+### Creating rules in Terraform
+{: #rules-tf}
+{: terraform}
+
+To create rules using Terraform, see [IBM Cloud Provider](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs){: external} in the [Terraform Registry](https://registry.terraform.io/){: external}.
+
+To create a rule, you need the appropriate {{site.data.keyword.databases-for}} `service_name`:
+* `databases-for-etcd`
+* `databases-for-elasticsearch`
+* `databases-for-mongodb`
+* `databases-for-postgresql`
+* `databases-for-redis`
+* `messages-for-rabbitmq`
+* `databases-for-cassandra`
+* `databases-for-enterprisedb`
+* `database-for-mysql`
+
+The `ibm_cbr_rule` provides a resource for `cbr_rule` and allows a `cbr_rule` to be created, updated, and deleted.
+
+Create a rule by using a command like:
+```sh
+resource "ibm_cbr_rule" "cbr_rule" {
+  contexts {
+        attributes {
+            name = "networkZoneId"
+            value = "559052eb8f43302824e7ae490c0281eb"
+        }
+        attributes {
+               name = "endpointType"
+               value = "private"
+    }
+  }
+  description = "this is an example of a rule with one context one zone"
+  enforcement_mode = "enabled"
+  operations {
+        api_types {
+            api_type_id = "api_type_id"
+        }
+  }
+  resources {
+        attributes {
+            name = "accountId"
+            value = "12ab34cd56ef78ab90cd12ef34ab56cd"
+        }
+        attributes {
+              name = "serviceName"
+              value = "network-policy-enabled"
+        }
+        tags {
+              name     = "tag_name"
+              value    = "tag_value"
+        }
+  }
+}
+```
+{: pre}
+
+You can import the `ibm_cbr_rule` resource by using `id`, the globally unique ID of the rule.
+```sh
+terraform import ibm_cbr_rule.cbr_rule 
+```
+{: pre}
 
 ### Verifying your rule
 {: #rules-ui-verify}
