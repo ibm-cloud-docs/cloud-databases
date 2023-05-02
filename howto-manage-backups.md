@@ -2,11 +2,11 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-28"
+lastupdated: "2023-05-02"
 
 subcollection: cloud-databases
 
-keywords: backups
+keywords: backups, new deployment, source deployment, backup, back up
 
 ---
 
@@ -192,7 +192,8 @@ For more details about {{site.data.keyword.databases-for}} Object Storage locati
 ## Point-in-Time Recovery
 {: #pitr-recovery-options}
 
-With Point-in-Time Recovery (PIRTR), the deployment continuously backs up incrementally and can replay transactions to bring a new deployment that is restored from a backup to any point in the last 7 days. {{site.data.keyword.databases-for}} offers Point-In-Time Recovery (PITR) for the following services:
+With Point-in-Time Recovery (PITR), the deployment continuously backs up incrementally and can replay transactions to bring a new deployment that is restored from a backup to any point in the last 7 days. {{site.data.keyword.databases-for}} offers Point-In-Time Recovery (PITR) for the following services:
 
 - [{{site.data.keyword.databases-for-mysql_full}}](/docs/databases-for-mysql?topic=databases-for-mysql-pitr) 
 - [{{site.data.keyword.databases-for-postgresql_full}}](/docs/databases-for-postgresql?topic=databases-for-postgresql-pitr)
+- [{{site.data.keyword.databases-for-enterprisedb_full}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-pitr&interface=ui)
