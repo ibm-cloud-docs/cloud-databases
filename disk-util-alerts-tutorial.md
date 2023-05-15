@@ -30,6 +30,8 @@ To get started, you need access to {{site.data.keyword.mon_full}} in your databa
 ## Step 1: Retrieve your monitoring service instance
 {: #disk-util-alert-tutorial-step-1}
 
+In this step you will retrieve the necessary credentials to be able to gain access to your monitoring instance.
+
 Begin by logging in to the {{site.data.keyword.cloud_notm}} CLI:
 
 ```sh
@@ -37,24 +39,22 @@ ibmcloud login -sso
 ```
 {: pre}
 
-Then, choose your account:
-
 Follow the on-screen instructions to log in.
 
-Install plug-ins:
+Then you will need to install the required CLI plug-ins:
 
 `ibmcloud plugin install monitoring`
 
 `ibmcloud plugin install cloud-databases`
 
-Target the region you are working in:
+Now target the [region](/docs/overview?topic=overview-locations) you are working in:
 
 ```sh
 ibmcloud target -r <REGION>
 ```
 {: pre}
 
-List monitoring instances with the following command:
+Now you can list the existing monitoring instances in that region with the following command:
 
 ```sh
 ibmcloud monitoring service-instances
@@ -86,7 +86,7 @@ GUID=$(ibmcloud resource service-instance <instance_name_from_step_above> --outp
 Use the following command: 
 
 ```sh
-curl -X POST https://<region>.monitoring.cloud.ibm.com/api/notificationChannels -H "Authorization: Bearer $AUTH_TOKEN" -H "IBMInstanceID: $GUID" -H "content-type: application/json"  --data-raw '{"notificationChannel":{"id":null,"version":null,"teamId":"","name":"<notification_channel>","type":"EMAIL","enabled":true,"sendTestNotification":true,"options":{"notifyOnOk":true,"notifyOnResolve":true,"emailRecipients":["subhi@ibm.com"]}}}'
+curl -X POST https://<region>.monitoring.cloud.ibm.com/api/notificationChannels -H "Authorization: Bearer $AUTH_TOKEN" -H "IBMInstanceID: $GUID" -H "content-type: application/json"  --data-raw '{"notificationChannel":{"id":null,"version":null,"teamId":"","name":"<notification_channel>","type":"EMAIL","enabled":true,"sendTestNotification":true,"options":{"notifyOnOk":true,"notifyOnResolve":true,"emailRecipients":["email@email.com"]}}}'
 ```
 {: pre}
 
@@ -96,7 +96,7 @@ You will see the following output:
 {"notificationChannel":{"id":39209,"version":1,"customerId":34292,"enabled":true,"sendTestNotification":true,"createdOn":1678967870764,"modifiedOn":1678967870764,"name":"thursTest","options":{"notifyOnOk":true,"emailRecipients":["email@email.com"],"notifyOnResolve":true},"type":"EMAIL"}}% 
 ```
 
-Make a note of the `id` field that is returned by the API call.
+You have created a Notification Channel for your alerts. Make a note of the `id` field that is returned by the API call. 
 
 ## Step 3: Create the alert
 {: #disk-util-alert-tutorial-step-3}
@@ -114,67 +114,42 @@ ibmcloud cdb ls
 {: pre}
 
 ```screen
-#Retrieving instances for all database types in all resource groups in all locations under IBM as …
-
-#OK
-
-#Name                          Location   State
-
-#Databases for PostgreSQL-76   us-south   inactive
-
-#testelastic                   eu-gb      active
-
-#Databases for MySQL-9j        us-south   active
+Retrieving instances for all database types in all resource groups in all locations under IBM as …
+OK
+Name                          Location   State
+Databases for PostgreSQL-76   us-south   inactive
+testelastic                   eu-gb      active
+Databases for MySQL-9j        us-south   active
 ```
 
 Now, use the name of your database to create the alert, using the the command:
 
 ```sh
 curl --request POST \
-
   --url https://<region>.monitoring.cloud.ibm.com/api/alerts \
-
   --header "Authorization: Bearer  $AUTH_TOKEN" \
-
   --header 'Content-Type: application/json' \
-
   --header "IBMInstanceID: $GUID" \
-
   --data-raw  '{
-
 	"alert":
-
 		{
-
 			"type": "MANUAL",
-
 			"name": "Disk Alert",
-
 			"description": "",
-
 			"enabled": true,
-
 			"severity": 1,
-
 			"timespan": 60000000,
-
 			"notificationChannelIds": [
-
 				<id_from_previous_step>
-
 			],
-
 			"filter": "ibm_service_instance_name in (\"<db_instance_name_from_previous_step>\")",
-
 		  "condition": "max(max(ibm_databases_for_elasticsearch_disk_used_percent)) > 0.9"
-
 		}
-
 }'
 ```
 {: pre}
 
-This example uses {{site.data.keyword.databases-for-elasticsearch_full}}. To apply the same method to other {{site.data.keyword.databases-for}} services, find the metrics
+This example uses {{site.data.keyword.databases-for-elasticsearch_full}}. To apply the same method to other {{site.data.keyword.databases-for}} services, find the metrics below:
 
 - [{{site.data.keyword.databases-for-cassandra_full}}](/docs/databases-for-cassandra?topic=databases-for-cassandra-monitoring#metrics-by-plan)
 - [{{site.data.keyword.databases-for-enterprisedb_full}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-monitoring#metrics-by-plan)
@@ -195,5 +170,7 @@ ibmcloud monitoring alert list --name <monitoring instance name>
 ```
 {: pre}
 
-## Next steps
+## Conclusion and next steps
 {: #disk-util-alert-tutorial-next-steps}
+
+You should now receive an alert whenever disk utilization for your Elasticsearch instance exceeds 90%, so you can take action before the disk is too full. If you want to modify your alert or find out more about Monitoring, please visit the [Monitoring documentation](/docs/monitoring?topic=monitoring-getting-started).
