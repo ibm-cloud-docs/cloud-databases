@@ -2,11 +2,11 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-05-02"
+lastupdated: "2023-05-16"
 
 subcollection: cloud-databases
 
-keywords: backups, new deployment, source deployment, backup, back up
+keywords: backups, new deployment, source deployment, backup, back up, ondemand backup, on-demand backup, on-demand back up
 
 ---
 
@@ -27,6 +27,9 @@ Backups for {{site.data.keyword.databases-for}} deployments are accessible from 
 - Backups are restorable across accounts, but only through the API and only if the user that is running the restore has access to both the source and destination accounts.
 - {{site.data.keyword.databases-for}} backups are not downloadable. If you need a local backup, use the appropriate software. For example, [pg_dump](https://www.postgresql.org/docs/9.6/static/backup-dump.html){: .external} is an effective tool for managing PostgreSQL backups.
 - {{site.data.keyword.databases-for-cassandra_full}} does not support reenablement. After a deployment is disabled, that deployment must be restored from a backup.
+
+For information on taking an on-demand backup, see [Taking an on-demand backup](/docs/cloud-databases?topic=cloud-databases-dashboard-backups&interface=cli#ondemand-backup).
+{: tip}
 
 ## Backups in the UI
 {: #backup-ui}
