@@ -2,11 +2,15 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-03-24"
+lastupdated: "2023-05-16"
 
 keywords: resource utilization, disk utilization, disk alert
 
 subcollection: cloud-databases
+
+content-type: tutorial
+account-plan: paid
+completion-time: 30m
 
 ---
 
@@ -14,6 +18,8 @@ subcollection: cloud-databases
 
 # Setting up disk alerts for disk utilization
 {: #disk-util-alert-tutorial}
+{: toc-content-type="tutorial"}
+{: toc-completion-time="30m"}
 
 ## Objectives
 {: #disk-util-alert-tutorial-objectives}
@@ -27,10 +33,11 @@ In this tutorial, you use the {{site.data.keyword.cloud_notm}} API and the [{{si
 
 To get started, you need access to {{site.data.keyword.mon_full}} in your database region, and you need to have a monitoring instance available. This monitoring instance must be in the same region as the database target. You also must have [Platform Metrics](/docs/monitoring?topic=monitoring-platform_metrics_enabling) enabled.
 
-## Step 1: Retrieve your monitoring service instance
-{: #disk-util-alert-tutorial-step-1}
+## Retrieve your monitoring service instance
+{: #retrieve-monitoring-serv-instance}
+{: step}
 
-In this step you will retrieve the necessary credentials to be able to gain access to your monitoring instance.
+In this step, you retrieve the necessary credentials to gain access to your monitoring instance.
 
 Begin by logging in to the {{site.data.keyword.cloud_notm}} CLI:
 
@@ -41,20 +48,20 @@ ibmcloud login -sso
 
 Follow the on-screen instructions to log in.
 
-Then you will need to install the required CLI plug-ins:
+Next, install the required CLI plug-ins:
 
-`ibmcloud plugin install monitoring`
+[`ibmcloud plugin install monitoring`](https://cloud.ibm.com/docs/cli?topic=cli-monitor-cli){: external}
 
-`ibmcloud plugin install cloud-databases`
+[`{{site.data.keyword.databases-for}} CLI plug-in`](https://cloud.ibm.com/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#installing-cli-plugin)
 
-Now target the [region](/docs/overview?topic=overview-locations) you are working in:
+Next, target the [region](/docs/overview?topic=overview-locations) you are working in:
 
 ```sh
 ibmcloud target -r <REGION>
 ```
 {: pre}
 
-Now you can list the existing monitoring instances in that region with the following command:
+List the existing monitoring instances in that region with the following command:
 
 ```sh
 ibmcloud monitoring service-instances
@@ -80,8 +87,9 @@ GUID=$(ibmcloud resource service-instance <instance_name_from_step_above> --outp
 ```
 {: pre}
 
-## Step 2: Set up the notification channel
-{: #disk-util-alert-tutorial-step-2}
+## Set up the notification channel
+{: #set-up-notif-channel}
+{: step}
 
 Use the following command: 
 
@@ -98,14 +106,15 @@ You will see the following output:
 
 You have created a Notification Channel for your alerts. Make a note of the `id` field that is returned by the API call. 
 
-## Step 3: Create the alert
-{: #disk-util-alert-tutorial-step-3}
+## Create the alert
+{: #create-alert}
+{: step}
 
 Now that you have the notification channel, create your alert.
 
 To retrieve the name of the database instance you want to set up the alert for, list all your database instances. 
 
-Make sure to select a database on the same region as the monitoring instance.
+Make sure to select a database in the same region as the monitoring instance.
 {: note}
 
 ```sh
@@ -160,8 +169,9 @@ This example uses {{site.data.keyword.databases-for-elasticsearch_full}}. To app
 - [{{site.data.keyword.databases-for-mysql_full}}](/docs/databases-for-mysql?topic=databases-for-mysql-monitoring#metrics-by-plan)
 - [{{site.data.keyword.messages-for-rabbitmq_full}}](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-monitoring#metrics-by-plan)
 
-## Step 4: Check that your alert is created
-{: #disk-util-alert-tutorial-step-4}
+## Check that your alert is created
+{: #check-alert-creation}
+{: step}
 
 To check that your alert is now created, use the following command:
 
@@ -170,7 +180,7 @@ ibmcloud monitoring alert list --name <monitoring instance name>
 ```
 {: pre}
 
-## Conclusion and next steps
-{: #disk-util-alert-tutorial-next-steps}
+## Next Steps
+{: #disk-alert-next-steps}
 
 You should now receive an alert whenever disk utilization for your Elasticsearch instance exceeds 90%, so you can take action before the disk is too full. If you want to modify your alert or find out more about Monitoring, please visit the [Monitoring documentation](/docs/monitoring?topic=monitoring-getting-started).
