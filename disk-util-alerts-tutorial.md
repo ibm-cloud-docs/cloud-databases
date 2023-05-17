@@ -32,22 +32,25 @@ In this tutorial, you use the {{site.data.keyword.cloud_notm}} API and the [{{si
 {: #disk-util-alert-tutorial-getting-started}
 
 ### Set up monitoring instance and Platform Metrics
-{: #monitor-platform}
+{: #disk-util-alert-tutorial-monitor-platform}
 
 To get started, you need access to [{{site.data.keyword.mon_full}}](https://www.ibm.com/cloud/cloud-monitoring) in your database region, and you need to have a [monitoring instance](/docs/monitoring?topic=monitoring-getting-started) available. This monitoring instance must be in the same region as the database target. 
 
 You also must have [Platform Metrics](/docs/monitoring?topic=monitoring-platform_metrics_enabling) enabled.
 
-Next, you need the {{site.data.keyword.cloud_notm}} Monitoring CLI and {{site.data.keyword.databases-for}} CLI plug-in.
+### Install Command Line Interface tools
+{: #disk-util-alert-tutorial-cli-tools}
 
-Install the [{{site.data.keyword.cloud_notm}} Monitoring CLI]((https://cloud.ibm.com/docs/cli?topic=cli-monitor-cli)) by running the following command:
+Next, you need the [{{site.data.keyword.cloud_notm}} Monitoring CLI]((https://cloud.ibm.com/docs/cli?topic=cli-monitor-cli)) and [{{site.data.keyword.databases-for}} CLI plug-in](https://cloud.ibm.com/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#installing-cli-plugin).
+
+Install the {{site.data.keyword.cloud_notm}} Monitoring CLI by running the following command:
 
 ```sh
 ibmcloud plugin install monitoring
 ```
 {: pre}
 
-Install the [{{site.data.keyword.databases-for}} CLI plug-in](https://cloud.ibm.com/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#installing-cli-plugin) by running the following command: 
+Install the {{site.data.keyword.databases-for}} CLI plug-in by running the following command:
 
 ```sh
 ibmcloud plugin install cloud-databases
@@ -129,7 +132,7 @@ Make a note of the `id` field that is returned by the API call.
 {: important}
 
 ## Create the alert
-{: #create-alert}
+{: #disk-util-alert-tutorial-create-alert}
 {: step}
 
 Now that you have the notification channel, create your alert.
@@ -196,7 +199,7 @@ ibmcloud monitoring alert list --name <monitoring instance name>
 Congratulations, you should now receive an alert whenever your {{site.data.keyword.databases-for-elasticsearch}} instance disk utilization exceeds 90%, so you can take action before the disk is too full. 
 
 ## Next Steps
-{: #disk-alert-next-steps}
+{: #disk-alert-tut-next-steps}
 
 If you want to modify your alert or find out more about Monitoring, please visit the [Monitoring documentation](/docs/monitoring?topic=monitoring-getting-started).
 
