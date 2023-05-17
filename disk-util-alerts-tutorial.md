@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-05-16"
+lastupdated: "2023-05-17"
 
 keywords: resource utilization, disk utilization, disk alert
 
@@ -31,10 +31,14 @@ In this tutorial, you use the {{site.data.keyword.cloud_notm}} API and the [{{si
 ## Getting productive 
 {: #disk-util-alert-tutorial-getting-started}
 
-To get started, you need access to {{site.data.keyword.mon_full}} in your database region, and you need to have a monitoring instance available. This monitoring instance must be in the same region as the database target. You also must have [Platform Metrics](/docs/monitoring?topic=monitoring-platform_metrics_enabling) enabled.
+### Set up monitoring instance and Platform Metrics
+{: #monitor-platform}
 
-### Install the necessary CLI plug-ins:
-{: #install-plug-ins}
+To get started, you need access to [{{site.data.keyword.mon_full}}](https://www.ibm.com/cloud/cloud-monitoring) in your database region, and you need to have a [monitoring instance](/docs/monitoring?topic=monitoring-getting-started) available. This monitoring instance must be in the same region as the database target. 
+
+You also must have [Platform Metrics](/docs/monitoring?topic=monitoring-platform_metrics_enabling) enabled.
+
+Next, you need the {{site.data.keyword.cloud_notm}} Monitoring CLI and {{site.data.keyword.databases-for}} CLI plug-in.
 
 Install the [{{site.data.keyword.cloud_notm}} Monitoring CLI]((https://cloud.ibm.com/docs/cli?topic=cli-monitor-cli)) by running the following command:
 
@@ -49,6 +53,8 @@ Install the [{{site.data.keyword.databases-for}} CLI plug-in](https://cloud.ibm.
 ibmcloud plugin install cloud-databases
 ```
 {: pre}
+
+You are now ready to retrieve and monitor your service instance.
 
 ## Retrieve your monitoring service instance
 {: #retrieve-monitoring-serv-instance}
@@ -128,7 +134,7 @@ Make a note of the `id` field that is returned by the API call.
 
 Now that you have the notification channel, create your alert.
 
-To retrieve the name of the database instance you want to set up the alert for, list all your database instances, using a command like:
+To retrieve the name of the database instance you want to set up the alert for, list all your database instances with a command like:
 
 ```sh
 ibmcloud cdb ls
@@ -187,6 +193,13 @@ ibmcloud monitoring alert list --name <monitoring instance name>
 ```
 {: pre}
 
+Congratulations, you should now receive an alert whenever your {{site.data.keyword.databases-for-elasticsearch}} instance disk utilization exceeds 90%, so you can take action before the disk is too full. 
+
+## Next Steps
+{: #disk-alert-next-steps}
+
+If you want to modify your alert or find out more about Monitoring, please visit the [Monitoring documentation](/docs/monitoring?topic=monitoring-getting-started).
+
 ## {{site.data.keyword.databases-for}} service metrics
 {: #icd-service-metrics}
 
@@ -200,8 +213,3 @@ This tutorial uses {{site.data.keyword.databases-for-elasticsearch_full}}. To ap
 - [{{site.data.keyword.databases-for-redis_full}}](/docs/databases-for-redis?topic=databases-for-redis-monitoring#metrics-by-plan)
 - [{{site.data.keyword.databases-for-mysql_full}}](/docs/databases-for-mysql?topic=databases-for-mysql-monitoring#metrics-by-plan)
 - [{{site.data.keyword.messages-for-rabbitmq_full}}](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-monitoring#metrics-by-plan)
-
-## Next Steps
-{: #disk-alert-next-steps}
-
-You should now receive an alert whenever your {{site.data.keyword.databases-for-elasticsearch}} instance disk utilization exceeds 90%, so you can take action before the disk is too full. If you want to modify your alert or find out more about Monitoring, please visit the [Monitoring documentation](/docs/monitoring?topic=monitoring-getting-started).
