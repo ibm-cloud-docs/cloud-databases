@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-05-17"
+lastupdated: "2023-05-18"
 
 keywords: resource utilization, disk utilization, disk alert
 
@@ -24,7 +24,7 @@ completion-time: 30m
 ## Objectives
 {: #disk-util-alert-tutorial-objectives}
 
-Getting timely alerts about resource utilization is key to managing your database, avoiding problems, and mitigating downtime. If you know in advance that your database is running out of disk, take steps to scale those resources. Scaling your resources keeps your services running smoothly.
+Getting timely alerts about resource utilization is key to managing your database, avoiding problems, and mitigating downtime. If you know in advance that your database is running out of disk, take steps to scale those resources. Scaling your resources helps your services run smoothly.
 
 In this tutorial, you use the {{site.data.keyword.cloud_notm}} API and the [{{site.data.keyword.cloud_notm}} CLI](https://cloud.ibm.com/docs/cli?topic=cli-getting-started){: external} to set up an alert that emails you whenever the disk utilization of your database exceeds 90%. This specific example creates an alert on a {{site.data.keyword.databases-for-elasticsearch}} deployment, but it is applicable to all the databases in the IBM {{site.data.keyword.databases-for}} catalog.
 
@@ -92,9 +92,9 @@ ibmcloud monitoring service-instances
 Note the service instance name that has “Platform Metrics” enabled.
 {: note}
 
-Now create an authorization token for the API, using a command like:
+Now create an authorization token for the API, by using a command like:
 
-The following steps only work on bash.
+The following steps work only on Bash.
 {: important}
 
 ```sh
@@ -113,20 +113,20 @@ GUID=$(ibmcloud resource service-instance <instance_name_from_step_above> --outp
 {: #set-up-notif-channel}
 {: step}
 
-To set up the notification channel, use the following command: 
+Configure a [notification channel](/docs/monitoring?topic=monitoring-notifications) to be notified when an alert is triggered. To set up your notification channel, use the following command:
 
 ```sh
 curl -X POST https://<region>.monitoring.cloud.ibm.com/api/notificationChannels -H "Authorization: Bearer $AUTH_TOKEN" -H "IBMInstanceID: $GUID" -H "content-type: application/json"  --data-raw '{"notificationChannel":{"id":null,"version":null,"teamId":"","name":"<notification_channel>","type":"EMAIL","enabled":true,"sendTestNotification":true,"options":{"notifyOnOk":true,"notifyOnResolve":true,"emailRecipients":["email@email.com"]}}}'
 ```
 {: pre}
 
-You will see the following output:
+You see the following output:
 
 ```screen
 {"notificationChannel":{"id":39209,"version":1,"customerId":34292,"enabled":true,"sendTestNotification":true,"createdOn":1678967870764,"modifiedOn":1678967870764,"name":"thursTest","options":{"notifyOnOk":true,"emailRecipients":["email@email.com"],"notifyOnResolve":true},"type":"EMAIL"}}% 
 ```
 
-You have now created a Notification Channel for your alerts. 
+You have now created a notification channel for your alerts.
 
 Make a note of the `id` field that is returned by the API call.
 {: important}
@@ -135,7 +135,10 @@ Make a note of the `id` field that is returned by the API call.
 {: #disk-util-alert-tutorial-create-alert}
 {: step}
 
-Now that you have the notification channel, create your alert.
+Now that you have a notification channel, create your [alert rule](https://cloud.ibm.com/docs/monitoring?topic=monitoring-alert_api){: external}. Your alert rule describes the metric query to be monitored, the threshold value, and the action to take when the threshold is crossed. In this case, you're monitoring your `ibm_service_instance_name` to ensure that `max` utilization doesn't exceed 90%. If that happens, an alert is triggered and you're notified.
+
+This alert is triggered at 90% disk utilization. However, 50-70% disk utilization is preferred.
+{: note}
 
 To retrieve the name of the database instance you want to set up the alert for, list all your database instances with a command like:
 
@@ -147,7 +150,7 @@ ibmcloud cdb ls
 Make sure to select a database in the same region as the monitoring instance.
 {: important}
 
-You will see output like the following:
+You see output like the following:
 
 ```screen
 Retrieving instances for all database types in all resource groups in all locations under IBM as …
@@ -158,7 +161,7 @@ testelastic                   eu-gb      active
 Databases for MySQL-9j        us-south   active
 ```
 
-Now, use the name of your database to create the alert, using the the following command:
+Now, use the name of your database to create the alert by using a command like:
 
 ```sh
 curl --request POST \
@@ -189,24 +192,41 @@ curl --request POST \
 {: #check-alert-creation}
 {: step}
 
-Check that your alert is now created with the following command:
+An alert is created whenever you reach 90% of disk size. You receive the alert to the same email that you created in the notification channel. You can also use the following command to check current active alerts:
 
 ```sh
 ibmcloud monitoring alert list --name <monitoring instance name>
 ```
 {: pre}
 
-Congratulations, you should now receive an alert whenever your {{site.data.keyword.databases-for-elasticsearch}} instance disk utilization exceeds 90%, so you can take action before the disk is too full. 
+You now receive an alert whenever your {{site.data.keyword.databases-for-elasticsearch}} instance disk utilization exceeds 90%, so you can act before the disk is too full.
 
 ## Next Steps
 {: #disk-alert-tut-next-steps}
 
-If you want to modify your alert or find out more about Monitoring, please visit the [Monitoring documentation](/docs/monitoring?topic=monitoring-getting-started).
+To modify your alert or find out more about Monitoring, see [Monitoring](/docs/monitoring?topic=monitoring-getting-started).
+
+### Scaling Resources
+{: #check-alert-scale-resources}
+
+If you receive an alert that your disk utilization exceeds 90%, scale your disk so that you do not exceed 50-70% usage. Manually manage your service's resources or autoscale.
+
+| Service                                          | Managing Resources         | Autoscaling |
+|--------------------------------------------------|----------------------------|-------------|
+| {{site.data.keyword.databases-for-cassandra}} | [Scaling Disk, RAM, and CPU](/docs/databases-for-cassandra?topic=databases-for-cassandra-resources-scaling&interface=ui) | [Autoscaling](/docs/databases-for-cassandra?topic=databases-for-cassandra-autoscaling&interface=ui) |
+| {{site.data.keyword.databases-for-enterprisedb}} | [Scaling Disk, RAM, and CPU](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-resources-scaling&interface=ui) | [Autoscaling](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-autoscaling&interface=ui) |
+| {{site.data.keyword.databases-for-etcd}} | [Scaling Disk, RAM, and CPU](/docs/databases-for-etcd?topic=databases-for-etcd-resources-scaling&interface=ui) | [Autoscaling](/docs/databases-for-etcd?topic=databases-for-etcd-autoscaling&interface=ui) |
+| {{site.data.keyword.databases-for-mongodb}} | [Scaling Disk, RAM, and CPU](/docs/databases-for-mongodb?topic=databases-for-mongodb-resources-scaling&interface=ui) | [Autoscaling](/docs/databases-for-mongodb?topic=databases-for-mongodb-autoscaling&interface=ui) |
+| {{site.data.keyword.databases-for-postgresql}} | [Scaling Disk, RAM, and CPU](/docs/databases-for-postgresql?topic=databases-for-postgresql-resources-scaling&interface=ui) | [Autoscaling](/docs/databases-for-postgresql?topic=databases-for-postgresql-autoscaling&interface=ui) |
+| {{site.data.keyword.databases-for-redis}} | [Scaling Disk, RAM, and CPU](/docs/databases-for-redis?topic=databases-for-redis-resources-scaling&interface=ui) | [Autoscaling](/docs/databases-for-redis?topic=databases-for-redis-autoscaling&interface=ui) |
+| {{site.data.keyword.databases-for-mysql}} | [Scaling Disk, RAM, and CPU](/docs/databases-for-mysql?topic=databases-for-mysql-resources-scaling) | [Autoscaling](/docs/databases-for-redis?topic=databases-for-redis-autoscaling&interface=ui) |
+| {{site.data.keyword.messages-for-rabbitmql}} | [Scaling Disk, RAM, and CPU](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-resources-scaling&interface=ui) | [Autoscaling](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-autoscaling&interface=ui) |
+{: caption="Table 1. Scaling Resources" caption-side="bottom"}
 
 ## {{site.data.keyword.databases-for}} service metrics
 {: #icd-service-metrics}
 
-This tutorial uses {{site.data.keyword.databases-for-elasticsearch_full}}. To apply the same method to other {{site.data.keyword.databases-for}} services, find the metrics below:
+This tutorial uses {{site.data.keyword.databases-for-elasticsearch_full}}. However, the same process applys to other {{site.data.keyword.databases-for}} services:
 
 - [{{site.data.keyword.databases-for-cassandra_full}}](/docs/databases-for-cassandra?topic=databases-for-cassandra-monitoring#metrics-by-plan)
 - [{{site.data.keyword.databases-for-enterprisedb_full}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-monitoring#metrics-by-plan)
