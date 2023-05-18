@@ -4,7 +4,7 @@ copyright:
   years: 2021, 2023
 lastupdated: "2023-05-18"
 
-keywords: resource utilization, disk utilization, disk alert
+keywords: resource utilization, disk utilization, disk alert, notification channel, resource management, disk utilization, alert rule
 
 subcollection: cloud-databases
 
@@ -226,7 +226,7 @@ If you receive an alert that your disk utilization exceeds 90%, scale your disk 
 ## {{site.data.keyword.databases-for}} service metrics
 {: #icd-service-metrics}
 
-This tutorial uses {{site.data.keyword.databases-for-elasticsearch_full}}. However, the same process applys to other {{site.data.keyword.databases-for}} services:
+This tutorial uses {{site.data.keyword.databases-for-elasticsearch_full}}. However, the same process applies to other {{site.data.keyword.databases-for}} services:
 
 - [{{site.data.keyword.databases-for-cassandra_full}}](/docs/databases-for-cassandra?topic=databases-for-cassandra-monitoring#metrics-by-plan)
 - [{{site.data.keyword.databases-for-enterprisedb_full}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-monitoring#metrics-by-plan)
