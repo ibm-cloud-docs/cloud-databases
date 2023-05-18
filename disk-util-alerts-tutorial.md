@@ -24,7 +24,7 @@ completion-time: 30m
 ## Objectives
 {: #disk-util-alert-tutorial-objectives}
 
-Getting timely alerts about resource utilization is key to managing your database, avoiding problems, and mitigating downtime. If you know in advance that your database is running out of disk, take steps to scale those resources. Scaling your resources helps your services run smoothly.
+Getting timely alerts about resource utilization is key to managing your database, avoiding problems, and mitigating downtime. If you know in advance that your database is running out of disk, take steps to scale those resources.
 
 In this tutorial, you use the {{site.data.keyword.cloud_notm}} API and the [{{site.data.keyword.cloud_notm}} CLI](https://cloud.ibm.com/docs/cli?topic=cli-getting-started){: external} to set up an alert that emails you whenever the disk utilization of your database exceeds 90%. This specific example creates an alert on a {{site.data.keyword.databases-for-elasticsearch}} deployment, but it is applicable to all the databases in the IBM {{site.data.keyword.databases-for}} catalog.
 
@@ -204,7 +204,7 @@ You now receive an alert whenever your {{site.data.keyword.databases-for-elastic
 ## Next Steps
 {: #disk-alert-tut-next-steps}
 
-To modify your alert or find out more about Monitoring, see [Monitoring](/docs/monitoring?topic=monitoring-getting-started).
+To modify your alert or find out more about Monitoring, see [Getting started with{{site.data.keyword.mon_full_notm}}](/docs/monitoring?topic=monitoring-getting-started).
 
 ### Scaling Resources
 {: #check-alert-scale-resources}
@@ -220,7 +220,7 @@ If you receive an alert that your disk utilization exceeds 90%, scale your disk 
 | {{site.data.keyword.databases-for-postgresql}} | [Scaling Disk, RAM, and CPU](/docs/databases-for-postgresql?topic=databases-for-postgresql-resources-scaling&interface=ui) | [Autoscaling](/docs/databases-for-postgresql?topic=databases-for-postgresql-autoscaling&interface=ui) |
 | {{site.data.keyword.databases-for-redis}} | [Scaling Disk, RAM, and CPU](/docs/databases-for-redis?topic=databases-for-redis-resources-scaling&interface=ui) | [Autoscaling](/docs/databases-for-redis?topic=databases-for-redis-autoscaling&interface=ui) |
 | {{site.data.keyword.databases-for-mysql}} | [Scaling Disk, RAM, and CPU](/docs/databases-for-mysql?topic=databases-for-mysql-resources-scaling) | [Autoscaling](/docs/databases-for-redis?topic=databases-for-redis-autoscaling&interface=ui) |
-| {{site.data.keyword.messages-for-rabbitmql}} | [Scaling Disk, RAM, and CPU](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-resources-scaling&interface=ui) | [Autoscaling](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-autoscaling&interface=ui) |
+| {{site.data.keyword.messages-for-rabbitmq}} | [Scaling Disk, RAM, and CPU](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-resources-scaling&interface=ui) | [Autoscaling](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-autoscaling&interface=ui) |
 {: caption="Table 1. Scaling Resources" caption-side="bottom"}
 
 ## {{site.data.keyword.databases-for}} service metrics
