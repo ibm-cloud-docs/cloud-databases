@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-05-18"
+lastupdated: "2023-05-22"
 
 keywords: resource utilization, disk utilization, disk alert, notification channel, resource management, disk utilization, alert rule
 
@@ -187,6 +187,9 @@ curl --request POST \
 }'
 ```
 {: pre}
+
+This command takes the max disk utilization of any member available, regardless of the number of members.
+{: note}
 
 ## Check that your alert is created
 {: #check-alert-creation}
