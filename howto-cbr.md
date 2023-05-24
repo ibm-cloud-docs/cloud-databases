@@ -2,7 +2,7 @@
 
 copyright:
   years:  2022, 2023
-lastupdated: "2023-04-25"
+lastupdated: "2023-05-24"
 
 keywords: restricting access to cloud databases, restricting access to ICD, DataStax cbr, Elasticsearch cbr, EnterpriseDB cbr, etcd cbr, mongodb cbr, postgresql cbr, redis cbr, mysql cbr, rabbitmq cbr
 
@@ -77,7 +77,7 @@ A network zone represents an allowlist of IP addresses where an access request i
 {: #network-zone-cli}
 {: cli}
 
-To create network zones in the CLI, [install the context-based restrictions CLI plug-in](/docs/account?topic=cli-cbr-plugin#install-cbr-plugin). You can use the `cbr-zone-create` command to add resources to network zones. For more information, see the [context-based restrictions CLI reference](https://test.cloud.ibm.com/docs/account?topic=cli-cbr-plugin#cbr-zones-cli).
+To create network zones in the CLI, [install the context-based restrictions CLI plug-in](/docs/cli?topic=cli-cbr-plugin). Use the `cbr-zone-create` command to add resources to network zones. For more information, see the [context-based restrictions CLI reference](/docs/account?topic=account-cbr-plugin#cbr-zones-cli).
 
 Create a zone by using a command like:
 
@@ -149,7 +149,7 @@ Rules restrict access to specific cloud resources based on resource attributes a
 {: #rules-cli}
 {: cli}
 
-To create rules in the CLI, [install the context-based restrictions CLI plug-in](/docs/account?topic=cli-cbr-plugin#install-cbr-plugin).
+To create rules in the CLI, [install the context-based restrictions CLI plug-in](/docs/account?topic=account-cbr-plugin).
 
 To create a rule in the CLI, you need the appropriate {{site.data.keyword.databases-for}} `service_name`:
 * `databases-for-etcd`
@@ -168,6 +168,9 @@ Create a rule by using a command like:
 ibmcloud cbr rule-create --enforcement-mode enabled --context-attributes "networkZoneId=<ZONE-ID>" --resource-group-id <RESOURCE_GROUP_ID> --service-name <SERVICE-NAME> --service-instance <SERVICE-INSTANCE> --api-types crn:v1:bluemix:public:context-based-restrictions::::api-type:data-plane --description <DESCRIPTION>
 ```
 {: .pre}
+
+{{site.data.keyword.databases-for}} does not currently support **Control plane** as an option.
+{: .note}
 
 *Report-only* is not available for {{site.data.keyword.databases-for}}.
 {: .important}
@@ -193,6 +196,9 @@ Delete a rule by using a command like:
 ibmcloud cbr rule-delete <RULE-ID>
 ```
 {: .pre}
+
+Use `ibmcloud cbr <command> — help` for a full list of options and parameters. For example, `ibmcloud cbr rule-create — help` outputs parameters for rule creation.
+{: .tip}
 
 ### Creating rules in Terraform
 {: #rules-tf}
