@@ -53,13 +53,52 @@ Assess your workload's requirements and consider the tradeoffs between performan
 {: #iso-compute-provisioning}
 {: ui}
 
-### {{site.data.keyword.databases-for}} Isolated Compute Provisioning through the API
-{: #iso-compute-provisioning}
+### {{site.data.keyword.databases-for}} Isolated Compute using the API
+{: #iso-compute-api}
 {: api}
+
+#### Provisioning using the API
+{: #iso-compute-provisioning-api}
+{: api}
+
+To provision a {{site.data.keyword.databases-for}} Isolated Compute instance, use the {{site.data.keyword.databases-for}} API [Capability endpoint](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#capability){: external}.
+
+Use a command like:
+
+```sh
+curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H "Authorization: Bearer <IAM token>" -H 'Content-Type: application/json' -d '{
+    "type": "postgresql",
+    "version": "14",
+    "platform": "classic",
+    "location": "us-south",
+    "parameters": {"members_host_flavor": "b3c.4x16.encrypted"}
+  }'
+```
+{: pre}
+
+#### Sacling using the API
+{: #iso-compute-scaling-api}
+{: api}
+
+To scale a {{site.data.keyword.databases-for}} Isolated Compute instance, use the {{site.data.keyword.databases-for}} API [Scaling endpoint](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#setdeploymentscalinggroup){: external}.
+
+Use a command like:
+
+```sh
+curl -X PATCH https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}/groups/{group_id} 
+-H 'Authorization: Bearer <>' 
+-H 'Content-Type: application/json' 
+-d '{"group": 
+      {"host_flavor": "b3c.4x16.encrypted"}
+    }' \
+```
+{: pre}
 
 ### {{site.data.keyword.databases-for}} Isolated Compute Provisioning through the CLI
 {: #iso-compute-provisioning}
 {: cli}
+
+
 
 ### {{site.data.keyword.databases-for}} Isolated Compute Provisioning through Terraform
 {: #iso-compute-provisioning}
