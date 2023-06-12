@@ -64,4 +64,3 @@ Assess your workload's requirements and consider the tradeoffs between performan
 ### {{site.data.keyword.databases-for}} Isolated Compute Provisioning through Terraform
 {: #iso-compute-provisioning}
 {: terraform}
-
