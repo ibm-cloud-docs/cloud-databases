@@ -76,7 +76,7 @@ curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H 
 ```
 {: pre}
 
-#### Sacling using the API
+#### Scaling using the API
 {: #iso-compute-scaling-api}
 {: api}
 
