@@ -38,17 +38,20 @@ Provision a deployment by going to the service's catalog page, or by specifying 
 
 When you create the deployment from the catalog, specify the following parameters.
 
-1. **The service name** - The name can be any string and is the name that is used on the web and in the CLI to identify the new deployment.
-2. **The region** - The deployment's region.
-3. **The database version** - The major version of the database to be created within the deployment. The latest minor version is used automatically. 
+1. [Required]{: tag-red} **The service name** - The name can be any string and is the name that is used on the web and in the CLI to identify the new deployment.
+2. [Required]{: tag-red} **Location** - The deployment's public cloud region or Satellite location.
 
-You can optionally set:
+   ![Service Details](images/Service_details.svg){: caption="Figure 1. Service Details" caption-side="bottom"}
 
-1. **The resource group** - If you are organizing your services into [resource groups](/docs/account?topic=account-account_setup), specify the resource group in this field. Otherwise, you can leave it at default.
-2. **Key Protect instance and disk encryption key** - If you use Key Protect, an instance and key can be selected to encrypt the deployment's disk. If you do not use your own key, the deployment automatically creates and manages its own disk encryption key.
-3. **Initial resource allocation** - Specify initial memory and disk sizes for your databases. The minimum sizes of memory and disk are selected by default. 
-4. **CPU allocation** - Choose dedicated compute resources for your deployment. With dedicated cores, your resource group is given a single-tenant host with a minimum reserve of cpu shares. Your deployments are then allocated the number of CPUs you specify. If not specified in the provisioning request by using the API or CLI, the default minimum is used.
-5. **Endpoints** - Configure the [Service Endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints) on your deployment. The default is that connections to your deployment can be made from the public network.
+3. [Required]{: tag-red} **Database Version** - The deployment version of your database. To ensure optimal performance, run the preferred version. The latest minor version is used automatically. 
+
+   ![Database Version](images/Database_version.svg){: caption="Figure 1. Database Version" caption-side="bottom"}
+
+- [Optional]{: tag-purple} **The resource group** - If you are organizing your services into [resource groups](/docs/account?topic=account-account_setup), specify the resource group in this field. Otherwise, you can leave it at default.
+- [Optional]{: tag-purple} **Key Protect instance and disk encryption key** - If you use Key Protect, an instance and key can be selected to encrypt the deployment's disk. If you do not use your own key, the deployment automatically creates and manages its own disk encryption key.
+- [Optional]{: tag-purple} **Initial resource allocation** - Specify initial memory and disk sizes for your databases. The minimum sizes of memory and disk are selected by default. 
+- [Optional]{: tag-purple} **CPU allocation** - Choose dedicated compute resources for your deployment. With dedicated cores, your resource group is given a single-tenant host with a minimum reserve of cpu shares. Your deployments are then allocated the number of CPUs you specify. If not specified in the provisioning request by using the API or CLI, the default minimum is used.
+- [Optional]{: tag-purple} **Endpoints** - Configure the [Service Endpoints](/docs/cloud-databases?topic=cloud-databases-service-endpoints) on your deployment. The default is that connections to your deployment can be made from the public network.
 
 After you select the appropriate settings, click **Create** to start the provisioning process. 
 
