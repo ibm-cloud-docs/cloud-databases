@@ -38,15 +38,9 @@ Provision a deployment by going to the service's catalog page, or by specifying 
 
 When you create the deployment from the catalog, specify the following parameters.
 
-1. [Required]{: tag-red} **The service name** - The name can be any string and is the name that is used on the web and in the CLI to identify the new deployment.
-2. [Required]{: tag-red} **Location** - The deployment's public cloud region or Satellite location.
-
-   ![Service Details](images/Service_details.svg){: caption="Figure 1. Service Details" caption-side="bottom"}
-
-3. [Required]{: tag-red} **Database Version** - The deployment version of your database. To ensure optimal performance, run the preferred version. The latest minor version is used automatically. 
-
-   ![Database Version](images/Database_version.svg){: caption="Figure 1. Database Version" caption-side="bottom"}
-
+- [Required]{: tag-red} **The service name** - The name can be any string and is the name that is used on the web and in the CLI to identify the new deployment.
+- [Required]{: tag-red} **Location** - The deployment's public cloud region or Satellite location.
+- [Required]{: tag-red} **Database Version** - The deployment version of your database. To ensure optimal performance, run the preferred version. The latest minor version is used automatically. 
 - [Optional]{: tag-purple} **The resource group** - If you are organizing your services into [resource groups](/docs/account?topic=account-account_setup), specify the resource group in this field. Otherwise, you can leave it at default.
 - [Optional]{: tag-purple} **Key Protect instance and disk encryption key** - If you use Key Protect, an instance and key can be selected to encrypt the deployment's disk. If you do not use your own key, the deployment automatically creates and manages its own disk encryption key.
 - [Optional]{: tag-purple} **Initial resource allocation** - Specify initial memory and disk sizes for your databases. The minimum sizes of memory and disk are selected by default. 
