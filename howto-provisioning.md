@@ -154,8 +154,7 @@ The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are al
 If you use Terraform to manage your infrastructure, the [{{site.data.keyword.cloud_notm}} provider for Terraform](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started) supports provisioning {{site.data.keyword.databases-for}} deployments. Find a sample Terraform configuration file at [{{site.data.keyword.databases-for}} Resources](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: .external}.
 
 ## List of Additional Parameters
-{: #provisioning-parameters}
-{: cli}
+{: #provisioning-parameters-api}
 {: api}
 
 * `backup_id`- A CRN of a backup resource to restore from. The backup must be created by a database deployment with the same service ID. The backup is loaded after provisioning and the new deployment starts up that uses that data. A backup CRN is in the format `crn:v1:<...>:backup:<uuid>`. If omitted, the database is provisioned empty.
