@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-04-13"
+lastupdated: "2023-06-13"
 
 keywords: provision cloud databases, terraform, provisioning parameters, cli, resource controller api
 
@@ -56,32 +56,37 @@ After you select the appropriate settings, click **Create** to start the provisi
 {: #use-cli}
 {: cli}
 
-The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your console or CLI. For more information, see [Download and install {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli).
+Use the [{{site.data.keyword.cloud_notm}} CLI tool](https://www.ibm.com/cloud/cli){: external} to communicate with {{site.data.keyword.cloud_notm}} from your CLI.
 
-To create a {{site.data.keyword.databases-for}} deployment, use the CLI to request a service instance with the service ID of the database (or messaging queue) you want to provision.
+To create a {{site.data.keyword.databases-for}} deployment, use the {{site.data.keyword.cloud_notm}} CLI tool to request a service instance with the service ID of the {{site.data.keyword.databases-for}} resource you want to provision.
 
-The command template is
+The command looks like:
 
 ```sh
 ibmcloud resource service-instance-create <service-name> <service-id> <service-plan-id> <region> --service-endpoints <SERVICE_ENDPOINTS_TYPE>
 ```
 {: .pre}
 
-More information about this command, in general, is available in the [CLI reference for resource groups](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_create).
+For more information, see [Working with resources and resource groups](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_create){: external}.
 
-When the command is run, provisioning the database deployment begins. The database takes some time to deploy. You can check on its progress on your {{site.data.keyword.cloud_notm}} Dashboard. You can also run:
+
+To check provisioning status, use the following command that reports the current state of the service instance.
 
 ```sh
 ibmcloud resource service-instance <service-name>
 ```
 {: .pre}
 
-This command reports the current state of the service instance.
+For more information, see [Working with resources and resource groups](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instances){: external}.
 
 ### More flags and parameters
 {: #flags-params}
+{: cli}
 
-The `--service-endpoints` flag enables connections to your deployments from the public internet and over the IBM Cloud Private network, by using [Service Endpoints](/docs/services/cloud-databases?topic=cloud-databases-service-endpoints). By default, connections to your deployment can be made from the public network. Possible values are 'public', 'private', 'public-and-private'. If the flag is omitted, the default is public endpoints.
+The `--service-endpoints` flag enables connections to your deployments from the public internet and over the {{site.data.keyword.cloud_notm}} Private network using [Service Endpoints](/docs/services/cloud-databases?topic=cloud-databases-service-endpoints). By default, connections to your deployment can be made from the public network. Possible values are `public`, `private`, `public-and-private`. If the flag is omitted, the default is public endpoints.
+
+The command looks like:
+
 ```sh
 ibmcloud resource service-instance-create <service-name> --service-endpoints <endpoint-type>
 ```
@@ -89,8 +94,7 @@ ibmcloud resource service-instance-create <service-name> --service-endpoints <en
 
 The `service-instance-create` command supports a `-p` flag, which allows JSON-formatted parameters to be passed to the provisioning process. Some parameter values are Cloud Resource Names (CRNs), which uniquely identify a resource in the cloud. All parameter names and values are passed as strings.
 
-For example, if a database is being provisioned from a particular backup and the new database deployment needs a total of 9 GB of memory across three members, then the command to provision 3 GB per member looks like
-
+For example, if a database is being provisioned from a particular backup and the new database deployment needs a total of 9 GB of memory across three members, then the command to provision 3 GB per member looks like:
 ```sh
 ibmcloud resource service-instance-create example-database <service-name> standard us-south \
 -p \ '{
@@ -104,15 +108,32 @@ ibmcloud resource service-instance-create example-database <service-name> standa
 {: #provision-controller-api}
 {: api}
 
-You can provision new deployments by using the Resource Controller API. However, to use the Resource Controller API, you need some additional preparation.
+Provision new deployments with the [Resource Controller API](https://cloud.ibm.com/apidocs/resource-controller/resource-controller){: external}. To use the Resource Controller API, you need some additional preparation.
 
-1. [Obtain an IAM token from your API token](https://{DomainName}/apidocs/resource-controller#authentication).
-2. You need to know the ID of the resource group that you would like to deploy to. This information is available through the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_groups). You can find a list of resource groups with `ibmcloud resource groups` and the ID of a resource group with `ibmcloud resource group`. 
-3. You need to know the region to which you would like to deploy.
+1. [Obtain an IAM token from your API token](https://cloud.ibm.com/apidocs/resource-controller/resource-controller#authentication){: external}.
+1. You need to know the ID of the resource group that you would like to deploy to. This information is available through the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_groups).
 
-Once you have all the information, the create request is a `POST` to the `https://resource-controller.cloud.ibm.com/v2/resource_instances` endpoint.
+   Use a command like: 
+   ```sh
+   ibmcloud resource groups
+   ```
+   {: pre}
 
-```curl
+1. You need to know the region to which you would like to deploy.
+
+   To list all of the regions that deployments can be provisioned into from the current region, use the {{site.data.keyword.databases-for}} CLI plug-in. 
+   
+   The command looks like: 
+
+   ```sh
+   ibmcloud cdb regions --json
+   ```
+   {: pre}
+
+
+Once you have all the information, [Create (provision) a new resource instance](https://cloud.ibm.com/apidocs/resource-controller/resource-controller#create-resource-instance){: external} with the {{site.data.keyword.cloud_notm}} Resource Controller.
+
+```sh
 curl -X POST \
   https://resource-controller.cloud.ibm.com/v2/resource_instances \
   -H 'Authorization: Bearer <>' \
@@ -126,18 +147,19 @@ curl -X POST \
 ```
 {: .pre}
 
-The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are all required. If needed, you can send [more parameters](#list-of-additional-parameters) in the request body.
-
-More information on the Resource Controller API is found in its [API Reference](https://{DomainName}/apidocs/resource-controller#create-provision-a-new-resource-instance).
+The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are all required.
+{: required}
 
 ## Provisioning with Terraform
 {: #provisioning-terraform}
 {: terraform}
 
-If you use Terraform to manage your infrastructure, the [{{site.data.keyword.cloud_notm}} provider for Terraform](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started) supports provisioning {{site.data.keyword.databases-for}} deployments. A sample Terraform configuration file is on the [Cloud Databases resources](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: .external} documentation page.
+If you use Terraform to manage your infrastructure, the [{{site.data.keyword.cloud_notm}} provider for Terraform](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started) supports provisioning {{site.data.keyword.databases-for}} deployments. Find a sample Terraform configuration file at [{{site.data.keyword.databases-for}} Resources](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: .external}.
 
 ## List of Additional Parameters
 {: #provisioning-parameters}
+{: cli}
+{: api}
 
 * `backup_id`- A CRN of a backup resource to restore from. The backup must be created by a database deployment with the same service ID. The backup is loaded after provisioning and the new deployment starts up that uses that data. A backup CRN is in the format `crn:v1:<...>:backup:<uuid>`. If omitted, the database is provisioned empty.
 * `version` - The version of the database to be provisioned. If omitted, the database is created with the most recent major and minor version.
