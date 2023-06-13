@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-06-07"
+lastupdated: "2023-06-13"
 
 subcollection: cloud-databases
 
@@ -73,6 +73,19 @@ curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H 
     "location": "us-south",
     "parameters": {"members_host_flavor": "b3c.4x16.encrypted"}
   }'
+```
+{: pre}
+
+#### Retrieve Isolated Compute Resources the API
+{: #iso-compute-retrieve-api}
+{: api}
+
+To retrieve the Isolated Compute resources available for a {{site.data.keyword.databases-for}} Isolated Compute instance, use the {{site.data.keyword.databases-for}} API [Scaling endpoint](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#listdeploymentscalinggroups){: external}.
+
+Use a command like:
+
+```sh
+curl -X GET https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}/groups -H 'Authorization: Bearer <>' \
 ```
 {: pre}
 
