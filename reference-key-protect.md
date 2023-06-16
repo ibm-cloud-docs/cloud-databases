@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2019, 2022
-lastupdated: "2022-12-09"
+  years: 2019, 2023
+lastupdated: "2023-06-16"
 
 subcollection: cloud-databases
 
@@ -9,14 +9,6 @@ keywords: bring your own key, byok, cryptoshredding, key rotation, key rotation 
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: .external target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
 {{site.data.keyword.attribute-definition-list}}
 
 # Key Protect Integration
@@ -34,8 +26,9 @@ To get started, you need [{{site.data.keyword.keymanagementserviceshort}}](https
 
 Go to your instance of {{site.data.keyword.keymanagementserviceshort}} and [generate or enter a key](/docs/key-protect?topic=key-protect-getting-started-tutorial).
 
-## Granting service authorization
+## Granting service authorization in the UI
 {: #granting-service-auth}
+{: ui}
 
 Authorize {{site.data.keyword.keymanagementserviceshort}} for use with {{site.data.keyword.databases-for}} deployments:
 
