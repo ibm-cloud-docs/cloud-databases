@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-06-13"
+lastupdated: "2023-06-21"
 
 keywords: provision cloud databases, terraform, provisioning parameters, cli, resource controller api
 
@@ -31,6 +31,9 @@ Provision a deployment by going to the service's catalog page, or by specifying 
 | [{{site.data.keyword.databases-for-mysql_full}}](https://cloud.ibm.com/catalog/services/databases-for-mysql) | `databases-for-mysql` |
 | [{{site.data.keyword.messages-for-rabbitmq_full}}](https://cloud.ibm.com/catalog/services/messages-for-rabbitmq) | `messages-for-rabbitmq` |
 {: caption="Table 1. {{site.data.keyword.databases-for}} deployments" caption-side="bottom"}
+
+{{site.data.keyword.databases-for-cassandra_full}} is deprecated and no longer supported as of 30 June 2024. For more information, see the [deprecation details](/docs/databases-for-cassandra?topic=databases-for-cassandra-deprecation#dep_details).
+{: note}
 
 ## Using the catalog
 {: #catalog}
