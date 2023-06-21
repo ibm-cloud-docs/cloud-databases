@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018, 2023
-lastupdated: "2023-05-12"
+lastupdated: "2023-06-21"
 
 subcollection: cloud-databases
 
@@ -59,8 +59,11 @@ Failure to act can result in compatibility issues with your apps when IBM upgrad
 | PostgreSQL | Major version is defined by the first number in the version number. | v11, TBD | Backup taken and access removed |  
 | Redis | Major versions are the first number in a `major.minor.patch` version number. | v5.0, TBD | Automatically upgraded in place to next Major version only for Redis 4 to Redis 5 |  
 | RabbitMQ | Major versions are the first two numbers in a `major.x.patch` version number. | v3.11, TBD | Backup taken and access removed |  
-| MySQL** | Major versions are the first two numbers in a `major.x.patch` version number. | v5.7, October 2023 | Backup taken and access removed |  
+| MySQL** | Major versions are the first two numbers in a `major.x.patch` version number. | v5.7, TBC | Backup taken and access removed |  
 {: caption="Table 1. Major versions for {{site.data.keyword.databases-for}}" caption-side="top"}
+
+{{site.data.keyword.databases-for-cassandra_full}} is deprecated and no longer supported as of 30 June 2024. For more information, see the [deprecation details](/docs/databases-for-cassandra?topic=databases-for-cassandra-deprecation#dep_details).
+{: deprecated}
 
 ***For more information, see [MySQL 8 GA](/docs/databases-for-mysql?topic=databases-for-mysql-mysql8-ga).*
 
