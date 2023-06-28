@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-06-14"
+lastupdated: "2023-06-28"
 
 subcollection: cloud-databases
 
@@ -106,6 +106,9 @@ curl -X PATCH https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{i
     }' \
 ```
 {: pre}
+
+Autoscaling is not supported on {{site.data.keyword.databases-for}} Isolated Compute. If you have provisioned an Isolated instance or migrated from a deployment with autoscaling, keep an eye on your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/databases-for-mongodb?topic=databases-for-mongodb-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
+{: note}
 
 ### {{site.data.keyword.databases-for}} Isolated Compute Provisioning through the CLI
 {: #iso-compute-provisioning}
