@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2023
-lastupdated: "2023-01-23"
+lastupdated: "2023-07-07"
 
 subcollection: cloud-databases
 
@@ -9,13 +9,7 @@ keywords: service endpoints, private endpoints, private networking, vpe, virtual
 
 ---
 
-{:external: .external target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:note: .note}
-{:tip: .tip}
+{{site.data.keyword.attribute-definition-list}}
 
 # Service Endpoints Integration
 {: #service-endpoints}
@@ -46,9 +40,9 @@ For more information on accessing services using service endpoints, see [Secure 
 ## Enabling Service Endpoints
 {: #-enabling-service-endpoints}
 
-If you want to use connections over the public internet, you do not have to enable Service Endpoints on your {{site.data.keyword.cloud_notm}} account. If you want to enable private networking on your deployments, you need to follow the instructions in the Service Endpoint documentation under [Enabling VRF and service endpoints](/docs/account?topic=account-vrf-service-endpoint).
+To use connections over the public internet, you do not have to enable Service Endpoints on your {{site.data.keyword.cloud_notm}} account. If you want to enable private networking on your deployments, follow the instructions in the Service Endpoint documentation under [Enabling VRF and service endpoints](/docs/account?topic=account-vrf-service-endpoint).
 
-Currently, enabling Service Endpoints on your account is a manual step that is handled by support ticket. After you complete the [request](/docs/account?topic=account-vrf-service-endpoint#service-endpoint), you can check on the status of the ticket by going to your [Support](https://cloud.ibm.com/unifiedsupport/cases/manage) page on {{site.data.keyword.cloud_notm}}
+Currently, enabling virtual routing and forwarding (VRF) on your account in classic is a manual step that is handled by support ticket. VRF is automatically enabled for VPC. After you complete the [request](/docs/account?topic=account-vrf-service-endpoint#service-endpoint), check on the status of the ticket by going to your [Support](https://cloud.ibm.com/unifiedsupport/cases/manage) page on {{site.data.keyword.cloud_notm}}.
 
 ## Provisioning with Service Endpoints
 {: #provisioning-service-endpoints}
@@ -78,10 +72,12 @@ After you have a deployment, it is possible to change your public and private se
 
 In the *Overview* tab of your deployment's dashboard, go to the *Endpoints* section. You can toggle which types of connections are available to your deployment.
 
-You can use the [`ibmcloud resource service-instance-update`](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_update) command in the CLI, specifying the endpoint with the `--service-endpoints` flag.
+Use the [`ibmcloud resource service-instance-update`](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_update) command in the CLI, specifying the endpoint with the `--service-endpoints` flag.
+
 ```sh
 ibmcloud resource service-instance-update <service-name> --service-endpoints <endpoint-type>
 ```
+{: pre}
 
 Or you can use the [Resource Controller API](https://cloud.ibm.com/apidocs/resource-controller), with a `PATCH` request to the [/resource_instances/{id}](https://cloud.ibm.com/apidocs/resource-controller#update-a-resource-instance) endpoint.
 
@@ -90,18 +86,18 @@ Changing the type of endpoints available on your deployment does not cause any d
 ## Credentials for Private Endpoints
 {: #private-endpoints-credentials}
 
-You can use either public or private connection strings with any set of credentials you make on your deployment. By default, the connection strings for a set of credentials are filled with strings for connecting over a public endpoint. If you are using private endpoints, you can specify connection strings that contain the private endpoint be generated instead. 
+Use either public or private connection strings with any set of credentials that you make on your deployment. By default, the connection strings for a set of credentials are filled with strings for connecting over a public endpoint. If you are using private endpoints, you can specify connection strings that contain the private endpoint be generated instead. 
 
 When you create credentials in *Service Credentials*, use either the `{ "service-endpoints": "public" }` or the `{ "service-endpoints": "private" }` parameter to specify which endpoint gets filled into the connection strings. 
 
 In the API, you can use the [`/deployments/{id}/users/{userid}/connections/{endpoint_type}`](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026) to retrieve connection strings for both public or private endpoints.
 
-If you only have private endpoints on your deployments, then all new credentials have private endpoints in the connection strings.
+If you have only private endpoints on your deployments, then all new credentials have private endpoints in the connection strings.
 
 ## Connecting Through Private Endpoints
 {: #private-endpoint-connections}
 
-{{site.data.keyword.cloud}} Databases offer both private and public cloud service endpoints. If you want to run your application or access the end point from a browser that is not on the private network, you must take these additional steps: 
+{{site.data.keyword.databases-for}} offers both private and public cloud service endpoints. To run your application or access the end point from a browser that is not on the private network, take these additional steps: 
   
 * Ensure your Cloud IaaS or SL account is [enabled for private endpoints](https://cloud.ibm.com/docs/account?topic=account-service-endpoints-overview).
 * Create a virtual machine (VSI) that runs Linux
@@ -114,5 +110,5 @@ If you only have private endpoints on your deployments, then all new credentials
 ## Using Virtual Private Endpoints 
 {: #Virtual-Private-Endpoints}
 
-Review the {{site.data.keyword.cloud}} Databases [documentation on Virtual Private Endpoints (VPEs) here](/docs/cloud-databases?topic=cloud-databases-vpes). 
+For more information, see [Virtual Private Endpoints](/docs/cloud-databases?topic=cloud-databases-vpes).
 
