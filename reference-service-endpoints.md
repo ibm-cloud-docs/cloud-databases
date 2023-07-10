@@ -55,7 +55,7 @@ To configure your deployment's endpoints on provision, use the *Endpoints* field
 A MongoDB deployment cannot support both [public and private endpoints simultaneously](/docs/databases-for-mongodb?topic=databases-for-mongodb-service-endpoints&interface=ui#provisioning-service-endpoints). *This cannot be changed after provisioning*.
 {: .important}
 
-### Provisioning with Service Endpoints through the CLI
+## Provisioning with Service Endpoints through the CLI
 {: #provisioning-endpoints-cli}
 {: cli}
 
@@ -69,7 +69,7 @@ ibmcloud resource service-instance-create <service-name> --service-endpoints <en
 {{site.data.keyword.databases-for}} deployments except {{site.data.keyword.databases-for-mongodb}} allow for both public and private networking to be enabled at the same time.
 {: .tip}
 
-### Provisioning with Service Endpoints through the API
+## Provisioning with Service Endpoints through the API
 {: #provisioning-endpoints-api}
 {: api}
 
