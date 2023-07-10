@@ -57,6 +57,7 @@ A MongoDB deployment cannot support both [public and private endpoints simultane
 
 ### Provisioning with Service Endpoints through the CLI
 {: #provisioning-endpoints-cli}
+{: cli}
 
 Service Endpoints are enabled through an optional parameter when you provision through the CLI. Provisioning is handled by the Resource Controller. Pass the `service-endpoints` parameter one of the options `public`, `private`, or `public-and-private`.
 
@@ -70,6 +71,7 @@ ibmcloud resource service-instance-create <service-name> --service-endpoints <en
 
 ### Provisioning with Service Endpoints through the API
 {: #provisioning-endpoints-api}
+{: api}
 
 Service Endpoints are enabled through an optional parameter when you provision through the API. Provisioning is handled by the Resource Controller. Pass the `service-endpoints` parameter one of the options `public`, `private`, or `public-and-private`.
 
