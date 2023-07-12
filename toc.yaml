@@ -54,8 +54,8 @@ toc:
           - reference-logging.md
   - navgroup:
       id: reference
-      - db-version-policy.md
       topics:
+      - db-version-policy.md
       - reference-responsibilities.md
       - reference-iam.md
       - topicgroup: 
