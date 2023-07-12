@@ -55,8 +55,6 @@ toc:
           - reference-logging.md
   - navgroup: 
       id: reference
-      topics: 
-      - /databases-cli-plugin/databases-cli-plugin-cdb-reference
       - link:
           label: Cloud Databases API
           href: https://cloud.ibm.com/apidocs/cloud-databases-api
