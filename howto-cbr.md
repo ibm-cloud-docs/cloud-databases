@@ -113,7 +113,7 @@ Rules restrict access to specific cloud resources based on resource attributes a
 
 {{site.data.keyword.databases-for}} does not support IPv6 addresses. If an IPv6 address is included, it will be ignored.
 
-__Full Closure of Access to Non-Allowlisted Endpoints**: To provide a more robust security framework, we have implemented a significant change in access control for public and private endpoints. Going forward, access to both public and private endpoints that are not explicitly allowlisted will be fully closed. This restriction ensures only authorized access to your endpoints, minimizing the risk of unauthorized access.
+Full Closure of Access to Non-Allowlisted Endpoints: To provide a more robust security framework, we have implemented a significant change in access control for public and private endpoints. Going forward, access to both public and private endpoints that are not explicitly allowlisted will be fully closed. This restriction ensures only authorized access to your endpoints, minimizing the risk of unauthorized access.
 {: important}
 
 ### Creating rules in the UI
