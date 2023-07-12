@@ -53,8 +53,9 @@ toc:
           topics: 
           - reference-activity-tracker.md
           - reference-logging.md
-  - navgroup: 
+  - navgroup:
       id: reference
+      topics:
       - db-version-policy.md
       - reference-responsibilities.md
       - reference-iam.md
