@@ -2,7 +2,7 @@
 
 copyright:
   years:  2022, 2023
-lastupdated: "2023-05-24"
+lastupdated: "2023-07-12"
 
 keywords: restricting access to cloud databases, restricting access to ICD, DataStax cbr, Elasticsearch cbr, EnterpriseDB cbr, etcd cbr, mongodb cbr, postgresql cbr, redis cbr, mysql cbr, rabbitmq cbr
 
@@ -22,7 +22,7 @@ Context-based restrictions give account owners and administrators the ability to
 
 These restrictions work with traditional IAM policies, which are based on identity, to provide an extra layer of protection. Unlike IAM policies, context-based restrictions don't assign access. Context-based restrictions check that an access request comes from an allowed context that you configure. Since both IAM access and context-based restrictions enforce access, context-based restrictions offer protection even in the face of compromised or mismanaged credentials. For more information, see [What are context-based restrictions](/docs/account?topic=account-context-restrictions-whatis).
 
-A user must have the Administrator role on the {{site.data.keyword.databases-for}} service to create, update, or delete rules. A user must also have either the Editor or Administrator role on the context-based restrictions service to create, update, or delete network zones. A user with the Viewer role on the context-based restrictions service can add network zones to a rule. 
+A user must have the Administrator role on the {{site.data.keyword.databases-for}} service to create, update, or delete rules. A user must also have either the Editor or Administrator role on the context-based restrictions service to create, update, or delete network zones. A user with the Viewer role on the context-based restrictions service can add network zones to a rule.
 {: note}
 
 Any {{site.data.keyword.cloudaccesstraillong_notm}} or audit log events generated come from the context-based restrictions service, not {{site.data.keyword.databases-for}}. {{site.data.keyword.databases-for}} supports audit events only for customer interactions with context-based restrictions-protected platform endpoint calls. {{site.data.keyword.databases-for}} does not support audit events when you enable context-based restrictions rules on the control plane API for your instances. For more information, see [Monitoring context-based restrictions](/docs/account?topic=account-cbr-monitor).
@@ -111,8 +111,10 @@ ibmcloud cbr zone-delete <ZONE-ID>
 
 Rules restrict access to specific cloud resources based on resource attributes and contexts. A created rule can accept up to 2,000 IP/CIDR values for private endpoints and up to 2,000 IP/CIDR values for public endpoints. This limit is specfic to {{site.data.keyword.databases-for}}. Other {{site.data.keyword.cloud}} service limits may vary.
 
-{{site.data.keyword.databases-for}} does not support IPv6 addresses. If an IPv6 address is included, it will be ignored. 
+{{site.data.keyword.databases-for}} does not support IPv6 addresses. If an IPv6 address is included, it will be ignored.
 
+Full Closure of Access to Non-Allowlisted Endpoints: To provide a more robust security framework, we have implemented a significant change in access control for public and private endpoints. Going forward, access to both public and private endpoints that are not explicitly allowlisted will be fully closed. This restriction ensures only authorized access to your endpoints, minimizing the risk of unauthorized access.
+{: important}
 
 ### Creating rules in the UI
 {: #rules-ui}
