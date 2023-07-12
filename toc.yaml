@@ -55,9 +55,6 @@ toc:
           - reference-logging.md
   - navgroup: 
       id: reference
-      - link:
-          label: Cloud Databases API
-          href: https://cloud.ibm.com/apidocs/cloud-databases-api
       - db-version-policy.md
       - reference-responsibilities.md
       - reference-iam.md
