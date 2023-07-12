@@ -2,7 +2,7 @@
 
 copyright:
   years:  2022, 2023
-lastupdated: "2023-05-24"
+lastupdated: "2023-07-12"
 
 keywords: restricting access to cloud databases, restricting access to ICD, DataStax cbr, Elasticsearch cbr, EnterpriseDB cbr, etcd cbr, mongodb cbr, postgresql cbr, redis cbr, mysql cbr, rabbitmq cbr
 
@@ -111,8 +111,10 @@ ibmcloud cbr zone-delete <ZONE-ID>
 
 Rules restrict access to specific cloud resources based on resource attributes and contexts. A created rule can accept up to 2,000 IP/CIDR values for private endpoints and up to 2,000 IP/CIDR values for public endpoints. This limit is specfic to {{site.data.keyword.databases-for}}. Other {{site.data.keyword.cloud}} service limits may vary.
 
-{{site.data.keyword.databases-for}} does not support IPv6 addresses. If an IPv6 address is included, it will be ignored. 
+{{site.data.keyword.databases-for}} does not support IPv6 addresses. If an IPv6 address is included, it will be ignored.
 
+__Full Closure of Access to Non-Allowlisted Endpoints**: To provide a more robust security framework, we have implemented a significant change in access control for public and private endpoints. Going forward, access to both public and private endpoints that are not explicitly allowlisted will be fully closed. This restriction ensures only authorized access to your endpoints, minimizing the risk of unauthorized access.
+{: important}
 
 ### Creating rules in the UI
 {: #rules-ui}
