@@ -53,6 +53,7 @@ toc:
           topics: 
           - reference-activity-tracker.md
           - reference-logging.md
+          - reference-sysdig.md
   - navgroup:
       id: reference
       topics:
