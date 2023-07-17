@@ -1,9 +1,9 @@
 ---
 copyright:
   years: 2023
-lastupdated: "2023-07-13"
+lastupdated: "2023-07-17"
 
-subcollection: cloud-databases
+subcollection: cloud-databases, database member, CPU seconds, platform metrics
 
 keywords: sysdig
 
@@ -36,4 +36,4 @@ To enable Sysdig Monitor on {{site.data.keyword.mon_full}}, follow these steps:
 ### CPU used per member (data only available with dedicated cores)
 {: #sysdig-monitor-dashboards-cpu-used-per-member}
 
-The usage presented in this dashboard is a percentage of total CPU being used, based on the number of cores in your {{site.data.keyword.databases-for}} instance. For example, if you have eight cores and your usage is 12.5%, then that percentage reflects 100% usage of one of your eight cores. In the same example, 25% usage reflects 100% usage of two of your available eight cores. 
+The usage that is presented in this dashboard is a percentage of total CPU being used, based on the number of cores in your {{site.data.keyword.databases-for}} instance. For example, if you have eight cores and your usage is 12.5%, then that percentage reflects that your database member is using 1 core's worth of CPU seconds; however, that does not guarantee that your member's workload is pinned to one core – the workload might be distributed unevenly among your eight cores. In the same example, 25% usage reflects that your database member is using 2 core's worth of CPU seconds out of your available 8 cores.
