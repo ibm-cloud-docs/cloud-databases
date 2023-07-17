@@ -17,8 +17,7 @@ toc:
       - learn-getting-to-production.md
   - navgroup: 
       id: howto
-      topics: 
-      - howto-provisioning.md
+      topics:
       - topicgroup: 
           label: IBM Cloud Databases (ICD) enabled by IBM Cloud Satellite
           topics: 
