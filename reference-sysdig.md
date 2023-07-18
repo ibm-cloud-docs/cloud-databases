@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2023
-lastupdated: "2023-07-17"
+lastupdated: "2023-07-18"
 
 subcollection: cloud-databases, database member, CPU seconds, platform metrics
 
@@ -11,7 +11,7 @@ keywords: sysdig
 
 {{site.data.keyword.attribute-definition-list}}
 
-# IBM Cloud Monitor Sysdig
+# {{site.data.keyword.mon_full}} with Sysdig
 {: #sysdig-monitor}
 
 ## Enabling {{site.data.keyword.mon_full}} with Sysdig
