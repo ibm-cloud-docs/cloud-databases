@@ -66,7 +66,7 @@ toc:
           - reference-service-endpoints.md
       - reference-key-protect.md
       - reference-hpcs.md
-  -navgroup:
+  - navgroup:
       id: help
       topics:
       - topicgroup:
