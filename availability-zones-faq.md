@@ -5,7 +5,7 @@ lastupdated: "2023-07-31"
 
 subcollection: cloud-databases
 
-keywords: 
+keywords: data center, multizone regions, cloud status, viewing cloud status, incident
 
 ---
 
@@ -21,32 +21,28 @@ You can create a {{site.data.keyword.databases-for}} instance on {{site.data.key
 
 See the documentation for provisioning a specific service {{site.data.keyword.databases-for}} instance: 
 
-- 
+- Provisioning [{{site.data.keyword.databases-for-cassandra_full}}](/docs/databases-for-cassandra?topic=databases-for-cassandra-provisioning)
+- Provisioning [{{site.data.keyword.databases-for-elasticsearch_full}}](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-provisioning-new)
+- Provisioning [{{site.data.keyword.databases-for-enterprisedb_full}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-provisioning)
+- Provisioning [{{site.data.keyword.databases-for-etcd_full}}](/docs/databases-for-etcd?topic=databases-for-etcd-provisioning)
+- Provisioning [{{site.data.keyword.databases-for-mongodb_full}}](/docs/databases-for-mongodb?topic=databases-for-mongodb-provisioning)
+- Provisioning [{{site.data.keyword.databases-for-postgresql_full}}](/docs/databases-for-postgresql?topic=databases-for-postgresql-provisioning)
+- Provisioning [{{site.data.keyword.databases-for-redis_full}}](/docs/databases-for-redis?topic=databases-for-redis-provisioning)
+- Provisioning [{{site.data.keyword.databases-for-mysql_full}}](/docs/databases-for-mysql?topic=databases-for-mysql-provisioning)
+- Provisioning [{{site.data.keyword.messages-for-rabbitmq_full}}](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-provisioning)
 
 ## What is an availability zone?
 {: #what-availability-zone}
 {: faq}
 
-When you create an instance, after you select the {{site.data.keyword.cloudant_short_notm}} tile, you must select a region. These locations are called availability zones. An availability zone is an {{site.data.keyword.cloud}} Public location that hosts your data. All Lite and Standard plans automatically deploy into a multi-zone region. Dedicated Hardware plan instances can be deployed in most [{{site.data.keyword.IBM_notm}} data center locations](https://www.ibm.com/cloud/data-centers/){: external}.
+{{site.data.keyword.cloud}} has a resilient global network of locations to host your highly available cloud workload. You can create resources in different locations, such as a region or data center, but with the same billing and usage view. You can also deploy your apps to the location that is nearest to your customers to achieve low application latency. {{site.data.keyword.cloud_notm}} provides three tiers of regions: [multizone regions](#x9774820){: term}, [single-campus multizone regions](#x10127487){: term}, and [data centers](#x2439906){: term}.
 
+For more information, see {{site.data.keyword.cloud}} [Region and data center locations for resource deployment](/docs/overview?topic=overview-locations).
 
-## What is the difference between a single-zone and a multi-zone region?
-{: #multi-zone-region}
+## How can I see the status of {{site.data.keyword.cloud}} platform and services?
+{: #ibm-cloud-status}
 {: faq}
 
-A multi-zone region includes three availability zones that can be used by an instance that is deployed to that region. The multi-zone regions available with {{site.data.keyword.cloudant_short_notm}} include the following regions:
+The {{site.data.keyword.cloud}} [Status page](https://cloud.ibm.com/status){: external} is the central place to find details about major incidents that affect the {{site.data.keyword.cloud}} platform and services. Other incidents, planned maintenance, announcements, release notes, and security bulletins are posted on the Notifications page, where you can easily view them.
 
-- Dallas
-- Frankfurt
-- London
-- Osaka
-- Sydney
-- Tokyo
-- Washington DC
-
-A single-zone region offers only one availability zone for that region. The single-zone regions available with {{site.data.keyword.cloudant_short_notm}} include the following regions:
-
-- Seoul
-- Chennai
-
-For more information, see [Plans and provisioning](/docs/services/Cloudant?topic=Cloudant-ibm-cloud-public#locations-and-tenancy).
+For more information, see [Viewing cloud status](https://cloud.ibm.com/docs/get-support?topic=get-support-viewing-cloud-status){: external}.
