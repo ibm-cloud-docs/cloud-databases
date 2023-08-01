@@ -72,3 +72,4 @@ toc:
           label: FAQs
           topics:
           - availability-zones-faq.md
+          - status-page-faq.md
