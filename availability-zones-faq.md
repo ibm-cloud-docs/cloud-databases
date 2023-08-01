@@ -38,11 +38,3 @@ See the documentation for provisioning a specific service {{site.data.keyword.da
 {{site.data.keyword.cloud}} has a resilient global network of locations to host your highly available cloud workload. You can create resources in different locations, such as a region or data center, but with the same billing and usage view. You can also deploy your apps to the location that is nearest to your customers to achieve low application latency. {{site.data.keyword.cloud_notm}} provides three tiers of regions: [multizone regions](#x9774820){: term}, [single-campus multizone regions](#x10127487){: term}, and [data centers](#x2439906){: term}.
 
 For more information, see {{site.data.keyword.cloud}} [Region and data center locations for resource deployment](/docs/overview?topic=overview-locations).
-
-## How can I see the status of {{site.data.keyword.cloud}} platform and services?
-{: #ibm-cloud-status}
-{: faq}
-
-The {{site.data.keyword.cloud}} [Status page](https://cloud.ibm.com/status){: external} is the central place to find details about major incidents that affect the {{site.data.keyword.cloud}} platform and services. Other incidents, planned maintenance, announcements, release notes, and security bulletins are posted on the Notifications page, where you can easily view them.
-
-For more information, see [Viewing cloud status](https://cloud.ibm.com/docs/get-support?topic=get-support-viewing-cloud-status){: external}.
