@@ -28,4 +28,33 @@ ibmcloud cdb deployment-groups <DEPLOYMENT NAME>
 ```
 {: pre}
 
+The command will return a value that looks like:
+
+```text
+Group   member
+Count   3
+|       
++   Memory                  
+|   Allocation              3072mb
+|   Allocation per member   1024mb
+|   Minimum                 3072mb
+|   Step Size               384mb
+|   Adjustable              true
+|                           
++   CPU                     
+|   Allocation              0
+|   Allocation per member   0
+|   Minimum                 9
+|   Step Size               3
+|   Adjustable              true
+|                           
++   Disk                    
+|   Allocation              30720mb
+|   Allocation per member   10240mb
+|   Minimum                 30720mb
+|   Step Size               3072mb
+|   Adjustable              true
+```
+{: pre}
+
 For more information, see [ibmcloud cdb deployment-groups](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference){: external}.
