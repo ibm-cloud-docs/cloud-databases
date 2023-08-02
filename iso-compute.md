@@ -124,7 +124,7 @@ CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} 
 {: terraform}
 
 ## {{site.data.keyword.databases-for}} Isolated Compute Pricing
-{: #iso-compute-provisioning}
+{: #iso-compute-pricing}
 
 Isolated Compute grandfathered pricing structure:
 - if version EOL: no change
