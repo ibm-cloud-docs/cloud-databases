@@ -1,7 +1,7 @@
 {
     "title": "IBM Cloud® Databases",
-    "lastupdated": "2023-02-21",
-    "introduction": "The IBM Cloud® Databases portfolio includes nine database-as-a-service offerings on the IBM Cloud. In addition to the comprehensive information in the IBM Cloud® Databases docs, links to additional sources of information are provided below.",
+    "lastupdated": "2023-08-02",
+    "introduction": "The IBM Cloud® Databases portfolio contains database-as-a-service offerings on IBM Cloud®. In addition to the comprehensive information in the IBM Cloud® Databases docs, links to additional sources of information are provided below.",
     "section_devtools": {
       "api": "/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction", 
       "cli": "/docs/databases-cli-plugin", 
@@ -9,20 +9,50 @@
     },
     "section_recommended": [
       {
-        "title": "Getting to production for IBM Cloud® Databases",
-        "description": "Prework and a sample checklist",
-        "href": "/docs/cloud-databases?topic=cloud-databases-best-practices&interface=ui"
+        "title": "IBM Cloud® Databases for DataStax",
+        "description": "IBM Cloud® Databases for DataStax is a scale-out NoSQL database built on Apache Cassandra, designed for high-availability and workload flexibility.",
+        "href": "https://cloud.ibm.com/docs/databases-for-cassandra"
       },
       {
-        "title": "Provisioning an IBM Cloud® Databases deployment",
-        "description": "To create an IBM Cloud® Databases deployment, first create an IBM Cloud service instance.",
-        "href": "/docs/cloud-databases?topic=cloud-databases-provisioning&interface=ui"
+        "title": "IBM Cloud® Databases for Elasticsearch",
+        "description": "Elasticsearch combines the power of a full text search engine with the indexing strengths of a JSON document database.",
+        "href": "https://cloud.ibm.com/docs/databases-for-elasticsearch"
       },
       {
-        "title": "Protecting Cloud Databases resources with context-based restrictions",
-        "description": "Context-based restrictions give account owners and administrators the ability to define and enforce access restrictions for IBM Cloud® resources based on the context of access requests. Access to Cloud Databases resources can be controlled with context-based restrictions and Identity and Access Management (IAM) policies.",
-        "href": "/docs/cloud-databases?topic=cloud-databases-cbr&interface=ui"
-      }
+        "title": "IBM Cloud® Databases for EnterpriseDB",
+        "description": "EnterpriseDB is a PostgreSQL-based database engine optimized for performance, developer productivity, and compatibility with Oracle.",
+        "href": "https://cloud.ibm.com/docs/databases-for-enterprisedb"
+      },
+      {
+        "title": "IBM Cloud® Databases for etcd",
+        "description": "etcd is a distributed, reliable key-value store for the most critical data of a distributed system.",
+        "href": "https://cloud.ibm.com/docs/databases-for-etcd"
+      },
+      {
+        "title": "IBM Cloud® Databases for MongoDB",
+        "description": "MongoDB is a JSON document store with a rich query and aggregation framework.",
+        "href": "https://cloud.ibm.com/docs/databases-for-mongodb"
+      },
+      {
+        "title": "IBM Cloud® Databases for PostgreSQL",
+        "description": "PostgreSQL is a powerful, open source object-relational database that is highly customizable.",
+        "href": "https://cloud.ibm.com/docs/databases-for-postgresql"
+      },
+      {
+        "title": "IBM Cloud® Databases for Redis",
+        "description": "Redis is a blazingly fast, in-memory data structure store.",
+        "href": "https://cloud.ibm.com/docs/databases-for-redis"
+      },
+      {
+        "title": "IBM Cloud® Messages for RabbitMQ",
+        "description": "RabbitMQ is an open source multi-protocol messaging broker.",
+        "href": "https://cloud.ibm.com/docs/messages-for-rabbitmq"
+      },
+      {
+        "title": "IBM Cloud® Databases for MySQL",
+        "description": "IBM Cloud® Databases for MySQL is a serverless, cloud database service that is fully integrated into the IBM Cloud environment.",
+        "href": "https://cloud.ibm.com/docs/databases-for-mysql"
+      },
     ],
     "section_learn": {
       "developer": "https://developer.ibm.com/depmodels/cloud/",
