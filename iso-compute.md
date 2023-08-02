@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-06-28"
+lastupdated: "2023-08-02"
 
 subcollection: cloud-databases
 
@@ -122,3 +122,15 @@ CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} 
 ### {{site.data.keyword.databases-for}} Isolated Compute Provisioning through Terraform
 {: #iso-compute-provisioning}
 {: terraform}
+
+## {{site.data.keyword.databases-for}} Isolated Compute Pricing
+{: #iso-compute-provisioning}
+
+Isolated Compute grandfathered pricing structure:
+- if version EOL: no change
+- if increase RAM: no change
+- if increase CPU: charge for all cores, cores ONLY
+- if migrate to shared: charge for all cores, cores ONLY
+
+we might still want to raise the RAM price (ie, use ram_new rather than ram parts), so the logic should still be there. we just don’t want to raise ram prices now
+Right now, no new/migrated shared instances will have increased ram pricing. Instead, when you provision a new instance, migrate an instance, or scale CPU, you will be charged for all the CPU you have, and no longer be considered grandfathered , but this does not add the RAM $5 increase.
