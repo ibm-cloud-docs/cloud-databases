@@ -52,7 +52,7 @@
         "title": "IBM Cloud® Databases for MySQL",
         "description": "IBM Cloud® Databases for MySQL is a serverless, cloud database service that is fully integrated into the IBM Cloud environment.",
         "href": "https://cloud.ibm.com/docs/databases-for-mysql"
-      },
+      }
     ],
     "section_learn": {
       "developer": "https://developer.ibm.com/depmodels/cloud/",
