@@ -21,6 +21,20 @@ keywords: resource config, resource configuration
 {: faq}
 {: support}
 
+### Retrieving resource configuration through the UI
+{: #faq-resource-config-retrieve-ui}
+{: faq}
+{: support}
+{: ui}
+
+In the {{site.data.keyword.cloud_notm}} Dashboard, select **Resources**, which displays your current resource configuration.
+
+### Retrieving resource configuration through the CLI
+{: #faq-resource-config-retrieve-cli}
+{: faq}
+{: support}
+{: cli}
+
 The [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference){: external} can retrieve your instance's current resource configuration, by using the `ibmcloud cdb deployment-groups` command. The `ibmcloud cdb deployment-groups` displays the scaling group values for a deployment's members. The scaling groups relate to Memory, CPU, and Disk. The default group is named "member". Use a command like:
 
 ```sh
