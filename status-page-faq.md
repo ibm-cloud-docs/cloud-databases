@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2023
-lastupdated: "2023-08-01"
+lastupdated: "2023-08-03"
 
 subcollection: cloud-databases
 
@@ -11,7 +11,7 @@ keywords: data center, multizone regions, cloud status, viewing cloud status, in
 
 {{site.data.keyword.attribute-definition-list}}
 
-# How can I see the status of {{site.data.keyword.cloud}} platform and services?
+# {{site.data.keyword.cloud}} platform and service FAQ
 {: #ibm-cloud-status}
 {: faq}
 
