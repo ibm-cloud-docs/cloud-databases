@@ -23,7 +23,7 @@ completion-time: 30m
 {: toc-services="cloud-databases"}
 {: toc-completion-time="30m"}
 
-To determine if your Cloud Databases deployment region and key management system support Bring Your Own Key (BYOK) for backups, follow this procedure:
+To determine if your {{site.data.keyword.databases-for}} deployment region and key management system support Bring Your Own Key (BYOK) for backups, follow this procedure:
 
 ## Prerequisites
 {: #kms-tutorial-prereqs}
