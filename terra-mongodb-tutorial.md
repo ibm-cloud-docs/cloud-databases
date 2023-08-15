@@ -1,8 +1,8 @@
 ---
 
 copyright:
-   years: 2022
-lastupdated: "2022-12-09"
+   years: 2022, 2023
+lastupdated: "2023-08-15"
 
 keywords: IBM Cloud Databases, ICD, terraform, terraform mongodbee, mongodb, mongodbee
 
@@ -14,14 +14,7 @@ completion-time: 1h
 
 ---
 
-{:external: .external target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
+{{site.data.keyword.attribute-definition-list}}	
 
 # Provision a {{site.data.keyword.databases-for-mongodb}} Enterprise Edition instance with Terraform
 {: #tutorial-provision-mongodbee-tf}
@@ -98,57 +91,65 @@ In the same project directory, create a Terraform configuration file named `mong
 
 ```terraform
 data "ibm_resource_group" "mongodbee_tutorial" {
-  name = "default"
-  
+  is_default = true
+}
 resource "ibm_database" "mongodbee_db" {
   resource_group_id = data.ibm_resource_group.mongodbee_tutorial.id
   name              = "terraform_mongodbee"
   service           = "databases-for-mongodb"
-  plan              = "standard"
+  plan              = "enterprise"
   location          = "us-east"
-  adminpassword     = "password123
-
-group {
-  group_id = "member"
-  memory {
-    allocation_mb = 14336
-  }
-  disk {
-    allocation_mb = 20480
-  }
-  cpu {
-    allocation_count = 6
+  adminpassword     = "password123changeme"
+  group {
+    group_id = "member"
+    
+    memory {
+      allocation_mb = 14336
+    }
+    disk {
+      allocation_mb = 20480
+    }
+    cpu {
+      allocation_count = 6
+    }
   }
   
   group {
     group_id = "analytics"
+    
     members {
       allocation_count = 1
     }
+  }
+  
   group {
     group_id = "bi_connector"
+    
     members {
       allocation_count = 1
     }
+  }
+  
   timeouts {
     create = "120m"
     update = "120m"
     delete = "15m"
   }
-  data "ibm_database_connection" "mongodbee_conn" {
-    deployment_id = ibm_database.mongodbee_db.id
-    user_type     = "database"
-    user_id       = "admin"
-    endpoint_type = "public"
-  
-  output "bi_connector_connection" {
-    description = "BI Connector connection string"
-    value       = data.ibm_database_connection.mongodbee_conn.bi_connector.0.composed.0
- 
-  output "analytics_connection" {
-    description = "Analytics Node connection string"
-    value       = data.ibm_database_connection.mongodbee_conn.analytics.0.composed.0
-  }
+}
+data "ibm_database_connection" "mongodbee_conn" {
+  deployment_id = resource.ibm_database.mongodbee_db.id
+  user_id       = resource.ibm_database.mongodbee_db.adminuser  
+  user_type     = "database"
+  endpoint_type = "public"
+}
+output "bi_connector_connection" {
+  description = "BI Connector connection string"
+  value       = data.ibm_database_connection.mongodbee_conn.bi_connector.0.composed.0
+}
+output "analytics_connection" {
+  description = "Analytics Node connection string"
+  value       = data.ibm_database_connection.mongodbee_conn.analytics.0.composed.0
+}
 ```
 {: codeblock}
 
@@ -179,6 +180,6 @@ Now that you configured the {{site.data.keyword.cloud}} Provider plug-in for you
 
  For more information, see [Provisioning {{site.data.keyword.cloud}} resources](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-manage_resources#provision_resources).
 
- To view sample Terraform templates with the complete Terraform configuration files to test, refer to [Sample templates](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-provider-template#sample-templates).
+ To view sample Terraform templates with the complete Terraform configuration files to test, see [Sample templates](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-provider-template#sample-templates).
 
-For an overview of the Terraform resources and data sources that you can use, see the [Index of Terraform on {{site.data.keyword.cloud}} resources and data sources](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-resources-datasource-list).
+For an overview of Terraform resources and data sources, see [Index of Terraform on {{site.data.keyword.cloud}} resources and data sources](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-resources-datasource-list).
