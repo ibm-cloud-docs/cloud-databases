@@ -30,5 +30,5 @@ The same applies when a COS bucket is deleted. Data is overwritten before the sp
 
 In accordance with GDPR and other regulations, {{site.data.keyword.databases-for}} retains instance logs for 30 days. After 30 days, it is deleted through the same process as a COS bucket.
 
-Instances that are configured with the optional bring your own key (BYOK) capability have their data shredded. The data is inaccessible when the customer-owned encryption key is deleted from the Key Protect or Hyperprotect Crypto Services instance. For more information, see the relevant Deleting your Deployment and Removing your Data for your {{site.data.keyword.databases-for}} service.
+Instances that are configured with the optional bring your own key (BYOK) capability have their data shredded. The data is inaccessible when the customer-owned encryption key is deleted from the Key Protect or Hyperprotect Crypto Services instance. For more information, see [Deleting your Deployment and Removing your Data](/docs/cloud-databases?topic=cloud-databases-deprovisioning){: external}.
 
