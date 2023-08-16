@@ -55,6 +55,6 @@ Before beginning this tutorial, make sure you have created or installed the foll
 {: #kms-tutorial-config-failover}
 {: step}
 
-[Creating Cross region buckets](/docs/cloud-object-storage?topic=cloud-object-storage-hpcs#hpcs-cr){: external} with a root key from a Hyper Protect Crypto Services (HPCS) instance requires that instance to be [configured with failover configuration](/docs/hs-crypto?   topic=hs-crypto-enable-add-failover){: external}.
+[Creating Cross region buckets](/docs/cloud-object-storage?topic=cloud-object-storage-hpcs#hpcs-cr){: external} with a root key from a Hyper Protect Crypto Services (HPCS) instance requires that instance to be [configured with failover configuration](/docs/hs-crypto?topic=hs-crypto-enable-add-failover){: external}.
 
 Confirm that failover is properly configured for the selected HPCS instance correctly using either the IBM Cloud console or CLI. For more information, see [Creating Cross region buckets](/docs/cloud-object-storage?topic=cloud-object-storage-hpcs#hpcs-cr){: external}.
