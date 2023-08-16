@@ -27,6 +27,7 @@ To determine if your {{site.data.keyword.databases-for}} deployment region and k
 
 ## Prerequisites
 {: #kms-tutorial-prereqs}
+{: step}
 
 Before beginning this tutorial, make sure you have created or installed the following resources and tools.
 
@@ -34,6 +35,9 @@ Before beginning this tutorial, make sure you have created or installed the foll
 - The [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin) - the CLI interface to interact with the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction). For more information, see [Getting started with the {{site.data.keyword.cloud_notm}} CLI](/docs/databases-cli-plugin).
 - A {{site.data.keyword.databases-for}} deployment. For more information, see [Provisioning](/docs/cloud-databases?topic=cloud-databases-provisioning).
 
+## Match backup region location with data location requirements
+{: #kms-tutorial-match-backup-data}
+{: step}
 
 1. Ensure that the backup region location matches your data location requirements, see [Backup Locations Cloud Object chart](/docs/databases-for-postgresql?topic=databases-for-postgresql-dashboard-backups&interface=ui#backup-locations). Backup location differs per database region. Ensure that the backup region location matches your data location requirements.
 
@@ -47,8 +51,10 @@ Before beginning this tutorial, make sure you have created or installed the foll
    | eu-de             | eu-de                |
    {: caption="Table 1. {{site.data.keyword.databases-for}} instance    location and key region support" caption-side="top"}
 
-1. Configure failover 
+## Configure failover
+{: #kms-tutorial-config-failover}
+{: step}
 
-   [Creating COS Cross Region buckets](/docs/cloud-object-storage?   topic=cloud-object-storage-hpcs#hpcs-cr){: external} with a root key from    a Hyper Protect Crypto Services (HPCS) instance requires that instance to    be [configured with failover configuration](/docs/hs-crypto?   topic=hs-crypto-enable-add-failover){: external}.
+[Creating Cross region buckets](/docs/cloud-object-storage?topic=cloud-object-storage-hpcs#hpcs-cr){: external} with a root key from a Hyper Protect Crypto Services (HPCS) instance requires that instance to be [configured with failover configuration](/docs/hs-crypto?   topic=hs-crypto-enable-add-failover){: external}.
 
-   Confirm that failover is properly configured for the selected HPCS instance correctly using either the IBM Cloud console or CLI. For more information, see [Creating Cross region buckets](/docs/cloud-object-storage?topic=cloud-object-storage-hpcs#hpcs-cr){: external}.
+Confirm that failover is properly configured for the selected HPCS instance correctly using either the IBM Cloud console or CLI. For more information, see [Creating Cross region buckets](/docs/cloud-object-storage?topic=cloud-object-storage-hpcs#hpcs-cr){: external}.
