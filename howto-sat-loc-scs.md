@@ -43,12 +43,12 @@ subcollection: cloud-databases
 # Your service cluster
 {: #icd-service-cluster}
 
-As outlined in your initial ICD Satellite location deployment, your initial service cluster was established with the following hosts:
+As outlined in your initial {{site.data.keyword.databases-for}} Satellite location deployment, your initial service cluster was established with the following hosts:
 
 - Three type **8x32** hosts (on AWS, three hosts of type **AWS m5d.2xlarge**)
 - Three type **32x128** hosts (on AWS, three hosts of type **AWS m5d.8xlarge**)
 
-The three type **8x32** hosts are for IBM Cloud™ Databases (ICD) enabled by IBM Cloud Satellite internal use, while the three type **32x128** hosts are for your use.
+The three type **8x32** hosts are for {{site.data.keyword.databases-for}} enabled by IBM Cloud Satellite internal use, while the three type **32x128** hosts are for your use.
 
 ## Growing your service cluster
 {: #icd-service-cluster-grow}

@@ -48,7 +48,7 @@ completion-time: 15m
 {: toc-content-type="tutorial"}
 {: toc-completion-time="15m"}
 
-To deploy the ICD enabled by IBM Cloud Satellite service, prepare your Satellite location. Follow these steps to set up IBM Cloud™ Databases (ICD) enabled by IBM Cloud Satellite in an on-premises location.
+To deploy the {{site.data.keyword.databases-for}} enabled by IBM Cloud Satellite service, prepare your Satellite location. Follow these steps to set up {{site.data.keyword.databases-for}} enabled by IBM Cloud Satellite in an on-premises location.
 
 On-premises satellite location currently supports *only* NetApp ONTAP-SAN storage. 
 
@@ -141,7 +141,7 @@ Begin by configuring IAM Authorizations:
 {: step}
 {: #onprem-loc-readiness}
 
-Your location needs to report `Normal` before you provision your ICD Satellite Deployment. This status can be confirmed in the UI, as shown here:
+Your location needs to report `Normal` before you provision your {{site.data.keyword.databases-for}} Satellite Deployment. This status can be confirmed in the UI, as shown here:
 
 ![UI showing location is Normal](images/sat-normal.png){: caption="Figure 1. UI showing location is Normal" caption-side="bottom"}
 
@@ -162,11 +162,11 @@ To get to this state, attach a minimum of three 4x16 hosts to your location and 
 Attempting to provision a database instance into a location without a running Control plane (that is, `Normal` state), causes a provisioning to fail.
 {: .important}
 
-## Provisioning ICD Satellite Deployment
+## Provisioning {{site.data.keyword.databases-for}} Satellite Deployment
 {: #provision-satellite-deployment}
 {: step}
 
-You can provision your ICD Satellite Deployment by selecting the Satellite location that you create in the **Location** menu of the provisioning page. For more information, see the relevant [Provisioning documentation](/docs/cloud-databases?topic=cloud-databases-provisioning). After you create a new service instance, this instance will appear in the IBM Cloud `Resource List` as `Provisioned`.
+You can provision your {{site.data.keyword.databases-for}} Satellite Deployment by selecting the Satellite location that you create in the **Location** menu of the provisioning page. For more information, see the relevant [Provisioning documentation](/docs/cloud-databases?topic=cloud-databases-provisioning). After you create a new service instance, this instance will appear in the IBM Cloud `Resource List` as `Provisioned`.
 
 When you deploy the first database service instance, a service cluster deploys automatically into your Satellite location. The deployment of the service cluster can take up to 1 hour.
 
