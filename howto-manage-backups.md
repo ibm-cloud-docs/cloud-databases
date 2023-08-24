@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-05-16"
+lastupdated: "2023-08-24"
 
 subcollection: cloud-databases
 
@@ -17,8 +17,7 @@ keywords: backups, new deployment, source deployment, backup, back up, ondemand 
 
 Backups for {{site.data.keyword.databases-for}} deployments are accessible from the _Backups_ tab of your deployment's dashboard. Here is some additional general information about backups:
 
-- One backup is taken every day.
-- Backups are available for 30 days. 
+- Automatic backups are performed daily and kept with a simple retention schedule of 30 days.
 - Backups cannot be deleted. 
 - If you delete your deployment, its backups are deleted automatically.
 - Daily backup scheduling is not configurable.
