@@ -13,7 +13,7 @@ toc:
       id: learn
       topics:
       - index.md
-      - iso-compute.md
+      - hosting-models.md
       - learn-getting-to-production.md
   - navgroup: 
       id: howto
