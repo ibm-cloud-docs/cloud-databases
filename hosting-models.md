@@ -19,7 +19,10 @@ keywords: isolated compute
 
 {{site.data.keyword.databases-for}} offers two hosting models: {{site.data.keyword.databases-for}} Shared Compute and {{site.data.keyword.databases-for}} Isolated Compute. Shared hosting is a cost-effective option for your database deployment. If your applications require more precise control, security, and performance then Isolated Compute is an appealing option.
 
-# {{site.data.keyword.databases-for}} Isolated Compute
+Switching hosting models does not cause downtime.
+{: note}
+
+## {{site.data.keyword.databases-for}} Isolated Compute
 {: #hosting-models-iso-compute}
 
 {{site.data.keyword.databases-for}} Isolated Compute provides dedicated computing resources. 
@@ -141,3 +144,6 @@ Isolated Compute grandfathered pricing structure:
 
 we might still want to raise the RAM price (ie, use ram_new rather than ram parts), so the logic should still be there. we just don’t want to raise ram prices now
 Right now, no new/migrated shared instances will have increased ram pricing. Instead, when you provision a new instance, migrate an instance, or scale CPU, you will be charged for all the CPU you have, and no longer be considered grandfathered , but this does not add the RAM $5 increase.
+
+## {{site.data.keyword.databases-for}} Shared Compute
+{: #hosting-models-iso-compute}
