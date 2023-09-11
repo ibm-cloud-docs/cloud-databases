@@ -162,10 +162,10 @@ If you use allowlists to control connections in your environment, use the follow
 
 | Location | Region | Data center | Subnet | First IP |
 | -- | -- | -- | -- | -- |
-| Chennai | che01 | che01 |  10.162.8.127/26  | 10.162.8.65 |         
-| Chennai | che01 | che01 |  10.163.20.127/25 | 10.163.20.1 |         
-| Chennai | che01 | che01 | 10.162.115.103/29 | 10.162.115.97 |         
-| Chennai | che01 | che01 |  10.162.132.79/29 | 10.162.132.73 |   
+| Chennai | in-che | che01 |  10.162.8.127/26  | 10.162.8.65 |         
+| Chennai | in-che | che01 |  10.163.20.127/25 | 10.163.20.1 |         
+| Chennai | in-che | che01 | 10.162.115.103/29 | 10.162.115.97 |         
+| Chennai | in-che | che01 |  10.162.132.79/29 | 10.162.132.73 |   
 {: caption="Table 2. in-che Private Subnets" caption-side="bottom"}
 
 ### `ca-tor` List
@@ -176,24 +176,24 @@ If you use allowlists to control connections in your environment, use the follow
 
 | Location | Region | Data center | Subnet | First IP |
 | -- | -- | -- | -- | -- |
-| Toronto | ca-tor | tor01 |  158.85.91.111/28 | 158.85.91.97  |         
-| Toronto | ca-tor | tor01 |  158.85.120.63/26 | 158.85.120.1  |         
-| Toronto | ca-tor | tor01 | 169.55.136.127/25 | 169.55.136.1  |         
-| Toronto | ca-tor | tor01 | 169.55.142.191/27 | 169.55.142.161  |         
-| Toronto | ca-tor | tor01 |  158.85.95.183/29 | 158.85.95.177  |         
-| Toronto | ca-tor | tor01 | 169.55.130.215/29 | 169.55.130.209  |         
-| Toronto | ca-tor | tor04 |  163.74.68.95/28  | 163.74.68.81  |         
-| Toronto | ca-tor | tor04 |  163.74.69.159/27 | 163.74.69.129  |         
-| Toronto | ca-tor | tor04 |  163.74.72.127/26 | 163.74.72.65  |         
-| Toronto | ca-tor | tor04 |  163.74.73.255/25 | 163.74.73.129  |         
-| Toronto | ca-tor | tor04 |  163.74.68.55/29  | 163.74.68.49  |         
-| Toronto | ca-tor | tor04 |  163.74.68.63/29  | 163.74.68.57  |         
-| Toronto | ca-tor | tor05 |  163.75.67.111/28 | 163.75.67.97  |         
-| Toronto | ca-tor | tor05 |  163.75.68.95/27  | 163.75.68.65  |         
-| Toronto | ca-tor | tor05 |  163.75.75.63/26  | 163.75.75.1  |         
-| Toronto | ca-tor | tor05 |  163.75.96.255/25 | 163.75.96.129  |         
-| Toronto | ca-tor | tor05 |   163.75.67.7/29  | 163.75.67.1  |         
-| Toronto | ca-tor | tor05 |  163.75.67.119/29 | 163.75.67.113  | 
+| Toronto | ca-tor | tor01 |  158.85.91.111/28 | 158.85.91.97 |         
+| Toronto | ca-tor | tor01 |  158.85.120.63/26 | 158.85.120.1 |         
+| Toronto | ca-tor | tor01 | 169.55.136.127/25 | 169.55.136.1 |         
+| Toronto | ca-tor | tor01 | 169.55.142.191/27 | 169.55.142.161 |         
+| Toronto | ca-tor | tor01 |  158.85.95.183/29 | 158.85.95.177 |         
+| Toronto | ca-tor | tor01 | 169.55.130.215/29 | 169.55.130.209 |         
+| Toronto | ca-tor | tor04 |  163.74.68.95/28  | 163.74.68.81 |         
+| Toronto | ca-tor | tor04 |  163.74.69.159/27 | 163.74.69.129 |         
+| Toronto | ca-tor | tor04 |  163.74.72.127/26 | 163.74.72.65 |         
+| Toronto | ca-tor | tor04 |  163.74.73.255/25 | 163.74.73.129 |         
+| Toronto | ca-tor | tor04 |  163.74.68.55/29  | 163.74.68.49 |         
+| Toronto | ca-tor | tor04 |  163.74.68.63/29  | 163.74.68.57 |         
+| Toronto | ca-tor | tor05 |  163.75.67.111/28 | 163.75.67.97 |         
+| Toronto | ca-tor | tor05 |  163.75.68.95/27  | 163.75.68.65 |         
+| Toronto | ca-tor | tor05 |  163.75.75.63/26  | 163.75.75.1 |         
+| Toronto | ca-tor | tor05 |  163.75.96.255/25 | 163.75.96.129 |         
+| Toronto | ca-tor | tor05 |   163.75.67.7/29  | 163.75.67.1 |         
+| Toronto | ca-tor | tor05 |  163.75.67.119/29 | 163.75.67.113 |   
 {: caption="Table 3. ca-tor Public Subnets" caption-side="bottom"}
 
 #### Private Subnets
@@ -201,18 +201,18 @@ If you use allowlists to control connections in your environment, use the follow
 
 | Location | Region | Data center | Subnet | First IP |
 | -- | -- | -- | -- | -- |
-| Toronto | ca-tor | tor01 | 10.114.100.127/26 | 10.114.100.65 |          
-| Toronto | ca-tor | tor01 | 10.114.225.127/25 | 10.114.225.1 |          
-| Toronto | ca-tor | tor01 |  10.114.79.63/29  | 10.114.79.57 |          
-| Toronto | ca-tor | tor01 |  10.115.88.79/29  | 10.115.88.73 |          
-| Toronto | ca-tor | tor04 |  10.11.22.127/25  | 10.11.22.1 |          
-| Toronto | ca-tor | tor04 |  10.11.25.191/26  | 10.11.25.129 |          
-| Toronto | ca-tor | tor04 |   10.11.12.47/29  | 10.11.12.41 |          
-| Toronto | ca-tor | tor04 |   10.11.12.55/29  | 10.11.12.49 |          
-| Toronto | ca-tor | tor05 |  10.243.14.255/26 | 10.243.14.193 |          
-| Toronto | ca-tor | tor05 | 10.243.102.255/25 | 10.243.102.129 |          
-| Toronto | ca-tor | tor05 |  10.243.23.135/29 | 10.243.23.129 |          
-| Toronto | ca-tor | tor05 |  10.243.23.159/29 | 10.243.23.153 |   
+| Toronto | tor01 | 10.114.100.127/26 | 10.114.100.65  |         
+| Toronto | tor01 | 10.114.225.127/25 | 10.114.225.1  |         
+| Toronto | tor01 |  10.114.79.63/29  | 10.114.79.57  |         
+| Toronto | tor01 |  10.115.88.79/29  | 10.115.88.73  |         
+| Toronto | tor04 |  10.11.22.127/25  | 10.11.22.1  |         
+| Toronto | tor04 |  10.11.25.191/26  | 10.11.25.129  |         
+| Toronto | tor04 |   10.11.12.47/29  | 10.11.12.41  |         
+| Toronto | tor04 |   10.11.12.55/29  | 10.11.12.49  |         
+| Toronto | tor05 |  10.243.14.255/26 | 10.243.14.193  |         
+| Toronto | tor05 | 10.243.102.255/25 | 10.243.102.129  |         
+| Toronto | tor05 |  10.243.23.135/29 | 10.243.23.129  |         
+| Toronto | tor05 |  10.243.23.159/29 | 10.243.23.153  | 
 {: caption="Table 4. ca-tor Private Subnets" caption-side="bottom"}
 
 ### `br-sao` List
