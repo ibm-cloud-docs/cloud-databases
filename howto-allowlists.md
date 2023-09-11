@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-06-20"
+lastupdated: "2023-09-11"
 
 subcollection: cloud-databases
 
@@ -13,9 +13,9 @@ keywords: allowlist, ip addresses, blocklist, whitelist, cloud databases allowli
 {{site.data.keyword.attribute-definition-list}}
 
 # Allowlisting
-{: #allowlisting} 
+{: #allowlisting}
 
-{{site.data.keyword.databases-for}} now supports context-based restrictions, which give account owners and administrators the ability to define and enforce access restrictions for {{site.data.keyword.cloud}} resources based on the context of access requests. Access to {{site.data.keyword.databases-for}} resources can be controlled with context-based restrictions and identity and access management (IAM) policies. Context-based restrictions check that an access request comes from an allowed context that you configure. Since both IAM access and context-based restrictions enforce access, context-based restrictions offer protection even in the face of compromised or mismanaged credentials. For more information, see [Protecting Cloud Databases resources with context-based restrictions](/docs/cloud-databases?topic=cloud-databases-cbr).{: .tip}
+{{site.data.keyword.databases-for}} now supports context-based restrictions, which give account owners and administrators the ability to define and enforce access restrictions for {{site.data.keyword.cloud}} resources based on the context of access requests. Access to {{site.data.keyword.databases-for}} resources can be controlled with context-based restrictions and identity and access management (IAM) policies. Context-based restrictions check that an access request comes from an allowed context that you configure. Since both IAM access and context-based restrictions enforce access, context-based restrictions offer protection even in the face of compromised or mismanaged credentials. For more information, see [Protecting {{site.data.keyword.databases-for}} resources with context-based restrictions](/docs/cloud-databases?topic=cloud-databases-cbr).{: .tip}
 
 To restrict access to your databases, allowlist specific IP addresses or ranges of IP addresses on your deployment.
 
@@ -154,7 +154,7 @@ If you use allowlists to control connections in your environment, use the follow
 | Chennai | in-che | che01 | 169.38.132.127/25 | 169.38.132.1 |         
 | Chennai | in-che | che01 | 169.38.136.255/26 | 169.38.136.193 |         
 | Chennai | in-che | che01 |  169.38.73.151/29 | 169.38.73.145 |         
-| Chennai | in-che | che01 |  169.38.105.79/29 | 169.38.105.73 |
+| Chennai | in-che | che01 |  169.38.105.79/29 | 169.38.73.145 |   
 {: caption="Table 1. in-che Public Subnets" caption-side="bottom"}
 
 #### Private Subnets
@@ -162,10 +162,10 @@ If you use allowlists to control connections in your environment, use the follow
 
 | Location | Region | Data center | Subnet | First IP |
 | -- | -- | -- | -- | -- |
-| Chennai | in-che | che01 |  10.162.8.127/26  | 10.162.8.65 |         
-| Chennai | in-che | che01 |  10.163.20.127/25 | 10.163.20.1 |  
-| Chennai | in-che | che01 | 10.162.115.103/29 | 10.162.115.97 |         
-| Chennai | in-che | che01 |  10.162.132.79/29 | 10.162.132.73 |  
+| Chennai | che01 | che01 |  10.162.8.127/26  | 10.162.8.65 |         
+| Chennai | che01 | che01 |  10.163.20.127/25 | 10.163.20.1 |         
+| Chennai | che01 | che01 | 10.162.115.103/29 | 10.162.115.97 |         
+| Chennai | che01 | che01 |  10.162.132.79/29 | 10.162.132.73 |   
 {: caption="Table 2. in-che Private Subnets" caption-side="bottom"}
 
 ### `ca-tor` List
