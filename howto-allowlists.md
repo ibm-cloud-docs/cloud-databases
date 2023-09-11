@@ -270,42 +270,42 @@ If you use allowlists to control connections in your environment, use the follow
 
 | Location | Region | Data center | Subnet | First IP |
 | -- | -- | -- | -- | -- |
-| London | eu-gb | lon04 |  158.175.64.95/28  | 158.175.64.81  |         
-| London | eu-gb | lon04 | 158.175.139.191/27 | 158.175.139.161  |         
-| London | eu-gb | lon04 | 158.175.141.255/24 | 158.175.141.1  |         
-| London | eu-gb | lon04 | 158.175.147.63/26  | 158.175.147.1  |         
-| London | eu-gb | lon04 | 158.175.151.127/25 | 158.175.151.1  |         
-| London | eu-gb | lon04 | 158.175.156.255/24 | 158.175.156.1  |         
-| London | eu-gb | lon04 | 158.175.81.111/29  | 158.175.81.105  |         
-| London | eu-gb | lon04 | 158.175.91.151/29  | 158.175.91.145  |         
-| London | eu-gb | lon04 | 158.175.92.175/29  | 158.175.92.169  |         
-| London | eu-gb | lon04 |  158.175.97.7/29   | 158.175.97.1  |         
-| London | eu-gb | lon04 | 158.175.97.167/29  | 158.175.97.161  |         
-| London | eu-gb | lon04 | 158.175.125.79/29  | 158.175.125.73  |         
-| London | eu-gb | lon05 |  141.125.69.63/27  | 141.125.69.33  |         
-| London | eu-gb | lon05 |  141.125.71.15/28  | 141.125.71.1  |         
-| London | eu-gb | lon05 | 141.125.83.127/26  | 141.125.83.65  |         
-| London | eu-gb | lon05 | 141.125.88.127/25  | 141.125.88.1  |         
-| London | eu-gb | lon05 | 141.125.93.255/24  | 141.125.93.1  |         
-| London | eu-gb | lon05 | 141.125.146.255/24 | 141.125.146.1  |         
-| London | eu-gb | lon05 |  141.125.69.31/29  | 141.125.69.25  |         
-| London | eu-gb | lon05 |  141.125.70.7/29   | 141.125.70.1  |         
-| London | eu-gb | lon05 | 141.125.77.191/29  | 141.125.77.185  |         
-| London | eu-gb | lon05 |  141.125.85.87/29  | 141.125.85.81  |         
-| London | eu-gb | lon05 |  141.125.87.55/29  | 141.125.87.49  |         
-| London | eu-gb | lon05 | 141.125.98.103/29  | 141.125.98.97  |         
-| London | eu-gb | lon06 | 158.176.109.207/28 | 158.176.109.193  |         
-| London | eu-gb | lon06 | 158.176.109.255/27 | 158.176.109.225  |         
-| London | eu-gb | lon06 | 158.176.122.63/26  | 158.176.122.1  |         
-| London | eu-gb | lon06 | 158.176.139.255/25 | 158.176.139.129  |         
-| London | eu-gb | lon06 | 158.176.148.255/24 | 158.176.148.1  |         
-| London | eu-gb | lon06 | 158.176.199.255/24 | 158.176.199.1  |         
-| London | eu-gb | lon06 | 158.176.71.255/29  | 158.176.71.249  |         
-| London | eu-gb | lon06 | 158.176.87.135/29  | 158.176.87.129  |         
-| London | eu-gb | lon06 | 158.176.113.143/29 | 158.176.113.137  |         
-| London | eu-gb | lon06 | 158.176.122.239/29 | 158.176.122.233  |         
-| London | eu-gb | lon06 | 158.176.124.223/29 | 158.176.124.217  |         
-| London | eu-gb | lon06 | 158.176.131.15/29  | 158.176.131.9  |
+| London | eu-gb | lon04 |  158.175.64.95/28  | 158.175.64.81 |         
+| London | eu-gb | lon04 | 158.175.139.191/27 | 158.175.139.161 |         
+| London | eu-gb | lon04 | 158.175.141.255/24 | 158.175.141.1 |         
+| London | eu-gb | lon04 | 158.175.147.63/26  | 158.175.147.1 |         
+| London | eu-gb | lon04 | 158.175.151.127/25 | 158.175.151.1 |         
+| London | eu-gb | lon04 | 158.175.156.255/24 | 158.175.156.1 |         
+| London | eu-gb | lon04 | 158.175.81.111/29  | 158.175.81.105 |         
+| London | eu-gb | lon04 | 158.175.91.151/29  | 158.175.91.145 |         
+| London | eu-gb | lon04 | 158.175.92.175/29  | 158.175.92.169 |         
+| London | eu-gb | lon04 |  158.175.97.7/29   | 158.175.97.1 |         
+| London | eu-gb | lon04 | 158.175.97.167/29  | 158.175.97.161 |         
+| London | eu-gb | lon04 | 158.175.125.79/29  | 158.175.125.73 |         
+| London | eu-gb | lon05 |  141.125.69.63/27  | 141.125.69.33 |         
+| London | eu-gb | lon05 |  141.125.71.15/28  | 141.125.71.1 |         
+| London | eu-gb | lon05 | 141.125.83.127/26  | 141.125.83.65 |         
+| London | eu-gb | lon05 | 141.125.88.127/25  | 141.125.88.1 |         
+| London | eu-gb | lon05 | 141.125.93.255/24  | 141.125.93.1 |         
+| London | eu-gb | lon05 | 141.125.146.255/24 | 141.125.146.1 |         
+| London | eu-gb | lon05 |  141.125.69.31/29  | 141.125.69.25 |         
+| London | eu-gb | lon05 |  141.125.70.7/29   | 141.125.70.1 |         
+| London | eu-gb | lon05 | 141.125.77.191/29  | 141.125.77.185 |         
+| London | eu-gb | lon05 |  141.125.85.87/29  | 141.125.85.81 |         
+| London | eu-gb | lon05 |  141.125.87.55/29  | 141.125.87.49 |         
+| London | eu-gb | lon05 | 141.125.98.103/29  | 141.125.98.97 |         
+| London | eu-gb | lon06 | 158.176.109.207/28 | 158.176.109.193 |         
+| London | eu-gb | lon06 | 158.176.109.255/27 | 158.176.109.225 |         
+| London | eu-gb | lon06 | 158.176.122.63/26  | 158.176.122.1 |         
+| London | eu-gb | lon06 | 158.176.139.255/25 | 158.176.139.129 |         
+| London | eu-gb | lon06 | 158.176.148.255/24 | 158.176.148.1 |         
+| London | eu-gb | lon06 | 158.176.199.255/24 | 158.176.199.1 |         
+| London | eu-gb | lon06 | 158.176.71.255/29  | 158.176.71.249 |         
+| London | eu-gb | lon06 | 158.176.87.135/29  | 158.176.87.129 |         
+| London | eu-gb | lon06 | 158.176.113.143/29 | 158.176.113.137 |         
+| London | eu-gb | lon06 | 158.176.122.239/29 | 158.176.122.233 |         
+| London | eu-gb | lon06 | 158.176.124.223/29 | 158.176.124.217 |         
+| London | eu-gb | lon06 | 158.176.131.15/29  | 158.176.131.9 |    
 {: caption="Table 7. eu-gb Public Subnets" caption-side="bottom"}
 
 #### Private Subnets
@@ -314,6 +314,7 @@ If you use allowlists to control connections in your environment, use the follow
 | Location | Region | Data center | Subnet | First IP |
 | -- | -- | -- | -- | -- |
 | London | eu-gb | lon04 |   10.45.36.63/26  | 10.45.36.1 |         
+| London | eu-gb | lon04 |  10.45.110.255/24 | 10.45.110.1 |         
 | London | eu-gb | lon04 |  10.45.235.255/25 | 10.45.235.129 |         
 | London | eu-gb | lon04 |  10.45.245.255/24 | 10.45.245.1 |         
 | London | eu-gb | lon04 |  10.45.250.255/24 | 10.45.250.1 |         
@@ -326,6 +327,7 @@ If you use allowlists to control connections in your environment, use the follow
 | London | eu-gb | lon05 |  10.196.18.63/26  | 10.196.18.1 |         
 | London | eu-gb | lon05 |  10.196.54.255/25 | 10.196.54.129 |         
 | London | eu-gb | lon05 |  10.196.60.255/24 | 10.196.60.1 |         
+| London | eu-gb | lon05 | 10.196.148.255/24 | 10.196.148.1 |         
 | London | eu-gb | lon05 | 10.196.149.255/24 | 10.196.149.1 |         
 | London | eu-gb | lon05 |  10.196.4.183/29  | 10.196.4.177 |         
 | London | eu-gb | lon05 |  10.196.12.191/29 | 10.196.12.185 |         
@@ -337,13 +339,14 @@ If you use allowlists to control connections in your environment, use the follow
 | London | eu-gb | lon06 |  10.72.196.255/24 | 10.72.196.1 |         
 | London | eu-gb | lon06 |  10.72.211.255/25 | 10.72.211.129 |         
 | London | eu-gb | lon06 |  10.242.60.255/24 | 10.242.60.1 |         
+| London | eu-gb | lon06 |  10.242.63.255/24 | 10.242.63.1 |         
 | London | eu-gb | lon06 |   10.72.9.63/29   | 10.72.9.57 |         
 | London | eu-gb | lon06 |   10.72.25.95/29  | 10.72.25.89 |         
 | London | eu-gb | lon06 |  10.72.42.215/29  | 10.72.42.209 |         
 | London | eu-gb | lon06 |  10.72.95.167/29  | 10.72.95.161 |         
 | London | eu-gb | lon06 |  10.72.127.111/29 | 10.72.127.105 |         
-| London | eu-gb | lon06 |  10.72.187.247/29 | 10.72.187.241 |  
-{: caption="Table 8. eu-gb Private Subnets" caption-side="bottom"}     
+| London | eu-gb | lon06 |  10.72.187.247/29 | 10.72.187.241 |   
+{: caption="Table 8. eu-gb Private Subnets" caption-side="bottom"}    
 
 ### `au-syd` List
 {: #au-syd-list} 
