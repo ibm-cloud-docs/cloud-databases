@@ -378,7 +378,7 @@ If you use allowlists to control connections in your environment, use the follow
 | Sydney | au-syd | syd05 | 135.90.108.255/24  | 135.90.108.1 |         
 | Sydney | au-syd | syd05 |  135.90.67.31/29   | 135.90.67.25 |         
 | Sydney | au-syd | syd05 |  135.90.67.135/29  | 135.90.67.129 |         
-| Sydney | au-syd | syd05 |  135.90.68.39/29   | 135.90.68.33 | 
+| Sydney | au-syd | syd05 |  135.90.68.39/29   | 135.90.68.33 |    
 {: caption="Table 9. au-syd Public Subnets" caption-side="bottom"}  
 
 #### Private Subnets
@@ -386,24 +386,24 @@ If you use allowlists to control connections in your environment, use the follow
 
 | Location | Region | Data center | Subnet | First IP |
 | -- | -- | -- | -- | -- |
-| Sydney | au-syd | syd01 | 10.138.220.255/25 | 10.138.220.129 |        
-| Sydney | au-syd | syd01 |  10.139.40.63/26  | 10.139.40.1 |        
-| Sydney | au-syd | syd01 |  10.139.61.255/24 | 10.139.61.1 |        
-| Sydney | au-syd | syd01 |  10.138.152.63/29 | 10.138.152.57 |        
-| Sydney | au-syd | syd01 | 10.138.172.175/29 | 10.138.172.169 |        
-| Sydney | au-syd | syd01 | 10.138.172.183/29 | 10.138.172.177 |        
-| Sydney | au-syd | syd04 |  10.63.110.255/25 | 10.63.110.129 |        
-| Sydney | au-syd | syd04 |  10.63.212.127/26 | 10.63.212.65 |        
-| Sydney | au-syd | syd04 |  10.63.244.255/24 | 10.63.244.1 |        
-| Sydney | au-syd | syd04 |   10.63.4.255/29  | 10.63.4.249 |        
-| Sydney | au-syd | syd04 |  10.63.44.103/29  | 10.63.44.97 |        
-| Sydney | au-syd | syd04 |  10.63.253.111/29 | 10.63.253.105 |        
-| Sydney | au-syd | syd05 |  10.195.4.255/26  | 10.195.4.193 |        
-| Sydney | au-syd | syd05 |  10.195.81.127/25 | 10.195.81.1 |        
-| Sydney | au-syd | syd05 | 10.195.128.255/24 | 10.195.128.1 |        
-| Sydney | au-syd | syd05 |  10.195.7.239/29  | 10.195.7.233 |        
-| Sydney | au-syd | syd05 |  10.195.7.247/29  | 10.195.7.241 |        
-| Sydney | au-syd | syd05 |  10.195.46.111/29 | 10.195.46.105 |
+| Sydney | au-syd | syd01 | 10.138.220.255/25 | 10.138.220.129 |         
+| Sydney | au-syd | syd01 |  10.139.40.63/26  | 10.139.40.1 |         
+| Sydney | au-syd | syd01 |  10.139.61.255/24 | 10.139.61.1 |         
+| Sydney | au-syd | syd01 |  10.138.152.63/29 | 10.138.152.57 |         
+| Sydney | au-syd | syd01 | 10.138.172.175/29 | 10.138.172.169 |         
+| Sydney | au-syd | syd01 | 10.138.172.183/29 | 10.138.172.177 |         
+| Sydney | au-syd | syd04 |  10.63.110.255/25 | 10.63.110.129 |         
+| Sydney | au-syd | syd04 |  10.63.212.127/26 | 10.63.212.65 |         
+| Sydney | au-syd | syd04 |  10.63.244.255/24 | 10.63.244.1 |         
+| Sydney | au-syd | syd04 |   10.63.4.255/29  | 10.63.4.249 |         
+| Sydney | au-syd | syd04 |  10.63.44.103/29  | 10.63.44.97 |         
+| Sydney | au-syd | syd04 |  10.63.253.111/29 | 10.63.253.105 |         
+| Sydney | au-syd | syd05 |  10.195.4.255/26  | 10.195.4.193 |         
+| Sydney | au-syd | syd05 |  10.195.81.127/25 | 10.195.81.1 |         
+| Sydney | au-syd | syd05 | 10.195.128.255/24 | 10.195.128.1 |         
+| Sydney | au-syd | syd05 |  10.195.7.239/29  | 10.195.7.233 |         
+| Sydney | au-syd | syd05 |  10.195.7.247/29  | 10.195.7.241 |         
+| Sydney | au-syd | syd05 |  10.195.46.111/29 | 10.195.46.105 | 
 {: caption="Table 10. au-syd Private Subnets" caption-side="bottom"}
 
 ### `jp-tok` List
