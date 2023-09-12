@@ -440,7 +440,7 @@ If you use allowlists to control connections in your environment, use the follow
 | Tokyo | jp-tok | tok05 |  165.192.66.7/29   | 165.192.66.1 |         
 | Tokyo | jp-tok | tok05 | 165.192.70.175/29  | 165.192.70.169 |         
 | Tokyo | jp-tok | tok05 | 165.192.71.239/29  | 165.192.71.233 |         
-| Tokyo | jp-tok | tok05 | 165.192.148.63/29  | 165.192.148.57 |       
+| Tokyo | jp-tok | tok05 | 165.192.148.63/29  | 165.192.148.57 |     
 {: caption="Table 11. tok Public Subnets" caption-side="bottom"}   
 
 #### Private Subnets
@@ -470,7 +470,7 @@ If you use allowlists to control connections in your environment, use the follow
 | Tokyo | jp-tok | tok05 |  10.193.15.167/29 | 10.193.15.161 |         
 | Tokyo | jp-tok | tok05 |  10.193.19.39/29  | 10.193.19.33 |         
 | Tokyo | jp-tok | tok05 |  10.193.76.255/29 | 10.193.76.249 |         
-| Tokyo | jp-tok | tok05 | 10.193.103.175/29 | 10.193.103.169 | 
+| Tokyo | jp-tok | tok05 | 10.193.103.175/29 | 10.193.103.169 |
 {: caption="Table 12. tok Private Subnets" caption-side="bottom"}  
 
 ### `jp-osa` List
