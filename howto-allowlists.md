@@ -495,7 +495,7 @@ If you use allowlists to control connections in your environment, use the follow
 | Osaka | jp-osa | osa23 | 163.73.68.95/27  | 163.73.68.65 |         
 | Osaka | jp-osa | osa23 | 163.73.71.63/26  | 163.73.71.1 |         
 | Osaka | jp-osa | osa23 | 163.73.67.191/29 | 163.73.67.185 |         
-| Osaka | jp-osa | osa23 | 163.73.67.231/29 | 163.73.67.225 |  
+| Osaka | jp-osa | osa23 | 163.73.67.231/29 | 163.73.67.225 |   
 {: caption="Table 13. jp-osa Public Subnets" caption-side="bottom"} 
 
 #### Private Subnets
@@ -514,8 +514,8 @@ If you use allowlists to control connections in your environment, use the follow
 | Osaka | jp-osa | osa23 | 10.10.12.255/26 | 10.10.12.193 |         
 | Osaka | jp-osa | osa23 | 10.10.28.255/25 | 10.10.28.129 |         
 | Osaka | jp-osa | osa23 |   10.10.8.7/29  | 10.10.8.1 |         
-| Osaka | jp-osa | osa23 |  10.10.8.15/29  | 10.10.8.9 |   
-{: caption="Table 14. jp-osa Private Subnets" caption-side="bottom"}    
+| Osaka | jp-osa | osa23 |  10.10.8.15/29  | 10.10.8.9 |    
+{: caption="Table 14. jp-osa Private Subnets" caption-side="bottom"}  
 
 ### `us-east` List
 {: #us-east-list} 
