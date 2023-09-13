@@ -33,6 +33,20 @@ To enable Sysdig Monitor on {{site.data.keyword.mon_full}}, follow these steps:
 ## Sysdig Dashboards
 {: #sysdig-monitor-dashboards}
 
+Use dashboards to monitor your environments and applications. Sysdig dashboards are designed around time. Select your dashboard based on specific data gathered over a set time range. 
+
+## Common metrics
+{: #sysdig-monitor-dashboards-common-metrics}
+
+{{site.data.keyword.databases-for}} uses some common metrics across all our offerings.
+
+### Disk used percent
+{: #sysdig-monitor-dashboards-disk-used-percent}
+
+
+
+
+
 ### CPU used per member (data only available with dedicated cores)
 {: #sysdig-monitor-dashboards-cpu-used-per-member}
 
