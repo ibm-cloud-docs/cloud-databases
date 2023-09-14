@@ -25,7 +25,7 @@ subcollection: cloud-databases
 - {{site.data.keyword.databases-for-enterprisedb_full}} is a PostgreSQL-based database engine optimized for performance, developer productivity, and compatibility with Oracle. For more information, see the [{{site.data.keyword.databases-for-enterprisedb}} documentation](/docs/databases-for-enterprisedb){: external}. 
 - {{site.data.keyword.databases-for-mysql_full}} is fully managed MySQL relational database service. For more information, see the [{{site.data.keyword.databases-for-mysql}} documentation](/docs/databases-for-mysql){: external}.
 - {{site.data.keyword.messages-for-rabbitmq_full}} is an open source multi-protocol messaging broker. For more information, see the [{{site.data.keyword.messages-for-rabbitmq}}documentation](/docs/databases-for-redis){: external}.
-- {{site.data.keyword.databases-for-etcd_full}} is a distributed reliable key-value store for the most critical data of a distributed system. For more information, see the [{{site.data.keyword.messages-for-etcd}} documentation](/docs/databases-for-etcd){: external}.
+- {{site.data.keyword.databases-for-etcd_full}} is a distributed reliable key-value store for the most critical data of a distributed system. For more information, see the [{{site.data.keyword.databases-for-etcd}} documentation](/docs/databases-for-etcd){: external}.
 
 ## {{site.data.keyword.databases-for}} CLI plug-in
 {: #about-cli}
