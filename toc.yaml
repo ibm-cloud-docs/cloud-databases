@@ -12,12 +12,16 @@ toc:
   - navgroup: 
       id: learn
       topics:
-      - index.md
+      - topicgroup:
+          label: Choose your database
+          topics:
+          - include: ../databases-for-mongodb/landing.json
       - hosting-models.md
-      - learn-getting-to-production.md
+      - index.md
   - navgroup: 
       id: howto
-      topics: 
+      topics:
+      - learn-getting-to-production.md
       - howto-deprovisioning.md
       - howto-manage-backups.md
       - howto-allowlists.md
@@ -26,7 +30,7 @@ toc:
       - howto-cbr.md
       - cbr-tutorial.md
       - topicgroup: 
-          label: IBM Cloud Databases (ICD) enabled by IBM Cloud Satellite
+          label: IBM Cloud Databases enabled by IBM Cloud Satellite
           topics: 
           - howto-sat-loc.md
           - howto-sat-loc-aws.md
