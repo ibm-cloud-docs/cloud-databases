@@ -1,0 +1,10 @@
+includes:
+   - https://github.ibm.com/cloud-docs/databases-for-cassandra
+   - https://github.ibm.com/cloud-docs/databases-for-elasticsearch
+   - https://github.ibm.com/cloud-docs/databases-for-enterprisedb
+   - https://github.ibm.com/cloud-docs/databases-for-etcd
+   - https://github.ibm.com/cloud-docs/databases-for-mongodb
+   - https://github.ibm.com/cloud-docs/databases-for-mysql
+   - https://github.ibm.com/cloud-docs/databases-for-postgresql
+   - https://github.ibm.com/cloud-docs/databases-for-redis
+   - https://github.ibm.com/cloud-docs/messages-for-rabbitmq
