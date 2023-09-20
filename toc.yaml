@@ -15,7 +15,7 @@ toc:
       - topicgroup:
           label: Choose your database
           topics:
-          - include: ../databases-for-mongodb/landing.json
+          - include: ../databases-for-mongodb/getting-started.md
       - hosting-models.md
       - index.md
   - navgroup: 
