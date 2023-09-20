@@ -30,13 +30,6 @@ toc:
       - howto-cbr.md
       - cbr-tutorial.md
       - topicgroup: 
-          label: IBM Cloud Databases enabled by IBM Cloud Satellite
-          topics: 
-          - howto-sat-loc.md
-          - howto-sat-loc-aws.md
-          - howto-sat-loc-onprem.md
-          - howto-sat-loc-scs.md
-      - topicgroup: 
           label: Enhancing security
           topics: 
           - manage-scc.md
@@ -58,6 +51,13 @@ toc:
           - reference-activity-tracker.md
           - reference-logging.md
           - reference-sysdig.md
+      - topicgroup: 
+          label: IBM Cloud Databases enabled by IBM Cloud Satellite
+          topics: 
+          - howto-sat-loc.md
+          - howto-sat-loc-aws.md
+          - howto-sat-loc-onprem.md
+          - howto-sat-loc-scs.md
   - navgroup:
       id: reference
       topics:
