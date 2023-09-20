@@ -12,18 +12,6 @@ toc:
   - navgroup: 
       id: learn
       topics:
-      - topicgroup:
-          label: Choose your database
-          topics:
-          - include: ../databases-for-mongodb/getting-started.md
-          - include: ../databases-for-elasticsearch/getting-started.md
-          - include: ../databases-for-datastax/getting-started.md
-          - include: ../databases-for-redis/getting-started.md
-          - include: ../databases-for-postgresql/getting-started.md
-          - include: ../databases-for-enterprisedb/getting-started.md
-          - include: ../databases-for-mysql/getting-started.md
-          - include: ../messages-for-rabbitmq/getting-started.md
-          - include: ../databases-for-etcd/getting-started.md
       - hosting-models.md
       - index.md
   - navgroup: 
