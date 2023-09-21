@@ -56,10 +56,10 @@ subcollection: cloud-databases
 
 {{site.data.keyword.messages-for-rabbitmq}} is an open source multi-protocol messaging broker. For more information, see [{{site.data.keyword.messages-for-rabbitmq}](/docs/messages-for-rabbitmq){: external}.
 
-## {{site.data.keyword.databases-for-etcd_full}} {{site.data.keyword.databases-for-etcd_full_notm}}
+## {{site.data.keyword.databases-for-etcd_full}}
 {: #cdb-offerings-etcd}
 
-{{site.data.keyword.databases-for-etcd}} is a distributed reliable key-value store for the most critical data of a distributed system. For more information, see the [{{site.data.keyword.databases-for-etcd}}](/docs/databases-for-etcd){: external}.
+{{site.data.keyword.databases-for-etcd}} is a distributed reliable key-value store for the most critical data of a distributed system. For more information, see [{{site.data.keyword.databases-for-etcd}}](/docs/databases-for-etcd){: external}.
 
 ## {{site.data.keyword.databases-for}} CLI plug-in and API
 {: #cdb-offerings-cli-api}
