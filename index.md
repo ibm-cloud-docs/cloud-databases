@@ -24,7 +24,7 @@ subcollection: cloud-databases
 ## {{site.data.keyword.databases-for-elasticsearch}}
 {: #cdb-offerings-elasticsearch}
 
-{{site.data.keyword.databases-for-elasticsearch}} combines the power of a full text search engine with the indexing strengths of a JSON document database. For more information, see [/docs/databases-for-elasticsearch](/docs/databases-for-mongodb){: external}.
+{{site.data.keyword.databases-for-elasticsearch}} combines the power of a full text search engine with the indexing strengths of a JSON document database. For more information, see [{{site.data.keyword.databases-for-elasticsearch}}](/docs/databases-for-elasticsearch){: external}.
 
 ## {{site.data.keyword.databases-for-cassandra}}
 {: #cdb-offerings-cassandra}
@@ -54,7 +54,7 @@ subcollection: cloud-databases
 ## {{site.data.keyword.messages-for-rabbitmq}}
 {: #cdb-offerings-rabbitmq}
 
-{{site.data.keyword.messages-for-rabbitmq}} is an open source multi-protocol messaging broker. For more information, see [{{site.data.keyword.messages-for-rabbitmq}](/docs/messages-for-rabbitmq){: external}.
+{{site.data.keyword.messages-for-rabbitmq}} is an open source multi-protocol messaging broker. For more information, see [{{site.data.keyword.messages-for-rabbitmq}}](/docs/messages-for-rabbitmq){: external}.
 
 ## {{site.data.keyword.databases-for-etcd}}
 {: #cdb-offerings-etcd}
