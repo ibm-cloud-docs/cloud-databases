@@ -31,7 +31,7 @@ subcollection: cloud-databases
 
 {{site.data.keyword.databases-for-cassandra}} is a scale-out NoSQL database built on Apache Cassandra, designed for high-availability and workload flexibility. For more information, see [{{site.data.keyword.databases-for-cassandra}}](/docs/databases-for-cassandra){: external}.
 
-## {{site.data.keyword.databases-for-redis_full}}
+## {{site.data.keyword.databases-for-redis}}
 {: #cdb-offerings-redis}
 
 {{site.data.keyword.databases-for-redis}} is a blazingly fast, in-memory data structure store. For more information, see [{{site.data.keyword.databases-for-redis}}](/docs/databases-for-redis){: external}.
