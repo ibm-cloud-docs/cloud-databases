@@ -60,4 +60,3 @@ subcollection: cloud-databases
 {: #cdb-offerings-etcd}
 
 {{site.data.keyword.databases-for-etcd}} is a distributed reliable key-value store for the most critical data of a distributed system. For more information, see [{{site.data.keyword.databases-for-etcd}}](/docs/databases-for-etcd){: external}.
-
