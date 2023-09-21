@@ -19,7 +19,7 @@ subcollection: cloud-databases
 ## {{site.data.keyword.databases-for-mongodb}}
 {: #cdb-offerings-mongodb}
 
-{{site.data.keyword.databases-for-mongodb}} is a JSON document store with a rich query and aggregation framework. For more information, see [{{site.data.keyword.databases-for-mongodb_full}}](/docs/databases-for-mongodb){: external}.
+{{site.data.keyword.databases-for-mongodb}} is a JSON document store with a rich query and aggregation framework. For more information, see [{{site.data.keyword.databases-for-mongodb}}](/docs/databases-for-mongodb){: external}.
 
 ## {{site.data.keyword.databases-for-elasticsearch}}
 {: #cdb-offerings-elasticsearch}
