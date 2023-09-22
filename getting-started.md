@@ -32,3 +32,5 @@ This tutorial is a short introduction to deploying a {{site.data.keyword.databas
 {: step}
 
 Choose your desired {{site.data.keyword.databases-for}} service.
+
+{{../cloud-databases/index.md#cdb-offerings}}
