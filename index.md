@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-09-21"
+lastupdated: "2023-09-22"
 
 subcollection: cloud-databases
 
@@ -19,12 +19,12 @@ subcollection: cloud-databases
 ## {{site.data.keyword.databases-for-mongodb}}
 {: #cdb-offerings-mongodb}
 
-{{site.data.keyword.databases-for-mongodb}} is a JSON document store with a rich query and aggregation framework. For more information, see [{{site.data.keyword.databases-for-mongodb}}](/docs/databases-for-mongodb){: external}.
+{{site.data.keyword.databases-for-mongodb}} is a JSON document store with a rich query and aggregation framework. For more information, see [{{site.data.keyword.databases-for-mongodb}}](/docs/databases-for-mongodb){: external}. {{site.data.keyword.databases-for-mongodb}} offers two plans: Standard and Enterprise.
 
 ## {{site.data.keyword.databases-for-elasticsearch}}
 {: #cdb-offerings-elasticsearch}
 
-{{site.data.keyword.databases-for-elasticsearch}} combines the power of a full text search engine with the indexing strengths of a JSON document database. For more information, see [{{site.data.keyword.databases-for-elasticsearch}}](/docs/databases-for-elasticsearch){: external}.
+{{site.data.keyword.databases-for-elasticsearch}} combines the power of a full text search engine with the indexing strengths of a JSON document database. For more information, see [{{site.data.keyword.databases-for-elasticsearch}}](/docs/databases-for-elasticsearch){: external}. {{site.data.keyword.databases-for-elasticsearch}} offers two plans: Standard and Enterprise.
 
 ## {{site.data.keyword.databases-for-cassandra}}
 {: #cdb-offerings-cassandra}
