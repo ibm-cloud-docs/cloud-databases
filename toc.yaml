@@ -12,15 +12,11 @@ toc:
   - navgroup: 
       id: learn
       topics:
+      - getting-started.md
       - hosting-models.md
-      - index.md
   - navgroup: 
       id: howto
       topics:
-      - topicgroup:
-          label: Getting started
-          topics:
-          - getting-started.md
       - topicgroup:
           label: Logging and monitoring
           topics: 
