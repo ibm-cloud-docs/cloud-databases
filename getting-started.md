@@ -34,3 +34,17 @@ This tutorial is a short introduction to deploying a {{site.data.keyword.databas
 Choose your desired {{site.data.keyword.databases-for}} service.
 
 {{../cloud-databases/index.md#cdb-offerings}}
+
+## Provision an instance
+{: #getting-started-cdb-provision-instance}
+{: step}
+
+- Provisioning [{{site.data.keyword.databases-for-mongodb}}](/docs/databases-for-mongodb?topic=databases-for-mongodb-provisioning){: external}. {{site.data.keyword.databases-for-mongodb}} offers two plans: Standard and Enterprise.
+- Provisioning [{{site.data.keyword.databases-for-elasticsearch}}](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-provisioning-new){: external}. {{site.data.keyword.databases-for-elasticsearch}} offers two plans: Standard and Enterprise.
+- Provisioning [{{site.data.keyword.databases-for-cassandra}}](/docs/databases-for-cassandra?topic=databases-for-cassandra-provisioning){: external}.
+- Provisioning [{{site.data.keyword.databases-for-redis}}](/docs/databases-for-redis?topic=databases-for-redis-provisioning){: external}.
+- Provisioning [{{site.data.keyword.databases-for-postgresql}}](/docs/databases-for-postgresql?topic=databases-for-postgresql-provisioning){: external}.
+- Provisioning [{{site.data.keyword.databases-for-enterprisedb}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-provisioning){: external}.
+- Provisioning [{{site.data.keyword.databases-for-mysql}}](/docs/databases-for-mysql?topic=databases-for-mysql-provisioning){: external}.
+- Provisioning [{{site.data.keyword.messages-for-rabbitmq}}](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-provisioning){: external}.
+- Provisioning [{{site.data.keyword.databases-for-etcd}}](/docs/databases-for-etcd?topic=databases-for-etcd-provisioning){: external}.
