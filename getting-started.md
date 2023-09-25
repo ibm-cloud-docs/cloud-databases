@@ -70,3 +70,7 @@ Follow the outlined procedures for provisioning a {{site.data.keyword.databases-
 - [{{site.data.keyword.messages-for-rabbitmq}}](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-provisioning){: external}.
 
 - [{{site.data.keyword.databases-for-etcd}}](/docs/databases-for-etcd?topic=databases-for-etcd-provisioning){: external}.
+
+Set up Logging and Monitoring
+{: #getting-started-cdb-logging-monitoring}
+{: step}
