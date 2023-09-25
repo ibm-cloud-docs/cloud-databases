@@ -33,7 +33,7 @@ To enable Sysdig Monitor on {{site.data.keyword.mon_full}}, follow these steps:
 ## Sysdig Dashboards
 {: #sysdig-monitor-dashboards}
 
-Use dashboards to monitor your environments and applications. Sysdig dashboards are designed around time. Select your dashboard based on specific data gathered over a set time range. 
+Use dashboards to monitor your environments and applications. Sysdig dashboards are designed around time. Select your dashboard based on specific data gathered over a set time range.
 
 ## Common metrics
 {: #sysdig-monitor-dashboards-common-metrics}
@@ -43,11 +43,30 @@ Use dashboards to monitor your environments and applications. Sysdig dashboards 
 ### Disk used percent
 {: #sysdig-monitor-dashboards-disk-used-percent}
 
-
-
-
-
 ### CPU used per member (data only available with dedicated cores)
 {: #sysdig-monitor-dashboards-cpu-used-per-member}
 
 The usage that is presented in this dashboard is a percentage of total CPU being used, based on the number of cores in your {{site.data.keyword.databases-for}} instance. For example, if you have eight cores and your usage is 12.5%, then that percentage reflects that your database member is using 1 core's worth of CPU seconds; however, that does not guarantee that your member's workload is pinned to one core – the workload might be distributed unevenly among your eight cores. In the same example, 25% usage reflects that your database member is using 2 core's worth of CPU seconds out of your available 8 cores.
+
+## Service-specific {{site.data.keyword.databases-for}} metrics
+{: #sysdig-monitor-dashboards-specific-metrics}
+
+For metrics relevant to a particular {{site.data.keyword.databases-for}} service, see the appropriate Monitoring documentation:
+
+- [{{site.data.keyword.databases-for-mongodb}}](/docs/databases-for-mongodb?topic=databases-for-mongodb-monitoring){: external}.
+
+- [{{site.data.keyword.databases-for-elasticsearch}}](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-monitoring){: external}. 
+
+- [{{site.data.keyword.databases-for-cassandra}}](/docs/databases-for-cassandra?topic=databases-for-cassandra-monitoring){: external}.
+
+- [{{site.data.keyword.databases-for-redis}}](/docs/databases-for-redis?topic=databases-for-redis-monitoring){: external}.
+
+- [{{site.data.keyword.databases-for-postgresql}}](/docs/databases-for-postgresql?topic=databases-for-postgresql-monitoring){: external}.
+
+- [{{site.data.keyword.databases-for-enterprisedb}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-monitoring){: external}.
+
+- [{{site.data.keyword.databases-for-mysql}}](/docs/databases-for-mysql?topic=databases-for-mysql-monitoring){: external}.
+
+- [{{site.data.keyword.messages-for-rabbitmq}}](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-monitoring){: external}.
+
+- [{{site.data.keyword.databases-for-etcd}}](/docs/databases-for-etcd?topic=databases-for-etcd-monitoring){: external}.
