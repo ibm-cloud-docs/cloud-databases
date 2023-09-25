@@ -71,6 +71,12 @@ Follow the outlined procedures for provisioning a {{site.data.keyword.databases-
 
 - [{{site.data.keyword.databases-for-etcd}}](/docs/databases-for-etcd?topic=databases-for-etcd-provisioning){: external}.
 
-Set up Logging and Monitoring
+## Set up Logging and Monitoring
 {: #getting-started-cdb-logging-monitoring}
 {: step}
+
+Use the {{site.data.keyword.at_full}} service to capture a record of your {{site.data.keyword.databases-for}} activities and monitor the activity of your {{site.data.keyword.cloud_notm}} account. For more information, see {{site.data.keyword.databases-for}} [{{site.data.keyword.at_full}} Integration](/docs/cloud-databases?topic=cloud-databases-activity-tracker).
+
+Use {{site.data.keyword.la_full}} to add log management capabilities to your {{site.data.keyword.databases-for}} architecture. For more information, see {{site.data.keyword.databases-for}} [{{site.data.keyword.la_full}} Integration](/docs/cloud-databases?topic=cloud-databases-logging).
+
+Use {{site.data.keyword.mon_full}} to gain operational visibility into the performance and health of your applications, services, and platforms. For more information, see {{site.data.keyword.databases-for}} [{{site.data.keyword.mon_full}} with Sysdig Integration](/docs/cloud-databases?topic=cloud-databases-sysdig-monitor).
