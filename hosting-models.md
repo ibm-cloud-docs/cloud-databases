@@ -18,16 +18,56 @@ keywords: isolated compute, hosting models
 To allow for reliable resource allocation, {{site.data.keyword.databases-for}} offers two hosting models: Shared Compute and Isolated Compute. {{site.data.keyword.databases-for}} Shared Compute is a cost-effective, flexible option for your database deployment. {{site.data.keyword.databases-for}} Isolated Compute is an appealing option for applications that require more precise control, security, or performance.
 {: shortdesc}
 
-Switching hosting models does not cause downtime.
-{: note}
-
 ## {{site.data.keyword.databases-for}} Isolated Compute
 {: #hosting-models-iso-compute}
 
-By placing your deployment and all associated user-data operations on its own isolated machine, {{site.data.keyword.databases-for}} Isolated Compute provides dedicated computing resourcees and security. Shared Compute improves our existing multi-tenant offering ({{site.data.keyword.databases-for}} Shared Compute) by delivering predictable performance and stronger security through logically separated tenants.
+Isolated Compute is the service for secure enterprise data hosting. By placing your deployment and all associated user-data operations on an isolated machine, {{site.data.keyword.databases-for}} Isolated Compute provides dedicated computing resourcees and security.
 
-CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} Isolated Compute. Disk autoscaling is available. If you have provisioned an Isolated instance or migrated from a deployment with autoscaling, keep an eye on your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/databases-for-mongodb?topic=databases-for-mongodb-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
+At provisioning, select the CPU x RAM size of the machine to provision your database on — this machine will be dedicated to running this database instance, giving you hypervisor-level isolation between your instance and any other database. To further strengthen isolation, dedicated database management agents run alongside the database instance on the same isolated machines. IO bandwidth and network bandwidth will also be dedicated to the database instance.
+
+Storage is still selected separately, allowing you to determine the number of [IOPS](#x3858854){: term} your database receives. Scale your database and change your machine size through your preferred method: the [dashboard](https://cloud.ibm.com/){: external}, the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference), the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction), or through [Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: external}.
+
+CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} Isolated Compute. Disk autoscaling is available. If you have provisioned an Isolated instance or migrated from a deployment with autoscaling, monitor your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/databases-for-mongodb?topic=databases-for-mongodb-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
 {: note}
+
+### Isolated Compute Sizing
+{: #hosting-models-iso-compute-sizing}
+
+Isolated Compute features 6 size selections:
+- 4 CPU x 16 RAM
+- 8 CPU x 32 RAM
+- 8 CPU x 64 RAM
+- 16 CPU x 64 RAM
+- 32 CPU x 128 RAM
+- 30 CPU x 240 RAM
+
+The price of CPU and RAM resources remains the same.
+
+## {{site.data.keyword.databases-for}} Shared Compute
+{: #hosting-models-shared-compute}
+
+The new {{site.data.keyword.databases-for}} Shared Compute improves our existing multi-tenant offering by delivering predictable performance and stronger security through logically separated tenants. Shared Compute uses shared host machines; {{site.data.keyword.databases-for}} ensures that each separate customer database is logically separated for data isolation and security. 
+
+Based on your feedback, Shared Compute also ensures predictable and transparent performance. Each {{site.data.keyword.databases-for}} instance receives a deterministic CPU allocation. If an instance is provisioned without selecting a CPU amount, Shared Compute automatically allocates a small amount of CPU to your database, up to a 2 core max. Automatic CPU is provided at a 1:8 ratio of CPU:RAM; therefore, an instance with 1 GB RAM receives 1/8th of a CPU; an instance with 8 GB RAM receives 1 CPU; and an instance with 20 GB RAM receives 2 CPU due to the 2 CPU limit. 
+
+If you have higher performance requirements than 2 CPU, leverage the flexibility of Shared Compute. Scale performance to fit your workload by selecting the amount of CPU and RAM resources you receive. Additionally, if you know that your instance will experience variable demand, use autoscaling to set the expected load and duration that would initiate resource scaling, along with the resource and cost limit your database will scale to.
+
+## Switching hosting models
+{: #hosting-models-switching}
+
+To switch between our Shared and Isolated compute, select the model you want, review your resource selection, and switch. Switching hosting models does not cause downtime.
+
+## Hosting model grandfathering
+{: #hosting-models-grandfathering}
+
+Current multi-tenant users that are automatically migrated to Shared Compute will begin to be charged for their CPU use starting November 2024.
+{: important}
+
+Existing multi-tenant customers will be transitioned to Shared Compute, including a gradual transition from free-for-all CPU allocation to the deterministic Shared Compute allocation.
+
+All Dedicated Cores instances will be migrated to the nearest larger Isolated Compute size.
+
+New Shared Compute users, or self-migrated users to Shared Compute, will receive Shared Compute charging.
 
 ## {{site.data.keyword.databases-for}} Isolated Compute Provisioning
 {: #hosting-models-iso-compute-provisioning}
@@ -97,33 +137,6 @@ CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} 
 {: #hosting-models-iso-compute-provisioning}
 {: cli}
 
-
-
 ### {{site.data.keyword.databases-for}} Isolated Compute Provisioning through Terraform
 {: #hosting-models-iso-compute-provisioning}
 {: terraform}
-
-## {{site.data.keyword.databases-for}} Isolated Compute Pricing
-{: #hosting-models-iso-compute-pricing}
-
-Isolated Compute grandfathered pricing structure:
-- if version EOL: no change
-- if increase RAM: no change
-- if increase CPU: charge for all cores, cores ONLY
-- if migrate to shared: charge for all cores, cores ONLY
-
-we might still want to raise the RAM price (ie, use ram_new rather than ram parts), so the logic should still be there. we just don’t want to raise ram prices now
-Right now, no new/migrated shared instances will have increased ram pricing. Instead, when you provision a new instance, migrate an instance, or scale CPU, you will be charged for all the CPU you have, and no longer be considered grandfathered , but this does not add the RAM $5 increase.
-
-## {{site.data.keyword.databases-for}} Shared Compute
-{: #hosting-models-iso-compute}
-
-## Hosting model migration
-{: #hosting-models-migration}
-
-Migration between hosting models is an easy, one-click process. There is no downtime during the migration and you can feel free to move back and forth between models.
-
-## Hosting model Grandfathering
-{: #hosting-models-grandfathering}
-
-
