@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2023
-lastupdated: "2023-09-25"
+lastupdated: "2023-09-27"
 
 keywords: cloud databases
 
@@ -47,7 +47,7 @@ Choose your desired {{site.data.keyword.databases-for}} service.
 {: #getting-started-cdb-provision-instance}
 {: step}
 
-Follow the outlined procedures for provisioning a {{site.data.keyword.databases-for}} instance of your preferred service. You can provision through the [catalog](https://cloud.ibm.com/catalog/services/databases-for-mongodb){: external}, the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference), the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction), or through [Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: external}.
+Follow the outlined procedures for provisioning a {{site.data.keyword.databases-for}} instance of your preferred service. Provision through the [catalog](https://cloud.ibm.com/catalog/services/databases-for-mongodb){: external}, the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference){: external}, the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction){: external}, or through [Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: external}.
 
 - [{{site.data.keyword.databases-for-mongodb}}](/docs/databases-for-mongodb?topic=databases-for-mongodb-provisioning){: external}. 
    {{site.data.keyword.databases-for-mongodb}} offers two plans: Standard and Enterprise.
@@ -71,12 +71,20 @@ Follow the outlined procedures for provisioning a {{site.data.keyword.databases-
 
 - [{{site.data.keyword.databases-for-etcd}}](/docs/databases-for-etcd?topic=databases-for-etcd-provisioning){: external}.
 
+## Set up notifications
+{: #getting-started-cdb-setup-notifs}
+{: step}
+
+Set up [{{site.data.keyword.cloud_notm}} email notifications](https://cloud.ibm.com/docs/account?topic=account-email-prefs){: external} to stay up-to-date with announcements, billing and usage, additional notification preferences, and ordering.
+
+Set up [resource notifications](https://cloud.ibm.com/docs/account?topic=account-email-prefs#setting-resource-notifications){: external}. {{site.data.keyword.databases-for}} directly notifies you when your database version is approaching end of life. For more information, see the {{site.data.keyword.databases-for}} [Database Version Lifecycle](/docs/cloud-databases?topic=cloud-databases-versioning-policy){: external}.
+
 ## Set up Logging and Monitoring
 {: #getting-started-cdb-logging-monitoring}
 {: step}
 
-1. Use the {{site.data.keyword.at_full}} service to capture a record of your {{site.data.keyword.databases-for}} activities and monitor the activity of your {{site.data.keyword.cloud_notm}} account. For more information, see {{site.data.keyword.databases-for}} [{{site.data.keyword.at_full}} Integration](/docs/cloud-databases?topic=cloud-databases-activity-tracker).
+1. Use the {{site.data.keyword.at_full}} service to capture a record of your {{site.data.keyword.databases-for}} activities and monitor the activity of your {{site.data.keyword.cloud_notm}} account. For more information, see {{site.data.keyword.databases-for}} [{{site.data.keyword.at_full}} Integration](/docs/cloud-databases?topic=cloud-databases-activity-tracker){: external}.
 
-1. Use {{site.data.keyword.la_full}} to add log management capabilities to your {{site.data.keyword.databases-for}} architecture. For more information, see {{site.data.keyword.databases-for}} [{{site.data.keyword.la_full}} Integration](/docs/cloud-databases?topic=cloud-databases-logging).
+1. Use {{site.data.keyword.la_full}} to add log management capabilities to your {{site.data.keyword.databases-for}} architecture. For more information, see {{site.data.keyword.databases-for}} [{{site.data.keyword.la_full}} Integration](/docs/cloud-databases?topic=cloud-databases-logging){: external}.
 
-1. Use {{site.data.keyword.mon_full}} to gain operational visibility into the performance and health of your applications, services, and platforms. For more information, see {{site.data.keyword.databases-for}} [{{site.data.keyword.mon_full}} with Sysdig Integration](/docs/cloud-databases?topic=cloud-databases-sysdig-monitor).
+1. Use {{site.data.keyword.mon_full}} to gain operational visibility into the performance and health of your applications, services, and platforms. For more information, see {{site.data.keyword.databases-for}} [{{site.data.keyword.mon_full}} with Sysdig Integration](/docs/cloud-databases?topic=cloud-databases-sysdig-monitor){: external}.
