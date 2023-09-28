@@ -17,7 +17,7 @@ subcollection: cloud-databases
 {: faq}
 {: support}
 
-{{site.data.keyword.databases-for}} certificates are authenticated by a unique TLS certificates. To verify this, you can inspect the certificate that your service presents when opening a connection. The certificate contains the hostname for a single instance. {{site.data.keyword.databases-for}} dataplane clusters possess their own distinctive root certificate. When you're engaged in certificate validation procedures, exercise caution and select the correct root certificate for each instance. For more information, see the relevant {{site.data.keyword.databases-for}} [Connecting an external application](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-external-app){: external} documentation.
+{{site.data.keyword.databases-for}} certificates are authenticated by unique TLS certificates. To verify this, you can inspect the certificate that your service presents when opening a connection. The certificate contains the hostname for a single instance. {{site.data.keyword.databases-for}} dataplane clusters possess their own distinctive root certificate. When you're engaged in certificate validation procedures, exercise caution and select the correct root certificate for each instance. For more information, see the relevant [Connecting an external application](#faq-cert-external-app) documentation.
 
 ## Connecting an external application documentation
 {: #faq-cert-external-app}
