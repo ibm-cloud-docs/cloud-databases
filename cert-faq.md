@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-09-28"
+lastupdated: "2023-09-29"
 
 keywords: certificate, cert, tls, ssl, mutual tls, client certificates
 
@@ -17,7 +17,7 @@ subcollection: cloud-databases
 {: faq}
 {: support}
 
-{{site.data.keyword.databases-for}} certificates are authenticated by unique TLS certificates. To verify this, you can inspect the certificate that your service presents when opening a connection. The certificate contains the hostname for a single instance. {{site.data.keyword.databases-for}} data plane clusters possess their own distinctive root certificate. When you're engaged in certificate validation procedures, exercise caution and select the correct root certificate for each instance. For more information, see the relevant [Connecting an external application](#faq-cert-external-app) documentation.
+{{site.data.keyword.databases-for}} certificates are authenticated by unique TLS certificates. To verify this, you can inspect the certificate that your service presents when opening a connection. The certificate contains the hostname for a single instance. {{site.data.keyword.databases-for}} data plane clusters possess their own distinctive root certificate. When you're engaged in certificate validation procedures, exercise caution and select the correct root certificate for each instance. For more information, see [Connecting an external application](#faq-cert-external-app).
 
 ## Connecting an external application documentation
 {: #faq-cert-external-app}
@@ -26,7 +26,7 @@ subcollection: cloud-databases
 
 Choose the appropriate service documentation for connecting an external application:
 
-- [{{site.data.keyword.databases-for-mongodb}}](/docs/databases-for-mongodb?topic=databases-for-mongodb-external-app){: external}
+- [{{site.data.keyword.databases-for-mongodb}}](/docs/databases-for-mongodb?topic=databases-for-mongodb-mongodb-external-app){: external}
 - [{{site.data.keyword.databases-for-elasticsearch}}](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-external-app){: external}
 - [{{site.data.keyword.databases-for-cassandra}}](/docs/databases-for-cassandra?topic=databases-for-cassandra-external-app){: external}
 - [{{site.data.keyword.databases-for-redis}}](/docs/databases-for-redis?topic=databases-for-redis-external-app){: external}
