@@ -88,3 +88,9 @@ Set up [resource notifications](https://cloud.ibm.com/docs/account?topic=account
 1. Use {{site.data.keyword.la_full}} to add log management capabilities to your {{site.data.keyword.databases-for}} architecture. For more information, see {{site.data.keyword.databases-for}} [{{site.data.keyword.la_full}} Integration](/docs/cloud-databases?topic=cloud-databases-logging){: external}.
 
 1. Use {{site.data.keyword.mon_full}} to gain operational visibility into the performance and health of your applications, services, and platforms. For more information, see {{site.data.keyword.databases-for}} [{{site.data.keyword.mon_full}} with Sysdig Integration](/docs/cloud-databases?topic=cloud-databases-sysdig-monitor){: external}.
+
+## Next Steps
+{: #getting-started-cdb-logging-monitoring}
+{: step}
+
+You've provisioned {{site.data.keyword.databases-for}} service, set up notifications, and set up monitoring. Now let's make sure your service is secure. 

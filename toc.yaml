@@ -52,7 +52,7 @@ toc:
           - howto-sat-loc-aws.md
           - howto-sat-loc-onprem.md
           - howto-sat-loc-scs.md
-          - howto-deprovisioning.md
+      - howto-deprovisioning.md
   - navgroup:
       id: reference
       topics:
