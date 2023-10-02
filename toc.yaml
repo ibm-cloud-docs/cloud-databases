@@ -13,18 +13,16 @@ toc:
       id: learn
       topics:
       - getting-started.md
+  - navgroup: 
+      id: howto
+      topics:
+      - hosting-models.md
       - topicgroup:
           label: Logging and monitoring
           topics: 
           - reference-activity-tracker.md
           - reference-logging.md
           - reference-sysdig.md
-  - navgroup: 
-      id: howto
-      topics:
-      - hosting-models.md
-      - howto-manage-backups.md
-      - closures.md
       - topicgroup: 
           label: Enhancing security
           topics: 
@@ -32,6 +30,8 @@ toc:
           - howto-cbr.md
           - ha-dr.md
           - howto-allowlists.md
+      - howto-manage-backups.md
+      - closures.md
       - topicgroup: 
           label: Tutorials
           topics: 
