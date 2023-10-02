@@ -13,26 +13,25 @@ toc:
       id: learn
       topics:
       - getting-started.md
-      - hosting-models.md
-  - navgroup: 
-      id: howto
-      topics:
       - topicgroup:
           label: Logging and monitoring
           topics: 
           - reference-activity-tracker.md
           - reference-logging.md
           - reference-sysdig.md
+  - navgroup: 
+      id: howto
+      topics:
+      - hosting-models.md
       - howto-manage-backups.md
-      - howto-allowlists.md
-      - ha-dr.md
       - closures.md
-      - howto-cbr.md
-      - howto-deprovisioning.md
       - topicgroup: 
           label: Enhancing security
           topics: 
           - manage-scc.md
+          - howto-cbr.md
+          - ha-dr.md
+          - howto-allowlists.md
       - topicgroup: 
           label: Tutorials
           topics: 
@@ -53,6 +52,7 @@ toc:
           - howto-sat-loc-aws.md
           - howto-sat-loc-onprem.md
           - howto-sat-loc-scs.md
+          - howto-deprovisioning.md
   - navgroup:
       id: reference
       topics:
