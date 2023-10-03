@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-10-02"
+lastupdated: "2023-10-03"
 
 subcollection: cloud-databases
 
@@ -33,7 +33,7 @@ For more information about your responsibilities when using {{site.data.keyword.
 ## Disaster recovery strategy
 {: #bc-dr-strategy}
 
-{{site.data.keyword.cloud_notm}} has [business continuity](#x3026801){: term) plans in place to provide for the recovery of services within hours if a disaster occurs. You are responsible for your data backup and associated recovery of your content.
+{{site.data.keyword.cloud_notm}} has [business continuity](#x3026801){: term} plans in place to provide for the recovery of services within hours if a disaster occurs. You are responsible for your data backup and associated recovery of your content.
 
 {{site.data.keyword.databases-for}} provides mechanisms to protect your data and restore service functions. Business continuity plans are in place to achieve targeted [recovery point objective](#x3429911){: term} (RPO) and [recovery time objective](#x3167918){: term} (RTO) for the service. The following table outlines the targets for {{site.data.keyword.databases-for}}.
 
