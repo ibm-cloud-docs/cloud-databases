@@ -39,8 +39,8 @@ For more information about your responsibilities when using {{site.data.keyword.
 
 | Disaster recovery objective | Target Value   |
 |---|---|
-|  RPO |   |
-|  RTO |   |
+|  RPO | < 24 hours |
+|  RTO | <24 hours - for Regional failure (0 hours for Zone Failure) |
 {: caption="Table 1. RPO and RTO for {{site.data.keyword.databases-for}}" caption-side="bottom"}
 
 ## Locations
@@ -48,10 +48,10 @@ For more information about your responsibilities when using {{site.data.keyword.
 
 For more information about service availability within regions and data centers, see [Service and infrastructure availability by location](/docs/overview?topic=overview-services_region).
 
-## Single Region Backups
+## Backup Storage Regions
 {: #bc-dr-single-region-backups}
 
-If you deploy in a single zone region, you can create multiple worker nodes but you can't spread them across data centers (zones). The highly available master includes three replicas on separate hosts, but is not spread across zones.
+The purpose of the {{site.data.keyword.databases-for}} regional Disaster Recovery (DR) policy is to make {{site.data.keyword.cos_full}} backups available from the downed region available for you to restore.
 
 | **Region** |                **Backup Storage Region**               | Cross-Region Support? |
 |:----------:|:------------------------------------------------------:|:---------------------:|
@@ -69,3 +69,6 @@ If you deploy in a single zone region, you can create multiple worker nodes but 
 | eu-es      | s3.private.eu.cloud-object-storage.appdomain.cloud     | Yes                   |
 | eu-fr2     | s3.private.eu-fr2.cloud-object-storage.appdomain.cloud | No*                   |
 {: caption="Table 2. Single Region Backups for {{site.data.keyword.databases-for}}" caption-side="bottom"}
+
+*You should keep a local copy of data in case of region failure.
+
