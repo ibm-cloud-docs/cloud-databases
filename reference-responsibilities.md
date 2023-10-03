@@ -1,29 +1,20 @@
 ---
 
 copyright:
-  years: 2019, 2022
-lastupdated: "2022-04-27"
+  years: 2019, 2023
+lastupdated: "2023-10-02"
 
 subcollection: cloud-databases
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:codeblock: .codeblock}
-{:note: .note}
-{:tip: .tip}
+{{site.data.keyword.attribute-definition-list}}
 
-# Responsibilities for {{site.data.keyword.databases-for}}
+# Shared Responsibilities for {{site.data.keyword.databases-for}}
 {: #responsibilities-cloud-databases}
 
 Learn about the management responsibilities and terms and conditions that you have when you use {{site.data.keyword.cloud}} {{site.data.keyword.databases-for}}. For a high-level view of the service types in {{site.data.keyword.cloud_notm}} and the breakdown of responsibilities between the client and {{site.data.keyword.IBM_notm}} for each type, see [Shared responsibilities for {{site.data.keyword.cloud_notm}} offerings](/docs/overview?topic=overview-shared-responsibilities).
 {: shortdesc}
-
-This document covers all the IBM Cloud Databases that include {{site.data.keyword.databases-for-cassandra}}, {{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-enterprisedb}}, {{site.data.keyword.databases-for-etcd}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-redis}}, and {{site.data.keyword.messages-for-rabbitmq}}.
-{: .note}
 
 Review the following sections for the specific responsibilities for you and for {{site.data.keyword.IBM_notm}} when you use {{site.data.keyword.databases-for}}. For the overall terms of use, see [{{site.data.keyword.cloud_notm}} Terms and Notices](/docs/overview/terms-of-use?topic=overview-terms).
 
