@@ -167,7 +167,7 @@ If you need to adjust resources or use a Key Protect key, add any of the optiona
 
 ### Restoring a backup through Terraform
 {: #restore-backup-tf}
-{: tf}
+{: terraform}
 
 Use Terraform to restore to a backup from an older version to a new version.
 
