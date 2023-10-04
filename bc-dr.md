@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-10-03"
+lastupdated: "2023-10-04"
 
 subcollection: cloud-databases
 
@@ -55,19 +55,19 @@ The purpose of the {{site.data.keyword.databases-for}} regional Disaster Recover
 
 | **Region** |                **Backup Storage Region**               | Cross-Region Support? |
 |:----------:|:------------------------------------------------------:|:---------------------:|
-| us-south   | s3.private.us.cloud-object-storage.appdomain.cloud     | Yes                   |
-| jp-osa     | s3.private.ap.cloud-object-storage.appdomain.cloud     | Yes                   |
-| jp-tok     | s3.private.ap.cloud-object-storage.appdomain.cloud     | Yes                   |
-| eu-gb      | s3.private.eu.cloud-object-storage.appdomain.cloud     | Yes                   |
-| us-east    | s3.private.us.cloud-object-storage.appdomain.cloud     | Yes                   |
-| ay-syd     | s3.private.ap.cloud-object-storage.appdomain.cloud     | Yes                   |
-| che01      | s3.private.che01.cloud-object-storage.appdomain.cloud  | No*                   |
-| ca-tor     | s3.private.mon01.cloud-object-storage.appdomain.cloud  | No*                   |
-| br-sao     | s3.private.br-sao.cloud-object-storage.appdomain.cloud | No*                   |
-| eu-de      | s3.private.eu.cloud-object-storage.appdomain.cloud     | Yes                   |
-| par01      | s3.private.eu.cloud-object-storage.appdomain.cloud     | Yes                   |
-| eu-es      | s3.private.eu.cloud-object-storage.appdomain.cloud     | Yes                   |
-| eu-fr2     | s3.private.eu-fr2.cloud-object-storage.appdomain.cloud | No*                   |
+| us-south   | US Cross Regional Endpoint   | Yes                   |
+| jp-osa     | Asia Pacific Cross Regional Endpoint  | Yes                   |
+| jp-tok     | Asia Pacific Cross Regional Endpoint    | Yes                   |
+| eu-gb      | Europe Cross Regional Endpoint     | Yes                   |
+| us-east    | US Cross Regional Endpoint     | Yes                   |
+| ay-syd     | Asia Pacific Cross Regional Endpoint     | Yes                   |
+| che01      | Che01 Single Data Center Endpoint  | No*                   |
+| ca-tor     | Mon01 Single Data Center Endpoint  | No*                   |
+| br-sao     | Br-sao Regional Endpoint | No*                   |
+| eu-de      | Europe Cross Regional Endpoint     | Yes                   |
+| par01      | Europe Cross Regional Endpoint    | Yes                   |
+| eu-es      | Europe Cross Regional Endpoint     | Yes                   |
+| eu-fr2     | BNPP Regional Endpoint | No*                   |
 {: caption="Table 2. Single Region Backups for {{site.data.keyword.databases-for}}" caption-side="bottom"}
 
 *You should keep a local copy of data in case of region failure.
