@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-08-25"
+lastupdated: "2023-10-04"
 
 subcollection: cloud-databases
 
@@ -164,11 +164,37 @@ The `target` is the region where you want the new deployment to be located, whic
 
 If you need to adjust resources or use a Key Protect key, add any of the optional parameters `key_protect_key`, `members_disk_allocation_mb`, `members_memory_allocation_mb`, and `members_cpu_allocation_count`, and their preferred values to the body of the request.
 
+
+### Restoring a backup through Terraform
+{: #restore-backup-tf}
+{: tf}
+
+Use Terraform to restore to a backup from an older version to a new version.
+
+1. Set your `backup_id`. For more information, see [`backup_id`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database#backup_id){: external}.
+1. Set your `version` in the version attribute. For more information, see [`version`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database#backup_id){: external}.
+
+The code will look like:
+
+```tf
+resource "ibm_database" "<your-instance>" {
+  name                                 = "<your_database_name>"
+  service                              = "<service>"
+  plan                                 = "<plan>"
+  location                             = "<region>"
+  version                              = "<version>"
+  backup_id                            = "<backup_id>"
+}
+```
+{: codeblock}
+
+For more information, see the [{{site.data.keyword.databases-for}} Terraform Registry](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database#backup_id){: external}.
+
 ## Backups and Restoration
 {: #backup-restoration}
 
-* {{site.data.keyword.cloud_notm}} Databases are not responsible for restoration, timeliness, or validity of said backups.
-* Actions that you take as a user can compromise the integrity of backups, such as under-allocating memory and disk. Users can monitor that backups are successful by using the API, and periodically restore a backup to ensure validity and integrity. Users can retrieve the most recent-scheduled backup details from the [Cloud Databases CLI plug-in](#backups-in-the-cli) and the [Cloud Databases API](#restoring-a-backup-through-the-api).
+* {{site.data.keyword.databases-for}} are not responsible for restoration, timeliness, or validity of said backups.
+* Actions that you take as a user can compromise the integrity of backups, such as under-allocating memory and disk. Users can monitor that backups are successful by using the API, and periodically restore a backup to ensure validity and integrity. Users can retrieve the most recent-scheduled backup details from the [{{site.data.keyword.databases-for}} CLI plug-in](#backups-in-the-cli) and the [{{site.data.keyword.databases-for}} API](#restoring-a-backup-through-the-api).
 * As a managed service, {{site.data.keyword.databases-for}} monitors the state of your backups and can attempt to remediate when possible. If you encounter issues from which you cannot recover, contact support for more help.
 
 ## Backup Locations
