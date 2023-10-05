@@ -29,4 +29,4 @@ subcollection: cloud-databases
 ## Next Steps
 {: #getting-started}
 
-Now that you've decided which {{site.data.keyword.databases-for}} service suits your needs, you need to [provision an instance]().
+Now that you've decided which {{site.data.keyword.databases-for}} service suits your needs, you need to [provision an instance](/docs/cloud-databases?topic=cloud-databases-getting-started-cdb-provision-instance).
