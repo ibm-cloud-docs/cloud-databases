@@ -21,4 +21,4 @@ Set up [resource notifications](https://cloud.ibm.com/docs/account?topic=account
 ## Next Steps
 {: #getting-started}
 
-Now that you've set up {{site.data.keyword.cloud_notm}} notifications, you should [set up logging and monitoring]() for your {{site.data.keyword.databases-for}} service instance.
+Now that you've set up {{site.data.keyword.cloud_notm}} notifications, you should [set up logging and monitoring](/docs/cloud-databases?topic=cloud-databases-getting-started-cdb-logging-monitoring) for your {{site.data.keyword.databases-for}} service instance.

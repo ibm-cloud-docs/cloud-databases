@@ -41,4 +41,4 @@ Follow the outlined procedures for provisioning a {{site.data.keyword.databases-
 ## Next Steps
 {: #getting-started}
 
-Now that you've provisioned a {{site.data.keyword.databases-for}} service intance, you should [set up notifications]().
+Now that you've provisioned a {{site.data.keyword.databases-for}} service intance, you should [set up notifications](/docs/cloud-databases?topic=cloud-databases-getting-started-cdb-setup-notifs).
