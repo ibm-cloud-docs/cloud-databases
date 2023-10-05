@@ -16,6 +16,7 @@ toc:
       - cdb-provision.md
       - cdb-notifications.md
       - cdb-logging-monitoring.md
+      - cdb-secure.md
   - navgroup: 
       id: howto
       topics:
