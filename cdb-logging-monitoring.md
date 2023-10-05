@@ -12,7 +12,6 @@ subcollection: cloud-databases
 
 # Set up Logging and Monitoring
 {: #getting-started-cdb-logging-monitoring}
-{: step}
 
 1. Use the {{site.data.keyword.at_full}} service to capture a record of your {{site.data.keyword.databases-for}} activities and monitor the activity of your {{site.data.keyword.cloud_notm}} account. For more information, see {{site.data.keyword.databases-for}} [{{site.data.keyword.at_full}} Integration](/docs/cloud-databases?topic=cloud-databases-activity-tracker){: external}.
 
@@ -21,7 +20,6 @@ subcollection: cloud-databases
 1. Use {{site.data.keyword.mon_full}} to gain operational visibility into the performance and health of your applications, services, and platforms. For more information, see {{site.data.keyword.databases-for}} [{{site.data.keyword.mon_full}} with Sysdig Integration](/docs/cloud-databases?topic=cloud-databases-sysdig-monitor){: external}.
 
 ## Next Steps
-{: #getting-started-cdb-logging-monitoring}
-{: step}
+{: #getting-started-cdb-logging-monitoring-next-steps}
 
 You've provisioned {{site.data.keyword.databases-for}} service, set up notifications, and set up monitoring. Now let's make sure your service is secure.

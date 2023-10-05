@@ -27,6 +27,6 @@ subcollection: cloud-databases
 - {{site.data.keyword.databases-for-etcd}} is a distributed reliable key-value store for the most critical data of a distributed system. For more information, see [{{site.data.keyword.databases-for-etcd}}](/docs/databases-for-etcd){: external}.
 
 ## Next Steps
-{: #getting-started}
+{: #cdb-offerings-next-steps}
 
 Now that you've decided which {{site.data.keyword.databases-for}} service suits your needs, you need to [provision an instance](/docs/cloud-databases?topic=cloud-databases-getting-started-cdb-provision-instance).

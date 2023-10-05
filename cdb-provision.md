@@ -12,7 +12,6 @@ subcollection: cloud-databases
 
 # Provision an instance
 {: #getting-started-cdb-provision-instance}
-{: step}
 
 Follow the outlined procedures for provisioning a {{site.data.keyword.databases-for}} instance of your preferred service. Provision through the [catalog](https://cloud.ibm.com/catalog/services/databases-for-mongodb){: external}, the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference){: external}, the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction){: external}, or through [Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: external}.
 
@@ -39,6 +38,6 @@ Follow the outlined procedures for provisioning a {{site.data.keyword.databases-
 - [{{site.data.keyword.databases-for-etcd}}](/docs/databases-for-etcd?topic=databases-for-etcd-provisioning){: external}.
 
 ## Next Steps
-{: #getting-started}
+{: #getting-started-cdb-provision-instance-next-steps}
 
 Now that you've provisioned a {{site.data.keyword.databases-for}} service intance, you should [set up notifications](/docs/cloud-databases?topic=cloud-databases-getting-started-cdb-setup-notifs).
