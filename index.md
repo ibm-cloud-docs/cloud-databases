@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-09-22"
+lastupdated: "2023-10-05"
 
 subcollection: cloud-databases
 
@@ -10,7 +10,7 @@ subcollection: cloud-databases
 
 {{site.data.keyword.attribute-definition-list}}
 
-# {{site.data.keyword.databases-for}} Offerings
+# Choose your service
 {: #cdb-offerings}
 
 {{site.data.keyword.databases-for}} are managed databases, and a messaging queue, that are hosted in {{site.data.keyword.cloud_notm}} and integrated with other {{site.data.keyword.cloud_notm}} services.
@@ -25,3 +25,8 @@ subcollection: cloud-databases
 - {{site.data.keyword.databases-for-mysql}} is fully managed MySQL relational database service. For more information, see [{{site.data.keyword.databases-for-mysql}}](/docs/databases-for-mysql){: external}.
 - {{site.data.keyword.messages-for-rabbitmq}} is an open source multi-protocol messaging broker. For more information, see [{{site.data.keyword.messages-for-rabbitmq}}](/docs/messages-for-rabbitmq){: external}.
 - {{site.data.keyword.databases-for-etcd}} is a distributed reliable key-value store for the most critical data of a distributed system. For more information, see [{{site.data.keyword.databases-for-etcd}}](/docs/databases-for-etcd){: external}.
+
+## Next Steps
+{: #getting-started}
+
+Now that you've decided which {{site.data.keyword.databases-for}} service suits your needs, you need to [provision an instance]().

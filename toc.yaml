@@ -12,7 +12,10 @@ toc:
   - navgroup: 
       id: learn
       topics:
-      - getting-started.md
+      - index.md
+      - cdb-provision.md
+      - cdb-notifications.md
+      - cdb-logging-monitoring.md
   - navgroup: 
       id: howto
       topics:
