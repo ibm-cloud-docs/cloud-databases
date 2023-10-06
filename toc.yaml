@@ -20,7 +20,7 @@ toc:
       - topicgroup:
           label: IBM Cloud Databases Services
           topics:
-          - include: ../databases-for-mongodb/landing.json
+          - include: ../databases-for-mongodb/getting-started.md
   - navgroup: 
       id: howto
       topics:
