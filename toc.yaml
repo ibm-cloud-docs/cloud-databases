@@ -20,8 +20,7 @@ toc:
       - topicgroup:
           label: IBM Cloud Databases Services
           topics:
-          - include: ../databases-for-mongodb/getting-started.md
-          - include: ../databases-for-elasticsearch/getting-started.md
+          - include: ../databases-for-mongodb/getting-started-edb.md
   - navgroup:
       id: howto
       topics:
