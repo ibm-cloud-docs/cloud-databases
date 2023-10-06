@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2019, 2022
-lastupdated: "2022-11-01"
+  years: 2019, 2023
+lastupdated: "2023-10-06"
 
 subcollection: cloud-databases
 
@@ -9,13 +9,7 @@ keywords: database logs, platform logs,
 
 ---
 
-{:external: .external target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:note: .note} 
-{:tip: .tip}
+{{site.data.keyword.attribute-definition-list}}
 
 # Log Analysis Integration
 {: #logging}
