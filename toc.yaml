@@ -17,6 +17,10 @@ toc:
       - cdb-notifications.md
       - cdb-logging-monitoring.md
       - cdb-secure.md
+      - topicgroup:
+          label: IBM Cloud Databases Services
+          topics:
+          - include: ../databases-for-mongodb/landing.json
   - navgroup: 
       id: howto
       topics:
