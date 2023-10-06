@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-09-26"
+lastupdated: "2023-10-06"
 
 subcollection: cloud-databases
 
@@ -65,7 +65,7 @@ Current multi-tenant users that are automatically migrated to Shared Compute wil
 
 Existing multi-tenant customers will be transitioned to Shared Compute, including a gradual transition from free-for-all CPU allocation to the deterministic Shared Compute allocation.
 
-All Dedicated Cores instances will be migrated to the nearest larger Isolated Compute size.
+All Dedicated Cores instances will be migrated to the nearest larger Isolated Compute size. To provision a Dedicated Cores instance before it is shut down, use the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference){: external}, the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction){: external}, or through [Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: external}.
 
 New Shared Compute users, or self-migrated users to Shared Compute, will receive Shared Compute charging.
 
