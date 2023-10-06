@@ -8,8 +8,8 @@ toc:
     href: /docs/cloud-databases?topic=cloud-databases-about
     path: cloud-databases
     label: IBM Cloud Databases
-  entries: 
-  - navgroup: 
+  entries:
+  - navgroup:
       id: learn
       topics:
       - index.md
@@ -21,28 +21,28 @@ toc:
           label: IBM Cloud Databases Services
           topics:
           - include: ../databases-for-mongodb/getting-started.md
-  - navgroup: 
+  - navgroup:
       id: howto
       topics:
       - hosting-models.md
       - topicgroup:
           label: Logging and monitoring
-          topics: 
+          topics:
           - reference-activity-tracker.md
           - reference-logging.md
           - reference-sysdig.md
-      - topicgroup: 
+      - topicgroup:
           label: Enhancing security
-          topics: 
+          topics:
           - manage-scc.md
           - howto-cbr.md
           - ha-dr.md
           - howto-allowlists.md
       - howto-manage-backups.md
       - closures.md
-      - topicgroup: 
+      - topicgroup:
           label: Tutorials
-          topics: 
+          topics:
           - cbr-tutorial.md
           - howto-tutorials.md
           - hello-world-tutorial.md
@@ -53,9 +53,9 @@ toc:
           - bi-tutorial.md
           - disk-util-alerts-tutorial.md
           - kms-tutorial.md
-      - topicgroup: 
+      - topicgroup:
           label: IBM Cloud Databases enabled by IBM Cloud Satellite
-          topics: 
+          topics:
           - howto-sat-loc.md
           - howto-sat-loc-aws.md
           - howto-sat-loc-onprem.md
@@ -68,9 +68,9 @@ toc:
       - db-version-policy.md
       - reference-responsibilities.md
       - reference-iam.md
-      - topicgroup: 
+      - topicgroup:
           label: Connecting over Private Networks
-          topics: 
+          topics:
           - howto-vpes.md
           - reference-service-endpoints.md
       - reference-key-protect.md
