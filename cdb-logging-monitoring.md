@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-10-05"
+lastupdated: "2023-10-09"
 
 subcollection: cloud-databases
 
@@ -22,4 +22,4 @@ subcollection: cloud-databases
 ## Next Steps
 {: #getting-started-cdb-logging-monitoring-next-steps}
 
-You've provisioned {{site.data.keyword.databases-for}} service, set up notifications, and set up monitoring. Now let's make sure your service is secure.
+You've provisioned {{site.data.keyword.databases-for}} service, set up notifications, and set up monitoring. Now let's work on [Securing your service](/docs/cloud-databases?topic=cloud-databases-cdb-secure-service).
