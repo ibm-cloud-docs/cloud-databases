@@ -24,6 +24,7 @@ toc:
           - include: ../databases-for-elasticsearch/getting-started-edb.md
           - include: ../databases-for-cassandra/getting-started-ds.md
           - include: ../databases-for-redis/getting-started-redis.md
+          - include: ../databases-for-postgresql/getting-started-pg.md
   - navgroup:
       id: howto
       topics:
