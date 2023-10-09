@@ -24,7 +24,6 @@ toc:
           - include: ../databases-for-elasticsearch/getting-started-elastic.md
           - include: ../databases-for-cassandra/getting-started-ds.md
           - include: ../databases-for-redis/getting-started-redis.md
-          - include: ../databases-for-postgresql/getting-started-pg.md
           - include: ../databases-for-enterprisedb/getting-started-edb.md
           - include: ../databases-for-mysql/getting-started-mysql.md
           - include: ../messages-for-rabbitmq/getting-started-rmq.md
