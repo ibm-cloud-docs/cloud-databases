@@ -21,9 +21,9 @@ toc:
           label: IBM Cloud Databases Services
           topics:
           - include: ../databases-for-mongodb/getting-started-mdb.md
-          - include: ../databases-for-mongodb/getting-started-edb.md
-          - include: ../databases-for-mongodb/getting-started-ds.md
-          - include: ../databases-for-mongodb/getting-started-redis.md
+          - include: ../databases-for-elasticsearch/getting-started-edb.md
+          - include: ../databases-for-cassandra/getting-started-ds.md
+          - include: ../databases-for-redis/getting-started-redis.md
   - navgroup:
       id: howto
       topics:
