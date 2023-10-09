@@ -20,7 +20,7 @@ toc:
       - topicgroup:
           label: IBM Cloud Databases Services
           topics:
-          - include: ../databases-for-mongodb/getting-started-edb.md
+          - include: ../databases-for-mongodb/getting-started-mdb.md
   - navgroup:
       id: howto
       topics:
