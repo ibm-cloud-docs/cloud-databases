@@ -22,6 +22,7 @@ toc:
           topics:
           - include: ../databases-for-mongodb/getting-started-mdb.md
           - include: ../databases-for-mongodb/getting-started-edb.md
+          - include: ../databases-for-mongodb/getting-started-ds.md
   - navgroup:
       id: howto
       topics:
