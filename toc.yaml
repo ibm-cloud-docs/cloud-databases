@@ -27,6 +27,7 @@ toc:
           - include: ../databases-for-postgresql/getting-started-pg.md
           - include: ../databases-for-enterprisedb/getting-started-edb.md
           - include: ../databases-for-mysql/getting-started-mysql.md
+          - include: ../messages-for-rabbitmq/getting-started-rmq.md
   - navgroup:
       id: howto
       topics:
