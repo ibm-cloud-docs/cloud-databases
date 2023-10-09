@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-04-06"
+  years: 2020, 2023
+lastupdated: "2023-10-09"
 
 keywords: bring your own key, byok, cryptoshredding, hpcs, hyper protect crypto services
 
@@ -9,14 +9,7 @@ subcollection: cloud-databases
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: .external target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
+{{site.data.keyword.attribute-definition-list}}
 
 # Hyper Protect Crypto Services Integration
 {: #hpcs}
