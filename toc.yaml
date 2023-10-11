@@ -20,15 +20,33 @@ toc:
       - topicgroup:
           label: IBM Cloud Databases Services
           topics:
-          - include: ../databases-for-mongodb/getting-started-mdb.md
-          - include: ../databases-for-elasticsearch/getting-started-elastic.md
-          - include: ../databases-for-cassandra/getting-started-ds.md
-          - include: ../databases-for-redis/getting-started-redis.md
-          - include: ../databases-for-postgresql/getting-started-pg.md
-          - include: ../databases-for-enterprisedb/getting-started-edb.md
-          - include: ../databases-for-mysql/getting-started-mysql.md
-          - include: ../messages-for-rabbitmq/getting-started-rmq.md
-          - include: ../databases-for-etcd/getting-started-etcd.md
+          - link:
+              label: Cloud Databases for MongoDB
+              href: https://cloud.ibm.com/docs/databases-for-mongodb
+          - link:
+              label: Cloud Databases for Elasticsearch
+              href: https://cloud.ibm.com/docs/databases-for-elasticsearch
+          - link:
+              label: Cloud Databases for DataStax
+              href: https://cloud.ibm.com/docs/databases-for-cassandra
+          - link:
+              label: Cloud Databases for Redis
+              href: https://cloud.ibm.com/docs/databases-for-redis
+          - link:
+              label: Cloud Databases for PostgreSQL
+              href: https://cloud.ibm.com/docs/databases-for-postgresql
+          - link:
+              label: Cloud Databases for EnterpriseDB
+              href: https://cloud.ibm.com/docs/databases-for-enterprisedb
+          - link:
+              label: Cloud Databases for MySQL
+              href: https://cloud.ibm.com/docs/databases-for-mysql
+          - link:
+              label: Messages for RabbitMQ
+              href: https://cloud.ibm.com/docs/messages-for-rabbitmq
+          - link:
+              label: Cloud Databases for etcd
+              href: https://cloud.ibm.com/docs/databases-for-etcd
   - navgroup:
       id: howto
       topics:
