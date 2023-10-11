@@ -21,24 +21,19 @@ When you provision a {{site.data.keyword.databases-for}} instance, you can choos
 
 | Service | Versioning Schema | Next Known End of Life Version and Date | Preferred Major Version | End of life procedure |
 | --------- | --------- | --------- | --------- | --------- |
-| DataStax | Major versions are the first number in a `major.minor.patch` version number. | v6.8.x, March 2026 |  | Full deprecation announced with an end of service date of 30 June 2024 |  
-| Elasticsearch | Major versions are the first number in a `release.version.maintenance` version number.| v7.9, November 2023; v7.10, November 2023; v7.17, 26 April 2024 | v8.7 | Backup is taken and access removed |  
-| EnterpriseDB | Major version is defined by the first number in the version number. | v12, December 2024 | v12 | Backup is taken and access isremoved |  
-| etcd | Major versions are the first number in a `major.minor.patch` version number. | v3.3, 26 April 2024 | v3.5 | Backup taken and access is removed |  
-| MongoDB | Major versions are the first two numbers in a `major.x.patch` version number. In cases where `x` is even, it is a stable release suitable for production. Even `x` versions are the only ones available on {{site.data.keyword.databases-for}}. | v4.2, July 2023; v4.4, 26 April 2024; v5, September 2024 | v5.0 | Automatically upgraded in place to next Major version |
-| PostgreSQL | Major version is defined by the first number in the version number. | v11, 29 February 2024 | v6.2 | Backup taken and access removed |  
-| Redis | Major versions are the first number in a `major.minor.patch` version number. | v5.0, TBD | Automatically upgraded in place to next Major version only for Redis 4 to Redis 5 |  
-| RabbitMQ | Major versions are the first two numbers in a `major.x.patch` version number. | v3.11, TBD | v3.11 | Backup taken and access removed |  
-| MySQL** | Major versions are the first two numbers in a `major.x.patch` version number. | v5.7, 26 April 2024 | v8.0 | Backup taken and access removed |  
+| {{site.data.keyword.databases-for-mongodb}} | Major versions are the first two numbers in a `major.x.patch` version number. In cases where `x` is even, it is a stable release suitable for production. Even `x` versions are the only ones available on {{site.data.keyword.databases-for}}. | v4.2, July 2023; v4.4, 26 April 2024; v5, September 2024 | v5.0 | Automatically upgraded in place to next Major version |
+| {{site.data.keyword.databases-for-elasticsearch}} | Major versions are the first number in a `release.version.maintenance` version number.| v7.9, November 2023; v7.10, November 2023; v7.17, 26 April 2024 | v8.7 | Backup is taken and access removed |
+| {{site.data.keyword.databases-for-redis}} | Major versions are the first number in a `major.minor.patch` version number. | v5.0, TBD | Automatically upgraded in place to next Major version only for Redis 4 to Redis 5 |
+| {{site.data.keyword.databases-for-postgresql}} | Major version is defined by the first number in the version number. | v11, 29 February 2024 | v6.2 | Backup taken and access removed |
+| {{site.data.keyword.databases-for-enterprisedb}} | Major version is defined by the first number in the version number. | v12, December 2024 | v12 | Backup is taken and access isremoved |
+| {{site.data.keyword.databases-for-mysql}} | Major versions are the first two numbers in a `major.x.patch` version number. | v5.7, 26 April 2024 | v8.0 For more information, see [MySQL 8 GA](/docs/databases-for-mysql?topic=databases-for-mysql-mysql8-ga). | Backup taken and access removed |
+| {{site.data.keyword.messages-for-rabbitmq}} | Major versions are the first two numbers in a `major.x.patch` version number. | v3.11, TBD | v3.11 | Backup taken and access removed |
+| {{site.data.keyword.databases-for-etcd}} | Major versions are the first number in a `major.minor.patch` version number. | v3.3, 26 April 2024 | v3.5 | Backup taken and access is removed |
+| {{site.data.keyword.databases-for-cassandra}} | Major versions are the first number in a `major.minor.patch` version number. | v6.8.x, March 2026 |  | Full deprecation announced with an end of service date of 30 June 2024 |
 {: caption="Table 1. Major versions for {{site.data.keyword.databases-for}}" caption-side="top"}
 
 {{site.data.keyword.databases-for-cassandra_full}} is deprecated and no longer supported as of 30 June 2024. For more information, see the [deprecation details](/docs/databases-for-cassandra?topic=databases-for-cassandra-deprecation#dep_details).
 {: deprecated}
-
-***For more information, see [MySQL 8 GA](/docs/databases-for-mysql?topic=databases-for-mysql-mysql8-ga).*
-
-Any actions taken after an EOL date happen over several days after the EOL date. We try, but cannot guarantee, to make these upgrades outside of business hours in the local regions. If you want more control over the upgrade process of your instance, we recommend that you upgrade following our [backup and restore process](/docs/cloud-databases?topic=cloud-databases-dashboard-backups) before the EOL date of your version.
-{: .note}
 
 ## Version Tags
 {: #version-tags}
@@ -74,6 +69,9 @@ You receive multiple notifications when a major version reaches its End of life.
 * A notification by email through the {{site.data.keyword.IBM_notm}} API. This email contains a *Notifications* link that takes you to a Notifications Management page. **Make sure that these announcements are not being caught by your email service's spam filter.** For more information, see [Setting up Distribution Lists for IBM Cloud Notifications](https://www.ibm.com/cloud/blog/announcements/setting-up-distribution-lists-for-ibm-cloud-notifications){: external}.
 
 For more information, see [Programmatic Methods for Checking Version Status](#-major-version-eol-check-version-status).
+
+Any actions taken after an EOL date happen over several days after the EOL date. We try, but cannot guarantee, to make these upgrades outside of business hours in the local regions. If you want more control over the upgrade process of your instance, we recommend that you upgrade following our [backup and restore process](/docs/cloud-databases?topic=cloud-databases-dashboard-backups) before the EOL date of your version.
+{: .note}
 
 ### Programmatic Methods for Checking Version Status
 {: #-major-version-eol-check-version-status}
