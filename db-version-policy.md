@@ -35,6 +35,11 @@ When you provision a {{site.data.keyword.databases-for}} instance, you can choos
 {{site.data.keyword.databases-for-cassandra_full}} is deprecated and no longer supported as of 30 June 2024. For more information, see the [deprecation details](/docs/databases-for-cassandra?topic=databases-for-cassandra-deprecation#dep_details).
 {: deprecated}
 
+## Subscribe for version updates
+{: #version-updates-subscribe}
+
+{{site.data.keyword.databases-for}} major version updates will be posted in each service's Release Notes. To stay up-to-date with major version announcements, go to the [{{site.data.keyword.cloud_notm}} status page](https://cloud.ibm.com/status){: external} and sign up for notifications. Service release notes are included in these status notifications.
+
 ## Version Tags
 {: #version-tags}
 
