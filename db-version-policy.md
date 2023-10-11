@@ -19,17 +19,17 @@ When you provision a {{site.data.keyword.databases-for}} instance, you can choos
 ## Major versions defined
 {: #version-definitions}
 
-| Service | Versioning Schema | Next Known End of Life Version and Date | End of life procedure |
-| --------- | --------- | --------- | --------- |
-| DataStax | Major versions are the first number in a `major.minor.patch` version number. | v6.8.x, March 2026 | Backup is taken and access is removed |  
-| Elasticsearch | Major versions are the first number in a `release.version.maintenance` version number.| v7.9, November 2023; v7.10, November 2023; v7.17, TBD | Backup is taken and access removed |  
-| EnterpriseDB | Major version is defined by the first number in the version number. | v12, December 2024 | Backup is taken and access isremoved |  
-| etcd | Major versions are the first number in a `major.minor.patch` version number. | v3.3, unplanned | Backup taken and access is removed |  
-| MongoDB | Major versions are the first two numbers in a `major.x.patch` version number. In cases where `x` is even, it is a stable release suitable for production. Even `x` versions are the only ones available on {{site.data.keyword.databases-for}}. | v4.2, July 2023; v4.4, January 2024; v5, September 2024 | Automatically upgraded in place to next Major version |
-| PostgreSQL | Major version is defined by the first number in the version number. | v11, 29 February 2024 | Backup taken and access removed |  
+| Service | Versioning Schema | Next Known End of Life Version and Date | Preferred Major Version | End of life procedure |
+| --------- | --------- | --------- | --------- | --------- |
+| DataStax | Major versions are the first number in a `major.minor.patch` version number. | v6.8.x, March 2026 |  | Full deprecation announced with an end of service date of 30 June 2024 |  
+| Elasticsearch | Major versions are the first number in a `release.version.maintenance` version number.| v7.9, November 2023; v7.10, November 2023; v7.17, 26 April 2024 | v8.7 | Backup is taken and access removed |  
+| EnterpriseDB | Major version is defined by the first number in the version number. | v12, December 2024 | v12 | Backup is taken and access isremoved |  
+| etcd | Major versions are the first number in a `major.minor.patch` version number. | v3.3, 26 April 2024 | v3.5 | Backup taken and access is removed |  
+| MongoDB | Major versions are the first two numbers in a `major.x.patch` version number. In cases where `x` is even, it is a stable release suitable for production. Even `x` versions are the only ones available on {{site.data.keyword.databases-for}}. | v4.2, July 2023; v4.4, 26 April 2024; v5, September 2024 | v5.0 | Automatically upgraded in place to next Major version |
+| PostgreSQL | Major version is defined by the first number in the version number. | v11, 29 February 2024 | v6.2 | Backup taken and access removed |  
 | Redis | Major versions are the first number in a `major.minor.patch` version number. | v5.0, TBD | Automatically upgraded in place to next Major version only for Redis 4 to Redis 5 |  
-| RabbitMQ | Major versions are the first two numbers in a `major.x.patch` version number. | v3.11, TBD | Backup taken and access removed |  
-| MySQL** | Major versions are the first two numbers in a `major.x.patch` version number. | v5.7, TBD | Backup taken and access removed |  
+| RabbitMQ | Major versions are the first two numbers in a `major.x.patch` version number. | v3.11, TBD | v3.11 | Backup taken and access removed |  
+| MySQL** | Major versions are the first two numbers in a `major.x.patch` version number. | v5.7, 26 April 2024 | v8.0 | Backup taken and access removed |  
 {: caption="Table 1. Major versions for {{site.data.keyword.databases-for}}" caption-side="top"}
 
 {{site.data.keyword.databases-for-cassandra_full}} is deprecated and no longer supported as of 30 June 2024. For more information, see the [deprecation details](/docs/databases-for-cassandra?topic=databases-for-cassandra-deprecation#dep_details).
