@@ -28,7 +28,7 @@ When you provision a {{site.data.keyword.databases-for}} instance, you can choos
 | {{site.data.keyword.databases-for-enterprisedb}}  | Major version is defined by the first number in the version number. | v12, December 2024 |   v12   | Backup is taken and access is removed |
 | {{site.data.keyword.databases-for-mysql}} | Major versions are the first two numbers in a `major.x.patch` version number. | v5.7, 26 April 2024 |  v8.0 For more information, see [MySQL 8 GA](/docs/databases-for-mysql?topic=databases-for-mysql-mysql8-ga).  | Backup taken and access removed |
 | {{site.data.keyword.messages-for-rabbitmq}} | Major versions are the first two numbers in a `major.x.patch` version number. | v3.11, TBD |   v3.11   | Backup taken and access removed | | {{site.data.keyword.databases-for-etcd}} | Major versions are the first number in a `major.minor.patch` version number. | v3.3, 26 April 2024 |   v3.5   | Backup taken and access is removed |
-| {{site.data.keyword.databases-for-cassandra}} | Major versions are the first number in a `major.minor.patch` version number. | v6.8.x, March 2026 |  | Full deprecation announced with an end of service date of 30 June 2024 |
+| {{site.data.keyword.databases-for-cassandra}} | Major versions are the first number in a `major.minor.patch` version number. | v6.8x |  | *Full deprecation announced with an end of service date of 30 June 2024* |
 {: caption="Table 1. Major versions for {{site.data.keyword.databases-for}}" caption-side="top"}
 
 {{site.data.keyword.databases-for-cassandra_full}} is deprecated and no longer supported as of 30 June 2024. For more information, see the [deprecation details](/docs/databases-for-cassandra?topic=databases-for-cassandra-deprecation#dep_details).
