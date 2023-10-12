@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018, 2023
-lastupdated: "2023-10-11"
+lastupdated: "2023-10-12"
 
 subcollection: cloud-databases
 
@@ -19,17 +19,16 @@ When you provision a {{site.data.keyword.databases-for}} instance, you can choos
 ## Major versions defined
 {: #version-definitions}
 
-| Service | Versioning Schema | Next Known End of Life Version and Date | Preferred Major Version | End of life procedure |
-| --------- | --------- | --------- | --------- | --------- |
-| {{site.data.keyword.databases-for-mongodb}} | Major versions are the first two numbers in a `major.x.patch` version number. In cases where `x` is even, it is a stable release suitable for production. Even `x` versions are the only ones available on {{site.data.keyword.databases-for}}. | v4.2, July 2023; v4.4, 26 April 2024; v5, September 2024 | v5.0 | Automatically upgraded in place to next Major version |
-| {{site.data.keyword.databases-for-elasticsearch}} | Major versions are the first number in a `release.version.maintenance` version number.| v7.9, November 2023; v7.10, November 2023; v7.17, 26 April 2024 | v8.7 | Backup is taken and access removed |
-| {{site.data.keyword.databases-for-redis}} | Major versions are the first number in a `major.minor.patch` version number. | v5.0, TBD | Automatically upgraded in place to next Major version only for Redis 4 to Redis 5 |
-| {{site.data.keyword.databases-for-postgresql}} | Major version is defined by the first number in the version number. | v11, 29 February 2024 | v6.2 | Backup taken and access removed |
-| {{site.data.keyword.databases-for-enterprisedb}} | Major version is defined by the first number in the version number. | v12, December 2024 | v12 | Backup is taken and access isremoved |
-| {{site.data.keyword.databases-for-mysql}} | Major versions are the first two numbers in a `major.x.patch` version number. | v5.7, 26 April 2024 | v8.0 For more information, see [MySQL 8 GA](/docs/databases-for-mysql?topic=databases-for-mysql-mysql8-ga). | Backup taken and access removed |
-| {{site.data.keyword.messages-for-rabbitmq}} | Major versions are the first two numbers in a `major.x.patch` version number. | v3.11, TBD | v3.11 | Backup taken and access removed |
-| {{site.data.keyword.databases-for-etcd}} | Major versions are the first number in a `major.minor.patch` version number. | v3.3, 26 April 2024 | v3.5 | Backup taken and access is removed |
-| {{site.data.keyword.databases-for-cassandra}} | Major versions are the first number in a `major.minor.patch` version number. | v6.8.x, March 2026 |  | Full deprecation announced with an end of service date of 30 June 2024 |
+| Service | Versioning Schema| Next Known End of Life Version and Date | Preferred Major Version | End of life procedure |
+|---------------------------------------------------|---------------------------------------------------|---------------------------------------------------|---------------------------------------------------|---------------------------------------------------|
+| {{site.data.keyword.databases-for-mongodb}} | Major versions are the first two numbers in a `major.x.patch` version number. In cases where `x` is even, it is a stable release suitable for production. Even `x` versions are the only ones available on {{site.data.keyword.databases-for}}. | v4.2, July 2023; v4.4, 26 April 2024; v5, September 2024 |   v5.0   | Automatically upgraded in place to next Major version |
+| {{site.data.keyword.databases-for-elasticsearch}} | Major versions are the first number in a `release.version.maintenance` version number. | v7.9, November 2023; v7.10, November 2023; v7.17, 26 April 2024 |   v8.7   | Automatically upgraded in place to next Major version |
+| {{site.data.keyword.databases-for-redis}} | Major versions are the first number in a `major.minor.patch` version number. | v5.0,TBD |   v6.2   | Automatically upgraded in place to next Major version 6.2 |
+| {{site.data.keyword.databases-for-postgresql}} | Major version is defined by the first number in the version number. | v11, 29 February 2024 |   v15   | Backup taken and access removed |
+| {{site.data.keyword.databases-for-enterprisedb}}  | Major version is defined by the first number in the version number. | v12, December 2024 |   v12   | Backup is taken and access is removed |
+| {{site.data.keyword.databases-for-mysql}} | Major versions are the first two numbers in a `major.x.patch` version number. | v5.7, 26 April 2024 |  v8.0 For more information, see [MySQL 8 GA](/docs/databases-for-mysql?topic=databases-for-mysql-mysql8-ga).  | Backup taken and access removed |
+| {{site.data.keyword.messages-for-rabbitmq}} | Major versions are the first two numbers in a `major.x.patch` version number. | v3.11, TBD |   v3.11   | Backup taken and access removed | | {{site.data.keyword.databases-for-etcd}} | Major versions are the first number in a `major.minor.patch` version number. | v3.3, 26 April 2024 |   v3.5   | Backup taken and access is removed |
+| {{site.data.keyword.databases-for-cassandra}} | Major versions are the first number in a `major.minor.patch` version number. | v6.8.x, March 2026 |  | Full deprecation announced with an end of service date of 30 June 2024 |
 {: caption="Table 1. Major versions for {{site.data.keyword.databases-for}}" caption-side="top"}
 
 {{site.data.keyword.databases-for-cassandra_full}} is deprecated and no longer supported as of 30 June 2024. For more information, see the [deprecation details](/docs/databases-for-cassandra?topic=databases-for-cassandra-deprecation#dep_details).
@@ -39,17 +38,6 @@ When you provision a {{site.data.keyword.databases-for}} instance, you can choos
 {: #version-updates-subscribe}
 
 {{site.data.keyword.databases-for}} major version updates will be posted in each service's Release Notes. To stay up-to-date with major version announcements, go to the [{{site.data.keyword.cloud_notm}} status page](https://cloud.ibm.com/status){: external} and sign up for notifications. Service release notes are included in these status notifications.
-
-## Version Tags
-{: #version-tags}
-
-| Version Tag | Description|
-|-------------|-------------|
-| Preferred | The recommended and default version for all new instances. It's the most stable, up-to-date version from both an instance-level and service-level perspective.|
-| Preview | A preview version is released for a limited time to try available functions. Often it is the newest available version available from the project maintainers in preparation for making it the "Preferred" version. While deployable, preview versions are not suitable for production, as they are excluded from service-level agreements and support. Also, a preview version isn't guaranteed to become a production-level release. IBM reserves the right to ask a customer to delete an instance that uses a preview version. |
-| Deprecated | Old versions and versions near their end of life dates are marked as "Deprecated". Provisions and restores of instances that run a deprecated version are still available and instances that run a deprecated version continue to be supported. However, you are encouraged to upgrade to the new "Preferred" version as deprecated versions are eventually removed from {{site.data.keyword.cloud_notm}} and are no longer provisionable, restorable, or supported.                                                              |
-| Untagged | Untagged versions are fully supported and deployable versions. They are usually slightly older than the current preferred version, but they are still supported by the project maintainers. They continue to be supported on {{site.data.keyword.databases-for}} instances until their deprecation is announced.|
-{: caption="Table 1. {{site.data.keyword.databases-for}} Version Tags" caption-side="bottom"}
 
 ## Deprecation of Major Versions
 {: #version-deprecation}
@@ -64,6 +52,22 @@ At the end of the transition window, deprecated major versions cannot be deploye
 
 Failure to act can result in compatibility issues with your apps when IBM upgrades in-place. On rare occasions, failure can result, impacting your availability. If a failure occurs, the instance is disabled, and you need to restore from backup. We recommend self-migrating before the end of support date.
 {: .important}
+
+## Version Tags
+{: #version-tags}
+
+| Version Tag | Description|
+|-------------|-------------|
+| **Preferred** | The recommended and default version for all new instances. It's the most stable, up-to-date version from both an instance-level and service-level perspective.|
+| **Preview** | A preview version is released for a limited time to try available functions. Often it is the newest available version available from the project maintainers in preparation for making it the "Preferred" version. While deployable, preview versions are not suitable for production, as they are excluded from service-level agreements and support. Also, a preview version isn't guaranteed to become a production-level release. IBM reserves the right to ask a customer to delete an instance that uses a preview version. |
+| **Deprecated** | Old versions and versions near their end of life dates are marked as "Deprecated". Provisions and restores of instances that run a deprecated version are still available and instances that run a deprecated version continue to be supported. However, you are encouraged to upgrade to the new "Preferred" version as deprecated versions are eventually removed from {{site.data.keyword.cloud_notm}} and are no longer provisionable, restorable, or supported.                                                              |
+| **Untagged** | Untagged versions are fully supported and deployable versions. They are usually slightly older than the current preferred version, but they are still supported by the project maintainers. They continue to be supported on {{site.data.keyword.databases-for}} instances until their deprecation is announced.|
+{: caption="Table 1. {{site.data.keyword.databases-for}} Version Tags" caption-side="bottom"}
+
+## Minor versions
+{: #minor-versions}
+
+{{site.data.keyword.cloud_notm}} is committed to providing secure, up-to-date versions of services. As updates are released by project maintainers, they are tested, evaluated, and released to {{site.data.keyword.databases-for}} instances. Your instance's minor version and patch updates are handled automatically and are not user configurable. 
 
 ## Major versioning End of Life
 {: #-major-version-eol}
@@ -102,8 +106,3 @@ The {{site.data.keyword.databases-for}} API `deployables` endpoint returns all d
 GET /v5/ibm/deployables
 ```
 {: pre}
-
-## Minor versions
-{: #minor-versions}
-
-{{site.data.keyword.cloud_notm}} is committed to providing secure, up-to-date versions of services. As updates are released by project maintainers, they are tested, evaluated, and released to {{site.data.keyword.databases-for}} instances. Your instance's minor version and patch updates are handled automatically and are not user configurable. 
