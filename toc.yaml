@@ -17,6 +17,7 @@ toc:
       - cdb-provision.md
       - cdb-notifications.md
       - cdb-logging-monitoring.md
+      - cdb-secure.md
       - topicgroup:
           label: IBM Cloud Databases Services
           topics:
