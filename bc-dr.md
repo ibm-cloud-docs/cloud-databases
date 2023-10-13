@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-10-04"
+lastupdated: "2023-10-13"
 
 subcollection: cloud-databases
 
@@ -67,8 +67,7 @@ The purpose of the {{site.data.keyword.databases-for}} regional Disaster Recover
 | eu-de      | Europe Cross Regional Endpoint     | Yes                   |
 | par01      | Europe Cross Regional Endpoint    | Yes                   |
 | eu-es      | Europe Cross Regional Endpoint     | Yes                   |
-| eu-fr2     | BNPP Regional Endpoint | No*                   |
-{: caption="Table 2. Single Region Backups for {{site.data.keyword.databases-for}}" caption-side="bottom"}
+{: caption="Table 1. Single Region Backups for {{site.data.keyword.databases-for}}" caption-side="bottom"}
 
 *You should keep a local copy of data in case of region failure.
 
