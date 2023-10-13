@@ -51,12 +51,6 @@ toc:
   - navgroup: 
       id: howto
       topics:
-      - topicgroup: 
-          label: IBM Cloud Databases (ICD) enabled by IBM Cloud Satellite
-          topics: 
-          - howto-sat-loc.md
-          - howto-sat-loc-aws.md
-          - howto-sat-loc-onprem.md
       - howto-deprovisioning.md
       - howto-manage-backups.md
       - howto-allowlists.md
@@ -85,6 +79,12 @@ toc:
           - reference-activity-tracker.md
           - reference-logging.md
           - reference-sysdig.md
+      - topicgroup: 
+          label: IBM Cloud Databases (ICD) enabled by IBM Cloud Satellite
+          topics: 
+          - howto-sat-loc.md
+          - howto-sat-loc-aws.md
+          - howto-sat-loc-onprem.md
   - navgroup:
       id: reference
       topics:
