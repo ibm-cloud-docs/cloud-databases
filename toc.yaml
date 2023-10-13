@@ -51,17 +51,21 @@ toc:
   - navgroup: 
       id: howto
       topics:
-      - howto-deprovisioning.md
-      - howto-manage-backups.md
-      - howto-allowlists.md
-      - ha-dr.md
-      - closures.md
-      - howto-cbr.md
-      - cbr-tutorial.md
+      - topicgroup: 
+          label: Logging and monitoring
+          topics: 
+          - reference-activity-tracker.md
+          - reference-logging.md
+          - reference-sysdig.md
       - topicgroup: 
           label: Enhancing security
           topics: 
           - manage-scc.md
+          - howto-cbr.md
+          - cbr-tutorial.md
+          - howto-allowlists.md
+      - howto-manage-backups.md
+      - ha-dr.md
       - topicgroup: 
           label: Tutorials
           topics: 
@@ -73,12 +77,8 @@ toc:
           - truck-tracker-tutorial.md
           - bi-tutorial.md
           - disk-util-alerts-tutorial.md
-      - topicgroup: 
-          label: Logging and monitoring
-          topics: 
-          - reference-activity-tracker.md
-          - reference-logging.md
-          - reference-sysdig.md
+      - closures.md
+      - howto-deprovisioning.md
       - topicgroup: 
           label: IBM Cloud Databases (ICD) enabled by IBM Cloud Satellite
           topics: 
