@@ -24,7 +24,7 @@ subcollection: cloud-databases
 - **{{site.data.keyword.databases-for-mysql}}** is fully managed MySQL relational database service. For more information, see [{{site.data.keyword.databases-for-mysql}}](/docs/databases-for-mysql){: external}.
 - **{{site.data.keyword.messages-for-rabbitmq}}** is an open source multi-protocol messaging broker. For more information, see [{{site.data.keyword.messages-for-rabbitmq}}](/docs/messages-for-rabbitmq){: external}.
 - **{{site.data.keyword.databases-for-etcd}}** is a distributed reliable key-value store for the most critical data of a distributed system. For more information, see [{{site.data.keyword.databases-for-etcd}}](/docs/databases-for-etcd){: external}.
-- **{{site.data.keyword.databases-for-cassandra}}** is deprecated and no longer supported as of 30 June 2024. For more information, see the [deprecation details](/docs/databases-for-cassandra?topic=databases-for-cassandra-deprecation#dep_details).{: deprecated}
+- **{{site.data.keyword.databases-for-cassandra}}** is deprecated and no longer supported as of 30 June 2024. For more information, see the [deprecation details](/docs/databases-for-cassandra?topic=databases-for-cassandra-deprecation#dep_details).
 
 ## Next Steps
 {: #cdb-offerings-next-steps}
