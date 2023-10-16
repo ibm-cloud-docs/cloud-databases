@@ -65,6 +65,7 @@ toc:
           - howto-allowlists.md
           - reference-service-endpoints.md
           - howto-vpes.md
+          - reference-iam.md
       - howto-manage-backups.md
       - closures.md
       - topicgroup:
@@ -80,8 +81,8 @@ toc:
   - navgroup:
       id: tutorial
       topics:
-      - cbr-tutorial.md
       - howto-tutorials.md
+      - cbr-tutorial.md
       - hello-world-tutorial.md
       - terra-postgres-tutorial.md
       - terra-mongodb-tutorial.md
@@ -100,7 +101,6 @@ toc:
           - bc-dr.md
       - db-version-policy.md
       - reference-responsibilities.md
-      - reference-iam.md
   - navgroup:
       id: help
       topics:
