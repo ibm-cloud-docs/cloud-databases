@@ -62,7 +62,6 @@ toc:
           topics:
           - manage-scc.md
           - howto-cbr.md
-          - ha-dr.md
           - howto-allowlists.md
       - howto-manage-backups.md
       - closures.md
@@ -90,7 +89,11 @@ toc:
   - navgroup:
       id: reference
       topics:
-      - bc-dr.md
+      - topicgroup:
+          label: High availability and disaster recovery
+          topics:
+          - ha-dr.md
+          - bc-dr.md
       - db-version-policy.md
       - reference-responsibilities.md
       - reference-iam.md
