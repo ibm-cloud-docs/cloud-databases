@@ -67,19 +67,6 @@ toc:
       - howto-manage-backups.md
       - closures.md
       - topicgroup:
-          label: Tutorials
-          topics:
-          - cbr-tutorial.md
-          - howto-tutorials.md
-          - hello-world-tutorial.md
-          - terra-postgres-tutorial.md
-          - terra-mongodb-tutorial.md
-          - k8-tutorial.md
-          - truck-tracker-tutorial.md
-          - bi-tutorial.md
-          - disk-util-alerts-tutorial.md
-          - kms-tutorial.md
-      - topicgroup:
           label: IBM Cloud Databases enabled by IBM Cloud Satellite
           topics:
           - howto-sat-loc.md
@@ -87,6 +74,19 @@ toc:
           - howto-sat-loc-onprem.md
           - howto-sat-loc-scs.md
       - howto-deprovisioning.md
+  - navgroup:
+      id: tutorial
+      topics:
+      - cbr-tutorial.md
+      - howto-tutorials.md
+      - hello-world-tutorial.md
+      - terra-postgres-tutorial.md
+      - terra-mongodb-tutorial.md
+      - k8-tutorial.md
+      - truck-tracker-tutorial.md
+      - bi-tutorial.md
+      - disk-util-alerts-tutorial.md
+      - kms-tutorial.md
   - navgroup:
       id: reference
       topics:
