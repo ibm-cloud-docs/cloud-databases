@@ -63,6 +63,8 @@ toc:
           - manage-scc.md
           - howto-cbr.md
           - howto-allowlists.md
+          - reference-service-endpoints.md
+          - howto-vpes.md
       - howto-manage-backups.md
       - closures.md
       - topicgroup:
@@ -72,7 +74,9 @@ toc:
           - howto-sat-loc-aws.md
           - howto-sat-loc-onprem.md
           - howto-sat-loc-scs.md
-      - howto-deprovisioning.md
+          - reference-key-protect.md
+          - reference-hpcs.md
+          - howto-deprovisioning.md
   - navgroup:
       id: tutorial
       topics:
@@ -97,13 +101,6 @@ toc:
       - db-version-policy.md
       - reference-responsibilities.md
       - reference-iam.md
-      - topicgroup:
-          label: Connecting over Private Networks
-          topics:
-          - howto-vpes.md
-          - reference-service-endpoints.md
-      - reference-key-protect.md
-      - reference-hpcs.md
   - navgroup:
       id: help
       topics:
