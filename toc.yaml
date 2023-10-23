@@ -94,6 +94,7 @@ toc:
   - navgroup:
       id: reference
       topics:
+      - icd-cli.md
       - topicgroup:
           label: High availability and disaster recovery
           topics:
