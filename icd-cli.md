@@ -51,13 +51,13 @@ ibmcloud cdb help [<command>]
 
 | Service | CLI client |
 |---------------------------------------------------| :----------------------------------------------------------------------------: |
-| {{site.data.keyword.databases-for-mongodb}}       | [The mongo Shell](https://www.mongodb.com/docs/v4.4/mongo/){: external}    |
-| {{site.data.keyword.databases-for-elasticsearch}} |                                                                            |
-| {{site.data.keyword.databases-for-redis}}         | [The Redis CLI](https://redis.io/docs/ui/cli/){: external}                 |
-| {{site.data.keyword.databases-for-postgresql}}    | [psql](https://www.postgresql.org/docs/14/app-psql.html){: external}        |
-| {{site.data.keyword.databases-for-enterprisedb}}  |                                                                            |
-| {{site.data.keyword.databases-for-mysql}}         | [mysql](https://dev.mysql.com/doc/refman/8.0/en/mysql.html){: external}    |
-| {{site.data.keyword.messages-for-rabbitmq}}       |                                                                            |
-| {{site.data.keyword.databases-for-etcd}}          | [etcdctl](https://etcd.io/docs/v3.4/dev-guide/interacting_v3/){: external} |
-| {{site.data.keyword.databases-for-cassandra}}     |                                                                            |
+| [{{site.data.keyword.databases-for-mongodb}}](/docs/databases-for-mongodb){: external}       | [The mongo Shell](https://www.mongodb.com/docs/v4.4/mongo/){: external}    |
+| [{{site.data.keyword.databases-for-elasticsearch}}](/docs/databases-for-elasticsearch){: external} |                                                                            |
+| [{{site.data.keyword.databases-for-redis}}](/docs/databases-for-redis){: external}         | [The Redis CLI](https://redis.io/docs/ui/cli/){: external}                 |
+| [{{site.data.keyword.databases-for-postgresql}}](/docs/databases-for-postgresql){: external}    | [psql](https://www.postgresql.org/docs/14/app-psql.html){: external}        |
+| [{{site.data.keyword.databases-for-enterprisedb}}](/docs/databases-for-enterprisedb){: external}  |                                                                            |
+| [{{site.data.keyword.databases-for-mysql}}](/docs/databases-for-mysql){: external}         | [mysql](https://dev.mysql.com/doc/refman/8.0/en/mysql.html){: external}    |
+| [{{site.data.keyword.messages-for-rabbitmq}}](/docs/messages-for-rabbitmq){: external}       |                                                                            |
+| [{{site.data.keyword.databases-for-etcd}}](/docs/databases-for-etcd){: external}          | [etcdctl](https://etcd.io/docs/v3.4/dev-guide/interacting_v3/){: external} |
+| [{{site.data.keyword.databases-for-cassandra}}](/docs/databases-for-cassandra){: external}     |                                                                            |
 {: caption="{{site.data.keyword.databases-for}} service-specific CLI clients" caption-side="bottom"}
