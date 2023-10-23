@@ -81,9 +81,8 @@ toc:
   - navgroup:
       id: tutorial
       topics:
-      - howto-tutorials.md
-      - cbr-tutorial.md
       - hello-world-tutorial.md
+      - cbr-tutorial.md
       - terra-postgres-tutorial.md
       - terra-mongodb-tutorial.md
       - k8-tutorial.md
