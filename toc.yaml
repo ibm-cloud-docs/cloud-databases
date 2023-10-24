@@ -63,11 +63,14 @@ toc:
           - manage-scc.md
           - howto-cbr.md
           - howto-allowlists.md
-          - reference-service-endpoints.md
-          - howto-vpes.md
           - reference-iam.md
           - reference-key-protect.md
           - reference-hpcs.md
+          - topicgroup:
+              label: Connecting over Private Networks
+              topics:
+              - howto-vpes.md
+              - reference-service-endpoints.md
       - howto-manage-backups.md
       - closures.md
       - howto-deprovisioning.md
