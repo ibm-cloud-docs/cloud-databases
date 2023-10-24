@@ -62,21 +62,11 @@ toc:
           topics: 
           - manage-scc.md
           - howto-cbr.md
-          - cbr-tutorial.md
           - howto-allowlists.md
+          - reference-service-endpoints.md
+          - howto-vpes.md
+          - reference-iam.md
       - howto-manage-backups.md
-      - ha-dr.md
-      - topicgroup: 
-          label: Tutorials
-          topics: 
-          - howto-tutorials.md
-          - hello-world-tutorial.md
-          - terra-postgres-tutorial.md
-          - terra-mongodb-tutorial.md
-          - k8-tutorial.md
-          - truck-tracker-tutorial.md
-          - bi-tutorial.md
-          - disk-util-alerts-tutorial.md
       - closures.md
       - howto-deprovisioning.md
       - topicgroup: 
@@ -86,18 +76,28 @@ toc:
           - howto-sat-loc-aws.md
           - howto-sat-loc-onprem.md
   - navgroup:
+      id: tutorial
+      topics: 
+      - hello-world-tutorial.md
+      - howto-tutorials.md
+      - cbr-tutorial.md
+      - terra-postgres-tutorial.md
+      - terra-mongodb-tutorial.md
+      - k8-tutorial.md
+      - truck-tracker-tutorial.md
+      - bi-tutorial.md
+      - disk-util-alerts-tutorial.md
+  - navgroup:
       id: reference
       topics:
       - db-version-policy.md
-      - reference-responsibilities.md
-      - reference-iam.md
       - topicgroup: 
-          label: Connecting over Private Networks
-          topics: 
-          - howto-vpes.md
-          - reference-service-endpoints.md
+          label: High Availability and disaster recovery
+          topics:
+          - ha-dr.md
       - reference-key-protect.md
       - reference-hpcs.md
+      - reference-responsibilities.md
   - navgroup:
       id: help
       topics:
