@@ -66,6 +66,8 @@ toc:
           - reference-service-endpoints.md
           - howto-vpes.md
           - reference-iam.md
+          - reference-key-protect.md
+          - reference-hpcs.md
       - howto-manage-backups.md
       - closures.md
       - howto-deprovisioning.md
@@ -95,8 +97,6 @@ toc:
           label: High Availability and disaster recovery
           topics:
           - ha-dr.md
-      - reference-key-protect.md
-      - reference-hpcs.md
       - reference-responsibilities.md
   - navgroup:
       id: help
