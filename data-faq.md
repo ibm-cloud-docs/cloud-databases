@@ -22,7 +22,7 @@ subcollection: cloud-databases
 {: faq}
 {: support}
 
-When an instance is deleted, {{site.data.keyword.databases-for}} holds the block storage volume and Cloud Object Storage (COS) bucket in a “soft delete” state up to 8 days before deletion. After that 8-day period, we issue a `delete` to the COS and block storage services for those data volumes.
+When an instance is deleted, {{site.data.keyword.databases-for}} holds the block storage volume and Cloud Object Storage (COS) bucket in a “soft delete” state up to 3 days before deletion. After that 3-day period, we issue a `delete` to the COS and block storage services for those data volumes.
 
 For more information on volume deletions, see [What happens to the data when Block Storage for Classic LUNs are deleted?](https://cloud.ibm.com/docs/BlockStorage?topic=BlockStorage-block-storage-faqs#deleted){: external}.
 
