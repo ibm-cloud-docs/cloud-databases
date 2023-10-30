@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-10-04"
+lastupdated: "2023-10-30"
 
 subcollection: cloud-databases
 
@@ -226,3 +226,8 @@ With Point-in-Time Recovery (PITR), the deployment continuously backs up increme
 - [{{site.data.keyword.databases-for-mysql_full}}](/docs/databases-for-mysql?topic=databases-for-mysql-pitr) 
 - [{{site.data.keyword.databases-for-postgresql_full}}](/docs/databases-for-postgresql?topic=databases-for-postgresql-pitr)
 - [{{site.data.keyword.databases-for-enterprisedb_full}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-pitr&interface=ui)
+
+## Backups FAQ
+{: #backup-faq-reference}
+
+For frequently asked questions about backups, check out [Backups FAQ](/docs/cloud-databases?topic=cloud-databases-faq-backups){: external}.
