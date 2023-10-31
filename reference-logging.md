@@ -1,11 +1,11 @@
 ---
 copyright:
   years: 2019, 2023
-lastupdated: "2023-10-06"
+lastupdated: "2023-10-31"
 
 subcollection: cloud-databases
 
-keywords: database logs, platform logs, 
+keywords: database logs, platform logs, platform logging, hipaa
 
 ---
 
@@ -16,12 +16,9 @@ keywords: database logs, platform logs,
 
 {{site.data.keyword.databases-for}} are integrated with [{{site.data.keyword.loganalysisfull}}](/docs/log-analysis), so you can view database platform logs.
 
-This document covers the integration of {{site.data.keyword.loganalysisshort}} with Cloud Databases, which includes {{site.data.keyword.databases-for-cassandra}}, {{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-enterprisedb}}, {{site.data.keyword.databases-for-etcd}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-redis}}, {{site.data.keyword.databases-for-mysql_full}}, and {{site.data.keyword.messages-for-rabbitmq}}.
-{: .note}
+Currently, {{site.data.keyword.loganalysisfull}} integration is available for {{site.data.keyword.databases-for}} instances according to the following table.
 
-Currently, {{site.data.keyword.loganalysisfull}} integration is available for {{site.data.keyword.databases-for}} deployments according to the following table.
-
-| Deployment Region | Log Analysis Region |
+| Instance Region | Log Analysis Region |
 | ----------|----------- |
 | `us-south` | `us-south` |
 | `jp-tok` | `jp-tok` |
@@ -34,9 +31,10 @@ Currently, {{site.data.keyword.loganalysisfull}} integration is available for {{
 | `jp-osa` | `jp-tok`  |
 | `br-sao` | `br-sao` |
 | `par01` | `eu-de` |
+| `eu-es` | `eu-de` |
 {: caption="Table 1. Log Analysis regions" caption-side="top"}
 
-Platform logs from your deployments appear in a Log Analysis instance in the same region, except for `jp-osa`. Deployments in `jp-osa` have their logs forwarded to `jp-tok`. If you have deployments in multiple regions, you must set up Log Analysis in multiple regions.  
+Platform logs from your instances appear in a Log Analysis instance in the same region, except for `jp-osa`. Instances in `jp-osa` have their logs forwarded to `jp-tok`. If you have instances in multiple regions, you must set up Log Analysis in multiple regions.  
 
 ## Provisioning {{site.data.keyword.loganalysisfull}}
 {: #provisioning-logging}
@@ -51,7 +49,7 @@ This setting enables platform logs from **ALL** {{site.data.keyword.cloud_notm}}
 ### HIPAA 
 {: #hipaa}
 
-{{site.data.keyword.la_full_notm}} offers a HIPAA-compliant plan for the service. For more information, see the {{site.data.keyword.la_full_notm}} documentation on [Provisioning a HIPAA Compliance instance](/docs/log-analysis?topic=log-analysis-provision_hipaa).
+{{site.data.keyword.la_full_notm}} offers a HIPAA-compliant plan for the service. For more information, see [Provisioning a HIPAA Compliance instance](/docs/log-analysis?topic=log-analysis-provision_hipaa).
 
 Use caution when configuring the platform service logs, since this setting can impact other services that require HIPAA compliance.
 
@@ -80,9 +78,9 @@ Each log line can be expanded to a detailed view by clicking the arrow to the le
 
 To set up logging alerts, see [Working with Alerts](/docs/log-analysis?topic=log-analysis-alerts#alerts)
 
-For more information on features offered by {{site.data.keyword.loganalysisfull}}, including integrating it with your other {{site.data.keyword.cloud_notm}} services, see [its full documentation](/docs/log-analysis).
+For more information,see [{{site.data.keyword.la_full_notm}}](/docs/log-analysis).
 
 ## Internal Log Retention
 {: #internal-logging}
 
-Database platform logs for all {{site.data.keyword.databases-for}} deployments are kept internally for 30 days and then purged. If your {{site.data.keyword.loganalysisshort}} plan is for a shorter period, logs are only accessible by you for the length of your plan. Regardless of the plan that you choose, all database logs are deleted after 30 days.
+Database platform logs for all {{site.data.keyword.databases-for}} instances are kept internally for 30 days and then purged. If your {{site.data.keyword.loganalysisshort}} plan is for a shorter period, logs are only accessible by you for the length of your plan. Regardless of the plan that you choose, all database logs are deleted after 30 days.
