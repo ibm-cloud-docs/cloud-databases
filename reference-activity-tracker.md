@@ -1,31 +1,22 @@
 ---
 copyright:
-  years: 2019, 2022
-lastupdated: "2022-11-01"
+  years: 2019, 2023
+lastupdated: "2023-10-31"
 
 subcollection: cloud-databases
 
-keywords: events, auditing
+keywords: events, auditing, activity tracker, auditing
 
 ---
 
-{:external: .external target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:note: .note}
-{:tip: .tip}
+{{site.data.keyword.attribute-definition-list}}
 
 # Activity Tracker Integration
 {: #activity-tracker}
 
-{{site.data.keyword.cloud_notm}} Databases deployments are integrated with Activity Tracker events in [{{site.data.keyword.at_full}}](/docs/activity-tracker?topic=activity-tracker-getting-started), so you can view service-level events.
+{{site.data.keyword.cloud_notm}} Databases instances are integrated with Activity Tracker events in [{{site.data.keyword.at_full}}](/docs/activity-tracker?topic=activity-tracker-getting-started), so you can view service-level events.
 
-This document covers the integration of Activity Tracker with Cloud Databases, which includes {{site.data.keyword.databases-for-cassandra}}, {{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-enterprisedb}}, {{site.data.keyword.databases-for-etcd}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-redis}}, {{site.data.keyword.databases-for-mysql_full}}, and {{site.data.keyword.messages-for-rabbitmq}}.
-{: .note}
-
-Currently, {{site.data.keyword.at_short}} integration is available for {{site.data.keyword.databases-for}} deployments according to the following table. 
+Currently, {{site.data.keyword.at_short}} integration is available for {{site.data.keyword.databases-for}} instances according to the following table. 
 
 | Deployment Region | Activity Tracker Region |
 | ----------|----------- |
@@ -39,14 +30,15 @@ Currently, {{site.data.keyword.at_short}} integration is available for {{site.da
 | `us-east` | `us-east` |
 | `ca-tor` | `ca-tor` |
 | `par01` | `eu-de` |
+| `eu-es` | `eu-de` |
 {: caption="Table 1. Activity Tracker regions" caption-side="bottom"}
 
-Events from your deployments appear in an Activity Tracker instance in the same region, except in the case of `jp-osa`. Events for deployments in `jp-osa` are forwarded to `jp-tok`. If you have deployments in multiple regions, you must set up the Activity Tracker in multiple regions. 
+Events from your instances appear in an Activity Tracker instance in the same region, except for `jp-osa` and `eu-es`. Events for instances in `jp-osa` are forwarded to `jp-tok` and events for `eu-es` are forwarded to `eu-de`. If you have instances in multiple regions, you must set up the {{site.data.keyword.at_short}} in multiple regions. 
 
 ## Activity Tracker
 {: #activity-tracker-provision}
 
-When you provision the service, events are automatically forwarded from all your {{site.data.keyword.databases-for}} deployments in the same region.
+When you provision the service, events are automatically forwarded from all your {{site.data.keyword.databases-for}} instances in the same region.
 
 The service can be provisioned from [its catalog page](/catalog/ibm-cloud-activity-tracker) or from an existing [Observability Dashboard](https://cloud.ibm.com/observe/activitytracker).
 
@@ -55,18 +47,17 @@ The {{site.data.keyword.at_short}} service has a lite plan that is free to use, 
 ### Using the Activity Tracker
 {: #using-activity-tracker}
 
-You can access {{site.data.keyword.at_short}} through the _Observability_ tab of your deployment's _Manage_ page. The **Manage Activity Tracker** button links to the main list of all {{site.data.keyword.at_short}} instances in your IBM Cloud account. Select the instance where you set your database logs to be forwarded. Click **View Activity Tracker** to view the events.
+You can access {{site.data.keyword.at_short}} through the _Observability_ tab of your instance's _Manage_ page. The **Manage Activity Tracker** button links to the main list of all {{site.data.keyword.at_short}} instances in your {{site.data.keyword.cloud_notm}} account. Select the instance where you set your database logs to be forwarded. Click **View Activity Tracker** to view the events.
 
-Once event activity is being forwarded to the service, each event can be expanded to a detailed view by clicking the arrow to the left of the timestamp.
+After event activity is being forwarded to the service, each event can be expanded to a detailed view by clicking the arrow to the left of the timestamp.
 
 When reviewing Activity Tracker logs, you see `denies` that include the `dry_run` tag. These `denies` are marked with a `true` or `false` value. 
 - Events with `dry_run: false` indicate an attempt to run an action. 
-- Events with `dry_run: true` indicate an attempt to determine support for an action without triggering that action to occur. Such `dry_run` attempts can occur as the service instance management console determines the features to which a logged in user has access.
-
+- Events with `dry_run: true` indicate an attempt to determine support for an action without triggering that action to occur. Such `dry_run` attempts can occur as the service instance management console determines the features to which a logged-in user has access.
 
 The {{site.data.keyword.at_short}} service offers [searching](/docs/activity-tracker?topic=activity-tracker-view_events#view_events_step2), [filtering](/docs/activity-tracker?topic=activity-tracker-view_events#view_events_step3), and [export](/docs/activity-tracker?topic=activity-tracker-export) of events so you can customize retention for your use-case. You can also use it to configure [alerts](/docs/activity-tracker?topic=activity-tracker-alerts).
 
-We recommend alerting on database lifecycle events such failed backups. For example, you can create that Activity Tracker alert by filtering audit events to `outcome:failure action:"<service_id>.deployment-backup-scheduled.create"` and then following the alert configuration instructions. 
+We recommend alerting on database lifecycle events, such as failed backups. For example, you can create that Activity Tracker alert by filtering audit events to `outcome:failure action:"<service_id>.deployment-backup-scheduled.create"` and then following the alert configuration instructions. 
 {: .tip}
 
 ## Event Fields
@@ -77,15 +68,15 @@ A description of the common fields for an {{site.data.keyword.at_short}} event i
 ## List of Events
 {: #list-of-events}
 
-The table lists the events that are sent to {{site.data.keyword.at_short}} from {{site.data.keyword.databases-for}} deployments.
+The table lists the events that are sent to {{site.data.keyword.at_short}} from {{site.data.keyword.databases-for}} instances.
 
 A new auditing message format has been released and the legacy format for events that are submitted to your Activity Tracker instances will be deprecated. Deprecated events, and their analogous new events, are listed in the table. You should update any alerting or tools that rely on the text strings of the deprecated events to the new event format.
 {: .note}
 
 | Action Name | Legacy Action name | Description |
 | ------- | ------- | ------- |
-| `<service_id>.deployment-backup.create`|`<service_id>.backup-ondemand.create` | An on-demand backup of your deployment was created. If the backup failed, a "-failure" flag is included in the message. |
-|`<service_id>.deployment-backup-scheduled.create`| `<service_id>.backup-scheduled.create`| A scheduled backup of your deployment was created. If the backup failed, a "-failure" flag is included in the message. |
+| `<service_id>.deployment-backup.create`|`<service_id>.backup-ondemand.create` | An on-demand backup of your instance was created. If the backup failed, a "-failure" flag is included in the message. |
+|`<service_id>.deployment-backup-scheduled.create`| `<service_id>.backup-scheduled.create`| A scheduled backup of your instance was created. If the backup failed, a "-failure" flag is included in the message. |
 |`<service_id>.deployment-user.update`|`<service_id>.user-password.update`| A user's password was updated. A "-failure" flag is included in the message if the attempt to update a user's password failed. |
 |`<service_id>.deployment-user.create`|`<service_id>.user.create` | A user was created. A "-failure" flag is included in the message if the attempt to create a user failed. |
 |`<service_id>.deployment-user.delete`|`<service_id>.user.delete` | A user was deleted. A "-failure" flag is included in the message if the attempt to delete a user failed. |
@@ -97,6 +88,6 @@ A new auditing message format has been released and the legacy format for events
 |`<service_id>.deployment-volumes.update`|`<service_id>.volumes.update` | An activity was performed on the encryption key that is used by the database, such as rotation or shredding. Details of the action are in the event. |
 {: caption="Table 2. List of Events and Event Descriptions" caption-side="bottom"}
 
-The `service_id` field indicates the type of {{site.data.keyword.databases-for}} deployment. For example, `databases-for-postgresql` or `messages-for-rabbitmq`.
+The `service_id` field indicates the type of {{site.data.keyword.databases-for}} instance. For example, `databases-for-postgresql` or `messages-for-rabbitmq`.
 
-The `<service_id>.backup.restore` auditing message is no longer sent because this action is already covered by the `<service_name>.instance.create` IBM Cloud global event. For more resource-related global events, you can review the [Activity Tracker documentation](/docs/activity-tracker?topic=activity-tracker-at_events_rc#rc_ui). IBM Cloud global events include generation of events such as provisioning, deprovisioning, service plan changes, and tagging of resources. To view these events, you must [provision an instance](/docs/services/activity-tracker?topic=activity-tracker-provision#provision) of the IBM Cloud Activity Tracker service in the Frankfurt (eu-de) region.
+The `<service_id>.backup.restore` auditing message is no longer sent because this action is already covered by the `<service_name>.instance.create` {{site.data.keyword.cloud_notm}} global event. For more resource-related global events, you can review the [{{site.data.keyword.at_full}} documentation](/docs/activity-tracker?topic=activity-tracker-at_events_rc#rc_ui). {{site.data.keyword.cloud_notm}} global events include generation of events such as provisioning, deprovisioning, service plan changes, and tagging of resources. To view these events, you must [provision an instance](/docs/services/activity-tracker?topic=activity-tracker-provision#provision) of the {{site.data.keyword.at_full}} service in the Frankfurt (`eu-de`) region.
