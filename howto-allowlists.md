@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-09-12"
+lastupdated: "2023-10-31"
 
 subcollection: cloud-databases
 
@@ -348,6 +348,44 @@ If you use allowlists to control connections in your environment, use the follow
 | London | eu-gb | lon06 |  10.72.187.247/29 | 10.72.187.241 |   
 {: caption="Table 8. eu-gb Private Subnets" caption-side="bottom"}    
 
+### `eu-es` List
+{: #eu-es-list} 
+
+#### Public Subnets
+{: #eu-es-public-list}
+
+| Location | Region | Data center | Subnet | First IP |
+| -- | -- | -- | -- | -- |
+| Madrid | eu-es | mad02 |  13.120.67.15/28  |  13.120.67.1   |         
+| Madrid | eu-es | mad02 |  13.120.67.159/27 |  13.120.67.129 |          
+| Madrid | eu-es | mad02 |  13.120.66.175/29 |  13.120.66.169 |          
+| Madrid | eu-es | mad02 |  13.120.66.231/29 |  13.120.66.225 |          
+| Madrid | eu-es | mad04 |  13.121.64.63/28  |  13.121.64.49  |         
+| Madrid | eu-es | mad04 |  13.121.66.127/27 |  13.121.66.97  |         
+| Madrid | eu-es | mad04 |  13.121.66.47/29  |  13.121.66.41  |         
+| Madrid | eu-es | mad04 |  13.121.66.183/29 |  13.121.66.177 |          
+| Madrid | eu-es | mad05 |  13.122.64.15/28  |  13.122.64.1   |        
+| Madrid | eu-es | mad05 |  13.122.66.255/27 |  13.122.66.225 |          
+| Madrid | eu-es | mad05 |  13.122.64.55/29  |  13.122.64.49  |         
+| Madrid | eu-es | mad05 |  13.122.65.247/29 |  13.122.65.241 |
+{: caption="Table 9. eu-es Public Subnets" caption-side="bottom"}  
+
+#### Private Subnets
+{: #eu-es-private-list} 
+
+| Location | Region | Data center | Subnet | First IP |
+| -- | -- | -- | -- | -- |
+| Madrid | eu-es | mad02 |  10.118.13.255/26 | 10.118.13.193  |         
+| Madrid | eu-es | mad02 |  10.118.8.231/29  | 10.118.8.225  |         
+| Madrid | eu-es | mad02 |  10.118.8.239/29  | 10.118.8.233  |         
+| Madrid | eu-es | mad04 |  10.118.75.127/26 | 10.118.75.65  |         
+| Madrid | eu-es | mad04 |  10.118.67.119/29 | 10.118.67.113  |         
+| Madrid | eu-es | mad04 |  10.118.70.87/29  | 10.118.70.81  |         
+| Madrid | eu-es | mad05 | 10.118.138.255/26 | 10.118.138.193  |         
+| Madrid | eu-es | mad05 | 10.118.131.247/29 | 10.118.131.241  |         
+| Madrid | eu-es | mad05 |  10.118.136.39/29 | 10.118.136.33  |
+{: caption="Table 10. eu-es Private Subnets" caption-side="bottom"} 
+
 ### `au-syd` List
 {: #au-syd-list} 
 
@@ -379,7 +417,7 @@ If you use allowlists to control connections in your environment, use the follow
 | Sydney | au-syd | syd05 |  135.90.67.31/29   | 135.90.67.25 |         
 | Sydney | au-syd | syd05 |  135.90.67.135/29  | 135.90.67.129 |         
 | Sydney | au-syd | syd05 |  135.90.68.39/29   | 135.90.68.33 |    
-{: caption="Table 9. au-syd Public Subnets" caption-side="bottom"}  
+{: caption="Table 11. au-syd Public Subnets" caption-side="bottom"}  
 
 #### Private Subnets
 {: #au-syd-private-list} 
@@ -404,7 +442,7 @@ If you use allowlists to control connections in your environment, use the follow
 | Sydney | au-syd | syd05 |  10.195.7.239/29  | 10.195.7.233 |         
 | Sydney | au-syd | syd05 |  10.195.7.247/29  | 10.195.7.241 |         
 | Sydney | au-syd | syd05 |  10.195.46.111/29 | 10.195.46.105 | 
-{: caption="Table 10. au-syd Private Subnets" caption-side="bottom"}
+{: caption="Table 12. au-syd Private Subnets" caption-side="bottom"}
 
 ### `jp-tok` List
 {: #jp-tok-list} 
@@ -441,7 +479,7 @@ If you use allowlists to control connections in your environment, use the follow
 | Tokyo | jp-tok | tok05 | 165.192.70.175/29  | 165.192.70.169 |         
 | Tokyo | jp-tok | tok05 | 165.192.71.239/29  | 165.192.71.233 |         
 | Tokyo | jp-tok | tok05 | 165.192.148.63/29  | 165.192.148.57 |     
-{: caption="Table 11. tok Public Subnets" caption-side="bottom"}   
+{: caption="Table 13. tok Public Subnets" caption-side="bottom"}   
 
 #### Private Subnets
 {: #jp-tok-private-list} 
@@ -471,7 +509,7 @@ If you use allowlists to control connections in your environment, use the follow
 | Tokyo | jp-tok | tok05 |  10.193.19.39/29  | 10.193.19.33 |         
 | Tokyo | jp-tok | tok05 |  10.193.76.255/29 | 10.193.76.249 |         
 | Tokyo | jp-tok | tok05 | 10.193.103.175/29 | 10.193.103.169 |
-{: caption="Table 12. tok Private Subnets" caption-side="bottom"}  
+{: caption="Table 14. tok Private Subnets" caption-side="bottom"}  
 
 ### `jp-osa` List
 {: #jp-osa-list} 
@@ -496,7 +534,7 @@ If you use allowlists to control connections in your environment, use the follow
 | Osaka | jp-osa | osa23 | 163.73.71.63/26  | 163.73.71.1 |         
 | Osaka | jp-osa | osa23 | 163.73.67.191/29 | 163.73.67.185 |         
 | Osaka | jp-osa | osa23 | 163.73.67.231/29 | 163.73.67.225 |   
-{: caption="Table 13. jp-osa Public Subnets" caption-side="bottom"} 
+{: caption="Table 15. jp-osa Public Subnets" caption-side="bottom"} 
 
 #### Private Subnets
 {: #jp-osa-private-list} 
@@ -515,7 +553,7 @@ If you use allowlists to control connections in your environment, use the follow
 | Osaka | jp-osa | osa23 | 10.10.28.255/25 | 10.10.28.129 |         
 | Osaka | jp-osa | osa23 |   10.10.8.7/29  | 10.10.8.1 |         
 | Osaka | jp-osa | osa23 |  10.10.8.15/29  | 10.10.8.9 |    
-{: caption="Table 14. jp-osa Private Subnets" caption-side="bottom"}  
+{: caption="Table 16. jp-osa Private Subnets" caption-side="bottom"}  
 
 ### `us-east` List
 {: #us-east-list} 
@@ -577,7 +615,7 @@ If you use allowlists to control connections in your environment, use the follow
 | Washington DC | us-east | wdc07 |  169.61.113.47/29 | 169.61.113.41 |         
 | Washington DC | us-east | wdc07 | 169.61.122.159/29 | 169.61.122.153 |         
 | Washington DC | us-east | wdc07 |   169.62.6.87/29  | 169.62.6.81 |
-{: caption="Table 15. us-east Public Subnets" caption-side="bottom"}
+{: caption="Table 17. us-east Public Subnets" caption-side="bottom"}
 
 #### Private Subnets
 {: #us-east-private-list} 
@@ -630,7 +668,7 @@ If you use allowlists to control connections in your environment, use the follow
 | Washington DC | us-east | wdc07 |  10.191.12.175/29 | 10.191.12.169  |         
 | Washington DC | us-east | wdc07 |  10.191.49.247/29 | 10.191.49.241  |         
 | Washington DC | us-east | wdc07 |  10.191.115.7/29  | 10.191.115.1  | 
-{: caption="Table 16. us-east Private Subnets" caption-side="bottom"}  
+{: caption="Table 18. us-east Private Subnets" caption-side="bottom"}  
 
 ### `eu-de` List
 {: #eu-de-list} 
@@ -724,7 +762,7 @@ If you use allowlists to control connections in your environment, use the follow
 | Paris | eu-de | par01 |     159.8.114.127/27  |  159.8.114.97 |         
 | Paris | eu-de | par01 |     159.8.78.239/29   |  159.8.78.233 |         
 | Paris | eu-de | par01 |     159.8.94.95/29   |  159.8.94.89 | 
-{: caption="Table 17. eu-de Public Subnets" caption-side="bottom"} 
+{: caption="Table 19. eu-de Public Subnets" caption-side="bottom"} 
 
 #### Private Subnets
 {: #eu-de-private-list} 
@@ -813,7 +851,7 @@ If you use allowlists to control connections in your environment, use the follow
 | Paris | eu-de | par01 |  10.127.213.63/26 | 10.127.213.1 |         
 | Paris | eu-de | par01 |  10.126.23.255/29 | 10.126.23.249 |         
 | Paris | eu-de | par01 | 10.126.100.135/29 | 10.126.100.129 | 
-{: caption="Table 18. eu-de Private Subnets" caption-side="bottom"} 
+{: caption="Table 20. eu-de Private Subnets" caption-side="bottom"} 
 
 ### `us-south` List
 {: #us-south-list}
@@ -1089,7 +1127,7 @@ If you use allowlists to control connections in your environment, use the follow
 | Dallas | us-south | dal13 | 169.62.240.223/29  | 169.62.240.217 |         
 | Dallas | us-south | dal13 | 169.62.240.231/29  | 169.62.240.225 |         
 | Dallas | us-south | dal13 |  174.36.70.143/29  | 174.36.70.137 |
-{: caption="Table 19. us-south Public Subnets" caption-side="bottom"} 
+{: caption="Table 21. us-south Public Subnets" caption-side="bottom"} 
 
 #### Private Subnets
 {: #us-south-private-list}
@@ -1352,4 +1390,4 @@ If you use allowlists to control connections in your environment, use the follow
 | Dallas | us-south | dal13 |  10.220.30.31/29  | 10.220.30.25 |         
 | Dallas | us-south | dal13 | 10.220.162.167/29 | 10.220.162.161 |         
 | Dallas | us-south | dal13 | 10.220.202.239/29 | 10.220.202.233 |
-{: caption="Table 20. us-south Private Subnets" caption-side="bottom"}  
+{: caption="Table 22. us-south Private Subnets" caption-side="bottom"}  
