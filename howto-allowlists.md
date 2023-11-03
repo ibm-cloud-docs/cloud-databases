@@ -15,7 +15,7 @@ keywords: allowlist, ip addresses, blocklist, whitelist, cloud databases allowli
 # Allowlisting
 {: #allowlisting}
 
-{{site.data.keyword.databases-for}} now supports context-based restrictions, which give account owners and administrators the ability to define and enforce access restrictions for {{site.data.keyword.cloud}} resources based on the context of access requests. Access to {{site.data.keyword.databases-for}} resources can be controlled with context-based restrictions and identity and access management (IAM) policies. Context-based restrictions check that an access request comes from an allowed context that you configure. Since both IAM access and context-based restrictions enforce access, context-based restrictions offer protection even in the face of compromised or mismanaged credentials. For more information, see [Protecting {{site.data.keyword.databases-for}} resources with context-based restrictions](/docs/cloud-databases?topic=cloud-databases-cbr).{: deprecated}
+{{site.data.keyword.databases-for}} now supports context-based restrictions, which give account owners and administrators the ability to define and enforce access restrictions for {{site.data.keyword.cloud}} resources based on the context of access requests. Access to {{site.data.keyword.databases-for}} resources can be controlled with context-based restrictions and identity and access management (IAM) policies. Context-based restrictions check that an access request comes from an allowed context that you configure. Since both IAM access and context-based restrictions enforce access, context-based restrictions offer protection even in the face of compromised or mismanaged credentials. For more information, see [Protecting {{site.data.keyword.databases-for}} resources with context-based restrictions](/docs/cloud-databases?topic=cloud-databases-cbr).
 
 To restrict access to your databases, allowlist specific IP addresses or ranges of IP addresses on your deployment.
 
@@ -349,7 +349,7 @@ If you use allowlists to control connections in your environment, use the follow
 {: caption="Table 8. eu-gb Private Subnets" caption-side="bottom"}    
 
 ### `eu-es` List
-{: #eu-es-list} 
+{: #eu-es-list}
 
 #### Public Subnets
 {: #eu-es-public-list}
@@ -371,7 +371,7 @@ If you use allowlists to control connections in your environment, use the follow
 {: caption="Table 9. eu-es Public Subnets" caption-side="bottom"}  
 
 #### Private Subnets
-{: #eu-es-private-list} 
+{: #eu-es-private-list}
 
 | Location | Region | Data center | Subnet | First IP |
 | -- | -- | -- | -- | -- |
