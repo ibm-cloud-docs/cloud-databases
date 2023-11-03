@@ -16,7 +16,6 @@ keywords: allowlist, ip addresses, blocklist, whitelist, cloud databases allowli
 {: #allowlisting}
 
 Using {{site.data.keyword.cloud_notm}} native [context-based restrictions](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-cbr){: external} is recommended over allowlisting.
-{: deprecated}
 
 To restrict access to your databases, allowlist specific IP addresses or ranges of IP addresses on your deployment.
 
