@@ -1,21 +1,14 @@
 ---
 copyright:
-  years: 2019, 2022
-lastupdated: "2022-05-05"
+  years: 2019, 2023
+lastupdated: "2023-11-03"
 
 keywords: kubernetes, tutorial, setup
 
 subcollection: cloud-databases
 ---
 
-{:external: .external target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:tip: .tip}
-{:note: .note}
-
+{{site.data.keyword.attribute-definition-list}}
 
 # Connect a {{site.data.keyword.databases-for}} deployment to an {{site.data.keyword.containerlong_notm}} application
 {: #tutorial-k8s-app}
