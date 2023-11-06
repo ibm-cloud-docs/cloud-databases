@@ -73,7 +73,7 @@ New Shared Compute users, or self-migrated users to Shared Compute, will receive
 {: #hosting-models-iso-compute-provisioning}
 
 ### {{site.data.keyword.databases-for}} Isolated Compute Provisioning through the UI
-{: #hosting-models-iso-compute-provisioning}
+{: #hosting-models-iso-compute-provisioning-ui}
 {: ui}
 
 ### {{site.data.keyword.databases-for}} Isolated Compute using the API
@@ -134,9 +134,9 @@ CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} 
 {: note}
 
 ### {{site.data.keyword.databases-for}} Isolated Compute Provisioning through the CLI
-{: #hosting-models-iso-compute-provisioning}
+{: #hosting-models-iso-compute-provisioning-cli}
 {: cli}
 
 ### {{site.data.keyword.databases-for}} Isolated Compute Provisioning through Terraform
-{: #hosting-models-iso-compute-provisioning}
+{: #hosting-models-iso-compute-provisioning-tf}
 {: terraform}
