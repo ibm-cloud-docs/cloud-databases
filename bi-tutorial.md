@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2019, 2022
-lastupdated: "2022-06-22"
+  years: 2019, 2023
+lastupdated: "2023-11-07"
 
 keywords: IBM Cloud Databases, ICD, bi connector
 
@@ -11,16 +11,6 @@ content-type: tutorial
 account-plan: paid
 completion-time: 2h
 ---
-
-{:external: .external target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:step: data-tutorial-type="step"}
 
 # Mapping Global COVID-19 cases with the {{site.data.keyword.databases-for-mongodb}} EE (Enterprise Edition) Analytics Add-On and Tableau
 {: #bi-connector-tutorial-description}
