@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-11-06"
+lastupdated: "2023-11-07"
 
 subcollection: cloud-databases
 
@@ -16,6 +16,7 @@ keywords: allowlist, ip addresses, blocklist, whitelist, cloud databases allowli
 {: #allowlisting}
 
 {{site.data.keyword.databases-for}} now supports context-based restrictions, which give account owners and administrators the ability to define and enforce access restrictions for {{site.data.keyword.cloud}} resources based on the context of access requests. Access to {{site.data.keyword.databases-for}} resources can be controlled with context-based restrictions and identity and access management (IAM) policies. Context-based restrictions check that an access request comes from an allowed context that you configure. Since both IAM access and context-based restrictions enforce access, context-based restrictions offer protection even in the face of compromised or mismanaged credentials. For more information, see [Protecting {{site.data.keyword.databases-for}} resources with context-based restrictions](/docs/cloud-databases?topic=cloud-databases-cbr).
+{: deprecated}
 
 To restrict access to your databases, allowlist specific IP addresses or ranges of IP addresses on your deployment.
 
