@@ -51,6 +51,7 @@ toc:
       id: howto
       topics:
       - hosting-models.md
+      - learn-getting-to-production.md
       - topicgroup:
           label: Logging and monitoring
           topics:
