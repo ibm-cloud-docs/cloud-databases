@@ -238,21 +238,21 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [Messages for RabbitMQ Used memory for an instance](#ibm_messages_for_rabbitmq_memory_used_bytes) |
 | [Messages for RabbitMQ Used memory for an instance](#ibm_messages_for_rabbitmq_memory_used_percent) |
 | [DataStax Disk read latency mean](#ibm_databases_for_cassandra_disk_read_latency_mean) |
-| [Disk write latency mean](#ibm_databases_for_cassandra_disk_write_latency_mean) |
-| [GC Percentage](#ibm_databases_for_cassandra_garbage_collection_percent_average_15m) |
-| [IO utilization in percent 15 minute average](#ibm_databases_for_cassandra_disk_io_utilization_percent_average_15m) |
-| [IO utilization in percent 30 minute average](#ibm_databases_for_cassandra_disk_io_utilization_percent_average_30m) |
-| [IO utilization in percent 5 minute average](#ibm_databases_for_cassandra_disk_io_utilization_percent_average_5m) |
-| [IO utilization in percent 60 minute average](#ibm_databases_for_cassandra_disk_io_utilization_percent_average_60m) |
-| [IOPS read & write total count for an instance](#ibm_databases_for_cassandra_disk_iops_read_write_total) |
-| [Maximum allowed memory for an instance](#ibm_databases_for_cassandra_memory_limit_bytes) |
-| [Total disk space for an instance](#ibm_databases_for_cassandra_disk_total_bytes) |
-| [Used CPU for an instance](#ibm_databases_for_cassandra_cpu_used_percent) |
-| [Used JVM heap for a database member of the instance in percent](#ibm_databases_for_cassandra_jvm_heap_percent) |
-| [Used disk space for an instance](#ibm_databases_for_cassandra_disk_used_bytes) |
-| [Used disk space for an instance](#ibm_databases_for_cassandra_disk_used_percent) |
-| [Used memory for an instance](#ibm_databases_for_cassandra_memory_used_bytes) |
-| [Used memory for an instance](#ibm_databases_for_cassandra_memory_used_percent) |
+| [DataStax Disk write latency mean](#ibm_databases_for_cassandra_disk_write_latency_mean) |
+| [DataStax GC Percentage](#ibm_databases_for_cassandra_garbage_collection_percent_average_15m) |
+| [DataStax IO utilization in percent 15 minute average](#ibm_databases_for_cassandra_disk_io_utilization_percent_average_15m) |
+| [DataStax IO utilization in percent 30 minute average](#ibm_databases_for_cassandra_disk_io_utilization_percent_average_30m) |
+| [DataStax IO utilization in percent 5 minute average](#ibm_databases_for_cassandra_disk_io_utilization_percent_average_5m) |
+| [DataStax IO utilization in percent 60 minute average](#ibm_databases_for_cassandra_disk_io_utilization_percent_average_60m) |
+| [DataStax IOPS read & write total count for an instance](#ibm_databases_for_cassandra_disk_iops_read_write_total) |
+| [DataStax Maximum allowed memory for an instance](#ibm_databases_for_cassandra_memory_limit_bytes) |
+| [DataStax Total disk space for an instance](#ibm_databases_for_cassandra_disk_total_bytes) |
+| [DataStax Used CPU for an instance](#ibm_databases_for_cassandra_cpu_used_percent) |
+| [DataStax Used JVM heap for a database member of the instance in percent](#ibm_databases_for_cassandra_jvm_heap_percent) |
+| [DataStax Used disk space for an instance](#ibm_databases_for_cassandra_disk_used_bytes) |
+| [DataStax Used disk space for an instance](#ibm_databases_for_cassandra_disk_used_percent) |
+| [DataStax Used memory for an instance](#ibm_databases_for_cassandra_memory_used_bytes) |
+| [DataStax Used memory for an instance](#ibm_databases_for_cassandra_memory_used_percent) |
 {: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
 
 ### MongoDB Average time spent acquiring locks in microseconds total W-average
