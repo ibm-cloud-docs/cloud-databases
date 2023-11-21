@@ -3046,7 +3046,7 @@ How much disk I/O has been used over 5 minutes as a percentage of total disk I/O
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 55: IO utilization in percent 5 minute average metric metadata" caption-side="top"}
 
-### DataStax IO utilization in percent 60 minute average
+#### DataStax IO utilization in percent 60 minute average
 {: #ibm_databases_for_cassandra_disk_io_utilization_percent_average_60m}
 
 How much disk I/O has been used over 60 minutes as a percentage of total disk I/O available
@@ -3059,7 +3059,7 @@ How much disk I/O has been used over 60 minutes as a percentage of total disk I/
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 64: IO utilization in percent 60 minute average metric metadata" caption-side="top"}
 
-### DataStax IOPS read & write total count for an instance
+#### DataStax IOPS read & write total count for an instance
 {: #ibm_databases_for_cassandra_disk_iops_read_write_total}
 
 How many input-output operations per second your instance is performing
@@ -3072,7 +3072,7 @@ How many input-output operations per second your instance is performing
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 73: IOPS read & write total count for an instance metric metadata" caption-side="top"}
 
-### DataStax Maximum allowed memory for an instance
+#### DataStax Maximum allowed memory for an instance
 {: #ibm_databases_for_cassandra_memory_limit_bytes}
 
 The maximum amount of memory available to your instance
