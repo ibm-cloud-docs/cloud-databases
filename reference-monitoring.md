@@ -33,6 +33,9 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 ## Metrics available by Service Plan
 {: #metrics-by-plan}
 
+## MongoDB Metrics
+{: #metrics-by-plan-mongodb}
+
 | Metric Name |
 |-----------|
 | [MongoDB Average time spent acquiring locks in microseconds](#ibm_databases_for_mongodb_locks_time_acquiring_microseconds_W_average) |
@@ -62,6 +65,9 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [MongoDB Used memory for an instance](#ibm_databases_for_mongodb_memory_used_bytes) |
 | [MongoDB Used memory for an instance](#ibm_databases_for_mongodb_memory_used_percent) |
 {: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
+
+## PostgreSQL Metrics
+{: #metrics-by-plan-postgresql}
 
 | Metric Name |
 |-----------|
@@ -106,6 +112,9 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [PostgreSQL Deadlocks rate](#ibm_databases_for_postgresql_deadlocks_rate) |
 {: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
 
+## EnterpriseDB Metrics
+{: #metrics-by-plan-enterprisedb}
+
 | Metric Name |
 |-----------|
 | [EnterpriseDB Blocks hit rate](#ibm_databases_for_enterprisedb_blocks_hit_rate) |
@@ -148,6 +157,9 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [EnterpriseDB Used memory for an instance](#ibm_databases_for_enterprisedb_memory_used_percent) |
 | [EnterpriseDB WAL logs used bytes](#ibm_databases_for_enterprisedb_wal_used_bytes) |
 {: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
+
+## MySQL Metrics
+{: #metrics-by-plan-mysql}
 
 | Metric Name |
 |-----------|
@@ -195,6 +207,9 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [MySQL Used memory for an instance](#ibm_databases_for_mysql_memory_used_percent) |
 {: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
 
+## Elasticsearch Metrics
+{: #metrics-by-plan-elasticsearch}
+
 | Metric Name |
 |-----------|
 | [Elasticsearch Cluster status](#ibm_databases_for_elasticsearch_cluster_status) |
@@ -217,6 +232,9 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [Elasticsearch Used memory for an instance](#ibm_databases_for_elasticsearch_memory_used_percent) |
 {: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
 
+## etcd Metrics
+{: #metrics-by-plan-etcd}
+
 | Metric Name |
 |-----------|
 | [etcd Disk read latency mean](#ibm_databases_for_etcd_disk_read_latency_mean) |
@@ -235,6 +253,9 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [etcd Used memory for an instance](#ibm_databases_for_etcd_memory_used_percent) |
 {: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
 
+## Redis Metrics
+{: #metrics-by-plan-redis}
+
 | Metric Name |
 |-----------|
 | [Redis IO utilization in percent 15 minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_15m) |
@@ -251,6 +272,9 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [Redis Used memory for an instance](#ibm_databases_for_redis_memory_used_percent) |
 {: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
 
+## Messages for RabbitMQ Metrics
+{: #metrics-by-plan-rabbitmq}
+
 | Metric Name |
 |-----------|
 | [Messages for RabbitMQ IO utilization in percent 15 minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_15m) |
@@ -266,6 +290,9 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [Messages for RabbitMQ Used memory for an instance](#ibm_messages_for_rabbitmq_memory_used_bytes) |
 | [Messages for RabbitMQ Used memory for an instance](#ibm_messages_for_rabbitmq_memory_used_percent) |
 {: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
+
+## DataStax Metrics
+{: #metrics-by-plan-datastax}
 
 | Metric Name |
 |-----------|
