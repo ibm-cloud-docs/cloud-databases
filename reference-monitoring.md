@@ -2670,7 +2670,7 @@ How much disk space your instance is using
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 196: Used disk space for an instance metric metadata" caption-side="top"}
 
-### Redis Used disk space for an instance percent
+#### Redis Used disk space for an instance percent
 {: #ibm_databases_for_redis_disk_used_percent}
 
 How much disk space is used as a percentage of total disk available
@@ -2696,7 +2696,7 @@ How much memory your instance is using
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 214: Used memory for an instance metric metadata" caption-side="top"}
 
-### Redis Used memory for an instance percent
+#### Redis Used memory for an instance percent
 {: #ibm_databases_for_redis_memory_used_percent}
 
 How much memory is used as a percentage of total memory available
