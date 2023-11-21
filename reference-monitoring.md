@@ -182,73 +182,73 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [MySQL Used memory for an instance](#ibm_databases_for_mysql_memory_used_bytes) |
 | [MySQL Used memory for an instance](#ibm_databases_for_mysql_memory_used_percent) |
 | [Elasticsearch Cluster status](#ibm_databases_for_elasticsearch_cluster_status) |
-| [DataStaxDisk read latency mean](#ibm_databases_for_cassandra_disk_read_latency_mean) |
 | [Elasticsearch Disk read latency mean](#ibm_databases_for_elasticsearch_disk_read_latency_mean) |
-| [Disk read latency mean](#ibm_databases_for_etcd_disk_read_latency_mean) |
-| [Disk write latency mean](#ibm_databases_for_cassandra_disk_write_latency_mean) |
 | [Elasticsearch Disk write latency mean](#ibm_databases_for_elasticsearch_disk_write_latency_mean) |
-| [Disk write latency mean](#ibm_databases_for_etcd_disk_write_latency_mean) |
-| [GC Percentage](#ibm_databases_for_cassandra_garbage_collection_percent_average_15m) |
 | [Elasticsearch GC Percentage](#ibm_databases_for_elasticsearch_garbage_collection_percent_average_15m) |
-| [IO utilization in percent 15 minute average](#ibm_databases_for_cassandra_disk_io_utilization_percent_average_15m) |
 | [Elasticsearch IO utilization in percent 15 minute average](#ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_15m) |
-| [IO utilization in percent 15 minute average](#ibm_databases_for_etcd_disk_io_utilization_percent_average_15m) |
+| [Elasticsearch IO utilization in percent 30 minute average](#ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_30m) |
+| [Elasticsearch IO utilization in percent 5 minute average](#ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_5m) |
+| [Elasticsearch IO utilization in percent 60 minute average](#ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_60m) |
+| [Elasticsearch IOPS read & write total count for an instance](#ibm_databases_for_elasticsearch_disk_iops_read_write_total) |
+| [Elasticsearch Maximum allowed memory for an instance](#ibm_databases_for_elasticsearch_memory_limit_bytes) |
+| [Elasticsearch Number of unassigned shards](#ibm_databases_for_elasticsearch_unassigned_shards_total) |
+| [Elasticsearch Total disk space for an instance](#ibm_databases_for_elasticsearch_disk_total_bytes) |
+| [Elasticsearch Used CPU for an instance](#ibm_databases_for_elasticsearch_cpu_used_percent) |
+| [Elasticsearch Used JVM heap for a database member of the instance in percent](#ibm_databases_for_elasticsearch_jvm_heap_percent) |
+| [Elasticsearch Used disk space for an instance](#ibm_databases_for_elasticsearch_disk_used_bytes) |
+| [Elasticsearch Used disk space for an instance](#ibm_databases_for_elasticsearch_disk_used_percent) |
+| [Elasticsearch Used memory for an instance](#ibm_databases_for_elasticsearch_memory_used_bytes) |
+| [Elasticsearch Used memory for an instance](#ibm_databases_for_elasticsearch_memory_used_percent) |
+| [etcd Disk read latency mean](#ibm_databases_for_etcd_disk_read_latency_mean) |
+| [etcd Disk write latency mean](#ibm_databases_for_etcd_disk_write_latency_mean) |
+| [etcd IO utilization in percent 15 minute average](#ibm_databases_for_etcd_disk_io_utilization_percent_average_15m) |
+| [etcd IO utilization in percent 30 minute average](#ibm_databases_for_etcd_disk_io_utilization_percent_average_30m) |
+| [etcd IO utilization in percent 5 minute average](#ibm_databases_for_etcd_disk_io_utilization_percent_average_5m) |
+| [etcd IO utilization in percent 60 minute average](#ibm_databases_for_etcd_disk_io_utilization_percent_average_60m) |
+| [etcd IOPS read & write total count for an instance](#ibm_databases_for_etcd_disk_iops_read_write_total) |
+| [etcd Maximum allowed memory for an instance](#ibm_databases_for_etcd_memory_limit_bytes) |
+| [etcd Total disk space for an instance](#ibm_databases_for_etcd_disk_total_bytes) |
+| [etcd Used CPU for an instance](#ibm_databases_for_etcd_cpu_used_percent) |
+| [etcd Used disk space for an instance](#ibm_databases_for_etcd_disk_used_bytes) |
+| [etcd Used disk space for an instance](#ibm_databases_for_etcd_disk_used_percent) |
+| [etcd Used memory for an instance](#ibm_databases_for_etcd_memory_used_bytes) |
+| [etcd Used memory for an instance](#ibm_databases_for_etcd_memory_used_percent) |
+| [DataStax Disk read latency mean](#ibm_databases_for_cassandra_disk_read_latency_mean) |
+| [Disk write latency mean](#ibm_databases_for_cassandra_disk_write_latency_mean) |
+| [GC Percentage](#ibm_databases_for_cassandra_garbage_collection_percent_average_15m) |
+| [IO utilization in percent 15 minute average](#ibm_databases_for_cassandra_disk_io_utilization_percent_average_15m) |
 | [IO utilization in percent 15 minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_15m) |
 | [IO utilization in percent 15 minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_15m) |
 | [IO utilization in percent 30 minute average](#ibm_databases_for_cassandra_disk_io_utilization_percent_average_30m) |
-| [Elasticsearch IO utilization in percent 30 minute average](#ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_30m) |
-| [IO utilization in percent 30 minute average](#ibm_databases_for_etcd_disk_io_utilization_percent_average_30m) |
 | [IO utilization in percent 30 minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_30m) |
 | [IO utilization in percent 30 minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_30m) |
 | [IO utilization in percent 5 minute average](#ibm_databases_for_cassandra_disk_io_utilization_percent_average_5m) |
-| [Elasticsearch IO utilization in percent 5 minute average](#ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_5m) |
-| [IO utilization in percent 5 minute average](#ibm_databases_for_etcd_disk_io_utilization_percent_average_5m) |
 | [IO utilization in percent 5 minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_5m) |
 | [IO utilization in percent 5 minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_5m) |
 | [IO utilization in percent 60 minute average](#ibm_databases_for_cassandra_disk_io_utilization_percent_average_60m) |
-| [Elasticsearch IO utilization in percent 60 minute average](#ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_60m) |
-| [IO utilization in percent 60 minute average](#ibm_databases_for_etcd_disk_io_utilization_percent_average_60m) |
 | [IO utilization in percent 60 minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_60m) |
 | [IO utilization in percent 60 minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_60m) |
 | [IOPS read & write total count for an instance](#ibm_databases_for_cassandra_disk_iops_read_write_total) |
-| [Elasticsearch IOPS read & write total count for an instance](#ibm_databases_for_elasticsearch_disk_iops_read_write_total) |
-| [IOPS read & write total count for an instance](#ibm_databases_for_etcd_disk_iops_read_write_total) |
 | [IOPS read & write total count for an instance](#ibm_databases_for_redis_disk_iops_read_write_total) |
 | [IOPS read & write total count for an instance](#ibm_messages_for_rabbitmq_disk_iops_read_write_total) |
 | [Maximum allowed memory for an instance](#ibm_databases_for_cassandra_memory_limit_bytes) |
-| [Elasticsearch Maximum allowed memory for an instance](#ibm_databases_for_elasticsearch_memory_limit_bytes) |
-| [Maximum allowed memory for an instance](#ibm_databases_for_etcd_memory_limit_bytes) |
 | [Maximum allowed memory for an instance](#ibm_databases_for_redis_memory_limit_bytes) |
 | [Maximum allowed memory for an instance](#ibm_messages_for_rabbitmq_memory_limit_bytes) |
-| [Elasticsearch Number of unassigned shards](#ibm_databases_for_elasticsearch_unassigned_shards_total) |
 | [Total disk space for an instance](#ibm_databases_for_cassandra_disk_total_bytes) |
-| [Elasticsearch Total disk space for an instance](#ibm_databases_for_elasticsearch_disk_total_bytes) |
-| [etcd Total disk space for an instance](#ibm_databases_for_etcd_disk_total_bytes) |
 | [Total disk space for an instance](#ibm_databases_for_redis_disk_total_bytes) |
 | [Total disk space for an instance](#ibm_messages_for_rabbitmq_disk_total_bytes) |
 | [Used CPU for an instance](#ibm_databases_for_cassandra_cpu_used_percent) |
-| [Elasticsearch Used CPU for an instance](#ibm_databases_for_elasticsearch_cpu_used_percent) |
-| [etcd Used CPU for an instance](#ibm_databases_for_etcd_cpu_used_percent) |
 | [Used CPU for an instance](#ibm_databases_for_redis_cpu_used_percent) |
 | [Used CPU for an instance](#ibm_messages_for_rabbitmq_cpu_used_percent) |
 | [Used JVM heap for a database member of the instance in percent](#ibm_databases_for_cassandra_jvm_heap_percent) |
-| [Elasticsearch Used JVM heap for a database member of the instance in percent](#ibm_databases_for_elasticsearch_jvm_heap_percent) |
 | [Used disk space for an instance](#ibm_databases_for_cassandra_disk_used_bytes) |
 | [Used disk space for an instance](#ibm_databases_for_cassandra_disk_used_percent) |
-| [Elasticsearch Used disk space for an instance](#ibm_databases_for_elasticsearch_disk_used_bytes) |
-| [Elasticsearch Used disk space for an instance](#ibm_databases_for_elasticsearch_disk_used_percent) |
-| [etcd Used disk space for an instance](#ibm_databases_for_etcd_disk_used_bytes) |
-| [etcd Used disk space for an instance](#ibm_databases_for_etcd_disk_used_percent) |
 | [Used disk space for an instance](#ibm_databases_for_redis_disk_used_bytes) |
 | [Used disk space for an instance](#ibm_databases_for_redis_disk_used_percent) |
 | [Used disk space for an instance](#ibm_messages_for_rabbitmq_disk_used_bytes) |
 | [Used disk space for an instance](#ibm_messages_for_rabbitmq_disk_used_percent) |
 | [Used memory for an instance](#ibm_databases_for_cassandra_memory_used_bytes) |
 | [Used memory for an instance](#ibm_databases_for_cassandra_memory_used_percent) |
-| [Elasticsearch Used memory for an instance](#ibm_databases_for_elasticsearch_memory_used_bytes) |
-| [Elasticsearch Used memory for an instance](#ibm_databases_for_elasticsearch_memory_used_percent) |
-| [etcd Used memory for an instance](#ibm_databases_for_etcd_memory_used_bytes) |
-| [etcd Used memory for an instance](#ibm_databases_for_etcd_memory_used_percent) |
 | [Used memory for an instance](#ibm_databases_for_redis_memory_used_bytes) |
 | [Used memory for an instance](#ibm_databases_for_redis_memory_used_percent) |
 | [Used memory for an instance](#ibm_messages_for_rabbitmq_memory_used_bytes) |
