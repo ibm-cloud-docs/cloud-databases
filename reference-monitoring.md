@@ -105,60 +105,84 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [EnterpriseDB Buffers backend rate](#ibm_databases_for_enterprisedb_buffers_backend_rate) |
 | [EnterpriseDB Buffers checkpoint rate](#ibm_databases_for_enterprisedb_buffers_checkpoint_rate) |
 | [EnterpriseDB Cache hit ratio](#ibm_databases_for_enterprisedb_cache_hit_ratio) |
-| [MySQL Cache hit ratio](#ibm_databases_for_mysql_cache_hit_ratio) |
-| [Elasticsearch Cluster status](#ibm_databases_for_elasticsearch_cluster_status) |
 | [EnterpriseDB Deadlocks count](#ibm_databases_for_enterprisedb_deadlocks_count) |
 | [EnterpriseDB Deadlocks rate](#ibm_databases_for_enterprisedb_deadlocks_rate) |
+| [EnterpriseDB Disk read latency mean](#ibm_databases_for_enterprisedb_disk_read_latency_mean) |
+| [EnterpriseDB Disk write latency mean](#ibm_databases_for_enterprisedb_disk_write_latency_mean) |
+| [EnterpriseDB IO utilization in percent 15 minute average](#ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_15m) |
+| [EnterpriseDB IO utilization in percent 30 minute average](#ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_30m) |
+| [EnterpriseDB IO utilization in percent 5 minute average](#ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_5m) |
+| [EnterpriseDB IO utilization in percent 60 minute average](#ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_60m) |
+| [EnterpriseDB IOPS read & write total count for an instance](#ibm_databases_for_enterprisedb_disk_iops_read_write_total) |
+| [EnterpriseDB Maximum allowed memory for an instance](#ibm_databases_for_enterprisedb_memory_limit_bytes) |
+| [EnterpriseDB Read replica replication lag](#ibm_databases_for_enterprisedb_read_replica_replication_lag_bytes) |
+| [EnterpriseDB Successful archive rate](#ibm_databases_for_enterprisedb_successful_archive_rate) |
+| [EnterpriseDB Temporary files size in bytes](#ibm_databases_for_enterprisedb_temp_bytes_count) |
+| [EnterpriseDB The total number of EnterpriseDB connections being used](#ibm_databases_for_enterprisedb_total_connections) |
+| [EnterpriseDB Total disk space for an instance](#ibm_databases_for_enterprisedb_disk_total_bytes) |
+| [EnterpriseDB Transaction commit count](#ibm_databases_for_enterprisedb_transaction_commit_count) |
+| [EnterpriseDB Transaction commit rate](#ibm_databases_for_enterprisedb_transaction_commit_rate) |
+| [EnterpriseDB Transaction rollback count](#ibm_databases_for_enterprisedb_transaction_rollback_count) |
+| [EnterpriseDB Transaction rollback rate](#ibm_databases_for_enterprisedb_transaction_rollback_rate) |
+| [EnterpriseDB Tuples deleted count](#ibm_databases_for_enterprisedb_tuples_deleted_count) |
+| [EnterpriseDB Tuples deleted rate](#ibm_databases_for_enterprisedb_tuples_deleted_rate) |
+| [EnterpriseDB Tuples fetched count](#ibm_databases_for_enterprisedb_tuples_fetched_count) |
+| [EnterpriseDB Tuples fetched rate](#ibm_databases_for_enterprisedb_tuples_fetched_rate) |
+| [EnterpriseDB Tuples inserted count](#ibm_databases_for_enterprisedb_tuples_inserted_count) |
+| [EnterpriseDB Tuples inserted rate](#ibm_databases_for_enterprisedb_tuples_inserted_rate) |
+| [EnterpriseDB Tuples returned rate](#ibm_databases_for_enterprisedb_tuples_returned_rate) |
+| [EnterpriseDB Tuples updated count](#ibm_databases_for_enterprisedb_tuples_updated_count) |
+| [EnterpriseDB Tuples updated rate](#ibm_databases_for_enterprisedb_tuples_updated_rate) |
+| [EnterpriseDB Used CPU for an instance](#ibm_databases_for_enterprisedb_cpu_used_percent) |
+| [EnterpriseDB Used disk space for an instance](#ibm_databases_for_enterprisedb_disk_used_bytes) |
+| [EnterpriseDB Used disk space for an instance](#ibm_databases_for_enterprisedb_disk_used_percent) |
+| [EnterpriseDB Used memory for an instance](#ibm_databases_for_enterprisedb_memory_used_bytes) |
+| [EnterpriseDB Used memory for an instance](#ibm_databases_for_enterprisedb_memory_used_percent) |
+| [EnterpriseDB WAL logs used bytes](#ibm_databases_for_enterprisedb_wal_used_bytes) |
+| [MySQL Cache hit ratio](#ibm_databases_for_mysql_cache_hit_ratio) |
+| [Elasticsearch Cluster status](#ibm_databases_for_elasticsearch_cluster_status) |
 | [DataStaxDisk read latency mean](#ibm_databases_for_cassandra_disk_read_latency_mean) |
 | [Elasticsearch Disk read latency mean](#ibm_databases_for_elasticsearch_disk_read_latency_mean) |
-| [EnterpriseDB Disk read latency mean](#ibm_databases_for_enterprisedb_disk_read_latency_mean) |
 | [Disk read latency mean](#ibm_databases_for_etcd_disk_read_latency_mean) |
 | [Disk read latency mean](#ibm_databases_for_mysql_disk_read_latency_mean) |
 | [Disk write latency mean](#ibm_databases_for_cassandra_disk_write_latency_mean) |
 | [Elasticsearch Disk write latency mean](#ibm_databases_for_elasticsearch_disk_write_latency_mean) |
-| [EnterpriseDB Disk write latency mean](#ibm_databases_for_enterprisedb_disk_write_latency_mean) |
 | [Disk write latency mean](#ibm_databases_for_etcd_disk_write_latency_mean) |
 | [Disk write latency mean](#ibm_databases_for_mysql_disk_write_latency_mean) |
 | [GC Percentage](#ibm_databases_for_cassandra_garbage_collection_percent_average_15m) |
 | [Elasticsearch GC Percentage](#ibm_databases_for_elasticsearch_garbage_collection_percent_average_15m) |
 | [IO utilization in percent 15 minute average](#ibm_databases_for_cassandra_disk_io_utilization_percent_average_15m) |
 | [Elasticsearch IO utilization in percent 15 minute average](#ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_15m) |
-| [EnterpriseDB IO utilization in percent 15 minute average](#ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_15m) |
 | [IO utilization in percent 15 minute average](#ibm_databases_for_etcd_disk_io_utilization_percent_average_15m) |
 | [IO utilization in percent 15 minute average](#ibm_databases_for_mysql_disk_io_utilization_percent_average_15m) |
 | [IO utilization in percent 15 minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_15m) |
 | [IO utilization in percent 15 minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_15m) |
 | [IO utilization in percent 30 minute average](#ibm_databases_for_cassandra_disk_io_utilization_percent_average_30m) |
 | [Elasticsearch IO utilization in percent 30 minute average](#ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_30m) |
-| [EnterpriseDB IO utilization in percent 30 minute average](#ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_30m) |
 | [IO utilization in percent 30 minute average](#ibm_databases_for_etcd_disk_io_utilization_percent_average_30m) |
 | [IO utilization in percent 30 minute average](#ibm_databases_for_mysql_disk_io_utilization_percent_average_30m) |
 | [IO utilization in percent 30 minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_30m) |
 | [IO utilization in percent 30 minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_30m) |
 | [IO utilization in percent 5 minute average](#ibm_databases_for_cassandra_disk_io_utilization_percent_average_5m) |
 | [Elasticsearch IO utilization in percent 5 minute average](#ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_5m) |
-| [EnterpriseDB IO utilization in percent 5 minute average](#ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_5m) |
 | [IO utilization in percent 5 minute average](#ibm_databases_for_etcd_disk_io_utilization_percent_average_5m) |
 | [IO utilization in percent 5 minute average](#ibm_databases_for_mysql_disk_io_utilization_percent_average_5m) |
 | [IO utilization in percent 5 minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_5m) |
 | [IO utilization in percent 5 minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_5m) |
 | [IO utilization in percent 60 minute average](#ibm_databases_for_cassandra_disk_io_utilization_percent_average_60m) |
 | [Elasticsearch IO utilization in percent 60 minute average](#ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_60m) |
-| [EnterpriseDB IO utilization in percent 60 minute average](#ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_60m) |
 | [IO utilization in percent 60 minute average](#ibm_databases_for_etcd_disk_io_utilization_percent_average_60m) |
 | [IO utilization in percent 60 minute average](#ibm_databases_for_mysql_disk_io_utilization_percent_average_60m) |
 | [IO utilization in percent 60 minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_60m) |
 | [IO utilization in percent 60 minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_60m) |
 | [IOPS read & write total count for an instance](#ibm_databases_for_cassandra_disk_iops_read_write_total) |
 | [Elasticsearch IOPS read & write total count for an instance](#ibm_databases_for_elasticsearch_disk_iops_read_write_total) |
-| [EnterpriseDB IOPS read & write total count for an instance](#ibm_databases_for_enterprisedb_disk_iops_read_write_total) |
 | [IOPS read & write total count for an instance](#ibm_databases_for_etcd_disk_iops_read_write_total) |
 | [IOPS read & write total count for an instance](#ibm_databases_for_mysql_disk_iops_read_write_total) |
 | [IOPS read & write total count for an instance](#ibm_databases_for_redis_disk_iops_read_write_total) |
 | [IOPS read & write total count for an instance](#ibm_messages_for_rabbitmq_disk_iops_read_write_total) |
 | [Maximum allowed memory for an instance](#ibm_databases_for_cassandra_memory_limit_bytes) |
 | [Elasticsearch Maximum allowed memory for an instance](#ibm_databases_for_elasticsearch_memory_limit_bytes) |
-| [EnterpriseDB Maximum allowed memory for an instance](#ibm_databases_for_enterprisedb_memory_limit_bytes) |
 | [Maximum allowed memory for an instance](#ibm_databases_for_etcd_memory_limit_bytes) |
 | [Maximum allowed memory for an instance](#ibm_databases_for_mysql_memory_limit_bytes) |
 | [Maximum allowed memory for an instance](#ibm_databases_for_redis_memory_limit_bytes) |
@@ -166,9 +190,6 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [Elasticsearch Number of unassigned shards](#ibm_databases_for_elasticsearch_unassigned_shards_total) |
 | [Percent of threads connected](#ibm_databases_for_mysql_threads_connected_usage) |
 | [Percent of threads running](#ibm_databases_for_mysql_threads_running_usage) |
-| [EnterpriseDB Read replica replication lag](#ibm_databases_for_enterprisedb_read_replica_replication_lag_bytes) |
-| [EnterpriseDB Successful archive rate](#ibm_databases_for_enterprisedb_successful_archive_rate) |
-| [EnterpriseDB Temporary files size in bytes](#ibm_databases_for_enterprisedb_temp_bytes_count) |
 | [The number of connections that were aborted because the client died without closing the connection properly](#ibm_databases_for_mysql_aborted_clients_rate) |
 | [The number of threads created to handle connections](#ibm_databases_for_mysql_threads_created) |
 | [The number of threads in the thread cache](#ibm_databases_for_mysql_thread_cache_size) |
@@ -194,30 +215,14 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [The rate of times that a request for a table lock could not be granted immediately and a wait was needed](#ibm_databases_for_mysql_table_locks_waited_rate) |
 | [The rate of times that the log buffer was too small and a wait was required for it to be flushed before continuing](#ibm_databases_for_mysql_innodb_log_waits_rate) |
 | [The rate of total command statements executed](#ibm_databases_for_mysql_commands_total_rate) |
-| [EnterpriseDB The total number of EnterpriseDB connections being used](#ibm_databases_for_enterprisedb_total_connections) |
 | [Total disk space for an instance](#ibm_databases_for_cassandra_disk_total_bytes) |
 | [Elasticsearch Total disk space for an instance](#ibm_databases_for_elasticsearch_disk_total_bytes) |
-| [EnterpriseDB Total disk space for an instance](#ibm_databases_for_enterprisedb_disk_total_bytes) |
 | [etcd Total disk space for an instance](#ibm_databases_for_etcd_disk_total_bytes) |
 | [Total disk space for an instance](#ibm_databases_for_mysql_disk_total_bytes) |
 | [Total disk space for an instance](#ibm_databases_for_redis_disk_total_bytes) |
 | [Total disk space for an instance](#ibm_messages_for_rabbitmq_disk_total_bytes) |
-| [EnterpriseDB Transaction commit count](#ibm_databases_for_enterprisedb_transaction_commit_count) |
-| [EnterpriseDB Transaction commit rate](#ibm_databases_for_enterprisedb_transaction_commit_rate) |
-| [EnterpriseDB Transaction rollback count](#ibm_databases_for_enterprisedb_transaction_rollback_count) |
-| [EnterpriseDB Transaction rollback rate](#ibm_databases_for_enterprisedb_transaction_rollback_rate) |
-| [EnterpriseDB Tuples deleted count](#ibm_databases_for_enterprisedb_tuples_deleted_count) |
-| [EnterpriseDB Tuples deleted rate](#ibm_databases_for_enterprisedb_tuples_deleted_rate) |
-| [EnterpriseDB Tuples fetched count](#ibm_databases_for_enterprisedb_tuples_fetched_count) |
-| [EnterpriseDB Tuples fetched rate](#ibm_databases_for_enterprisedb_tuples_fetched_rate) |
-| [EnterpriseDB Tuples inserted count](#ibm_databases_for_enterprisedb_tuples_inserted_count) |
-| [EnterpriseDB Tuples inserted rate](#ibm_databases_for_enterprisedb_tuples_inserted_rate) |
-| [EnterpriseDB Tuples returned rate](#ibm_databases_for_enterprisedb_tuples_returned_rate) |
-| [EnterpriseDB Tuples updated count](#ibm_databases_for_enterprisedb_tuples_updated_count) |
-| [EnterpriseDB Tuples updated rate](#ibm_databases_for_enterprisedb_tuples_updated_rate) |
 | [Used CPU for an instance](#ibm_databases_for_cassandra_cpu_used_percent) |
 | [Elasticsearch Used CPU for an instance](#ibm_databases_for_elasticsearch_cpu_used_percent) |
-| [EnterpriseDB Used CPU for an instance](#ibm_databases_for_enterprisedb_cpu_used_percent) |
 | [etcd Used CPU for an instance](#ibm_databases_for_etcd_cpu_used_percent) |
 | [Used CPU for an instance](#ibm_databases_for_mysql_cpu_used_percent) |
 | [Used CPU for an instance](#ibm_databases_for_redis_cpu_used_percent) |
@@ -228,8 +233,6 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [Used disk space for an instance](#ibm_databases_for_cassandra_disk_used_percent) |
 | [Elasticsearch Used disk space for an instance](#ibm_databases_for_elasticsearch_disk_used_bytes) |
 | [Elasticsearch Used disk space for an instance](#ibm_databases_for_elasticsearch_disk_used_percent) |
-| [EnterpriseDB Used disk space for an instance](#ibm_databases_for_enterprisedb_disk_used_bytes) |
-| [EnterpriseDB Used disk space for an instance](#ibm_databases_for_enterprisedb_disk_used_percent) |
 | [etcd Used disk space for an instance](#ibm_databases_for_etcd_disk_used_bytes) |
 | [etcd Used disk space for an instance](#ibm_databases_for_etcd_disk_used_percent) |
 | [Used disk space for an instance](#ibm_databases_for_mysql_disk_used_bytes) |
@@ -242,8 +245,6 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [Used memory for an instance](#ibm_databases_for_cassandra_memory_used_percent) |
 | [Elasticsearch Used memory for an instance](#ibm_databases_for_elasticsearch_memory_used_bytes) |
 | [Elasticsearch Used memory for an instance](#ibm_databases_for_elasticsearch_memory_used_percent) |
-| [EnterpriseDB Used memory for an instance](#ibm_databases_for_enterprisedb_memory_used_bytes) |
-| [EnterpriseDB Used memory for an instance](#ibm_databases_for_enterprisedb_memory_used_percent) |
 | [etcd Used memory for an instance](#ibm_databases_for_etcd_memory_used_bytes) |
 | [etcd Used memory for an instance](#ibm_databases_for_etcd_memory_used_percent) |
 | [Used memory for an instance](#ibm_databases_for_mysql_memory_used_bytes) |
@@ -252,7 +253,6 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [Used memory for an instance](#ibm_databases_for_redis_memory_used_percent) |
 | [Used memory for an instance](#ibm_messages_for_rabbitmq_memory_used_bytes) |
 | [Used memory for an instance](#ibm_messages_for_rabbitmq_memory_used_percent) |
-| [EnterpriseDB WAL logs used bytes](#ibm_databases_for_enterprisedb_wal_used_bytes) |
 {: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
 
 ### MongoDB Average time spent acquiring locks in microseconds total W-average
