@@ -66,6 +66,344 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [MongoDB Used memory for an instance](#ibm_databases_for_mongodb_memory_used_percent) |
 {: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
 
+### MongoDB Average time spent acquiring locks in microseconds total W-average
+{: #ibm_databases_for_mongodb_locks_time_acquiring_microseconds_W_average}
+
+Average time spent acquiring locks in microseconds
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_mongodb_locks_time_acquiring_microseconds_W_average`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `second` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 2: Average time spent acquiring locks in microseconds metric metadata" caption-side="top"}
+
+### MongoDB Average time spent acquiring locks in microseconds total_average
+{: #ibm_databases_for_mongodb_locks_time_acquiring_microseconds_total_average}
+
+Average time spent acquiring locks in microseconds
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_mongodb_locks_time_acquiring_microseconds_total_average`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `second` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 3: Average time spent acquiring locks in microseconds metric metadata" caption-side="top"}
+
+### MongoDB Connections
+{: #ibm_databases_for_mongodb_connections}
+
+The number of connections to the database
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_mongodb_connections`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 16: Connections metric metadata" caption-side="top"}
+
+### MongoDB Disk read latency mean
+{: #ibm_databases_for_mongodb_disk_read_latency_mean}
+
+Disk read latency mean
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_mongodb_disk_read_latency_mean`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `count` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 25: Disk read latency mean metric metadata" caption-side="top"}
+
+### MongoDB Disk write latency mean
+{: #ibm_databases_for_mongodb_disk_write_latency_mean}
+
+Disk write latency mean
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_mongodb_disk_write_latency_mean`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `count` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 32: Disk write latency mean metric metadata" caption-side="top"}
+
+### MongoDB IO utilization in percent 15 minute average
+{: #ibm_databases_for_mongodb_disk_io_utilization_percent_average_15m}
+
+How much disk I/O has been used over 15 minutes as a percentage of total disk I/O available
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_mongodb_disk_io_utilization_percent_average_15m`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 41: IO utilization in percent 15 minute average metric metadata" caption-side="top"}
+
+### MongoDB IO utilization in percent 30 minute average
+{: #ibm_databases_for_mongodb_disk_io_utilization_percent_average_30m}
+
+How much disk I/O has been used over 30 minutes as a percentage of total disk I/O available
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_mongodb_disk_io_utilization_percent_average_30m`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 50: IO utilization in percent 30 minute average metric metadata" caption-side="top"}
+
+### MongoDB IO utilization in percent 5 minute average
+{: #ibm_databases_for_mongodb_disk_io_utilization_percent_average_5m}
+
+How much disk I/O has been used over 5 minutes as a percentage of total disk I/O available
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_mongodb_disk_io_utilization_percent_average_5m`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 59: IO utilization in percent 5 minute average metric metadata" caption-side="top"}
+
+### MongoDB IO utilization in percent 60 minute average
+{: #ibm_databases_for_mongodb_disk_io_utilization_percent_average_60m}
+
+How much disk I/O has been used over 60 minutes as a percentage of total disk I/O available
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_mongodb_disk_io_utilization_percent_average_60m`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 68: IO utilization in percent 60 minute average metric metadata" caption-side="top"}
+
+### MongoDB IOPS read & write total count for an instance
+{: #ibm_databases_for_mongodb_disk_iops_read_write_total}
+
+How many input-output operations per second your instance is performing
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_mongodb_disk_iops_read_write_total`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `count` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 77: IOPS read & write total count for an instance metric metadata" caption-side="top"}
+
+### MongoDB Maximum allowed memory for an instance
+{: #ibm_databases_for_mongodb_memory_limit_bytes}
+
+The maximum amount of memory available to your instance
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_mongodb_memory_limit_bytes`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `byte` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 86: Maximum allowed memory for an instance metric metadata" caption-side="top"}
+
+### MongoDB Oplog gigabyte per hour
+{: #ibm_databases_for_mongodb_oplog_gb_per_hour}
+
+The gigabytes of oplog per hour the primary generates
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_mongodb_oplog_gb_per_hour`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 92: Oplog gigabyte per hour metric metadata" caption-side="top"}
+
+### MongoDB Oplog used bytes
+{: #ibm_databases_for_mongodb_oplog_used_bytes}
+
+The total amount of space used by the oplog in bytes.
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_mongodb_oplog_used_bytes`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `byte` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 93: Oplog used bytes metric metadata" caption-side="top"}
+
+### MongoDB Oplog used bytes percent of total
+{: #ibm_databases_for_mongodb_oplog_used_bytes_percent}
+
+The total used oplog space in percent
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_mongodb_oplog_used_bytes_percent`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 94: Oplog used bytes percent of total metric metadata" caption-side="top"}
+
+### MongoDB Oplog window hours
+{: #ibm_databases_for_mongodb_oplog_window_hours}
+
+The approximate number of hours available in the oplog.
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_mongodb_oplog_window_hours`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 95: Oplog window hours metric metadata" caption-side="top"}
+
+### MongoDB Page faults
+{: #ibm_databases_for_mongodb_page_faults}
+
+The number of times per second that MongoDB had to request data from disk. Scale RAM to reduce the number of disk requests
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_mongodb_page_faults`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 96: Page faults metric metadata" caption-side="top"}
+
+### MongoDB Process resident memory in bytes
+{: #ibm_databases_for_mongodb_process_resident_memory_bytes}
+
+Amount of actual physical memory used by the MongoDB process.
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_mongodb_process_resident_memory_bytes`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `byte` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 99: Process resident memory in bytes metric metadata" caption-side="top"}
+
+### MongoDB Process virtual memory in bytes
+{: #ibm_databases_for_mongodb_process_virtual_memory_bytes}
+
+Amount of virtual memory used by the MongoDB process.
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_mongodb_process_virtual_memory_bytes`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `byte` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 100: Process virtual memory in bytes metric metadata" caption-side="top"}
+
+### MongoDB Replica set member state
+{: #ibm_databases_for_mongodb_status}
+
+An integer between 0 and 10 that represents the replica state of the current member.
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_mongodb_status`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `count` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 103: Replica set member state metric metadata" caption-side="top"}
+
+### MongoDB Replication lag
+{: #ibm_databases_for_mongodb_replica_lag}
+
+The replication lag in seconds
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_mongodb_replica_lag`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `second` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 104: Replication lag metric metadata" caption-side="top"}
+
+### MongoDB Total disk space for an instance
+{: #ibm_databases_for_mongodb_disk_total_bytes}
+
+Represents the total amount of disk space available to your deployment
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_mongodb_disk_total_bytes`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `byte` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 140: Total disk space for an instance metric metadata" caption-side="top"}
+
+### MongoDB Used CPU for an instance
+{: #ibm_databases_for_mongodb_cpu_used_percent}
+
+How much CPU is used as a percentage of total CPU available. Only for deployments that have dedicated CPU
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_mongodb_cpu_used_percent`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 175: Used CPU for an instance metric metadata" caption-side="top"}
+
+### MongoDB Used disk space for an instance bytes
+{: #ibm_databases_for_mongodb_disk_used_bytes}
+
+How much disk space your instance is using
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_mongodb_disk_used_bytes`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `byte` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 190: Used disk space for an instance metric metadata" caption-side="top"}
+
+### MongoDB Used disk space for an instance
+{: #ibm_databases_for_mongodb_disk_used_percent}
+
+How much disk space is used as a percentage of total disk available
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_mongodb_disk_used_percent`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 191: Used disk space for an instance metric metadata" caption-side="top"}
+
+### MongoDB Used memory for an instance
+{: #ibm_databases_for_mongodb_memory_used_bytes}
+
+How much memory your instance is using
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_mongodb_memory_used_bytes`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `byte` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 208: Used memory for an instance metric metadata" caption-side="top"}
+
+### MongoDB Used memory for an instance percent
+{: #ibm_databases_for_mongodb_memory_used_percent}
+
+How much memory is used as a percentage of total memory available
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_mongodb_memory_used_percent`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 209: Used memory for an instance metric metadata" caption-side="top"}
+
 ## PostgreSQL Metrics
 {: #metrics-by-plan-postgresql}
 
@@ -450,6 +788,9 @@ How much memory is used as a percentage of total memory available
 ## DataStax Metrics
 {: #metrics-by-plan-datastax}
 
+{{site.data.keyword.databases-for-cassandra_full}} is deprecated and no longer supported as of 30 June 2024. For more information, see the [deprecation details](/docs/databases-for-cassandra?topic=databases-for-cassandra-deprecation#dep_details).
+{: deprecated}
+
 | Metric Name |
 |-----------|
 | [DataStax Disk read latency mean](#ibm_databases_for_cassandra_disk_read_latency_mean) |
@@ -469,32 +810,6 @@ How much memory is used as a percentage of total memory available
 | [DataStax Used memory for an instance](#ibm_databases_for_cassandra_memory_used_bytes) |
 | [DataStax Used memory for an instance](#ibm_databases_for_cassandra_memory_used_percent) |
 {: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
-
-### MongoDB Average time spent acquiring locks in microseconds total W-average
-{: #ibm_databases_for_mongodb_locks_time_acquiring_microseconds_W_average}
-
-Average time spent acquiring locks in microseconds
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mongodb_locks_time_acquiring_microseconds_W_average`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `second` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 2: Average time spent acquiring locks in microseconds metric metadata" caption-side="top"}
-
-### MongoDB Average time spent acquiring locks in microseconds total_average
-{: #ibm_databases_for_mongodb_locks_time_acquiring_microseconds_total_average}
-
-Average time spent acquiring locks in microseconds
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mongodb_locks_time_acquiring_microseconds_total_average`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `second` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 3: Average time spent acquiring locks in microseconds metric metadata" caption-side="top"}
 
 ### EnterpriseDB Blocks hit rate
 {: #ibm_databases_for_enterprisedb_blocks_hit_rate}
@@ -652,19 +967,6 @@ A number derived from the status value of the /_cluster/health endpoint. Possibl
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 15: Cluster status metric metadata" caption-side="top"}
 
-### MongoDB Connections
-{: #ibm_databases_for_mongodb_connections}
-
-The number of connections to the database
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mongodb_connections`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `none` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 16: Connections metric metadata" caption-side="top"}
-
 ### EnterpriseDB Deadlocks count
 {: #ibm_databases_for_enterprisedb_deadlocks_count}
 
@@ -769,19 +1071,6 @@ Disk read latency mean
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 24: Disk read latency mean metric metadata" caption-side="top"}
 
-### MongoDB Disk read latency mean
-{: #ibm_databases_for_mongodb_disk_read_latency_mean}
-
-Disk read latency mean
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mongodb_disk_read_latency_mean`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `count` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 25: Disk read latency mean metric metadata" caption-side="top"}
-
 ### MySQL Disk read latency mean
 {: #ibm_databases_for_mysql_disk_read_latency_mean}
 
@@ -859,19 +1148,6 @@ Disk write latency mean
 | `Value Type`  | `count` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 31: Disk write latency mean metric metadata" caption-side="top"}
-
-### MongoDB Disk write latency mean
-{: #ibm_databases_for_mongodb_disk_write_latency_mean}
-
-Disk write latency mean
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mongodb_disk_write_latency_mean`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `count` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 32: Disk write latency mean metric metadata" caption-side="top"}
 
 ### MySQL Disk write latency mean
 {: #ibm_databases_for_mysql_disk_write_latency_mean}
@@ -977,19 +1253,6 @@ How much disk I/O has been used over 15 minutes as a percentage of total disk I/
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 40: IO utilization in percent 15 minute average metric metadata" caption-side="top"}
 
-### MongoDB IO utilization in percent 15 minute average
-{: #ibm_databases_for_mongodb_disk_io_utilization_percent_average_15m}
-
-How much disk I/O has been used over 15 minutes as a percentage of total disk I/O available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mongodb_disk_io_utilization_percent_average_15m`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 41: IO utilization in percent 15 minute average metric metadata" caption-side="top"}
-
 ### MySQL IO utilization in percent 15 minute average
 {: #ibm_databases_for_mysql_disk_io_utilization_percent_average_15m}
 
@@ -1080,19 +1343,6 @@ How much disk I/O has been used over 30 minutes as a percentage of total disk I/
 | `Value Type`  | `percent` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 49: IO utilization in percent 30 minute average metric metadata" caption-side="top"}
-
-### MongoDB IO utilization in percent 30 minute average
-{: #ibm_databases_for_mongodb_disk_io_utilization_percent_average_30m}
-
-How much disk I/O has been used over 30 minutes as a percentage of total disk I/O available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mongodb_disk_io_utilization_percent_average_30m`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 50: IO utilization in percent 30 minute average metric metadata" caption-side="top"}
 
 ### MySQL IO utilization in percent 30 minute average
 {: #ibm_databases_for_mysql_disk_io_utilization_percent_average_30m}
@@ -1185,19 +1435,6 @@ How much disk I/O has been used over 5 minutes as a percentage of total disk I/O
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 58: IO utilization in percent 5 minute average metric metadata" caption-side="top"}
 
-### MongoDB IO utilization in percent 5 minute average
-{: #ibm_databases_for_mongodb_disk_io_utilization_percent_average_5m}
-
-How much disk I/O has been used over 5 minutes as a percentage of total disk I/O available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mongodb_disk_io_utilization_percent_average_5m`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 59: IO utilization in percent 5 minute average metric metadata" caption-side="top"}
-
 ### MySQL IO utilization in percent 5 minute average
 {: #ibm_databases_for_mysql_disk_io_utilization_percent_average_5m}
 
@@ -1288,19 +1525,6 @@ How much disk I/O has been used over 60 minutes as a percentage of total disk I/
 | `Value Type`  | `percent` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 67: IO utilization in percent 60 minute average metric metadata" caption-side="top"}
-
-### MongoDB IO utilization in percent 60 minute average
-{: #ibm_databases_for_mongodb_disk_io_utilization_percent_average_60m}
-
-How much disk I/O has been used over 60 minutes as a percentage of total disk I/O available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mongodb_disk_io_utilization_percent_average_60m`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 68: IO utilization in percent 60 minute average metric metadata" caption-side="top"}
 
 ### MySQL IO utilization in percent 60 minute average
 {: #ibm_databases_for_mysql_disk_io_utilization_percent_average_60m}
@@ -1393,19 +1617,6 @@ How many input-output operations per second your instance is performing
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 76: IOPS read & write total count for an instance metric metadata" caption-side="top"}
 
-### MongoDB IOPS read & write total count for an instance
-{: #ibm_databases_for_mongodb_disk_iops_read_write_total}
-
-How many input-output operations per second your instance is performing
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mongodb_disk_iops_read_write_total`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `count` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 77: IOPS read & write total count for an instance metric metadata" caption-side="top"}
-
 ### MySQL IOPS read & write total count for an instance
 {: #ibm_databases_for_mysql_disk_iops_read_write_total}
 
@@ -1497,19 +1708,6 @@ The maximum amount of memory available to your instance
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 85: Maximum allowed memory for an instance metric metadata" caption-side="top"}
 
-### MongoDB Maximum allowed memory for an instance
-{: #ibm_databases_for_mongodb_memory_limit_bytes}
-
-The maximum amount of memory available to your instance
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mongodb_memory_limit_bytes`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `byte` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 86: Maximum allowed memory for an instance metric metadata" caption-side="top"}
-
 ### MySQL Maximum allowed memory for an instance
 {: #ibm_databases_for_mysql_memory_limit_bytes}
 
@@ -1562,71 +1760,6 @@ Number of unassigned shards
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 91: Number of unassigned shards metric metadata" caption-side="top"}
 
-### MongoDB Oplog gigabyte per hour
-{: #ibm_databases_for_mongodb_oplog_gb_per_hour}
-
-The gigabytes of oplog per hour the primary generates
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mongodb_oplog_gb_per_hour`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `none` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 92: Oplog gigabyte per hour metric metadata" caption-side="top"}
-
-### MongoDB Oplog used bytes
-{: #ibm_databases_for_mongodb_oplog_used_bytes}
-
-The total amount of space used by the oplog in bytes.
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mongodb_oplog_used_bytes`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `byte` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 93: Oplog used bytes metric metadata" caption-side="top"}
-
-### MongoDB Oplog used bytes percent of total
-{: #ibm_databases_for_mongodb_oplog_used_bytes_percent}
-
-The total used oplog space in percent
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mongodb_oplog_used_bytes_percent`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 94: Oplog used bytes percent of total metric metadata" caption-side="top"}
-
-### MongoDB Oplog window hours
-{: #ibm_databases_for_mongodb_oplog_window_hours}
-
-The approximate number of hours available in the oplog.
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mongodb_oplog_window_hours`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `none` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 95: Oplog window hours metric metadata" caption-side="top"}
-
-### MongoDB Page faults
-{: #ibm_databases_for_mongodb_page_faults}
-
-The number of times per second that MongoDB had to request data from disk. Scale RAM to reduce the number of disk requests
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mongodb_page_faults`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `none` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 96: Page faults metric metadata" caption-side="top"}
-
 ### MySQL Percent of threads connected
 {: #ibm_databases_for_mysql_threads_connected_usage}
 
@@ -1653,32 +1786,6 @@ Percent of threads running.
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 98: Percent of threads running metric metadata" caption-side="top"}
 
-### MongoDB Process resident memory in bytes
-{: #ibm_databases_for_mongodb_process_resident_memory_bytes}
-
-Amount of actual physical memory used by the MongoDB process.
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mongodb_process_resident_memory_bytes`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `byte` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 99: Process resident memory in bytes metric metadata" caption-side="top"}
-
-### MongoDB Process virtual memory in bytes
-{: #ibm_databases_for_mongodb_process_virtual_memory_bytes}
-
-Amount of virtual memory used by the MongoDB process.
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mongodb_process_virtual_memory_bytes`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `byte` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 100: Process virtual memory in bytes metric metadata" caption-side="top"}
-
 ### EnterpriseDB Read replica replication lag
 {: #ibm_databases_for_enterprisedb_read_replica_replication_lag_bytes}
 
@@ -1704,32 +1811,6 @@ How far behind a PostgreSQL read-only replica is, in bytes
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 102: Read replica replication lag metric metadata" caption-side="top"}
-
-### MongoDB Replica set member state
-{: #ibm_databases_for_mongodb_status}
-
-An integer between 0 and 10 that represents the replica state of the current member.
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mongodb_status`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `count` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 103: Replica set member state metric metadata" caption-side="top"}
-
-### MongoDB Replication lag
-{: #ibm_databases_for_mongodb_replica_lag}
-
-The replication lag in seconds
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mongodb_replica_lag`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `second` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 104: Replication lag metric metadata" caption-side="top"}
 
 ### EnterpriseDB Successful archive rate
 {: #ibm_databases_for_enterprisedb_successful_archive_rate}
@@ -2186,19 +2267,6 @@ Represents the total amount of disk space available to your deployment
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 139: Total disk space for an instance metric metadata" caption-side="top"}
 
-### MongoDB Total disk space for an instance
-{: #ibm_databases_for_mongodb_disk_total_bytes}
-
-Represents the total amount of disk space available to your deployment
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mongodb_disk_total_bytes`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `byte` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 140: Total disk space for an instance metric metadata" caption-side="top"}
-
 ### MySQL Total disk space for an instance
 {: #ibm_databases_for_mysql_disk_total_bytes}
 
@@ -2628,19 +2696,6 @@ How much CPU is used as a percentage of total CPU available. Only for deployment
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 174: Used CPU for an instance metric metadata" caption-side="top"}
 
-### MongoDB Used CPU for an instance
-{: #ibm_databases_for_mongodb_cpu_used_percent}
-
-How much CPU is used as a percentage of total CPU available. Only for deployments that have dedicated CPU
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mongodb_cpu_used_percent`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 175: Used CPU for an instance metric metadata" caption-side="top"}
-
 ### MySQL Used CPU for an instance
 {: #ibm_databases_for_mysql_cpu_used_percent}
 
@@ -2809,32 +2864,6 @@ How much disk space is used as a percentage of total disk available
 | `Value Type`  | `percent` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 189: Used disk space for an instance metric metadata" caption-side="top"}
-
-### MongoDB Used disk space for an instance bytes
-{: #ibm_databases_for_mongodb_disk_used_bytes}
-
-How much disk space your instance is using
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mongodb_disk_used_bytes`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `byte` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 190: Used disk space for an instance metric metadata" caption-side="top"}
-
-### MongoDB Used disk space for an instance
-{: #ibm_databases_for_mongodb_disk_used_percent}
-
-How much disk space is used as a percentage of total disk available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mongodb_disk_used_percent`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 191: Used disk space for an instance metric metadata" caption-side="top"}
 
 ### MySQL Used disk space for an instance
 {: #ibm_databases_for_mysql_disk_used_bytes}
@@ -3017,32 +3046,6 @@ How much memory is used as a percentage of total memory available
 | `Value Type`  | `percent` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 207: Used memory for an instance metric metadata" caption-side="top"}
-
-### MongoDB Used memory for an instance
-{: #ibm_databases_for_mongodb_memory_used_bytes}
-
-How much memory your instance is using
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mongodb_memory_used_bytes`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `byte` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 208: Used memory for an instance metric metadata" caption-side="top"}
-
-### MongoDB Used memory for an instance percent
-{: #ibm_databases_for_mongodb_memory_used_percent}
-
-How much memory is used as a percentage of total memory available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mongodb_memory_used_percent`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 209: Used memory for an instance metric metadata" caption-side="top"}
 
 ### MySQL Used memory for an instance
 {: #ibm_databases_for_mysql_memory_used_bytes}
