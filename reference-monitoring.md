@@ -213,46 +213,46 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [etcd Used disk space for an instance](#ibm_databases_for_etcd_disk_used_percent) |
 | [etcd Used memory for an instance](#ibm_databases_for_etcd_memory_used_bytes) |
 | [etcd Used memory for an instance](#ibm_databases_for_etcd_memory_used_percent) |
+| [Redis IO utilization in percent 15 minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_15m) |
+| [Redis IO utilization in percent 30 minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_30m) |
+| [Redis IO utilization in percent 5 minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_5m) |
+| [Redis IO utilization in percent 60 minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_60m) |
+| [Redis IOPS read & write total count for an instance](#ibm_databases_for_redis_disk_iops_read_write_total) |
+| [Redis Maximum allowed memory for an instance](#ibm_databases_for_redis_memory_limit_bytes) |
+| [Redis Total disk space for an instance](#ibm_databases_for_redis_disk_total_bytes) |
+| [Redis Used CPU for an instance](#ibm_databases_for_redis_cpu_used_percent) |
+| [Redis Used disk space for an instance](#ibm_databases_for_redis_disk_used_bytes) |
+| [Redis Used disk space for an instance](#ibm_databases_for_redis_disk_used_percent) |
+| [Redis Used memory for an instance](#ibm_databases_for_redis_memory_used_bytes) |
+| [Redis Used memory for an instance](#ibm_databases_for_redis_memory_used_percent) |
+| [Messages for RabbitMQ IO utilization in percent 15 minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_15m) |
+| [Messages for RabbitMQ IO utilization in percent 30 minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_30m) |
+| [Messages for RabbitMQ IO utilization in percent 5 minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_5m) |
+| [Messages for RabbitMQ IO utilization in percent 60 minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_60m) |
+| [Messages for RabbitMQ IOPS read & write total count for an instance](#ibm_messages_for_rabbitmq_disk_iops_read_write_total) |
+| [Messages for RabbitMQ Maximum allowed memory for an instance](#ibm_messages_for_rabbitmq_memory_limit_bytes) |
+| [Messages for RabbitMQ Total disk space for an instance](#ibm_messages_for_rabbitmq_disk_total_bytes) |
+| [Messages for RabbitMQ Used CPU for an instance](#ibm_messages_for_rabbitmq_cpu_used_percent) |
+| [Messages for RabbitMQ Used disk space for an instance](#ibm_messages_for_rabbitmq_disk_used_bytes) |
+| [Messages for RabbitMQ Used disk space for an instance](#ibm_messages_for_rabbitmq_disk_used_percent) |
+| [Messages for RabbitMQ Used memory for an instance](#ibm_messages_for_rabbitmq_memory_used_bytes) |
+| [Messages for RabbitMQ Used memory for an instance](#ibm_messages_for_rabbitmq_memory_used_percent) |
 | [DataStax Disk read latency mean](#ibm_databases_for_cassandra_disk_read_latency_mean) |
 | [Disk write latency mean](#ibm_databases_for_cassandra_disk_write_latency_mean) |
 | [GC Percentage](#ibm_databases_for_cassandra_garbage_collection_percent_average_15m) |
 | [IO utilization in percent 15 minute average](#ibm_databases_for_cassandra_disk_io_utilization_percent_average_15m) |
-| [IO utilization in percent 15 minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_15m) |
-| [IO utilization in percent 15 minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_15m) |
 | [IO utilization in percent 30 minute average](#ibm_databases_for_cassandra_disk_io_utilization_percent_average_30m) |
-| [IO utilization in percent 30 minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_30m) |
-| [IO utilization in percent 30 minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_30m) |
 | [IO utilization in percent 5 minute average](#ibm_databases_for_cassandra_disk_io_utilization_percent_average_5m) |
-| [IO utilization in percent 5 minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_5m) |
-| [IO utilization in percent 5 minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_5m) |
 | [IO utilization in percent 60 minute average](#ibm_databases_for_cassandra_disk_io_utilization_percent_average_60m) |
-| [IO utilization in percent 60 minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_60m) |
-| [IO utilization in percent 60 minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_60m) |
 | [IOPS read & write total count for an instance](#ibm_databases_for_cassandra_disk_iops_read_write_total) |
-| [IOPS read & write total count for an instance](#ibm_databases_for_redis_disk_iops_read_write_total) |
-| [IOPS read & write total count for an instance](#ibm_messages_for_rabbitmq_disk_iops_read_write_total) |
 | [Maximum allowed memory for an instance](#ibm_databases_for_cassandra_memory_limit_bytes) |
-| [Maximum allowed memory for an instance](#ibm_databases_for_redis_memory_limit_bytes) |
-| [Maximum allowed memory for an instance](#ibm_messages_for_rabbitmq_memory_limit_bytes) |
 | [Total disk space for an instance](#ibm_databases_for_cassandra_disk_total_bytes) |
-| [Total disk space for an instance](#ibm_databases_for_redis_disk_total_bytes) |
-| [Total disk space for an instance](#ibm_messages_for_rabbitmq_disk_total_bytes) |
 | [Used CPU for an instance](#ibm_databases_for_cassandra_cpu_used_percent) |
-| [Used CPU for an instance](#ibm_databases_for_redis_cpu_used_percent) |
-| [Used CPU for an instance](#ibm_messages_for_rabbitmq_cpu_used_percent) |
 | [Used JVM heap for a database member of the instance in percent](#ibm_databases_for_cassandra_jvm_heap_percent) |
 | [Used disk space for an instance](#ibm_databases_for_cassandra_disk_used_bytes) |
 | [Used disk space for an instance](#ibm_databases_for_cassandra_disk_used_percent) |
-| [Used disk space for an instance](#ibm_databases_for_redis_disk_used_bytes) |
-| [Used disk space for an instance](#ibm_databases_for_redis_disk_used_percent) |
-| [Used disk space for an instance](#ibm_messages_for_rabbitmq_disk_used_bytes) |
-| [Used disk space for an instance](#ibm_messages_for_rabbitmq_disk_used_percent) |
 | [Used memory for an instance](#ibm_databases_for_cassandra_memory_used_bytes) |
 | [Used memory for an instance](#ibm_databases_for_cassandra_memory_used_percent) |
-| [Used memory for an instance](#ibm_databases_for_redis_memory_used_bytes) |
-| [Used memory for an instance](#ibm_databases_for_redis_memory_used_percent) |
-| [Used memory for an instance](#ibm_messages_for_rabbitmq_memory_used_bytes) |
-| [Used memory for an instance](#ibm_messages_for_rabbitmq_memory_used_percent) |
 {: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
 
 ### MongoDB Average time spent acquiring locks in microseconds total W-average
