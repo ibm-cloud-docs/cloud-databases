@@ -291,6 +291,162 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [Messages for RabbitMQ Used memory for an instance](#ibm_messages_for_rabbitmq_memory_used_percent) |
 {: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
 
+### Messages for RabbitMQ IO utilization in percent 15 minute average
+{: #ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_15m}
+
+How much disk I/O has been used over 15 minutes as a percentage of total disk I/O available
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_15m`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 45: IO utilization in percent 15 minute average metric metadata" caption-side="top"}
+
+### Messages for RabbitMQ IO utilization in percent 30 minute average
+{: #ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_30m}
+
+How much disk I/O has been used over 30 minutes as a percentage of total disk I/O available
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_30m`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 54: IO utilization in percent 30 minute average metric metadata" caption-side="top"}
+
+### Messages for RabbitMQ IO utilization in percent 5 minute average
+{: #ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_5m}
+
+How much disk I/O has been used over 5 minutes as a percentage of total disk I/O available
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_5m`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 63: IO utilization in percent 5 minute average metric metadata" caption-side="top"}
+
+### Messages for RabbitMQ IO utilization in percent 60 minute average
+{: #ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_60m}
+
+How much disk I/O has been used over 60 minutes as a percentage of total disk I/O available
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_60m`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 72: IO utilization in percent 60 minute average metric metadata" caption-side="top"}
+
+### Messages for RabbitMQ IOPS read & write total count for an instance
+{: #ibm_messages_for_rabbitmq_disk_iops_read_write_total}
+
+How many input-output operations per second your instance is performing
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_messages_for_rabbitmq_disk_iops_read_write_total`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `count` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 81: IOPS read & write total count for an instance metric metadata" caption-side="top"}
+
+### Messages for RabbitMQ Maximum allowed memory for an instance
+{: #ibm_messages_for_rabbitmq_memory_limit_bytes}
+
+The maximum amount of memory available to your instance
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_messages_for_rabbitmq_memory_limit_bytes`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `byte` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 90: Maximum allowed memory for an instance metric metadata" caption-side="top"}
+
+### Messages for RabbitMQ Total disk space for an instance
+{: #ibm_messages_for_rabbitmq_disk_total_bytes}
+
+Represents the total amount of disk space available to your deployment
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_messages_for_rabbitmq_disk_total_bytes`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `byte` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 144: Total disk space for an instance metric metadata" caption-side="top"}
+
+### Messages for RabbitMQ Used CPU for an instance
+{: #ibm_messages_for_rabbitmq_cpu_used_percent}
+
+How much CPU is used as a percentage of total CPU available. Only for deployments that have dedicated CPU
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_messages_for_rabbitmq_cpu_used_percent`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 179: Used CPU for an instance metric metadata" caption-side="top"}
+
+### Messages for RabbitMQ Used disk space for an instance bytes
+{: #ibm_messages_for_rabbitmq_disk_used_bytes}
+
+How much disk space your instance is using
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_messages_for_rabbitmq_disk_used_bytes`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `byte` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 198: Used disk space for an instance metric metadata" caption-side="top"}
+
+### Messages for RabbitMQ Used disk space for an instance percent
+{: #ibm_messages_for_rabbitmq_disk_used_percent}
+
+How much disk space is used as a percentage of total disk available
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_messages_for_rabbitmq_disk_used_percent`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 199: Used disk space for an instance metric metadata" caption-side="top"}
+
+### Messages for RabbitMQ Used memory for an instance bytes
+{: #ibm_messages_for_rabbitmq_memory_used_bytes}
+
+How much memory your instance is using
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_messages_for_rabbitmq_memory_used_bytes`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `byte` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 216: Used memory for an instance metric metadata" caption-side="top"}
+
+### Messages for RabbitMQ Used memory for an instance percent
+{: #ibm_messages_for_rabbitmq_memory_used_percent}
+
+How much memory is used as a percentage of total memory available
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_messages_for_rabbitmq_memory_used_percent`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 217: Used memory for an instance metric metadata" caption-side="top"}
+
 ## DataStax Metrics
 {: #metrics-by-plan-datastax}
 
@@ -873,19 +1029,6 @@ How much disk I/O has been used over 15 minutes as a percentage of total disk I/
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 44: IO utilization in percent 15 minute average metric metadata" caption-side="top"}
 
-### Messages for RabbitMQ IO utilization in percent 15 minute average
-{: #ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_15m}
-
-How much disk I/O has been used over 15 minutes as a percentage of total disk I/O available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_15m`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 45: IO utilization in percent 15 minute average metric metadata" caption-side="top"}
-
 ### DataStax IO utilization in percent 30 minute average
 {: #ibm_databases_for_cassandra_disk_io_utilization_percent_average_30m}
 
@@ -989,19 +1132,6 @@ How much disk I/O has been used over 30 minutes as a percentage of total disk I/
 | `Value Type`  | `percent` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 53: IO utilization in percent 30 minute average metric metadata" caption-side="top"}
-
-### Messages for RabbitMQ IO utilization in percent 30 minute average
-{: #ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_30m}
-
-How much disk I/O has been used over 30 minutes as a percentage of total disk I/O available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_30m`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 54: IO utilization in percent 30 minute average metric metadata" caption-side="top"}
 
 ### DataStax IO utilization in percent 5 minute average
 {: #ibm_databases_for_cassandra_disk_io_utilization_percent_average_5m}
@@ -1107,19 +1237,6 @@ How much disk I/O has been used over 5 minutes as a percentage of total disk I/O
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 62: IO utilization in percent 5 minute average metric metadata" caption-side="top"}
 
-### Messages for RabbitMQ IO utilization in percent 5 minute average
-{: #ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_5m}
-
-How much disk I/O has been used over 5 minutes as a percentage of total disk I/O available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_5m`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 63: IO utilization in percent 5 minute average metric metadata" caption-side="top"}
-
 ### DataStax IO utilization in percent 60 minute average
 {: #ibm_databases_for_cassandra_disk_io_utilization_percent_average_60m}
 
@@ -1223,19 +1340,6 @@ How much disk I/O has been used over 60 minutes as a percentage of total disk I/
 | `Value Type`  | `percent` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 71: IO utilization in percent 60 minute average metric metadata" caption-side="top"}
-
-### Messages for RabbitMQ IO utilization in percent 60 minute average
-{: #ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_60m}
-
-How much disk I/O has been used over 60 minutes as a percentage of total disk I/O available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_60m`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 72: IO utilization in percent 60 minute average metric metadata" caption-side="top"}
 
 ### DataStax IOPS read & write total count for an instance
 {: #ibm_databases_for_cassandra_disk_iops_read_write_total}
@@ -1341,19 +1445,6 @@ How many input-output operations per second your instance is performing
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 80: IOPS read & write total count for an instance metric metadata" caption-side="top"}
 
-### Messages for RabbitMQ IOPS read & write total count for an instance
-{: #ibm_messages_for_rabbitmq_disk_iops_read_write_total}
-
-How many input-output operations per second your instance is performing
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_messages_for_rabbitmq_disk_iops_read_write_total`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `count` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 81: IOPS read & write total count for an instance metric metadata" caption-side="top"}
-
 ### DataStax Maximum allowed memory for an instance
 {: #ibm_databases_for_cassandra_memory_limit_bytes}
 
@@ -1457,19 +1548,6 @@ The maximum amount of memory available to your instance
 | `Value Type`  | `byte` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 89: Maximum allowed memory for an instance metric metadata" caption-side="top"}
-
-### Messages for RabbitMQ Maximum allowed memory for an instance
-{: #ibm_messages_for_rabbitmq_memory_limit_bytes}
-
-The maximum amount of memory available to your instance
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_messages_for_rabbitmq_memory_limit_bytes`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `byte` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 90: Maximum allowed memory for an instance metric metadata" caption-side="top"}
 
 ### Elasticsearch Number of unassigned shards
 {: #ibm_databases_for_elasticsearch_unassigned_shards_total}
@@ -2160,19 +2238,6 @@ Represents the total amount of disk space available to your deployment
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 143: Total disk space for an instance metric metadata" caption-side="top"}
 
-### Messages for RabbitMQ Total disk space for an instance
-{: #ibm_messages_for_rabbitmq_disk_total_bytes}
-
-Represents the total amount of disk space available to your deployment
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_messages_for_rabbitmq_disk_total_bytes`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `byte` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 144: Total disk space for an instance metric metadata" caption-side="top"}
-
 ### EnterpriseDB Transaction commit count
 {: #ibm_databases_for_enterprisedb_transaction_commit_count}
 
@@ -2615,19 +2680,6 @@ How much CPU is used as a percentage of total CPU available. Only for deployment
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 178: Used CPU for an instance metric metadata" caption-side="top"}
 
-### Messages for RabbitMQ Used CPU for an instance
-{: #ibm_messages_for_rabbitmq_cpu_used_percent}
-
-How much CPU is used as a percentage of total CPU available. Only for deployments that have dedicated CPU
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_messages_for_rabbitmq_cpu_used_percent`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 179: Used CPU for an instance metric metadata" caption-side="top"}
-
 ### DataStax Used JVM heap for a database member of the instance in percent
 {: #ibm_databases_for_cassandra_jvm_heap_percent}
 
@@ -2862,32 +2914,6 @@ How much disk space is used as a percentage of total disk available
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 197: Used disk space for an instance metric metadata" caption-side="top"}
 
-### Messages for RabbitMQ Used disk space for an instance bytes
-{: #ibm_messages_for_rabbitmq_disk_used_bytes}
-
-How much disk space your instance is using
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_messages_for_rabbitmq_disk_used_bytes`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `byte` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 198: Used disk space for an instance metric metadata" caption-side="top"}
-
-### Messages for RabbitMQ Used disk space for an instance percent
-{: #ibm_messages_for_rabbitmq_disk_used_percent}
-
-How much disk space is used as a percentage of total disk available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_messages_for_rabbitmq_disk_used_percent`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 199: Used disk space for an instance metric metadata" caption-side="top"}
-
 ### DataStax Used memory for an instance bytes
 {: #ibm_databases_for_cassandra_memory_used_bytes}
 
@@ -3095,32 +3121,6 @@ How much memory is used as a percentage of total memory available
 | `Value Type`  | `percent` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 215: Used memory for an instance metric metadata" caption-side="top"}
-
-### Messages for RabbitMQ Used memory for an instance bytes
-{: #ibm_messages_for_rabbitmq_memory_used_bytes}
-
-How much memory your instance is using
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_messages_for_rabbitmq_memory_used_bytes`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `byte` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 216: Used memory for an instance metric metadata" caption-side="top"}
-
-### Messages for RabbitMQ Used memory for an instance percent
-{: #ibm_messages_for_rabbitmq_memory_used_percent}
-
-How much memory is used as a percentage of total memory available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_messages_for_rabbitmq_memory_used_percent`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 217: Used memory for an instance metric metadata" caption-side="top"}
 
 ### EnterpriseDB WAL logs used bytes
 {: #ibm_databases_for_enterprisedb_wal_used_bytes}
