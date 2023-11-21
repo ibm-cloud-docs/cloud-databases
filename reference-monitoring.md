@@ -1634,6 +1634,58 @@ How much disk I/O has been used over 30 minutes as a percentage of total disk I/
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 51: IO utilization in percent 30 minute average metric metadata" caption-side="top"}
 
+#### MySQL IO utilization in percent 5 minute average
+{: #ibm_databases_for_mysql_disk_io_utilization_percent_average_5m}
+
+How much disk I/O has been used over 5 minutes as a percentage of total disk I/O available
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_mysql_disk_io_utilization_percent_average_5m`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 60: IO utilization in percent 5 minute average metric metadata" caption-side="top"}
+
+#### MySQL IO utilization in percent 60 minute average
+{: #ibm_databases_for_mysql_disk_io_utilization_percent_average_60m}
+
+How much disk I/O has been used over 60 minutes as a percentage of total disk I/O available
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_mysql_disk_io_utilization_percent_average_60m`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 69: IO utilization in percent 60 minute average metric metadata" caption-side="top"}
+
+#### MySQL IOPS read & write total count for an instance
+{: #ibm_databases_for_mysql_disk_iops_read_write_total}
+
+How many input-output operations per second your instance is performing
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_mysql_disk_iops_read_write_total`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `count` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 78: IOPS read & write total count for an instance metric metadata" caption-side="top"}
+
+#### MySQLMaximum allowed memory for an instance
+{: #ibm_databases_for_mysql_memory_limit_bytes}
+
+The maximum amount of memory available to your instance
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_mysql_memory_limit_bytes`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `byte` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 87: Maximum allowed memory for an instance metric metadata" caption-side="top"}
+
 #### MySQL Percent of threads connected
 {: #ibm_databases_for_mysql_threads_connected_usage}
 
@@ -2929,7 +2981,7 @@ Disk read latency mean
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 21: Disk read latency mean metric metadata" caption-side="top"}
 
-### DataStax Disk write latency mean
+#### DataStax Disk write latency mean
 {: #ibm_databases_for_cassandra_disk_write_latency_mean}
 
 Disk write latency mean
@@ -2942,7 +2994,7 @@ Disk write latency mean
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 28: Disk write latency mean metric metadata" caption-side="top"}
 
-### DataStax GC Percentage
+#### DataStax GC Percentage
 {: #ibm_databases_for_cassandra_garbage_collection_percent_average_15m}
 
 Percentage of time the Cassandra JVM spends on garbage collection
@@ -2955,7 +3007,7 @@ Percentage of time the Cassandra JVM spends on garbage collection
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 35: GC Percentage metric metadata" caption-side="top"}
 
-### DataStax IO utilization in percent 15 minute average
+#### DataStax IO utilization in percent 15 minute average
 {: #ibm_databases_for_cassandra_disk_io_utilization_percent_average_15m}
 
 How much disk I/O has been used over 15 minutes as a percentage of total disk I/O available
@@ -2968,7 +3020,7 @@ How much disk I/O has been used over 15 minutes as a percentage of total disk I/
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 37: IO utilization in percent 15 minute average metric metadata" caption-side="top"}
 
-### DataStax IO utilization in percent 30 minute average
+#### DataStax IO utilization in percent 30 minute average
 {: #ibm_databases_for_cassandra_disk_io_utilization_percent_average_30m}
 
 How much disk I/O has been used over 30 minutes as a percentage of total disk I/O available
@@ -2981,7 +3033,7 @@ How much disk I/O has been used over 30 minutes as a percentage of total disk I/
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 46: IO utilization in percent 30 minute average metric metadata" caption-side="top"}
 
-### DataStax IO utilization in percent 5 minute average
+#### DataStax IO utilization in percent 5 minute average
 {: #ibm_databases_for_cassandra_disk_io_utilization_percent_average_5m}
 
 How much disk I/O has been used over 5 minutes as a percentage of total disk I/O available
@@ -2993,19 +3045,6 @@ How much disk I/O has been used over 5 minutes as a percentage of total disk I/O
 | `Value Type`  | `percent` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 55: IO utilization in percent 5 minute average metric metadata" caption-side="top"}
-
-#### MySQLIO utilization in percent 5 minute average
-{: #ibm_databases_for_mysql_disk_io_utilization_percent_average_5m}
-
-How much disk I/O has been used over 5 minutes as a percentage of total disk I/O available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mysql_disk_io_utilization_percent_average_5m`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 60: IO utilization in percent 5 minute average metric metadata" caption-side="top"}
 
 ### DataStax IO utilization in percent 60 minute average
 {: #ibm_databases_for_cassandra_disk_io_utilization_percent_average_60m}
@@ -3020,19 +3059,6 @@ How much disk I/O has been used over 60 minutes as a percentage of total disk I/
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 64: IO utilization in percent 60 minute average metric metadata" caption-side="top"}
 
-#### MySQLIO utilization in percent 60 minute average
-{: #ibm_databases_for_mysql_disk_io_utilization_percent_average_60m}
-
-How much disk I/O has been used over 60 minutes as a percentage of total disk I/O available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mysql_disk_io_utilization_percent_average_60m`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 69: IO utilization in percent 60 minute average metric metadata" caption-side="top"}
-
 ### DataStax IOPS read & write total count for an instance
 {: #ibm_databases_for_cassandra_disk_iops_read_write_total}
 
@@ -3045,19 +3071,6 @@ How many input-output operations per second your instance is performing
 | `Value Type`  | `count` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 73: IOPS read & write total count for an instance metric metadata" caption-side="top"}
-
-#### MySQLIOPS read & write total count for an instance
-{: #ibm_databases_for_mysql_disk_iops_read_write_total}
-
-How many input-output operations per second your instance is performing
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mysql_disk_iops_read_write_total`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `count` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 78: IOPS read & write total count for an instance metric metadata" caption-side="top"}
 
 ### DataStax Maximum allowed memory for an instance
 {: #ibm_databases_for_cassandra_memory_limit_bytes}
@@ -3072,20 +3085,7 @@ The maximum amount of memory available to your instance
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 82: Maximum allowed memory for an instance metric metadata" caption-side="top"}
 
-#### MySQLMaximum allowed memory for an instance
-{: #ibm_databases_for_mysql_memory_limit_bytes}
-
-The maximum amount of memory available to your instance
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mysql_memory_limit_bytes`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `byte` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 87: Maximum allowed memory for an instance metric metadata" caption-side="top"}
-
-### DataStax Total disk space for an instance
+#### DataStax Total disk space for an instance
 {: #ibm_databases_for_cassandra_disk_total_bytes}
 
 Represents the total amount of disk space available to your deployment
@@ -3098,7 +3098,7 @@ Represents the total amount of disk space available to your deployment
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 136: Total disk space for an instance metric metadata" caption-side="top"}
 
-### DataStax Used CPU for an instance
+#### DataStax Used CPU for an instance
 {: #ibm_databases_for_cassandra_cpu_used_percent}
 
 How much CPU is used as a percentage of total CPU available. Only for deployments that have dedicated CPU
@@ -3111,7 +3111,7 @@ How much CPU is used as a percentage of total CPU available. Only for deployment
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 171: Used CPU for an instance metric metadata" caption-side="top"}
 
-### DataStax Used JVM heap for a database member of the instance in percent
+#### DataStax Used JVM heap for a database member of the instance in percent
 {: #ibm_databases_for_cassandra_jvm_heap_percent}
 
 How much JVM heap is used as a percentage of total JVM heap is available
@@ -3124,7 +3124,7 @@ How much JVM heap is used as a percentage of total JVM heap is available
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 180: Used JVM heap for a database member of the instance in percent metric metadata" caption-side="top"}
 
-### DataStax Used disk space for an instance bytes
+#### DataStax Used disk space for an instance bytes
 {: #ibm_databases_for_cassandra_disk_used_bytes}
 
 How much disk space your instance is using
@@ -3137,7 +3137,7 @@ How much disk space your instance is using
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 182: Used disk space for an instance metric metadata" caption-side="top"}
 
-### DataStax Used disk space for an instance percent
+#### DataStax Used disk space for an instance percent
 {: #ibm_databases_for_cassandra_disk_used_percent}
 
 How much disk space is used as a percentage of total disk available
@@ -3150,7 +3150,7 @@ How much disk space is used as a percentage of total disk available
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 183: Used disk space for an instance metric metadata" caption-side="top"}
 
-### DataStax Used memory for an instance bytes
+#### DataStax Used memory for an instance bytes
 {: #ibm_databases_for_cassandra_memory_used_bytes}
 
 How much memory your instance is using
@@ -3163,7 +3163,7 @@ How much memory your instance is using
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 200: Used memory for an instance metric metadata" caption-side="top"}
 
-### DataStax Used memory for an instance percent
+#### DataStax Used memory for an instance percent
 {: #ibm_databases_for_cassandra_memory_used_percent}
 
 How much memory is used as a percentage of total memory available
