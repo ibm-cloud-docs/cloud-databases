@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2023
-lastupdated: "2023-11-20"
+lastupdated: "2023-11-21"
 
 keywords: monitoring
 
@@ -37,6 +37,30 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 |-----------|
 | [MongoDB Average time spent acquiring locks in microseconds](#ibm_databases_for_mongodb_locks_time_acquiring_microseconds_W_average) |
 | [MongoDB Average time spent acquiring locks in microseconds](#ibm_databases_for_mongodb_locks_time_acquiring_microseconds_total_average) |
+| [MongoDB Connections](#ibm_databases_for_mongodb_connections) |
+| [MongoDB Disk read latency mean](#ibm_databases_for_mongodb_disk_read_latency_mean) |
+| [MongoDB Disk write latency mean](#ibm_databases_for_mongodb_disk_write_latency_mean) |
+| [MongoDB IO utilization in percent 15 minute average](#ibm_databases_for_mongodb_disk_io_utilization_percent_average_15m) |
+| [MongoDB IO utilization in percent 30 minute average](#ibm_databases_for_mongodb_disk_io_utilization_percent_average_30m) |
+| [MongoDB IO utilization in percent 5 minute average](#ibm_databases_for_mongodb_disk_io_utilization_percent_average_5m) |
+| [MongoDB IO utilization in percent 60 minute average](#ibm_databases_for_mongodb_disk_io_utilization_percent_average_60m) |
+| [MongoDB IOPS read & write total count for an instance](#ibm_databases_for_mongodb_disk_iops_read_write_total) |
+| [MongoDB Maximum allowed memory for an instance](#ibm_databases_for_mongodb_memory_limit_bytes) |
+| [MongoDB Oplog gigabyte per hour](#ibm_databases_for_mongodb_oplog_gb_per_hour) |
+| [MongoDB Oplog used bytes](#ibm_databases_for_mongodb_oplog_used_bytes) |
+| [MongoDB Oplog used bytes percent of total](#ibm_databases_for_mongodb_oplog_used_bytes_percent) |
+| [MongoDB Oplog window hours](#ibm_databases_for_mongodb_oplog_window_hours) |
+| [MongoDB Page faults](#ibm_databases_for_mongodb_page_faults) |
+| [MongoDB Process resident memory in bytes](#ibm_databases_for_mongodb_process_resident_memory_bytes) |
+| [MongoDB Process virtual memory in bytes](#ibm_databases_for_mongodb_process_virtual_memory_bytes) |
+| [MongoDB Replica set member state](#ibm_databases_for_mongodb_status) |
+| [MongoDB Replication lag](#ibm_databases_for_mongodb_replica_lag) |
+| [MongoDB Total disk space for an instance](#ibm_databases_for_mongodb_disk_total_bytes) |
+| [MongoDB Used CPU for an instance](#ibm_databases_for_mongodb_cpu_used_percent) |
+| [MongoDB Used disk space for an instance](#ibm_databases_for_mongodb_disk_used_bytes) |
+| [MongoDB Used disk space for an instance](#ibm_databases_for_mongodb_disk_used_percent) |
+| [MongoDB Used memory for an instance](#ibm_databases_for_mongodb_memory_used_bytes) |
+| [MongoDB Used memory for an instance](#ibm_databases_for_mongodb_memory_used_percent) |
 | [EnterpriseDB Blocks hit rate](#ibm_databases_for_enterprisedb_blocks_hit_rate) |
 | [PostgreSQL Blocks hit rate](#ibm_databases_for_postgresql_blocks_hit_rate) |
 | [EnterpriseDB Blocks read rate](#ibm_databases_for_enterprisedb_blocks_read_rate) |
@@ -49,7 +73,6 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [MySQL Cache hit ratio](#ibm_databases_for_mysql_cache_hit_ratio) |
 | [PostgreSQLCache hit ratio](#ibm_databases_for_postgresql_cache_hit_ratio) |
 | [Elasticsearch Cluster status](#ibm_databases_for_elasticsearch_cluster_status) |
-| [MongoDB Connections](#ibm_databases_for_mongodb_connections) |
 | [EnterpriseDB Deadlocks count](#ibm_databases_for_enterprisedb_deadlocks_count) |
 | [PostgreSQL Deadlocks count](#ibm_databases_for_postgresql_deadlocks_count) |
 | [EnterpriseDB Deadlocks rate](#ibm_databases_for_enterprisedb_deadlocks_rate) |
@@ -58,14 +81,12 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [Elasticsearch Disk read latency mean](#ibm_databases_for_elasticsearch_disk_read_latency_mean) |
 | [EnterpriseDB Disk read latency mean](#ibm_databases_for_enterprisedb_disk_read_latency_mean) |
 | [Disk read latency mean](#ibm_databases_for_etcd_disk_read_latency_mean) |
-| [Disk read latency mean](#ibm_databases_for_mongodb_disk_read_latency_mean) |
 | [Disk read latency mean](#ibm_databases_for_mysql_disk_read_latency_mean) |
 | [Disk read latency mean](#ibm_databases_for_postgresql_disk_read_latency_mean) |
 | [Disk write latency mean](#ibm_databases_for_cassandra_disk_write_latency_mean) |
 | [Elasticsearch Disk write latency mean](#ibm_databases_for_elasticsearch_disk_write_latency_mean) |
 | [EnterpriseDB Disk write latency mean](#ibm_databases_for_enterprisedb_disk_write_latency_mean) |
 | [Disk write latency mean](#ibm_databases_for_etcd_disk_write_latency_mean) |
-| [Disk write latency mean](#ibm_databases_for_mongodb_disk_write_latency_mean) |
 | [Disk write latency mean](#ibm_databases_for_mysql_disk_write_latency_mean) |
 | [Disk write latency mean](#ibm_databases_for_postgresql_disk_write_latency_mean) |
 | [GC Percentage](#ibm_databases_for_cassandra_garbage_collection_percent_average_15m) |
@@ -74,7 +95,6 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [Elasticsearch IO utilization in percent 15 minute average](#ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_15m) |
 | [EnterpriseDB IO utilization in percent 15 minute average](#ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_15m) |
 | [IO utilization in percent 15 minute average](#ibm_databases_for_etcd_disk_io_utilization_percent_average_15m) |
-| [IO utilization in percent 15 minute average](#ibm_databases_for_mongodb_disk_io_utilization_percent_average_15m) |
 | [IO utilization in percent 15 minute average](#ibm_databases_for_mysql_disk_io_utilization_percent_average_15m) |
 | [IO utilization in percent 15 minute average](#ibm_databases_for_postgresql_disk_io_utilization_percent_average_15m) |
 | [IO utilization in percent 15 minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_15m) |
@@ -83,7 +103,6 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [Elasticsearch IO utilization in percent 30 minute average](#ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_30m) |
 | [EnterpriseDB IO utilization in percent 30 minute average](#ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_30m) |
 | [IO utilization in percent 30 minute average](#ibm_databases_for_etcd_disk_io_utilization_percent_average_30m) |
-| [IO utilization in percent 30 minute average](#ibm_databases_for_mongodb_disk_io_utilization_percent_average_30m) |
 | [IO utilization in percent 30 minute average](#ibm_databases_for_mysql_disk_io_utilization_percent_average_30m) |
 | [IO utilization in percent 30 minute average](#ibm_databases_for_postgresql_disk_io_utilization_percent_average_30m) |
 | [IO utilization in percent 30 minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_30m) |
@@ -92,7 +111,6 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [Elasticsearch IO utilization in percent 5 minute average](#ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_5m) |
 | [EnterpriseDB IO utilization in percent 5 minute average](#ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_5m) |
 | [IO utilization in percent 5 minute average](#ibm_databases_for_etcd_disk_io_utilization_percent_average_5m) |
-| [IO utilization in percent 5 minute average](#ibm_databases_for_mongodb_disk_io_utilization_percent_average_5m) |
 | [IO utilization in percent 5 minute average](#ibm_databases_for_mysql_disk_io_utilization_percent_average_5m) |
 | [IO utilization in percent 5 minute average](#ibm_databases_for_postgresql_disk_io_utilization_percent_average_5m) |
 | [IO utilization in percent 5 minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_5m) |
@@ -101,7 +119,6 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [Elasticsearch IO utilization in percent 60 minute average](#ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_60m) |
 | [EnterpriseDB IO utilization in percent 60 minute average](#ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_60m) |
 | [IO utilization in percent 60 minute average](#ibm_databases_for_etcd_disk_io_utilization_percent_average_60m) |
-| [IO utilization in percent 60 minute average](#ibm_databases_for_mongodb_disk_io_utilization_percent_average_60m) |
 | [IO utilization in percent 60 minute average](#ibm_databases_for_mysql_disk_io_utilization_percent_average_60m) |
 | [IO utilization in percent 60 minute average](#ibm_databases_for_postgresql_disk_io_utilization_percent_average_60m) |
 | [IO utilization in percent 60 minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_60m) |
@@ -110,7 +127,6 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [Elasticsearch IOPS read & write total count for an instance](#ibm_databases_for_elasticsearch_disk_iops_read_write_total) |
 | [EnterpriseDB IOPS read & write total count for an instance](#ibm_databases_for_enterprisedb_disk_iops_read_write_total) |
 | [IOPS read & write total count for an instance](#ibm_databases_for_etcd_disk_iops_read_write_total) |
-| [IOPS read & write total count for an instance](#ibm_databases_for_mongodb_disk_iops_read_write_total) |
 | [IOPS read & write total count for an instance](#ibm_databases_for_mysql_disk_iops_read_write_total) |
 | [IOPS read & write total count for an instance](#ibm_databases_for_postgresql_disk_iops_read_write_total) |
 | [IOPS read & write total count for an instance](#ibm_databases_for_redis_disk_iops_read_write_total) |
@@ -119,25 +135,15 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [Elasticsearch Maximum allowed memory for an instance](#ibm_databases_for_elasticsearch_memory_limit_bytes) |
 | [EnterpriseDB Maximum allowed memory for an instance](#ibm_databases_for_enterprisedb_memory_limit_bytes) |
 | [Maximum allowed memory for an instance](#ibm_databases_for_etcd_memory_limit_bytes) |
-| [Maximum allowed memory for an instance](#ibm_databases_for_mongodb_memory_limit_bytes) |
 | [Maximum allowed memory for an instance](#ibm_databases_for_mysql_memory_limit_bytes) |
 | [Maximum allowed memory for an instance](#ibm_databases_for_postgresql_memory_limit_bytes) |
 | [Maximum allowed memory for an instance](#ibm_databases_for_redis_memory_limit_bytes) |
 | [Maximum allowed memory for an instance](#ibm_messages_for_rabbitmq_memory_limit_bytes) |
 | [Elasticsearch Number of unassigned shards](#ibm_databases_for_elasticsearch_unassigned_shards_total) |
-| [Oplog gigabyte per hour](#ibm_databases_for_mongodb_oplog_gb_per_hour) |
-| [Oplog used bytes](#ibm_databases_for_mongodb_oplog_used_bytes) |
-| [Oplog used bytes percent of total](#ibm_databases_for_mongodb_oplog_used_bytes_percent) |
-| [Oplog window hours](#ibm_databases_for_mongodb_oplog_window_hours) |
-| [Page faults](#ibm_databases_for_mongodb_page_faults) |
 | [Percent of threads connected](#ibm_databases_for_mysql_threads_connected_usage) |
 | [Percent of threads running](#ibm_databases_for_mysql_threads_running_usage) |
-| [Process resident memory in bytes](#ibm_databases_for_mongodb_process_resident_memory_bytes) |
-| [Process virtual memory in bytes](#ibm_databases_for_mongodb_process_virtual_memory_bytes) |
 | [EnterpriseDB Read replica replication lag](#ibm_databases_for_enterprisedb_read_replica_replication_lag_bytes) |
 | [Read replica replication lag](#ibm_databases_for_postgresql_read_replica_replication_lag_bytes) |
-| [Replica set member state](#ibm_databases_for_mongodb_status) |
-| [Replication lag](#ibm_databases_for_mongodb_replica_lag) |
 | [EnterpriseDB Successful archive rate](#ibm_databases_for_enterprisedb_successful_archive_rate) |
 | [Successful archive rate](#ibm_databases_for_postgresql_successful_archive_rate) |
 | [EnterpriseDB Temporary files size in bytes](#ibm_databases_for_enterprisedb_temp_bytes_count) |
@@ -173,7 +179,6 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [Elasticsearch Total disk space for an instance](#ibm_databases_for_elasticsearch_disk_total_bytes) |
 | [EnterpriseDB Total disk space for an instance](#ibm_databases_for_enterprisedb_disk_total_bytes) |
 | [etcd Total disk space for an instance](#ibm_databases_for_etcd_disk_total_bytes) |
-| [Total disk space for an instance](#ibm_databases_for_mongodb_disk_total_bytes) |
 | [Total disk space for an instance](#ibm_databases_for_mysql_disk_total_bytes) |
 | [Total disk space for an instance](#ibm_databases_for_postgresql_disk_total_bytes) |
 | [Total disk space for an instance](#ibm_databases_for_redis_disk_total_bytes) |
@@ -208,7 +213,6 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [Elasticsearch Used CPU for an instance](#ibm_databases_for_elasticsearch_cpu_used_percent) |
 | [EnterpriseDB Used CPU for an instance](#ibm_databases_for_enterprisedb_cpu_used_percent) |
 | [etcd Used CPU for an instance](#ibm_databases_for_etcd_cpu_used_percent) |
-| [Used CPU for an instance](#ibm_databases_for_mongodb_cpu_used_percent) |
 | [Used CPU for an instance](#ibm_databases_for_mysql_cpu_used_percent) |
 | [Used CPU for an instance](#ibm_databases_for_postgresql_cpu_used_percent) |
 | [Used CPU for an instance](#ibm_databases_for_redis_cpu_used_percent) |
@@ -223,8 +227,6 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [EnterpriseDB Used disk space for an instance](#ibm_databases_for_enterprisedb_disk_used_percent) |
 | [etcd Used disk space for an instance](#ibm_databases_for_etcd_disk_used_bytes) |
 | [etcd Used disk space for an instance](#ibm_databases_for_etcd_disk_used_percent) |
-| [Used disk space for an instance](#ibm_databases_for_mongodb_disk_used_bytes) |
-| [Used disk space for an instance](#ibm_databases_for_mongodb_disk_used_percent) |
 | [Used disk space for an instance](#ibm_databases_for_mysql_disk_used_bytes) |
 | [Used disk space for an instance](#ibm_databases_for_mysql_disk_used_percent) |
 | [Used disk space for an instance](#ibm_databases_for_postgresql_disk_used_bytes) |
@@ -241,8 +243,6 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [EnterpriseDB Used memory for an instance](#ibm_databases_for_enterprisedb_memory_used_percent) |
 | [etcd Used memory for an instance](#ibm_databases_for_etcd_memory_used_bytes) |
 | [etcd Used memory for an instance](#ibm_databases_for_etcd_memory_used_percent) |
-| [Used memory for an instance](#ibm_databases_for_mongodb_memory_used_bytes) |
-| [Used memory for an instance](#ibm_databases_for_mongodb_memory_used_percent) |
 | [Used memory for an instance](#ibm_databases_for_mysql_memory_used_bytes) |
 | [Used memory for an instance](#ibm_databases_for_mysql_memory_used_percent) |
 | [Used memory for an instance](#ibm_databases_for_postgresql_memory_used_bytes) |
