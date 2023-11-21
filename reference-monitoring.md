@@ -28,8 +28,6 @@ To access your instance's monitoring dashboard from {{site.data.keyword.monitori
 
 If you have instances that are in Single-zone Region (SZR) `che01` then your logs are forwarded to an {{site.data.keyword.monitoringfull_notm}} instance in another region. You need to provision monitoring instances in the region where your metrics are forwarded to. Metrics for instances in `che01` go to `jp-tok`.
 
-
-
 ## Metrics available by Service Plan
 {: #metrics-by-plan}
 
