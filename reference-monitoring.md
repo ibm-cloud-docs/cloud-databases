@@ -61,6 +61,10 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [MongoDB Used disk space for an instance](#ibm_databases_for_mongodb_disk_used_percent) |
 | [MongoDB Used memory for an instance](#ibm_databases_for_mongodb_memory_used_bytes) |
 | [MongoDB Used memory for an instance](#ibm_databases_for_mongodb_memory_used_percent) |
+{: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
+
+| Metric Name |
+|-----------|
 | [PostgreSQL Cache hit ratio](#ibm_databases_for_postgresql_cache_hit_ratio) |
 | [PostgreSQL Disk read latency mean](#ibm_databases_for_postgresql_disk_read_latency_mean) |
 | [PostgreSQL Disk write latency mean](#ibm_databases_for_postgresql_disk_write_latency_mean) |
@@ -100,6 +104,10 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [PostgreSQL Buffers checkpoint rate](#ibm_databases_for_postgresql_buffers_checkpoint_rate) |
 | [PostgreSQL Deadlocks count](#ibm_databases_for_postgresql_deadlocks_count) |
 | [PostgreSQL Deadlocks rate](#ibm_databases_for_postgresql_deadlocks_rate) |
+{: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
+
+| Metric Name |
+|-----------|
 | [EnterpriseDB Blocks hit rate](#ibm_databases_for_enterprisedb_blocks_hit_rate) |
 | [EnterpriseDB Blocks read rate](#ibm_databases_for_enterprisedb_blocks_read_rate) |
 | [EnterpriseDB Buffers backend rate](#ibm_databases_for_enterprisedb_buffers_backend_rate) |
@@ -139,6 +147,10 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [EnterpriseDB Used memory for an instance](#ibm_databases_for_enterprisedb_memory_used_bytes) |
 | [EnterpriseDB Used memory for an instance](#ibm_databases_for_enterprisedb_memory_used_percent) |
 | [EnterpriseDB WAL logs used bytes](#ibm_databases_for_enterprisedb_wal_used_bytes) |
+{: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
+
+| Metric Name |
+|-----------|
 | [MySQL Cache hit ratio](#ibm_databases_for_mysql_cache_hit_ratio) |
 | [MySQL Disk read latency mean](#ibm_databases_for_mysql_disk_read_latency_mean) |
 | [MySQL Disk write latency mean](#ibm_databases_for_mysql_disk_write_latency_mean) |
@@ -181,6 +193,10 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [MySQL Used disk space for an instance](#ibm_databases_for_mysql_disk_used_percent) |
 | [MySQL Used memory for an instance](#ibm_databases_for_mysql_memory_used_bytes) |
 | [MySQL Used memory for an instance](#ibm_databases_for_mysql_memory_used_percent) |
+{: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
+
+| Metric Name |
+|-----------|
 | [Elasticsearch Cluster status](#ibm_databases_for_elasticsearch_cluster_status) |
 | [Elasticsearch Disk read latency mean](#ibm_databases_for_elasticsearch_disk_read_latency_mean) |
 | [Elasticsearch Disk write latency mean](#ibm_databases_for_elasticsearch_disk_write_latency_mean) |
@@ -199,6 +215,10 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [Elasticsearch Used disk space for an instance](#ibm_databases_for_elasticsearch_disk_used_percent) |
 | [Elasticsearch Used memory for an instance](#ibm_databases_for_elasticsearch_memory_used_bytes) |
 | [Elasticsearch Used memory for an instance](#ibm_databases_for_elasticsearch_memory_used_percent) |
+{: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
+
+| Metric Name |
+|-----------|
 | [etcd Disk read latency mean](#ibm_databases_for_etcd_disk_read_latency_mean) |
 | [etcd Disk write latency mean](#ibm_databases_for_etcd_disk_write_latency_mean) |
 | [etcd IO utilization in percent 15 minute average](#ibm_databases_for_etcd_disk_io_utilization_percent_average_15m) |
@@ -213,6 +233,10 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [etcd Used disk space for an instance](#ibm_databases_for_etcd_disk_used_percent) |
 | [etcd Used memory for an instance](#ibm_databases_for_etcd_memory_used_bytes) |
 | [etcd Used memory for an instance](#ibm_databases_for_etcd_memory_used_percent) |
+{: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
+
+| Metric Name |
+|-----------|
 | [Redis IO utilization in percent 15 minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_15m) |
 | [Redis IO utilization in percent 30 minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_30m) |
 | [Redis IO utilization in percent 5 minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_5m) |
@@ -225,6 +249,10 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [Redis Used disk space for an instance](#ibm_databases_for_redis_disk_used_percent) |
 | [Redis Used memory for an instance](#ibm_databases_for_redis_memory_used_bytes) |
 | [Redis Used memory for an instance](#ibm_databases_for_redis_memory_used_percent) |
+{: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
+
+| Metric Name |
+|-----------|
 | [Messages for RabbitMQ IO utilization in percent 15 minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_15m) |
 | [Messages for RabbitMQ IO utilization in percent 30 minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_30m) |
 | [Messages for RabbitMQ IO utilization in percent 5 minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_5m) |
@@ -237,6 +265,10 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [Messages for RabbitMQ Used disk space for an instance](#ibm_messages_for_rabbitmq_disk_used_percent) |
 | [Messages for RabbitMQ Used memory for an instance](#ibm_messages_for_rabbitmq_memory_used_bytes) |
 | [Messages for RabbitMQ Used memory for an instance](#ibm_messages_for_rabbitmq_memory_used_percent) |
+{: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
+
+| Metric Name |
+|-----------|
 | [DataStax Disk read latency mean](#ibm_databases_for_cassandra_disk_read_latency_mean) |
 | [DataStax Disk write latency mean](#ibm_databases_for_cassandra_disk_write_latency_mean) |
 | [DataStax GC Percentage](#ibm_databases_for_cassandra_garbage_collection_percent_average_15m) |
