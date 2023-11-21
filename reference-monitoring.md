@@ -61,34 +61,64 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [MongoDB Used disk space for an instance](#ibm_databases_for_mongodb_disk_used_percent) |
 | [MongoDB Used memory for an instance](#ibm_databases_for_mongodb_memory_used_bytes) |
 | [MongoDB Used memory for an instance](#ibm_databases_for_mongodb_memory_used_percent) |
-| [EnterpriseDB Blocks hit rate](#ibm_databases_for_enterprisedb_blocks_hit_rate) |
+| [PostgreSQL Cache hit ratio](#ibm_databases_for_postgresql_cache_hit_ratio) |
+| [PostgreSQL Disk read latency mean](#ibm_databases_for_postgresql_disk_read_latency_mean) |
+| [PostgreSQL Disk write latency mean](#ibm_databases_for_postgresql_disk_write_latency_mean) |
+| [PostgreSQL IO utilization in percent 15 minute average](#ibm_databases_for_postgresql_disk_io_utilization_percent_average_15m) |
+| [PostgreSQL IO utilization in percent 30 minute average](#ibm_databases_for_postgresql_disk_io_utilization_percent_average_30m) |
+| [PostgreSQL IO utilization in percent 5 minute average](#ibm_databases_for_postgresql_disk_io_utilization_percent_average_5m) |
+| [PostgreSQL IO utilization in percent 60 minute average](#ibm_databases_for_postgresql_disk_io_utilization_percent_average_60m) |
+| [PostgreSQL IOPS read & write total count for an instance](#ibm_databases_for_postgresql_disk_iops_read_write_total) |
+| [PostgreSQL Maximum allowed memory for an instance](#ibm_databases_for_postgresql_memory_limit_bytes) |
+| [PostgreSQL Read replica replication lag](#ibm_databases_for_postgresql_read_replica_replication_lag_bytes) |
+| [PostgreSQL Successful archive rate](#ibm_databases_for_postgresql_successful_archive_rate) |
+| [PostgreSQL Temporary files size in bytes](#ibm_databases_for_postgresql_temp_bytes_count) |
+| [PostgreSQL The total number of PostgreSQL connections being used](#ibm_databases_for_postgresql_total_connections) |
+| [PostgreSQL Total disk space for an instance](#ibm_databases_for_postgresql_disk_total_bytes) |
+| [PostgreSQL Transaction commit count](#ibm_databases_for_postgresql_transaction_commit_count) |
+| [PostgreSQL Transaction commit rate](#ibm_databases_for_postgresql_transaction_commit_rate) |
+| [PostgreSQL Transaction rollback count](#ibm_databases_for_postgresql_transaction_rollback_count) |
+| [PostgreSQL Transaction rollback rate](#ibm_databases_for_postgresql_transaction_rollback_rate) |
+| [PostgreSQL Tuples deleted count](#ibm_databases_for_postgresql_tuples_deleted_count) |
+| [PostgreSQL Tuples deleted rate](#ibm_databases_for_postgresql_tuples_deleted_rate) |
+| [PostgreSQL Tuples fetched count](#ibm_databases_for_postgresql_tuples_fetched_count) |
+| [PostgreSQL Tuples fetched rate](#ibm_databases_for_postgresql_tuples_fetched_rate) |
+| [PostgreSQL Tuples inserted count](#ibm_databases_for_postgresql_tuples_inserted_count) |
+| [PostgreSQL Tuples inserted rate](#ibm_databases_for_postgresql_tuples_inserted_rate) |
+| [PostgreSQL Tuples returned rate](#ibm_databases_for_postgresql_tuples_returned_rate) |
+| [PostgreSQL Tuples updated count](#ibm_databases_for_postgresql_tuples_updated_count) |
+| [PostgreSQL Tuples updated rate](#ibm_databases_for_postgresql_tuples_updated_rate) |
+| [PostgreSQL Used CPU for an instance](#ibm_databases_for_postgresql_cpu_used_percent) |
+| [PostgreSQL Used disk space for an instance](#ibm_databases_for_postgresql_disk_used_bytes) |
+| [PostgreSQL Used disk space for an instance](#ibm_databases_for_postgresql_disk_used_percent) |
+| [PostgreSQL Used memory for an instance](#ibm_databases_for_postgresql_memory_used_bytes) |
+| [PostgreSQL Used memory for an instance](#ibm_databases_for_postgresql_memory_used_percent) |
+| [PostgreSQL WAL logs used bytes](#ibm_databases_for_postgresql_wal_used_bytes) |
 | [PostgreSQL Blocks hit rate](#ibm_databases_for_postgresql_blocks_hit_rate) |
-| [EnterpriseDB Blocks read rate](#ibm_databases_for_enterprisedb_blocks_read_rate) |
 | [PostgreSQL Blocks read rate](#ibm_databases_for_postgresql_blocks_read_rate) |
-| [EnterpriseDB Buffers backend rate](#ibm_databases_for_enterprisedb_buffers_backend_rate) |
 | [PostgreSQL Buffers backend rate](#ibm_databases_for_postgresql_buffers_backend_rate) |
-| [EnterpriseDB Buffers checkpoint rate](#ibm_databases_for_enterprisedb_buffers_checkpoint_rate) |
 | [PostgreSQL Buffers checkpoint rate](#ibm_databases_for_postgresql_buffers_checkpoint_rate) |
+| [PostgreSQL Deadlocks count](#ibm_databases_for_postgresql_deadlocks_count) |
+| [PostgreSQL Deadlocks rate](#ibm_databases_for_postgresql_deadlocks_rate) |
+| [EnterpriseDB Blocks hit rate](#ibm_databases_for_enterprisedb_blocks_hit_rate) |
+| [EnterpriseDB Blocks read rate](#ibm_databases_for_enterprisedb_blocks_read_rate) |
+| [EnterpriseDB Buffers backend rate](#ibm_databases_for_enterprisedb_buffers_backend_rate) |
+| [EnterpriseDB Buffers checkpoint rate](#ibm_databases_for_enterprisedb_buffers_checkpoint_rate) |
 | [EnterpriseDB Cache hit ratio](#ibm_databases_for_enterprisedb_cache_hit_ratio) |
 | [MySQL Cache hit ratio](#ibm_databases_for_mysql_cache_hit_ratio) |
-| [PostgreSQLCache hit ratio](#ibm_databases_for_postgresql_cache_hit_ratio) |
 | [Elasticsearch Cluster status](#ibm_databases_for_elasticsearch_cluster_status) |
 | [EnterpriseDB Deadlocks count](#ibm_databases_for_enterprisedb_deadlocks_count) |
-| [PostgreSQL Deadlocks count](#ibm_databases_for_postgresql_deadlocks_count) |
 | [EnterpriseDB Deadlocks rate](#ibm_databases_for_enterprisedb_deadlocks_rate) |
-| [PostgreSQL Deadlocks rate](#ibm_databases_for_postgresql_deadlocks_rate) |
 | [DataStaxDisk read latency mean](#ibm_databases_for_cassandra_disk_read_latency_mean) |
 | [Elasticsearch Disk read latency mean](#ibm_databases_for_elasticsearch_disk_read_latency_mean) |
 | [EnterpriseDB Disk read latency mean](#ibm_databases_for_enterprisedb_disk_read_latency_mean) |
 | [Disk read latency mean](#ibm_databases_for_etcd_disk_read_latency_mean) |
 | [Disk read latency mean](#ibm_databases_for_mysql_disk_read_latency_mean) |
-| [Disk read latency mean](#ibm_databases_for_postgresql_disk_read_latency_mean) |
 | [Disk write latency mean](#ibm_databases_for_cassandra_disk_write_latency_mean) |
 | [Elasticsearch Disk write latency mean](#ibm_databases_for_elasticsearch_disk_write_latency_mean) |
 | [EnterpriseDB Disk write latency mean](#ibm_databases_for_enterprisedb_disk_write_latency_mean) |
 | [Disk write latency mean](#ibm_databases_for_etcd_disk_write_latency_mean) |
 | [Disk write latency mean](#ibm_databases_for_mysql_disk_write_latency_mean) |
-| [Disk write latency mean](#ibm_databases_for_postgresql_disk_write_latency_mean) |
 | [GC Percentage](#ibm_databases_for_cassandra_garbage_collection_percent_average_15m) |
 | [Elasticsearch GC Percentage](#ibm_databases_for_elasticsearch_garbage_collection_percent_average_15m) |
 | [IO utilization in percent 15 minute average](#ibm_databases_for_cassandra_disk_io_utilization_percent_average_15m) |
@@ -96,7 +126,6 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [EnterpriseDB IO utilization in percent 15 minute average](#ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_15m) |
 | [IO utilization in percent 15 minute average](#ibm_databases_for_etcd_disk_io_utilization_percent_average_15m) |
 | [IO utilization in percent 15 minute average](#ibm_databases_for_mysql_disk_io_utilization_percent_average_15m) |
-| [IO utilization in percent 15 minute average](#ibm_databases_for_postgresql_disk_io_utilization_percent_average_15m) |
 | [IO utilization in percent 15 minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_15m) |
 | [IO utilization in percent 15 minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_15m) |
 | [IO utilization in percent 30 minute average](#ibm_databases_for_cassandra_disk_io_utilization_percent_average_30m) |
@@ -104,7 +133,6 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [EnterpriseDB IO utilization in percent 30 minute average](#ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_30m) |
 | [IO utilization in percent 30 minute average](#ibm_databases_for_etcd_disk_io_utilization_percent_average_30m) |
 | [IO utilization in percent 30 minute average](#ibm_databases_for_mysql_disk_io_utilization_percent_average_30m) |
-| [IO utilization in percent 30 minute average](#ibm_databases_for_postgresql_disk_io_utilization_percent_average_30m) |
 | [IO utilization in percent 30 minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_30m) |
 | [IO utilization in percent 30 minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_30m) |
 | [IO utilization in percent 5 minute average](#ibm_databases_for_cassandra_disk_io_utilization_percent_average_5m) |
@@ -112,7 +140,6 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [EnterpriseDB IO utilization in percent 5 minute average](#ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_5m) |
 | [IO utilization in percent 5 minute average](#ibm_databases_for_etcd_disk_io_utilization_percent_average_5m) |
 | [IO utilization in percent 5 minute average](#ibm_databases_for_mysql_disk_io_utilization_percent_average_5m) |
-| [IO utilization in percent 5 minute average](#ibm_databases_for_postgresql_disk_io_utilization_percent_average_5m) |
 | [IO utilization in percent 5 minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_5m) |
 | [IO utilization in percent 5 minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_5m) |
 | [IO utilization in percent 60 minute average](#ibm_databases_for_cassandra_disk_io_utilization_percent_average_60m) |
@@ -120,7 +147,6 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [EnterpriseDB IO utilization in percent 60 minute average](#ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_60m) |
 | [IO utilization in percent 60 minute average](#ibm_databases_for_etcd_disk_io_utilization_percent_average_60m) |
 | [IO utilization in percent 60 minute average](#ibm_databases_for_mysql_disk_io_utilization_percent_average_60m) |
-| [IO utilization in percent 60 minute average](#ibm_databases_for_postgresql_disk_io_utilization_percent_average_60m) |
 | [IO utilization in percent 60 minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_60m) |
 | [IO utilization in percent 60 minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_60m) |
 | [IOPS read & write total count for an instance](#ibm_databases_for_cassandra_disk_iops_read_write_total) |
@@ -128,7 +154,6 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [EnterpriseDB IOPS read & write total count for an instance](#ibm_databases_for_enterprisedb_disk_iops_read_write_total) |
 | [IOPS read & write total count for an instance](#ibm_databases_for_etcd_disk_iops_read_write_total) |
 | [IOPS read & write total count for an instance](#ibm_databases_for_mysql_disk_iops_read_write_total) |
-| [IOPS read & write total count for an instance](#ibm_databases_for_postgresql_disk_iops_read_write_total) |
 | [IOPS read & write total count for an instance](#ibm_databases_for_redis_disk_iops_read_write_total) |
 | [IOPS read & write total count for an instance](#ibm_messages_for_rabbitmq_disk_iops_read_write_total) |
 | [Maximum allowed memory for an instance](#ibm_databases_for_cassandra_memory_limit_bytes) |
@@ -136,18 +161,14 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [EnterpriseDB Maximum allowed memory for an instance](#ibm_databases_for_enterprisedb_memory_limit_bytes) |
 | [Maximum allowed memory for an instance](#ibm_databases_for_etcd_memory_limit_bytes) |
 | [Maximum allowed memory for an instance](#ibm_databases_for_mysql_memory_limit_bytes) |
-| [Maximum allowed memory for an instance](#ibm_databases_for_postgresql_memory_limit_bytes) |
 | [Maximum allowed memory for an instance](#ibm_databases_for_redis_memory_limit_bytes) |
 | [Maximum allowed memory for an instance](#ibm_messages_for_rabbitmq_memory_limit_bytes) |
 | [Elasticsearch Number of unassigned shards](#ibm_databases_for_elasticsearch_unassigned_shards_total) |
 | [Percent of threads connected](#ibm_databases_for_mysql_threads_connected_usage) |
 | [Percent of threads running](#ibm_databases_for_mysql_threads_running_usage) |
 | [EnterpriseDB Read replica replication lag](#ibm_databases_for_enterprisedb_read_replica_replication_lag_bytes) |
-| [Read replica replication lag](#ibm_databases_for_postgresql_read_replica_replication_lag_bytes) |
 | [EnterpriseDB Successful archive rate](#ibm_databases_for_enterprisedb_successful_archive_rate) |
-| [Successful archive rate](#ibm_databases_for_postgresql_successful_archive_rate) |
 | [EnterpriseDB Temporary files size in bytes](#ibm_databases_for_enterprisedb_temp_bytes_count) |
-| [Temporary files size in bytes](#ibm_databases_for_postgresql_temp_bytes_count) |
 | [The number of connections that were aborted because the client died without closing the connection properly](#ibm_databases_for_mysql_aborted_clients_rate) |
 | [The number of threads created to handle connections](#ibm_databases_for_mysql_threads_created) |
 | [The number of threads in the thread cache](#ibm_databases_for_mysql_thread_cache_size) |
@@ -174,47 +195,31 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [The rate of times that the log buffer was too small and a wait was required for it to be flushed before continuing](#ibm_databases_for_mysql_innodb_log_waits_rate) |
 | [The rate of total command statements executed](#ibm_databases_for_mysql_commands_total_rate) |
 | [EnterpriseDB The total number of EnterpriseDB connections being used](#ibm_databases_for_enterprisedb_total_connections) |
-| [The total number of PostgreSQL connections being used](#ibm_databases_for_postgresql_total_connections) |
 | [Total disk space for an instance](#ibm_databases_for_cassandra_disk_total_bytes) |
 | [Elasticsearch Total disk space for an instance](#ibm_databases_for_elasticsearch_disk_total_bytes) |
 | [EnterpriseDB Total disk space for an instance](#ibm_databases_for_enterprisedb_disk_total_bytes) |
 | [etcd Total disk space for an instance](#ibm_databases_for_etcd_disk_total_bytes) |
 | [Total disk space for an instance](#ibm_databases_for_mysql_disk_total_bytes) |
-| [Total disk space for an instance](#ibm_databases_for_postgresql_disk_total_bytes) |
 | [Total disk space for an instance](#ibm_databases_for_redis_disk_total_bytes) |
 | [Total disk space for an instance](#ibm_messages_for_rabbitmq_disk_total_bytes) |
 | [EnterpriseDB Transaction commit count](#ibm_databases_for_enterprisedb_transaction_commit_count) |
-| [Transaction commit count](#ibm_databases_for_postgresql_transaction_commit_count) |
 | [EnterpriseDB Transaction commit rate](#ibm_databases_for_enterprisedb_transaction_commit_rate) |
-| [Transaction commit rate](#ibm_databases_for_postgresql_transaction_commit_rate) |
 | [EnterpriseDB Transaction rollback count](#ibm_databases_for_enterprisedb_transaction_rollback_count) |
-| [Transaction rollback count](#ibm_databases_for_postgresql_transaction_rollback_count) |
 | [EnterpriseDB Transaction rollback rate](#ibm_databases_for_enterprisedb_transaction_rollback_rate) |
-| [Transaction rollback rate](#ibm_databases_for_postgresql_transaction_rollback_rate) |
 | [EnterpriseDB Tuples deleted count](#ibm_databases_for_enterprisedb_tuples_deleted_count) |
-| [Tuples deleted count](#ibm_databases_for_postgresql_tuples_deleted_count) |
 | [EnterpriseDB Tuples deleted rate](#ibm_databases_for_enterprisedb_tuples_deleted_rate) |
-| [Tuples deleted rate](#ibm_databases_for_postgresql_tuples_deleted_rate) |
 | [EnterpriseDB Tuples fetched count](#ibm_databases_for_enterprisedb_tuples_fetched_count) |
-| [Tuples fetched count](#ibm_databases_for_postgresql_tuples_fetched_count) |
 | [EnterpriseDB Tuples fetched rate](#ibm_databases_for_enterprisedb_tuples_fetched_rate) |
-| [Tuples fetched rate](#ibm_databases_for_postgresql_tuples_fetched_rate) |
 | [EnterpriseDB Tuples inserted count](#ibm_databases_for_enterprisedb_tuples_inserted_count) |
-| [Tuples inserted count](#ibm_databases_for_postgresql_tuples_inserted_count) |
 | [EnterpriseDB Tuples inserted rate](#ibm_databases_for_enterprisedb_tuples_inserted_rate) |
-| [Tuples inserted rate](#ibm_databases_for_postgresql_tuples_inserted_rate) |
 | [EnterpriseDB Tuples returned rate](#ibm_databases_for_enterprisedb_tuples_returned_rate) |
-| [Tuples returned rate](#ibm_databases_for_postgresql_tuples_returned_rate) |
 | [EnterpriseDB Tuples updated count](#ibm_databases_for_enterprisedb_tuples_updated_count) |
-| [Tuples updated count](#ibm_databases_for_postgresql_tuples_updated_count) |
 | [EnterpriseDB Tuples updated rate](#ibm_databases_for_enterprisedb_tuples_updated_rate) |
-| [Tuples updated rate](#ibm_databases_for_postgresql_tuples_updated_rate) |
 | [Used CPU for an instance](#ibm_databases_for_cassandra_cpu_used_percent) |
 | [Elasticsearch Used CPU for an instance](#ibm_databases_for_elasticsearch_cpu_used_percent) |
 | [EnterpriseDB Used CPU for an instance](#ibm_databases_for_enterprisedb_cpu_used_percent) |
 | [etcd Used CPU for an instance](#ibm_databases_for_etcd_cpu_used_percent) |
 | [Used CPU for an instance](#ibm_databases_for_mysql_cpu_used_percent) |
-| [Used CPU for an instance](#ibm_databases_for_postgresql_cpu_used_percent) |
 | [Used CPU for an instance](#ibm_databases_for_redis_cpu_used_percent) |
 | [Used CPU for an instance](#ibm_messages_for_rabbitmq_cpu_used_percent) |
 | [Used JVM heap for a database member of the instance in percent](#ibm_databases_for_cassandra_jvm_heap_percent) |
@@ -229,8 +234,6 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [etcd Used disk space for an instance](#ibm_databases_for_etcd_disk_used_percent) |
 | [Used disk space for an instance](#ibm_databases_for_mysql_disk_used_bytes) |
 | [Used disk space for an instance](#ibm_databases_for_mysql_disk_used_percent) |
-| [Used disk space for an instance](#ibm_databases_for_postgresql_disk_used_bytes) |
-| [Used disk space for an instance](#ibm_databases_for_postgresql_disk_used_percent) |
 | [Used disk space for an instance](#ibm_databases_for_redis_disk_used_bytes) |
 | [Used disk space for an instance](#ibm_databases_for_redis_disk_used_percent) |
 | [Used disk space for an instance](#ibm_messages_for_rabbitmq_disk_used_bytes) |
@@ -245,14 +248,11 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [etcd Used memory for an instance](#ibm_databases_for_etcd_memory_used_percent) |
 | [Used memory for an instance](#ibm_databases_for_mysql_memory_used_bytes) |
 | [Used memory for an instance](#ibm_databases_for_mysql_memory_used_percent) |
-| [Used memory for an instance](#ibm_databases_for_postgresql_memory_used_bytes) |
-| [Used memory for an instance](#ibm_databases_for_postgresql_memory_used_percent) |
 | [Used memory for an instance](#ibm_databases_for_redis_memory_used_bytes) |
 | [Used memory for an instance](#ibm_databases_for_redis_memory_used_percent) |
 | [Used memory for an instance](#ibm_messages_for_rabbitmq_memory_used_bytes) |
 | [Used memory for an instance](#ibm_messages_for_rabbitmq_memory_used_percent) |
 | [EnterpriseDB WAL logs used bytes](#ibm_databases_for_enterprisedb_wal_used_bytes) |
-| [WAL logs used bytes](#ibm_databases_for_postgresql_wal_used_bytes) |
 {: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
 
 ### MongoDB Average time spent acquiring locks in microseconds total W-average
