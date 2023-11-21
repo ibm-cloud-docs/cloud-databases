@@ -64,7 +64,10 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [MongoDB Used memory for an instance](#ibm_databases_for_mongodb_memory_used_percent) |
 {: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
 
-### MongoDB Average time spent acquiring locks in microseconds total W-average
+### MongoDB Metric Descriptions
+{: #metrics-by-plan-mongodb-desc}
+
+#### MongoDB Average time spent acquiring locks in microseconds total W-average
 {: #ibm_databases_for_mongodb_locks_time_acquiring_microseconds_W_average}
 
 Average time spent acquiring locks in microseconds
@@ -77,7 +80,7 @@ Average time spent acquiring locks in microseconds
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 2: Average time spent acquiring locks in microseconds metric metadata" caption-side="top"}
 
-### MongoDB Average time spent acquiring locks in microseconds total_average
+#### MongoDB Average time spent acquiring locks in microseconds total_average
 {: #ibm_databases_for_mongodb_locks_time_acquiring_microseconds_total_average}
 
 Average time spent acquiring locks in microseconds
@@ -90,7 +93,7 @@ Average time spent acquiring locks in microseconds
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 3: Average time spent acquiring locks in microseconds metric metadata" caption-side="top"}
 
-### MongoDB Connections
+#### MongoDB Connections
 {: #ibm_databases_for_mongodb_connections}
 
 The number of connections to the database
@@ -103,7 +106,7 @@ The number of connections to the database
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 16: Connections metric metadata" caption-side="top"}
 
-### MongoDB Disk read latency mean
+#### MongoDB Disk read latency mean
 {: #ibm_databases_for_mongodb_disk_read_latency_mean}
 
 Disk read latency mean
@@ -116,7 +119,7 @@ Disk read latency mean
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 25: Disk read latency mean metric metadata" caption-side="top"}
 
-### MongoDB Disk write latency mean
+#### MongoDB Disk write latency mean
 {: #ibm_databases_for_mongodb_disk_write_latency_mean}
 
 Disk write latency mean
@@ -129,7 +132,7 @@ Disk write latency mean
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 32: Disk write latency mean metric metadata" caption-side="top"}
 
-### MongoDB IO utilization in percent 15 minute average
+#### MongoDB IO utilization in percent 15 minute average
 {: #ibm_databases_for_mongodb_disk_io_utilization_percent_average_15m}
 
 How much disk I/O has been used over 15 minutes as a percentage of total disk I/O available
@@ -142,7 +145,7 @@ How much disk I/O has been used over 15 minutes as a percentage of total disk I/
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 41: IO utilization in percent 15 minute average metric metadata" caption-side="top"}
 
-### MongoDB IO utilization in percent 30 minute average
+#### MongoDB IO utilization in percent 30 minute average
 {: #ibm_databases_for_mongodb_disk_io_utilization_percent_average_30m}
 
 How much disk I/O has been used over 30 minutes as a percentage of total disk I/O available
@@ -155,7 +158,7 @@ How much disk I/O has been used over 30 minutes as a percentage of total disk I/
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 50: IO utilization in percent 30 minute average metric metadata" caption-side="top"}
 
-### MongoDB IO utilization in percent 5 minute average
+#### MongoDB IO utilization in percent 5 minute average
 {: #ibm_databases_for_mongodb_disk_io_utilization_percent_average_5m}
 
 How much disk I/O has been used over 5 minutes as a percentage of total disk I/O available
@@ -168,7 +171,7 @@ How much disk I/O has been used over 5 minutes as a percentage of total disk I/O
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 59: IO utilization in percent 5 minute average metric metadata" caption-side="top"}
 
-### MongoDB IO utilization in percent 60 minute average
+#### MongoDB IO utilization in percent 60 minute average
 {: #ibm_databases_for_mongodb_disk_io_utilization_percent_average_60m}
 
 How much disk I/O has been used over 60 minutes as a percentage of total disk I/O available
@@ -181,7 +184,7 @@ How much disk I/O has been used over 60 minutes as a percentage of total disk I/
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 68: IO utilization in percent 60 minute average metric metadata" caption-side="top"}
 
-### MongoDB IOPS read & write total count for an instance
+#### MongoDB IOPS read & write total count for an instance
 {: #ibm_databases_for_mongodb_disk_iops_read_write_total}
 
 How many input-output operations per second your instance is performing
@@ -194,7 +197,7 @@ How many input-output operations per second your instance is performing
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 77: IOPS read & write total count for an instance metric metadata" caption-side="top"}
 
-### MongoDB Maximum allowed memory for an instance
+#### MongoDB Maximum allowed memory for an instance
 {: #ibm_databases_for_mongodb_memory_limit_bytes}
 
 The maximum amount of memory available to your instance
@@ -207,7 +210,7 @@ The maximum amount of memory available to your instance
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 86: Maximum allowed memory for an instance metric metadata" caption-side="top"}
 
-### MongoDB Oplog gigabyte per hour
+#### MongoDB Oplog gigabyte per hour
 {: #ibm_databases_for_mongodb_oplog_gb_per_hour}
 
 The gigabytes of oplog per hour the primary generates
@@ -220,7 +223,7 @@ The gigabytes of oplog per hour the primary generates
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 92: Oplog gigabyte per hour metric metadata" caption-side="top"}
 
-### MongoDB Oplog used bytes
+#### MongoDB Oplog used bytes
 {: #ibm_databases_for_mongodb_oplog_used_bytes}
 
 The total amount of space used by the oplog in bytes.
@@ -233,7 +236,7 @@ The total amount of space used by the oplog in bytes.
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 93: Oplog used bytes metric metadata" caption-side="top"}
 
-### MongoDB Oplog used bytes percent of total
+#### MongoDB Oplog used bytes percent of total
 {: #ibm_databases_for_mongodb_oplog_used_bytes_percent}
 
 The total used oplog space in percent
@@ -246,7 +249,7 @@ The total used oplog space in percent
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 94: Oplog used bytes percent of total metric metadata" caption-side="top"}
 
-### MongoDB Oplog window hours
+#### MongoDB Oplog window hours
 {: #ibm_databases_for_mongodb_oplog_window_hours}
 
 The approximate number of hours available in the oplog.
@@ -259,7 +262,7 @@ The approximate number of hours available in the oplog.
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 95: Oplog window hours metric metadata" caption-side="top"}
 
-### MongoDB Page faults
+#### MongoDB Page faults
 {: #ibm_databases_for_mongodb_page_faults}
 
 The number of times per second that MongoDB had to request data from disk. Scale RAM to reduce the number of disk requests
@@ -272,7 +275,7 @@ The number of times per second that MongoDB had to request data from disk. Scale
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 96: Page faults metric metadata" caption-side="top"}
 
-### MongoDB Process resident memory in bytes
+#### MongoDB Process resident memory in bytes
 {: #ibm_databases_for_mongodb_process_resident_memory_bytes}
 
 Amount of actual physical memory used by the MongoDB process.
@@ -285,7 +288,7 @@ Amount of actual physical memory used by the MongoDB process.
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 99: Process resident memory in bytes metric metadata" caption-side="top"}
 
-### MongoDB Process virtual memory in bytes
+#### MongoDB Process virtual memory in bytes
 {: #ibm_databases_for_mongodb_process_virtual_memory_bytes}
 
 Amount of virtual memory used by the MongoDB process.
@@ -298,7 +301,7 @@ Amount of virtual memory used by the MongoDB process.
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 100: Process virtual memory in bytes metric metadata" caption-side="top"}
 
-### MongoDB Replica set member state
+#### MongoDB Replica set member state
 {: #ibm_databases_for_mongodb_status}
 
 An integer between 0 and 10 that represents the replica state of the current member.
@@ -311,7 +314,7 @@ An integer between 0 and 10 that represents the replica state of the current mem
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 103: Replica set member state metric metadata" caption-side="top"}
 
-### MongoDB Replication lag
+#### MongoDB Replication lag
 {: #ibm_databases_for_mongodb_replica_lag}
 
 The replication lag in seconds
@@ -324,7 +327,7 @@ The replication lag in seconds
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 104: Replication lag metric metadata" caption-side="top"}
 
-### MongoDB Total disk space for an instance
+#### MongoDB Total disk space for an instance
 {: #ibm_databases_for_mongodb_disk_total_bytes}
 
 Represents the total amount of disk space available to your deployment
@@ -337,7 +340,7 @@ Represents the total amount of disk space available to your deployment
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 140: Total disk space for an instance metric metadata" caption-side="top"}
 
-### MongoDB Used CPU for an instance
+#### MongoDB Used CPU for an instance
 {: #ibm_databases_for_mongodb_cpu_used_percent}
 
 How much CPU is used as a percentage of total CPU available. Only for deployments that have dedicated CPU
@@ -350,7 +353,7 @@ How much CPU is used as a percentage of total CPU available. Only for deployment
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 175: Used CPU for an instance metric metadata" caption-side="top"}
 
-### MongoDB Used disk space for an instance bytes
+#### MongoDB Used disk space for an instance bytes
 {: #ibm_databases_for_mongodb_disk_used_bytes}
 
 How much disk space your instance is using
@@ -363,7 +366,7 @@ How much disk space your instance is using
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 190: Used disk space for an instance metric metadata" caption-side="top"}
 
-### MongoDB Used disk space for an instance
+#### MongoDB Used disk space for an instance
 {: #ibm_databases_for_mongodb_disk_used_percent}
 
 How much disk space is used as a percentage of total disk available
@@ -376,7 +379,7 @@ How much disk space is used as a percentage of total disk available
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 191: Used disk space for an instance metric metadata" caption-side="top"}
 
-### MongoDB Used memory for an instance
+#### MongoDB Used memory for an instance
 {: #ibm_databases_for_mongodb_memory_used_bytes}
 
 How much memory your instance is using
@@ -389,7 +392,7 @@ How much memory your instance is using
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 208: Used memory for an instance metric metadata" caption-side="top"}
 
-### MongoDB Used memory for an instance percent
+#### MongoDB Used memory for an instance percent
 {: #ibm_databases_for_mongodb_memory_used_percent}
 
 How much memory is used as a percentage of total memory available
@@ -448,7 +451,10 @@ How much memory is used as a percentage of total memory available
 | [PostgreSQL Deadlocks rate](#ibm_databases_for_postgresql_deadlocks_rate) |
 {: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
 
-### PostgreSQL Blocks hit rate
+### PostgreSQL Metric Descriptions
+{: #metrics-by-plan-postgres-desc}
+
+#### PostgreSQL Blocks hit rate
 {: #ibm_databases_for_postgresql_blocks_hit_rate}
 
 Blocks hit rate
@@ -461,7 +467,7 @@ Blocks hit rate
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 5: Blocks hit rate metric metadata" caption-side="top"}
 
-### PostgreSQL Blocks read rate
+#### PostgreSQL Blocks read rate
 {: #ibm_databases_for_postgresql_blocks_read_rate}
 
 Blocks read rate
@@ -474,7 +480,7 @@ Blocks read rate
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 7: Blocks read rate metric metadata" caption-side="top"}
 
-### PostgreSQL Buffers backend rate
+#### PostgreSQL Buffers backend rate
 {: #ibm_databases_for_postgresql_buffers_backend_rate}
 
 Buffers backend rate
@@ -487,7 +493,7 @@ Buffers backend rate
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 9: Buffers backend rate metric metadata" caption-side="top"}
 
-### PostgreSQL Buffers checkpoint rate
+#### PostgreSQL Buffers checkpoint rate
 {: #ibm_databases_for_postgresql_buffers_checkpoint_rate}
 
 Buffers checkpoint rate
@@ -500,7 +506,7 @@ Buffers checkpoint rate
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 11: Buffers checkpoint rate metric metadata" caption-side="top"}
 
-### PostgreSQL Cache hit ratio
+#### PostgreSQL Cache hit ratio
 {: #ibm_databases_for_postgresql_cache_hit_ratio}
 
 Cache hit ratio
@@ -513,7 +519,7 @@ Cache hit ratio
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 14: Cache hit ratio metric metadata" caption-side="top"}
 
-### PostgreSQL Deadlocks count
+#### PostgreSQL Deadlocks count
 {: #ibm_databases_for_postgresql_deadlocks_count}
 
 Deadlocks count
@@ -526,7 +532,7 @@ Deadlocks count
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 18: Deadlocks count metric metadata" caption-side="top"}
 
-### PostgreSQL Deadlocks rate
+#### PostgreSQL Deadlocks rate
 {: #ibm_databases_for_postgresql_deadlocks_rate}
 
 Deadlocks rate
@@ -539,7 +545,7 @@ Deadlocks rate
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 20: Deadlocks rate metric metadata" caption-side="top"}
 
-### PostgreSQL Disk read latency mean
+#### PostgreSQL Disk read latency mean
 {: #ibm_databases_for_postgresql_disk_read_latency_mean}
 
 Disk read latency mean
@@ -552,7 +558,7 @@ Disk read latency mean
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 27: Disk read latency mean metric metadata" caption-side="top"}
 
-### PostgreSQL Disk write latency mean
+#### PostgreSQL Disk write latency mean
 {: #ibm_databases_for_postgresql_disk_write_latency_mean}
 
 Disk write latency mean
@@ -565,7 +571,7 @@ Disk write latency mean
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 34: Disk write latency mean metric metadata" caption-side="top"}
 
-### PostgreSQL IO utilization in percent 15 minute average
+#### PostgreSQL IO utilization in percent 15 minute average
 {: #ibm_databases_for_postgresql_disk_io_utilization_percent_average_15m}
 
 How much disk I/O has been used over 15 minutes as a percentage of total disk I/O available
@@ -578,7 +584,7 @@ How much disk I/O has been used over 15 minutes as a percentage of total disk I/
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 43: IO utilization in percent 15 minute average metric metadata" caption-side="top"}
 
-### PostgreSQL IO utilization in percent 30 minute average
+#### PostgreSQL IO utilization in percent 30 minute average
 {: #ibm_databases_for_postgresql_disk_io_utilization_percent_average_30m}
 
 How much disk I/O has been used over 30 minutes as a percentage of total disk I/O available
@@ -591,7 +597,7 @@ How much disk I/O has been used over 30 minutes as a percentage of total disk I/
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 52: IO utilization in percent 30 minute average metric metadata" caption-side="top"}
 
-### PostgreSQL IO utilization in percent 5 minute average
+#### PostgreSQL IO utilization in percent 5 minute average
 {: #ibm_databases_for_postgresql_disk_io_utilization_percent_average_5m}
 
 How much disk I/O has been used over 5 minutes as a percentage of total disk I/O available
@@ -604,7 +610,7 @@ How much disk I/O has been used over 5 minutes as a percentage of total disk I/O
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 61: IO utilization in percent 5 minute average metric metadata" caption-side="top"}
 
-### PostgreSQL IO utilization in percent 60 minute average
+#### PostgreSQL IO utilization in percent 60 minute average
 {: #ibm_databases_for_postgresql_disk_io_utilization_percent_average_60m}
 
 How much disk I/O has been used over 60 minutes as a percentage of total disk I/O available
@@ -617,7 +623,7 @@ How much disk I/O has been used over 60 minutes as a percentage of total disk I/
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 70: IO utilization in percent 60 minute average metric metadata" caption-side="top"}
 
-### PostgreSQL IOPS read & write total count for an instance
+#### PostgreSQL IOPS read & write total count for an instance
 {: #ibm_databases_for_postgresql_disk_iops_read_write_total}
 
 How many input-output operations per second your instance is performing
@@ -630,7 +636,7 @@ How many input-output operations per second your instance is performing
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 79: IOPS read & write total count for an instance metric metadata" caption-side="top"}
 
-### PostgreSQL Maximum allowed memory for an instance
+#### PostgreSQL Maximum allowed memory for an instance
 {: #ibm_databases_for_postgresql_memory_limit_bytes}
 
 The maximum amount of memory available to your instance
@@ -643,7 +649,7 @@ The maximum amount of memory available to your instance
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 88: Maximum allowed memory for an instance metric metadata" caption-side="top"}
 
-### PostgreSQL Read replica replication lag
+#### PostgreSQL Read replica replication lag
 {: #ibm_databases_for_postgresql_read_replica_replication_lag_bytes}
 
 How far behind a PostgreSQL read-only replica is, in bytes
@@ -656,7 +662,7 @@ How far behind a PostgreSQL read-only replica is, in bytes
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 102: Read replica replication lag metric metadata" caption-side="top"}
 
-### PostgreSQL Successful archive rate
+#### PostgreSQL Successful archive rate
 {: #ibm_databases_for_postgresql_successful_archive_rate}
 
 Successful archive rate
@@ -669,7 +675,7 @@ Successful archive rate
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 106: Successful archive rate metric metadata" caption-side="top"}
 
-### PostgreSQL Temporary files size in bytes
+#### PostgreSQL Temporary files size in bytes
 {: #ibm_databases_for_postgresql_temp_bytes_count}
 
 Temporary files size in bytes
@@ -682,7 +688,7 @@ Temporary files size in bytes
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 108: Temporary files size in bytes metric metadata" caption-side="top"}
 
-### PostgreSQL The total number of PostgreSQL connections being used
+#### PostgreSQL The total number of PostgreSQL connections being used
 {: #ibm_databases_for_postgresql_total_connections}
 
 The total number of PostgreSQL connections being used
@@ -695,7 +701,7 @@ The total number of PostgreSQL connections being used
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 135: The total number of PostgreSQL connections being used metric metadata" caption-side="top"}
 
-### PostgreSQL Total disk space for an instance
+#### PostgreSQL Total disk space for an instance
 {: #ibm_databases_for_postgresql_disk_total_bytes}
 
 Represents the total amount of disk space available to your deployment
@@ -708,7 +714,7 @@ Represents the total amount of disk space available to your deployment
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 142: Total disk space for an instance metric metadata" caption-side="top"}
 
-### PostgreSQL Transaction commit count
+#### PostgreSQL Transaction commit count
 {: #ibm_databases_for_postgresql_transaction_commit_count}
 
 Transaction commit count
@@ -721,7 +727,7 @@ Transaction commit count
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 146: Transaction commit count metric metadata" caption-side="top"}
 
-### PostgreSQL Transaction commit rate
+#### PostgreSQL Transaction commit rate
 {: #ibm_databases_for_postgresql_transaction_commit_rate}
 
 Transaction commit rate
@@ -734,7 +740,7 @@ Transaction commit rate
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 148: Transaction commit rate metric metadata" caption-side="top"}
 
-### PostgreSQL Transaction rollback count
+#### PostgreSQL Transaction rollback count
 {: #ibm_databases_for_postgresql_transaction_rollback_count}
 
 Transaction rollback count
@@ -747,7 +753,7 @@ Transaction rollback count
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 150: Transaction rollback count metric metadata" caption-side="top"}
 
-### PostgreSQL Transaction rollback rate
+#### PostgreSQL Transaction rollback rate
 {: #ibm_databases_for_postgresql_transaction_rollback_rate}
 
 Transaction rollback rate
@@ -760,7 +766,7 @@ Transaction rollback rate
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 152: Transaction rollback rate metric metadata" caption-side="top"}
 
-### PostgreSQL Tuples deleted count
+#### PostgreSQL Tuples deleted count
 {: #ibm_databases_for_postgresql_tuples_deleted_count}
 
 Tuples deleted count
@@ -773,7 +779,7 @@ Tuples deleted count
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 154: Tuples deleted count metric metadata" caption-side="top"}
 
-### PostgreSQL Tuples deleted rate
+#### PostgreSQL Tuples deleted rate
 {: #ibm_databases_for_postgresql_tuples_deleted_rate}
 
 Tuples deleted rate
@@ -786,7 +792,7 @@ Tuples deleted rate
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 156: Tuples deleted rate metric metadata" caption-side="top"}
 
-### PostgreSQL Tuples fetched count
+#### PostgreSQL Tuples fetched count
 {: #ibm_databases_for_postgresql_tuples_fetched_count}
 
 Tuples fetched count
@@ -799,7 +805,7 @@ Tuples fetched count
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 158: Tuples fetched count metric metadata" caption-side="top"}
 
-### PostgreSQL Tuples fetched rate
+#### PostgreSQL Tuples fetched rate
 {: #ibm_databases_for_postgresql_tuples_fetched_rate}
 
 Tuples fetched rate
@@ -812,7 +818,7 @@ Tuples fetched rate
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 160: Tuples fetched rate metric metadata" caption-side="top"}
 
-### PostgreSQL Tuples inserted count
+#### PostgreSQL Tuples inserted count
 {: #ibm_databases_for_postgresql_tuples_inserted_count}
 
 Tuples inserted count
@@ -825,7 +831,7 @@ Tuples inserted count
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 162: Tuples inserted count metric metadata" caption-side="top"}
 
-### PostgreSQL Tuples inserted rate
+#### PostgreSQL Tuples inserted rate
 {: #ibm_databases_for_postgresql_tuples_inserted_rate}
 
 Tuples inserted rate
@@ -838,7 +844,7 @@ Tuples inserted rate
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 164: Tuples inserted rate metric metadata" caption-side="top"}
 
-### PostgreSQL Tuples returned rate
+#### PostgreSQL Tuples returned rate
 {: #ibm_databases_for_postgresql_tuples_returned_rate}
 
 Tuples returned rate
@@ -851,7 +857,7 @@ Tuples returned rate
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 166: Tuples returned rate metric metadata" caption-side="top"}
 
-### PostgreSQL Tuples updated count
+#### PostgreSQL Tuples updated count
 {: #ibm_databases_for_postgresql_tuples_updated_count}
 
 Tuples updated count
@@ -864,8 +870,7 @@ Tuples updated count
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 168: Tuples updated count metric metadata" caption-side="top"}
 
-
-### PostgreSQL Tuples updated rate
+#### PostgreSQL Tuples updated rate
 {: #ibm_databases_for_postgresql_tuples_updated_rate}
 
 Tuples updated rate
@@ -878,7 +883,7 @@ Tuples updated rate
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 170: Tuples updated rate metric metadata" caption-side="top"}
 
-### PostgreSQL Used CPU for an instance
+#### PostgreSQL Used CPU for an instance
 {: #ibm_databases_for_postgresql_cpu_used_percent}
 
 How much CPU is used as a percentage of total CPU available. Only for deployments that have dedicated CPU
@@ -891,7 +896,7 @@ How much CPU is used as a percentage of total CPU available. Only for deployment
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 177: Used CPU for an instance metric metadata" caption-side="top"}
 
-### PostgreSQL Used disk space for an instance bytes
+#### PostgreSQL Used disk space for an instance bytes
 {: #ibm_databases_for_postgresql_disk_used_bytes}
 
 How much disk space your instance is using
@@ -904,7 +909,7 @@ How much disk space your instance is using
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 194: Used disk space for an instance metric metadata" caption-side="top"}
 
-### PostgreSQL Used disk space for an instance
+#### PostgreSQL Used disk space for an instance
 {: #ibm_databases_for_postgresql_disk_used_percent}
 
 How much disk space is used as a percentage of total disk available
@@ -917,7 +922,7 @@ How much disk space is used as a percentage of total disk available
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 195: Used disk space for an instance metric metadata" caption-side="top"}
 
-### PostgreSQL Used memory for an instance bytes
+#### PostgreSQL Used memory for an instance bytes
 {: #ibm_databases_for_postgresql_memory_used_bytes}
 
 How much memory your instance is using
@@ -930,7 +935,7 @@ How much memory your instance is using
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 212: Used memory for an instance metric metadata" caption-side="top"}
 
-### PostgreSQL Used memory for an instance percent
+#### PostgreSQL Used memory for an instance percent
 {: #ibm_databases_for_postgresql_memory_used_percent}
 
 How much memory is used as a percentage of total memory available
@@ -943,7 +948,7 @@ How much memory is used as a percentage of total memory available
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 213: Used memory for an instance metric metadata" caption-side="top"}
 
-### PostgreSQL WAL logs used bytes
+#### PostgreSQL WAL logs used bytes
 {: #ibm_databases_for_postgresql_wal_used_bytes}
 
 How much WAL log file uses, in bytes
@@ -1001,6 +1006,516 @@ How much WAL log file uses, in bytes
 | [EnterpriseDB Used memory for an instance](#ibm_databases_for_enterprisedb_memory_used_percent) |
 | [EnterpriseDB WAL logs used bytes](#ibm_databases_for_enterprisedb_wal_used_bytes) |
 {: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
+
+### EnterpriseDB Metrics Descriptions
+{: #metrics-by-plan-enterprisedb-desc}
+
+#### EnterpriseDB Blocks hit rate
+{: #ibm_databases_for_enterprisedb_blocks_hit_rate}
+
+Blocks hit rate
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_blocks_hit_rate`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `rate` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 4: Blocks hit rate metric metadata" caption-side="top"}
+
+#### EnterpriseDB Blocks read rate
+{: #ibm_databases_for_enterprisedb_blocks_read_rate}
+
+Blocks read rate
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_blocks_read_rate`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `rate` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 6: Blocks read rate metric metadata" caption-side="top"}
+
+#### EnterpriseDB Buffers backend rate
+{: #ibm_databases_for_enterprisedb_buffers_backend_rate}
+
+Buffers backend rate
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_buffers_backend_rate`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `rate` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 8: Buffers backend rate metric metadata" caption-side="top"}
+
+#### EnterpriseDB Buffers checkpoint rate
+{: #ibm_databases_for_enterprisedb_buffers_checkpoint_rate}
+
+Buffers checkpoint rate
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_buffers_checkpoint_rate`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `rate` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 10: Buffers checkpoint rate metric metadata" caption-side="top"}
+
+#### EnterpriseDB Cache hit ratio
+{: #ibm_databases_for_enterprisedb_cache_hit_ratio}
+
+Cache hit ratio
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_cache_hit_ratio`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 12: Cache hit ratio metric metadata" caption-side="top"}
+
+#### EnterpriseDB Deadlocks count
+{: #ibm_databases_for_enterprisedb_deadlocks_count}
+
+Deadlocks count
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_deadlocks_count`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 17: Deadlocks count metric metadata" caption-side="top"}
+
+#### EnterpriseDB Deadlocks rate
+{: #ibm_databases_for_enterprisedb_deadlocks_rate}
+
+Deadlocks rate
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_deadlocks_rate`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `rate` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 19: Deadlocks rate metric metadata" caption-side="top"}
+
+#### EnterpriseDB Disk read latency mean
+{: #ibm_databases_for_enterprisedb_disk_read_latency_mean}
+
+Disk read latency mean
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_disk_read_latency_mean`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `count` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 23: Disk read latency mean metric metadata" caption-side="top"}
+
+#### EnterpriseDB Disk write latency mean
+{: #ibm_databases_for_enterprisedb_disk_write_latency_mean}
+
+Disk write latency mean
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_disk_write_latency_mean`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `count` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 30: Disk write latency mean metric metadata" caption-side="top"}
+
+#### EnterpriseDB IO utilization in percent 15 minute average
+{: #ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_15m}
+
+How much disk I/O has been used over 15 minutes as a percentage of total disk I/O available
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_15m`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 39: IO utilization in percent 15 minute average metric metadata" caption-side="top"}
+
+#### EnterpriseDB IO utilization in percent 30 minute average
+{: #ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_30m}
+
+How much disk I/O has been used over 30 minutes as a percentage of total disk I/O available
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_30m`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 48: IO utilization in percent 30 minute average metric metadata" caption-side="top"}
+
+#### EnterpriseDB IO utilization in percent 5 minute average
+{: #ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_5m}
+
+How much disk I/O has been used over 5 minutes as a percentage of total disk I/O available
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_5m`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 57: IO utilization in percent 5 minute average metric metadata" caption-side="top"}
+
+#### EnterpriseDB IO utilization in percent 60 minute average
+{: #ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_60m}
+
+How much disk I/O has been used over 60 minutes as a percentage of total disk I/O available
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_60m`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 66: IO utilization in percent 60 minute average metric metadata" caption-side="top"}
+
+#### EnterpriseDB IOPS read & write total count for an instance
+{: #ibm_databases_for_enterprisedb_disk_iops_read_write_total}
+
+How many input-output operations per second your instance is performing
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_disk_iops_read_write_total`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `count` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 75: IOPS read & write total count for an instance metric metadata" caption-side="top"}
+
+#### EnterpriseDB Maximum allowed memory for an instance
+{: #ibm_databases_for_enterprisedb_memory_limit_bytes}
+
+The maximum amount of memory available to your instance
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_memory_limit_bytes`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `byte` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 84: Maximum allowed memory for an instance metric metadata" caption-side="top"}
+
+#### EnterpriseDB Read replica replication lag
+{: #ibm_databases_for_enterprisedb_read_replica_replication_lag_bytes}
+
+How far behind an EnterpriseDB read-only replica is, in bytes
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_read_replica_replication_lag_bytes`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 101: Read replica replication lag metric metadata" caption-side="top"}
+
+#### EnterpriseDB Successful archive rate
+{: #ibm_databases_for_enterprisedb_successful_archive_rate}
+
+Successful archive rate
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_successful_archive_rate`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `rate` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 105: Successful archive rate metric metadata" caption-side="top"}
+
+#### EnterpriseDB Temporary files size in bytes
+{: #ibm_databases_for_enterprisedb_temp_bytes_count}
+
+Temporary files size in bytes
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_temp_bytes_count`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 107: Temporary files size in bytes metric metadata" caption-side="top"}
+
+### The total number of EnterpriseDB connections being used
+{: #ibm_databases_for_enterprisedb_total_connections}
+
+The total number of EnterpriseDB connections being used
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_total_connections`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `count` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 134: The total number of EnterpriseDB connections being used metric metadata" caption-side="top"}
+
+#### EnterpriseDB Total disk space for an instance
+{: #ibm_databases_for_enterprisedb_disk_total_bytes}
+
+Represents the total amount of disk space available to your deployment
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_disk_total_bytes`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `byte` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 138: Total disk space for an instance metric metadata" caption-side="top"}
+
+#### EnterpriseDB Transaction commit count
+{: #ibm_databases_for_enterprisedb_transaction_commit_count}
+
+Transaction commit count
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_transaction_commit_count`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 145: Transaction commit count metric metadata" caption-side="top"}
+
+#### EnterpriseDB Transaction commit rate
+{: #ibm_databases_for_enterprisedb_transaction_commit_rate}
+
+Transaction commit rate
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_transaction_commit_rate`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `rate` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 147: Transaction commit rate metric metadata" caption-side="top"}
+
+#### EnterpriseDB Transaction rollback count
+{: #ibm_databases_for_enterprisedb_transaction_rollback_count}
+
+Transaction rollback count
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_transaction_rollback_count`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 149: Transaction rollback count metric metadata" caption-side="top"}
+
+#### EnterpriseDB Transaction rollback rate
+{: #ibm_databases_for_enterprisedb_transaction_rollback_rate}
+
+Transaction rollback rate
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_transaction_rollback_rate`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `rate` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 151: Transaction rollback rate metric metadata" caption-side="top"}
+
+#### EnterpriseDB Tuples deleted count
+{: #ibm_databases_for_enterprisedb_tuples_deleted_count}
+
+Tuples deleted count
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_tuples_deleted_count`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 153: Tuples deleted count metric metadata" caption-side="top"}
+
+#### EnterpriseDB Tuples deleted rate
+{: #ibm_databases_for_enterprisedb_tuples_deleted_rate}
+
+Tuples deleted rate
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_tuples_deleted_rate`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `rate` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 155: Tuples deleted rate metric metadata" caption-side="top"}
+
+#### EnterpriseDB EnterpriseDB Tuples fetched count
+{: #ibm_databases_for_enterprisedb_tuples_fetched_count}
+
+Tuples fetched count
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_tuples_fetched_count`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 157: Tuples fetched count metric metadata" caption-side="top"}
+
+#### EnterpriseDB Tuples fetched rate
+{: #ibm_databases_for_enterprisedb_tuples_fetched_rate}
+
+Tuples fetched rate
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_tuples_fetched_rate`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `rate` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 159: Tuples fetched rate metric metadata" caption-side="top"}
+
+#### EnterpriseDB Tuples inserted count
+{: #ibm_databases_for_enterprisedb_tuples_inserted_count}
+
+Tuples inserted count
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_tuples_inserted_count`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 161: Tuples inserted count metric metadata" caption-side="top"}
+
+#### EnterpriseDB Tuples inserted rate
+{: #ibm_databases_for_enterprisedb_tuples_inserted_rate}
+
+Tuples inserted rate
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_tuples_inserted_rate`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `rate` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 163: Tuples inserted rate metric metadata" caption-side="top"}
+
+#### EnterpriseDB Tuples returned rate
+{: #ibm_databases_for_enterprisedb_tuples_returned_rate}
+
+Tuples returned rate
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_tuples_returned_rate`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `rate` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 165: Tuples returned rate metric metadata" caption-side="top"}
+
+#### EnterpriseDB Tuples updated count
+{: #ibm_databases_for_enterprisedb_tuples_updated_count}
+
+Tuples updated count
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_tuples_updated_count`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 167: Tuples updated count metric metadata" caption-side="top"}
+
+#### EnterpriseDB Tuples updated rate
+{: #ibm_databases_for_enterprisedb_tuples_updated_rate}
+
+Tuples updated rate
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_tuples_updated_rate`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `rate` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 169: Tuples updated rate metric metadata" caption-side="top"}
+
+#### EnterpriseDB Used CPU for an instance
+{: #ibm_databases_for_enterprisedb_cpu_used_percent}
+
+How much CPU is used as a percentage of total CPU available. Only for deployments that have dedicated CPU
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_cpu_used_percent`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 173: Used CPU for an instance metric metadata" caption-side="top"}
+
+#### EnterpriseDB Used disk space for an instance
+{: #ibm_databases_for_enterprisedb_disk_used_bytes}
+
+How much disk space your instance is using
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_disk_used_bytes`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `byte` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 186: Used disk space for an instance metric metadata" caption-side="top"}
+
+#### EnterpriseDB Used disk space for an instance percent
+{: #ibm_databases_for_enterprisedb_disk_used_percent}
+
+How much disk space is used as a percentage of total disk available
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_disk_used_percent`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 187: Used disk space for an instance metric metadata" caption-side="top"}
+
+#### EnterpriseDB Used memory for an instance bytes
+{: #ibm_databases_for_enterprisedb_memory_used_bytes}
+
+How much memory your instance is using
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_memory_used_bytes`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `byte` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 204: Used memory for an instance metric metadata" caption-side="top"}
+
+#### EnterpriseDB Used memory for an instance percent
+{: #ibm_databases_for_enterprisedb_memory_used_percent}
+
+How much memory is used as a percentage of total memory available
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_memory_used_percent`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 205: Used memory for an instance metric metadata" caption-side="top"}
+
+#### EnterpriseDB WAL logs used bytes
+{: #ibm_databases_for_enterprisedb_wal_used_bytes}
+
+How much WAL log file uses, in bytes
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_enterprisedb_wal_used_bytes`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `byte` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 218: WAL logs used bytes metric metadata" caption-side="top"}
 
 ## MySQL Metrics
 {: #metrics-by-plan-mysql}
@@ -1317,71 +1832,6 @@ How much memory is used as a percentage of total memory available
 | [DataStax Used memory for an instance](#ibm_databases_for_cassandra_memory_used_percent) |
 {: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
 
-### EnterpriseDB Blocks hit rate
-{: #ibm_databases_for_enterprisedb_blocks_hit_rate}
-
-Blocks hit rate
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_enterprisedb_blocks_hit_rate`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `rate` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 4: Blocks hit rate metric metadata" caption-side="top"}
-
-### EnterpriseDB Blocks read rate
-{: #ibm_databases_for_enterprisedb_blocks_read_rate}
-
-Blocks read rate
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_enterprisedb_blocks_read_rate`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `rate` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 6: Blocks read rate metric metadata" caption-side="top"}
-
-### EnterpriseDB Buffers backend rate
-{: #ibm_databases_for_enterprisedb_buffers_backend_rate}
-
-Buffers backend rate
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_enterprisedb_buffers_backend_rate`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `rate` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 8: Buffers backend rate metric metadata" caption-side="top"}
-
-### EnterpriseDB Buffers checkpoint rate
-{: #ibm_databases_for_enterprisedb_buffers_checkpoint_rate}
-
-Buffers checkpoint rate
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_enterprisedb_buffers_checkpoint_rate`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `rate` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 10: Buffers checkpoint rate metric metadata" caption-side="top"}
-
-### EnterpriseDB Cache hit ratio
-{: #ibm_databases_for_enterprisedb_cache_hit_ratio}
-
-Cache hit ratio
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_enterprisedb_cache_hit_ratio`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 12: Cache hit ratio metric metadata" caption-side="top"}
-
 ### MySQL Cache hit ratio
 {: #ibm_databases_for_mysql_cache_hit_ratio}
 
@@ -1408,32 +1858,6 @@ A number derived from the status value of the /_cluster/health endpoint. Possibl
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 15: Cluster status metric metadata" caption-side="top"}
 
-### EnterpriseDB Deadlocks count
-{: #ibm_databases_for_enterprisedb_deadlocks_count}
-
-Deadlocks count
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_enterprisedb_deadlocks_count`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `none` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 17: Deadlocks count metric metadata" caption-side="top"}
-
-### EnterpriseDB Deadlocks rate
-{: #ibm_databases_for_enterprisedb_deadlocks_rate}
-
-Deadlocks rate
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_enterprisedb_deadlocks_rate`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `rate` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 19: Deadlocks rate metric metadata" caption-side="top"}
-
 ### DataStax Disk read latency mean
 {: #ibm_databases_for_cassandra_disk_read_latency_mean}
 
@@ -1459,19 +1883,6 @@ Disk read latency mean
 | `Value Type`  | `count` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 22: Disk read latency mean metric metadata" caption-side="top"}
-
-### EnterpriseDB Disk read latency mean
-{: #ibm_databases_for_enterprisedb_disk_read_latency_mean}
-
-Disk read latency mean
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_enterprisedb_disk_read_latency_mean`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `count` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 23: Disk read latency mean metric metadata" caption-side="top"}
 
 ### etcd Disk read latency mean
 {: #ibm_databases_for_etcd_disk_read_latency_mean}
@@ -1524,19 +1935,6 @@ Disk write latency mean
 | `Value Type`  | `count` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 29: Disk write latency mean metric metadata" caption-side="top"}
-
-### EnterpriseDB Disk write latency mean
-{: #ibm_databases_for_enterprisedb_disk_write_latency_mean}
-
-Disk write latency mean
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_enterprisedb_disk_write_latency_mean`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `count` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 30: Disk write latency mean metric metadata" caption-side="top"}
 
 ### etcd Disk write latency mean
 {: #ibm_databases_for_etcd_disk_write_latency_mean}
@@ -1616,19 +2014,6 @@ How much disk I/O has been used over 15 minutes as a percentage of total disk I/
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 38: IO utilization in percent 15 minute average metric metadata" caption-side="top"}
 
-### EnterpriseDB IO utilization in percent 15 minute average
-{: #ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_15m}
-
-How much disk I/O has been used over 15 minutes as a percentage of total disk I/O available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_15m`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 39: IO utilization in percent 15 minute average metric metadata" caption-side="top"}
-
 ### etcd IO utilization in percent 15 minute average
 {: #ibm_databases_for_etcd_disk_io_utilization_percent_average_15m}
 
@@ -1693,19 +2078,6 @@ How much disk I/O has been used over 30 minutes as a percentage of total disk I/
 | `Value Type`  | `percent` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 47: IO utilization in percent 30 minute average metric metadata" caption-side="top"}
-
-### EnterpriseDB IO utilization in percent 30 minute average
-{: #ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_30m}
-
-How much disk I/O has been used over 30 minutes as a percentage of total disk I/O available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_30m`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 48: IO utilization in percent 30 minute average metric metadata" caption-side="top"}
 
 ### etcd IO utilization in percent 30 minute average
 {: #ibm_databases_for_etcd_disk_io_utilization_percent_average_30m}
@@ -1772,19 +2144,6 @@ How much disk I/O has been used over 5 minutes as a percentage of total disk I/O
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 56: IO utilization in percent 5 minute average metric metadata" caption-side="top"}
 
-### EnterpriseDB IO utilization in percent 5 minute average
-{: #ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_5m}
-
-How much disk I/O has been used over 5 minutes as a percentage of total disk I/O available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_5m`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 57: IO utilization in percent 5 minute average metric metadata" caption-side="top"}
-
 ### etcd IO utilization in percent 5 minute average
 {: #ibm_databases_for_etcd_disk_io_utilization_percent_average_5m}
 
@@ -1849,19 +2208,6 @@ How much disk I/O has been used over 60 minutes as a percentage of total disk I/
 | `Value Type`  | `percent` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 65: IO utilization in percent 60 minute average metric metadata" caption-side="top"}
-
-### EnterpriseDB IO utilization in percent 60 minute average
-{: #ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_60m}
-
-How much disk I/O has been used over 60 minutes as a percentage of total disk I/O available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_60m`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 66: IO utilization in percent 60 minute average metric metadata" caption-side="top"}
 
 ### etcd IO utilization in percent 60 minute average
 {: #ibm_databases_for_etcd_disk_io_utilization_percent_average_60m}
@@ -1928,19 +2274,6 @@ How many input-output operations per second your instance is performing
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 74: IOPS read & write total count for an instance metric metadata" caption-side="top"}
 
-### EnterpriseDB IOPS read & write total count for an instance
-{: #ibm_databases_for_enterprisedb_disk_iops_read_write_total}
-
-How many input-output operations per second your instance is performing
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_enterprisedb_disk_iops_read_write_total`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `count` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 75: IOPS read & write total count for an instance metric metadata" caption-side="top"}
-
 ### etcd IOPS read & write total count for an instance
 {: #ibm_databases_for_etcd_disk_iops_read_write_total}
 
@@ -2005,19 +2338,6 @@ The maximum amount of memory available to your instance
 | `Value Type`  | `byte` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 83: Maximum allowed memory for an instance metric metadata" caption-side="top"}
-
-### EnterpriseDB Maximum allowed memory for an instance
-{: #ibm_databases_for_enterprisedb_memory_limit_bytes}
-
-The maximum amount of memory available to your instance
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_enterprisedb_memory_limit_bytes`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `byte` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 84: Maximum allowed memory for an instance metric metadata" caption-side="top"}
 
 ### etcd Maximum allowed memory for an instance
 {: #ibm_databases_for_etcd_memory_limit_bytes}
@@ -2096,45 +2416,6 @@ Percent of threads running.
 | `Value Type`  | `percent` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 98: Percent of threads running metric metadata" caption-side="top"}
-
-### EnterpriseDB Read replica replication lag
-{: #ibm_databases_for_enterprisedb_read_replica_replication_lag_bytes}
-
-How far behind an EnterpriseDB read-only replica is, in bytes
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_enterprisedb_read_replica_replication_lag_bytes`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `none` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 101: Read replica replication lag metric metadata" caption-side="top"}
-
-### EnterpriseDB Successful archive rate
-{: #ibm_databases_for_enterprisedb_successful_archive_rate}
-
-Successful archive rate
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_enterprisedb_successful_archive_rate`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `rate` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 105: Successful archive rate metric metadata" caption-side="top"}
-
-### EnterpriseDB Temporary files size in bytes
-{: #ibm_databases_for_enterprisedb_temp_bytes_count}
-
-Temporary files size in bytes
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_enterprisedb_temp_bytes_count`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `none` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 107: Temporary files size in bytes metric metadata" caption-side="top"}
 
 ### MySQL The number of connections that were aborted because the client died without closing the connection properly
 {: #ibm_databases_for_mysql_aborted_clients_rate}
@@ -2461,19 +2742,6 @@ The rate of total command statements executed.
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 133: The rate of total command statements executed metric metadata" caption-side="top"}
 
-### The total number of EnterpriseDB connections being used
-{: #ibm_databases_for_enterprisedb_total_connections}
-
-The total number of EnterpriseDB connections being used
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_enterprisedb_total_connections`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `count` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 134: The total number of EnterpriseDB connections being used metric metadata" caption-side="top"}
-
 ### DataStax Total disk space for an instance
 {: #ibm_databases_for_cassandra_disk_total_bytes}
 
@@ -2499,19 +2767,6 @@ Represents the total amount of disk space available to your deployment
 | `Value Type`  | `byte` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 137: Total disk space for an instance metric metadata" caption-side="top"}
-
-### EnterpriseDB Total disk space for an instance
-{: #ibm_databases_for_enterprisedb_disk_total_bytes}
-
-Represents the total amount of disk space available to your deployment
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_enterprisedb_disk_total_bytes`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `byte` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 138: Total disk space for an instance metric metadata" caption-side="top"}
 
 ### etcd Total disk space for an instance
 {: #ibm_databases_for_etcd_disk_total_bytes}
@@ -2552,175 +2807,6 @@ Represents the total amount of disk space available to your deployment
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 143: Total disk space for an instance metric metadata" caption-side="top"}
 
-### EnterpriseDB Transaction commit count
-{: #ibm_databases_for_enterprisedb_transaction_commit_count}
-
-Transaction commit count
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_enterprisedb_transaction_commit_count`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `none` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 145: Transaction commit count metric metadata" caption-side="top"}
-
-### EnterpriseDB Transaction commit rate
-{: #ibm_databases_for_enterprisedb_transaction_commit_rate}
-
-Transaction commit rate
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_enterprisedb_transaction_commit_rate`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `rate` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 147: Transaction commit rate metric metadata" caption-side="top"}
-
-### EnterpriseDB Transaction rollback count
-{: #ibm_databases_for_enterprisedb_transaction_rollback_count}
-
-Transaction rollback count
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_enterprisedb_transaction_rollback_count`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `none` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 149: Transaction rollback count metric metadata" caption-side="top"}
-
-### EnterpriseDB Transaction rollback rate
-{: #ibm_databases_for_enterprisedb_transaction_rollback_rate}
-
-Transaction rollback rate
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_enterprisedb_transaction_rollback_rate`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `rate` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 151: Transaction rollback rate metric metadata" caption-side="top"}
-
-### EnterpriseDB Tuples deleted count
-{: #ibm_databases_for_enterprisedb_tuples_deleted_count}
-
-Tuples deleted count
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_enterprisedb_tuples_deleted_count`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `none` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 153: Tuples deleted count metric metadata" caption-side="top"}
-
-### EnterpriseDB Tuples deleted rate
-{: #ibm_databases_for_enterprisedb_tuples_deleted_rate}
-
-Tuples deleted rate
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_enterprisedb_tuples_deleted_rate`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `rate` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 155: Tuples deleted rate metric metadata" caption-side="top"}
-
-### EnterpriseDB EnterpriseDB Tuples fetched count
-{: #ibm_databases_for_enterprisedb_tuples_fetched_count}
-
-Tuples fetched count
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_enterprisedb_tuples_fetched_count`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `none` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 157: Tuples fetched count metric metadata" caption-side="top"}
-
-### EnterpriseDB Tuples fetched rate
-{: #ibm_databases_for_enterprisedb_tuples_fetched_rate}
-
-Tuples fetched rate
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_enterprisedb_tuples_fetched_rate`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `rate` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 159: Tuples fetched rate metric metadata" caption-side="top"}
-
-### EnterpriseDB Tuples inserted count
-{: #ibm_databases_for_enterprisedb_tuples_inserted_count}
-
-Tuples inserted count
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_enterprisedb_tuples_inserted_count`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `none` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 161: Tuples inserted count metric metadata" caption-side="top"}
-
-### EnterpriseDB Tuples inserted rate
-{: #ibm_databases_for_enterprisedb_tuples_inserted_rate}
-
-Tuples inserted rate
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_enterprisedb_tuples_inserted_rate`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `rate` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 163: Tuples inserted rate metric metadata" caption-side="top"}
-
-### EnterpriseDB Tuples returned rate
-{: #ibm_databases_for_enterprisedb_tuples_returned_rate}
-
-Tuples returned rate
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_enterprisedb_tuples_returned_rate`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `rate` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 165: Tuples returned rate metric metadata" caption-side="top"}
-
-### EnterpriseDB Tuples updated count
-{: #ibm_databases_for_enterprisedb_tuples_updated_count}
-
-Tuples updated count
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_enterprisedb_tuples_updated_count`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `none` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 167: Tuples updated count metric metadata" caption-side="top"}
-
-### EnterpriseDB Tuples updated rate
-{: #ibm_databases_for_enterprisedb_tuples_updated_rate}
-
-Tuples updated rate
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_enterprisedb_tuples_updated_rate`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `rate` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 169: Tuples updated rate metric metadata" caption-side="top"}
-
 ### DataStax Used CPU for an instance
 {: #ibm_databases_for_cassandra_cpu_used_percent}
 
@@ -2746,19 +2832,6 @@ How much CPU is used as a percentage of total CPU available. Only for deployment
 | `Value Type`  | `percent` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 172: Used CPU for an instance metric metadata" caption-side="top"}
-
-### EnterpriseDB Used CPU for an instance
-{: #ibm_databases_for_enterprisedb_cpu_used_percent}
-
-How much CPU is used as a percentage of total CPU available. Only for deployments that have dedicated CPU
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_enterprisedb_cpu_used_percent`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 173: Used CPU for an instance metric metadata" caption-side="top"}
 
 ### etcd Used CPU for an instance
 {: #ibm_databases_for_etcd_cpu_used_percent}
@@ -2876,32 +2949,6 @@ How much disk space is used as a percentage of total disk available
 | `Value Type`  | `percent` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 185: Used disk space for an instance metric metadata" caption-side="top"}
-
-### EnterpriseDB Used disk space for an instance
-{: #ibm_databases_for_enterprisedb_disk_used_bytes}
-
-How much disk space your instance is using
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_enterprisedb_disk_used_bytes`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `byte` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 186: Used disk space for an instance metric metadata" caption-side="top"}
-
-### EnterpriseDB Used disk space for an instance percent
-{: #ibm_databases_for_enterprisedb_disk_used_percent}
-
-How much disk space is used as a percentage of total disk available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_enterprisedb_disk_used_percent`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 187: Used disk space for an instance metric metadata" caption-side="top"}
 
 ### etcd Used disk space for an instance bytes
 {: #ibm_databases_for_etcd_disk_used_bytes}
@@ -3033,32 +3080,6 @@ How much memory is used as a percentage of total memory available
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 203: Used memory for an instance metric metadata" caption-side="top"}
 
-### EnterpriseDB Used memory for an instance bytes
-{: #ibm_databases_for_enterprisedb_memory_used_bytes}
-
-How much memory your instance is using
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_enterprisedb_memory_used_bytes`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `byte` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 204: Used memory for an instance metric metadata" caption-side="top"}
-
-### EnterpriseDB Used memory for an instance percent
-{: #ibm_databases_for_enterprisedb_memory_used_percent}
-
-How much memory is used as a percentage of total memory available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_enterprisedb_memory_used_percent`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 205: Used memory for an instance metric metadata" caption-side="top"}
-
 ### etcd Used memory for an instance bytes
 {: #ibm_databases_for_etcd_memory_used_bytes}
 
@@ -3136,19 +3157,6 @@ How much memory is used as a percentage of total memory available
 | `Value Type`  | `percent` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 215: Used memory for an instance metric metadata" caption-side="top"}
-
-### EnterpriseDB WAL logs used bytes
-{: #ibm_databases_for_enterprisedb_wal_used_bytes}
-
-How much WAL log file uses, in bytes
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_enterprisedb_wal_used_bytes`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `byte` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 218: WAL logs used bytes metric metadata" caption-side="top"}
 
 ## Attributes for Segmentation
 {: #attributes}
