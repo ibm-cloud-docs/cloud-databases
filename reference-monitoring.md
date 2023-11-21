@@ -140,91 +140,95 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [EnterpriseDB Used memory for an instance](#ibm_databases_for_enterprisedb_memory_used_percent) |
 | [EnterpriseDB WAL logs used bytes](#ibm_databases_for_enterprisedb_wal_used_bytes) |
 | [MySQL Cache hit ratio](#ibm_databases_for_mysql_cache_hit_ratio) |
+| [MySQL Disk read latency mean](#ibm_databases_for_mysql_disk_read_latency_mean) |
+| [MySQL Disk write latency mean](#ibm_databases_for_mysql_disk_write_latency_mean) |
+| [MySQL IO utilization in percent 15 minute average](#ibm_databases_for_mysql_disk_io_utilization_percent_average_15m) |
+| [MySQL IO utilization in percent 30 minute average](#ibm_databases_for_mysql_disk_io_utilization_percent_average_30m) |
+| [MySQL IO utilization in percent 5 minute average](#ibm_databases_for_mysql_disk_io_utilization_percent_average_5m) |
+| [MySQL IO utilization in percent 60 minute average](#ibm_databases_for_mysql_disk_io_utilization_percent_average_60m) |
+| [MySQL IOPS read & write total count for an instance](#ibm_databases_for_mysql_disk_iops_read_write_total) |
+| [MySQL Maximum allowed memory for an instance](#ibm_databases_for_mysql_memory_limit_bytes) |
+| [MySQL Percent of threads connected](#ibm_databases_for_mysql_threads_connected_usage) |
+| [MySQL Percent of threads running](#ibm_databases_for_mysql_threads_running_usage) |
+| [MySQL The number of connections that were aborted because the client died without closing the connection properly](#ibm_databases_for_mysql_aborted_clients_rate) |
+| [MySQL The number of threads created to handle connections](#ibm_databases_for_mysql_threads_created) |
+| [MySQL The number of threads in the thread cache](#ibm_databases_for_mysql_thread_cache_size) |
+| [MySQL The number of threads in the thread cache](#ibm_databases_for_mysql_threads_cached) |
+| [MySQL The open file usage](#ibm_databases_for_mysql_open_file_usage) |
+| [MySQL The pool hit rate](#ibm_databases_for_mysql_pool_hit_rate) |
+| [MySQL The pool utilization](#ibm_databases_for_mysql_pool_utilization) |
+| [MySQL The rate of bytes received from all clients](#ibm_databases_for_mysql_bytes_received_rate) |
+| [MySQL The rate of bytes sent to all clients](#ibm_databases_for_mysql_bytes_sent_rate) |
+| [MySQL The rate of failed attempts to connect to the MySQL server](#ibm_databases_for_mysql_aborted_connects_rate) |
+| [MySQL The rate of joins that did a full scan of the first table](#ibm_databases_for_mysql_select_scan_rate) |
+| [MySQL The rate of joins that perform table scans because they do not use indexes](#ibm_databases_for_mysql_select_full_join_rate) |
+| [MySQL The rate of joins that used a range search on a reference table](#ibm_databases_for_mysql_select_full_range_join_rate) |
+| [MySQL The rate of joins that used ranges on the first table](#ibm_databases_for_mysql_select_range_rate) |
+| [MySQL The rate of joins without keys that check for key usage after each row](#ibm_databases_for_mysql_select_range_check_rate) |
+| [MySQL The rate of merge passes that the sort algorithm has had to do](#ibm_databases_for_mysql_sort_merge_passes_rate) |
+| [MySQL The rate of queries that have taken more than long_query_time seconds](#ibm_databases_for_mysql_slow_queries_rate) |
+| [MySQL The rate of sorted rows](#ibm_databases_for_mysql_sort_rows_rate) |
+| [MySQL The rate of sorts that were done by scanning the table](#ibm_databases_for_mysql_sort_scan_rate) |
+| [MySQL The rate of sorts that were done using ranges](#ibm_databases_for_mysql_sort_range_rate) |
+| [MySQL The rate of statements executed by the server](#ibm_databases_for_mysql_questions_rate) |
+| [MySQL The rate of times that a request for a table lock could be granted immediately](#ibm_databases_for_mysql_table_locks_immediate_rate) |
+| [MySQL The rate of times that a request for a table lock could not be granted immediately and a wait was needed](#ibm_databases_for_mysql_table_locks_waited_rate) |
+| [MySQL The rate of times that the log buffer was too small and a wait was required for it to be flushed before continuing](#ibm_databases_for_mysql_innodb_log_waits_rate) |
+| [MySQL The rate of total command statements executed](#ibm_databases_for_mysql_commands_total_rate) |
+| [MySQL Total disk space for an instance](#ibm_databases_for_mysql_disk_total_bytes) |
+| [MySQL Used CPU for an instance](#ibm_databases_for_mysql_cpu_used_percent) |
+| [MySQL Used disk space for an instance](#ibm_databases_for_mysql_disk_used_bytes) |
+| [MySQL Used disk space for an instance](#ibm_databases_for_mysql_disk_used_percent) |
+| [MySQL Used memory for an instance](#ibm_databases_for_mysql_memory_used_bytes) |
+| [MySQL Used memory for an instance](#ibm_databases_for_mysql_memory_used_percent) |
 | [Elasticsearch Cluster status](#ibm_databases_for_elasticsearch_cluster_status) |
 | [DataStaxDisk read latency mean](#ibm_databases_for_cassandra_disk_read_latency_mean) |
 | [Elasticsearch Disk read latency mean](#ibm_databases_for_elasticsearch_disk_read_latency_mean) |
 | [Disk read latency mean](#ibm_databases_for_etcd_disk_read_latency_mean) |
-| [Disk read latency mean](#ibm_databases_for_mysql_disk_read_latency_mean) |
 | [Disk write latency mean](#ibm_databases_for_cassandra_disk_write_latency_mean) |
 | [Elasticsearch Disk write latency mean](#ibm_databases_for_elasticsearch_disk_write_latency_mean) |
 | [Disk write latency mean](#ibm_databases_for_etcd_disk_write_latency_mean) |
-| [Disk write latency mean](#ibm_databases_for_mysql_disk_write_latency_mean) |
 | [GC Percentage](#ibm_databases_for_cassandra_garbage_collection_percent_average_15m) |
 | [Elasticsearch GC Percentage](#ibm_databases_for_elasticsearch_garbage_collection_percent_average_15m) |
 | [IO utilization in percent 15 minute average](#ibm_databases_for_cassandra_disk_io_utilization_percent_average_15m) |
 | [Elasticsearch IO utilization in percent 15 minute average](#ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_15m) |
 | [IO utilization in percent 15 minute average](#ibm_databases_for_etcd_disk_io_utilization_percent_average_15m) |
-| [IO utilization in percent 15 minute average](#ibm_databases_for_mysql_disk_io_utilization_percent_average_15m) |
 | [IO utilization in percent 15 minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_15m) |
 | [IO utilization in percent 15 minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_15m) |
 | [IO utilization in percent 30 minute average](#ibm_databases_for_cassandra_disk_io_utilization_percent_average_30m) |
 | [Elasticsearch IO utilization in percent 30 minute average](#ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_30m) |
 | [IO utilization in percent 30 minute average](#ibm_databases_for_etcd_disk_io_utilization_percent_average_30m) |
-| [IO utilization in percent 30 minute average](#ibm_databases_for_mysql_disk_io_utilization_percent_average_30m) |
 | [IO utilization in percent 30 minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_30m) |
 | [IO utilization in percent 30 minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_30m) |
 | [IO utilization in percent 5 minute average](#ibm_databases_for_cassandra_disk_io_utilization_percent_average_5m) |
 | [Elasticsearch IO utilization in percent 5 minute average](#ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_5m) |
 | [IO utilization in percent 5 minute average](#ibm_databases_for_etcd_disk_io_utilization_percent_average_5m) |
-| [IO utilization in percent 5 minute average](#ibm_databases_for_mysql_disk_io_utilization_percent_average_5m) |
 | [IO utilization in percent 5 minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_5m) |
 | [IO utilization in percent 5 minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_5m) |
 | [IO utilization in percent 60 minute average](#ibm_databases_for_cassandra_disk_io_utilization_percent_average_60m) |
 | [Elasticsearch IO utilization in percent 60 minute average](#ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_60m) |
 | [IO utilization in percent 60 minute average](#ibm_databases_for_etcd_disk_io_utilization_percent_average_60m) |
-| [IO utilization in percent 60 minute average](#ibm_databases_for_mysql_disk_io_utilization_percent_average_60m) |
 | [IO utilization in percent 60 minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_60m) |
 | [IO utilization in percent 60 minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_60m) |
 | [IOPS read & write total count for an instance](#ibm_databases_for_cassandra_disk_iops_read_write_total) |
 | [Elasticsearch IOPS read & write total count for an instance](#ibm_databases_for_elasticsearch_disk_iops_read_write_total) |
 | [IOPS read & write total count for an instance](#ibm_databases_for_etcd_disk_iops_read_write_total) |
-| [IOPS read & write total count for an instance](#ibm_databases_for_mysql_disk_iops_read_write_total) |
 | [IOPS read & write total count for an instance](#ibm_databases_for_redis_disk_iops_read_write_total) |
 | [IOPS read & write total count for an instance](#ibm_messages_for_rabbitmq_disk_iops_read_write_total) |
 | [Maximum allowed memory for an instance](#ibm_databases_for_cassandra_memory_limit_bytes) |
 | [Elasticsearch Maximum allowed memory for an instance](#ibm_databases_for_elasticsearch_memory_limit_bytes) |
 | [Maximum allowed memory for an instance](#ibm_databases_for_etcd_memory_limit_bytes) |
-| [Maximum allowed memory for an instance](#ibm_databases_for_mysql_memory_limit_bytes) |
 | [Maximum allowed memory for an instance](#ibm_databases_for_redis_memory_limit_bytes) |
 | [Maximum allowed memory for an instance](#ibm_messages_for_rabbitmq_memory_limit_bytes) |
 | [Elasticsearch Number of unassigned shards](#ibm_databases_for_elasticsearch_unassigned_shards_total) |
-| [Percent of threads connected](#ibm_databases_for_mysql_threads_connected_usage) |
-| [Percent of threads running](#ibm_databases_for_mysql_threads_running_usage) |
-| [The number of connections that were aborted because the client died without closing the connection properly](#ibm_databases_for_mysql_aborted_clients_rate) |
-| [The number of threads created to handle connections](#ibm_databases_for_mysql_threads_created) |
-| [The number of threads in the thread cache](#ibm_databases_for_mysql_thread_cache_size) |
-| [The number of threads in the thread cache](#ibm_databases_for_mysql_threads_cached) |
-| [The open file usage](#ibm_databases_for_mysql_open_file_usage) |
-| [The pool hit rate](#ibm_databases_for_mysql_pool_hit_rate) |
-| [The pool utilization](#ibm_databases_for_mysql_pool_utilization) |
-| [The rate of bytes received from all clients](#ibm_databases_for_mysql_bytes_received_rate) |
-| [The rate of bytes sent to all clients](#ibm_databases_for_mysql_bytes_sent_rate) |
-| [The rate of failed attempts to connect to the MySQL server](#ibm_databases_for_mysql_aborted_connects_rate) |
-| [The rate of joins that did a full scan of the first table](#ibm_databases_for_mysql_select_scan_rate) |
-| [The rate of joins that perform table scans because they do not use indexes](#ibm_databases_for_mysql_select_full_join_rate) |
-| [The rate of joins that used a range search on a reference table](#ibm_databases_for_mysql_select_full_range_join_rate) |
-| [The rate of joins that used ranges on the first table](#ibm_databases_for_mysql_select_range_rate) |
-| [The rate of joins without keys that check for key usage after each row](#ibm_databases_for_mysql_select_range_check_rate) |
-| [The rate of merge passes that the sort algorithm has had to do](#ibm_databases_for_mysql_sort_merge_passes_rate) |
-| [The rate of queries that have taken more than long_query_time seconds](#ibm_databases_for_mysql_slow_queries_rate) |
-| [The rate of sorted rows](#ibm_databases_for_mysql_sort_rows_rate) |
-| [The rate of sorts that were done by scanning the table](#ibm_databases_for_mysql_sort_scan_rate) |
-| [The rate of sorts that were done using ranges](#ibm_databases_for_mysql_sort_range_rate) |
-| [The rate of statements executed by the server](#ibm_databases_for_mysql_questions_rate) |
-| [The rate of times that a request for a table lock could be granted immediately](#ibm_databases_for_mysql_table_locks_immediate_rate) |
-| [The rate of times that a request for a table lock could not be granted immediately and a wait was needed](#ibm_databases_for_mysql_table_locks_waited_rate) |
-| [The rate of times that the log buffer was too small and a wait was required for it to be flushed before continuing](#ibm_databases_for_mysql_innodb_log_waits_rate) |
-| [The rate of total command statements executed](#ibm_databases_for_mysql_commands_total_rate) |
 | [Total disk space for an instance](#ibm_databases_for_cassandra_disk_total_bytes) |
 | [Elasticsearch Total disk space for an instance](#ibm_databases_for_elasticsearch_disk_total_bytes) |
 | [etcd Total disk space for an instance](#ibm_databases_for_etcd_disk_total_bytes) |
-| [Total disk space for an instance](#ibm_databases_for_mysql_disk_total_bytes) |
 | [Total disk space for an instance](#ibm_databases_for_redis_disk_total_bytes) |
 | [Total disk space for an instance](#ibm_messages_for_rabbitmq_disk_total_bytes) |
 | [Used CPU for an instance](#ibm_databases_for_cassandra_cpu_used_percent) |
 | [Elasticsearch Used CPU for an instance](#ibm_databases_for_elasticsearch_cpu_used_percent) |
 | [etcd Used CPU for an instance](#ibm_databases_for_etcd_cpu_used_percent) |
-| [Used CPU for an instance](#ibm_databases_for_mysql_cpu_used_percent) |
 | [Used CPU for an instance](#ibm_databases_for_redis_cpu_used_percent) |
 | [Used CPU for an instance](#ibm_messages_for_rabbitmq_cpu_used_percent) |
 | [Used JVM heap for a database member of the instance in percent](#ibm_databases_for_cassandra_jvm_heap_percent) |
@@ -235,8 +239,6 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [Elasticsearch Used disk space for an instance](#ibm_databases_for_elasticsearch_disk_used_percent) |
 | [etcd Used disk space for an instance](#ibm_databases_for_etcd_disk_used_bytes) |
 | [etcd Used disk space for an instance](#ibm_databases_for_etcd_disk_used_percent) |
-| [Used disk space for an instance](#ibm_databases_for_mysql_disk_used_bytes) |
-| [Used disk space for an instance](#ibm_databases_for_mysql_disk_used_percent) |
 | [Used disk space for an instance](#ibm_databases_for_redis_disk_used_bytes) |
 | [Used disk space for an instance](#ibm_databases_for_redis_disk_used_percent) |
 | [Used disk space for an instance](#ibm_messages_for_rabbitmq_disk_used_bytes) |
@@ -247,8 +249,6 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [Elasticsearch Used memory for an instance](#ibm_databases_for_elasticsearch_memory_used_percent) |
 | [etcd Used memory for an instance](#ibm_databases_for_etcd_memory_used_bytes) |
 | [etcd Used memory for an instance](#ibm_databases_for_etcd_memory_used_percent) |
-| [Used memory for an instance](#ibm_databases_for_mysql_memory_used_bytes) |
-| [Used memory for an instance](#ibm_databases_for_mysql_memory_used_percent) |
 | [Used memory for an instance](#ibm_databases_for_redis_memory_used_bytes) |
 | [Used memory for an instance](#ibm_databases_for_redis_memory_used_percent) |
 | [Used memory for an instance](#ibm_messages_for_rabbitmq_memory_used_bytes) |
