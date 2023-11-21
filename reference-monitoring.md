@@ -1244,7 +1244,7 @@ Temporary files size in bytes
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 107: Temporary files size in bytes metric metadata" caption-side="top"}
 
-### The total number of EnterpriseDB connections being used
+#### The total number of EnterpriseDB connections being used
 {: #ibm_databases_for_enterprisedb_total_connections}
 
 The total number of EnterpriseDB connections being used
@@ -2088,6 +2088,243 @@ How much memory is used as a percentage of total memory available
 | [Elasticsearch Used memory for an instance](#ibm_databases_for_elasticsearch_memory_used_percent) |
 {: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
 
+### Elasticsearch Metrics Descriptions
+{: #metrics-by-plan-elasticsearch-desc}
+
+#### Elasticsearch Cluster status
+{: #ibm_databases_for_elasticsearch_cluster_status}
+
+A number derived from the status value of the /_cluster/health endpoint. Possible Values: 'green' = 1.0, 'yellow' = 0.5, 'red' = 0, ERROR = -1
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_elasticsearch_cluster_status`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `count` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 15: Cluster status metric metadata" caption-side="top"}
+
+#### Elasticsearch Disk read latency mean
+{: #ibm_databases_for_elasticsearch_disk_read_latency_mean}
+
+Disk read latency mean
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_elasticsearch_disk_read_latency_mean`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `count` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 22: Disk read latency mean metric metadata" caption-side="top"}
+
+#### Elasticsearch Disk write latency mean
+{: #ibm_databases_for_elasticsearch_disk_write_latency_mean}
+
+Disk write latency mean
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_elasticsearch_disk_write_latency_mean`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `count` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 29: Disk write latency mean metric metadata" caption-side="top"}
+
+#### Elasticsearch GC Percentage
+{: #ibm_databases_for_elasticsearch_garbage_collection_percent_average_15m}
+
+Percentage of time the Elasticsearch JVM spends on garbage collection
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_elasticsearch_garbage_collection_percent_average_15m`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `count` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 36: GC Percentage metric metadata" caption-side="top"}
+
+#### Elasticsearch IO utilization in percent 15 minute average
+{: #ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_15m}
+
+How much disk I/O has been used over 15 minutes as a percentage of total disk I/O available
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_15m`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 38: IO utilization in percent 15 minute average metric metadata" caption-side="top"}
+
+#### Elasticsearch IO utilization in percent 30 minute average
+{: #ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_30m}
+
+How much disk I/O has been used over 30 minutes as a percentage of total disk I/O available
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_30m`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 47: IO utilization in percent 30 minute average metric metadata" caption-side="top"}
+
+#### Elasticsearch IO utilization in percent 5 minute average
+{: #ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_5m}
+
+How much disk I/O has been used over 5 minutes as a percentage of total disk I/O available
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_5m`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 56: IO utilization in percent 5 minute average metric metadata" caption-side="top"}
+
+#### Elasticsearch IO utilization in percent 60 minute average
+{: #ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_60m}
+
+How much disk I/O has been used over 60 minutes as a percentage of total disk I/O available
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_60m`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 65: IO utilization in percent 60 minute average metric metadata" caption-side="top"}
+
+#### Elasticsearch IOPS read & write total count for an instance
+{: #ibm_databases_for_elasticsearch_disk_iops_read_write_total}
+
+How many input-output operations per second your instance is performing
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_elasticsearch_disk_iops_read_write_total`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `count` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 74: IOPS read & write total count for an instance metric metadata" caption-side="top"}
+
+#### Elasticsearch Maximum allowed memory for an instance
+{: #ibm_databases_for_elasticsearch_memory_limit_bytes}
+
+The maximum amount of memory available to your instance
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_elasticsearch_memory_limit_bytes`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `byte` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 83: Maximum allowed memory for an instance metric metadata" caption-side="top"}
+
+#### Elasticsearch Number of unassigned shards
+{: #ibm_databases_for_elasticsearch_unassigned_shards_total}
+
+Number of unassigned shards
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_elasticsearch_unassigned_shards_total`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `count` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 91: Number of unassigned shards metric metadata" caption-side="top"}
+
+#### Elasticsearch Total disk space for an instance
+{: #ibm_databases_for_elasticsearch_disk_total_bytes}
+
+Represents the total amount of disk space available to your deployment
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_elasticsearch_disk_total_bytes`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `byte` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 137: Total disk space for an instance metric metadata" caption-side="top"}
+
+#### Elasticsearch Used CPU for an instance
+{: #ibm_databases_for_elasticsearch_cpu_used_percent}
+
+How much CPU is used as a percentage of total CPU available. Only for deployments that have dedicated CPU
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_elasticsearch_cpu_used_percent`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 172: Used CPU for an instance metric metadata" caption-side="top"}
+
+#### Elasticsearch Used JVM heap for a database member of the instance in percent
+{: #ibm_databases_for_elasticsearch_jvm_heap_percent}
+
+How much JVM heap is used as a percentage of total JVM heap is available
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_elasticsearch_jvm_heap_percent`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 181: Used JVM heap for a database member of the instance in percent metric metadata" caption-side="top"}
+
+#### Elasticsearch Used disk space for an instance bytes
+{: #ibm_databases_for_elasticsearch_disk_used_bytes}
+
+How much disk space your instance is using
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_elasticsearch_disk_used_bytes`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `byte` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 184: Used disk space for an instance metric metadata" caption-side="top"}
+
+#### Elasticsearch Used disk space for an instance percent
+{: #ibm_databases_for_elasticsearch_disk_used_percent}
+
+How much disk space is used as a percentage of total disk available
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_elasticsearch_disk_used_percent`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 185: Used disk space for an instance metric metadata" caption-side="top"}
+
+#### Elasticsearch Used memory for an instance
+{: #ibm_databases_for_elasticsearch_memory_used_bytes}
+
+How much memory your instance is using
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_elasticsearch_memory_used_bytes`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `byte` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 202: Used memory for an instance metric metadata" caption-side="top"}
+
+#### Elasticsearch Used memory for an instance percent
+{: #ibm_databases_for_elasticsearch_memory_used_percent}
+
+How much memory is used as a percentage of total memory available
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_elasticsearch_memory_used_percent`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 203: Used memory for an instance metric metadata" caption-side="top"}
+
 ## etcd Metrics
 {: #metrics-by-plan-etcd}
 
@@ -2109,6 +2346,191 @@ How much memory is used as a percentage of total memory available
 | [etcd Used memory for an instance](#ibm_databases_for_etcd_memory_used_percent) |
 {: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
 
+### etcd Metrics Descriptions
+{: #metrics-by-plan-etcd-desc}
+
+#### etcd Disk read latency mean
+{: #ibm_databases_for_etcd_disk_read_latency_mean}
+
+Disk read latency mean
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_etcd_disk_read_latency_mean`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `count` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 24: Disk read latency mean metric metadata" caption-side="top"}
+
+#### etcd Disk write latency mean
+{: #ibm_databases_for_etcd_disk_write_latency_mean}
+
+Disk write latency mean
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_etcd_disk_write_latency_mean`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `count` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 31: Disk write latency mean metric metadata" caption-side="top"}
+
+#### etcd IO utilization in percent 15 minute average
+{: #ibm_databases_for_etcd_disk_io_utilization_percent_average_15m}
+
+How much disk I/O has been used over 15 minutes as a percentage of total disk I/O available
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_etcd_disk_io_utilization_percent_average_15m`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 40: IO utilization in percent 15 minute average metric metadata" caption-side="top"}
+
+#### etcd IO utilization in percent 30 minute average
+{: #ibm_databases_for_etcd_disk_io_utilization_percent_average_30m}
+
+How much disk I/O has been used over 30 minutes as a percentage of total disk I/O available
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_etcd_disk_io_utilization_percent_average_30m`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 49: IO utilization in percent 30 minute average metric metadata" caption-side="top"}
+
+#### etcd IO utilization in percent 5 minute average
+{: #ibm_databases_for_etcd_disk_io_utilization_percent_average_5m}
+
+How much disk I/O has been used over 5 minutes as a percentage of total disk I/O available
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_etcd_disk_io_utilization_percent_average_5m`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 58: IO utilization in percent 5 minute average metric metadata" caption-side="top"}
+
+#### etcd IO utilization in percent 60 minute average
+{: #ibm_databases_for_etcd_disk_io_utilization_percent_average_60m}
+
+How much disk I/O has been used over 60 minutes as a percentage of total disk I/O available
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_etcd_disk_io_utilization_percent_average_60m`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 67: IO utilization in percent 60 minute average metric metadata" caption-side="top"}
+
+#### etcd IOPS read & write total count for an instance
+{: #ibm_databases_for_etcd_disk_iops_read_write_total}
+
+How many input-output operations per second your instance is performing
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_etcd_disk_iops_read_write_total`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `count` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 76: IOPS read & write total count for an instance metric metadata" caption-side="top"}
+
+#### etcd Maximum allowed memory for an instance
+{: #ibm_databases_for_etcd_memory_limit_bytes}
+
+The maximum amount of memory available to your instance
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_etcd_memory_limit_bytes`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `byte` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 85: Maximum allowed memory for an instance metric metadata" caption-side="top"}
+
+#### etcd Total disk space for an instance
+{: #ibm_databases_for_etcd_disk_total_bytes}
+
+Represents the total amount of disk space available to your deployment
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_etcd_disk_total_bytes`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `byte` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 139: Total disk space for an instance metric metadata" caption-side="top"}
+
+#### etcd Used CPU for an instance
+{: #ibm_databases_for_etcd_cpu_used_percent}
+
+How much CPU is used as a percentage of total CPU available. Only for deployments that have dedicated CPU
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_etcd_cpu_used_percent`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 174: Used CPU for an instance metric metadata" caption-side="top"}
+
+#### etcd Used disk space for an instance bytes
+{: #ibm_databases_for_etcd_disk_used_bytes}
+
+How much disk space your instance is using
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_etcd_disk_used_bytes`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `byte` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 188: Used disk space for an instance metric metadata" caption-side="top"}
+
+#### etcd Used disk space for an instance percent
+{: #ibm_databases_for_etcd_disk_used_percent}
+
+How much disk space is used as a percentage of total disk available
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_etcd_disk_used_percent`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 189: Used disk space for an instance metric metadata" caption-side="top"}
+
+#### etcd Used memory for an instance bytes
+{: #ibm_databases_for_etcd_memory_used_bytes}
+
+How much memory your instance is using
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_etcd_memory_used_bytes`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `byte` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 206: Used memory for an instance metric metadata" caption-side="top"}
+
+#### etcd Used memory for an instance
+{: #ibm_databases_for_etcd_memory_used_percent}
+
+How much memory is used as a percentage of total memory available
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_etcd_memory_used_percent`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 207: Used memory for an instance metric metadata" caption-side="top"}
+
 ## Redis Metrics
 {: #metrics-by-plan-redis}
 
@@ -2127,6 +2549,165 @@ How much memory is used as a percentage of total memory available
 | [Redis Used memory for an instance](#ibm_databases_for_redis_memory_used_bytes) |
 | [Redis Used memory for an instance](#ibm_databases_for_redis_memory_used_percent) |
 {: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
+
+### Redis Metrics Descriptions
+{: #metrics-by-plan-redis-desc}
+
+#### Redis IO utilization in percent 15 minute average
+{: #ibm_databases_for_redis_disk_io_utilization_percent_average_15m}
+
+How much disk I/O has been used over 15 minutes as a percentage of total disk I/O available
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_redis_disk_io_utilization_percent_average_15m`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 44: IO utilization in percent 15 minute average metric metadata" caption-side="top"}
+
+#### Redis IO utilization in percent 30 minute average
+{: #ibm_databases_for_redis_disk_io_utilization_percent_average_30m}
+
+How much disk I/O has been used over 30 minutes as a percentage of total disk I/O available
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_redis_disk_io_utilization_percent_average_30m`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 53: IO utilization in percent 30 minute average metric metadata" caption-side="top"}
+
+#### Redis IO utilization in percent 5 minute average
+{: #ibm_databases_for_redis_disk_io_utilization_percent_average_5m}
+
+How much disk I/O has been used over 5 minutes as a percentage of total disk I/O available
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_redis_disk_io_utilization_percent_average_5m`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 62: IO utilization in percent 5 minute average metric metadata" caption-side="top"}
+
+#### Redis IO utilization in percent 60 minute average
+{: #ibm_databases_for_redis_disk_io_utilization_percent_average_60m}
+
+How much disk I/O has been used over 60 minutes as a percentage of total disk I/O available
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_redis_disk_io_utilization_percent_average_60m`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 71: IO utilization in percent 60 minute average metric metadata" caption-side="top"}
+
+#### Redis IOPS read & write total count for an instance
+{: #ibm_databases_for_redis_disk_iops_read_write_total}
+
+How many input-output operations per second your instance is performing
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_redis_disk_iops_read_write_total`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `count` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 80: IOPS read & write total count for an instance metric metadata" caption-side="top"}
+
+#### Redis Maximum allowed memory for an instance
+{: #ibm_databases_for_redis_memory_limit_bytes}
+
+The maximum amount of memory available to your instance
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_redis_memory_limit_bytes`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `byte` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 89: Maximum allowed memory for an instance metric metadata" caption-side="top"}
+
+#### Redis Total disk space for an instance
+{: #ibm_databases_for_redis_disk_total_bytes}
+
+Represents the total amount of disk space available to your deployment
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_redis_disk_total_bytes`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `byte` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 143: Total disk space for an instance metric metadata" caption-side="top"}
+
+#### Redis Used CPU for an instance
+{: #ibm_databases_for_redis_cpu_used_percent}
+
+How much CPU is used as a percentage of total CPU available. Only for deployments that have dedicated CPU
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_redis_cpu_used_percent`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 178: Used CPU for an instance metric metadata" caption-side="top"}
+
+#### Redis Used disk space for an instance
+{: #ibm_databases_for_redis_disk_used_bytes}
+
+How much disk space your instance is using
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_redis_disk_used_bytes`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `byte` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 196: Used disk space for an instance metric metadata" caption-side="top"}
+
+### Redis Used disk space for an instance percent
+{: #ibm_databases_for_redis_disk_used_percent}
+
+How much disk space is used as a percentage of total disk available
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_redis_disk_used_percent`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 197: Used disk space for an instance metric metadata" caption-side="top"}
+
+#### Redis Used memory for an instance bytes
+{: #ibm_databases_for_redis_memory_used_bytes}
+
+How much memory your instance is using
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_redis_memory_used_bytes`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `byte` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 214: Used memory for an instance metric metadata" caption-side="top"}
+
+### Redis Used memory for an instance percent
+{: #ibm_databases_for_redis_memory_used_percent}
+
+How much memory is used as a percentage of total memory available
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_redis_memory_used_percent`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 215: Used memory for an instance metric metadata" caption-side="top"}
 
 ## Messages for RabbitMQ Metrics
 {: #metrics-by-plan-rabbitmq}
@@ -2147,7 +2728,10 @@ How much memory is used as a percentage of total memory available
 | [Messages for RabbitMQ Used memory for an instance](#ibm_messages_for_rabbitmq_memory_used_percent) |
 {: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
 
-### Messages for RabbitMQ IO utilization in percent 15 minute average
+### Messages for RabbitMQ Metrics Descriptions
+{: #metrics-by-plan-rabbitmq-desc}
+
+#### Messages for RabbitMQ IO utilization in percent 15 minute average
 {: #ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_15m}
 
 How much disk I/O has been used over 15 minutes as a percentage of total disk I/O available
@@ -2160,7 +2744,7 @@ How much disk I/O has been used over 15 minutes as a percentage of total disk I/
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 45: IO utilization in percent 15 minute average metric metadata" caption-side="top"}
 
-### Messages for RabbitMQ IO utilization in percent 30 minute average
+#### Messages for RabbitMQ IO utilization in percent 30 minute average
 {: #ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_30m}
 
 How much disk I/O has been used over 30 minutes as a percentage of total disk I/O available
@@ -2173,7 +2757,7 @@ How much disk I/O has been used over 30 minutes as a percentage of total disk I/
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 54: IO utilization in percent 30 minute average metric metadata" caption-side="top"}
 
-### Messages for RabbitMQ IO utilization in percent 5 minute average
+#### Messages for RabbitMQ IO utilization in percent 5 minute average
 {: #ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_5m}
 
 How much disk I/O has been used over 5 minutes as a percentage of total disk I/O available
@@ -2186,7 +2770,7 @@ How much disk I/O has been used over 5 minutes as a percentage of total disk I/O
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 63: IO utilization in percent 5 minute average metric metadata" caption-side="top"}
 
-### Messages for RabbitMQ IO utilization in percent 60 minute average
+#### Messages for RabbitMQ IO utilization in percent 60 minute average
 {: #ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_60m}
 
 How much disk I/O has been used over 60 minutes as a percentage of total disk I/O available
@@ -2199,7 +2783,7 @@ How much disk I/O has been used over 60 minutes as a percentage of total disk I/
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 72: IO utilization in percent 60 minute average metric metadata" caption-side="top"}
 
-### Messages for RabbitMQ IOPS read & write total count for an instance
+#### Messages for RabbitMQ IOPS read & write total count for an instance
 {: #ibm_messages_for_rabbitmq_disk_iops_read_write_total}
 
 How many input-output operations per second your instance is performing
@@ -2212,7 +2796,7 @@ How many input-output operations per second your instance is performing
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 81: IOPS read & write total count for an instance metric metadata" caption-side="top"}
 
-### Messages for RabbitMQ Maximum allowed memory for an instance
+#### Messages for RabbitMQ Maximum allowed memory for an instance
 {: #ibm_messages_for_rabbitmq_memory_limit_bytes}
 
 The maximum amount of memory available to your instance
@@ -2225,7 +2809,7 @@ The maximum amount of memory available to your instance
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 90: Maximum allowed memory for an instance metric metadata" caption-side="top"}
 
-### Messages for RabbitMQ Total disk space for an instance
+#### Messages for RabbitMQ Total disk space for an instance
 {: #ibm_messages_for_rabbitmq_disk_total_bytes}
 
 Represents the total amount of disk space available to your deployment
@@ -2238,7 +2822,7 @@ Represents the total amount of disk space available to your deployment
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 144: Total disk space for an instance metric metadata" caption-side="top"}
 
-### Messages for RabbitMQ Used CPU for an instance
+#### Messages for RabbitMQ Used CPU for an instance
 {: #ibm_messages_for_rabbitmq_cpu_used_percent}
 
 How much CPU is used as a percentage of total CPU available. Only for deployments that have dedicated CPU
@@ -2251,7 +2835,7 @@ How much CPU is used as a percentage of total CPU available. Only for deployment
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 179: Used CPU for an instance metric metadata" caption-side="top"}
 
-### Messages for RabbitMQ Used disk space for an instance bytes
+#### Messages for RabbitMQ Used disk space for an instance bytes
 {: #ibm_messages_for_rabbitmq_disk_used_bytes}
 
 How much disk space your instance is using
@@ -2264,7 +2848,7 @@ How much disk space your instance is using
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 198: Used disk space for an instance metric metadata" caption-side="top"}
 
-### Messages for RabbitMQ Used disk space for an instance percent
+#### Messages for RabbitMQ Used disk space for an instance percent
 {: #ibm_messages_for_rabbitmq_disk_used_percent}
 
 How much disk space is used as a percentage of total disk available
@@ -2277,7 +2861,7 @@ How much disk space is used as a percentage of total disk available
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 199: Used disk space for an instance metric metadata" caption-side="top"}
 
-### Messages for RabbitMQ Used memory for an instance bytes
+#### Messages for RabbitMQ Used memory for an instance bytes
 {: #ibm_messages_for_rabbitmq_memory_used_bytes}
 
 How much memory your instance is using
@@ -2290,7 +2874,7 @@ How much memory your instance is using
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 216: Used memory for an instance metric metadata" caption-side="top"}
 
-### Messages for RabbitMQ Used memory for an instance percent
+#### Messages for RabbitMQ Used memory for an instance percent
 {: #ibm_messages_for_rabbitmq_memory_used_percent}
 
 How much memory is used as a percentage of total memory available
@@ -2329,20 +2913,10 @@ How much memory is used as a percentage of total memory available
 | [DataStax Used memory for an instance](#ibm_databases_for_cassandra_memory_used_percent) |
 {: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
 
-### Elasticsearch Cluster status
-{: #ibm_databases_for_elasticsearch_cluster_status}
+### DataStax Metrics
+{: #metrics-by-plan-datastax-desc}
 
-A number derived from the status value of the /_cluster/health endpoint. Possible Values: 'green' = 1.0, 'yellow' = 0.5, 'red' = 0, ERROR = -1
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_elasticsearch_cluster_status`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `count` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 15: Cluster status metric metadata" caption-side="top"}
-
-### DataStax Disk read latency mean
+#### DataStax Disk read latency mean
 {: #ibm_databases_for_cassandra_disk_read_latency_mean}
 
 Disk read latency mean
@@ -2354,32 +2928,6 @@ Disk read latency mean
 | `Value Type`  | `count` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 21: Disk read latency mean metric metadata" caption-side="top"}
-
-### Elasticsearch Disk read latency mean
-{: #ibm_databases_for_elasticsearch_disk_read_latency_mean}
-
-Disk read latency mean
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_elasticsearch_disk_read_latency_mean`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `count` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 22: Disk read latency mean metric metadata" caption-side="top"}
-
-### etcd Disk read latency mean
-{: #ibm_databases_for_etcd_disk_read_latency_mean}
-
-Disk read latency mean
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_etcd_disk_read_latency_mean`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `count` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 24: Disk read latency mean metric metadata" caption-side="top"}
 
 ### DataStax Disk write latency mean
 {: #ibm_databases_for_cassandra_disk_write_latency_mean}
@@ -2394,32 +2942,6 @@ Disk write latency mean
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 28: Disk write latency mean metric metadata" caption-side="top"}
 
-### Elasticsearch Disk write latency mean
-{: #ibm_databases_for_elasticsearch_disk_write_latency_mean}
-
-Disk write latency mean
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_elasticsearch_disk_write_latency_mean`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `count` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 29: Disk write latency mean metric metadata" caption-side="top"}
-
-### etcd Disk write latency mean
-{: #ibm_databases_for_etcd_disk_write_latency_mean}
-
-Disk write latency mean
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_etcd_disk_write_latency_mean`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `count` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 31: Disk write latency mean metric metadata" caption-side="top"}
-
 ### DataStax GC Percentage
 {: #ibm_databases_for_cassandra_garbage_collection_percent_average_15m}
 
@@ -2432,19 +2954,6 @@ Percentage of time the Cassandra JVM spends on garbage collection
 | `Value Type`  | `count` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 35: GC Percentage metric metadata" caption-side="top"}
-
-### Elasticsearch GC Percentage
-{: #ibm_databases_for_elasticsearch_garbage_collection_percent_average_15m}
-
-Percentage of time the Elasticsearch JVM spends on garbage collection
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_elasticsearch_garbage_collection_percent_average_15m`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `count` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 36: GC Percentage metric metadata" caption-side="top"}
 
 ### DataStax IO utilization in percent 15 minute average
 {: #ibm_databases_for_cassandra_disk_io_utilization_percent_average_15m}
@@ -2459,45 +2968,6 @@ How much disk I/O has been used over 15 minutes as a percentage of total disk I/
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 37: IO utilization in percent 15 minute average metric metadata" caption-side="top"}
 
-### Elasticsearch IO utilization in percent 15 minute average
-{: #ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_15m}
-
-How much disk I/O has been used over 15 minutes as a percentage of total disk I/O available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_15m`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 38: IO utilization in percent 15 minute average metric metadata" caption-side="top"}
-
-### etcd IO utilization in percent 15 minute average
-{: #ibm_databases_for_etcd_disk_io_utilization_percent_average_15m}
-
-How much disk I/O has been used over 15 minutes as a percentage of total disk I/O available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_etcd_disk_io_utilization_percent_average_15m`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 40: IO utilization in percent 15 minute average metric metadata" caption-side="top"}
-
-### Redis IO utilization in percent 15 minute average
-{: #ibm_databases_for_redis_disk_io_utilization_percent_average_15m}
-
-How much disk I/O has been used over 15 minutes as a percentage of total disk I/O available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_redis_disk_io_utilization_percent_average_15m`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 44: IO utilization in percent 15 minute average metric metadata" caption-side="top"}
-
 ### DataStax IO utilization in percent 30 minute average
 {: #ibm_databases_for_cassandra_disk_io_utilization_percent_average_30m}
 
@@ -2510,45 +2980,6 @@ How much disk I/O has been used over 30 minutes as a percentage of total disk I/
 | `Value Type`  | `percent` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 46: IO utilization in percent 30 minute average metric metadata" caption-side="top"}
-
-### Elasticsearch IO utilization in percent 30 minute average
-{: #ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_30m}
-
-How much disk I/O has been used over 30 minutes as a percentage of total disk I/O available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_30m`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 47: IO utilization in percent 30 minute average metric metadata" caption-side="top"}
-
-### etcd IO utilization in percent 30 minute average
-{: #ibm_databases_for_etcd_disk_io_utilization_percent_average_30m}
-
-How much disk I/O has been used over 30 minutes as a percentage of total disk I/O available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_etcd_disk_io_utilization_percent_average_30m`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 49: IO utilization in percent 30 minute average metric metadata" caption-side="top"}
-
-### Redis IO utilization in percent 30 minute average
-{: #ibm_databases_for_redis_disk_io_utilization_percent_average_30m}
-
-How much disk I/O has been used over 30 minutes as a percentage of total disk I/O available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_redis_disk_io_utilization_percent_average_30m`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 53: IO utilization in percent 30 minute average metric metadata" caption-side="top"}
 
 ### DataStax IO utilization in percent 5 minute average
 {: #ibm_databases_for_cassandra_disk_io_utilization_percent_average_5m}
@@ -2563,32 +2994,6 @@ How much disk I/O has been used over 5 minutes as a percentage of total disk I/O
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 55: IO utilization in percent 5 minute average metric metadata" caption-side="top"}
 
-### Elasticsearch IO utilization in percent 5 minute average
-{: #ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_5m}
-
-How much disk I/O has been used over 5 minutes as a percentage of total disk I/O available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_5m`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 56: IO utilization in percent 5 minute average metric metadata" caption-side="top"}
-
-### etcd IO utilization in percent 5 minute average
-{: #ibm_databases_for_etcd_disk_io_utilization_percent_average_5m}
-
-How much disk I/O has been used over 5 minutes as a percentage of total disk I/O available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_etcd_disk_io_utilization_percent_average_5m`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 58: IO utilization in percent 5 minute average metric metadata" caption-side="top"}
-
 #### MySQLIO utilization in percent 5 minute average
 {: #ibm_databases_for_mysql_disk_io_utilization_percent_average_5m}
 
@@ -2601,19 +3006,6 @@ How much disk I/O has been used over 5 minutes as a percentage of total disk I/O
 | `Value Type`  | `percent` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 60: IO utilization in percent 5 minute average metric metadata" caption-side="top"}
-
-### Redis IO utilization in percent 5 minute average
-{: #ibm_databases_for_redis_disk_io_utilization_percent_average_5m}
-
-How much disk I/O has been used over 5 minutes as a percentage of total disk I/O available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_redis_disk_io_utilization_percent_average_5m`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 62: IO utilization in percent 5 minute average metric metadata" caption-side="top"}
 
 ### DataStax IO utilization in percent 60 minute average
 {: #ibm_databases_for_cassandra_disk_io_utilization_percent_average_60m}
@@ -2628,32 +3020,6 @@ How much disk I/O has been used over 60 minutes as a percentage of total disk I/
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 64: IO utilization in percent 60 minute average metric metadata" caption-side="top"}
 
-### Elasticsearch IO utilization in percent 60 minute average
-{: #ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_60m}
-
-How much disk I/O has been used over 60 minutes as a percentage of total disk I/O available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_60m`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 65: IO utilization in percent 60 minute average metric metadata" caption-side="top"}
-
-### etcd IO utilization in percent 60 minute average
-{: #ibm_databases_for_etcd_disk_io_utilization_percent_average_60m}
-
-How much disk I/O has been used over 60 minutes as a percentage of total disk I/O available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_etcd_disk_io_utilization_percent_average_60m`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 67: IO utilization in percent 60 minute average metric metadata" caption-side="top"}
-
 #### MySQLIO utilization in percent 60 minute average
 {: #ibm_databases_for_mysql_disk_io_utilization_percent_average_60m}
 
@@ -2666,19 +3032,6 @@ How much disk I/O has been used over 60 minutes as a percentage of total disk I/
 | `Value Type`  | `percent` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 69: IO utilization in percent 60 minute average metric metadata" caption-side="top"}
-
-### Redis IO utilization in percent 60 minute average
-{: #ibm_databases_for_redis_disk_io_utilization_percent_average_60m}
-
-How much disk I/O has been used over 60 minutes as a percentage of total disk I/O available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_redis_disk_io_utilization_percent_average_60m`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 71: IO utilization in percent 60 minute average metric metadata" caption-side="top"}
 
 ### DataStax IOPS read & write total count for an instance
 {: #ibm_databases_for_cassandra_disk_iops_read_write_total}
@@ -2693,32 +3046,6 @@ How many input-output operations per second your instance is performing
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 73: IOPS read & write total count for an instance metric metadata" caption-side="top"}
 
-### Elasticsearch IOPS read & write total count for an instance
-{: #ibm_databases_for_elasticsearch_disk_iops_read_write_total}
-
-How many input-output operations per second your instance is performing
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_elasticsearch_disk_iops_read_write_total`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `count` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 74: IOPS read & write total count for an instance metric metadata" caption-side="top"}
-
-### etcd IOPS read & write total count for an instance
-{: #ibm_databases_for_etcd_disk_iops_read_write_total}
-
-How many input-output operations per second your instance is performing
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_etcd_disk_iops_read_write_total`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `count` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 76: IOPS read & write total count for an instance metric metadata" caption-side="top"}
-
 #### MySQLIOPS read & write total count for an instance
 {: #ibm_databases_for_mysql_disk_iops_read_write_total}
 
@@ -2731,19 +3058,6 @@ How many input-output operations per second your instance is performing
 | `Value Type`  | `count` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 78: IOPS read & write total count for an instance metric metadata" caption-side="top"}
-
-### Redis IOPS read & write total count for an instance
-{: #ibm_databases_for_redis_disk_iops_read_write_total}
-
-How many input-output operations per second your instance is performing
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_redis_disk_iops_read_write_total`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `count` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 80: IOPS read & write total count for an instance metric metadata" caption-side="top"}
 
 ### DataStax Maximum allowed memory for an instance
 {: #ibm_databases_for_cassandra_memory_limit_bytes}
@@ -2758,32 +3072,6 @@ The maximum amount of memory available to your instance
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 82: Maximum allowed memory for an instance metric metadata" caption-side="top"}
 
-### Elasticsearch Maximum allowed memory for an instance
-{: #ibm_databases_for_elasticsearch_memory_limit_bytes}
-
-The maximum amount of memory available to your instance
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_elasticsearch_memory_limit_bytes`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `byte` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 83: Maximum allowed memory for an instance metric metadata" caption-side="top"}
-
-### etcd Maximum allowed memory for an instance
-{: #ibm_databases_for_etcd_memory_limit_bytes}
-
-The maximum amount of memory available to your instance
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_etcd_memory_limit_bytes`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `byte` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 85: Maximum allowed memory for an instance metric metadata" caption-side="top"}
-
 #### MySQLMaximum allowed memory for an instance
 {: #ibm_databases_for_mysql_memory_limit_bytes}
 
@@ -2796,32 +3084,6 @@ The maximum amount of memory available to your instance
 | `Value Type`  | `byte` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 87: Maximum allowed memory for an instance metric metadata" caption-side="top"}
-
-### Redis Maximum allowed memory for an instance
-{: #ibm_databases_for_redis_memory_limit_bytes}
-
-The maximum amount of memory available to your instance
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_redis_memory_limit_bytes`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `byte` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 89: Maximum allowed memory for an instance metric metadata" caption-side="top"}
-
-### Elasticsearch Number of unassigned shards
-{: #ibm_databases_for_elasticsearch_unassigned_shards_total}
-
-Number of unassigned shards
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_elasticsearch_unassigned_shards_total`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `count` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 91: Number of unassigned shards metric metadata" caption-side="top"}
 
 ### DataStax Total disk space for an instance
 {: #ibm_databases_for_cassandra_disk_total_bytes}
@@ -2836,45 +3098,6 @@ Represents the total amount of disk space available to your deployment
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 136: Total disk space for an instance metric metadata" caption-side="top"}
 
-### Elasticsearch Total disk space for an instance
-{: #ibm_databases_for_elasticsearch_disk_total_bytes}
-
-Represents the total amount of disk space available to your deployment
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_elasticsearch_disk_total_bytes`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `byte` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 137: Total disk space for an instance metric metadata" caption-side="top"}
-
-### etcd Total disk space for an instance
-{: #ibm_databases_for_etcd_disk_total_bytes}
-
-Represents the total amount of disk space available to your deployment
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_etcd_disk_total_bytes`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `byte` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 139: Total disk space for an instance metric metadata" caption-side="top"}
-
-### Redis Total disk space for an instance
-{: #ibm_databases_for_redis_disk_total_bytes}
-
-Represents the total amount of disk space available to your deployment
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_redis_disk_total_bytes`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `byte` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 143: Total disk space for an instance metric metadata" caption-side="top"}
-
 ### DataStax Used CPU for an instance
 {: #ibm_databases_for_cassandra_cpu_used_percent}
 
@@ -2888,45 +3111,6 @@ How much CPU is used as a percentage of total CPU available. Only for deployment
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 171: Used CPU for an instance metric metadata" caption-side="top"}
 
-### Elasticsearch Used CPU for an instance
-{: #ibm_databases_for_elasticsearch_cpu_used_percent}
-
-How much CPU is used as a percentage of total CPU available. Only for deployments that have dedicated CPU
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_elasticsearch_cpu_used_percent`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 172: Used CPU for an instance metric metadata" caption-side="top"}
-
-### etcd Used CPU for an instance
-{: #ibm_databases_for_etcd_cpu_used_percent}
-
-How much CPU is used as a percentage of total CPU available. Only for deployments that have dedicated CPU
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_etcd_cpu_used_percent`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 174: Used CPU for an instance metric metadata" caption-side="top"}
-
-### Redis Used CPU for an instance
-{: #ibm_databases_for_redis_cpu_used_percent}
-
-How much CPU is used as a percentage of total CPU available. Only for deployments that have dedicated CPU
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_redis_cpu_used_percent`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 178: Used CPU for an instance metric metadata" caption-side="top"}
-
 ### DataStax Used JVM heap for a database member of the instance in percent
 {: #ibm_databases_for_cassandra_jvm_heap_percent}
 
@@ -2939,19 +3123,6 @@ How much JVM heap is used as a percentage of total JVM heap is available
 | `Value Type`  | `percent` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 180: Used JVM heap for a database member of the instance in percent metric metadata" caption-side="top"}
-
-### Elasticsearch Used JVM heap for a database member of the instance in percent
-{: #ibm_databases_for_elasticsearch_jvm_heap_percent}
-
-How much JVM heap is used as a percentage of total JVM heap is available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_elasticsearch_jvm_heap_percent`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 181: Used JVM heap for a database member of the instance in percent metric metadata" caption-side="top"}
 
 ### DataStax Used disk space for an instance bytes
 {: #ibm_databases_for_cassandra_disk_used_bytes}
@@ -2979,84 +3150,6 @@ How much disk space is used as a percentage of total disk available
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 183: Used disk space for an instance metric metadata" caption-side="top"}
 
-### Elasticsearch Used disk space for an instance bytes
-{: #ibm_databases_for_elasticsearch_disk_used_bytes}
-
-How much disk space your instance is using
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_elasticsearch_disk_used_bytes`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `byte` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 184: Used disk space for an instance metric metadata" caption-side="top"}
-
-### Elasticsearch Used disk space for an instance percent
-{: #ibm_databases_for_elasticsearch_disk_used_percent}
-
-How much disk space is used as a percentage of total disk available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_elasticsearch_disk_used_percent`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 185: Used disk space for an instance metric metadata" caption-side="top"}
-
-### etcd Used disk space for an instance bytes
-{: #ibm_databases_for_etcd_disk_used_bytes}
-
-How much disk space your instance is using
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_etcd_disk_used_bytes`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `byte` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 188: Used disk space for an instance metric metadata" caption-side="top"}
-
-### etcd Used disk space for an instance percent
-{: #ibm_databases_for_etcd_disk_used_percent}
-
-How much disk space is used as a percentage of total disk available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_etcd_disk_used_percent`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 189: Used disk space for an instance metric metadata" caption-side="top"}
-
-### Redis Used disk space for an instance
-{: #ibm_databases_for_redis_disk_used_bytes}
-
-How much disk space your instance is using
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_redis_disk_used_bytes`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `byte` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 196: Used disk space for an instance metric metadata" caption-side="top"}
-
-### Redis Used disk space for an instance percent
-{: #ibm_databases_for_redis_disk_used_percent}
-
-How much disk space is used as a percentage of total disk available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_redis_disk_used_percent`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 197: Used disk space for an instance metric metadata" caption-side="top"}
-
 ### DataStax Used memory for an instance bytes
 {: #ibm_databases_for_cassandra_memory_used_bytes}
 
@@ -3082,84 +3175,6 @@ How much memory is used as a percentage of total memory available
 | `Value Type`  | `percent` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 201: Used memory for an instance metric metadata" caption-side="top"}
-
-### Elasticsearch Used memory for an instance
-{: #ibm_databases_for_elasticsearch_memory_used_bytes}
-
-How much memory your instance is using
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_elasticsearch_memory_used_bytes`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `byte` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 202: Used memory for an instance metric metadata" caption-side="top"}
-
-### Elasticsearch Used memory for an instance percent
-{: #ibm_databases_for_elasticsearch_memory_used_percent}
-
-How much memory is used as a percentage of total memory available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_elasticsearch_memory_used_percent`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 203: Used memory for an instance metric metadata" caption-side="top"}
-
-### etcd Used memory for an instance bytes
-{: #ibm_databases_for_etcd_memory_used_bytes}
-
-How much memory your instance is using
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_etcd_memory_used_bytes`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `byte` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 206: Used memory for an instance metric metadata" caption-side="top"}
-
-### Used memory for an instance
-{: #ibm_databases_for_etcd_memory_used_percent}
-
-How much memory is used as a percentage of total memory available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_etcd_memory_used_percent`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 207: Used memory for an instance metric metadata" caption-side="top"}
-
-### Redis Used memory for an instance bytes
-{: #ibm_databases_for_redis_memory_used_bytes}
-
-How much memory your instance is using
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_redis_memory_used_bytes`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `byte` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 214: Used memory for an instance metric metadata" caption-side="top"}
-
-### Redis Used memory for an instance percent
-{: #ibm_databases_for_redis_memory_used_percent}
-
-How much memory is used as a percentage of total memory available
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_redis_memory_used_percent`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `percent` |
-| `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 215: Used memory for an instance metric metadata" caption-side="top"}
 
 ## Attributes for Segmentation
 {: #attributes}
