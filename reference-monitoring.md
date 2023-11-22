@@ -41,11 +41,11 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 | [MongoDB Connections](#ibm_databases_for_mongodb_connections) |
 | [MongoDB Disk read latency mean](#ibm_databases_for_mongodb_disk_read_latency_mean) |
 | [MongoDB Disk write latency mean](#ibm_databases_for_mongodb_disk_write_latency_mean) |
-| [MongoDB IO utilization in percent 15 minute average](#ibm_databases_for_mongodb_disk_io_utilization_percent_average_15m) |
-| [MongoDB IO utilization in percent 30 minute average](#ibm_databases_for_mongodb_disk_io_utilization_percent_average_30m) |
-| [MongoDB IO utilization in percent 5 minute average](#ibm_databases_for_mongodb_disk_io_utilization_percent_average_5m) |
-| [MongoDB IO utilization in percent 60 minute average](#ibm_databases_for_mongodb_disk_io_utilization_percent_average_60m) |
-| [MongoDB IOPS read & write total count for an instance](#ibm_databases_for_mongodb_disk_iops_read_write_total) |
+| [MongoDB IO utilization in percent 15-minute average](#ibm_databases_for_mongodb_disk_io_utilization_percent_average_15m) |
+| [MongoDB IO utilization in percent 30-minute average](#ibm_databases_for_mongodb_disk_io_utilization_percent_average_30m) |
+| [MongoDB IO utilization in percent 5-minute average](#ibm_databases_for_mongodb_disk_io_utilization_percent_average_5m) |
+| [MongoDB IO utilization in percent 60-minute average](#ibm_databases_for_mongodb_disk_io_utilization_percent_average_60m) |
+| [MongoDB IOPS read and write total count for an instance](#ibm_databases_for_mongodb_disk_iops_read_write_total) |
 | [MongoDB Maximum allowed memory for an instance](#ibm_databases_for_mongodb_memory_limit_bytes) |
 | [MongoDB Oplog gigabyte per hour](#ibm_databases_for_mongodb_oplog_gb_per_hour) |
 | [MongoDB Oplog used bytes](#ibm_databases_for_mongodb_oplog_used_bytes) |
@@ -132,7 +132,7 @@ Disk write latency mean
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 32: Disk write latency mean metric metadata" caption-side="top"}
 
-#### MongoDB IO utilization in percent 15 minute average
+#### MongoDB IO utilization in percent 15-minute average
 {: #ibm_databases_for_mongodb_disk_io_utilization_percent_average_15m}
 
 How much disk I/O has been used over 15 minutes as a percentage of total disk I/O available
@@ -145,7 +145,7 @@ How much disk I/O has been used over 15 minutes as a percentage of total disk I/
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 41: IO utilization in percent 15 minute average metric metadata" caption-side="top"}
 
-#### MongoDB IO utilization in percent 30 minute average
+#### MongoDB IO utilization in percent 30-minute average
 {: #ibm_databases_for_mongodb_disk_io_utilization_percent_average_30m}
 
 How much disk I/O has been used over 30 minutes as a percentage of total disk I/O available
@@ -158,7 +158,7 @@ How much disk I/O has been used over 30 minutes as a percentage of total disk I/
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 50: IO utilization in percent 30 minute average metric metadata" caption-side="top"}
 
-#### MongoDB IO utilization in percent 5 minute average
+#### MongoDB IO utilization in percent 5-minute average
 {: #ibm_databases_for_mongodb_disk_io_utilization_percent_average_5m}
 
 How much disk I/O has been used over 5 minutes as a percentage of total disk I/O available
@@ -171,7 +171,7 @@ How much disk I/O has been used over 5 minutes as a percentage of total disk I/O
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 59: IO utilization in percent 5 minute average metric metadata" caption-side="top"}
 
-#### MongoDB IO utilization in percent 60 minute average
+#### MongoDB IO utilization in percent 60-minute average
 {: #ibm_databases_for_mongodb_disk_io_utilization_percent_average_60m}
 
 How much disk I/O has been used over 60 minutes as a percentage of total disk I/O available
@@ -413,10 +413,10 @@ How much memory is used as a percentage of total memory available
 | [PostgreSQL Cache hit ratio](#ibm_databases_for_postgresql_cache_hit_ratio) |
 | [PostgreSQL Disk read latency mean](#ibm_databases_for_postgresql_disk_read_latency_mean) |
 | [PostgreSQL Disk write latency mean](#ibm_databases_for_postgresql_disk_write_latency_mean) |
-| [PostgreSQL IO utilization in percent 15 minute average](#ibm_databases_for_postgresql_disk_io_utilization_percent_average_15m) |
-| [PostgreSQL IO utilization in percent 30 minute average](#ibm_databases_for_postgresql_disk_io_utilization_percent_average_30m) |
-| [PostgreSQL IO utilization in percent 5 minute average](#ibm_databases_for_postgresql_disk_io_utilization_percent_average_5m) |
-| [PostgreSQL IO utilization in percent 60 minute average](#ibm_databases_for_postgresql_disk_io_utilization_percent_average_60m) |
+| [PostgreSQL IO utilization in percent 15-minute average](#ibm_databases_for_postgresql_disk_io_utilization_percent_average_15m) |
+| [PostgreSQL IO utilization in percent 30-minute average](#ibm_databases_for_postgresql_disk_io_utilization_percent_average_30m) |
+| [PostgreSQL IO utilization in percent 5-minute average](#ibm_databases_for_postgresql_disk_io_utilization_percent_average_5m) |
+| [PostgreSQL IO utilization in percent 60-minute average](#ibm_databases_for_postgresql_disk_io_utilization_percent_average_60m) |
 | [PostgreSQL IOPS read & write total count for an instance](#ibm_databases_for_postgresql_disk_iops_read_write_total) |
 | [PostgreSQL Maximum allowed memory for an instance](#ibm_databases_for_postgresql_memory_limit_bytes) |
 | [PostgreSQL Read replica replication lag](#ibm_databases_for_postgresql_read_replica_replication_lag_bytes) |
@@ -571,7 +571,7 @@ Disk write latency mean
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 10: Disk write latency mean metric metadata" caption-side="top"}
 
-#### PostgreSQL IO utilization in percent 15 minute average
+#### PostgreSQL IO utilization in percent 15-minute average
 {: #ibm_databases_for_postgresql_disk_io_utilization_percent_average_15m}
 
 How much disk I/O has been used over 15 minutes as a percentage of total disk I/O available
@@ -584,7 +584,7 @@ How much disk I/O has been used over 15 minutes as a percentage of total disk I/
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 11: IO utilization in percent 15 minute average metric metadata" caption-side="top"}
 
-#### PostgreSQL IO utilization in percent 30 minute average
+#### PostgreSQL IO utilization in percent 30-minute average
 {: #ibm_databases_for_postgresql_disk_io_utilization_percent_average_30m}
 
 How much disk I/O has been used over 30 minutes as a percentage of total disk I/O available
@@ -597,7 +597,7 @@ How much disk I/O has been used over 30 minutes as a percentage of total disk I/
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 12: IO utilization in percent 30 minute average metric metadata" caption-side="top"}
 
-#### PostgreSQL IO utilization in percent 5 minute average
+#### PostgreSQL IO utilization in percent 5-minute average
 {: #ibm_databases_for_postgresql_disk_io_utilization_percent_average_5m}
 
 How much disk I/O has been used over 5 minutes as a percentage of total disk I/O available
@@ -610,7 +610,7 @@ How much disk I/O has been used over 5 minutes as a percentage of total disk I/O
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 13: IO utilization in percent 5 minute average metric metadata" caption-side="top"}
 
-#### PostgreSQL IO utilization in percent 60 minute average
+#### PostgreSQL IO utilization in percent 60-minute average
 {: #ibm_databases_for_postgresql_disk_io_utilization_percent_average_60m}
 
 How much disk I/O has been used over 60 minutes as a percentage of total disk I/O available
@@ -975,10 +975,10 @@ How much WAL log file uses, in bytes
 | [EnterpriseDB Deadlocks rate](#ibm_databases_for_enterprisedb_deadlocks_rate) |
 | [EnterpriseDB Disk read latency mean](#ibm_databases_for_enterprisedb_disk_read_latency_mean) |
 | [EnterpriseDB Disk write latency mean](#ibm_databases_for_enterprisedb_disk_write_latency_mean) |
-| [EnterpriseDB IO utilization in percent 15 minute average](#ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_15m) |
-| [EnterpriseDB IO utilization in percent 30 minute average](#ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_30m) |
-| [EnterpriseDB IO utilization in percent 5 minute average](#ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_5m) |
-| [EnterpriseDB IO utilization in percent 60 minute average](#ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_60m) |
+| [EnterpriseDB IO utilization in percent 15-minute average](#ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_15m) |
+| [EnterpriseDB IO utilization in percent 30-minute average](#ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_30m) |
+| [EnterpriseDB IO utilization in percent 5-minute average](#ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_5m) |
+| [EnterpriseDB IO utilization in percent 60-minute average](#ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_60m) |
 | [EnterpriseDB IOPS read & write total count for an instance](#ibm_databases_for_enterprisedb_disk_iops_read_write_total) |
 | [EnterpriseDB Maximum allowed memory for an instance](#ibm_databases_for_enterprisedb_memory_limit_bytes) |
 | [EnterpriseDB Read replica replication lag](#ibm_databases_for_enterprisedb_read_replica_replication_lag_bytes) |
@@ -1127,7 +1127,7 @@ Disk write latency mean
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 8: Disk write latency mean metric metadata" caption-side="top"}
 
-#### EnterpriseDB IO utilization in percent 15 minute average
+#### EnterpriseDB IO utilization in percent 15-minute average
 {: #ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_15m}
 
 How much disk I/O has been used over 15 minutes as a percentage of total disk I/O available
@@ -1140,7 +1140,7 @@ How much disk I/O has been used over 15 minutes as a percentage of total disk I/
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 9: IO utilization in percent 15 minute average metric metadata" caption-side="top"}
 
-#### EnterpriseDB IO utilization in percent 30 minute average
+#### EnterpriseDB IO utilization in percent 30-minute average
 {: #ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_30m}
 
 How much disk I/O has been used over 30 minutes as a percentage of total disk I/O available
@@ -1153,7 +1153,7 @@ How much disk I/O has been used over 30 minutes as a percentage of total disk I/
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 10: IO utilization in percent 30 minute average metric metadata" caption-side="top"}
 
-#### EnterpriseDB IO utilization in percent 5 minute average
+#### EnterpriseDB IO utilization in percent 5-minute average
 {: #ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_5m}
 
 How much disk I/O has been used over 5 minutes as a percentage of total disk I/O available
@@ -1166,7 +1166,7 @@ How much disk I/O has been used over 5 minutes as a percentage of total disk I/O
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 11: IO utilization in percent 5 minute average metric metadata" caption-side="top"}
 
-#### EnterpriseDB IO utilization in percent 60 minute average
+#### EnterpriseDB IO utilization in percent 60-minute average
 {: #ibm_databases_for_enterprisedb_disk_io_utilization_percent_average_60m}
 
 How much disk I/O has been used over 60 minutes as a percentage of total disk I/O available
@@ -1525,10 +1525,10 @@ How much WAL log file uses, in bytes
 | [MySQL Cache hit ratio](#ibm_databases_for_mysql_cache_hit_ratio) |
 | [MySQL Disk read latency mean](#ibm_databases_for_mysql_disk_read_latency_mean) |
 | [MySQL Disk write latency mean](#ibm_databases_for_mysql_disk_write_latency_mean) |
-| [MySQL IO utilization in percent 15 minute average](#ibm_databases_for_mysql_disk_io_utilization_percent_average_15m) |
-| [MySQL IO utilization in percent 30 minute average](#ibm_databases_for_mysql_disk_io_utilization_percent_average_30m) |
-| [MySQL IO utilization in percent 5 minute average](#ibm_databases_for_mysql_disk_io_utilization_percent_average_5m) |
-| [MySQL IO utilization in percent 60 minute average](#ibm_databases_for_mysql_disk_io_utilization_percent_average_60m) |
+| [MySQL IO utilization in percent 15-minute average](#ibm_databases_for_mysql_disk_io_utilization_percent_average_15m) |
+| [MySQL IO utilization in percent 30-minute average](#ibm_databases_for_mysql_disk_io_utilization_percent_average_30m) |
+| [MySQL IO utilization in percent 5-minute average](#ibm_databases_for_mysql_disk_io_utilization_percent_average_5m) |
+| [MySQL IO utilization in percent 60-minute average](#ibm_databases_for_mysql_disk_io_utilization_percent_average_60m) |
 | [MySQL IOPS read & write total count for an instance](#ibm_databases_for_mysql_disk_iops_read_write_total) |
 | [MySQL Maximum allowed memory for an instance](#ibm_databases_for_mysql_memory_limit_bytes) |
 | [MySQL Percent of threads connected](#ibm_databases_for_mysql_threads_connected_usage) |
@@ -1608,7 +1608,7 @@ Disk write latency mean
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 4: Disk write latency mean metric metadata" caption-side="top"}
 
-#### MySQL IO utilization in percent 15 minute average
+#### MySQL IO utilization in percent 15-minute average
 {: #ibm_databases_for_mysql_disk_io_utilization_percent_average_15m}
 
 How much disk I/O has been used over 15 minutes as a percentage of total disk I/O available
@@ -1621,7 +1621,7 @@ How much disk I/O has been used over 15 minutes as a percentage of total disk I/
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 5: IO utilization in percent 15 minute average metric metadata" caption-side="top"}
 
-#### MySQL IO utilization in percent 30 minute average
+#### MySQL IO utilization in percent 30-minute average
 {: #ibm_databases_for_mysql_disk_io_utilization_percent_average_30m}
 
 How much disk I/O has been used over 30 minutes as a percentage of total disk I/O available
@@ -1634,7 +1634,7 @@ How much disk I/O has been used over 30 minutes as a percentage of total disk I/
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 6: IO utilization in percent 30 minute average metric metadata" caption-side="top"}
 
-#### MySQL IO utilization in percent 5 minute average
+#### MySQL IO utilization in percent 5-minute average
 {: #ibm_databases_for_mysql_disk_io_utilization_percent_average_5m}
 
 How much disk I/O has been used over 5 minutes as a percentage of total disk I/O available
@@ -1647,7 +1647,7 @@ How much disk I/O has been used over 5 minutes as a percentage of total disk I/O
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 7: IO utilization in percent 5 minute average metric metadata" caption-side="top"}
 
-#### MySQL IO utilization in percent 60 minute average
+#### MySQL IO utilization in percent 60-minute average
 {: #ibm_databases_for_mysql_disk_io_utilization_percent_average_60m}
 
 How much disk I/O has been used over 60 minutes as a percentage of total disk I/O available
@@ -2124,10 +2124,10 @@ How much memory is used as a percentage of total memory available
 | [Elasticsearch Disk read latency mean](#ibm_databases_for_elasticsearch_disk_read_latency_mean) |
 | [Elasticsearch Disk write latency mean](#ibm_databases_for_elasticsearch_disk_write_latency_mean) |
 | [Elasticsearch GC Percentage](#ibm_databases_for_elasticsearch_garbage_collection_percent_average_15m) |
-| [Elasticsearch IO utilization in percent 15 minute average](#ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_15m) |
-| [Elasticsearch IO utilization in percent 30 minute average](#ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_30m) |
-| [Elasticsearch IO utilization in percent 5 minute average](#ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_5m) |
-| [Elasticsearch IO utilization in percent 60 minute average](#ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_60m) |
+| [Elasticsearch IO utilization in percent 15-minute average](#ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_15m) |
+| [Elasticsearch IO utilization in percent 30-minute average](#ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_30m) |
+| [Elasticsearch IO utilization in percent 5-minute average](#ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_5m) |
+| [Elasticsearch IO utilization in percent 60-minute average](#ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_60m) |
 | [Elasticsearch IOPS read & write total count for an instance](#ibm_databases_for_elasticsearch_disk_iops_read_write_total) |
 | [Elasticsearch Maximum allowed memory for an instance](#ibm_databases_for_elasticsearch_memory_limit_bytes) |
 | [Elasticsearch Number of unassigned shards](#ibm_databases_for_elasticsearch_unassigned_shards_total) |
@@ -2195,7 +2195,7 @@ Percentage of time the Elasticsearch JVM spends on garbage collection
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 5: GC Percentage metric metadata" caption-side="top"}
 
-#### Elasticsearch IO utilization in percent 15 minute average
+#### Elasticsearch IO utilization in percent 15-minute average
 {: #ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_15m}
 
 How much disk I/O has been used over 15 minutes as a percentage of total disk I/O available
@@ -2208,7 +2208,7 @@ How much disk I/O has been used over 15 minutes as a percentage of total disk I/
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 6: IO utilization in percent 15 minute average metric metadata" caption-side="top"}
 
-#### Elasticsearch IO utilization in percent 30 minute average
+#### Elasticsearch IO utilization in percent 30-minute average
 {: #ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_30m}
 
 How much disk I/O has been used over 30 minutes as a percentage of total disk I/O available
@@ -2221,7 +2221,7 @@ How much disk I/O has been used over 30 minutes as a percentage of total disk I/
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 7: IO utilization in percent 30 minute average metric metadata" caption-side="top"}
 
-#### Elasticsearch IO utilization in percent 5 minute average
+#### Elasticsearch IO utilization in percent 5-minute average
 {: #ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_5m}
 
 How much disk I/O has been used over 5 minutes as a percentage of total disk I/O available
@@ -2234,7 +2234,7 @@ How much disk I/O has been used over 5 minutes as a percentage of total disk I/O
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 8: IO utilization in percent 5 minute average metric metadata" caption-side="top"}
 
-#### Elasticsearch IO utilization in percent 60 minute average
+#### Elasticsearch IO utilization in percent 60-minute average
 {: #ibm_databases_for_elasticsearch_disk_io_utilization_percent_average_60m}
 
 How much disk I/O has been used over 60 minutes as a percentage of total disk I/O available
@@ -2384,10 +2384,10 @@ How much memory is used as a percentage of total memory available
 |-----------|
 | [etcd Disk read latency mean](#ibm_databases_for_etcd_disk_read_latency_mean) |
 | [etcd Disk write latency mean](#ibm_databases_for_etcd_disk_write_latency_mean) |
-| [etcd IO utilization in percent 15 minute average](#ibm_databases_for_etcd_disk_io_utilization_percent_average_15m) |
-| [etcd IO utilization in percent 30 minute average](#ibm_databases_for_etcd_disk_io_utilization_percent_average_30m) |
-| [etcd IO utilization in percent 5 minute average](#ibm_databases_for_etcd_disk_io_utilization_percent_average_5m) |
-| [etcd IO utilization in percent 60 minute average](#ibm_databases_for_etcd_disk_io_utilization_percent_average_60m) |
+| [etcd IO utilization in percent 15-minute average](#ibm_databases_for_etcd_disk_io_utilization_percent_average_15m) |
+| [etcd IO utilization in percent 30-minute average](#ibm_databases_for_etcd_disk_io_utilization_percent_average_30m) |
+| [etcd IO utilization in percent 5-minute average](#ibm_databases_for_etcd_disk_io_utilization_percent_average_5m) |
+| [etcd IO utilization in percent 60-minute average](#ibm_databases_for_etcd_disk_io_utilization_percent_average_60m) |
 | [etcd IOPS read & write total count for an instance](#ibm_databases_for_etcd_disk_iops_read_write_total) |
 | [etcd Maximum allowed memory for an instance](#ibm_databases_for_etcd_memory_limit_bytes) |
 | [etcd Total disk space for an instance](#ibm_databases_for_etcd_disk_total_bytes) |
@@ -2427,7 +2427,7 @@ Disk write latency mean
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 3: Disk write latency mean metric metadata" caption-side="top"}
 
-#### etcd IO utilization in percent 15 minute average
+#### etcd IO utilization in percent 15-minute average
 {: #ibm_databases_for_etcd_disk_io_utilization_percent_average_15m}
 
 How much disk I/O has been used over 15 minutes as a percentage of total disk I/O available
@@ -2440,7 +2440,7 @@ How much disk I/O has been used over 15 minutes as a percentage of total disk I/
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 4: IO utilization in percent 15 minute average metric metadata" caption-side="top"}
 
-#### etcd IO utilization in percent 30 minute average
+#### etcd IO utilization in percent 30-minute average
 {: #ibm_databases_for_etcd_disk_io_utilization_percent_average_30m}
 
 How much disk I/O has been used over 30 minutes as a percentage of total disk I/O available
@@ -2453,7 +2453,7 @@ How much disk I/O has been used over 30 minutes as a percentage of total disk I/
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 5: IO utilization in percent 30 minute average metric metadata" caption-side="top"}
 
-#### etcd IO utilization in percent 5 minute average
+#### etcd IO utilization in percent 5-minute average
 {: #ibm_databases_for_etcd_disk_io_utilization_percent_average_5m}
 
 How much disk I/O has been used over 5 minutes as a percentage of total disk I/O available
@@ -2466,7 +2466,7 @@ How much disk I/O has been used over 5 minutes as a percentage of total disk I/O
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 6: IO utilization in percent 5 minute average metric metadata" caption-side="top"}
 
-#### etcd IO utilization in percent 60 minute average
+#### etcd IO utilization in percent 60-minute average
 {: #ibm_databases_for_etcd_disk_io_utilization_percent_average_60m}
 
 How much disk I/O has been used over 60 minutes as a percentage of total disk I/O available
@@ -2588,10 +2588,10 @@ How much memory is used as a percentage of total memory available
 
 | Metric Name |
 |-----------|
-| [Redis IO utilization in percent 15 minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_15m) |
-| [Redis IO utilization in percent 30 minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_30m) |
-| [Redis IO utilization in percent 5 minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_5m) |
-| [Redis IO utilization in percent 60 minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_60m) |
+| [Redis IO utilization in percent 15-minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_15m) |
+| [Redis IO utilization in percent 30-minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_30m) |
+| [Redis IO utilization in percent 5-minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_5m) |
+| [Redis IO utilization in percent 60-minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_60m) |
 | [Redis IOPS read & write total count for an instance](#ibm_databases_for_redis_disk_iops_read_write_total) |
 | [Redis Maximum allowed memory for an instance](#ibm_databases_for_redis_memory_limit_bytes) |
 | [Redis Total disk space for an instance](#ibm_databases_for_redis_disk_total_bytes) |
@@ -2605,7 +2605,7 @@ How much memory is used as a percentage of total memory available
 ### Redis Metrics Descriptions
 {: #metrics-by-plan-redis-desc}
 
-#### Redis IO utilization in percent 15 minute average
+#### Redis IO utilization in percent 15-minute average
 {: #ibm_databases_for_redis_disk_io_utilization_percent_average_15m}
 
 How much disk I/O has been used over 15 minutes as a percentage of total disk I/O available
@@ -2618,7 +2618,7 @@ How much disk I/O has been used over 15 minutes as a percentage of total disk I/
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 2: IO utilization in percent 15 minute average metric metadata" caption-side="top"}
 
-#### Redis IO utilization in percent 30 minute average
+#### Redis IO utilization in percent 30-minute average
 {: #ibm_databases_for_redis_disk_io_utilization_percent_average_30m}
 
 How much disk I/O has been used over 30 minutes as a percentage of total disk I/O available
@@ -2631,7 +2631,7 @@ How much disk I/O has been used over 30 minutes as a percentage of total disk I/
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 3: IO utilization in percent 30 minute average metric metadata" caption-side="top"}
 
-#### Redis IO utilization in percent 5 minute average
+#### Redis IO utilization in percent 5-minute average
 {: #ibm_databases_for_redis_disk_io_utilization_percent_average_5m}
 
 How much disk I/O has been used over 5 minutes as a percentage of total disk I/O available
@@ -2644,7 +2644,7 @@ How much disk I/O has been used over 5 minutes as a percentage of total disk I/O
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 4: IO utilization in percent 5 minute average metric metadata" caption-side="top"}
 
-#### Redis IO utilization in percent 60 minute average
+#### Redis IO utilization in percent 60-minute average
 {: #ibm_databases_for_redis_disk_io_utilization_percent_average_60m}
 
 How much disk I/O has been used over 60 minutes as a percentage of total disk I/O available
@@ -2766,10 +2766,10 @@ How much memory is used as a percentage of total memory available
 
 | Metric Name |
 |-----------|
-| [Messages for RabbitMQ IO utilization in percent 15 minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_15m) |
-| [Messages for RabbitMQ IO utilization in percent 30 minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_30m) |
-| [Messages for RabbitMQ IO utilization in percent 5 minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_5m) |
-| [Messages for RabbitMQ IO utilization in percent 60 minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_60m) |
+| [Messages for RabbitMQ IO utilization in percent 15-minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_15m) |
+| [Messages for RabbitMQ IO utilization in percent 30-minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_30m) |
+| [Messages for RabbitMQ IO utilization in percent 5-minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_5m) |
+| [Messages for RabbitMQ IO utilization in percent 60-minute average](#ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_60m) |
 | [Messages for RabbitMQ IOPS read & write total count for an instance](#ibm_messages_for_rabbitmq_disk_iops_read_write_total) |
 | [Messages for RabbitMQ Maximum allowed memory for an instance](#ibm_messages_for_rabbitmq_memory_limit_bytes) |
 | [Messages for RabbitMQ Total disk space for an instance](#ibm_messages_for_rabbitmq_disk_total_bytes) |
@@ -2783,7 +2783,7 @@ How much memory is used as a percentage of total memory available
 ### Messages for RabbitMQ Metrics Descriptions
 {: #metrics-by-plan-rabbitmq-desc}
 
-#### Messages for RabbitMQ IO utilization in percent 15 minute average
+#### Messages for RabbitMQ IO utilization in percent 15-minute average
 {: #ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_15m}
 
 How much disk I/O has been used over 15 minutes as a percentage of total disk I/O available
@@ -2796,7 +2796,7 @@ How much disk I/O has been used over 15 minutes as a percentage of total disk I/
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 2: IO utilization in percent 15 minute average metric metadata" caption-side="top"}
 
-#### Messages for RabbitMQ IO utilization in percent 30 minute average
+#### Messages for RabbitMQ IO utilization in percent 30-minute average
 {: #ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_30m}
 
 How much disk I/O has been used over 30 minutes as a percentage of total disk I/O available
@@ -2809,7 +2809,7 @@ How much disk I/O has been used over 30 minutes as a percentage of total disk I/
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 3: IO utilization in percent 30 minute average metric metadata" caption-side="top"}
 
-#### Messages for RabbitMQ IO utilization in percent 5 minute average
+#### Messages for RabbitMQ IO utilization in percent 5-minute average
 {: #ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_5m}
 
 How much disk I/O has been used over 5 minutes as a percentage of total disk I/O available
@@ -2822,7 +2822,7 @@ How much disk I/O has been used over 5 minutes as a percentage of total disk I/O
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 4: IO utilization in percent 5 minute average metric metadata" caption-side="top"}
 
-#### Messages for RabbitMQ IO utilization in percent 60 minute average
+#### Messages for RabbitMQ IO utilization in percent 60-minute average
 {: #ibm_messages_for_rabbitmq_disk_io_utilization_percent_average_60m}
 
 How much disk I/O has been used over 60 minutes as a percentage of total disk I/O available
@@ -2950,10 +2950,10 @@ How much memory is used as a percentage of total memory available
 | [DataStax Disk read latency mean](#ibm_databases_for_cassandra_disk_read_latency_mean) |
 | [DataStax Disk write latency mean](#ibm_databases_for_cassandra_disk_write_latency_mean) |
 | [DataStax GC Percentage](#ibm_databases_for_cassandra_garbage_collection_percent_average_15m) |
-| [DataStax IO utilization in percent 15 minute average](#ibm_databases_for_cassandra_disk_io_utilization_percent_average_15m) |
-| [DataStax IO utilization in percent 30 minute average](#ibm_databases_for_cassandra_disk_io_utilization_percent_average_30m) |
-| [DataStax IO utilization in percent 5 minute average](#ibm_databases_for_cassandra_disk_io_utilization_percent_average_5m) |
-| [DataStax IO utilization in percent 60 minute average](#ibm_databases_for_cassandra_disk_io_utilization_percent_average_60m) |
+| [DataStax IO utilization in percent 15-minute average](#ibm_databases_for_cassandra_disk_io_utilization_percent_average_15m) |
+| [DataStax IO utilization in percent 30-minute average](#ibm_databases_for_cassandra_disk_io_utilization_percent_average_30m) |
+| [DataStax IO utilization in percent 5-minute average](#ibm_databases_for_cassandra_disk_io_utilization_percent_average_5m) |
+| [DataStax IO utilization in percent 60-minute average](#ibm_databases_for_cassandra_disk_io_utilization_percent_average_60m) |
 | [DataStax IOPS read & write total count for an instance](#ibm_databases_for_cassandra_disk_iops_read_write_total) |
 | [DataStax Maximum allowed memory for an instance](#ibm_databases_for_cassandra_memory_limit_bytes) |
 | [DataStax Total disk space for an instance](#ibm_databases_for_cassandra_disk_total_bytes) |
@@ -3007,7 +3007,7 @@ Percentage of time the Cassandra JVM spends on garbage collection
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 4: GC Percentage metric metadata" caption-side="top"}
 
-#### DataStax IO utilization in percent 15 minute average
+#### DataStax IO utilization in percent 15-minute average
 {: #ibm_databases_for_cassandra_disk_io_utilization_percent_average_15m}
 
 How much disk I/O has been used over 15 minutes as a percentage of total disk I/O available
@@ -3020,7 +3020,7 @@ How much disk I/O has been used over 15 minutes as a percentage of total disk I/
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 5: IO utilization in percent 15 minute average metric metadata" caption-side="top"}
 
-#### DataStax IO utilization in percent 30 minute average
+#### DataStax IO utilization in percent 30-minute average
 {: #ibm_databases_for_cassandra_disk_io_utilization_percent_average_30m}
 
 How much disk I/O has been used over 30 minutes as a percentage of total disk I/O available
@@ -3033,7 +3033,7 @@ How much disk I/O has been used over 30 minutes as a percentage of total disk I/
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 6: IO utilization in percent 30 minute average metric metadata" caption-side="top"}
 
-#### DataStax IO utilization in percent 5 minute average
+#### DataStax IO utilization in percent 5-minute average
 {: #ibm_databases_for_cassandra_disk_io_utilization_percent_average_5m}
 
 How much disk I/O has been used over 5 minutes as a percentage of total disk I/O available
@@ -3046,7 +3046,7 @@ How much disk I/O has been used over 5 minutes as a percentage of total disk I/O
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 7: IO utilization in percent 5 minute average metric metadata" caption-side="top"}
 
-#### DataStax IO utilization in percent 60 minute average
+#### DataStax IO utilization in percent 60-minute average
 {: #ibm_databases_for_cassandra_disk_io_utilization_percent_average_60m}
 
 How much disk I/O has been used over 60 minutes as a percentage of total disk I/O available
