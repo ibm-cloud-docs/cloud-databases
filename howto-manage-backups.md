@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-10-31"
+lastupdated: "2023-11-27"
 
 subcollection: cloud-databases
 
@@ -18,7 +18,7 @@ keywords: backups, new deployment, source deployment, backup, back up, ondemand 
 Backups for {{site.data.keyword.databases-for}} instances are accessible from the _Backups_ tab of your instance's dashboard. Here is some additional general information about backups:
 
 - Automatic backups are performed daily and kept with a simple retention schedule of 30 days.
-- Backups cannot be deleted. 
+- Backups cannot be deleted.
 - If you delete your instance, its backups are deleted automatically.
 - Daily backup scheduling is not configurable.
 - Backups are restorable to other regions, except for `eu-de` and `par-01`, which can restore backups only between each other. For example, `par-01` backups can be restored to `eu-de`, and vice versa.
@@ -34,11 +34,11 @@ For information on taking an on-demand backup, see [Taking an on-demand backup](
 {: #backup-ui}
 {: ui}
 
-The backup types have their respective tabs, either _On-demand_ or _Automatic_. Each backup is listed with its type and when the backup was taken. Click the timestamp to change its format between elapsed time, local time, and Coordinated Universal Time. 
+The backup types have their respective tabs, either _On-demand_ or _Automatic_. Each backup is listed with its type and when the backup was taken. Click the timestamp to change its format between elapsed time, local time, and Coordinated Universal Time.
 
 ![List of backups on the Backups tab](images/backups-list.png){: caption="Figure 1. List of backups on the Backups tab" caption-side="bottom"}
 
-Click the backup to reveal information for that specific backup, including its full ID. A **Restore** button, or pre-formatted CLI command, is there for restore options. 
+Click the backup to reveal information for that specific backup, including its full ID. A **Restore** button, or pre-formatted CLI command, is there for restore options.
 
 ## Backups in the CLI
 {: #backup-ui-cli}
@@ -72,7 +72,7 @@ For backups information in the {{site.data.keyword.databases-for}} API, use the 
 {: #ondemand-backup}
 {: cli}
 
-If you plan to make major changes to your instance, like scaling or removing databases, tables, collections, on-demand backups are useful. It can also be useful if you need to back up on a schedule. On-demand backups are kept for 30 days. 
+If you plan to make major changes to your instance, like scaling or removing databases, tables, collections, on-demand backups are useful. It can also be useful if you need to back up on a schedule. On-demand backups are kept for 30 days.
 
 Instances come with backup storage equal to their total disk space at no cost. If your backup storage usage is greater than total disk space, each gigabyte is charged at an overage of $0.03/month. Backups are compressed, so even if you use on-demand backups, most instances do not exceed the allotted credit.
 {: .tip}
@@ -105,8 +105,8 @@ To restore a backup to a new service instance,
 
 1. Click in the corresponding row to expand the options for the backup that you want to restore.
 2. Click **Restore**.
-3. Use the dialog box to select from some available options. 
-    - The new instance is automatically named `<name>-restore-[timestamp]`, but you can rename it. 
+3. Use the dialog box to select from some available options.
+    - The new instance is automatically named `<name>-restore-[timestamp]`, but you can rename it.
     - You can also select the region where the new instance is located. Cross region restores are supported, except for restoring into or out of the `eu-de` region.
     - You can choose the initial resource allocation, either to expand or shrink the resources on the new instance. You can also enable or disable dedicated cores.
 4. Click **Restore**. A "restore from backup started" message appears. Clicking **Your new instance is available now.** takes you to your _Resources List_.
@@ -157,7 +157,7 @@ curl -X POST \
 ```
 {: .pre}
 
-The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are all required, and `backup_id` is the backup that you want to restore. 
+The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are all required, and `backup_id` is the backup that you want to restore.
 {: important}
 
 The `target` is the region where you want the new instance to be located, which can be a different region from the source instance. Cross region restores are supported, except for restoring into or out of the `eu-de` region.
@@ -219,12 +219,17 @@ Backup location differs per database region. Ensure that the backup region locat
 
 For more details about {{site.data.keyword.databases-for}} Object Storage locations, review the location's [documentation](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-geo).
 
+## Business Continuity and disaster
+{: #backup-locations}
+
+{{site.data.keyword.databases-for}} provides mechanisms to protect your data and restore service functions. For more information (including [Backup Storage Regions](/docs/cloud-databases?topic=cloud-databases-bc-dr#bc-dr-single-region-backups), see [Understanding business continuity and disaster recovery for {{site.data.keyword.databases-for}}](/docs/cloud-databases?topic=cloud-databases-bc-dr){: external}.
+
 ## Point-in-Time Recovery
 {: #pitr-recovery-options}
 
 With Point-in-Time Recovery (PITR), the instance continuously backs up incrementally and can replay transactions to bring a new instance that is restored from a backup to any point in the last 7 days. {{site.data.keyword.databases-for}} offers Point-In-Time Recovery (PITR) for the following services:
 
-- [{{site.data.keyword.databases-for-mysql_full}}](/docs/databases-for-mysql?topic=databases-for-mysql-pitr) 
+- [{{site.data.keyword.databases-for-mysql_full}}](/docs/databases-for-mysql?topic=databases-for-mysql-pitr)
 - [{{site.data.keyword.databases-for-postgresql_full}}](/docs/databases-for-postgresql?topic=databases-for-postgresql-pitr)
 - [{{site.data.keyword.databases-for-enterprisedb_full}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-pitr&interface=ui)
 
