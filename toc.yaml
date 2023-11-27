@@ -5,7 +5,7 @@ toc:
     version: 2
     category: database
     audience: service
-    href: /docs/cloud-databases?topic=cloud-databases-about
+    href: /docs/cloud-databases
     path: cloud-databases
     label: IBM Cloud Databases
   entries:
