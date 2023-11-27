@@ -102,6 +102,7 @@ toc:
           label: High Availability and disaster recovery
           topics:
           - ha-dr.md
+          - bc-dr.md
       - reference-responsibilities.md
   - navgroup:
       id: help
