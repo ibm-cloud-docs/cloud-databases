@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-10-13"
+lastupdated: "2023-11-27"
 
 subcollection: cloud-databases
 
@@ -55,19 +55,19 @@ The purpose of the {{site.data.keyword.databases-for}} regional Disaster Recover
 
 | **Region** |                **Backup Storage Region**               | Cross-Region Support? |
 |:----------:|:------------------------------------------------------:|:---------------------:|
-| us-south   | US Cross Regional Endpoint   | Yes                   |
-| jp-osa     | Asia Pacific Cross Regional Endpoint  | Yes                   |
-| jp-tok     | Asia Pacific Cross Regional Endpoint    | Yes                   |
-| eu-gb      | Europe Cross Regional Endpoint     | Yes                   |
-| us-east    | US Cross Regional Endpoint     | Yes                   |
-| ay-syd     | Asia Pacific Cross Regional Endpoint     | Yes                   |
-| che01      | Che01 Single Data Center Endpoint  | No*                   |
-| ca-tor     | Mon01 Single Data Center Endpoint  | No*                   |
-| br-sao     | Br-sao Regional Endpoint | No*                   |
-| eu-de      | Europe Cross Regional Endpoint     | Yes                   |
-| par01      | Europe Cross Regional Endpoint    | Yes                   |
-| eu-es      | Europe Cross Regional Endpoint     | Yes                   |
-{: caption="Table 1. Single Region Backups for {{site.data.keyword.databases-for}}" caption-side="bottom"}
+| `us-south`   | US Cross Regional Endpoint   | Yes                   |
+| `jp-osa`     | Asia Pacific Cross Regional Endpoint  | Yes                   |
+| `jp-tok`     | Asia Pacific Cross Regional Endpoint    | Yes                   |
+| `eu-gb`      | Europe Cross Regional Endpoint     | Yes                   |
+| `us-east`    | US Cross Regional Endpoint     | Yes                   |
+| `au-syd`     | Asia Pacific Cross Regional Endpoint     | Yes                   |
+| `che01`      | Che01 Single Data Center Endpoint  | No*                   |
+| `ca-tor`     | Mon01 Single Data Center Endpoint  | No*                   |
+| `br-sao`     | Br-sao Regional Endpoint | No*                   |
+| `eu-de`      | Europe Cross Regional Endpoint     | Yes                   |
+| `par01`      | Europe Cross Regional Endpoint    | Yes                   |
+| `eu-es`      | Europe Cross Regional Endpoint     | Yes                   |
+{: caption="Table 2. Single Region Backups for {{site.data.keyword.databases-for}}" caption-side="bottom"}
 
-*You should keep a local copy of data in case of region failure.
-
+Keep a local copy of your data.
+{: important}
