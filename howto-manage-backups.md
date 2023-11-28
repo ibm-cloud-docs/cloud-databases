@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-11-27"
+lastupdated: "2023-11-28"
 
 subcollection: cloud-databases
 
@@ -21,7 +21,7 @@ Backups for {{site.data.keyword.databases-for}} instances are accessible from th
 - Backups cannot be deleted.
 - If you delete your instance, its backups are deleted automatically.
 - Daily backup scheduling is not configurable.
-- Backups are restorable to other regions, except for `eu-de` and `par-01`, which can restore backups only between each other. For example, `par-01` backups can be restored to `eu-de`, and vice versa.
+- Backups are restorable to other regions, except for `eu-de`, `eu-es`, and `par-01`, which can restore backups only between each other. For example, `par-01` backups can be restored to and between `eu-de` and `eu-es`.
 - Backup storage is encrypted. To manage the encryption keys, see [Key Protect integration](/docs/cloud-databases?topic=cloud-databases-key-protect#byok-for-backups). Otherwise, backups are encrypted with a key that is automatically generated for your instance.
 - Backups are restorable across accounts, but only through the API and only if the user that is running the restore has access to both the source and destination accounts.
 - {{site.data.keyword.databases-for}} backups are not downloadable. If you need a local backup, use the appropriate software. For example, [pg_dump](https://www.postgresql.org/docs/9.6/static/backup-dump.html){: .external} is an effective tool for managing PostgreSQL backups.
@@ -94,7 +94,7 @@ Backups are restored to a new instance. After the new instance finishes provisio
 
 By default, the new instance is auto-sized to the same disk and memory allocation as the source instance at the time of the backup from which you are restoring. To adjust the resources that are allocated to the new instance, use the optional fields in the UI, CLI, or API to resize the new instance. Be sure to allocate enough for your data and workload; if the instance is not given enough resources, the restore fails.
 
-Do not delete the source instance while the backup is restoring. Before you delete the old instance, wait until the new instance is provisioned and the backup is restored. Deleting a instance also deletes its backups.
+Do not delete the source instance while the backup is restoring. Before you delete the old instance, wait until the new instance is provisioned and the backup is restored. Deleting an instance also deletes its backups.
 {: .tip}
 
 ### Restoring a backup in the UI
@@ -107,7 +107,7 @@ To restore a backup to a new service instance,
 2. Click **Restore**.
 3. Use the dialog box to select from some available options.
     - The new instance is automatically named `<name>-restore-[timestamp]`, but you can rename it.
-    - You can also select the region where the new instance is located. Cross region restores are supported, except for restoring into or out of the `eu-de` region.
+    - You can also select the region where the new instance is located. Cross-region restores are supported, except for restoring into or out of the `eu-de` region.
     - You can choose the initial resource allocation, either to expand or shrink the resources on the new instance. You can also enable or disable dedicated cores.
 4. Click **Restore**. A "restore from backup started" message appears. Clicking **Your new instance is available now.** takes you to your _Resources List_.
 
@@ -122,7 +122,7 @@ ibmcloud resource service-instance-create <SERVICE_INSTANCE_NAME> <service-id> s
 ```
 {: .pre}
 
-Change the value of `SERVICE_INSTANCE_NAME` to the name that you want for your new instance. The `service-id` is the type of instance, such as `databases-for-postgresql` or `messages-for-rabbitmq`. The `region` is where you want the new instance to be located, which can be a different region from the source instance. Cross region restores are supported, except for restoring to or from `eu-de` by using another region. `BACKUP_ID` is the backup that you want to restore.
+Change the value of `SERVICE_INSTANCE_NAME` to the name that you want for your new instance. The `service-id` is the type of instance, such as `databases-for-postgresql` or `messages-for-rabbitmq`. The `region` is where you want the new instance to be located, which can be a different region from the source instance. Cross-region restores are supported, except for restoring to or from `eu-de` by using another region. `BACKUP_ID` is the backup that you want to restore.
 
 Optional parameters are available through the CLI. Use them if you need to customize resources, or use a Key Protect key for BYOK encryption on the new instance.
 ```sh
@@ -160,7 +160,7 @@ curl -X POST \
 The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are all required, and `backup_id` is the backup that you want to restore.
 {: important}
 
-The `target` is the region where you want the new instance to be located, which can be a different region from the source instance. Cross region restores are supported, except for restoring into or out of the `eu-de` region.
+The `target` is the region where you want the new instance to be located, which can be a different region from the source instance. Cross-region restores are supported, except for restoring into or out of the `eu-de` region.
 
 If you need to adjust resources or use a Key Protect key, add any of the optional parameters `key_protect_key`, `members_disk_allocation_mb`, `members_memory_allocation_mb`, and `members_cpu_allocation_count`, and their preferred values to the body of the request.
 
@@ -174,7 +174,7 @@ Use Terraform to restore to a backup from an older version to a new version.
 1. Set your `backup_id`. For more information, see [`backup_id`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database#backup_id){: external}.
 1. Set your `version` in the version attribute. For more information, see [`version`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database#backup_id){: external}.
 
-The code will look like:
+The code looks like:
 
 ```tf
 resource "ibm_database" "<your-instance>" {
