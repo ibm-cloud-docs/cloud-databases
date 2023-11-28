@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2023
-lastupdated: "2023-11-21"
+lastupdated: "2023-11-28"
 
 keywords: monitoring
 
@@ -115,6 +115,7 @@ Disk read latency mean
 |----------|-------------|
 | `Metric Name` | `ibm_databases_for_mongodb_disk_read_latency_mean`|
 | `Metric Type` | `gauge` |
+| `Frequency` | `60ms` |
 | `Value Type`  | `count` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 25: Disk read latency mean metric metadata" caption-side="top"}
@@ -128,6 +129,7 @@ Disk write latency mean
 |----------|-------------|
 | `Metric Name` | `ibm_databases_for_mongodb_disk_write_latency_mean`|
 | `Metric Type` | `gauge` |
+| `Frequency` | `60ms` |
 | `Value Type`  | `count` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 32: Disk write latency mean metric metadata" caption-side="top"}
@@ -554,6 +556,7 @@ Disk read latency mean
 |----------|-------------|
 | `Metric Name` | `ibm_databases_for_postgresql_disk_read_latency_mean`|
 | `Metric Type` | `gauge` |
+| `Frequency` | `60ms` |
 | `Value Type`  | `count` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 9: Disk read latency mean metric metadata" caption-side="top"}
@@ -567,6 +570,7 @@ Disk write latency mean
 |----------|-------------|
 | `Metric Name` | `ibm_databases_for_postgresql_disk_write_latency_mean`|
 | `Metric Type` | `gauge` |
+| `Frequency` | `60ms` |
 | `Value Type`  | `count` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 10: Disk write latency mean metric metadata" caption-side="top"}
@@ -1110,6 +1114,7 @@ Disk read latency mean
 |----------|-------------|
 | `Metric Name` | `ibm_databases_for_enterprisedb_disk_read_latency_mean`|
 | `Metric Type` | `gauge` |
+| `Frequency` | `60ms` |
 | `Value Type`  | `count` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 7: Disk read latency mean metric metadata" caption-side="top"}
@@ -1123,6 +1128,7 @@ Disk write latency mean
 |----------|-------------|
 | `Metric Name` | `ibm_databases_for_enterprisedb_disk_write_latency_mean`|
 | `Metric Type` | `gauge` |
+| `Frequency` | `60ms` |
 | `Value Type`  | `count` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 8: Disk write latency mean metric metadata" caption-side="top"}
@@ -1591,6 +1597,7 @@ Disk read latency mean
 |----------|-------------|
 | `Metric Name` | `ibm_databases_for_mysql_disk_read_latency_mean`|
 | `Metric Type` | `gauge` |
+| `Frequency` | `60ms` |
 | `Value Type`  | `count` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 3: Disk read latency mean metric metadata" caption-side="top"}
@@ -1604,6 +1611,7 @@ Disk write latency mean
 |----------|-------------|
 | `Metric Name` | `ibm_databases_for_mysql_disk_write_latency_mean`|
 | `Metric Type` | `gauge` |
+| `Frequency` | `60ms` |
 | `Value Type`  | `count` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 4: Disk write latency mean metric metadata" caption-side="top"}
@@ -2165,6 +2173,7 @@ Disk read latency mean
 |----------|-------------|
 | `Metric Name` | `ibm_databases_for_elasticsearch_disk_read_latency_mean`|
 | `Metric Type` | `gauge` |
+| `Frequency` | `60ms` |
 | `Value Type`  | `count` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 3: Disk read latency mean metric metadata" caption-side="top"}
@@ -2178,6 +2187,7 @@ Disk write latency mean
 |----------|-------------|
 | `Metric Name` | `ibm_databases_for_elasticsearch_disk_write_latency_mean`|
 | `Metric Type` | `gauge` |
+| `Frequency` | `60ms` |
 | `Value Type`  | `count` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 4: Disk write latency mean metric metadata" caption-side="top"}
@@ -2410,6 +2420,7 @@ Disk read latency mean
 |----------|-------------|
 | `Metric Name` | `ibm_databases_for_etcd_disk_read_latency_mean`|
 | `Metric Type` | `gauge` |
+| `Frequency` | `60ms` |
 | `Value Type`  | `count` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 2: Disk read latency mean metric metadata" caption-side="top"}
@@ -2423,6 +2434,7 @@ Disk write latency mean
 |----------|-------------|
 | `Metric Name` | `ibm_databases_for_etcd_disk_write_latency_mean`|
 | `Metric Type` | `gauge` |
+| `Frequency` | `60ms` |
 | `Value Type`  | `count` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 3: Disk write latency mean metric metadata" caption-side="top"}
@@ -2977,6 +2989,7 @@ Disk read latency mean
 |----------|-------------|
 | `Metric Name` | `ibm_databases_for_cassandra_disk_read_latency_mean`|
 | `Metric Type` | `gauge` |
+| `Frequency` | `60ms` |
 | `Value Type`  | `count` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 2: Disk read latency mean metric metadata" caption-side="top"}
@@ -2990,6 +3003,7 @@ Disk write latency mean
 |----------|-------------|
 | `Metric Name` | `ibm_databases_for_cassandra_disk_write_latency_mean`|
 | `Metric Type` | `gauge` |
+| `Frequency` | `60ms` |
 | `Value Type`  | `count` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 3: Disk write latency mean metric metadata" caption-side="top"}
