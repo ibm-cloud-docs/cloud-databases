@@ -5,7 +5,7 @@ lastupdated: "2023-11-28"
 
 keywords: monitoring
 
-subcollection: databases-for-elasticsearch
+subcollection: cloud-databases
 
 ---
 
