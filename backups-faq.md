@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-10-30"
+lastupdated: "2023-11-30"
 
 keywords: backups, new service instance, deleted resource, undelete
 
@@ -32,3 +32,10 @@ If an instance is deleted, the backup is deleted as well. However, {{site.data.k
 {{site.data.keyword.databases-for}} backups are restored in a new service instance. For more information, see [Managing {{site.data.keyword.databases-for}} backups](https://cloud.ibm.com/docs/databases-for-mysql?topic=databases-for-mysql-dashboard-backups){: external}.
 
 Point-in-Time Recovery (PITR) is available for [{{site.data.keyword.databases-for-mysql}}](/docs/databases-for-mysql?topic=databases-for-mysql-pitr){: external}, [{{site.data.keyword.databases-for-postgresql}}](/docs/databases-for-postgresql?topic=databases-for-postgresql-pitr){: external}, and [{{site.data.keyword.databases-for-enterprisedb}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-pitr){: external} but only if there is an instance that the backup is related to.
+
+## Can I create a backup while another backup is pending?
+{: #faq-backups-pending-backup}
+{: faq}
+{: support}
+
+{{site.data.keyword.databases-for}} does not create additional backups if there is already a pending backup in the queue, ensuring efficiency and avoiding redundancy in our backup processes. {{site.data.keyword.databases-for}} automatically schedules a new daily backup if none is currently set up. You have the flexibility to initiate manual backups at your preferred cadence.
