@@ -21,7 +21,7 @@ To allow for reliable resource allocation, {{site.data.keyword.databases-for}} o
 ## {{site.data.keyword.databases-for}} Isolated Compute
 {: #hosting-models-iso-compute}
 
-Isolated Compute is the service for secure enterprise data hosting. By placing your deployment and all associated user-data operations on an isolated machine, {{site.data.keyword.databases-for}} Isolated Compute provides dedicated computing resourcees and security.
+Isolated Compute is the service for secure enterprise data hosting. By placing your deployment and all associated user-data operations on an isolated machine, {{site.data.keyword.databases-for}} Isolated Compute provides dedicated computing resources and security.
 
 At provisioning, select the CPU x RAM size of the machine to provision your database on — this machine will be dedicated to running this database instance, giving you hypervisor-level isolation between your instance and any other database. To further strengthen isolation, dedicated database management agents run alongside the database instance on the same isolated machines. IO bandwidth and network bandwidth will also be dedicated to the database instance.
 
