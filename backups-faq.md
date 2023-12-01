@@ -2,9 +2,9 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-11-30"
+lastupdated: "2023-12-01"
 
-keywords: backups, new service instance, deleted resource, undelete
+keywords: backups, new service instance, deleted resource, undelete, pending backup
 
 subcollection: cloud-databases
 
