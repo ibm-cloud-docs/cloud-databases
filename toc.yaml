@@ -94,6 +94,7 @@ toc:
       - truck-tracker-tutorial.md
       - bi-tutorial.md
       - disk-util-alerts-tutorial.md
+      - kms-tutorial.md
   - navgroup:
       id: reference
       topics:
