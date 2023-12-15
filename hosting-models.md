@@ -141,7 +141,7 @@ CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} 
 {: #hosting-models-iso-compute-provisioning-tf}
 {: terraform}
 
-To provision a {{site.data.keyword.databases-for}} Isolated Compute instance, use Terraform {{site.data.keyword.databases-for}} API [Capability endpoint](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#capability){: external}.
+To provision a {{site.data.keyword.databases-for}} Isolated Compute instance, use Terraform.
 
 Use a command like:
 
