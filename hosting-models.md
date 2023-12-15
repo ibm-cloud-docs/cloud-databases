@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-12-01"
+lastupdated: "2023-12-15"
 
 subcollection: cloud-databases
 
@@ -140,3 +140,43 @@ CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} 
 ### {{site.data.keyword.databases-for}} Isolated Compute Provisioning through Terraform
 {: #hosting-models-iso-compute-provisioning-tf}
 {: terraform}
+
+To provision a {{site.data.keyword.databases-for}} Isolated Compute instance, use Terraform {{site.data.keyword.databases-for}} API [Capability endpoint](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#capability){: external}.
+
+Use a command like:
+
+```terraform
+data "ibm_resource_group" "group" {
+  name = "<your_group>"
+}
+resource "ibm_database" "<your_database>" {
+  name              = "<your_database_name>"
+  plan              = "standard"
+  location          = "location"
+  service           = "<service_name>"
+  resource_group_id = data.ibm_resource_group.group.id
+  tags              = ["tag1", "tag2"]
+  adminpassword                = "<password>"
+  group {
+    group_id = "member"
+    host_flavor {
+      id = "b3c.8x32.encrypted"
+    }
+    disk {
+      allocation_mb = 256000
+    }
+  }
+  users {
+    name     = "user123"
+    password = "<password>"
+  }
+  allowlist {
+    address     = "172.168.1.1/32"
+    description = "desc"
+  }
+}
+output "<service_name> connection string" {
+  value = "http://${ibm_database.test_acc.<service_name>.icd_conn}"
+}
+```
+{: codeblock}
