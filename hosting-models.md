@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-12-15"
+lastupdated: "2023-12-18"
 
 subcollection: cloud-databases
 
@@ -156,7 +156,7 @@ resource "ibm_database" "<your_database>" {
   service           = "<service_name>"
   resource_group_id = data.ibm_resource_group.group.id
   tags              = ["tag1", "tag2"]
-  adminpassword                = "<password>"
+  adminpassword     = "<password>"
   group {
     group_id = "member"
     host_flavor {
