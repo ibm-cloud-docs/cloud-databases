@@ -148,6 +148,8 @@ CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} 
 {: #hosting-models-iso-compute-provisioning-cli}
 {: cli}
 
+To provision a {{site.data.keyword.databases-for}} Isolated Compute instance, use the CLI.
+
 ```sh
 ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN> <LOCATION> `{"members_host_flavor": "<host_flavor value>"}`
 ```
