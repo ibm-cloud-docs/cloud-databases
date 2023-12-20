@@ -89,7 +89,7 @@ To retrieve the Isolated Compute resources available for a {{site.data.keyword.d
 Use a command like:
 
 ```sh
-curl -X GET https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}/groups -H 'Authorization: Bearer <>' \
+curl -X GET https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}/flavors -H 'Authorization: Bearer <>'
 ```
 {: pre}
 
