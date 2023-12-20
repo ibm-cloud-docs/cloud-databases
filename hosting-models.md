@@ -18,6 +18,18 @@ keywords: isolated compute, hosting models
 To allow for reliable resource allocation, {{site.data.keyword.databases-for}} offers two hosting models: Shared Compute and Isolated Compute. {{site.data.keyword.databases-for}} Shared Compute is a cost-effective, flexible option for your database deployment. {{site.data.keyword.databases-for}} Isolated Compute is an appealing option for applications that require more precise control, security, or performance.
 {: shortdesc}
 
+## {{site.data.keyword.databases-for}} Shared Compute
+{: #hosting-models-shared-compute}
+
+Shared compute uses shared host machines and {{site.data.keyword.databases-for}} ensures that each separate customer instance is logically separated for data isolation and security.
+
+Each database instance receives a deterministic CPU allocation. If an instance is provisioned without selecting a CPU amount, Shared Compute automatically allocates a small amount of CPU to your database up to a 2 core max. Automatic CPU is provided at a 1:8 ratio of CPU:RAM; therefore, a user with 1 GB RAM receives 1/8th of a CPU; an user with 8 GB RAM receives 1 CPU; and an user with 20 GB RAM receives 2 CPU due to the 2 CPU limit.
+
+If you have higher performance requirements than 2 CPU, you can easily leverage the flexibility of the Shared model. With the ability to select the amount of CPU and RAM resources you receive, scale performance to fit your workload. Additionally, if you know that your instance will experience variable demand, use autoscaling to set not only the expected load and duration that would initiate resource scaling, but also the resource and cost limit your database will scale to.
+
+Due to each service's individual requirements, {{site.data.keyword.databases-for}} has minimums in place for all Shared Compute instances. When all instances are transitioned to Shared Compute, we will apply the same minimums to Shared Compute and Dedicated Core instances. Current users of multi-tenant will be grandfathered.
+{: note}
+
 ## {{site.data.keyword.databases-for}} Isolated Compute
 {: #hosting-models-iso-compute}
 
@@ -43,15 +55,6 @@ Isolated Compute features 6 size selections:
 
 The price of CPU and RAM resources remains the same.
 
-## {{site.data.keyword.databases-for}} Shared Compute
-{: #hosting-models-shared-compute}
-
-The new {{site.data.keyword.databases-for}} Shared Compute improves our existing multi-tenant offering by delivering predictable performance and stronger security through logically separated tenants. Shared Compute uses shared host machines; {{site.data.keyword.databases-for}} ensures that each separate customer database is logically separated for data isolation and security.
-
-Based on your feedback, Shared Compute also ensures predictable and transparent performance. Each {{site.data.keyword.databases-for}} instance receives a deterministic CPU allocation. If an instance is provisioned without selecting a CPU amount, Shared Compute automatically allocates a small amount of CPU to your database, up to a 2 core max. Automatic CPU is provided at a 1:8 ratio of CPU:RAM; therefore, an instance with 1 GB RAM receives 1/8th of a CPU; an instance with 8 GB RAM receives 1 CPU; and an instance with 20 GB RAM receives 2 CPU due to the 2 CPU limit.
-
-If you have higher performance requirements than 2 CPU, leverage the flexibility of Shared Compute. Scale performance to fit your workload by selecting the amount of CPU and RAM resources you receive. Additionally, if you know that your instance will experience variable demand, use autoscaling to set the expected load and duration that would initiate resource scaling, along with the resource and cost limit your database will scale to.
-
 ## Switching hosting models
 {: #hosting-models-switching}
 
@@ -69,35 +72,18 @@ All Dedicated Cores instances will be switched over to the nearest larger Isolat
 
 New Shared Compute users, or users who switch over to Shared Compute on their own, will receive Shared Compute charging.
 
-## {{site.data.keyword.databases-for}} Isolated Compute Provisioning
-{: #hosting-models-iso-compute-provisioning}
+## {{site.data.keyword.databases-for}} Provisioning
+{: #hosting-models-provisioning}
 
-### {{site.data.keyword.databases-for}} Isolated Compute Provisioning through the UI
-{: #hosting-models-iso-compute-provisioning-ui}
+### Provisioning through the UI
+{: #hosting-provisioning-ui}
 {: ui}
 
-### {{site.data.keyword.databases-for}} Isolated Compute using the API
-{: #hosting-models-iso-compute-api}
+### Provisioning using the API
+{: #hosting-models-provisioning-api}
 {: api}
 
-#### Retrieve Isolated Compute Resources the API
-{: #hosting-models-iso-compute-retrieve-api}
-{: api}
-
-To retrieve the Isolated Compute resources available for a {{site.data.keyword.databases-for}} Isolated Compute instance, use the {{site.data.keyword.databases-for}} API [Scaling endpoint](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#listdeploymentscalinggroups){: external}.
-
-Use a command like:
-
-```sh
-curl -X GET https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}/groups -H 'Authorization: Bearer <>' \
-```
-{: pre}
-
-#### Provisioning using the API
-{: #hosting-models-iso-compute-provisioning-api}
-{: api}
-
-To provision a {{site.data.keyword.databases-for}} Isolated Compute instance, use the {{site.data.keyword.databases-for}} API [Capability endpoint](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#capability){: external}.
+To provision a {{site.data.keyword.databases-for}} instance, use the {{site.data.keyword.databases-for}} API [Capability endpoint](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#capability){: external}.
 
 Use a command like:
 
@@ -112,9 +98,10 @@ curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H 
 ```
 {: pre}
 
-The `host_flavor value` parameter defines your Isolated Compute sizing. Input the appropriate value for your desired size.
+The `host_flavor value` parameter defines your Isolated Compute sizing. Input the appropriate value for your desired size. To provision a Shared Compute instance, specify `multitenant`.
 | **Isolated Compute Size** | **host_flavor value** |
 |:-------------------------:|:---------------------:|
+| Shared Compute            | `multitenant`    |
 | 4 CPU x 16 RAM            | `b3c.4x16.encrypted`    |
 | 8 CPU x 32 RAM            | `b3c.8x32.encrypted`    |
 | 8 CPU x 64 RAM            | `m3c.8x64.encrypted`    |
@@ -123,8 +110,21 @@ The `host_flavor value` parameter defines your Isolated Compute sizing. Input th
 | 30 CPU x 240 RAM          | `m3c.30x240.encrypted`  |
 {: caption="Table 1. Isolated Compute sizing parameter" caption-side="bottom"}
 
+#### Retrieve Resources the API
+{: #hosting-models-retrieve-api}
+{: api}
+
+To retrieve the Isolated Compute resources available for a {{site.data.keyword.databases-for}} Isolated Compute instance, use the {{site.data.keyword.databases-for}} API [Scaling endpoint](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#listdeploymentscalinggroups){: external}.
+
+Use a command like:
+
+```sh
+curl -X GET https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}/groups -H 'Authorization: Bearer <>' \
+```
+{: pre}
+
 #### Scaling using the API
-{: #hosting-models-iso-compute-scaling-api}
+{: #hosting-models-scaling-api}
 {: api}
 
 To scale a {{site.data.keyword.databases-for}} Isolated Compute instance, use the {{site.data.keyword.databases-for}} API [Scaling endpoint](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#setdeploymentscalinggroup){: external}.
@@ -144,8 +144,8 @@ curl -X PATCH https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{i
 CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} Isolated Compute. Disk autoscaling is available. If you have provisioned an Isolated instance or switched over from a deployment with autoscaling, keep an eye on your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/databases-for-mongodb?topic=databases-for-mongodb-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
 {: note}
 
-### {{site.data.keyword.databases-for}} Isolated Compute Provisioning through the CLI
-{: #hosting-models-iso-compute-provisioning-cli}
+### Provisioning through the CLI
+{: #hosting-models-provisioning-cli}
 {: cli}
 
 To provision a {{site.data.keyword.databases-for}} Isolated Compute instance, use the CLI.
@@ -154,9 +154,10 @@ To provision a {{site.data.keyword.databases-for}} Isolated Compute instance, us
 ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN> <LOCATION> `{"members_host_flavor": "<host_flavor value>"}`
 ```
 
-The `host_flavor value` parameter defines your Isolated Compute sizing. Input the appropriate value for your desired size.
+The `host_flavor value` parameter defines your Isolated Compute sizing. Input the appropriate value for your desired size. To provision a Shared Compute instance, specify `multitenant`.
 | **Isolated Compute Size** | **host_flavor value** |
 |:-------------------------:|:---------------------:|
+| Shared Compute            | `multitenant`    |
 | 4 CPU x 16 RAM            | `b3c.4x16.encrypted`    |
 | 8 CPU x 32 RAM            | `b3c.8x32.encrypted`    |
 | 8 CPU x 64 RAM            | `m3c.8x64.encrypted`    |
@@ -168,11 +169,11 @@ The `host_flavor value` parameter defines your Isolated Compute sizing. Input th
 CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} Isolated Compute. Disk autoscaling is available. If you have provisioned an Isolated instance or switched over from a deployment with autoscaling, keep an eye on your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/databases-for-mongodb?topic=databases-for-mongodb-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
 {: note}
 
-### {{site.data.keyword.databases-for}} Isolated Compute Provisioning through Terraform
+### Provisioning through Terraform
 {: #hosting-models-iso-compute-provisioning-tf}
 {: terraform}
 
-To provision a {{site.data.keyword.databases-for}} Isolated Compute instance, use Terraform.
+To provision an instance, use Terraform.
 
 Use a command like:
 
@@ -212,9 +213,10 @@ output "<service_name> connection string" {
 ```
 {: codeblock}
 
-The `host_flavor` parameter defines your Isolated Compute sizing. Input the appropriate value for your desired size.
+The `host_flavor` parameter defines your Isolated Compute sizing. Input the appropriate value for your desired size. To provision a Shared Compute instance, specify `multitenant`.
 | **Isolated Compute Size** | **host_flavor value** |
 |:-------------------------:|:---------------------:|
+| Shared Compute            | `multitenant`    |
 | 4 CPU x 16 RAM            | `b3c.4x16.encrypted`    |
 | 8 CPU x 32 RAM            | `b3c.8x32.encrypted`    |
 | 8 CPU x 64 RAM            | `m3c.8x64.encrypted`    |
