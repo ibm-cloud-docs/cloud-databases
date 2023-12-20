@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-12-18"
+lastupdated: "2023-12-20"
 
 subcollection: cloud-databases
 
@@ -180,3 +180,15 @@ output "<service_name> connection string" {
 }
 ```
 {: codeblock}
+
+The `host_flavor` parameter defines your Isolated Compute sizing. Input the appropriate value for your desired size.
+
+| **Isolated Compute Size** | **host_flavor value** |
+|:-------------------------:|:---------------------:|
+| 4 CPU x 16 RAM            | b3c.4x16.encrypted    |
+| 8 CPU x 32 RAM            | b3c.8x32.encrypted    |
+| 8 CPU x 64 RAM            | m3c.8x64.encrypted    |
+| 16 CPU x 64 RAM           | b3c.16x64.encrypted   |
+| 32 CPU x 128 RAM          | b3c.32x128.encrypted  |
+| 30 CPU x 240 RAM          | m3c.30x240.encrypted  |
+{: caption="Table 1. Isolated Compute sizing parameter" caption-side="bottom"}
