@@ -110,7 +110,7 @@ The `host_flavor value` parameter defines your Isolated Compute sizing. Input th
 | 30 CPU x 240 RAM          | `m3c.30x240.encrypted`  |
 {: caption="Table 1. Isolated Compute sizing parameter" caption-side="bottom"}
 
-#### Retrieve Resources the API
+### Retrieve Resources through the API
 {: #hosting-models-retrieve-api}
 {: api}
 
@@ -123,7 +123,7 @@ curl -X GET https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}
 ```
 {: pre}
 
-#### Scaling using the API
+### Scaling through the API
 {: #hosting-models-scaling-api}
 {: api}
 
