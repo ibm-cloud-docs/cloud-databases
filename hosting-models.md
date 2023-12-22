@@ -79,7 +79,7 @@ New Shared Compute users, or users who switch over to Shared Compute on their ow
 {: #hosting-provisioning-ui}
 {: ui}
 
-To provision a {{site.data.keyword.databases}} service instance through the UI, select your **hosting type**. Choose either Shared Compute or Isolated Compute. Next, select the appropriate **Resource Allocation** for your workload.
+To provision a {{site.data.keyword.databases-for}} service instance through the UI, select your **hosting type**. Choose either Shared Compute or Isolated Compute. Next, select the appropriate **Resource Allocation** for your workload.
 
 ### Provisioning using the API
 {: #hosting-models-provisioning-api}
