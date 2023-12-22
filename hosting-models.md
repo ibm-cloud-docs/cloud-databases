@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-12-20"
+lastupdated: "2023-12-22"
 
 subcollection: cloud-databases
 
@@ -78,6 +78,8 @@ New Shared Compute users, or users who switch over to Shared Compute on their ow
 ### Provisioning through the UI
 {: #hosting-provisioning-ui}
 {: ui}
+
+To provision a {{site.data.keyword.databases}} service instance through the UI, select your **hosting type**. Choose either Shared Compute or Isolated Compute. Next, select the appropriate **Resource Allocation** for your workload.
 
 ### Provisioning using the API
 {: #hosting-models-provisioning-api}
