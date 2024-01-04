@@ -24,20 +24,14 @@ content-type: troubleshoot
 Your Terraform script deleted your {{site.data.keyword.databases-for}} instance. Why did this happen, and what can I do?
 {: shortdesc}
 
-You ran your Terraform script and now your instance has been deleted. You may receive and error that looks like:
+You ran your Terraform script and now your instance has been deleted. You may receive an error that looks like:
 {: tsSymptoms}
 
 ```text
 ibm_database.database_instance must be replaced
 ```
 
-Before executing a Terraform script on an existing instance, use the `terraform plan` command to compare the current infrastructure state with the desired state defined in your Terraform files. If altered, the following attributes recreate the instance:
-- `resource_group_id`
-- `service plan`
-- `version`
-- `key_protect_instance`
-- `key_protect_key`
-- `backup_encryption_key_crn`
+Before executing a Terraform script on an existing instance, use the `terraform plan` command to compare the current infrastructure state with the desired state defined in your Terraform files. If altered, the following attributes recreate the instance: `resource_group_id`, `service plan`, `version`, `key_protect_instance`, `key_protect_key`, `backup_encryption_key_crn`.
 {: tsCauses}
 
 Before executing a Terraform script on an existing instance, use the `terraform plan` command to compare the current infrastructure state with the desired state defined in your Terraform files. Altering the following attributes recreates the instance: `resource_group_id`, `service plan`, `version`, `key_protect_instance`, `key_protect_key`, `backup_encryption_key_crn`
