@@ -109,6 +109,10 @@ toc:
       id: help
       topics:
       - topicgroup:
+          label: Troubleshooting
+          topics:
+          - ts-terraform.md
+      - topicgroup:
           label: FAQs
           topics:
           - availability-zones-faq.md
