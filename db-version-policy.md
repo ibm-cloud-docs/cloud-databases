@@ -71,6 +71,13 @@ Failure to act can result in compatibility issues with your apps when IBM upgrad
 
 {{site.data.keyword.cloud_notm}} is committed to providing secure, up-to-date versions of services. As updates are released by project maintainers, they are tested, evaluated, and released to {{site.data.keyword.databases-for}} instances. Your instance's minor version and patch updates are handled automatically and are not user configurable.
 
+### Minor version upgrades and Terraform
+{: #minor-versions-tf}
+
+In the event of a minor version update, Terraform
+
+Terraform destroys the resource and re-create it (to match the expected configuration). To prevent Terraform from deleting your instance,
+
 ## Major versioning End of Life
 {: #-major-version-eol}
 
