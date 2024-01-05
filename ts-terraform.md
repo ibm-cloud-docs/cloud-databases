@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-01-04"
+lastupdated: "2024-01-05"
 
 keywords: question about terraform
 
@@ -16,7 +16,7 @@ content-type: troubleshoot
 
 <!-- Remember that this is the individual topic template for each troubleshooting entry that belongs in a troubleshooting topic group in the Help left nav group. For more information, see the guidance page: https://test.cloud.ibm.com/docs/writing?topic=writing-troubleshooting-topics-->
 
-# Why did my Terraform script delete my instance?
+# Why did Terraform replace my instance?
 {: #troubleshoot-terraform}
 {: troubleshoot}
 {: support}
@@ -24,7 +24,7 @@ content-type: troubleshoot
 Your Terraform script deleted your {{site.data.keyword.databases-for}} instance. Why did this happen, and what can I do?
 {: shortdesc}
 
-You ran your Terraform script and now your instance has been deleted. You may receive an error that looks like:
+You ran your Terraform script and now your instance has been deleted. You may have seen an output that looks like:
 {: tsSymptoms}
 
 ```text
