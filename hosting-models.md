@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-12-22"
+  years: 2023, 2024
+lastupdated: "2024-01-17"
 
 subcollection: cloud-databases
 
@@ -21,21 +21,22 @@ To allow for reliable resource allocation, {{site.data.keyword.databases-for}} o
 ## {{site.data.keyword.databases-for}} Shared Compute
 {: #hosting-models-shared-compute}
 
-Shared compute uses shared host machines and {{site.data.keyword.databases-for}} ensures that each separate customer instance is logically separated for data isolation and security.
+Shared compute is a flexible multi-tenant offering for dynamic, fine-tuned, and decoupled capacity selections.
 
 Each database instance receives a deterministic CPU allocation. If an instance is provisioned without selecting a CPU amount, Shared Compute automatically allocates a small amount of CPU to your database up to a 2 core max. Automatic CPU is provided at a 1:8 ratio of CPU:RAM; therefore, a user with 1 GB RAM receives 1/8th of a CPU; an user with 8 GB RAM receives 1 CPU; and an user with 20 GB RAM receives 2 CPU due to the 2 CPU limit.
 
 If you have higher performance requirements than 2 CPU, you can easily leverage the flexibility of the Shared model. With the ability to select the amount of CPU and RAM resources you receive, scale performance to fit your workload. Additionally, if you know that your instance will experience variable demand, use autoscaling to set not only the expected load and duration that would initiate resource scaling, but also the resource and cost limit your database will scale to.
 
-Due to each service's individual requirements, {{site.data.keyword.databases-for}} has minimums in place for all Shared Compute instances. When all instances are transitioned to Shared Compute, we will apply the same minimums to Shared Compute and Dedicated Core instances. Current users of multi-tenant will be grandfathered.
+Due to each service's individual requirements, {{site.data.keyword.databases-for}} has minimums in place for all Shared Compute instances. When all instances are transitioned to Shared Compute, we will apply the same minimums to Shared Compute and Isolated Core instances. Current users of multi-tenant will be grandfathered.
 {: note}
 
 ## {{site.data.keyword.databases-for}} Isolated Compute
 {: #hosting-models-iso-compute}
 
-Isolated Compute is the service for secure enterprise data hosting. By placing your deployment and all associated user-data operations on an isolated machine, {{site.data.keyword.databases-for}} Isolated Compute provides dedicated computing resources and security.
+Isolated Compute is a secure single-tenant offering for complex, highly-performant enterprise workloads. By placing your deployment and all associated user-data operations on an isolated machine, {{site.data.keyword.databases-for}} Isolated Compute provides computing resources and security.
 
-At provisioning, select the CPU x RAM size of the machine to provision your database on — this machine will be dedicated to running this database instance, giving you hypervisor-level isolation between your instance and any other database. To further strengthen isolation, dedicated database management agents run alongside the database instance on the same isolated machines. IO bandwidth and network bandwidth will also be dedicated to the database instance.
+At provisioning, choose the CPU x RAM size for the machine to set up your database. This machine will be exclusively assigned to running your database instance, ensuring hypervisor-level isolation from any other databases.
+To enhance isolation, specialized database management agents operate alongside the database instance on the same isolated machines. Both IO bandwidth and network bandwidth will be exclusively allocated to the database instance.
 
 Storage is still selected separately, allowing you to determine the number of [IOPS](#x3858854){: term} your database receives. Scale your database and change your machine size through your preferred method: the [dashboard](https://cloud.ibm.com/){: external}, the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference), the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction), or through [Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: external}.
 
