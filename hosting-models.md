@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-17"
+lastupdated: "2024-01-23"
 
 subcollection: cloud-databases
 
@@ -64,10 +64,10 @@ To switch between our Shared and Isolated compute, select the model you want, re
 ## Hosting model grandfathering
 {: #hosting-models-grandfathering}
 
-Current multi-tenant users that are automatically switched over to Shared Compute will begin to be charged for their CPU use starting November 2024.
+Current multi-tenant users that are automatically switched over to Shared Compute will begin to be charged for their CPU use starting March 2025.
 {: important}
 
-Existing multi-tenant customers will be transitioned to Shared Compute, including a gradual transition from free-for-all CPU allocation to the deterministic Shared Compute allocation.
+Starting in May 2024, existing multi-tenant customers will undergo a gradual transition from free-for-all CPU allocation to a deterministic allocation. However, automatic CPU allocation will continue with grandfathered charging until March 2025.
 
 All Dedicated Cores instances will be switched over to the nearest larger Isolated Compute size. To provision a Dedicated Cores instance before it is shut down, use the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference){: external}, the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction){: external}, or through [Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: external}.
 
@@ -102,7 +102,7 @@ curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H 
 {: pre}
 
 The `host_flavor value` parameter defines your Isolated Compute sizing. Input the appropriate value for your desired size. To provision a Shared Compute instance, specify `multitenant`.
-| **Isolated Compute Size** | **host_flavor value** |
+| **Host Flavor** | **host_flavor value** |
 |:-------------------------:|:---------------------:|
 | Shared Compute            | `multitenant`    |
 | 4 CPU x 16 RAM            | `b3c.4x16.encrypted`    |
@@ -111,7 +111,7 @@ The `host_flavor value` parameter defines your Isolated Compute sizing. Input th
 | 16 CPU x 64 RAM           | `b3c.16x64.encrypted`   |
 | 32 CPU x 128 RAM          | `b3c.32x128.encrypted`  |
 | 30 CPU x 240 RAM          | `m3c.30x240.encrypted`  |
-{: caption="Table 1. Isolated Compute sizing parameter" caption-side="bottom"}
+{: caption="Table 1. Host Flavor sizing parameter" caption-side="bottom"}
 
 ### Retrieve Resources through the API
 {: #hosting-models-retrieve-api}
@@ -158,7 +158,7 @@ ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVIC
 ```
 
 The `host_flavor value` parameter defines your Isolated Compute sizing. Input the appropriate value for your desired size. To provision a Shared Compute instance, specify `multitenant`.
-| **Isolated Compute Size** | **host_flavor value** |
+| **Host Flavor** | **host_flavor value** |
 |:-------------------------:|:---------------------:|
 | Shared Compute            | `multitenant`    |
 | 4 CPU x 16 RAM            | `b3c.4x16.encrypted`    |
@@ -167,7 +167,7 @@ The `host_flavor value` parameter defines your Isolated Compute sizing. Input th
 | 16 CPU x 64 RAM           | `b3c.16x64.encrypted`   |
 | 32 CPU x 128 RAM          | `b3c.32x128.encrypted`  |
 | 30 CPU x 240 RAM          | `m3c.30x240.encrypted`  |
-{: caption="Table 1. Isolated Compute sizing parameter" caption-side="bottom"}
+{: caption="Table 1. Host Flavor sizing parameter" caption-side="bottom"}
 
 CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} Isolated Compute. Disk autoscaling is available. If you have provisioned an Isolated instance or switched over from a deployment with autoscaling, keep an eye on your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/databases-for-mongodb?topic=databases-for-mongodb-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
 {: note}
@@ -187,11 +187,11 @@ data "ibm_resource_group" "group" {
 resource "ibm_database" "<your_database>" {
   name              = "<your_database_name>"
   plan              = "standard"
-  location          = "location"
-  service           = "<service_name>"
+  location          = "eu-gb"
+  service           = "databases-for-etcd"
   resource_group_id = data.ibm_resource_group.group.id
   tags              = ["tag1", "tag2"]
-  adminpassword     = "<password>"
+  adminpassword                = "password12"
   group {
     group_id = "member"
     host_flavor {
@@ -203,21 +203,21 @@ resource "ibm_database" "<your_database>" {
   }
   users {
     name     = "user123"
-    password = "<password>"
+    password = "password12"
   }
   allowlist {
     address     = "172.168.1.1/32"
     description = "desc"
   }
 }
-output "<service_name> connection string" {
-  value = "http://${ibm_database.test_acc.<service_name>.icd_conn}"
+output "ICD Etcd database connection string" {
+  value = "http://${ibm_database.test_acc.ibm_database_connection.icd_conn}"
 }
 ```
 {: codeblock}
 
 The `host_flavor` parameter defines your Isolated Compute sizing. Input the appropriate value for your desired size. To provision a Shared Compute instance, specify `multitenant`.
-| **Isolated Compute Size** | **host_flavor value** |
+| **Host Flavor** | **host_flavor value** |
 |:-------------------------:|:---------------------:|
 | Shared Compute            | `multitenant`    |
 | 4 CPU x 16 RAM            | `b3c.4x16.encrypted`    |
@@ -226,7 +226,7 @@ The `host_flavor` parameter defines your Isolated Compute sizing. Input the appr
 | 16 CPU x 64 RAM           | `b3c.16x64.encrypted`   |
 | 32 CPU x 128 RAM          | `b3c.32x128.encrypted`  |
 | 30 CPU x 240 RAM          | `m3c.30x240.encrypted`  |
-{: caption="Table 1. Isolated Compute sizing parameter" caption-side="bottom"}
+{: caption="Table 1. Host Flavor sizing parameter" caption-side="bottom"}
 
 CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} Isolated Compute. Disk autoscaling is available. If you have provisioned an Isolated instance or switched over from a deployment with autoscaling, keep an eye on your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/databases-for-mongodb?topic=databases-for-mongodb-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
 {: note}
