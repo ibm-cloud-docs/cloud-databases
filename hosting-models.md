@@ -76,13 +76,24 @@ New Shared Compute users, or users who switch over to Shared Compute on their ow
 ## {{site.data.keyword.databases-for}} Provisioning
 {: #hosting-models-provisioning}
 
-### Provisioning through the UI
+### Provision through the UI
 {: #hosting-provisioning-ui}
 {: ui}
 
 To provision a {{site.data.keyword.databases-for}} service instance through the UI, select your **hosting type**. Choose either Shared Compute or Isolated Compute. Next, select the appropriate **Resource Allocation** for your workload.
 
-### Provisioning using the API
+### Provision through the CLI
+{: #hosting-provisioning-cli}
+{: cli}
+
+To provision a {{site.data.keyword.databases-for}} instance, use the `deployment-groups-set`. Use a command like:
+
+```sh
+ibmcloud cdb deployment-groups-set <deploymentid> <groupid> [--memory <val>] [--cpu <val>] [--disk <val>] [--hostflavor <val>]
+```
+{: pre}
+
+### Provision using the API
 {: #hosting-models-provisioning-api}
 {: api}
 
@@ -126,7 +137,19 @@ curl -X GET https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}
 ```
 {: pre}
 
-### Scaling through the API
+### Scale through the CLI
+{: #hosting-models-scaling-cli}
+{: cli}
+
+To scale a {{site.data.keyword.databases-for}} instance, modify the `deployment-groups-set` parameter. Use a command like:
+
+```sh
+ibmcloud cdb deployment-groups-set <deploymentid> <groupid> [--memory <val>] [--cpu <val>] [--disk <val>] [--hostflavor <val>]
+```
+{: pre}
+
+
+### Scale through the API
 {: #hosting-models-scaling-api}
 {: api}
 
