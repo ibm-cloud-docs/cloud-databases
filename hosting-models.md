@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-23"
+lastupdated: "2024-01-26"
 
 subcollection: cloud-databases
 
@@ -139,13 +139,23 @@ curl -X PATCH https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{i
 -H 'Authorization: Bearer <>'
 -H 'Content-Type: application/json'
 -d '{"group":
-      {"host_flavor": "b3c.4x16.encrypted"}
+      {"host_flavor":
+        {"id": "b3c.4x16.encrypted"}
+      }
     }' \
 ```
 {: pre}
 
 CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} Isolated Compute. Disk autoscaling is available. If you have provisioned an Isolated instance or switched over from a deployment with autoscaling, keep an eye on your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/databases-for-mongodb?topic=databases-for-mongodb-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
 {: note}
+
+### Scaling through Terraform
+{: #hosting-models-scaling-tf}
+{: terraform}
+
+To scale a {{site.data.keyword.databases-for}} Isolated Compute instance, use Terraform.
+
+Update `host_flavor` with your desired amount. To implement your change, run `terraform apply`.
 
 ### Provisioning through the CLI
 {: #hosting-models-provisioning-cli}
@@ -177,8 +187,6 @@ CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} 
 {: terraform}
 
 To provision an instance, use Terraform.
-
-Use a command like:
 
 ```terraform
 data "ibm_resource_group" "group" {
