@@ -1,11 +1,11 @@
 ---
 copyright:
-  years: 2023
-lastupdated: "2023-07-18"
+  years: 2023, 2024
+lastupdated: "2024-02-16"
 
 subcollection: cloud-databases, database member, CPU seconds, platform metrics
 
-keywords: sysdig
+keywords: sysdig, cpu seconds, cpu cores, common metrics
 
 ---
 
@@ -17,7 +17,7 @@ keywords: sysdig
 ## Enabling {{site.data.keyword.mon_full}} with Sysdig
 {: #sysdig-monitor-enabling}
 
-To enable Sysdig Monitor on {{site.data.keyword.mon_full}}, follow these steps: 
+To enable Sysdig Monitor on {{site.data.keyword.mon_full}}, follow these steps:
 
 1. Log in to the {{site.data.keyword.cloud_notm}} console.
 1. Click the **Catalog** tab.
@@ -38,7 +38,12 @@ Use dashboards to monitor your environments and applications. Sysdig dashboards 
 ## Common metrics
 {: #sysdig-monitor-dashboards-common-metrics}
 
-{{site.data.keyword.databases-for}} uses some common metrics across all our offerings.
+Here is a list of common metrics across all {{site.data.keyword.databases-for}} offerings.
+
+### CPU cores used per member
+{: #sysdig-monitor-dashboards-cpu-cores-used-per-member}
+
+The usage that is presented in this dashboard is the number of CPU cores used per member, which is measured in core seconds.
 
 ### Disk used percent
 {: #sysdig-monitor-dashboards-disk-used-percent}
@@ -46,7 +51,7 @@ Use dashboards to monitor your environments and applications. Sysdig dashboards 
 ### CPU used per member (data only available with dedicated cores)
 {: #sysdig-monitor-dashboards-cpu-used-per-member}
 
-The usage that is presented in this dashboard is a percentage of total CPU being used, based on the number of cores in your {{site.data.keyword.databases-for}} instance. For example, if you have eight cores and your usage is 12.5%, then that percentage reflects that your database member is using 1 core's worth of CPU seconds; however, that does not guarantee that your member's workload is pinned to one core – the workload might be distributed unevenly among your eight cores. In the same example, 25% usage reflects that your database member is using 2 core's worth of CPU seconds out of your available 8 cores.
+The usage that is presented in this dashboard is a percentage of total CPU being used, based on the number of cores in your {{site.data.keyword.databases-for}} instance. For example, if you have eight cores and your usage is 12.5%, then that percentage reflects that your database member is using 1 core's worth of CPU seconds. However, this does not guarantee that your member's workload is pinned to one core – the workload might be distributed unevenly among your eight cores. In the same example, 25% usage reflects that your database member is using 2 core's worth of CPU seconds out of your available 8 cores.
 
 ## Service-specific {{site.data.keyword.databases-for}} metrics
 {: #sysdig-monitor-dashboards-specific-metrics}
@@ -55,7 +60,7 @@ For metrics relevant to a particular {{site.data.keyword.databases-for}} service
 
 - [{{site.data.keyword.databases-for-mongodb}}](/docs/databases-for-mongodb?topic=databases-for-mongodb-monitoring){: external}.
 
-- [{{site.data.keyword.databases-for-elasticsearch}}](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-monitoring){: external}. 
+- [{{site.data.keyword.databases-for-elasticsearch}}](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-monitoring){: external}.
 
 - [{{site.data.keyword.databases-for-cassandra}}](/docs/databases-for-cassandra?topic=databases-for-cassandra-monitoring){: external}.
 
