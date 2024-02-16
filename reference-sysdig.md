@@ -45,9 +45,6 @@ Here is a list of common metrics across all {{site.data.keyword.databases-for}} 
 
 The usage that is presented in this dashboard is the number of CPU cores used per member, which is measured in core seconds.
 
-### Disk used percent
-{: #sysdig-monitor-dashboards-disk-used-percent}
-
 ### CPU used per member (data only available with dedicated cores)
 {: #sysdig-monitor-dashboards-cpu-used-per-member}
 
