@@ -122,7 +122,7 @@ To provision a Shared Compute instance, specify `multitenant`.
 
 Use a command like:
 
-```
+```sh
 curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H "Authorization: Bearer <IAM token>" -H 'Content-Type: application/json' -d '{
     "type": "postgresql",
     "version": "14",
@@ -240,6 +240,7 @@ To provision a {{site.data.keyword.databases-for}} Isolated Compute instance, us
 ```sh
 ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN> <LOCATION> `{"members_host_flavor": "<host_flavor value>"}`
 ```
+{: pre}
 
 The `host_flavor value` parameter defines your Isolated Compute sizing. Input the appropriate value for your desired size. To provision a Shared Compute instance, specify `multitenant`.
 | **Host Flavor** | **host_flavor value** |
