@@ -74,7 +74,7 @@ A network zone represents an allowlist of IP addresses where an access request i
 1. **Reference a service**: You can select {{site.data.keyword.databases-for}} as a source service for context-based restrictions, but not as a target service. For example, you can provision a {{site.data.keyword.databases-for}} instance using BYOK from {{site.data.keyword.keymanagementservicefull}}. In this example, {{site.data.keyword.databases-for}} is the source formation and {{site.data.keyword.keymanagementservicefull}} is the target formation. Then, you would create a network zone with a {{site.data.keyword.databases-for}} service reference and create a rule associated with the network zone that targets {{site.data.keyword.keymanagementservicefull}}. To add a {{site.data.keyword.databases-for}} service reference, for *Service Type*, IAM services is autoselected. In the *Service* dropdown, select a specific {{site.data.keyword.databases-for}} service. If the zone you create is associated with a rule targeting {{site.data.keyword.databases-for}}, then a service reference is not allowed.
 
 Service references function only from {{site.data.keyword.keymanagementserviceshort}} service to {{site.data.keyword.databases-for}}.
-{: note}
+{: important}
 
 ### Creating network zones in the CLI
 {: #network-zone-cli}
