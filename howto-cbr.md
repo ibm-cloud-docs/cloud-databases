@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years:  2022, 2023
-lastupdated: "2023-11-03"
+  years:  2022, 2024
+lastupdated: "2024-02-22"
 
 keywords: restricting access to cloud databases, restricting access to ICD, DataStax cbr, Elasticsearch cbr, EnterpriseDB cbr, etcd cbr, mongodb cbr, postgresql cbr, redis cbr, mysql cbr, rabbitmq cbr
 
@@ -40,7 +40,7 @@ You can create context-based restrictions for the {{site.data.keyword.databases-
 You can create context-based restrictions rules to protect specific **regions**, **resource groups**, and **instances**.
 
 Region
-:   Protects {{site.data.keyword.databases-for}} resources in a specific region. If you include a region in your context-based restrictions rule, resources in the network zones that you associate with the rule can interact with resources only in that region. If you use the CLI, you can specify the `--region` option to protect resources in a specific region. If you use the UI, you can specify *Region* in the resource attributes. 
+:   Protects {{site.data.keyword.databases-for}} resources in a specific region. If you include a region in your context-based restrictions rule, resources in the network zones that you associate with the rule can interact with resources only in that region. If you use the CLI, you can specify the `--region` option to protect resources in a specific region. If you use the UI, you can specify *Region* in the resource attributes.
 
 Resource groups
 :   Protects a specific resource group. If you include a resource group in your context-based restrictions rule, resources in the network zones that you associate with the rule can interact only with resources in that resource group. Scoping a rule to a specific resource group is available only for rules that protect the cluster API type. If you use the CLI, you can specify the `--resource-group-id` option to protect resources in a specific resource group. If you use the UI, you can specify the *Resource group* in the resource attributes.
@@ -69,9 +69,11 @@ A network zone represents an allowlist of IP addresses where an access request i
    The **Denied IP addresses** field is optional and should include only exceptions that are contained within the IP ranges you provide in the allowed IP addresses field.
    {: note}
 
-1. Choose your *Allowed VPCs*, selecting as many as you like. 
+1. Choose your *Allowed VPCs*, selecting as many as you like.
 
-1. **Reference a service**: You can select {{site.data.keyword.databases-for}} as a source service for context-based restrictions, but not as a target service. For example, you can provision a {{site.data.keyword.databases-for}} deployment using BYOK from {{site.data.keyword.keymanagementservicefull}}. In this example, {{site.data.keyword.databases-for}} is the source formation and {{site.data.keyword.keymanagementservicefull}} is the target formation. Then, you would create a network zone with a {{site.data.keyword.databases-for}} service reference and create a rule associated with the network zone that targets {{site.data.keyword.keymanagementservicefull}}. To add a {{site.data.keyword.databases-for}} service reference, for *Service Type*, IAM services is autoselected. In the *Service* dropdown, select a specific {{site.data.keyword.databases-for}} service. If the zone you create is associated with a rule targeting {{site.data.keyword.databases-for}}, then a service reference is not allowed.
+1. **Reference a service**: You can select {{site.data.keyword.databases-for}} as a source service for context-based restrictions, but not as a target service. For example, you can provision a {{site.data.keyword.databases-for}} instance using BYOK from {{site.data.keyword.keymanagementservicefull}}. In this example, {{site.data.keyword.databases-for}} is the source formation and {{site.data.keyword.keymanagementservicefull}} is the target formation. Then, you would create a network zone with a {{site.data.keyword.databases-for}} service reference and create a rule associated with the network zone that targets {{site.data.keyword.keymanagementservicefull}}. To add a {{site.data.keyword.databases-for}} service reference, for *Service Type*, IAM services is autoselected. In the *Service* dropdown, select a specific {{site.data.keyword.databases-for}} service. If the zone you create is associated with a rule targeting {{site.data.keyword.databases-for}}, then a service reference is not allowed.
+     Service references function only from {{site.data.keyword.keymanagementserviceshort}} service to {{site.data.keyword.databases-for}}.
+     {: note}
 
 ### Creating network zones in the CLI
 {: #network-zone-cli}
@@ -124,7 +126,7 @@ Full Closure of Access to Non-Allowlisted Endpoints: To provide a more robust se
 1. Select **Rules**.
 1. Click **Create**.
 1. Select **Specific APIs** and then select `Data plane`. Any other selection results in an error.
-   
+
    {{site.data.keyword.databases-for}} does not currently support **Control plane** as an option.
    {: .note}
 
@@ -135,15 +137,15 @@ Full Closure of Access to Non-Allowlisted Endpoints: To provide a more robust se
    - Keep the toggle set to **No** to allow all endpoint types.
    - Set the toggle to **Yes** to allow only specific endpoint types, then choose from the list.
 1. Select a network zone or zones that you have already created, or create a new network zone by clicking **Create**.
-   
+
    Contexts define from where your resources can be accessed, effectively linking your network zone to your rule.
    {: tip}
 
 1. Click **Add** to add your configuration to the summary.
 1. Click **Next**.
 1. Name your rule.
-1. Select how you want to enforce the rule. 
-   
+1. Select how you want to enforce the rule.
+
    *Report-only* is not available for {{site.data.keyword.databases-for}}.
    {: important}
 
@@ -184,7 +186,7 @@ ibmcloud cbr rule-update <RULE-ID> --enforcement-mode disabled --context-attribu
 ```
 {: .pre}
 
-The `rule-update` command is an overwrite. Include all of the fields that are required as if you are creating the rule from scratch. If you omit any required fields, the rule overwrites those missing fields as empty, and the rule might fail because some of those fields are required, regardless of whether they are changing the rule. 
+The `rule-update` command is an overwrite. Include all of the fields that are required as if you are creating the rule from scratch. If you omit any required fields, the rule overwrites those missing fields as empty, and the rule might fail because some of those fields are required, regardless of whether they are changing the rule.
 {: .important}
 
 Updating requires the `RULE-ID`, not the rule name. Use the following command to list your rules and retrieve the relevant `RULE-ID`:
@@ -261,7 +263,7 @@ resource "ibm_cbr_rule" "cbr_rule" {
 
 You can import the `ibm_cbr_rule` resource by using `id`, the globally unique ID of the rule.
 ```sh
-terraform import ibm_cbr_rule.cbr_rule 
+terraform import ibm_cbr_rule.cbr_rule
 ```
 {: pre}
 
