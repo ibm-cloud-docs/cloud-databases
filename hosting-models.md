@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-02-19"
+lastupdated: "2024-02-24"
 
 subcollection: cloud-databases
 
@@ -161,21 +161,12 @@ curl -X GET https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}
 {: #hosting-models-scaling-cli}
 {: cli}
 
-To scale a {{site.data.keyword.databases-for}} Isolated Compute instance, modify the `deployment-groups-set` parameter. Use a command like:
-
-```sh
-ibmcloud cdb deployment-groups-set <deploymentid> <groupid> [--disk <val>] [--hostflavor <val>]
-```
-{: pre}
-
 To scale a {{site.data.keyword.databases-for}} Shared Compute instance. Use a command like:
 
 ```sh
 ibmcloud cdb deployment-groups-set <deploymentid> <groupid> [--memory <val>] [--cpu <val>] [--disk <val>] [--hostflavor multitenant]
 ```
 {: pre}
-
-
 
 ### Scale through the API
 {: #hosting-models-scaling-api}
