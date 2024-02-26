@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2023
-lastupdated: "2023-11-28"
+  years: 2023, 2024
+lastupdated: "2024-02-26"
 
 keywords: monitoring
 
@@ -1570,6 +1570,7 @@ How much WAL log file uses, in bytes
 | [MySQL Used disk space for an instance](#ibm_databases_for_mysql_disk_used_percent) |
 | [MySQL Used memory for an instance](#ibm_databases_for_mysql_memory_used_bytes) |
 | [MySQL Used memory for an instance](#ibm_databases_for_mysql_memory_used_percent) |
+| [MySQL Total active connections to the database](#ibm_databases_for_mysql_total_connections) |
 {: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
 
 ### MySQL Metrics Descriptions
@@ -2120,6 +2121,19 @@ How much memory is used as a percentage of total memory available
 | `Metric Name` | `ibm_databases_for_mysql_memory_used_percent`|
 | `Metric Type` | `gauge` |
 | `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 43: Used memory for an instance metric metadata" caption-side="top"}
+
+#### MySQL Total active connections to the database
+{: #ibm_databases_for_mysql_total_connections}
+
+Represents the total number of active connections to the database
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_mysql_total_connections`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `count` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 43: Used memory for an instance metric metadata" caption-side="top"}
 
