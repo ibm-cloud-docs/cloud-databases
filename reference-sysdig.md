@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2023, 2024
-lastupdated: "2024-02-16"
+lastupdated: "2024-02-28"
 
 subcollection: cloud-databases, database member, CPU seconds, platform metrics
 
@@ -43,7 +43,7 @@ Here is a list of common metrics across all {{site.data.keyword.databases-for}} 
 ### CPU cores used per member
 {: #sysdig-monitor-dashboards-cpu-cores-used-per-member}
 
-The usage that is presented in this dashboard is the number of CPU cores used per member, which is measured in core seconds.
+The usage that is presented in this dashboard is the number of CPU cores used per member, which is measured in core seconds. Regardless of whether or not your database is running with a dedicated amount of CPU cores, it is consuming CPU core cycles.
 
 ### CPU used per member (data only available with dedicated cores)
 {: #sysdig-monitor-dashboards-cpu-used-per-member}
