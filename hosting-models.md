@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-02-27"
+lastupdated: "2024-03-08"
 
 subcollection: cloud-databases
 
@@ -71,9 +71,9 @@ To switch between our Shared and Isolated compute, select the model you want, re
 Current multi-tenant users that are automatically switched over to Shared Compute will begin to be charged for their CPU use starting March 2025, with exceptions.
 {: important}
 
-Starting in May 2024, existing multi-tenant customers will undergo a gradual transition from free-for-all CPU allocation to a Shared Compute allocation. When this occurs we will automatically allocate CPU to your instance, and "grandfather" the CPU cost. This means that if you don't change your CPU allocations, we will cover the cost of the CPU we've allocated until old-style multi-tenant is shut down in 2025. 
+Starting in May 2024, existing multi-tenant customers will undergo a gradual transition from free-for-all CPU allocation to a Shared Compute allocation. When this occurs, CPU will be automatically allocated to your instance, and the CPU cost will be "grandfathered". This means that if you don't change your CPU allocations, the cost of the CPU that got allocated will be covered for you until the old-style multi-tenant is shut down in 2025. 
 
-We are also applying minimum RAM requirements to your databases. For existing multi-tenant instances, we will automatically lift RAM allocations, which will also be grandfathered. RAM grandfathering will stay in place unless you scale your CPU or RAM resources, after which you will be charged for your new resource allocation. Scaling RAM does not remove CPU grandfathering. 
+Minimum RAM requirements will also be applied to your databases. For existing multi-tenant instances, RAM allocations will be automatically lifted, which will also be grandfathered. RAM grandfathering will stay in place unless you scale your CPU or RAM resources, after which you will be charged for your new resource allocation. Scaling RAM does not remove CPU grandfathering. 
 
 All Dedicated Cores instances will be switched over to the nearest larger Isolated Compute size. To provision a Dedicated Cores instance before it is shut down, use the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference){: external}, the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction){: external}, or through [Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: external}.
 
