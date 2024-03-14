@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2023-10-05"
+  years: 2019, 2024
+lastupdated: "2024-03-14"
 
 subcollection: cloud-databases
 
@@ -19,7 +19,7 @@ Follow the outlined procedures for provisioning a {{site.data.keyword.databases-
    {{site.data.keyword.databases-for-mongodb}} offers two plans: Standard and Enterprise.
    {: note}
 
-- [{{site.data.keyword.databases-for-elasticsearch}}](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-provisioning-new){: external}. 
+- [{{site.data.keyword.databases-for-elasticsearch}}](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-provisioning){: external}. 
    {{site.data.keyword.databases-for-elasticsearch}} offers two plans: Standard and Enterprise.
    {: note}
 
