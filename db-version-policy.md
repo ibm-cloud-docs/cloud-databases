@@ -22,7 +22,7 @@ When you provision a {{site.data.keyword.databases-for}} instance, you can choos
 | Service | Versioning Schema| Next Known End of Life Version and Date | Preferred Major Version | End of life procedure |
 |----|----|----|:----:|----|
 | {{site.data.keyword.databases-for-mongodb}} | Major versions are the first two numbers in a `major.x.patch` version number. In cases where `x` is even, it is a stable release suitable for production. Even `x` versions are the only ones available on {{site.data.keyword.databases-for}}. | v4.4, 26 April 2024; v5, 25 September 2024 |   v6.0   | Automatically upgraded in place to next Major version |
-| {{site.data.keyword.databases-for-elasticsearch}} | Major versions are the first number in a `release.version.maintenance` version number. | v7.9, November 2023; v7.10, November 2023; v7.17, 26 April 2024 |   v8.10   | Automatically upgraded in place to next Major version |
+| {{site.data.keyword.databases-for-elasticsearch}} | Major versions are the first two numbers in a `release.version.maintenance` version number. |  v7.17, 29 August 2024 |   v8.10   | Automatically upgraded in place to next Major version |
 | {{site.data.keyword.databases-for-redis}} | Major versions are the first number in a `major.minor.patch` version number. | v5.0, 26 April 2024; v6.0 25 October 2024 |   v6.2   | Automatically upgraded in place to next Major version 6.2 |
 | {{site.data.keyword.databases-for-postgresql}} | The major version is defined by the first number in the version number. | v12, 22 January 2025 |   v15   | Backup taken and access removed |
 | {{site.data.keyword.databases-for-enterprisedb}}  | The major version is defined by the first number in the version number. | v12, TBD |   v12   | Backup is taken and access is removed |
