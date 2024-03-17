@@ -37,7 +37,7 @@ Virtual Private Endpoints (VPEs) are generally available in all regions.
 {: #vpes-before-begin}
 
 - You need to have an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/registration){: .external}
-- And a {{site.data.keyword.databases-for}} deployment. You can [provision](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-provisioning) one from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/services/). Give your deployment a memorable name that appears in your account's Resource List.
+- And a {{site.data.keyword.databases-for}} deployment. You can [provision](/docs/cloud-databases?topic=cloud-databases-getting-started-cdb-provision-instance) one from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/services/). Give your deployment a memorable name that appears in your account's Resource List.
 
 ### Setting up your VPE
 {: #vpes-setup}
