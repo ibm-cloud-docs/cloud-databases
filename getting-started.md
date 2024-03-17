@@ -53,7 +53,7 @@ Follow the outlined procedures for provisioning a {{site.data.keyword.databases-
    {{site.data.keyword.databases-for-mongodb}} offers two plans: Standard and Enterprise.
    {: note}
 
-- [{{site.data.keyword.databases-for-elasticsearch}}](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-provisioning-new){: external}. 
+- [{{site.data.keyword.databases-for-elasticsearch}}](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-provisioning){: external}. 
    {{site.data.keyword.databases-for-elasticsearch}} offers two plans: Standard and Enterprise.
    {: note}
 
