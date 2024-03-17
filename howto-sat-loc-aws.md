@@ -112,7 +112,7 @@ Attempting to provision a database instance into a location without a running Co
 {: step}
 {: #provision-deployment}
 
-You can provision your {{site.data.keyword.databases-for}} Satellite Deployment by selecting the Satellite location that you created in the **Location** menu of the provisioning page. For more information, see the relevant [Provisioning documentation](/docs/cloud-databases?topic=cloud-databases-provisioning) for your {{site.data.keyword.databases-for}} Satellite deployment. After you create a new service instance, this instance will appear in the IBM Cloud `Resource List` as `Provisioned`.
+You can provision your {{site.data.keyword.databases-for}} Satellite Deployment by selecting the Satellite location that you created in the **Location** menu of the provisioning page. For more information, see the relevant [Provisioning documentation](/docs/cloud-databases?topic=cloud-databases-getting-started-cdb-provision-instance) for your {{site.data.keyword.databases-for}} Satellite deployment. After you create a new service instance, this instance will appear in the IBM Cloud `Resource List` as `Provisioned`.
 
 When you deploy the first database service instance, a service cluster is automatically deployed into your Satellite location. The deployment of the service cluster can take up to 1 hour.
 

@@ -135,7 +135,7 @@ Connect your {{site.data.keyword.databases-for-mongodb}} EE (Enterprise Edition)
 
 ![Choose to Connect to MongoDB](images/tableau-connect-mongodb.png){: caption="Figure 2. Choose to Connect to MongoDB" caption-side="bottom"} 
 
-The server and port values come from the printed output of [Step 4]({#create-infra).
+The server and port values come from the printed output of [Step 4](#create-infra).
 Leave the database blank.
 The username is "admin".
 The password is the one you created in [Step 2](#clone-repo).

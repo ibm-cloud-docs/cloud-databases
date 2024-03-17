@@ -72,7 +72,7 @@ The service cluster name is based on the first database instance, even if multip
 {: .important}
 
 - Refer to the [Satellite Usage requirements](/docs/satellite?topic=satellite-requirements).
-- Be sure you set up the [{{site.data.keyword.cloud_notm}} CLI](/docs/satellite?topic=satellite-setup-cli), the plug-in for Satellite commands, and other related CLIs.
+- Be sure you install and set up the [{{site.data.keyword.cloud_notm}} CLI](/docs/satellite?topic=satellite-cli-install), the plug-in for Satellite commands, and other related CLIs.
 - If you did not create a Satellite location, see [Setting up Satellite locations](/docs/satellite?topic=satellite-locations). Follow the steps in the [Manually creating Satellite locations](/docs/satellite?topic=satellite-locations#location-create) documentation.
     - For the management location, choose **Washington DC**. If you are creating your Satellite location on AWS, adjust the **host zones** to AWS-default zone names, for example: **us-east-1a**, **us-east-1b**, **us-east-1c**.
 
