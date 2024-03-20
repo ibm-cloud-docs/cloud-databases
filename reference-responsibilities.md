@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2023-10-02"
+  years: 2019, 2024
+lastupdated: "2024-03-20"
 
 subcollection: cloud-databases
 
@@ -54,6 +54,6 @@ Review the following sections for the specific responsibilities for you and for 
 | Task | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |----------|-----------------------|--------|
 |Backups and restore| {{site.data.keyword.databases-for}} is responsible for automatic daily backups, as well as monitoring the state of client backups.| The Client is responsible for restoration, timeliness, validity of backups, and alerting of failed backups via [{{site.data.keyword.at_full}}](/docs/cloud-databases?topic=cloud-databases-activity-tracker.) More information can be found in the [Backup and Restore documentation](/docs/cloud-databases?topic=cloud-databases-dashboard-backups).|
-|Read-only replicas, {{site.data.keyword.databases-for-postgresql}} and {{site.data.keyword.databases-for-enterprisedb}} ONLY| {{site.data.keyword.databases-for-postgresql}} and {{site.data.keyword.databases-for-enterprisedb}} are responsible for providing the capability of deploying read-only replicas across regions (except for replicating data into or outside of `eu-de`). | The Client is responsible for provisioning, configuring, monitoring, and promoting read-only replicas. |
+|Read-only replicas, {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-enterprisedb}}, and {{site.data.keyword.databases-for-mysql}} ONLY| {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-enterprisedb}}, and {{site.data.keyword.databases-for-mysql}} are responsible for providing the capability of deploying read-only replicas across regions (except for replicating data into or outside of `eu-de`). | The Client is responsible for provisioning, configuring, monitoring, and promoting read-only replicas. |
 {: caption="Table 4. Responsibilities for disaster recovery" caption-side="top"}
 
