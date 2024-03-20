@@ -1,29 +1,20 @@
 ---
 
 copyright:
-  years: 2019, 2022
-lastupdated: "2022-04-27"
+  years: 2019, 2024
+lastupdated: "2024-03-20"
 
 subcollection: cloud-databases
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:codeblock: .codeblock}
-{:note: .note}
-{:tip: .tip}
+{{site.data.keyword.attribute-definition-list}}
 
-# Responsibilities for {{site.data.keyword.databases-for}}
+# Shared Responsibilities for {{site.data.keyword.databases-for}}
 {: #responsibilities-cloud-databases}
 
 Learn about the management responsibilities and terms and conditions that you have when you use {{site.data.keyword.cloud}} {{site.data.keyword.databases-for}}. For a high-level view of the service types in {{site.data.keyword.cloud_notm}} and the breakdown of responsibilities between the client and {{site.data.keyword.IBM_notm}} for each type, see [Shared responsibilities for {{site.data.keyword.cloud_notm}} offerings](/docs/overview?topic=overview-shared-responsibilities).
 {: shortdesc}
-
-This document covers all the IBM Cloud Databases that include {{site.data.keyword.databases-for-cassandra}}, {{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-enterprisedb}}, {{site.data.keyword.databases-for-etcd}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-redis}}, and {{site.data.keyword.messages-for-rabbitmq}}.
-{: .note}
 
 Review the following sections for the specific responsibilities for you and for {{site.data.keyword.IBM_notm}} when you use {{site.data.keyword.databases-for}}. For the overall terms of use, see [{{site.data.keyword.cloud_notm}} Terms and Notices](/docs/overview/terms-of-use?topic=overview-terms).
 
@@ -63,6 +54,6 @@ Review the following sections for the specific responsibilities for you and for 
 | Task | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |----------|-----------------------|--------|
 |Backups and restore| {{site.data.keyword.databases-for}} is responsible for automatic daily backups, as well as monitoring the state of client backups.| The Client is responsible for restoration, timeliness, validity of backups, and alerting of failed backups via [{{site.data.keyword.at_full}}](/docs/cloud-databases?topic=cloud-databases-activity-tracker.) More information can be found in the [Backup and Restore documentation](/docs/cloud-databases?topic=cloud-databases-dashboard-backups).|
-|Read-only replicas, {{site.data.keyword.databases-for-postgresql}} and {{site.data.keyword.databases-for-enterprisedb}} ONLY| {{site.data.keyword.databases-for-postgresql}} and {{site.data.keyword.databases-for-enterprisedb}} are responsible for providing the capability of deploying read-only replicas across regions (except for replicating data into or outside of `eu-de`). | The Client is responsible for provisioning, configuring, monitoring, and promoting read-only replicas. |
+|Read-only replicas, {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-enterprisedb}}, and {{site.data.keyword.databases-for-mysql}} ONLY| {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-enterprisedb}}, and {{site.data.keyword.databases-for-mysql}} are responsible for providing the capability of deploying read-only replicas across regions (except for replicating data into or outside of `eu-de`). | The Client is responsible for provisioning, configuring, monitoring, and promoting read-only replicas. |
 {: caption="Table 4. Responsibilities for disaster recovery" caption-side="top"}
 
