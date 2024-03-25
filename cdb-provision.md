@@ -23,7 +23,7 @@ Follow the outlined procedures for provisioning a {{site.data.keyword.databases-
    {{site.data.keyword.databases-for-elasticsearch}} offers two plans: Standard and Enterprise.
    {: note}
 
-- [{{site.data.keyword.databases-for-cassandra}}](/docs/databases-for-cassandra?topic=databases-for-cassandra-provisioning){: external}{: deprecated}.
+- [{{site.data.keyword.databases-for-cassandra}}](/docs/databases-for-cassandra?topic=databases-for-cassandra-deprecation){: external}{: deprecated}.
 
 - [{{site.data.keyword.databases-for-redis}}](/docs/databases-for-redis?topic=databases-for-redis-provisioning){: external}.
 
