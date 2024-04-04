@@ -134,7 +134,13 @@ ibmcloud resource service-instance-create <SERVICE_INSTANCE_NAME> <service-id> s
 A pre-formatted command for a specific backup is available in detailed view of the backup on the _Backups_ tab of your instance's dashboard.
 {: .tip}
 
-By default, restoring from a backup provisions an instance with the preferred version of the database type, not the version of the instance you restore from. You can specify a version by adding the version in the parameters object. For example, `ibmcloud resource service-instance-create SERVICE_INSTANCE_NAME databases-for-mysql standard us-south -p '{"backup_id":"<BACKUP_ID>", "version": "<VERSION>"}'`. To see a list of versions available, run `ibmcloud cdb deployables`.
+By default, restoring from a backup provisions an instance with the preferred version of the database type, not the version of the instance you restore from. You can specify a version by adding the version in the parameters object, as in the following example. 
+
+```sh
+`ibmcloud resource service-instance-create SERVICE_INSTANCE_NAME databases-for-mysql standard us-south -p '{"backup_id":"<BACKUP_ID>", "version": "<VERSION>"}'
+```
+
+To see a list of versions available, run `ibmcloud cdb deployables`.
 
 ### Restoring a backup through the API
 {: #restore-backup-api}
@@ -166,7 +172,13 @@ The `target` is the region where you want the new instance to be located, which 
 
 If you need to adjust resources or use a Key Protect key, add any of the optional parameters `key_protect_key`, `members_disk_allocation_mb`, `members_memory_allocation_mb`, and `members_cpu_allocation_count`, and their preferred values to the body of the request.
 
-By default, restoring from a backup provisions an instance with the preferred version of the database type, not the version of the instance you restore from. You can specify a version by adding the version in the parameters object. For example, `ibmcloud resource service-instance-create SERVICE_INSTANCE_NAME databases-for-mysql standard us-south -p '{"backup_id":"<BACKUP_ID>", "version": "<VERSION>"}'`. To see a list of versions available, run `ibmcloud cdb deployables`.
+By default, restoring from a backup provisions an instance with the preferred version of the database type, not the version of the instance you restore from. You can specify a version by adding the version in the parameters object, as in the following example. 
+
+```sh
+`ibmcloud resource service-instance-create SERVICE_INSTANCE_NAME databases-for-mysql standard us-south -p '{"backup_id":"<BACKUP_ID>", "version": "<VERSION>"}'
+```
+
+To see a list of versions available, run `ibmcloud cdb deployables`.
 
 
 ### Restoring a backup through Terraform
