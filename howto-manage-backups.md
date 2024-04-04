@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2023-11-28"
+  years: 2019, 2024
+lastupdated: "2024-04-04"
 
 subcollection: cloud-databases
 
@@ -134,6 +134,8 @@ ibmcloud resource service-instance-create <SERVICE_INSTANCE_NAME> <service-id> s
 A pre-formatted command for a specific backup is available in detailed view of the backup on the _Backups_ tab of your instance's dashboard.
 {: .tip}
 
+By default, restoring from a backup provisions an instance with the preferred version of the database type, not the version of the instance you restore from. You can specify a version by adding the version in the parameters object. For example, `ibmcloud resource service-instance-create SERVICE_INSTANCE_NAME databases-for-mysql standard us-south -p '{"backup_id":"<BACKUP_ID>", "version": "<VERSION>"}'`. To see a list of versions available, run `ibmcloud cdb deployables`.
+
 ### Restoring a backup through the API
 {: #restore-backup-api}
 {: api}
@@ -163,6 +165,8 @@ The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are al
 The `target` is the region where you want the new instance to be located, which can be a different region from the source instance. Cross-region restores are supported, except for restoring into or out of the `eu-de` region.
 
 If you need to adjust resources or use a Key Protect key, add any of the optional parameters `key_protect_key`, `members_disk_allocation_mb`, `members_memory_allocation_mb`, and `members_cpu_allocation_count`, and their preferred values to the body of the request.
+
+By default, restoring from a backup provisions an instance with the preferred version of the database type, not the version of the instance you restore from. You can specify a version by adding the version in the parameters object. For example, `ibmcloud resource service-instance-create SERVICE_INSTANCE_NAME databases-for-mysql standard us-south -p '{"backup_id":"<BACKUP_ID>", "version": "<VERSION>"}'`. To see a list of versions available, run `ibmcloud cdb deployables`.
 
 
 ### Restoring a backup through Terraform
