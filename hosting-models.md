@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-03-21"
+lastupdated: "2024-04-04"
 
 subcollection: cloud-databases
 
@@ -12,10 +12,10 @@ keywords: isolated compute, hosting models
 
 {{site.data.keyword.attribute-definition-list}}
 
-# {{site.data.keyword.databases-for}} Hosting types
+# {{site.data.keyword.databases-for}} Hosting models
 {: #hosting-types}
 
-To allow for reliable resource allocation, {{site.data.keyword.databases-for}} offers two hosting types: Shared Compute and Isolated Compute. {{site.data.keyword.databases-for}} Shared Compute is a flexible option for your database deployment that preserves performance predictability. {{site.data.keyword.databases-for}} Isolated Compute is our recommendation for Enterprise applications, providing more precise control and premium features.
+To allow for reliable resource allocation, {{site.data.keyword.databases-for}} offers two hosting models: Shared Compute and Isolated Compute. {{site.data.keyword.databases-for}} Shared Compute is a flexible option for your database deployment that preserves performance predictability. {{site.data.keyword.databases-for}} Isolated Compute is our recommendation for Enterprise applications, providing more precise control and premium features.
 {: shortdesc}
 
 ## {{site.data.keyword.databases-for}} Shared Compute
@@ -56,13 +56,13 @@ Isolated Compute features 6 size selections:
 
 The price of CPU and RAM resources remains the same.
 
-## Switching hosting types
-{: #hosting-types-switching}
+## Switching hosting models
+{: #hosting-models-switching}
 
 To switch between our Shared and Isolated compute, select the model you want, review your resource selection, and switch. Switching hosting models does not cause downtime, as this is not a backup and restore migration.
 
-## Hosting type grandfathering
-{: #hosting-type-grandfathering}
+## Hosting model grandfathering
+{: #hosting-model-grandfathering}
 
 Current multi-tenant users that are automatically switched over to Shared Compute will begin to be charged for their CPU use starting April 2025, with exceptions.
 {: important}
@@ -86,7 +86,7 @@ Ahead of the April 2025 date, if you have a multi-tenant instance, there are a f
 {: #hosting-provisioning-ui}
 {: ui}
 
-To provision a {{site.data.keyword.databases-for}} service instance through the UI, select your **hosting type**. Choose either Shared Compute or Isolated Compute. Next, select the appropriate **Resource Allocation** for your workload.
+To provision a {{site.data.keyword.databases-for}} service instance through the UI, select your **hosting model**. Choose either Shared Compute or Isolated Compute. Next, select the appropriate **Resource Allocation** for your workload.
 
 
 
