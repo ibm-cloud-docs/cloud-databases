@@ -43,7 +43,7 @@ Here is a list of common metrics across all {{site.data.keyword.databases-for}} 
 ### CPU cores used per member
 {: #sysdig-monitor-dashboards-cpu-cores-used-per-member}
 
-The usage that is presented in this dashboard is the number of CPU cores used per member, which is measured in core seconds. Regardless of whether or not your database is running with a dedicated amount of CPU cores, it is consuming CPU core cycles.
+The usage that is presented in this dashboard is the number of CPU cores used per member, which is measured in core seconds. This metric is available for both multi-tenanted and single-tenanted databases. We recommend you use this metric can be used to track historical CPU allocation over time, which can help you decide how many CPU cores to allocate for your database to match desired performance. 
 
 ### CPU used per member (data only available with dedicated cores)
 {: #sysdig-monitor-dashboards-cpu-used-per-member}
