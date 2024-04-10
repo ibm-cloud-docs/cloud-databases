@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-04-08"
+lastupdated: "2024-04-10"
 
 subcollection: cloud-databases
 
@@ -322,7 +322,7 @@ The `host_flavor` parameter defines your Isolated Compute sizing. Input the appr
 Current multi-tenant users that are automatically transitioned to Shared Compute will begin to be charged for their CPU use starting April 2025, with exceptions.
 {: important}
 
-Starting July 2024, existing multi-tenant instances will begin the transition to Shared Compute; this means that first, RAM minimums requirements on multi-tenant and dedicated core instances will be applied, lifting the RAM of Shared Compute instances that fall below these minimums. On July 15, multi-tenant databases will see a gradual transition from no determinstic CPU allocation to the deterministic Shared Compute CPU allocation. Ahead of this transition, [monitor your database’s CPU usage](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-sysdig-monitor#sysdig-monitor-dashboards-cpu-cores-used-per-member) to determine what allocation is required to maintain your current performance level. Existing multi-tenant users will be grandfathered through to April 2025 for both CPU and minimum RAM allocations that are automatically added. Existing dedicated core users will not be impacted by minimum resource requirements unless a scale or provision action is invoked on an instance that is currently below these minimums. 
+Starting July 2024, existing multi-tenant instances will begin the transition to Shared Compute; this means that first, RAM minimums requirements on multi-tenant and dedicated core instances will be applied, lifting the RAM of Shared Compute instances that fall below these minimums. On July 15, multi-tenant databases will be gradually transitioned from no determinstic CPU allocation to the deterministic Shared Compute CPU allocation. Ahead of this transition, [monitor your database’s CPU usage](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-sysdig-monitor#sysdig-monitor-dashboards-cpu-cores-used-per-member) to determine what allocation is required to maintain your current performance level. Existing multi-tenant users will be grandfathered through to April 2025 for both CPU and minimum RAM allocations that are automatically added. Existing dedicated core users will not be impacted by minimum resource requirements unless a scale or provision action is invoked on an instance that is currently below these minimums. 
 
 On July 1, all new multi-tenant provisions are placed on Shared Compute. Dedicated cores provisioning remain available at this time.
 
