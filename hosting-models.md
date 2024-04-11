@@ -215,8 +215,6 @@ curl -X PATCH https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{i
 ```
 {: pre}
 
-
-
 ### Scale through Terraform
 {: #hosting-models-scaling-tf}
 {: terraform}
@@ -354,8 +352,8 @@ Ahead of the April 2025 date, if you have a multi-tenant instance, there are a f
 | 4 CPU < N ≤ 8 CPU OR 16 GB RAM, < M < 32 GB RAM           | 8 CPU x 32 GB RAM, Isolated Compute   |
 | 4 CPU < N ≤ 8 CPU OR 32 GB RAM, < M < 64 GB RAM           |  8 CPU x 64 GB RAM, Isolated Compute   |
 | 8 CPU < N ≤ 16 CPU OR 32 GB RAM, < M < 64 GB RAM           | 16 CPU x 64 GB RAM, Isolated Compute   |
-| 16 CPU < N ≤ 32 CPU OR 64 GB RAM, < M < 128 GB RAM           | | 32 CPU x 128 RAM, Isolated Compute   |
-| 16 CPU < N ≤ 30 CPU OR 64 GB RAM, < M < 240 GB RAM           | | 30 CPU x 240 RAM, Isolated Compute   | 
+| 16 CPU < N ≤ 32 CPU OR 64 GB RAM, < M < 128 GB RAM          | 32 CPU x 128 RAM, Isolated Compute   |
+| 16 CPU < N ≤ 30 CPU OR 64 GB RAM, < M < 240 GB RAM          | 30 CPU x 240 RAM, Isolated Compute   | 
 
 
 
@@ -368,6 +366,6 @@ Ahead of the April 2025 date, if you have a multi-tenant instance, there are a f
 | 4 CPU < N ≤ 8 CPU OR 16 GB RAM < M < 32 GB RAM           | 8 CPU x 32 GB RAM, Isolated Compute   |
 | 4 CPU < N ≤ 8 CPU OR 32 GB RAM < M < 64 GB RAM           |  8 CPU x 64 GB RAM, Isolated Compute   |
 | 8 CPU < N ≤ 16 CPU OR 32 GB RAM < M < 64 GB RAM           | 16 CPU x 64 GB RAM, Isolated Compute   |
-| 16 CPU < N ≤ 32 CPU OR 64 GB RAM < M < 128 GB RAM           | | 32 CPU x 128 RAM, Isolated Compute          |
-| 16 CPU < N ≤ 30 CPU OR 64 GB RAM < M < 240 GB RAM           | | 30 CPU x 240 RA, Isolated Compute          | 
+| 16 CPU < N ≤ 32 CPU OR 64 GB RAM < M < 128 GB RAM         | 32 CPU x 128 RAM, Isolated Compute    |
+| 16 CPU < N ≤ 30 CPU OR 64 GB RAM < M < 240 GB RAM         | 30 CPU x 240 RA, Isolated Compute   | 
 
