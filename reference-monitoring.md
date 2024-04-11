@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2023, 2024
-lastupdated: "2024-02-26"
+lastupdated: "2024-04-11"
 
 keywords: monitoring
 
@@ -12,7 +12,7 @@ subcollection: cloud-databases
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Monitoring Integration
+# Monitoring integration
 {: #monitoring}
 
 Monitoring for {{site.data.keyword.databases-for}} is provided through integration with the {{site.data.keyword.monitoringfull}} service. Your instances forward select information so that you can monitor instance health and resource usage. To see your dashboards in {{site.data.keyword.monitoringfull_notm}}, enable [Platform Metrics](/docs/monitoring?topic=monitoring-platform_metrics_enabling) in the same region as your instance. If you have instances in more than one region, provision {{site.data.keyword.monitoringfull_notm}} and enable platform metrics in each region.
@@ -1589,6 +1589,19 @@ Cache hit ratio
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 2: Cache hit ratio metric metadata" caption-side="top"}
 
+### Connection usage for an instance.
+{: #ibm_databases_for_mysql_connection_used_percent}
+
+Represents the connection usage for your deployment.
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_mysql_connection_used_percent`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+`Segment By` | `Service instance, Service instance name` |
+{: caption="Table 16: Connection usage for an instance. metric metadata" 
+
 #### MySQL Disk read latency mean
 {: #ibm_databases_for_mysql_disk_read_latency_mean}
 
@@ -1681,6 +1694,19 @@ How many input-output operations per second your instance is performing
 | `Value Type`  | `count` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 9: IOPS read & write total count for an instance metric metadata" caption-side="top"}
+
+### The maximum permitted number of simultaneous client connections.
+{: #ibm_databases_for_mysql_max_connections}
+
+Represents the maximum permitted number of simultaneous client connections.
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_mysql_max_connections`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `count` |
+ `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 110: The maximum permitted number of simultaneous client connections. metric metadata" caption-side="top"}
 
 #### MySQLMaximum allowed memory for an instance
 {: #ibm_databases_for_mysql_memory_limit_bytes}
