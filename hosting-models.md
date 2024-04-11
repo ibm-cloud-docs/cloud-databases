@@ -343,7 +343,7 @@ Ahead of the April 2025 date, if you have a multi-tenant instance, there are a f
 ## Automatic transition placement
 {: #automatic-transition-placement}
 
-| **If your current resource allocation is N CPU x M RAM (Non-RabbitMQ Version):** | **You will be automatically placed on (Non-RabbitMQ Version):** |
+| **If your current resource allocation is N CPU x M RAM (Non-RabbitMQ Version):** | **You will be automatically placed on <br> (Non-RabbitMQ Version):** |
 |:-------------------------:|:---------------------:|
 | N = 0 CPU, M < 4 GB RAM           | 0.5 CPU x 4 GB RAM, Shared Compute   |
 | N = 0 CPU, 4 GB RAM < M ≤  16 GB RAM     | M/8 CPU x M GB RAM, Shared Compute|
