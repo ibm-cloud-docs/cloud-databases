@@ -1538,6 +1538,7 @@ How much WAL log file uses, in bytes
 | [MySQL IO utilization in percent 5-minute average](#ibm_databases_for_mysql_disk_io_utilization_percent_average_5m) |
 | [MySQL IO utilization in percent 60-minute average](#ibm_databases_for_mysql_disk_io_utilization_percent_average_60m) |
 | [MySQL IOPS read & write total count for an instance](#ibm_databases_for_mysql_disk_iops_read_write_total) |
+| [MySQL The maximum permitted number of simultaneous client connections.](#ibm_databases_for_mysql_max_connections) | 
 | [MySQL Maximum allowed memory for an instance](#ibm_databases_for_mysql_memory_limit_bytes) |
 | [MySQL Percent of threads connected](#ibm_databases_for_mysql_threads_connected_usage) |
 | [MySQL Percent of threads running](#ibm_databases_for_mysql_threads_running_usage) |
@@ -1591,7 +1592,7 @@ Cache hit ratio
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 2: Cache hit ratio metric metadata" caption-side="top"}
 
-#### Connection usage for an instance.
+#### MySQL Connection usage for an instance.
 {: #ibm_databases_for_mysql_connection_used_percent}
 
 Represents the connection usage for your deployment.
@@ -1697,7 +1698,7 @@ How many input-output operations per second your instance is performing
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 10: IOPS read & write total count for an instance metric metadata" caption-side="top"}
 
-#### The maximum permitted number of simultaneous client connections.
+#### MySQL The maximum permitted number of simultaneous client connections.
 {: #ibm_databases_for_mysql_max_connections}
 
 Represents the maximum permitted number of simultaneous client connections.
