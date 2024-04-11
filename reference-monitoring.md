@@ -1529,9 +1529,8 @@ How much WAL log file uses, in bytes
 | Metric Name |
 |-----------|
 | [MySQL Cache hit ratio](#ibm_databases_for_mysql_cache_hit_ratio) |
-| [MySQL Disk read latency mean]
-(#ibm_databases_for_mysql_disk_read_latency_mean) |
-| [Connection usage for an instance.](#ibm_databases_for_mysql_connection_used_percent) | 
+| [MySQL Disk read latency mean](#ibm_databases_for_mysql_disk_read_latency_mean) |
+| [MySQL Connection usage for an instance](#ibm_databases_for_mysql_connection_used_percent) | 
 | [MySQL Disk write latency mean](#ibm_databases_for_mysql_disk_write_latency_mean) |
 | [MySQL IO utilization in percent 15-minute average](#ibm_databases_for_mysql_disk_io_utilization_percent_average_15m) |
 | [MySQL IO utilization in percent 30-minute average](#ibm_databases_for_mysql_disk_io_utilization_percent_average_30m) |
