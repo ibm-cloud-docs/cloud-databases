@@ -1537,8 +1537,8 @@ How much WAL log file uses, in bytes
 | [MySQL IO utilization in percent 5-minute average](#ibm_databases_for_mysql_disk_io_utilization_percent_average_5m) |
 | [MySQL IO utilization in percent 60-minute average](#ibm_databases_for_mysql_disk_io_utilization_percent_average_60m) |
 | [MySQL IOPS read & write total count for an instance](#ibm_databases_for_mysql_disk_iops_read_write_total) |
-| [MySQL The maximum permitted number of simultaneous client connections.](#ibm_databases_for_mysql_max_connections) | 
 | [MySQL Maximum allowed memory for an instance](#ibm_databases_for_mysql_memory_limit_bytes) |
+| [MySQL The maximum permitted number of simultaneous client connections.](#ibm_databases_for_mysql_max_connections) | 
 | [MySQL Percent of threads connected](#ibm_databases_for_mysql_threads_connected_usage) |
 | [MySQL Percent of threads running](#ibm_databases_for_mysql_threads_running_usage) |
 | [MySQL The number of connections that were aborted because the client died without closing the connection properly](#ibm_databases_for_mysql_aborted_clients_rate) |
@@ -1697,19 +1697,6 @@ How many input-output operations per second your instance is performing
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 10: IOPS read & write total count for an instance metric metadata" caption-side="top"}
 
-#### MySQL Maximum permitted number of simultaneous client connections.
-{: #ibm_databases_for_mysql_max_connections}
-
-Represents the maximum permitted number of simultaneous client connections.
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_databases_for_mysql_max_connections`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `count` |
- `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 11: The maximum permitted number of simultaneous client connections. metric metadata" caption-side="top"}
-
 #### MySQL Maximum allowed memory for an instance
 {: #ibm_databases_for_mysql_memory_limit_bytes}
 
@@ -1722,6 +1709,19 @@ The maximum amount of memory available to your instance
 | `Value Type`  | `byte` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 12: Maximum allowed memory for an instance metric metadata" caption-side="top"}
+
+#### MySQL Maximum permitted number of simultaneous client connections.
+{: #ibm_databases_for_mysql_max_connections}
+
+Represents the maximum permitted number of simultaneous client connections.
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_mysql_max_connections`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `count` |
+ `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 11: The maximum permitted number of simultaneous client connections. metric metadata" caption-side="top"}
 
 #### MySQL Percent of threads connected
 {: #ibm_databases_for_mysql_threads_connected_usage}
