@@ -1529,8 +1529,8 @@ How much WAL log file uses, in bytes
 | Metric Name |
 |-----------|
 | [MySQL Cache hit ratio](#ibm_databases_for_mysql_cache_hit_ratio) |
-| [MySQL Disk read latency mean](#ibm_databases_for_mysql_disk_read_latency_mean) |
 | [MySQL Connection usage for an instance](#ibm_databases_for_mysql_connection_used_percent) | 
+| [MySQL Disk read latency mean](#ibm_databases_for_mysql_disk_read_latency_mean) |
 | [MySQL Disk write latency mean](#ibm_databases_for_mysql_disk_write_latency_mean) |
 | [MySQL IO utilization in percent 15-minute average](#ibm_databases_for_mysql_disk_io_utilization_percent_average_15m) |
 | [MySQL IO utilization in percent 30-minute average](#ibm_databases_for_mysql_disk_io_utilization_percent_average_30m) |
@@ -1591,7 +1591,7 @@ Cache hit ratio
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 2: Cache hit ratio metric metadata" caption-side="top"}
 
-#### MySQL Connection usage for an instance.
+#### MySQL Connection usage for an instance
 {: #ibm_databases_for_mysql_connection_used_percent}
 
 Represents the connection usage for your deployment.
@@ -1602,7 +1602,7 @@ Represents the connection usage for your deployment.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `percent` |
 `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 3: Connection usage for an instance. metric metadata" 
+{: caption="Table 3: Connection usage for an instance metric metadata" caption-side="top"}
 
 #### MySQL Disk read latency mean
 {: #ibm_databases_for_mysql_disk_read_latency_mean}
@@ -1697,7 +1697,7 @@ How many input-output operations per second your instance is performing
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 10: IOPS read & write total count for an instance metric metadata" caption-side="top"}
 
-#### MySQL The maximum permitted number of simultaneous client connections.
+#### MySQL Maximum permitted number of simultaneous client connections.
 {: #ibm_databases_for_mysql_max_connections}
 
 Represents the maximum permitted number of simultaneous client connections.
@@ -1710,7 +1710,7 @@ Represents the maximum permitted number of simultaneous client connections.
  `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 11: The maximum permitted number of simultaneous client connections. metric metadata" caption-side="top"}
 
-#### MySQLMaximum allowed memory for an instance
+#### MySQL Maximum allowed memory for an instance
 {: #ibm_databases_for_mysql_memory_limit_bytes}
 
 The maximum amount of memory available to your instance
