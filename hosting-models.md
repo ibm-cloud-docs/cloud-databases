@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-04-10"
+lastupdated: "2024-04-15"
 
 subcollection: cloud-databases
 
@@ -23,11 +23,11 @@ To allow for reliable resource allocation, {{site.data.keyword.databases-for}} o
 
 Shared compute is a flexible multi-tenant offering for dynamic, fine-tuned, and decoupled capacity selections.
 
-Each database instance receives a deterministic CPU allocation. If an instance is provisioned without selecting a CPU amount, Shared Compute automatically allocates a small amount of CPU to your database up to a 2 core max. Automatic CPU is provided at a 1:8 ratio of CPU:RAM; therefore, a user with 1 GB RAM receives 1/8th of a CPU; a user with 8 GB RAM receives 1 CPU; and an user with 20 GB RAM receives 2 CPU due to the 2 CPU limit.
+Each database instance receives a deterministic CPU allocation. If an instance is provisioned without selecting a CPU amount, Shared Compute automatically allocates a small amount of CPU to your database up to a 2 core max. Automatic CPU is provided at a 1:8 ratio of CPU:RAM; therefore, a user with 4 GB RAM receives 4/8th of a CPU; a user with 8 GB RAM receives 1 CPU; and an user with 20 GB RAM receives 2 CPU due to the 2 CPU limit.
 
 If you have higher performance requirements than 2 CPU, you can easily leverage the flexibility of the Shared model. With the ability to select the amount of CPU and RAM resources you receive, performance can be scaled to fit your workload. Additionally, if you know that your instance will experience variable demand, use RAM autoscaling to set not only the expected load and duration that would initiate resource scaling, but also the resource and cost limit your database will scale to.
 
-Because of each service's individual requirements, {{site.data.keyword.databases-for}} has minimum resource requirements in place for all Shared Compute instances. When all existing multi-tenant instances are transitioned to Shared Compute, these minimum resource requirements will be applied. Current multi-tenant instances will not be charged (that is, they will be _grandfathered_) for any increase to up to these minimum resourece requirements actioned by IBM until April 2025. For more information, see [Hosting model grandfathering](/docs/cloud-databases?topic=cloud-databases-hosting-models&interface=ui#hosting-models-grandfathering).
+Because of each service's individual requirements, {{site.data.keyword.databases-for}} has minimum resource requirements in place for all Shared Compute instances. When all existing multi-tenant instances are transitioned to Shared Compute, these minimum resource requirements will be applied. Current multi-tenant instances will not be charged (that is, they will be _grandfathered_) for any increase to up to these minimum resource requirements actioned by IBM until April 2025. For more information, see [Hosting model grandfathering](/docs/cloud-databases?topic=cloud-databases-hosting-models&interface=ui#hosting-models-grandfathering).
 {: note}
 
 ## {{site.data.keyword.databases-for}} Isolated Compute
@@ -35,10 +35,7 @@ Because of each service's individual requirements, {{site.data.keyword.databases
 
 Isolated Compute is a secure single-tenant offering for complex, highly-performant enterprise workloads. By placing your deployment and all associated user-data management agents on an isolated machine, {{site.data.keyword.databases-for}} Isolated Compute provides dedicated computing resources, dedicated IO and network bandwidth, and hypervisor-level isolation.
 
-When provisioning, choose the CPU x RAM size for the machine to set up your database. This machine will be exclusively assigned to running your database instance. Storage is still selected separately, allowing you to determine the size of disk and number of [IOPS](#x3858854){: term} your database receives. Scale your database and change your machine size using your preferred method: the [dashboard](https://cloud.ibm.com/){: external}, the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference), the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction), or using [Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: external}.
-
-Allocating CPU and RAM separately is not available when provisioning or scaling through Isolated Compute. You must specify `mulitenant` for the `host_flavor` parameter to enable this.
-{: note}
+When provisioning, choose the CPU x RAM size for the machine to set up your database. This machine will be exclusively assigned to running your database instance. Storage is still selected separately, allowing you to determine the size of disk and number of [IOPS](#x3858854){: term} your database receives. Scale your database and change your machine size using your preferred method: the [UI](https://cloud.ibm.com/){: external}, the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference), the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction), or using [Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: external}.
 
 CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} Isolated Compute. Disk autoscaling is available. If you provisioned an Isolated instance or switched over from a deployment with autoscaling, monitor your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/databases-for-mongodb?topic=databases-for-mongodb-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
 {: note}
@@ -59,7 +56,6 @@ Isolated Compute features 6 size selections:
 
 To switch between Shared and Isolated compute, select the model you want, review your resource selection, and switch. Switching hosting models does not cause downtime, as this is not a backup and restore migration. Instead, the same process is applied as for updates or database instance scaling. The database processes will perform a rolling restart, causing existing connections to be dropped. Thus, the recommendation is as always to ensure that your application has retry and reconnect logic to immediately re-establish a connection.
 
-
 ## Choosing between hosting models
 {: #choosing-between-hosting-models}
 
@@ -68,7 +64,7 @@ To switch between Shared and Isolated compute, select the model you want, review
 | Single-tenanted databases with dedicated IO and Network bandwidth. Database management agents are placed on Isolated machine. | Multi-tenanted, logically separated databases sharing bandwidth. Database management pods are also multi-tenanted. |
 | Receive all the available resources in your machine. | Transparent, deterministic CPU allocation. Know exactly what your performance will be and scale up and down as your workload requires. |
 | Premium databases, such as MongoDB Sharding and Elasticsearch Platinum, will be solely provisioned on Isolated Compute. Future enhancements, such as maintenance windows and cross-region replication will be supported solely on Isolated Compute. | Standard database versions only. |
-| Scalability is based on provided machine sizes. | Scalability is fine-grained and linear from a database-specific minimum configuration up to 28 CPU and 112 GB RAM.  |
+| Scalability is based on provided machine sizes. | Scalability is fine-grained and linear from a database-specific minimum configuration up to 28 CPU and 112 GB RAM. |
 
 ## {{site.data.keyword.databases-for}} Provisioning
 {: #hosting-models-provisioning}
@@ -78,7 +74,6 @@ To switch between Shared and Isolated compute, select the model you want, review
 {: ui}
 
 To provision a {{site.data.keyword.databases-for}} service instance through the UI, select your **hosting model**. Choose either Shared Compute or Isolated Compute. Next, select the appropriate **Resource Allocation** for your workload.
-
 
 ### Provision through the CLI
 {: #hosting-models-provisioning-cli}
@@ -104,6 +99,8 @@ The `<host_flavor value>` parameter defines your sizing. To provision a Shared C
 | 30 CPU x 240 RAM          | `m3c.30x240.encrypted`  |
 {: caption="Table 1. Host Flavor sizing parameter" caption-side="bottom"}
 
+Allocating CPU and RAM separately is not available when provisioning or scaling through Isolated Compute. You must specify `mulitenant` for the `host_flavor` parameter to enable this.
+{: note}
 
 ### Provision using the API
 {: #hosting-models-provisioning-api}
@@ -111,7 +108,7 @@ The `<host_flavor value>` parameter defines your sizing. To provision a Shared C
 
 To provision a Shared Compute instance, specify `multitenant` for the `members_host_flavor` parameter.
 
-Use a command like:
+Use the following command:
 
 ```sh
 curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H "Authorization: Bearer <IAM token>" -H 'Content-Type: application/json' -d '{
@@ -124,7 +121,7 @@ curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H 
 ```
 {: pre}
 
-To provision a {{site.data.keyword.databases-for}} Isolated Compute instance, use a command like:
+To provision a {{site.data.keyword.databases-for}} Isolated Compute instance, use the following command:
 
 ```sh
 curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H "Authorization: Bearer <IAM token>" -H 'Content-Type: application/json' -d '{
@@ -150,6 +147,8 @@ The `host_flavor value` parameter defines your Isolated Compute sizing. Input th
 | 30 CPU x 240 RAM          | `m3c.30x240.encrypted`  |
 {: caption="Table 1. Host Flavor sizing parameter" caption-side="bottom"}
 
+Allocating CPU and RAM separately is not available when provisioning or scaling through Isolated Compute. You must specify `mulitenant` for the `host_flavor` parameter to enable this.
+{: note}
 
 ### Retrieve resources through the API
 {: #hosting-models-retrieve-api}
@@ -157,7 +156,7 @@ The `host_flavor value` parameter defines your Isolated Compute sizing. Input th
 
 To retrieve the Isolated Compute resources available for a {{site.data.keyword.databases-for}} Isolated Compute instance, use the {{site.data.keyword.databases-for}} API [Scaling endpoint](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#listdeploymentscalinggroups){: external}.
 
-Use a command like:
+Use the following command:
 
 ```sh
 curl -X GET https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}/groups -H 'Authorization: Bearer <>' \
@@ -168,7 +167,7 @@ curl -X GET https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}
 {: #hosting-models-scaling-cli}
 {: cli}
 
-To scale a {{site.data.keyword.databases-for}} Shared Compute instance. Use a command like:
+To scale a {{site.data.keyword.databases-for}} Shared Compute instance. Use the following command:
 
 ```sh
 ibmcloud cdb deployment-groups-set <deploymentid> <groupid> [--memory <val>] [--cpu <val>] [--disk <val>] [--hostflavor multitenant]
@@ -181,7 +180,7 @@ ibmcloud cdb deployment-groups-set <deploymentid> <groupid> [--memory <val>] [--
 
 To scale a {{site.data.keyword.databases-for}} Isolated Compute instance, use the {{site.data.keyword.databases-for}} API [Scaling endpoint](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#setdeploymentscalinggroup){: external}.
 
-Use a command like:
+Use the following command:
 
 ```sh
 curl -X PATCH https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}/groups/{group_id}
@@ -195,7 +194,7 @@ curl -X PATCH https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{i
 ```
 {: pre}
 
-To scale a {{site.data.keyword.databases-for}} Isolated Compute instance to a Shared Compute instance, use a command like:
+To scale a {{site.data.keyword.databases-for}} Isolated Compute instance to a Shared Compute instance, use the following command:
 
 ```sh
 curl -X PATCH https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}/groups/{group_id}
@@ -219,7 +218,7 @@ curl -X PATCH https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{i
 {: #hosting-models-scaling-tf}
 {: terraform}
 
-To scale a {{site.data.keyword.databases-for}} Isolated Compute instance, use a command like:
+To scale a {{site.data.keyword.databases-for}} Isolated Compute instance, use the following command:
 
 Update `host_flavor` with your desired amount. To implement your change, run `terraform apply`.
 
@@ -227,7 +226,7 @@ Update `host_flavor` with your desired amount. To implement your change, run `te
 {: #hosting-models-iso-compute-provisioning-tf}
 {: terraform}
 
-To provision an instance through Isolated Compute, use a command like:
+To provision an instance through Isolated Compute, use the following command:
 
 ```terraform
 data "ibm_resource_group" "group" {
@@ -310,6 +309,7 @@ output "ICD Etcd database connection string" {
 {: codeblock}
 
 The `host_flavor` parameter defines your Isolated Compute sizing. Input the appropriate value for your desired size. To provision a Shared Compute instance, specify `multitenant`.
+
 | **Host flavor** | **host_flavor value** |
 |:-------------------------:|:---------------------:|
 | Shared Compute            | `multitenant`    |
@@ -324,48 +324,49 @@ The `host_flavor` parameter defines your Isolated Compute sizing. Input the appr
 ## Hosting model grandfathering
 {: #hosting-model-grandfathering}
 
-Current multi-tenant users that are automatically transitioned to Shared Compute will begin to be charged for their CPU use starting April 2025, with exceptions.
+Multi-tenant users that are automatically transitioned to Shared Compute will be *grandfathered*, meaning that they get RAM and CPU increased to the new minimums, if required. These increases will not be charged until April 2025.
 {: important}
 
-Starting July 2024, existing multi-tenant instances will begin the transition to Shared Compute; this means that first, RAM minimums requirements on multi-tenant and dedicated core instances will be applied, lifting the RAM of Shared Compute instances that fall below these minimums. On July 15, multi-tenant databases will be gradually transitioned from no determinstic CPU allocation to the deterministic Shared Compute CPU allocation. Ahead of this transition, [monitor your database’s CPU usage](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-sysdig-monitor#sysdig-monitor-dashboards-cpu-cores-used-per-member) to determine what allocation is required to maintain your current performance level. Existing multi-tenant users will be grandfathered through to April 2025 for both CPU and minimum RAM allocations that are automatically added. Existing dedicated core users will not be impacted by minimum resource requirements unless a scale or provision action is invoked on an instance that is currently below these minimums. 
+Starting July 2024, existing multi-tenant instances will begin the transition to Shared Compute; this means that first, RAM minimums requirements on multi-tenant and dedicated core instances will be applied, lifting the RAM of Shared Compute instances that fall below these minimums. On July 15, multi-tenant databases will be gradually transitioned from non-determinstic CPU allocation to the deterministic Shared Compute CPU allocation. Ahead of this transition, [monitor your database's CPU usage](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-sysdig-monitor#sysdig-monitor-dashboards-cpu-cores-used-per-member) to determine what allocation is required to maintain your current performance level. Existing multi-tenant users will be grandfathered through to April 2025 for both CPU and minimum RAM allocations that are automatically added. Existing dedicated core users will not be impacted by minimum resource requirements unless a scale or provision action is invoked on an instance that is currently below these minimums.
 
 On July 1, all new multi-tenant provisions are placed on Shared Compute. Dedicated cores provisioning remain available at this time.
 
 In April 2025, we will transition dedicated core users to Isolated Compute and remove grandfathering for Shared Compute instances. All Dedicated Cores instances will be transitioned to the nearest larger Isolated Compute size. Dedicated Core and Isolated Compute instances can follow the simple switchover steps to transition to Shared Compute at any time. To provision a Dedicated Cores instance before it is transitioned, use the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference){: external}, the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction){: external}, or through [Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: external}.
 
-Ahead of the April 2025 date, if you have a multi-tenant instance, there are a few exceptions where grandfathering would not longer apply: 
-- If you have an existing database and change your RAM allocation only, you will be charged corresponding to the RAM changes. 
-- If you have an existing database and change your CPU allocation, you will be charged for all CPU and RAM allocated to your database.
-- If you create a new Shared Compute instance, you will be charged for all CPU and RAM allocated to your database. 
-- If you transition to Shared Compute, you will be charged for all CPU and RAM allocated to your database.  
+Ahead of the April 2025 date, if you have a multi-tenant instance, there are a few exceptions where grandfathering would no longer apply:
 
+- If you have an existing database and change your RAM allocation only, you will be charged corresponding to the RAM changes.
+- If you have an existing database and change your CPU allocation, you will be charged for all CPU and RAM allocated to your database.
+- If you create a new Shared Compute instance, you will be charged for all CPU and RAM allocated to your database.
+- If you transition to Shared Compute, you will be charged for all CPU and RAM allocated to your database.
 
 ## Automatic transition placement
 {: #automatic-transition-placement}
 
 | **If your current resource allocation is N CPU x M RAM (Non-RabbitMQ Version):** | **You will be automatically placed on <br> (Non-RabbitMQ Version):** |
 |:-------------------------:|:---------------------:|
-| N = 0 CPU, M < 4 GB RAM           | 0.5 CPU x 4 GB RAM, Shared Compute   |
-| N = 0 CPU, 4 GB RAM < M ≤  16 GB RAM     | M/8 CPU x M GB RAM, Shared Compute|
-| N = 0 CPU, M > 16 GB RAM           | 2 CPU x M GB RAM, Shared Compute    |
-| 0 CPU < N ≤ 4 CPU, M < 16 GB RAM          |    4 CPU x 16 GB RAM, Isolated Compute  |
-| 4 CPU < N ≤ 8 CPU OR 16 GB RAM, < M < 32 GB RAM           | 8 CPU x 32 GB RAM, Isolated Compute   |
-| 4 CPU < N ≤ 8 CPU OR 32 GB RAM, < M < 64 GB RAM           |  8 CPU x 64 GB RAM, Isolated Compute   |
-| 8 CPU < N ≤ 16 CPU OR 32 GB RAM, < M < 64 GB RAM           | 16 CPU x 64 GB RAM, Isolated Compute   |
-| 16 CPU < N ≤ 32 CPU OR 64 GB RAM, < M < 128 GB RAM          | 32 CPU x 128 RAM, Isolated Compute   |
-| 16 CPU < N ≤ 30 CPU OR 64 GB RAM, < M < 240 GB RAM          | 30 CPU x 240 RAM, Isolated Compute   | 
+| N = 0 CPU, M < 4 GB RAM | 0.5 CPU x 4 GB RAM, Shared Compute |
+| N = 0 CPU, 4 GB RAM < M ≤ 16 GB RAM | M/8 CPU x M GB RAM, Shared Compute|
+| N = 0 CPU, M > 16 GB RAM | 2 CPU x M GB RAM, Shared Compute |
+| 0 CPU < N ≤ 4 CPU, M < 16 GB RAM | 4 CPU x 16 GB RAM, Isolated Compute |
+| 4 CPU < N ≤ 8 CPU OR 16 GB RAM, < M < 32 GB RAM | 8 CPU x 32 GB RAM, Isolated Compute |
+| 4 CPU < N ≤ 8 CPU OR 32 GB RAM, < M < 64 GB RAM | 8 CPU x 64 GB RAM, Isolated Compute |
+| 8 CPU < N ≤ 16 CPU OR 32 GB RAM, < M < 64 GB RAM | 16 CPU x 64 GB RAM, Isolated Compute |
+| 16 CPU < N ≤ 32 CPU OR 64 GB RAM, < M < 128 GB RAM | 32 CPU x 128 RAM, Isolated Compute |
+| 16 CPU < N ≤ 30 CPU OR 64 GB RAM, < M < 240 GB RAM | 30 CPU x 240 RAM, Isolated Compute |
 
+<br>
 
+<br>
 
 | **If your current resource allocation is N CPU x M RAM (RabbitMQ Version):** | **You will be automatically placed on (RabbitMQ Version):** |
 |:-------------------------:|:---------------------:|
-| N = 0 CPU, M < 8 GB RAM           | 1 CPU x 8 GB RAM, Shared Compute   |
-| N = 0 CPU, 8 GB RAM < M ≤  16 GB RAM     | M/8 CPU x M GB RAM, Shared Compute |
-| N = 0 CPU, M > 16 GB RAM           | 2 CPU x M GB RAM, Shared Compute    |
+| N = 0 CPU, M < 8 GB RAM | 1 CPU x 8 GB RAM, Shared Compute |
+| N = 0 CPU, 8 GB RAM < M ≤  16 GB RAM | M/8 CPU x M GB RAM, Shared Compute |
+| N = 0 CPU, M > 16 GB RAM           | 2 CPU x M GB RAM, Shared Compute |
 | 0 CPU < N ≤ 4 CPU , M < 16 GB RAM          |    4 CPU x 16 GB RAM, Isolated Compute  |
 | 4 CPU < N ≤ 8 CPU OR 16 GB RAM < M < 32 GB RAM           | 8 CPU x 32 GB RAM, Isolated Compute   |
 | 4 CPU < N ≤ 8 CPU OR 32 GB RAM < M < 64 GB RAM           |  8 CPU x 64 GB RAM, Isolated Compute   |
 | 8 CPU < N ≤ 16 CPU OR 32 GB RAM < M < 64 GB RAM           | 16 CPU x 64 GB RAM, Isolated Compute   |
 | 16 CPU < N ≤ 32 CPU OR 64 GB RAM < M < 128 GB RAM         | 32 CPU x 128 RAM, Isolated Compute    |
-| 16 CPU < N ≤ 30 CPU OR 64 GB RAM < M < 240 GB RAM         | 30 CPU x 240 RA, Isolated Compute   | 
-
+| 16 CPU < N ≤ 30 CPU OR 64 GB RAM < M < 240 GB RAM         | 30 CPU x 240 RA, Isolated Compute   |
