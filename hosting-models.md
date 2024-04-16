@@ -41,7 +41,9 @@ CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} 
 
 ## {{site.data.keyword.databases-for}} Shared Compute
 {: #hosting-models-shared-compute}
-{: cli}{: api}{: terraform}
+{: cli}
+{: api}
+{: terraform}
 
 Shared compute is a flexible multi-tenant offering for dynamic, fine-tuned, and decoupled capacity selections.
 
@@ -54,7 +56,9 @@ Because of each service's individual requirements, {{site.data.keyword.databases
 
 ## {{site.data.keyword.databases-for}} Isolated Compute
 {: #hosting-models-iso-compute}
-{: cli}{: api}{: terraform}
+{: cli}
+{: api}
+{: terraform}
 
 Isolated Compute is a secure single-tenant offering for complex, highly-performant enterprise workloads. By placing your deployment and all associated user-data management agents on an isolated machine, {{site.data.keyword.databases-for}} Isolated Compute provides dedicated computing resources, dedicated IO and network bandwidth, and hypervisor-level isolation.
 
