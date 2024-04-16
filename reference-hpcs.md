@@ -14,7 +14,9 @@ subcollection: cloud-databases
 # Hyper Protect Crypto Services Integration
 {: #hpcs}
 
-The data that you store in {{site.data.keyword.cloud}} Databases is encrypted by default by using randomly generated keys. If you need to control the encryption keys, you can Bring Your Own Key (BYOK) through [{{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-get-started), and use one of your own keys to encrypt your databases. Take note that {{site.data.keyword.hscrypto}} for {{site.data.keyword.cloud}} Databases backups is not currently supported. 
+The data that you store in {{site.data.keyword.cloud}} Databases is encrypted by default by using randomly generated keys. If you need to control the encryption keys, you can Bring Your Own Key (BYOK) through [{{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-get-started), and use one of your own keys to encrypt your databases. Take note that {{site.data.keyword.hscrypto}} for {{site.data.keyword.cloud}} Databases backups is not currently supported for the majority of regions and not recommended to be used without carefull considerations of the potential impact to disaster recovery. 
+
+
 
 This document covers the integration of {{site.data.keyword.hscrypto}} (HPCS) with Cloud Databases, which includes {{site.data.keyword.databases-for-cassandra}},{{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-enterprisedb}}, {{site.data.keyword.databases-for-etcd}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-redis}}, {{site.data.keyword.databases-for-mysql_full}}, and {{site.data.keyword.messages-for-rabbitmq}}.
 {: .note}
@@ -72,6 +74,45 @@ curl -X POST \
     "resource_group": "5g9f447903254bb58972a2f3f5a4c711",
     "resource_plan_id": "databases-for-x-standard",
     "disk_encryption_key_crn": "crn:v1:<...>:key:<id>"
+  }'
+```
+
+If you provision a deployment through the CLI or API, the HPCS key needs to be identified by its full CRN, not just its ID. An HPCS CRN is in the format `crn:v1:<...>:key:<id>`.
+{: .tip}
+
+## Using the HPCS Key for Backup encryption
+{: #use-hpcs}
+
+This feature is currently only supported in eu-es. Encrypting backups with HPCS in a single region will render the backups inaccessible should availability of HPCS be disrupted in this region. For this reason, we do not recommend to encrypt backups with HPCS. The suggestion is to use KeyProtect
+{: .note}
+
+You'll likely want to encrypt your disk with HPCS in case you've choosen to encrypt the backup with HPCS.
+{: .tip}
+
+After you grant your {{site.data.keyword.databases-for}} deployments permission to use your keys, you supply the [key name or CRN](/docs/hs-crypto?topic=hs-crypto-view-keys) when you provision a deployment. The deployment uses your encryption key to encrypt your data.
+
+If provisioning from the catalog page, select the HPCS instance and key from the dropdown menus.
+
+In the CLI, use the `backup_encryption_key_crn` parameter in the parameters JSON object.
+```bash
+ibmcloud resource service-instance-create example-database <service-name> standard eu-es \
+-p \ '{
+  "backup_encryption_key_crn": "crn:v1:<...>:key:<id>"
+}'
+```
+
+In the API, use the `back-encryption-key` parameter in the body of the request.
+```curl
+curl -X POST \
+  https://resource-controller.cloud.ibm.com/v2/resource_instances \
+  -H 'Authorization: Bearer <>' \
+  -H 'Content-Type: application/json' \
+    -d '{
+    "name": "my-instance",
+    "target": "blue-us-south",
+    "resource_group": "5g9f447903254bb58972a2f3f5a4c711",
+    "resource_plan_id": "databases-for-x-standard",
+    "backup_encryption_key_crn": "crn:v1:<...>:key:<id>"
   }'
 ```
 
