@@ -21,7 +21,7 @@ To enable Sysdig Monitor on {{site.data.keyword.mon_full}}, follow these steps:
 
 1. Log in to the {{site.data.keyword.cloud_notm}} console.
 1. Click the **Catalog** tab.
-1. In the **Category** list, select *Logging and Monitoring*.
+1. In the **Category** list, select **Logging and Monitoring**.
 1. Click the {{site.data.keyword.mon_full}} tile.
 1. In the **Create** dialog box, do the following:
    - Select a location.
@@ -30,7 +30,7 @@ To enable Sysdig Monitor on {{site.data.keyword.mon_full}}, follow these steps:
 1. Click Create.
 1. Then, follow the process found at [Working with platform metrics](/docs/monitoring?topic=monitoring-platform_metrics_working){: external} to configure your platform metrics.
 
-## Sysdig Dashboards
+## Sysdig dashboards
 {: #sysdig-monitor-dashboards}
 
 Use dashboards to monitor your environments and applications. Sysdig dashboards are designed around time. Select your dashboard based on specific data gathered over a
