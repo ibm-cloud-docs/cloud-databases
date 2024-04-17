@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2023, 2024
-lastupdated: "2024-02-28"
+lastupdated: "2024-04-17"
 
 subcollection: cloud-databases, database member, CPU seconds, platform metrics
 
@@ -33,7 +33,8 @@ To enable Sysdig Monitor on {{site.data.keyword.mon_full}}, follow these steps:
 ## Sysdig Dashboards
 {: #sysdig-monitor-dashboards}
 
-Use dashboards to monitor your environments and applications. Sysdig dashboards are designed around time. Select your dashboard based on specific data gathered over a set time range.
+Use dashboards to monitor your environments and applications. Sysdig dashboards are designed around time. Select your dashboard based on specific data gathered over a
+set time range.
 
 ## Common metrics
 {: #sysdig-monitor-dashboards-common-metrics}
@@ -43,7 +44,8 @@ Here is a list of common metrics across all {{site.data.keyword.databases-for}} 
 ### CPU cores used per member
 {: #sysdig-monitor-dashboards-cpu-cores-used-per-member}
 
-The usage that is presented in this dashboard is the number of CPU cores used per member, which is measured in core seconds. This metric is available for both multi-tenanted and single-tenanted databases. We recommend that you use this metric to track historical CPU allocation over time, which can help you to decide how many CPU cores to allocate for your database to match desired performance. 
+The usage that is presented in this dashboard is the number of CPU cores used per member, which is measured in core seconds. This metric is available for all hosting models; you can monitor this metric for both, databases that are hosted either as a single-tenant on underlying hardware and databases running on multi-tenant hosts.
+We recommend that you use this metric to track historical CPU allocation over time, which can help you to decide how many CPU cores to allocate for your database to match desired performance. 
 
 ### CPU used per member (data only available with dedicated cores)
 {: #sysdig-monitor-dashboards-cpu-used-per-member}
