@@ -50,17 +50,20 @@ If the service authorization is not present before provisioning your deployment 
 
 After you grant your {{site.data.keyword.databases-for}} deployments permission to use your keys, you supply the [key name or CRN](/docs/hs-crypto?topic=hs-crypto-view-keys) when you provision a deployment. The deployment uses your encryption key to encrypt your data.
 
-If provisioning from the catalog page, select the HPCS instance and key from the dropdown menus.
+If provisioning from the catalog page, select the HPCS instance and key from the drop-down menu.
 
-In the CLI, use the `disk_encryption_key_crn` parameter in the parameters JSON object.
+In the CLI, use the `disk_encryption_key_crn` parameter in the parameter's JSON object.
+
 ```bash
 ibmcloud resource service-instance-create example-database <service-name> standard us-south \
 -p \ '{
   "disk_encryption_key_crn": "crn:v1:<...>:key:<id>"
 }'
 ```
+{: codeblock}
 
 In the API, use the `disk-encryption-key` parameter in the body of the request.
+
 ```curl
 curl -X POST \
   https://resource-controller.cloud.ibm.com/v2/resource_instances \
@@ -74,8 +77,9 @@ curl -X POST \
     "disk_encryption_key_crn": "crn:v1:<...>:key:<id>"
   }'
 ```
+{: codeblock}
 
-If you provision a deployment through the CLI or API, the HPCS key needs to be identified by its full CRN, not just its ID. An HPCS CRN is in the format `crn:v1:<...>:key:<id>`.
+If you provision a deployment through the CLI or API, the HPCS key must be identified by its full CRN, not just its ID. An HPCS CRN has the format `crn:v1:<...>:key:<id>`.
 {: .tip}
 
 ## Using the HPCS Key for Backup encryption
@@ -99,6 +103,7 @@ ibmcloud resource service-instance-create example-database <service-name> standa
   "backup_encryption_key_crn": "crn:v1:<...>:key:<id>"
 }'
 ```
+{: codeblock}
 
 In the API, use the `back-encryption-key` parameter in the body of the request.
 
@@ -115,6 +120,7 @@ curl -X POST \
     "backup_encryption_key_crn": "crn:v1:<...>:key:<id>"
   }'
 ```
+{: codeblock}
 
 If you provision a deployment through the CLI or API, the HPCS key must be identified by its full CRN, not just its ID. An HPCS CRN has the format `crn:v1:<...>:key:<id>`.
 {: .tip}
