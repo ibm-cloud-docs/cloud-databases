@@ -85,7 +85,7 @@ If you provision a deployment through the CLI or API, the HPCS key must be ident
 ## Using the HPCS Key for Backup encryption
 {: #use-hpcs}
 
-This feature is currently only supported in the region eu-es. Encrypting backups with HPCS in a single region renders the backups inaccessible, if availability of HPCS gets disrupted in this region. Therefore, encrypting backups with HPCS is not recommended. Use {{site.data.keyword.keymanagementservicelong}} to encrypt backups.
+This feature is currently only supported in the region eu-es. Encrypting backups with HPCS in a single region renders the backups inaccessible, if availability of HPCS gets disrupted in this region. Taking a backup and restoring from backups will fail for the period that HPCS is unavailable. Therefore, encrypting backups with HPCS is not recommended. Use {{site.data.keyword.keymanagementservicelong}} to encrypt backups.
 {: .note}
 
 Encrypt your disk with HPCS, if you also encrypted the backup with HPCS.
