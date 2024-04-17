@@ -24,7 +24,7 @@ To allow for reliable resource allocation, {{site.data.keyword.databases-for}} o
 
 Shared compute is a flexible multi-tenant offering for dynamic, fine-tuned, and decoupled capacity selections.
 
-If you select Shared compute in the UI, you then choose an initial resource allocation preset: **Small**(1 CPU and 8 GB RAM for {{site.data.keyword.rabbitmq}}, 0.5 CPU and 4 GB RAM for all other databases) or **Custom**(2 CPU and 4 GB RAM). Small has a fixed amount of CPU and RAM, but you can change disk. Custom can be completely customized.
+If you select Shared compute in the {{site.data.keyword.cloud_notm}} console, you then choose an initial resource allocation preset: **Small**(1 CPU and 8 GB RAM for {{site.data.keyword.rabbitmq}}, 0.5 CPU and 4 GB RAM for all other databases) or **Custom**(2 CPU and 4 GB RAM). Small has a fixed amount of CPU and RAM, but you can change disk. Custom can be completely customized.
 
 With Small allocation preset, you can test out the database with the smallest resource allocation. If you have higher performance requirements, you can easily leverage the flexibility of the Shared model with the Custom allocation preset. With the ability to select the amount of CPU and RAM resources you receive, performance can be scaled to fit your workload.
 
@@ -62,7 +62,7 @@ Because of each service's individual requirements, {{site.data.keyword.databases
 
 Isolated Compute is a secure single-tenant offering for complex, highly-performant enterprise workloads. By placing your deployment and all associated user-data management agents on an isolated machine, {{site.data.keyword.databases-for}} Isolated Compute provides dedicated computing resources, dedicated IO and network bandwidth, and hypervisor-level isolation.
 
-When provisioning, choose the CPU x RAM size for the machine to set up your database. This machine will be exclusively assigned to running your database instance. Storage is still selected separately, allowing you to determine the size of disk and number of [IOPS](#x3858854){: term} your database receives. Scale your database and change your machine size using your preferred method: the [UI](https://cloud.ibm.com/){: external}, the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference), the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction), or using [Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: external}.
+When provisioning, choose the CPU x RAM size for the machine to set up your database. This machine will be exclusively assigned to running your database instance. Storage is still selected separately, allowing you to determine the size of disk and number of [IOPS](#x3858854){: term} your database receives. Scale your database and change your machine size using your preferred method: the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference), the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction), or using [Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: external}.
 
 CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} Isolated Compute. Disk autoscaling is available. If you provisioned an Isolated instance or switched over from a deployment with autoscaling, monitor your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/databases-for-mongodb?topic=databases-for-mongodb-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
 {: note}
@@ -96,11 +96,11 @@ To switch between Shared and Isolated compute, select the model you want, review
 ## {{site.data.keyword.databases-for}} Provisioning
 {: #hosting-models-provisioning}
 
-### Provision through the UI
+### Provision through the {{site.data.keyword.cloud_notm}} console
 {: #hosting-provisioning-ui}
 {: ui}
 
-To provision a {{site.data.keyword.databases-for}} service instance through the UI, select your **hosting model**. Choose either Shared Compute or Isolated Compute. Next, select the appropriate **Resource Allocation** for your workload.
+To provision a {{site.data.keyword.databases-for}} service instance through the {{site.data.keyword.cloud_notm}} console, select your **hosting model**. Choose either Shared Compute or Isolated Compute. Next, select the appropriate **Resource Allocation** for your workload.
 
 ### Provision through the CLI
 {: #hosting-models-provisioning-cli}
