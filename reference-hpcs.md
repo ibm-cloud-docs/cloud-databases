@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2024
-lastupdated: "2024-04-17"
+lastupdated: "2024-04-18"
 
 keywords: bring your own key, byok, cryptoshredding, hpcs, hyper protect crypto services
 
@@ -88,7 +88,7 @@ If you provision a deployment through the CLI or API, the HPCS key must be ident
 This feature is only supported in the region eu-es. Encrypting backups with HPCS in a single region renders the backups inaccessible, if availability of HPCS is disrupted in this region. Taking a backup and restoring from backups will fail for the period that HPCS is unavailable. Therefore, encrypting backups with HPCS is not recommended. Use {{site.data.keyword.keymanagementservicelong}} to encrypt backups.
 {: .note}
 
-If you encrypted the backup with HPCS you will also want to encryp the disk with HPCS.
+If you encrypted the backup with HPCS, encrypt the disk also with HPCS.
 {: .tip}
 
 After you grant your {{site.data.keyword.databases-for}} deployments permission to use your keys, you supply the [key name or CRN](/docs/hs-crypto?topic=hs-crypto-view-keys) when you provision a deployment. The deployment uses your encryption key to encrypt your data.
