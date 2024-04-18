@@ -14,7 +14,7 @@ subcollection: cloud-databases
 # Hyper Protect Crypto Services Integration
 {: #hpcs}
 
-The data that you store in {{site.data.keyword.cloud}} Databases is encrypted by default by using randomly generated keys. If you need to control the encryption keys, you can Bring Your Own Key (BYOK) through [{{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-get-started), and use one of your own keys to encrypt your databases. Take note that {{site.data.keyword.hscrypto}} for {{site.data.keyword.cloud}} Databases backups is not currently supported for the majority of regions and not recommended to be used without careful considerations of the potential impact to disaster recovery. 
+The data that you store in {{site.data.keyword.cloud}} Databases is encrypted by default by using randomly generated keys. If you need to control the encryption keys, you can Bring Your Own Key (BYOK) through [{{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-get-started), and use one of your own keys to encrypt your databases. Take note that {{site.data.keyword.hscrypto}} for {{site.data.keyword.cloud}} Databases backups is currently not supported for the majority of regions and not recommended to be used without careful considerations of the impact to disaster recovery. 
 
 This document covers the integration of {{site.data.keyword.hscrypto}} (HPCS) with Cloud Databases, which includes {{site.data.keyword.databases-for-cassandra}},{{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-enterprisedb}}, {{site.data.keyword.databases-for-etcd}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-redis}}, {{site.data.keyword.databases-for-mysql_full}}, and {{site.data.keyword.messages-for-rabbitmq}}.
 {: .note}
@@ -83,12 +83,12 @@ If you provision a deployment through the CLI or API, the HPCS key must be ident
 {: .tip}
 
 ## Using the HPCS Key for Backup encryption
-{: #use-hpcs}
+{: #use-hpcs-backups}
 
-This feature is currently only supported in the region eu-es. Encrypting backups with HPCS in a single region renders the backups inaccessible, if availability of HPCS gets disrupted in this region. Taking a backup and restoring from backups will fail for the period that HPCS is unavailable. Therefore, encrypting backups with HPCS is not recommended. Use {{site.data.keyword.keymanagementservicelong}} to encrypt backups.
+This feature is only supported in the region eu-es. Encrypting backups with HPCS in a single region renders the backups inaccessible, if availability of HPCS is disrupted in this region. Taking a backup and restoring from backups will fail for the period that HPCS is unavailable. Therefore, encrypting backups with HPCS is not recommended. Use {{site.data.keyword.keymanagementservicelong}} to encrypt backups.
 {: .note}
 
-Encrypt your disk with HPCS, if you also encrypted the backup with HPCS.
+If you encrypted the backup with HPCS you will also want to encryp the disk with HPCS.
 {: .tip}
 
 After you grant your {{site.data.keyword.databases-for}} deployments permission to use your keys, you supply the [key name or CRN](/docs/hs-crypto?topic=hs-crypto-view-keys) when you provision a deployment. The deployment uses your encryption key to encrypt your data.
@@ -105,7 +105,7 @@ ibmcloud resource service-instance-create example-database <service-name> standa
 ```
 {: codeblock}
 
-In the API, use the `back-encryption-key` parameter in the body of the request.
+In the API, use the `backup-encryption-key` parameter in the body of the request.
 
 ```curl
 curl -X POST \
