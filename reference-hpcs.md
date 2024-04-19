@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2020, 2021
-lastupdated: "2022-04-06"
+  years: 2020, 2024
+lastupdated: "2024-04-18"
 
 keywords: bring your own key, byok, cryptoshredding, hpcs, hyper protect crypto services
 
@@ -9,19 +9,12 @@ subcollection: cloud-databases
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: .external target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
+{{site.data.keyword.attribute-definition-list}}
 
 # Hyper Protect Crypto Services Integration
 {: #hpcs}
 
-The data that you store in {{site.data.keyword.cloud}} Databases is encrypted by default by using randomly generated keys. If you need to control the encryption keys, you can Bring Your Own Key (BYOK) through [{{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-get-started), and use one of your own keys to encrypt your databases. Take note that {{site.data.keyword.hscrypto}} for {{site.data.keyword.cloud}} Databases backups is not currently supported. 
+The data that you store in {{site.data.keyword.cloud}} Databases is encrypted by default by using randomly generated keys. If you need to control the encryption keys, you can Bring Your Own Key (BYOK) through [{{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-get-started), and use one of your own keys to encrypt your databases. Take note that {{site.data.keyword.hscrypto}} for {{site.data.keyword.cloud}} Databases backups is currently not supported for the majority of regions and not recommended to be used without careful considerations of the impact to disaster recovery. 
 
 This document covers the integration of {{site.data.keyword.hscrypto}} (HPCS) with Cloud Databases, which includes {{site.data.keyword.databases-for-cassandra}},{{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-enterprisedb}}, {{site.data.keyword.databases-for-etcd}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-redis}}, {{site.data.keyword.databases-for-mysql_full}}, and {{site.data.keyword.messages-for-rabbitmq}}.
 {: .note}
@@ -57,17 +50,20 @@ If the service authorization is not present before provisioning your deployment 
 
 After you grant your {{site.data.keyword.databases-for}} deployments permission to use your keys, you supply the [key name or CRN](/docs/hs-crypto?topic=hs-crypto-view-keys) when you provision a deployment. The deployment uses your encryption key to encrypt your data.
 
-If provisioning from the catalog page, select the HPCS instance and key from the dropdown menus.
+If provisioning from the catalog page, select the HPCS instance and key from the drop-down menu.
 
-In the CLI, use the `disk_encryption_key_crn` parameter in the parameters JSON object.
+In the CLI, use the `disk_encryption_key_crn` parameter in the parameter's JSON object.
+
 ```bash
 ibmcloud resource service-instance-create example-database <service-name> standard us-south \
 -p \ '{
   "disk_encryption_key_crn": "crn:v1:<...>:key:<id>"
 }'
 ```
+{: codeblock}
 
 In the API, use the `disk-encryption-key` parameter in the body of the request.
+
 ```curl
 curl -X POST \
   https://resource-controller.cloud.ibm.com/v2/resource_instances \
@@ -81,8 +77,52 @@ curl -X POST \
     "disk_encryption_key_crn": "crn:v1:<...>:key:<id>"
   }'
 ```
+{: codeblock}
 
-If you provision a deployment through the CLI or API, the HPCS key needs to be identified by its full CRN, not just its ID. An HPCS CRN is in the format `crn:v1:<...>:key:<id>`.
+If you provision a deployment through the CLI or API, the HPCS key must be identified by its full CRN, not just its ID. An HPCS CRN has the format `crn:v1:<...>:key:<id>`.
+{: .tip}
+
+## Using the HPCS Key for Backup encryption
+{: #use-hpcs-backups}
+
+This feature is only supported in the region eu-es. Encrypting backups with HPCS in a single region renders the backups inaccessible, if availability of HPCS is disrupted in this region. Taking a backup and restoring from backups will fail for the period that HPCS is unavailable. Therefore, encrypting backups with HPCS is not recommended. Use {{site.data.keyword.keymanagementservicelong}} to encrypt backups.
+{: .note}
+
+If you encrypted the backup with HPCS, encrypt the disk also with HPCS.
+{: .tip}
+
+After you grant your {{site.data.keyword.databases-for}} deployments permission to use your keys, you supply the [key name or CRN](/docs/hs-crypto?topic=hs-crypto-view-keys) when you provision a deployment. The deployment uses your encryption key to encrypt your data.
+
+If you provision from the Catalog, select the HPCS instance and key from the drop-down menu.
+
+In the CLI, use the `backup_encryption_key_crn` parameter in the parameter's JSON object.
+
+```bash
+ibmcloud resource service-instance-create example-database <service-name> standard eu-es \
+-p \ '{
+  "backup_encryption_key_crn": "crn:v1:<...>:key:<id>"
+}'
+```
+{: codeblock}
+
+In the API, use the `backup-encryption-key` parameter in the body of the request.
+
+```curl
+curl -X POST \
+  https://resource-controller.cloud.ibm.com/v2/resource_instances \
+  -H 'Authorization: Bearer <>' \
+  -H 'Content-Type: application/json' \
+    -d '{
+    "name": "my-instance",
+    "target": "blue-us-south",
+    "resource_group": "5g9f447903254bb58972a2f3f5a4c711",
+    "resource_plan_id": "databases-for-x-standard",
+    "backup_encryption_key_crn": "crn:v1:<...>:key:<id>"
+  }'
+```
+{: codeblock}
+
+If you provision a deployment through the CLI or API, the HPCS key must be identified by its full CRN, not just its ID. An HPCS CRN has the format `crn:v1:<...>:key:<id>`.
 {: .tip}
 
 ## Key Rotation
@@ -91,7 +131,7 @@ If you provision a deployment through the CLI or API, the HPCS key needs to be i
 HPCS offers manual and automatic [key rotation](/docs/hs-crypto?topic=hs-crypto-set-rotation-policy) and key rotation is supported by Cloud Databases deployments. When you rotate a key, the process initiates a _Syncing KMS state_ task, and your deployment is reencrypted with the new key. The task is displayed on the _Tasks_ panel on your deployment's _Overview_ and the associated HPCS and Cloud Databases events are sent to Activity Tracker.
 
 ## Deleting the Deployment
-{: #delete-deployment-hcps}
+{: #deleting-deployment}
 
 If you delete a deployment that is protected with an HPCS key, the deployment remains registered against the key during the soft-deletion period (up to 9 days). If you need to delete the key in the soft-deletion period, you must [force delete](/docs/hs-crypto?topic=hs-crypto-delete-keys) the key. After the soft-deletion period, the key can be deleted without the force. You can check the [association between the key and your deployment](/docs/hs-crypto?topic=hs-crypto-view-key-details) to determine when you can delete the key.
 
