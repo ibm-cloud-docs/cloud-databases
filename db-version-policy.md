@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018, 2024
-lastupdated: "2024-03-15"
+lastupdated: "2024-04-19"
 
 subcollection: cloud-databases
 
@@ -11,7 +11,7 @@ keywords: version for cloud-databases, database version, end of life, major vers
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Versioning Policy
+# Versioning policy
 {: #versioning-policy}
 
 When you provision a {{site.data.keyword.databases-for}} instance, you can choose from the versions currently available on {{site.data.keyword.cloud_notm}}. Find the latest versions from the [catalog pages](https://cloud.ibm.com/catalog?category=databases){: external}, the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployables-show){: external}, or the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api#get-all-deployable-databases){: external}.
@@ -19,8 +19,9 @@ When you provision a {{site.data.keyword.databases-for}} instance, you can choos
 ## Major versions defined
 {: #version-definitions}
 
-| Service | Versioning Schema| Next Known End of Life Version and Date | Preferred Major Version | End of life procedure |
-|----|----|----|:----:|----|
+| Service | Versioning schema| Next known end of life version and date | Preferred major version | End of life procedure |
+|----|----|----|----|----|
+| {{site.data.keyword.databases-for-mongodb}} | Major versions are the first two numbers in a `major.x.patch` version number. In cases where `x` is even, it is a stable release suitable for production. Even `x` versions are the only ones available on {{site.data.keyword.databases-for}}. | v4.4, 26 April 2024; v5, 25 September 2024 |   v6.0   | Automatically upgraded in place to next Major version |
 | {{site.data.keyword.databases-for-mongodb}} | Major versions are the first two numbers in a `major.x.patch` version number. In cases where `x` is even, it is a stable release suitable for production. Even `x` versions are the only ones available on {{site.data.keyword.databases-for}}. | v4.4, 26 April 2024; v5, 25 September 2024 |   v6.0   | Automatically upgraded in place to next Major version |
 | {{site.data.keyword.databases-for-elasticsearch}} | Major versions are the first two numbers in a `release.version.maintenance` version number. |  v7.17, 29 August 2024 |   v8.10   | Automatically upgraded in place to next Major version |
 | {{site.data.keyword.databases-for-redis}} | Major versions are the first number in a `major.minor.patch` version number. | v5.0, 26 April 2024; v6.0 25 October 2024 |   v6.2   | Automatically upgraded in place to next Major version 6.2 |
