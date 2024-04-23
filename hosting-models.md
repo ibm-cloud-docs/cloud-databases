@@ -454,12 +454,12 @@ Ahead of the May 2025 date, if you have a multi-tenant instance, there are a few
 | **If your current resource allocation is N CPU x M RAM (RabbitMQ Version):** | **You will be automatically placed on (RabbitMQ Version):** |
 |-------------------------|---------------------|
 | N = 0 CPU, M < 8 GB RAM | 1 CPU x 8 GB RAM, Shared Compute |
-| N = 0 CPU, 8 GB RAM < M ≤  16 GB RAM | M/8 CPU x M GB RAM, Shared Compute |
-| N = 0 CPU, M > 16 GB RAM           | 2 CPU x M GB RAM, Shared Compute |
-| 0 CPU < N ≤ 4 CPU , M < 16 GB RAM          |    4 CPU x 16 GB RAM, Isolated Compute  |
-| 4 CPU < N ≤ 8 CPU OR 16 GB RAM < M < 32 GB RAM           | 8 CPU x 32 GB RAM, Isolated Compute   |
-| 4 CPU < N ≤ 8 CPU OR 32 GB RAM < M < 64 GB RAM           |  8 CPU x 64 GB RAM, Isolated Compute   |
-| 8 CPU < N ≤ 16 CPU OR 32 GB RAM < M < 64 GB RAM           | 16 CPU x 64 GB RAM, Isolated Compute   |
-| 16 CPU < N ≤ 32 CPU OR 64 GB RAM < M < 128 GB RAM         | 32 CPU x 128 RAM, Isolated Compute    |
-| 16 CPU < N ≤ 30 CPU OR 64 GB RAM < M < 240 GB RAM         | 30 CPU x 240 RA, Isolated Compute   |
+| N = 0 CPU, 8 GB RAM < M ≤ 16 GB RAM | M/8 CPU x M GB RAM, Shared Compute |
+| N = 0 CPU, M > 16 GB RAM | 2 CPU x M GB RAM, Shared Compute |
+| 0 CPU < N ≤ 4 CPU , M < 16 GB RAM | 4 CPU x 16 GB RAM, Isolated Compute |
+| 4 CPU < N ≤ 8 CPU OR 16 GB RAM < M < 32 GB RAM | 8 CPU x 32 GB RAM, Isolated Compute |
+| 4 CPU < N ≤ 8 CPU OR 32 GB RAM < M < 64 GB RAM | 8 CPU x 64 GB RAM, Isolated Compute |
+| 8 CPU < N ≤ 16 CPU OR 32 GB RAM < M < 64 GB RAM | 16 CPU x 64 GB RAM, Isolated Compute |
+| 16 CPU < N ≤ 32 CPU OR 64 GB RAM < M < 128 GB RAM | 32 CPU x 128 RAM, Isolated Compute |
+| 16 CPU < N ≤ 30 CPU OR 64 GB RAM < M < 240 GB RAM | 30 CPU x 240 RA, Isolated Compute |
 {: caption="Table 5. Automatic transition placement RabbitMQ" caption-side="bottom"}
