@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2023, 2024
-lastupdated: "2024-04-11"
+lastupdated: "2024-04-23"
 
 keywords: monitoring
 
@@ -1708,7 +1708,7 @@ The maximum amount of memory available to your instance
 | `Metric Type` | `gauge` |
 | `Value Type`  | `byte` |
 | `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 12: Maximum allowed memory for an instance metric metadata" caption-side="top"}
+{: caption="Table 11: Maximum allowed memory for an instance metric metadata" caption-side="top"}
 
 #### MySQL Maximum permitted number of simultaneous client connections.
 {: #ibm_databases_for_mysql_max_connections}
@@ -1721,7 +1721,7 @@ Represents the maximum permitted number of simultaneous client connections.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `count` |
  `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 11: The maximum permitted number of simultaneous client connections. metric metadata" caption-side="top"}
+{: caption="Table 12: The maximum permitted number of simultaneous client connections. metric metadata" caption-side="top"}
 
 #### MySQL Percent of threads connected
 {: #ibm_databases_for_mysql_threads_connected_usage}
@@ -2150,7 +2150,7 @@ How much memory is used as a percentage of total memory available
 | `Metric Type` | `gauge` |
 | `Value Type`  | `percent` |
 | `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 47: Used memory for an instance metric metadata" caption-side="top"}
+{: caption="Table 45: Used memory for an instance metric metadata" caption-side="top"}
 
 #### MySQL Total active connections to the database
 {: #ibm_databases_for_mysql_total_connections}
@@ -2163,7 +2163,7 @@ Represents the total number of active connections to the database
 | `Metric Type` | `gauge` |
 | `Value Type`  | `count` |
 | `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 45: Used memory for an instance metric metadata" caption-side="top"}
+{: caption="Table 46: Used memory for an instance metric metadata" caption-side="top"}
 
 ## Elasticsearch Metrics
 {: #metrics-by-plan-elasticsearch}
