@@ -127,6 +127,11 @@ Isolated Compute features 6 size selections:
 
 To switch between Shared and Isolated compute, select the model you want, review your resource selection, and switch. Switching hosting models does not cause downtime, as this is not a backup and restore migration. Instead, the same process is applied as for updates or database instance scaling. The database processes will perform a rolling restart, causing existing connections to be dropped. Thus, the recommendation is as always to ensure that your application has retry and reconnect logic to immediately re-establish a connection.
 
+### {{site.data.keyword.databases-for}} hosting model availability
+{: #hosting-models-availability}
+
+The following table shows which model is available for each database.
+
 |  | **Shared Compute** | **Isolated Compute**  |
 |-------------------------|---------------------|---------------------|
 | PostgreSQL | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
@@ -139,7 +144,7 @@ To switch between Shared and Isolated compute, select the model you want, review
 | MySQL | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
 | Redis | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
 | RabbitMQ | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
-{: caption="Table 1. Choosing between hosting models" caption-side="bottom"}
+{: caption="Table 1. {{site.data.keyword.databases-for}} hosting model availability" caption-side="bottom"}
 
 ## Choosing between hosting models
 {: #choosing-between-hosting-models}
@@ -441,6 +446,7 @@ Ahead of the May 2025 date, if you have a multi-tenant instance, there are a few
 | 16 CPU < N ≤ 32 CPU OR 64 GB RAM, < M < 128 GB RAM | 32 CPU x 128 RAM, Isolated Compute |
 | 16 CPU < N ≤ 30 CPU OR 64 GB RAM, < M < 240 GB RAM | 30 CPU x 240 RAM, Isolated Compute |
 {: caption="Table 4. Automatic transition placement" caption-side="bottom"}
+
 <br>
 
 <br>
