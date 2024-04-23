@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-04-16"
+lastupdated: "2024-04-23"
 
 subcollection: cloud-databases
 
@@ -83,6 +83,20 @@ Isolated Compute features 6 size selections:
 
 To switch between Shared and Isolated compute, select the model you want, review your resource selection, and switch. Switching hosting models does not cause downtime, as this is not a backup and restore migration. Instead, the same process is applied as for updates or database instance scaling. The database processes will perform a rolling restart, causing existing connections to be dropped. Thus, the recommendation is as always to ensure that your application has retry and reconnect logic to immediately re-establish a connection.
 
+|  | **Shared Compute** | **Isolated Compute**  |
+|:-------------------------:|:---------------------:|:---------------------:|
+| PostgreSQL | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
+| EnterpriseDB |  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
+| Mongo Community | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
+| Mongo Enterprise |  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
+| Mongo Sharding |  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
+| Elastic Enterprise | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
+| Elastic Platinum |  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
+| MySQL | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
+| Redis | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
+| RabbitMQ | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
+{: caption="Table 1. Choosing between hosting models" caption-side="bottom"}
+
 ## Choosing between hosting models
 {: #choosing-between-hosting-models}
 
@@ -92,6 +106,7 @@ To switch between Shared and Isolated compute, select the model you want, review
 | Receive all the available resources in your machine. | Transparent, deterministic CPU allocation. Know exactly what your performance will be and scale up and down as your workload requires. |
 | Premium databases, such as MongoDB Sharding and Elasticsearch Platinum, will be solely provisioned on Isolated Compute. Future enhancements, such as maintenance windows and cross-region replication will be supported solely on Isolated Compute. | Standard database versions only. |
 | Scalability is based on provided machine sizes. | Scalability is fine-grained and linear from a database-specific minimum configuration up to 28 CPU and 112 GB RAM. |
+{: caption="Table 2. Choosing between hosting models" caption-side="bottom"}
 
 ## {{site.data.keyword.databases-for}} Provisioning
 {: #hosting-models-provisioning}
@@ -124,7 +139,7 @@ The `<host_flavor value>` parameter defines your sizing. To provision a Shared C
 | 16 CPU x 64 RAM           | `b3c.16x64.encrypted`   |
 | 32 CPU x 128 RAM          | `b3c.32x128.encrypted`  |
 | 30 CPU x 240 RAM          | `m3c.30x240.encrypted`  |
-{: caption="Table 1. Host Flavor sizing parameter" caption-side="bottom"}
+{: caption="Table 3. Host Flavor sizing parameter" caption-side="bottom"}
 
 Allocating CPU and RAM separately is not available when provisioning or scaling through Isolated Compute. You must specify `mulitenant` for the `host_flavor` parameter to enable this.
 {: note}
