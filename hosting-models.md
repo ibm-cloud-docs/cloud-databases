@@ -445,7 +445,7 @@ Ahead of the May 2025 date, if you have a multi-tenant instance, there are a few
 | 8 CPU < N ≤ 16 CPU OR 32 GB RAM, < M < 64 GB RAM | 16 CPU x 64 GB RAM, Isolated Compute |
 | 16 CPU < N ≤ 32 CPU OR 64 GB RAM, < M < 128 GB RAM | 32 CPU x 128 RAM, Isolated Compute |
 | 16 CPU < N ≤ 30 CPU OR 64 GB RAM, < M < 240 GB RAM | 30 CPU x 240 RAM, Isolated Compute |
-{: caption="Table 4. Automatic transition placement" caption-side="bottom"}
+{: caption="Table 3. Automatic transition placement" caption-side="bottom"}
 
 <br>
 
@@ -462,4 +462,4 @@ Ahead of the May 2025 date, if you have a multi-tenant instance, there are a few
 | 8 CPU < N ≤ 16 CPU OR 32 GB RAM < M < 64 GB RAM | 16 CPU x 64 GB RAM, Isolated Compute |
 | 16 CPU < N ≤ 32 CPU OR 64 GB RAM < M < 128 GB RAM | 32 CPU x 128 RAM, Isolated Compute |
 | 16 CPU < N ≤ 30 CPU OR 64 GB RAM < M < 240 GB RAM | 30 CPU x 240 RA, Isolated Compute |
-{: caption="Table 5. Automatic transition placement RabbitMQ" caption-side="bottom"}
+{: caption="Table 4. Automatic transition placement RabbitMQ" caption-side="bottom"}
