@@ -84,7 +84,7 @@ Isolated Compute features 6 size selections:
 To switch between Shared and Isolated compute, select the model you want, review your resource selection, and switch. Switching hosting models does not cause downtime, as this is not a backup and restore migration. Instead, the same process is applied as for updates or database instance scaling. The database processes will perform a rolling restart, causing existing connections to be dropped. Thus, the recommendation is as always to ensure that your application has retry and reconnect logic to immediately re-establish a connection.
 
 |  | **Shared Compute** | **Isolated Compute**  |
-|:-------------------------:|:---------------------:|:---------------------:|
+|-------------------------|---------------------|---------------------|
 | PostgreSQL | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
 | EnterpriseDB |  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
 | Mongo Community | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
@@ -101,7 +101,7 @@ To switch between Shared and Isolated compute, select the model you want, review
 {: #choosing-between-hosting-models}
 
 | **Isolated Compute** | **Shared Compute** |
-|:-------------------------:|:---------------------:|
+|-------------------------|---------------------|
 | Single-tenanted databases with dedicated IO and Network bandwidth. Database management agents are placed on Isolated machine. | Multi-tenanted, logically separated databases sharing bandwidth. Database management pods are also multi-tenanted. |
 | Receive all the available resources in your machine. | Transparent, deterministic CPU allocation. Know exactly what your performance will be and scale up and down as your workload requires. |
 | Premium databases, such as MongoDB Sharding and Elasticsearch Platinum, will be solely provisioned on Isolated Compute. Future enhancements, such as maintenance windows and cross-region replication will be supported solely on Isolated Compute. | Standard database versions only. |
@@ -131,7 +131,7 @@ ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVIC
 The `<host_flavor value>` parameter defines your sizing. To provision a Shared Compute instance, specify `multitenant`. To provision an Isolated Compute instance, input the appropriate value for your desired size.
 
 | **Host flavor** | **host_flavor value** |
-|:-------------------------:|:---------------------:|
+|-------------------------|---------------------|
 | Shared Compute            | `multitenant`    |
 | 4 CPU x 16 RAM            | `b3c.4x16.encrypted`    |
 | 8 CPU x 32 RAM            | `b3c.8x32.encrypted`    |
@@ -179,7 +179,7 @@ curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H 
 The `host_flavor value` parameter defines your Isolated Compute sizing. Input the appropriate value for your desired size.
 
 | **Host flavor** | **host_flavor value** |
-|:-------------------------:|:---------------------:|
+|-------------------------|---------------------|
 | Shared Compute            | `multitenant`    |
 | 4 CPU x 16 RAM            | `b3c.4x16.encrypted`    |
 | 8 CPU x 32 RAM            | `b3c.8x32.encrypted`    |
@@ -353,7 +353,7 @@ output "ICD Etcd database connection string" {
 The `host_flavor` parameter defines your Isolated Compute sizing. Input the appropriate value for your desired size. To provision a Shared Compute instance, specify `multitenant`.
 
 | **Host flavor** | **host_flavor value** |
-|:-------------------------:|:---------------------:|
+|-------------------------|---------------------|
 | Shared Compute            | `multitenant`    |
 | 4 CPU x 16 RAM            | `b3c.4x16.encrypted`    |
 | 8 CPU x 32 RAM            | `b3c.8x32.encrypted`    |
@@ -361,7 +361,7 @@ The `host_flavor` parameter defines your Isolated Compute sizing. Input the appr
 | 16 CPU x 64 RAM           | `b3c.16x64.encrypted`   |
 | 32 CPU x 128 RAM          | `b3c.32x128.encrypted`  |
 | 30 CPU x 240 RAM          | `m3c.30x240.encrypted`  |
-{: caption="Table 2. Host Flavor sizing parameter" caption-side="bottom"}
+{: caption="Table 1. Host Flavor sizing parameter" caption-side="bottom"}
 
 ## Hosting model grandfathering
 {: #hosting-model-grandfathering}
@@ -386,7 +386,7 @@ Ahead of the May 2025 date, if you have a multi-tenant instance, there are a few
 {: #automatic-transition-placement}
 
 | **If your current resource allocation is N CPU x M RAM (Non-RabbitMQ Version):** | **You will be automatically placed on <br> (Non-RabbitMQ Version):** |
-|:-------------------------:|:---------------------:|
+|-------------------------|---------------------|
 | N = 0 CPU, M < 4 GB RAM | 0.5 CPU x 4 GB RAM, Shared Compute |
 | N = 0 CPU, 4 GB RAM < M ≤ 16 GB RAM | M/8 CPU x M GB RAM, Shared Compute|
 | N = 0 CPU, M > 16 GB RAM | 2 CPU x M GB RAM, Shared Compute |
@@ -396,13 +396,13 @@ Ahead of the May 2025 date, if you have a multi-tenant instance, there are a few
 | 8 CPU < N ≤ 16 CPU OR 32 GB RAM, < M < 64 GB RAM | 16 CPU x 64 GB RAM, Isolated Compute |
 | 16 CPU < N ≤ 32 CPU OR 64 GB RAM, < M < 128 GB RAM | 32 CPU x 128 RAM, Isolated Compute |
 | 16 CPU < N ≤ 30 CPU OR 64 GB RAM, < M < 240 GB RAM | 30 CPU x 240 RAM, Isolated Compute |
-
+{: caption="Table 4. Automatic transition placement" caption-side="bottom"}
 <br>
 
 <br>
 
 | **If your current resource allocation is N CPU x M RAM (RabbitMQ Version):** | **You will be automatically placed on (RabbitMQ Version):** |
-|:-------------------------:|:---------------------:|
+|-------------------------|---------------------|
 | N = 0 CPU, M < 8 GB RAM | 1 CPU x 8 GB RAM, Shared Compute |
 | N = 0 CPU, 8 GB RAM < M ≤  16 GB RAM | M/8 CPU x M GB RAM, Shared Compute |
 | N = 0 CPU, M > 16 GB RAM           | 2 CPU x M GB RAM, Shared Compute |
@@ -412,3 +412,4 @@ Ahead of the May 2025 date, if you have a multi-tenant instance, there are a few
 | 8 CPU < N ≤ 16 CPU OR 32 GB RAM < M < 64 GB RAM           | 16 CPU x 64 GB RAM, Isolated Compute   |
 | 16 CPU < N ≤ 32 CPU OR 64 GB RAM < M < 128 GB RAM         | 32 CPU x 128 RAM, Isolated Compute    |
 | 16 CPU < N ≤ 30 CPU OR 64 GB RAM < M < 240 GB RAM         | 30 CPU x 240 RA, Isolated Compute   |
+{: caption="Table 5. Automatic transition placement RabbitMQ" caption-side="bottom"}
