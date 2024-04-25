@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2023, 2024
-lastupdated: "2024-04-17"
+lastupdated: "2024-04-25"
 
 subcollection: cloud-databases, database member, CPU seconds, platform metrics
 
@@ -57,20 +57,20 @@ The usage that is presented in this dashboard is a percentage of total CPU being
 
 For metrics relevant to a particular {{site.data.keyword.databases-for}} service, see the appropriate Monitoring documentation:
 
-- [{{site.data.keyword.databases-for-mongodb}}](/docs/databases-for-mongodb?topic=databases-for-mongodb-monitoring){: external}.
+- [{{site.data.keyword.databases-for-mongodb}}](/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-mongodb){: external}.
 
-- [{{site.data.keyword.databases-for-elasticsearch}}](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-monitoring){: external}.
+- [{{site.data.keyword.databases-for-elasticsearch}}](/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-elasticsearch){: external}.
 
-- [{{site.data.keyword.databases-for-cassandra}}](/docs/databases-for-cassandra?topic=databases-for-cassandra-monitoring){: external}.
+- [{{site.data.keyword.databases-for-cassandra}}](/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-datastax){: external}.
 
-- [{{site.data.keyword.databases-for-redis}}](/docs/databases-for-redis?topic=databases-for-redis-monitoring){: external}.
+- [{{site.data.keyword.databases-for-redis}}](/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-redis){: external}.
 
-- [{{site.data.keyword.databases-for-postgresql}}](/docs/databases-for-postgresql?topic=databases-for-postgresql-monitoring){: external}.
+- [{{site.data.keyword.databases-for-postgresql}}](/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-postgresql){: external}.
 
-- [{{site.data.keyword.databases-for-enterprisedb}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-monitoring){: external}.
+- [{{site.data.keyword.databases-for-enterprisedb}}](/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-enterprisedb){: external}.
 
-- [{{site.data.keyword.databases-for-mysql}}](/docs/databases-for-mysql?topic=databases-for-mysql-monitoring){: external}.
+- [{{site.data.keyword.databases-for-mysql}}](/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-mysql){: external}.
 
-- [{{site.data.keyword.messages-for-rabbitmq}}](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-monitoring){: external}.
+- [{{site.data.keyword.messages-for-rabbitmq}}](/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-rabbitmq){: external}.
 
-- [{{site.data.keyword.databases-for-etcd}}](/docs/databases-for-etcd?topic=databases-for-etcd-monitoring){: external}.
+- [{{site.data.keyword.databases-for-etcd}}](/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-etcd){: external}.
