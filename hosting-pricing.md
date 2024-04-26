@@ -12,7 +12,7 @@ keywords: hosting models, pricing, cost, charges
 
 {{site.data.keyword.attribute-definition-list}}
 
-# {{site.data.keyword.databases-for}} pricing
+# Pricing
 {: #hosting-pricing}
 
 The following pricing information is for the purpose of understanding the estimated monthly charges for a range of {{site.data.keyword.databases-for}} instance types. The estimated charges are for information purposes only and are subject to change without notice. Actual charges may vary.
