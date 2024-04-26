@@ -26,6 +26,8 @@ The following table shows the approximate **monthly** charges for {{site.data.ke
 
 [^tabletext1]: EnterpriseDB is only available via Isolated Compute, which requires more resources that the Shared Compute configurations used for all other databases in this table.
 
+<br>
+
 The charge for an {{site.data.keyword.databases-for}} instance is determined by the following five factors:
 
 - Database type: PostgreSQL, MongoDB, Elasticsearch, Redis, etcd, MySQL, EnterpriseDB, and RabbitMQ
