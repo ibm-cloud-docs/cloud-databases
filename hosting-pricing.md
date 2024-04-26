@@ -15,7 +15,10 @@ keywords: hosting models, pricing, cost, charges
 # Pricing
 {: #hosting-pricing}
 
-The following pricing information is for the purpose of understanding the estimated monthly charges for a range of {{site.data.keyword.databases-for}} instance types. The estimated charges are for information purposes only and are subject to change without notice. Actual charges may vary.
+The following pricing information is for the purpose of understanding the estimated monthly charges for a range of {{site.data.keyword.databases-for}} instance types. 
+
+The estimated charges are for information purposes only and are subject to change without notice. Actual charges may vary.
+{: note}
 
 The following table shows the approximate **monthly** charges for {{site.data.keyword.databases-for}} instances with the lowest charge configurations available:
 
@@ -41,6 +44,7 @@ Each database instance consists of two or three members, depending on the databa
 When deploying a database instance, you can select between Shared Compute hosting and Isolated Compute hosting. Shared Compute offers the lowest minimum resource allocations resulting in lower charges, and extensive flexibility in specifying vCPU, RAM, and storage resources. Isolated compute offers a choice of six standard vCPU x RAM resource profiles that are hosted on single-tenant compute instances for maximum workload isolation and security. Disk storage capacity per member is specified independently of the vCPU x RAM profile selected.
 
 MongoDB Enterprise Edition, Elasticsearch Platinum Edition, and EnterpriseDB require Isolated Compute hosting.
+{: note}
 
 The following tables provide estimated monthly charges for a range of configurations. Actual billing for usage is done on an hourly basis, so database instances that exist for less than a full month will be charged based on the number of hours they existed.
 
