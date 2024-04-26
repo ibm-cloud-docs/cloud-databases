@@ -17,13 +17,13 @@ keywords: hosting models, pricing, cost, charges
 
 Information in this section is for the purpose of understanding the estimated monthly charges for a range of {{site.data.keyword.databases-for}} instance types.
 
-The estimated charges provided in this document are for information purposes only and are subject to change without notice. Actual charges may vary.  
+The estimated charges provided in this document are for information purposes only and are subject to change without notice. Actual charges may vary.
 
-The following table shows the approximate **monthly** charges for {{site.data.keyword.databases-for}} instances with the lowest charge configurations available: 
+The following table shows the approximate **monthly** charges for {{site.data.keyword.databases-for}} instances with the lowest charge configurations available:
 
 | PostgreSQL | MongoDB Standard Edition | Elasticsearch Enterprise Edition| Redis | etcd | MySQL | RabbitMQ | EnterpriseDB1 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| $82 <br> 0.5 vCPU <br> 4 GB RAM <br> 5 GB disk <br> 2 members | $202 <br> 0.5 vCPU <br> 4 GB RAM <br> 10 GB disk <br> 3 members | $252 <br> 0.5 vCPU <br> 4 GB RAM <br> 5 GB disk <br> 3 members | $77 <br>  0.5 vCPU <br> 4 GB RAM <br> 1 GB disk <br> 2 members | $151 <br> 0.5 vCPU <br> 4 GB RAM <br> 20 GB disk <br> 3 members | $181 <br> 0.5 vCPU <br> 4 GB RAM <br> 10 GB disk <br> 3 members | $229 <br> 1 vCPU <br> 8 GB RAM <br> 1 GB disk <br> 3 members | $1,929 <br> 4 vCPU <br> 16 GB RAM <br> 20 GB disk <br> 3 members |
+| $82 <br><br> 0.5 vCPU <br> 4 GB RAM <br> 5 GB disk <br> 2 members | $202 <br><br> 0.5 vCPU <br> 4 GB RAM <br> 10 GB disk <br> 3 members | $252 <br><br> 0.5 vCPU <br> 4 GB RAM <br> 5 GB disk <br> 3 members | $77 <br><br> 0.5 vCPU <br> 4 GB RAM <br> 1 GB disk <br> 2 members | $151 <br><br> 0.5 vCPU <br> 4 GB RAM <br> 20 GB disk <br> 3 members | $181 <br><br> 0.5 vCPU <br> 4 GB RAM <br> 10 GB disk <br> 3 members | $229 <br><br>  1 vCPU <br> 8 GB RAM <br> 1 GB disk <br> 3 members | $1,929 <br><br> 4 vCPU <br> 16 GB RAM <br> 20 GB disk <br> 3 members |
 {: caption="Table 1. {{site.data.keyword.databases-for}} approximate monthly charges " caption-side="bottom"}
 
 1 Enterprise DB is only available via Isolated Compute which requires more resources that the Shared Compute configurations used for all other databases in the Table above.
