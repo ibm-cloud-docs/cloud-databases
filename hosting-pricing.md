@@ -72,7 +72,7 @@ The following tables provide estimated monthly charges for a range of configurat
 
 | vCPUs | GB RAM | GB disk | PostgreSQL | MongoDB Standard Edition | MongoDB Enterprise Edition | Elasticsearch Enterprise Edition | Elasticsearch Enterprise Edition |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 4 | 16 | 530 | $1,098 | $2,019 | | $2,164 | $2,600 |
+| 4 | 16 | 530 | $1,098 | $2,019 | N/A | $2,164 | $2,600 |
 | 8 | 32 | 320 | $1,265 | $2,644 | $4,734 | $2,932 | $3,845 |
 | 8 | 64 | 640 | $2,012 | $4,125 | $7,918 | $5,088 | $6,936 |
 | 16 | 64 | 640 | $2,529 | $5,287 | $9,468 | $5,864 | $7,690 |
