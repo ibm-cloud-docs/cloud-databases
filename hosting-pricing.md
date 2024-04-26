@@ -47,7 +47,7 @@ The following tables provide estimated monthly charges for a range of configurat
 ## Estimated monthly charges - Shared Compute
 {: #hosting-pricing}
 
-| vCPUs | GB RAM | GB disk | PostgreSQL | MongoDB Standard Edition | Elasticsearch Enterprise Edition |
+| vCPUs | GB RAM | GB disk | PostgreSQL | MongoDB <br> Standard Edition | Elasticsearch <br> Enterprise Edition |
 | --- | --- | --- | --- | --- | --- |
 | 0.5 | 4 | 40 | $126 | $258 | $318 |
 | 1 | 8 | 80 | $252 | $516 | $636 |
