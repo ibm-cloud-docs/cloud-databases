@@ -60,7 +60,7 @@ The following tables provide estimated monthly charges for a range of configurat
 
 | vCPUs | GB RAM | GB disk | Redis |etcd | MySQL | RabbitMQ |
 | --- | --- | --- | --- | --- | --- | --- |
-| 0.5 | 4 | 40 | $126 | $189 | $237 | |
+| 0.5 | 4 | 40 | $126 | $189 | $237 | N/A |
 | 1 | 8 | 80 | $252 | $378 | $474 | $378 |
 | 2 | 8 | 80 | $317 | $475 | $603 | $475 |
 | 2 | 16 | 160 | $503 | $755 | $948 |$755 |
