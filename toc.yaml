@@ -51,10 +51,10 @@ toc:
       id: howto
       topics:
       - topicgroup:
-        label: Hosting models
-        topics: 
-        - hosting-models.md
-        - hosting-pricing.md
+          label: Hosting models
+          topics:
+          - hosting-models.md
+          - hosting-pricing.md
       - hosting-models.md
       - learn-getting-to-production.md
       - topicgroup:
