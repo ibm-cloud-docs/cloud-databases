@@ -24,7 +24,7 @@ The following table shows the approximate **monthly** charges for {{site.data.ke
 | PostgreSQL | MongoDB Standard Edition | Elasticsearch Enterprise Edition| Redis | etcd | MySQL | RabbitMQ | EnterpriseDB1 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | $82 <br><br> 0.5 vCPU <br> 4 GB RAM <br> 5 GB disk <br> 2 members | $202 <br><br> 0.5 vCPU <br> 4 GB RAM <br> 10 GB disk <br> 3 members | $252 <br><br> 0.5 vCPU <br> 4 GB RAM <br> 5 GB disk <br> 3 members | $77 <br><br> 0.5 vCPU <br> 4 GB RAM <br> 1 GB disk <br> 2 members | $151 <br><br> 0.5 vCPU <br> 4 GB RAM <br> 20 GB disk <br> 3 members | $181 <br><br> 0.5 vCPU <br> 4 GB RAM <br> 10 GB disk <br> 3 members | $229 <br><br>  1 vCPU <br> 8 GB RAM <br> 1 GB disk <br> 3 members | $1,929 <br><br> 4 vCPU <br> 16 GB RAM <br> 20 GB disk <br> 3 members |
-{: caption="Table 1. {{site.data.keyword.databases-for}} approximate monthly charges " caption-side="bottom"}
+{: caption="Table 1. {{site.data.keyword.databases-for}} approximate monthly charges" caption-side="bottom"}
 
 1 Enterprise DB is only available via Isolated Compute which requires more resources that the Shared Compute configurations used for all other databases in the Table above.
 
@@ -44,7 +44,7 @@ MongoDB Enterprise Edition, Elasticsearch Platinum Edition, and EnterpriseDB req
 
 The following tables provide the estimated monthly charges for a range of configurations. Actual billing for usage is done on an hourly basis, so database instances that exist for less than a full month will be charged based on the number of hours they existed.
 
-## Estimated Monthly Charges - Shared Compute
+## Estimated monthly charges - Shared Compute
 {: #hosting-pricing}
 
 | vCPUs | GB RAM | GB disk | PostgreSQL | MongoDB Standard Edition | Elasticsearch Enterprise Edition |
@@ -54,7 +54,9 @@ The following tables provide the estimated monthly charges for a range of config
 | 2 | 8 | 80 | $317 | $661 | $733 |
 | 2 | 16 | 160 | $503 | $1,032 | $1,272 |
 | 4 | 16 | 160 | $633 | $1,322 | $1,466 |
-{: caption="Table 2. Estimated monthly charges - Shared Compute " caption-side="bottom"}
+{: caption="Table 2. Estimated monthly charges - Shared Compute" caption-side="bottom"}
+
+<br>
 
 | vCPUs | GB RAM | GB disk | Redis |etcd | MySQL | RabbitMQ |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -63,9 +65,9 @@ The following tables provide the estimated monthly charges for a range of config
 | 2 | 8 | 80 | $317 | $475 | $603 | $475 |
 | 2 | 16 | 160 | $503 | $755 | $948 |$755 |
 | 4 | 16 | 160 | $633 | $949 | $1,206 | $949 |
-{: caption="Table 3. Estimated monthly charges - Shared Compute " caption-side="bottom"}
+{: caption="Table 3. Estimated monthly charges - Shared Compute" caption-side="bottom"}
 
-## Estimated Monthly Charges - Isolated Compute
+## Estimated monthly charges - Isolated Compute
 {: #hosting-pricing}
 
 | vCPUs | GB RAM | GB disk | PostgreSQL | MongoDB Standard Edition | MongoDB Enterprise Edition | Elasticsearch Enterprise Edition | Elasticsearch Enterprise Edition |
@@ -76,14 +78,39 @@ The following tables provide the estimated monthly charges for a range of config
 | 16 | 64 | 640 | $2,529 | $5,287 | $9,468 | $5,864 | $7,690 |
 | 32 | 128 | 1280 | $5,058 | $10,573 | $18,936 | $11,728 | $15,380 |
 | 32 | 240 | 2400 | $7,543 | $15,467 | $29,692 | $19,078 | $26,010 |
-{: caption="Table 2. Estimated monthly charges - Isolated Compute " caption-side="bottom"}
+{: caption="Table 4. Estimated monthly charges - Isolated Compute" caption-side="bottom"}
+
+<br>
 
 | vCPUs | GB RAM | GB disk | Redis | etcd | MySQL | EnterpriseDB | RabbitMQ |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 4 | 16 | 530 | $1,098 | $1,646 | $1,904 | $2,891 | $1,646 |
-| 8 | 32 | 320 | $1,265 | $2,644 | $4,734 | $2,932 | $3,845 |
-| 8 | 64 | 640 | $2,012 | $4,125 | $7,918 | $5,088 | $6,936 |
-| 16 | 64 | 640 | $2,529 | $5,287 | $9,468 | $5,864 | $7,690 |
-| 32 | 128 | 1280 | $5,058 | $10,573 | $18,936 | $11,728 | $15,380 |
-| 32 | 240 | 2400 | $7,543 | $15,467 | $29,692 | $19,078 | $26,010 |
-{: caption="Table 2. Estimated monthly charges - Isolated Compute " caption-side="bottom"}
+| 8 | 32 | 320 | $1,265 | $1,897 | $2,412 | $4,386 | $1,897 |
+| 8 | 64 | 640 | $2,012 | $3,017 | $3,791 | $6,176 | $3,017 |
+| 16 | 64 | 640 | $2,529 | $3,794 | $4,824 | $8,771 | $3,794 |
+| 32 | 128 | 1280 | $5,058 | $7,587 | $9,647 | $17,542 | $7,587 |
+| 32 | 240 | 2400 | $7,543 | $11,314 | $14,213 | $23,157 | $11,314 |
+{: caption="Table 5. Estimated monthly charges - Isolated Compute" caption-side="bottom"}
+
+## Estimated monthly charges for other configurations
+{: #hosting-pricing-other}
+
+Use the iformation in the following tables to estimate the monthly charge for combinations of vCPU, RAM, and disk that is not shown in the previous tables. The estimated monthly charges are for one member, so to estimate the charge per instance, multiply by the number of members/instance shown in the table.
+
+| | PostgreSQL | MongoDB Standard Edition | MongoDB Enterprise Edition | Elasticsearch Enterprise Edition | Elasticsearch Platinum Edition |
+| --- | --- | --- | --- | --- | --- |
+| Members/instance | 2 | 3 | 3 | 3 | 3 |
+| 1 vCPU/month/member | $32.35 | $48.41 | $64.59 | $32.35 | $32.35 |
+| 1 GB RAM/month/member | $5.39 | $9.15 | $26.89 | $16.18 | $26.10 |
+| 1 GB disk/month/member | $0.63 | $0.63 | $0.63| $0.63 | $0.63 |
+{: caption="Table 6. Estimated monthly charges for other configurations" caption-side="bottom"}
+
+<br>
+
+| | Redis | etcd | MySQL | EnterpriseDB | RabbitMQ |
+| --- | --- | --- | --- | --- | --- |
+| Members/instance | 2 | 3 | 3 | 3 | 3 |
+| 1 vCPU/month/member | $32.35 | $32.35 | $43.06 | $107.15 | $32.35 |
+| 1 GB RAM/month/member | $5.39 | $5.39 | $8.08 | $12.36 | $5.39 |
+| 1 GB disk/month/member | $0.63 | $0.63 | $0.63| $0.63 | $0.63 |
+{: caption="Table 6. Estimated monthly charges for other configurations" caption-side="bottom"}
