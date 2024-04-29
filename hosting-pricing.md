@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-04-26"
+lastupdated: "2024-04-29"
 
 subcollection: cloud-databases
 
@@ -27,7 +27,7 @@ The following table shows the approximate **monthly** charges for {{site.data.ke
 | $82 <br><br> 0.5 vCPU <br> 4 GB RAM <br> 5 GB disk <br> 2 members | $202 <br><br> 0.5 vCPU <br> 4 GB RAM <br> 10 GB disk <br> 3 members | $252 <br><br> 0.5 vCPU <br> 4 GB RAM <br> 5 GB disk <br> 3 members | $77 <br><br> 0.5 vCPU <br> 4 GB RAM <br> 1 GB disk <br> 2 members | $151 <br><br> 0.5 vCPU <br> 4 GB RAM <br> 20 GB disk <br> 3 members | $181 <br><br> 0.5 vCPU <br> 4 GB RAM <br> 10 GB disk <br> 3 members | $229 <br><br>  1 vCPU <br> 8 GB RAM <br> 1 GB disk <br> 3 members | $1,929 <br><br> 4 vCPU <br> 16 GB RAM <br> 20 GB disk <br> 3 members |
 {: caption="Table 1. {{site.data.keyword.databases-for}} approximate monthly charges" caption-side="bottom"}
 
-[^tabletext1]: EnterpriseDB is only available via Isolated Compute, which requires more resources that the Shared Compute configurations used for all other databases in this table.
+[^tabletext1]: EnterpriseDB is only available via Isolated Compute, which requires more resources than the Shared Compute configurations used for all other databases in this table.
 
 <br>
 
@@ -74,14 +74,14 @@ The following tables provide estimated monthly charges for a range of configurat
 ## Estimated monthly charges - Isolated Compute
 {: #hosting-pricing}
 
-| vCPUs | GB RAM | GB disk | PostgreSQL | MongoDB Standard Edition | MongoDB Enterprise Edition | Elasticsearch Enterprise Edition | Elasticsearch Enterprise Edition |
+| vCPUs | GB RAM | GB disk | PostgreSQL | MongoDB Standard Edition | MongoDB Enterprise Edition | Elasticsearch Enterprise Edition | Elasticsearch Platinum Edition |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 4 | 16 | 530 | $1,098 | $2,019 | N/A | $2,164 | $2,600 |
 | 8 | 32 | 320 | $1,265 | $2,644 | $4,734 | $2,932 | $3,845 |
 | 8 | 64 | 640 | $2,012 | $4,125 | $7,918 | $5,088 | $6,936 |
 | 16 | 64 | 640 | $2,529 | $5,287 | $9,468 | $5,864 | $7,690 |
 | 32 | 128 | 1280 | $5,058 | $10,573 | $18,936 | $11,728 | $15,380 |
-| 32 | 240 | 2400 | $7,543 | $15,467 | $29,692 | $19,078 | $26,010 |
+| 30 | 240 | 2400 | $7,543 | $15,467 | $29,692 | $19,078 | $26,010 |
 {: caption="Table 4. Estimated monthly charges - Isolated Compute" caption-side="bottom"}
 
 <br>
@@ -93,7 +93,7 @@ The following tables provide estimated monthly charges for a range of configurat
 | 8 | 64 | 640 | $2,012 | $3,017 | $3,791 | $6,176 | $3,017 |
 | 16 | 64 | 640 | $2,529 | $3,794 | $4,824 | $8,771 | $3,794 |
 | 32 | 128 | 1280 | $5,058 | $7,587 | $9,647 | $17,542 | $7,587 |
-| 32 | 240 | 2400 | $7,543 | $11,314 | $14,213 | $23,157 | $11,314 |
+| 30 | 240 | 2400 | $7,543 | $11,314 | $14,213 | $23,157 | $11,314 |
 {: caption="Table 5. Estimated monthly charges - Isolated Compute" caption-side="bottom"}
 
 ## Estimated monthly charges for other configurations
@@ -117,4 +117,4 @@ Use the iformation in the following tables to estimate the monthly charge for co
 | 1 vCPU/month/member | $32.35 | $32.35 | $43.06 | $107.15 | $32.35 |
 | 1 GB RAM/month/member | $5.39 | $5.39 | $8.08 | $12.36 | $5.39 |
 | 1 GB disk/month/member | $0.63 | $0.63 | $0.63| $0.63 | $0.63 |
-{: caption="Table 6. Estimated monthly charges for other configurations" caption-side="bottom"}
+{: caption="Table 7. Estimated monthly charges for other configurations" caption-side="bottom"}
