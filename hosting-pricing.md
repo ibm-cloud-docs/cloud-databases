@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-04-29"
+  years: 2024
+lastupdated: "2024-04-30"
 
 subcollection: cloud-databases
 
