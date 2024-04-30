@@ -1,4 +1,3 @@
-
 ---
 toc:
   properties:
@@ -51,6 +50,11 @@ toc:
   - navgroup:
       id: howto
       topics:
+      - topicgroup:
+          label: Hosting models
+          topics:
+          - hosting-models.md
+          - hosting-pricing.md
       - learn-getting-to-production.md
       - topicgroup:
           label: Logging and monitoring
@@ -65,28 +69,25 @@ toc:
           - manage-scc.md
           - howto-cbr.md
           - howto-allowlists.md
+          - reference-service-endpoints.md
+          - howto-vpes.md
           - reference-iam.md
-          - reference-key-protect.md
-          - reference-hpcs.md
-          - topicgroup:
-              label: Connecting over Private Networks
-              topics:
-              - howto-vpes.md
-              - reference-service-endpoints.md
       - howto-manage-backups.md
       - closures.md
-      - howto-deprovisioning.md
       - topicgroup:
-          label: IBM Cloud Databases (ICD) enabled by IBM Cloud Satellite
+          label: IBM Cloud Databases enabled by IBM Cloud Satellite
           topics:
           - howto-sat-loc.md
           - howto-sat-loc-aws.md
           - howto-sat-loc-onprem.md
+          - howto-sat-loc-scs.md
+          - reference-key-protect.md
+          - reference-hpcs.md
+          - howto-deprovisioning.md
   - navgroup:
       id: tutorial
       topics:
       - hello-world-tutorial.md
-      - howto-tutorials.md
       - cbr-tutorial.md
       - terra-postgres-tutorial.md
       - terra-mongodb-tutorial.md
@@ -98,18 +99,19 @@ toc:
   - navgroup:
       id: reference
       topics:
-      - db-version-policy.md
+      - icd-cli.md
       - topicgroup:
-          label: High Availability and disaster recovery
+          label: High availability and disaster recovery
           topics:
           - ha-dr.md
           - bc-dr.md
+      - db-version-policy.md
       - reference-responsibilities.md
   - navgroup:
       id: help
       topics:
       - topicgroup:
-          label: Troubleshooting
+          label: Troubleshoot
           topics:
           - ts-terraform.md
       - topicgroup:
@@ -118,5 +120,7 @@ toc:
           - availability-zones-faq.md
           - status-page-faq.md
           - resource-config-faq.md
+          - data-faq.md
+          - ha-faq.md
           - cert-faq.md
           - backups-faq.md
