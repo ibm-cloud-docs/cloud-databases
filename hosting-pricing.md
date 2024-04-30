@@ -101,7 +101,7 @@ The following tables provide estimated monthly charges for a range of configurat
 
 Use the iformation in the following tables to estimate the monthly charge for combinations of vCPU, RAM, and disk that is not shown in the previous tables. The estimated monthly charges are for one member, so to estimate the charge per instance, multiply by the number of members/instance shown in the table.
 
-| | PostgreSQL | MongoDB Standard Edition | MongoDB Enterprise Edition | Elasticsearch Enterprise Edition | Elasticsearch Platinum Edition |
+| | PostgreSQL | MongoDB <br> Standard Edition | MongoDB Enterprise Edition | Elasticsearch Enterprise Edition | Elasticsearch Platinum Edition |
 | --- | --- | --- | --- | --- | --- |
 | Members/instance | 2 | 3 | 3 | 3 | 3 |
 | 1 vCPU/month/member | $32.35 | $48.41 | $64.59 | $32.35 | $32.35 |
