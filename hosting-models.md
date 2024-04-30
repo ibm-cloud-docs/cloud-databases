@@ -15,7 +15,7 @@ keywords: isolated compute, hosting models
 # Hosting models overview
 {: #hosting-types}
 
-To allow for reliable resource allocation, {{site.data.keyword.databases-for}} offers two hosting models; Shared Compute and Isolated Compute. {{site.data.keyword.databases-for}} Shared Compute is a flexible option for your database deployment that preserves performance predictability. {{site.data.keyword.databases-for}} Isolated Compute is our recommendation for production enterprise applications, providing more precise control and premium features.
+To allow for reliable resource allocation, {{site.data.keyword.databases-for}} offers two hosting models; Shared Compute and Isolated Compute. {{site.data.keyword.databases-for}} Shared Compute is a flexible option for your database deployment that preserves performance predictability. {{site.data.keyword.databases-for}} Isolated Compute is our recommendation for production enterprise applications, providing more precise control and enterprise features.
 {: shortdesc}
 
 ## {{site.data.keyword.databases-for}} Shared Compute
@@ -32,11 +32,11 @@ With Small allocation preset, you can test out the database with the smallest re
 {: #hosting-models-iso-compute-ui}
 {: ui}
 
-Isolated Compute is a secure single-tenant offering for complex, highly-performant enterprise workloads. By placing your deployment and all associated user-data management agents on an isolated machine, {{site.data.keyword.databases-for}} Isolated Compute provides dedicated computing resources, dedicated IO and network bandwidth, and hypervisor-level isolation.
+Isolated Compute is a secure single-tenant offering for complex, highly-performant enterprise workloads. By placing your deployment and all associated user-data management agents on an isolated machine, {{site.data.keyword.databases-for}} Isolated Compute provides dedicated computing resources, dedicated storage bandwidth, and hypervisor-level isolation.
 
 When provisioning, choose an initial host size for your instance. Storage is still selected separately, allowing you to determine the size of disk and number of [IOPS](#x3858854){: term} your database receives.
 
-CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} Isolated Compute. Disk autoscaling is available. If you provisioned an isolated instance or switched over from a deployment with autoscaling, monitor your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/databases-for-mongodb?topic=databases-for-mongodb-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
+CPU and RAM autoscaling is not supported on Isolated Compute. Disk autoscaling is available. If you provisioned an isolated instance or switched over from a deployment with autoscaling, monitor your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/databases-for-mongodb?topic=databases-for-mongodb-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
 {: note}
 
 ## {{site.data.keyword.databases-for}} Shared Compute
@@ -82,7 +82,7 @@ Because of each service's individual requirements, {{site.data.keyword.databases
 {: #hosting-models-iso-compute}
 {: cli}
 
-Isolated Compute is a secure single-tenant offering for complex, highly-performant enterprise workloads. By placing your deployment and all associated user-data management agents on an isolated machine, {{site.data.keyword.databases-for}} Isolated Compute provides dedicated computing resources, dedicated IO and network bandwidth, and hypervisor-level isolation.
+Isolated Compute is a secure single-tenant offering for complex, highly-performant enterprise workloads. By placing your deployment and all associated user-data management agents on an isolated machine, {{site.data.keyword.databases-for}} Isolated Compute provides dedicated computing resources, dedicated storage bandwidth, and hypervisor-level isolation.
 
 When provisioning, choose the CPU x RAM size for the machine to set up your database. This machine will be exclusively assigned to running your database instance. Storage is still selected separately, allowing you to determine the size of disk and number of [IOPS](#x3858854){: term} your database receives. Scale your database and change your machine size using your preferred method: the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference), the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction), or using [Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: external}.
 
@@ -93,7 +93,7 @@ CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} 
 {: #hosting-models-iso-compute}
 {: api}
 
-Isolated Compute is a secure single-tenant offering for complex, highly-performant enterprise workloads. By placing your deployment and all associated user-data management agents on an isolated machine, {{site.data.keyword.databases-for}} Isolated Compute provides dedicated computing resources, dedicated IO and network bandwidth, and hypervisor-level isolation.
+Isolated Compute is a secure single-tenant offering for complex, highly-performant enterprise workloads. By placing your deployment and all associated user-data management agents on an isolated machine, {{site.data.keyword.databases-for}} Isolated Compute provides dedicated computing resources, dedicated storage bandwidth, and hypervisor-level isolation.
 
 When provisioning, choose the CPU x RAM size for the machine to set up your database. This machine will be exclusively assigned to running your database instance. Storage is still selected separately, allowing you to determine the size of disk and number of [IOPS](#x3858854){: term} your database receives. Scale your database and change your machine size using your preferred method: the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference), the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction), or using [Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: external}.
 
@@ -133,9 +133,9 @@ To switch between Shared and Isolated Compute, select the model you want, review
 
 | **Isolated Compute** | **Shared Compute** |
 |-------------------------|---------------------|
-| Single-tenanted databases with dedicated IO and Network bandwidth. Database management agents are placed on isolated machine. | Multi-tenanted, logically separated databases sharing bandwidth. Database management pods are also multi-tenanted. |
+| Single-tenanted databases with dedicated storage bandwidth. Database management agents are placed on isolated machine. | Multi-tenanted, logically separated databases sharing bandwidth. Database management pods are also multi-tenanted. |
 | Receive all the available resources in your machine. | Transparent, deterministic CPU allocation. Know exactly what your performance will be and scale up and down as your workload requires. |
-| Premium databases, such as MongoDB Sharding and Elasticsearch Platinum, will be solely provisioned on Isolated Compute. Future enhancements, such as maintenance windows and cross-region replication will be supported solely on Isolated Compute. | Standard database versions only. |
+| Some of our database offerings, such as MongoDB Enterprise and Elasticsearch Platinum, will be solely provisioned on Isolated Compute. Future enhancements, such as cross-region replication may be supported solely on Isolated Compute. | Excludes some database offerings, such as MongoDB Enterprise and Elasticsearch Platinum. |
 | Scalability is based on provided machine sizes. | Scalability is fine-grained and linear from a database-specific minimum configuration up to 28 CPU and 112 GB RAM. |
 {: caption="Table 2. Choosing between hosting models" caption-side="bottom"}
 
@@ -150,7 +150,6 @@ The following table shows which model is available for each database.
 | EnterpriseDB |  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
 | Mongo Community | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
 | Mongo Enterprise |  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
-| Mongo Sharding |  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
 | Elastic Enterprise | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
 | Elastic Platinum |  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
 | etcd | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
@@ -159,27 +158,27 @@ The following table shows which model is available for each database.
 | RabbitMQ | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
 {: caption="Table 1. {{site.data.keyword.databases-for}} hosting model availability" caption-side="bottom"}
 
-## Hosting model grandfathering
+## Transition from existing hosting models to Isolated and Shared Compute
 {: #hosting-model-grandfathering}
 
-Multi-tenant users that are automatically transitioned to Shared Compute will be *grandfathered*, meaning that they get RAM and CPU increased to the new minimums, if required. These increases will not be charged until April 2025.
+Multi-tenant users that are automatically transitioned to Shared Compute will be *grandfathered*, meaning that they get RAM and CPU increased to the Shared Compute minimum resource allocations, if required. These increases will not be charged until May 2025.
 {: important}
 
-Starting August 2024, existing multi-tenant instances will begin the transition to Shared Compute; this means that first, RAM minimums requirements on multi-tenant and dedicated core instances will be applied, lifting the RAM of Shared Compute instances that fall below these minimums. On July 15, multi-tenant databases will be gradually transitioned from non-determinstic CPU allocation to the deterministic Shared Compute CPU allocation. Ahead of this transition, [monitor your database's CPU usage](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-sysdig-monitor#sysdig-monitor-dashboards-cpu-cores-used-per-member) to determine what allocation is required to maintain your current performance level. Existing multi-tenant users will be grandfathered through to April 2025 for both CPU and minimum RAM allocations that are automatically added. Existing dedicated core users will not be impacted by minimum resource requirements unless a scale or provision action is invoked on an instance that is currently below these minimums.
+Starting August 2024, existing multi-tenant instances will begin the transition to Shared Compute; this means that first, RAM minimum allocation on multi-tenant and dedicated core instances will be applied, lifting the RAM of Shared Compute instances that fall below these minimums. Following this, multi-tenant databases will be gradually transitioned from non-determinstic CPU allocation to the deterministic Shared Compute CPU allocation. Ahead of this transition, [monitor your database's CPU usage](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-sysdig-monitor#sysdig-monitor-dashboards-cpu-cores-used-per-member) to determine what allocation is required to maintain your current performance level. Existing multi-tenant users will be grandfathered through to May 2025 for both CPU and minimum RAM resource allocations that are automatically added. Existing dedicated core users will not be impacted by minimum resource requirements unless a scale or provision action is invoked on an instance that is currently below these minimums.
 
-On August 1, all new multi-tenant provisions are placed on Shared Compute. Dedicated cores provisioning remain available at this time.
+From September 2024, all new multi-tenant provisions are placed on Shared Compute. Dedicated cores provisioning remain available at this time.
 
 In May 2025, we will transition dedicated core users to Isolated Compute and remove grandfathering for Shared Compute instances. All Dedicated Cores instances will be transitioned to the nearest larger Isolated Compute size. Dedicated Core and Isolated Compute instances can follow the simple switchover steps to transition to Shared Compute at any time. To provision a Dedicated Cores instance before it is transitioned, use the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference){: external}, the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction){: external}, or through [Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: external}.
 
-Ahead of the May 2025 date, if you have a multi-tenant instance, there are a few exceptions where grandfathering would not longer apply: 
+Ahead of the May 2025 date, if you have a multi-tenant instance, there are a few exceptions where grandfathering would no longer apply: 
 
 - If you have an existing database and change your RAM allocation only, you will be charged corresponding to the RAM changes. 
 - If you have an existing database and change your CPU allocation, you will be charged for all CPU and RAM allocated to your database.
 - If you create a new Shared Compute instance, you will be charged for all CPU and RAM allocated to your database. 
 - If you transition to Shared Compute, you will be charged for all CPU and RAM allocated to your database.  
 
-## Automatic transition placement
-{: #automatic-transition-placement}
+## Shared Compute transition placement
+{: #shared-compute-placement}
 
 | **If your current resource allocation is N CPU x M RAM (Non-RabbitMQ Version):** | **You will be automatically placed on <br> (Non-RabbitMQ Version):** |
 |-------------------------|---------------------|
