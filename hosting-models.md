@@ -132,12 +132,12 @@ To switch between Shared and Isolated Compute, select the model you want, review
 {: #choosing-between-hosting-models}
 
 | **Isolated Compute** | **Shared Compute** |
-|-------------------------|---------------------|
+| --- | --- |
 | Single-tenanted databases with dedicated storage bandwidth. Database management agents are placed on isolated machine. | Multi-tenanted, logically separated databases sharing bandwidth. Database management pods are also multi-tenanted. |
 | Receive all the available resources in your machine. | Transparent, deterministic CPU allocation. Know exactly what your performance will be and scale up and down as your workload requires. |
 | Some of our database offerings, such as MongoDB Enterprise and Elasticsearch Platinum, will be solely provisioned on Isolated Compute. Future enhancements, such as cross-region replication may be supported solely on Isolated Compute. | Excludes some database offerings, such as MongoDB Enterprise and Elasticsearch Platinum. |
 | Scalability is based on provided machine sizes. | Scalability is fine-grained and linear from a database-specific minimum configuration up to 28 CPU and 112 GB RAM. |
-{: caption="Table 2. Choosing between hosting models" caption-side="bottom"}
+{: caption="Table 1. Choosing between hosting models" caption-side="bottom"}
 
 ## Databases availability by hosting model
 {: #hosting-models-availability}
@@ -145,7 +145,7 @@ To switch between Shared and Isolated Compute, select the model you want, review
 The following table shows which model is available for each database.
 
 |  | **Shared Compute** | **Isolated Compute**  |
-|-------------------------|---------------------|---------------------|
+| --- | --- | --- |
 | PostgreSQL | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
 | EnterpriseDB |  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
 | Mongo Community | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
@@ -156,7 +156,7 @@ The following table shows which model is available for each database.
 | MySQL | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
 | Redis | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
 | RabbitMQ | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
-{: caption="Table 1. {{site.data.keyword.databases-for}} hosting model availability" caption-side="bottom"}
+{: caption="Table 2. {{site.data.keyword.databases-for}} hosting model availability" caption-side="bottom"}
 
 ## Transition from existing hosting models to Isolated and Shared Compute
 {: #hosting-model-grandfathering}
@@ -180,7 +180,7 @@ Ahead of the May 2025 date, if you have a multi-tenant instance, there are a few
 ## Shared Compute transition placement
 {: #shared-compute-placement}
 
-| **If your current resource allocation is N CPU x M RAM (Non-RabbitMQ Version):** | **You will be automatically placed on <br> (Non-RabbitMQ Version):** |
+| **If your current resource allocation is N CPU x M RAM <br> (Non-RabbitMQ Version):** | **You will be automatically placed on <br> (Non-RabbitMQ Version):** |
 |-------------------------|---------------------|
 | N = 0 CPU, M < 4 GB RAM | 0.5 CPU x 4 GB RAM, Shared Compute |
 | N = 0 CPU, 4 GB RAM < M ≤ 16 GB RAM | M/8 CPU x M GB RAM, Shared Compute|
@@ -197,7 +197,7 @@ Ahead of the May 2025 date, if you have a multi-tenant instance, there are a few
 
 <br>
 
-| **If your current resource allocation is N CPU x M RAM (RabbitMQ Version):** | **You will be automatically placed on (RabbitMQ Version):** |
+| **If your current resource allocation is N CPU x M RAM <br> (RabbitMQ Version):** | **You will be automatically placed on <br> (RabbitMQ Version):** |
 |-------------------------|---------------------|
 | N = 0 CPU, M < 8 GB RAM | 1 CPU x 8 GB RAM, Shared Compute |
 | N = 0 CPU, 8 GB RAM < M ≤ 16 GB RAM | M/8 CPU x M GB RAM, Shared Compute |
