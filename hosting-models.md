@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-04-26"
+lastupdated: "2024-04-30"
 
 subcollection: cloud-databases
 
@@ -18,13 +18,13 @@ keywords: isolated compute, hosting models
 To allow for reliable resource allocation, {{site.data.keyword.databases-for}} offers two hosting models; Shared Compute and Isolated Compute. {{site.data.keyword.databases-for}} Shared Compute is a flexible option for your database deployment that preserves performance predictability. {{site.data.keyword.databases-for}} Isolated Compute is our recommendation for production enterprise applications, providing more precise control and premium features.
 {: shortdesc}
 
-## {{site.data.keyword.databases-for}} shared compute
+## {{site.data.keyword.databases-for}} Shared Compute
 {: #hosting-models-shared-compute-ui}
 {: ui}
 
-Shared compute is a flexible multi-tenant offering for dynamic, fine-tuned, and decoupled capacity selections.
+Shared Compute is a flexible multi-tenant offering for dynamic, fine-tuned, and decoupled capacity selections.
 
-If you select Shared compute in the {{site.data.keyword.cloud_notm}} console, you then choose an initial resource allocation preset: **Small** (1 CPU and 8 GB RAM for {{site.data.keyword.rabbitmq}}, 0.5 CPU and 4 GB RAM for all other databases) or **Custom** (2 CPU and 4 GB RAM). Small has a fixed amount of CPU and RAM, but you can change disk. Custom can be completely customized.
+If you select Shared Compute in the {{site.data.keyword.cloud_notm}} console, you then choose an initial resource allocation preset: **Small** (1 CPU and 8 GB RAM for {{site.data.keyword.rabbitmq}}, 0.5 CPU and 4 GB RAM for all other databases) or **Custom** (2 CPU and 4 GB RAM). Small has a fixed amount of CPU and RAM, but you can change disk. Custom can be completely customized.
 
 With Small allocation preset, you can test out the database with the smallest resource allocation. If you have higher performance requirements, you can easily leverage the flexibility of the Shared model with the Custom allocation preset. With the ability to select the amount of CPU and RAM resources you receive, performance can be scaled to fit your workload.
 
@@ -39,11 +39,11 @@ When provisioning, choose an initial host size for your instance. Storage is sti
 CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} Isolated Compute. Disk autoscaling is available. If you provisioned an Isolated instance or switched over from a deployment with autoscaling, monitor your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/databases-for-mongodb?topic=databases-for-mongodb-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
 {: note}
 
-## {{site.data.keyword.databases-for}} shared compute
+## {{site.data.keyword.databases-for}} Shared Compute
 {: #hosting-models-shared-compute}
 {: cli}
 
-Shared compute is a flexible multi-tenant offering for dynamic, fine-tuned, and decoupled capacity selections.
+Shared Compute is a flexible multi-tenant offering for dynamic, fine-tuned, and decoupled capacity selections.
 
 Each database instance receives a deterministic CPU allocation. If an instance is provisioned without selecting a CPU amount, Shared Compute automatically allocates a small amount of CPU to your database up to a 2 core max. Automatic CPU is provided at a 1:8 ratio of CPU:RAM; therefore, a user with 4 GB RAM receives 4/8th of a CPU; a user with 8 GB RAM receives 1 CPU; and an user with 20 GB RAM receives 2 CPU due to the 2 CPU limit.
 
@@ -52,11 +52,11 @@ If you have higher performance requirements than 2 CPU, you can easily leverage 
 Because of each service's individual requirements, {{site.data.keyword.databases-for}} has minimum resource requirements in place for all Shared Compute instances. When all existing multi-tenant instances are transitioned to Shared Compute, these minimum resource requirements will be applied. Current multi-tenant instances will not be charged (that is, they will be _grandfathered_) for any increase to up to these minimum resource requirements actioned by IBM until May 2025. For more information, see [Hosting model grandfathering](/docs/cloud-databases?topic=cloud-databases-hosting-models&interface=ui#hosting-models-grandfathering).
 {: note}
 
-## {{site.data.keyword.databases-for}} shared compute
+## {{site.data.keyword.databases-for}} Shared Compute
 {: #hosting-models-shared-compute}
 {: api}
 
-Shared compute is a flexible multi-tenant offering for dynamic, fine-tuned, and decoupled capacity selections.
+Shared Compute is a flexible multi-tenant offering for dynamic, fine-tuned, and decoupled capacity selections.
 
 Each database instance receives a deterministic CPU allocation. If an instance is provisioned without selecting a CPU amount, Shared Compute automatically allocates a small amount of CPU to your database up to a 2 core max. Automatic CPU is provided at a 1:8 ratio of CPU:RAM; therefore, a user with 4 GB RAM receives 4/8th of a CPU; a user with 8 GB RAM receives 1 CPU; and an user with 20 GB RAM receives 2 CPU due to the 2 CPU limit.
 
@@ -65,11 +65,11 @@ If you have higher performance requirements than 2 CPU, you can easily leverage 
 Because of each service's individual requirements, {{site.data.keyword.databases-for}} has minimum resource requirements in place for all Shared Compute instances. When all existing multi-tenant instances are transitioned to Shared Compute, these minimum resource requirements will be applied. Current multi-tenant instances will not be charged (that is, they will be _grandfathered_) for any increase to up to these minimum resource requirements actioned by IBM until May 2025. For more information, see [Hosting model grandfathering](/docs/cloud-databases?topic=cloud-databases-hosting-models&interface=ui#hosting-models-grandfathering).
 {: note}
 
-## {{site.data.keyword.databases-for}} shared compute
+## {{site.data.keyword.databases-for}} Shared Compute
 {: #hosting-models-shared-compute}
 {: terraform}
 
-Shared compute is a flexible multi-tenant offering for dynamic, fine-tuned, and decoupled capacity selections.
+Shared Compute is a flexible multi-tenant offering for dynamic, fine-tuned, and decoupled capacity selections.
 
 Each database instance receives a deterministic CPU allocation. If an instance is provisioned without selecting a CPU amount, Shared Compute automatically allocates a small amount of CPU to your database up to a 2 core max. Automatic CPU is provided at a 1:8 ratio of CPU:RAM; therefore, a user with 4 GB RAM receives 4/8th of a CPU; a user with 8 GB RAM receives 1 CPU; and an user with 20 GB RAM receives 2 CPU due to the 2 CPU limit.
 
@@ -78,7 +78,7 @@ If you have higher performance requirements than 2 CPU, you can easily leverage 
 Because of each service's individual requirements, {{site.data.keyword.databases-for}} has minimum resource requirements in place for all Shared Compute instances. When all existing multi-tenant instances are transitioned to Shared Compute, these minimum resource requirements will be applied. Current multi-tenant instances will not be charged (that is, they will be _grandfathered_) for any increase to up to these minimum resource requirements actioned by IBM until May 2025. For more information, see [Hosting model grandfathering](/docs/cloud-databases?topic=cloud-databases-hosting-models&interface=ui#hosting-models-grandfathering).
 {: note}
 
-## {{site.data.keyword.databases-for}} isolated compute
+## {{site.data.keyword.databases-for}} Isolated Compute
 {: #hosting-models-iso-compute}
 {: cli}
 
@@ -89,7 +89,7 @@ When provisioning, choose the CPU x RAM size for the machine to set up your data
 CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} Isolated Compute. Disk autoscaling is available. If you provisioned an Isolated instance or switched over from a deployment with autoscaling, monitor your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/databases-for-mongodb?topic=databases-for-mongodb-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
 {: note}
 
-## {{site.data.keyword.databases-for}} isolated compute
+## {{site.data.keyword.databases-for}} Isolated Compute
 {: #hosting-models-iso-compute}
 {: api}
 
@@ -100,7 +100,7 @@ When provisioning, choose the CPU x RAM size for the machine to set up your data
 CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} Isolated Compute. Disk autoscaling is available. If you provisioned an Isolated instance or switched over from a deployment with autoscaling, monitor your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/databases-for-mongodb?topic=databases-for-mongodb-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
 {: note}
 
-## {{site.data.keyword.databases-for}} isolated compute
+## {{site.data.keyword.databases-for}} Isolated Compute
 {: #hosting-models-iso-compute}
 {: terraform}
 
@@ -111,10 +111,10 @@ When provisioning, choose the CPU x RAM size for the machine to set up your data
 CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} Isolated Compute. Disk autoscaling is available. If you provisioned an Isolated instance or switched over from a deployment with autoscaling, monitor your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/databases-for-mongodb?topic=databases-for-mongodb-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
 {: note}
 
-### Isolated compute sizing
+### Isolated Compute sizing
 {: #hosting-models-iso-compute-sizing}
 
-Isolated compute features 6 size selections:
+Isolated Compute features 6 size selections:
 
 - 4 CPU x 16 RAM
 - 8 CPU x 32 RAM
@@ -126,12 +126,12 @@ Isolated compute features 6 size selections:
 ## Switching hosting models
 {: #hosting-models-switching}
 
-To switch between Shared and Isolated compute, select the model you want, review your resource selection, and switch. Switching hosting models does not cause downtime, as this is not a backup and restore migration. Instead, the same process is applied as for updates or database instance scaling. The database processes will perform a rolling restart, causing existing connections to be dropped. Thus, the recommendation is as always to ensure that your application has retry and reconnect logic to immediately re-establish a connection.
+To switch between Shared and Isolated Compute, select the model you want, review your resource selection, and switch. Switching hosting models does not cause downtime, as this is not a backup and restore migration. Instead, the same process is applied as for updates or database instance scaling. The database processes will perform a rolling restart, causing existing connections to be dropped. Thus, the recommendation is as always to ensure that your application has retry and reconnect logic to immediately re-establish a connection.
 
 ## Choosing between hosting models
 {: #choosing-between-hosting-models}
 
-| **Isolated compute** | **Shared compute** |
+| **Isolated Compute** | **Shared Compute** |
 |-------------------------|---------------------|
 | Single-tenanted databases with dedicated IO and Network bandwidth. Database management agents are placed on Isolated machine. | Multi-tenanted, logically separated databases sharing bandwidth. Database management pods are also multi-tenanted. |
 | Receive all the available resources in your machine. | Transparent, deterministic CPU allocation. Know exactly what your performance will be and scale up and down as your workload requires. |
@@ -144,7 +144,7 @@ To switch between Shared and Isolated compute, select the model you want, review
 
 The following table shows which model is available for each database.
 
-|  | **Shared compute** | **Isolated compute**  |
+|  | **Shared Compute** | **Isolated Compute**  |
 |-------------------------|---------------------|---------------------|
 | PostgreSQL | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
 | EnterpriseDB |  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
