@@ -28,7 +28,7 @@ If you select Shared Compute in the {{site.data.keyword.cloud_notm}} console, yo
 
 With Small allocation preset, you can test out the database with the smallest resource allocation. If you have higher performance requirements, you can easily leverage the flexibility of the Shared model with the Custom allocation preset. With the ability to select the amount of CPU and RAM resources you receive, performance can be scaled to fit your workload.
 
-## {{site.data.keyword.databases-for}} isolated compute
+## {{site.data.keyword.databases-for}} Isolated Compute
 {: #hosting-models-iso-compute-ui}
 {: ui}
 
