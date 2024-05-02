@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-04-04"
+lastupdated: "2024-05-02"
 
 subcollection: cloud-databases
 
@@ -27,8 +27,10 @@ Backups for {{site.data.keyword.databases-for}} instances are accessible from th
 - {{site.data.keyword.databases-for}} backups are not downloadable. If you need a local backup, use the appropriate software. For example, [pg_dump](https://www.postgresql.org/docs/9.6/static/backup-dump.html){: .external} is an effective tool for managing PostgreSQL backups.
 - {{site.data.keyword.databases-for-cassandra_full}} does not support reenablement. After an instance is disabled, that instance must be restored from a backup.
 
+Restore is currently available through the CLI, API, and Terraform.
+{: note}
+
 For information on taking an on-demand backup, see [Taking an on-demand backup](/docs/cloud-databases?topic=cloud-databases-dashboard-backups&interface=cli#ondemand-backup).
-{: tip}
 
 ## Backups in the UI
 {: #backup-ui}
