@@ -6,14 +6,14 @@ lastupdated: "2024-05-02"
 
 subcollection: cloud-databases
 
-keywords: isolated compute, hosting models
+keywords: isolated compute, hosting models, shared compute
 
 ---
 
 {{site.data.keyword.attribute-definition-list}}
 
 # Hosting models overview
-{: #hosting-types}
+{: #hosting-models}
 
 To allow for reliable resource allocation, {{site.data.keyword.databases-for}} offers two hosting models; Shared Compute and Isolated Compute. {{site.data.keyword.databases-for}} Shared Compute is a flexible option for your database deployment that preserves performance predictability. {{site.data.keyword.databases-for}} Isolated Compute is our recommendation for production enterprise applications, providing more precise control and enterprise features.
 {: shortdesc}
