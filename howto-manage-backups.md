@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-05-02"
+lastupdated: "2024-05-06"
 
 subcollection: cloud-databases
 
@@ -15,7 +15,12 @@ keywords: backups, new deployment, source deployment, backup, back up, ondemand 
 # Managing {{site.data.keyword.databases-for}} backups
 {: #dashboard-backups}
 
-Backups for {{site.data.keyword.databases-for}} instances are accessible from the _Backups_ tab of your instance's dashboard. Here is some additional general information about backups:
+Backups for {{site.data.keyword.databases-for}} instances are accessible from the _Backups_ tab of your instance's dashboard. 
+
+Restore is currently available through the CLI, API, and Terraform.
+{: note}
+
+Here is some additional general information about backups:
 
 - Automatic backups are performed daily and kept with a simple retention schedule of 30 days.
 - Backups cannot be deleted.
@@ -26,9 +31,6 @@ Backups for {{site.data.keyword.databases-for}} instances are accessible from th
 - Backups are restorable across accounts, but only through the API and only if the user that is running the restore has access to both the source and destination accounts.
 - {{site.data.keyword.databases-for}} backups are not downloadable. If you need a local backup, use the appropriate software. For example, [pg_dump](https://www.postgresql.org/docs/9.6/static/backup-dump.html){: .external} is an effective tool for managing PostgreSQL backups.
 - {{site.data.keyword.databases-for-cassandra_full}} does not support reenablement. After an instance is disabled, that instance must be restored from a backup.
-
-Restore is currently available through the CLI, API, and Terraform.
-{: note}
 
 For information on taking an on-demand backup, see [Taking an on-demand backup](/docs/cloud-databases?topic=cloud-databases-dashboard-backups&interface=cli#ondemand-backup).
 
