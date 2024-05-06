@@ -51,7 +51,7 @@ Review the following sections for the specific responsibilities for you and for 
 ## Disaster recovery
 {: #disaster-recovery-responsibilities}
 
-For new hosting models, restore and read replicas are currently available through the CLI, TF, and API.
+For new hosting models, PITR is currently available through the CLI, API, and Terraform.
 {: note}
 
 | Task | {{site.data.keyword.IBM_notm}} responsibilities | Your responsibilities |
