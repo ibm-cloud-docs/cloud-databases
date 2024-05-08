@@ -72,6 +72,9 @@ toc:
           - reference-service-endpoints.md
           - howto-vpes.md
           - reference-iam.md
+          - reference-key-protect.md
+          - reference-hpcs.md
+          - howto-deprovisioning.md
       - howto-manage-backups.md
       - closures.md
       - topicgroup:
@@ -81,9 +84,6 @@ toc:
           - howto-sat-loc-aws.md
           - howto-sat-loc-onprem.md
           - howto-sat-loc-scs.md
-          - reference-key-protect.md
-          - reference-hpcs.md
-          - howto-deprovisioning.md
   - navgroup:
       id: tutorial
       topics:
