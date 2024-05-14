@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2023, 2024
-lastupdated: "2024-04-25"
+lastupdated: "2024-05-14"
 
 subcollection: cloud-databases, database member, CPU seconds, platform metrics
 
@@ -39,7 +39,8 @@ set time range.
 ## Common metrics
 {: #sysdig-monitor-dashboards-common-metrics}
 
-Here is a list of common metrics across all {{site.data.keyword.databases-for}} offerings.
+Here is a detailed description about two of the common metrics across all {{site.data.keyword.databases-for}} offerings.
+
 
 ### CPU cores used per member
 {: #sysdig-monitor-dashboards-cpu-cores-used-per-member}
