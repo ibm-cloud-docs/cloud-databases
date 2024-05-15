@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-05-02"
+lastupdated: "2024-05-15"
 
 subcollection: cloud-databases
 
@@ -52,6 +52,14 @@ If you have higher performance requirements than 2 CPU, you can easily leverage 
 Because of each service's individual requirements, {{site.data.keyword.databases-for}} has minimum resource requirements in place for all Shared Compute instances. When all existing multi-tenant instances are transitioned to Shared Compute, these minimum resource requirements will be applied. Current multi-tenant instances will not be charged (that is, they will be _grandfathered_) for any increase to up to these minimum resource requirements actioned by IBM until May 2025. For more information, see [Hosting model grandfathering](/docs/cloud-databases?topic=cloud-databases-hosting-models&interface=ui#hosting-models-grandfathering).
 {: note}
 
+## {{site.data.keyword.databases-for}} Isolated Compute
+{: #hosting-models-iso-compute}
+{: cli}
+
+Isolated Compute is a secure single-tenant offering for complex, highly-performant enterprise workloads. By placing your deployment and all associated user-data management agents on an isolated machine, {{site.data.keyword.databases-for}} Isolated Compute provides dedicated computing resources, dedicated storage bandwidth, and hypervisor-level isolation.
+
+When provisioning, choose the CPU x RAM size for the machine to set up your database. This machine will be exclusively assigned to running your database instance. Storage is still selected separately, allowing you to determine the size of disk and number of [IOPS](#x3858854){: term} your database receives. Scale your database and change your machine size using your preferred method: the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference), the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction), or using [Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: external}.
+
 ## {{site.data.keyword.databases-for}} Shared Compute
 {: #hosting-models-shared-compute}
 {: api}
@@ -64,6 +72,46 @@ If you have higher performance requirements than 2 CPU, you can easily leverage 
 
 Because of each service's individual requirements, {{site.data.keyword.databases-for}} has minimum resource requirements in place for all Shared Compute instances. When all existing multi-tenant instances are transitioned to Shared Compute, these minimum resource requirements will be applied. Current multi-tenant instances will not be charged (that is, they will be _grandfathered_) for any increase to up to these minimum resource requirements actioned by IBM until May 2025. For more information, see [Hosting model grandfathering](/docs/cloud-databases?topic=cloud-databases-hosting-models&interface=ui#hosting-models-grandfathering).
 {: note}
+
+## {{site.data.keyword.databases-for}} Isolated Compute
+{: #hosting-models-iso-compute}
+{: api}
+
+Isolated Compute is a secure single-tenant offering for complex, highly-performant enterprise workloads. By placing your deployment and all associated user-data management agents on an isolated machine, {{site.data.keyword.databases-for}} Isolated Compute provides dedicated computing resources, dedicated storage bandwidth, and hypervisor-level isolation.
+
+When provisioning, choose the CPU x RAM size for the machine to set up your database. This machine will be exclusively assigned to running your database instance. Storage is still selected separately, allowing you to determine the size of disk and number of [IOPS](#x3858854){: term} your database receives. Scale your database and change your machine size using your preferred method: the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference), the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction), or using [Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: external}.
+
+To provision a {{site.data.keyword.databases-for}} instance on Isolated Compute, use the {{site.data.keyword.databases-for}} API [Capability endpoint](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#capability){: external}.
+
+Use a command like:
+
+```sh
+curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H "Authorization: Bearer <IAM token>" -H 'Content-Type: application/json' -d '{
+    "type": "postgresql",
+    "version": "14",
+    "platform": "classic",
+    "location": "us-south",
+    "parameters": {"members_host_flavor": "b3c.4x16.encrypted"}
+  }'
+```
+{: pre}
+
+The `host_flavor value` parameter defines your Isolated Compute sizing. Input the appropriate value for your desired size.
+
+To provision a Shared Compute instance, specify `multitenant`.
+
+Use a command like:
+
+```
+curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H "Authorization: Bearer <IAM token>" -H 'Content-Type: application/json' -d '{
+    "type": "postgresql",
+    "version": "14",
+    "platform": "classic",
+    "location": "us-south",
+    "parameters": {"members_host_flavor": "multitenant", "members_cpu_allocation_count": 3, "members_memory_allocation_mb": 3072, "members_disk_allocation_mb": 256000}
+  }'
+```
+{: pre}
 
 ## {{site.data.keyword.databases-for}} Shared Compute
 {: #hosting-models-shared-compute}
@@ -76,28 +124,6 @@ Each database instance receives a deterministic CPU allocation. If an instance i
 If you have higher performance requirements than 2 CPU, you can easily leverage the flexibility of the Shared model. With the ability to select the amount of CPU and RAM resources you receive, performance can be scaled to fit your workload. Additionally, if you know that your instance will experience variable demand, use RAM autoscaling to set not only the expected load and duration that would initiate resource scaling, but also the resource and cost limit your database will scale to.
 
 Because of each service's individual requirements, {{site.data.keyword.databases-for}} has minimum resource requirements in place for all Shared Compute instances. When all existing multi-tenant instances are transitioned to Shared Compute, these minimum resource requirements will be applied. Current multi-tenant instances will not be charged (that is, they will be _grandfathered_) for any increase to up to these minimum resource requirements actioned by IBM until May 2025. For more information, see [Hosting model grandfathering](/docs/cloud-databases?topic=cloud-databases-hosting-models&interface=ui#hosting-models-grandfathering).
-{: note}
-
-## {{site.data.keyword.databases-for}} Isolated Compute
-{: #hosting-models-iso-compute}
-{: cli}
-
-Isolated Compute is a secure single-tenant offering for complex, highly-performant enterprise workloads. By placing your deployment and all associated user-data management agents on an isolated machine, {{site.data.keyword.databases-for}} Isolated Compute provides dedicated computing resources, dedicated storage bandwidth, and hypervisor-level isolation.
-
-When provisioning, choose the CPU x RAM size for the machine to set up your database. This machine will be exclusively assigned to running your database instance. Storage is still selected separately, allowing you to determine the size of disk and number of [IOPS](#x3858854){: term} your database receives. Scale your database and change your machine size using your preferred method: the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference), the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction), or using [Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: external}.
-
-CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} Isolated Compute. Disk autoscaling is available. If you provisioned an isolated instance or switched over from a deployment with autoscaling, monitor your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/databases-for-mongodb?topic=databases-for-mongodb-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
-{: note}
-
-## {{site.data.keyword.databases-for}} Isolated Compute
-{: #hosting-models-iso-compute}
-{: api}
-
-Isolated Compute is a secure single-tenant offering for complex, highly-performant enterprise workloads. By placing your deployment and all associated user-data management agents on an isolated machine, {{site.data.keyword.databases-for}} Isolated Compute provides dedicated computing resources, dedicated storage bandwidth, and hypervisor-level isolation.
-
-When provisioning, choose the CPU x RAM size for the machine to set up your database. This machine will be exclusively assigned to running your database instance. Storage is still selected separately, allowing you to determine the size of disk and number of [IOPS](#x3858854){: term} your database receives. Scale your database and change your machine size using your preferred method: the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference), the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction), or using [Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: external}.
-
-CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} Isolated Compute. Disk autoscaling is available. If you provisioned an isolated instance or switched over from a deployment with autoscaling, monitor your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/databases-for-mongodb?topic=databases-for-mongodb-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
 {: note}
 
 ## {{site.data.keyword.databases-for}} Isolated Compute
@@ -109,6 +135,72 @@ Isolated Compute is a secure single-tenant offering for complex, highly-performa
 When provisioning, choose the CPU x RAM size for the machine to set up your database. This machine will be exclusively assigned to running your database instance. Storage is still selected separately, allowing you to determine the size of disk and number of [IOPS](#x3858854){: term} your database receives. Scale your database and change your machine size using your preferred method: the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference), the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction), or using [Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: external}.
 
 CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} Isolated Compute. Disk autoscaling is available. If you provisioned an isolated instance or switched over from a deployment with autoscaling, monitor your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/databases-for-mongodb?topic=databases-for-mongodb-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
+{: note}
+
+### Scale through the CLI
+{: #hosting-models-scaling-cli}
+{: cli}
+
+To scale a {{site.data.keyword.databases-for}} Isolated Compute instance, modify the `deployment-groups-set` parameter. Use a command like:
+
+```sh
+ibmcloud cdb deployment-groups-set <deploymentid> <groupid> [--disk <val>] [--hostflavor <val>]
+```
+{: pre}
+
+To scale a {{site.data.keyword.databases-for}} Shared Compute instance. Use a command like:
+
+```sh
+ibmcloud cdb deployment-groups-set <deploymentid> <groupid> [--memory <val>] [--cpu <val>] [--disk <val>] [--hostflavor multitenant]
+```
+{: pre}
+
+CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} Isolated Compute. Disk autoscaling is available. If you provisioned an isolated instance or switched over from a deployment with autoscaling, monitor your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/databases-for-mongodb?topic=databases-for-mongodb-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
+{: note}
+
+### Scale through the API
+{: #hosting-models-scaling-api}
+{: api}
+
+To scale a {{site.data.keyword.databases-for}} Isolated Compute instance, use the {{site.data.keyword.databases-for}} API [Scaling endpoint](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#setdeploymentscalinggroup){: external}.
+Use a command like:
+
+```sh
+curl -X PATCH https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}/groups/{group_id}
+-H 'Authorization: Bearer <>'
+-H 'Content-Type: application/json'
+-d '{"group":
+      {"host_flavor":
+        {"id": "b3c.4x16.encrypted"}
+      }
+    }' \
+```
+{: pre}
+
+To scale a {{site.data.keyword.databases-for}} Isolated Compute instance to a Shared Compute instance, use the following command:
+
+```sh
+curl -X PATCH https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}/groups/{group_id}
+-H 'Authorization: Bearer <>'
+-H 'Content-Type: application/json'
+-d '{"group":
+      {"host_flavor":
+        {"id": "multitenant"}
+      },
+      {"cpu":
+        {"allocation_count": 3}
+      },
+      {"memory":
+        {"allocation_mb": 2048}
+      }
+    }' \
+```
+{: pre}
+
+CPU and RAM allocation is not allowed when provisioning or scaling through Isolated Compute. You must specify `mulitenant` for the `host_flavor` parameter.
+{: note}
+
+CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} Isolated Compute. Disk autoscaling is available. If you have provisioned an Isolated instance or switched over from a deployment with autoscaling, keep an eye on your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/databases-for-mongodb?topic=databases-for-mongodb-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
 {: note}
 
 ### Isolated Compute sizing
