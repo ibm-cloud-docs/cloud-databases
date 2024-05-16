@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-05-15"
+lastupdated: "2024-05-16"
 
 subcollection: cloud-databases
 
@@ -102,7 +102,7 @@ To provision a Shared Compute instance, specify `multitenant`.
 
 Use a command like:
 
-```
+```sh
 curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H "Authorization: Bearer <IAM token>" -H 'Content-Type: application/json' -d '{
     "type": "postgresql",
     "version": "14",
@@ -110,6 +110,138 @@ curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H 
     "location": "us-south",
     "parameters": {"members_host_flavor": "multitenant", "members_cpu_allocation_count": 3, "members_memory_allocation_mb": 3072, "members_disk_allocation_mb": 256000}
   }'
+```
+{: pre}
+
+With Isolated Compute replacing *dedicated cores*, you cannot provision or scale instances running on Isolated Compute by submitting a CPU or memory allocation as you did prior to this change.
+{: important}
+
+Thus, the following command does not work:
+
+```sh
+{
+  "memory": {
+    "allocation_mb": 55296
+  },
+  "cpu": {
+    "allocation_count": 3
+  }
+}
+```
+{: pre}
+
+Instead, you must specify a `host_flavor` like this:
+
+```sh
+{
+  "host_flavor": {
+    "id": <value>
+  }
+}
+```
+{: pre}
+
+A host flavor represents fixed sizes of guaranteed resource allocations. You can see which host flavors are available by calling the [host flavors capability endpoint](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#capability) like this:
+
+```sh
+curl -X POST  https://api.{region}.databases.cloud.ibm.com/v5/ibm/capability/flavors  \
+  -H 'Authorization: Bearer <>' \
+  -H 'ContentType: application/json' \
+  -d '{
+    "deployment": {
+      "type": "postgresql",
+      "location": "us-south"
+    },
+  }'
+
+{
+  "deployment": {
+    "type": "postgresql",
+    "location": "us-south",
+    "platform": "classic"
+  },
+  "capability": {
+    "flavors": [
+      {
+        "id": "b3c.4x16.encrypted",
+        "name": "4x16",
+        "cpu": {
+          "allocation_count": 4
+        },
+        "memory": {
+          "allocation_mb": 16384
+        },
+        "hosting_size": "xs"
+      },
+      {
+        "id": "b3c.8x32.encrypted",
+        "name": "8x32",
+        "cpu": {
+          "allocation_count": 8
+        },
+        "memory": {
+          "allocation_mb": 32768
+        },
+        "hosting_size": "s"
+      },
+      {
+        "id": "multitenant",
+        "name": "multitenant",
+        "cpu": {
+          "allocation_count": 0
+        },
+        "memory": {
+          "allocation_mb": 0
+        },
+        "hosting_size": ""
+      }
+    ]
+  }
+}
+```
+{: pre}
+
+As shown, the isolated compute host flavors available to a PostgreSQL instance in the `us-south` region are:
+
+- `b3c.4x16.encrypted`
+- `b3c.8x32.encrypted`
+
+To provision or scale your instance to 4 CPUs and `16384` megabytes or RAM, you would submit:
+
+```sh
+{
+  "host_flavor": {
+    "id": "`b3c.4x16.encrypted`"
+  }
+}
+```
+{: pre}
+
+To scale your instance up to 8 CPUs and `32768` megabytes of RAM, you would submit:
+
+```sh
+{
+  "host_flavor": {
+    "id": "b3c.8x32.encrypted"
+  }
+}
+```
+{: pre}
+
+You can also submit a value of `multitenant` to migrate your instance from *Isolated Compute* to *Shared Compute*. Instances running on Shared Compute can be scaled by submitting new CPU and memory values:
+
+```sh
+{
+  "host_flavor": {
+    "id": "multitenant"
+  },
+  "memory": {
+    "allocation_mb": 16384
+  },
+  "cpu": {
+    "allocation_count": 4
+  }
+}
 ```
 {: pre}
 
@@ -135,72 +267,6 @@ Isolated Compute is a secure single-tenant offering for complex, highly-performa
 When provisioning, choose the CPU x RAM size for the machine to set up your database. This machine will be exclusively assigned to running your database instance. Storage is still selected separately, allowing you to determine the size of disk and number of [IOPS](#x3858854){: term} your database receives. Scale your database and change your machine size using your preferred method: the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference), the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction), or using [Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: external}.
 
 CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} Isolated Compute. Disk autoscaling is available. If you provisioned an isolated instance or switched over from a deployment with autoscaling, monitor your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/databases-for-mongodb?topic=databases-for-mongodb-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
-{: note}
-
-### Scale through the CLI
-{: #hosting-models-scaling-cli}
-{: cli}
-
-To scale a {{site.data.keyword.databases-for}} Isolated Compute instance, modify the `deployment-groups-set` parameter. Use a command like:
-
-```sh
-ibmcloud cdb deployment-groups-set <deploymentid> <groupid> [--disk <val>] [--hostflavor <val>]
-```
-{: pre}
-
-To scale a {{site.data.keyword.databases-for}} Shared Compute instance. Use a command like:
-
-```sh
-ibmcloud cdb deployment-groups-set <deploymentid> <groupid> [--memory <val>] [--cpu <val>] [--disk <val>] [--hostflavor multitenant]
-```
-{: pre}
-
-CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} Isolated Compute. Disk autoscaling is available. If you provisioned an isolated instance or switched over from a deployment with autoscaling, monitor your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/databases-for-mongodb?topic=databases-for-mongodb-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
-{: note}
-
-### Scale through the API
-{: #hosting-models-scaling-api}
-{: api}
-
-To scale a {{site.data.keyword.databases-for}} Isolated Compute instance, use the {{site.data.keyword.databases-for}} API [Scaling endpoint](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#setdeploymentscalinggroup){: external}.
-Use a command like:
-
-```sh
-curl -X PATCH https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}/groups/{group_id}
--H 'Authorization: Bearer <>'
--H 'Content-Type: application/json'
--d '{"group":
-      {"host_flavor":
-        {"id": "b3c.4x16.encrypted"}
-      }
-    }' \
-```
-{: pre}
-
-To scale a {{site.data.keyword.databases-for}} Isolated Compute instance to a Shared Compute instance, use the following command:
-
-```sh
-curl -X PATCH https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}/groups/{group_id}
--H 'Authorization: Bearer <>'
--H 'Content-Type: application/json'
--d '{"group":
-      {"host_flavor":
-        {"id": "multitenant"}
-      },
-      {"cpu":
-        {"allocation_count": 3}
-      },
-      {"memory":
-        {"allocation_mb": 2048}
-      }
-    }' \
-```
-{: pre}
-
-CPU and RAM allocation is not allowed when provisioning or scaling through Isolated Compute. You must specify `mulitenant` for the `host_flavor` parameter.
-{: note}
-
-CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} Isolated Compute. Disk autoscaling is available. If you have provisioned an Isolated instance or switched over from a deployment with autoscaling, keep an eye on your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/databases-for-mongodb?topic=databases-for-mongodb-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
 {: note}
 
 ### Isolated Compute sizing
