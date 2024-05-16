@@ -113,6 +113,9 @@ curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H 
 ```
 {: pre}
 
+<br>
+<br>
+
 With Isolated Compute replacing *dedicated cores*, you cannot provision or scale instances running on Isolated Compute by submitting a CPU or memory allocation as you did prior to this change.
 {: important}
 
