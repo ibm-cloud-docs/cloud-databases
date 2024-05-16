@@ -3,7 +3,7 @@ toc:
   properties:
     subcollection: cloud-databases
     version: 2
-    category: database
+    category: databaseho
     audience: service
     href: /docs/cloud-databases
     path: cloud-databases
@@ -14,6 +14,11 @@ toc:
       topics:
       - index.md
       - cdb-provision.md
+      - topicgroup:
+          label: Hosting models
+          topics:
+          - hosting-models.md
+          - hosting-pricing.md
       - cdb-notifications.md
       - cdb-logging-monitoring.md
       - cdb-secure.md
@@ -50,11 +55,6 @@ toc:
   - navgroup:
       id: howto
       topics:
-      - topicgroup:
-          label: Hosting models
-          topics:
-          - hosting-models.md
-          - hosting-pricing.md
       - learn-getting-to-production.md
       - topicgroup:
           label: Logging and monitoring
