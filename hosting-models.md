@@ -77,7 +77,7 @@ Because of each service's individual requirements, {{site.data.keyword.databases
 {: note}
 
 
-To provision a Shared Compute instance, specify `multitenant` as the `host_flavor`.
+To provision a {{site.data.keyword.databases-for}} instance on Isolated Compute, use the {{site.data.keyword.databases-for}} Resource Controller [API](https://cloud.ibm.com/apidocs/resource-controller/resource-controller#create-resource-instance){: external}. Specify `multitenant` as the `host_flavor`.
 
 Use a command like:
 
@@ -210,6 +210,50 @@ curl -X POST  https://api.{region}.databases.cloud.ibm.com/v5/ibm/capability/fla
         "hosting_size": "s"
       },
       {
+        "id": "m3c.8x64.encrypted",
+        "name": "8x64",
+        "cpu": {
+          "allocation_count": 8
+        },
+        "memory": {
+          "allocation_mb": 65536
+        },
+        "hosting_size": "s+"
+      },
+      {
+        "id": "b3c.16x64.encrypted",
+        "name": "16x64",
+        "cpu": {
+          "allocation_count": 16
+        },
+        "memory": {
+          "allocation_mb": 65536
+        },
+        "hosting_size": "m"
+      },
+      {
+        "id": "b3c.32x128.encrypted",
+        "name": "32x128",
+        "cpu": {
+          "allocation_count": 32
+        },
+        "memory": {
+          "allocation_mb": 131072
+        },
+        "hosting_size": "l"
+      },
+      {
+        "id": "m3c.30x240.encrypted",
+        "name": "30x240",
+        "cpu": {
+          "allocation_count": 30
+        },
+        "memory": {
+          "allocation_mb": 245760
+        },
+        "hosting_size": "xl"
+      },
+      {
         "id": "multitenant",
         "name": "multitenant",
         "cpu": {
@@ -223,6 +267,7 @@ curl -X POST  https://api.{region}.databases.cloud.ibm.com/v5/ibm/capability/fla
     ]
   }
 }
+
 ```
 {: pre}
 
@@ -230,6 +275,10 @@ As shown, the isolated compute host flavors available to a PostgreSQL instance i
 
 - `b3c.4x16.encrypted`
 - `b3c.8x32.encrypted`
+- `m3c.8x64.encrypted`
+- `b3c.16x64.encrypted`
+- `b3c.32x128.encrypted`
+- `m3c.30x240.encrypted`
 
 To provision or scale your instance to 4 CPUs and `16384` megabytes or RAM, you would submit:
 
