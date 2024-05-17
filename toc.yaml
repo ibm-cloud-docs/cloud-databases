@@ -3,7 +3,7 @@ toc:
   properties:
     subcollection: cloud-databases
     version: 2
-    category: databaseho
+    category: database
     audience: service
     href: /docs/cloud-databases
     path: cloud-databases
