@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-05-16"
+lastupdated: "2024-05-17"
 
 subcollection: cloud-databases
 
@@ -121,7 +121,7 @@ The `host_flavor value` parameter defines your Isolated Compute sizing. Input th
 {: #hosting-models-host-flavor-parameter}
 {: api}   
    
- The `host_flavor` parameter defines your Compute sizing. To provision a Shared Compute instance, specify `multitenant`. To provision an Isolated Compute instance, input the appropriate value for your desired CPU and RAM configuration. 
+The `host_flavor` parameter defines your Compute sizing. To provision a Shared Compute instance, specify `multitenant`. To provision an Isolated Compute instance, input the appropriate value for your desired CPU and RAM configuration. 
 
 | **Host flavor** | **host_flavor value** |
 |:-------------------------:|:---------------------:|
@@ -135,12 +135,10 @@ The `host_flavor value` parameter defines your Isolated Compute sizing. Input th
 {: caption="Table 1. Host flavor sizing parameter" caption-side="bottom"}
 
 
-
-
 <br>
 <br>
 
-With Isolated Compute replacing *dedicated cores*, you cannot provision or scale instances running on Isolated Compute by submitting a CPU or memory allocation as you did prior to this change.
+With Isolated Compute replacing *Dedicated Cores*, you cannot provision or scale instances running on Isolated Compute by submitting a CPU or memory allocation as you did prior to this change.
 {: important}
 
 Thus, the following command does not work:
@@ -322,7 +320,7 @@ To switch between Shared and Isolated Compute, select the model you want, review
 | Receive all the available resources in your machine. | Transparent, deterministic CPU allocation. Know exactly what your performance will be and scale up and down as your workload requires. |
 | Some of our database offerings, such as MongoDB Enterprise and Elasticsearch Platinum, will be solely provisioned on Isolated Compute. Future enhancements, such as cross-region replication may be supported solely on Isolated Compute. | Excludes some database offerings, such as MongoDB Enterprise and Elasticsearch Platinum. |
 | Scalability is based on provided machine sizes. | Scalability is fine-grained and linear from a database-specific minimum configuration up to 28 CPU and 112 GB RAM. |
-{: caption="Table 1. Choosing between hosting models" caption-side="bottom"}
+{: caption="Table 2. Choosing between hosting models" caption-side="bottom"}
 
 ## Databases availability by hosting model
 {: #hosting-models-availability}
@@ -341,9 +339,9 @@ The following table shows which model is available for each database.
 | MySQL | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
 | Redis | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
 | RabbitMQ | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
-{: caption="Table 2. {{site.data.keyword.databases-for}} hosting model availability" caption-side="bottom"}
+{: caption="Table 3. {{site.data.keyword.databases-for}} hosting model availability" caption-side="bottom"}
 
-## Transition Timeline from existing hosting models to Isolated and Shared Compute
+## Transition timeline from existing hosting models to Isolated and Shared Compute
 {: #hosting-model-transition-timeline}
 
 Multi-tenant users that are automatically transitioned to Shared Compute will be *grandfathered*, meaning that they get RAM and CPU increased to the Shared Compute minimum resource allocations, if required. These increases will not be charged until May 2025.
@@ -380,7 +378,7 @@ Ahead of the May 2025 date, if you have a multi-tenant instance, there are a few
 | 8 CPU < N ≤ 16 CPU OR 32 GB RAM, < M < 64 GB RAM | 16 CPU x 64 GB RAM, Isolated Compute |
 | 16 CPU < N ≤ 32 CPU OR 64 GB RAM, < M < 128 GB RAM | 32 CPU x 128 RAM, Isolated Compute |
 | 16 CPU < N ≤ 30 CPU OR 64 GB RAM, < M < 240 GB RAM | 30 CPU x 240 RAM, Isolated Compute |
-{: caption="Table 3. Automatic transition placement" caption-side="bottom"}
+{: caption="Table 4. Automatic transition placement" caption-side="bottom"}
 
 <br>
 
@@ -397,4 +395,4 @@ Ahead of the May 2025 date, if you have a multi-tenant instance, there are a few
 | 8 CPU < N ≤ 16 CPU OR 32 GB RAM < M < 64 GB RAM | 16 CPU x 64 GB RAM, Isolated Compute |
 | 16 CPU < N ≤ 32 CPU OR 64 GB RAM < M < 128 GB RAM | 32 CPU x 128 RAM, Isolated Compute |
 | 16 CPU < N ≤ 30 CPU OR 64 GB RAM < M < 240 GB RAM | 30 CPU x 240 RA, Isolated Compute |
-{: caption="Table 4. Automatic transition placement RabbitMQ" caption-side="bottom"}
+{: caption="Table 5. Automatic transition placement RabbitMQ" caption-side="bottom"}
