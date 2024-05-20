@@ -409,7 +409,7 @@ In May 2025, we will transition dedicated core users to Isolated Compute and rem
 Notifications will be sent ahead of changes, including at the following times: 
 - Before the transition of multi-tenant to Shared Compute, to notify you of expected changes. 
 - After all multi-tenant instances are transitioned to Shared Compute resource allocations, to recommend that you review your database performance and adjust resources as necessary. 
-- Before final shutdown of dedicated cores and the transition to Isolated Compute in addition to the end of grandfathering of Shared Compute instances.
+- Before final shutdown of dedicated cores and the transition to Isolated Compute. Additionally, before the end of grandfathering of Shared Compute instances.
 You can also find all notifications at [{{site.data.keyword.Bluemix_notm}} announcements](https://cloud.ibm.com/status/announcement).
 
 Ahead of the May 2025 date, if you have a multi-tenant instance, there are a few exceptions where grandfathering would no longer apply: 
