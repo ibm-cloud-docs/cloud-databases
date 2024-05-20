@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-05-17"
+lastupdated: "2024-05-20"
 
 subcollection: cloud-databases
 
@@ -406,11 +406,11 @@ From September 2024, the transition of multi-tenant instance to shared compute w
 
 In May 2025, we will transition dedicated core users to Isolated Compute and remove grandfathering for Shared Compute instances. All Dedicated Cores instances will be transitioned to the nearest larger Isolated Compute size. Dedicated Core instances can follow the simple switchover steps to transition to Isolated Compute at any time by using the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference){: external}, the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction){: external}, or through [Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: external}.
 
-Notifications will be sent ahead of changes, including: 
-- Ahead of the transition of multi-tenant to Shared Compute, to notify of expected changes. 
-- After all multi-tenant instances are transitioned to Shared Compute resource allocations, to recommend reviewing your database performance and adjusting resources as necessary
-- Ahead of final shutdown of dedicated cores and the transition to Isolated Compute, as well as the end of grandfathering of Shared Compute instances.
-All notifications can also be found at https://cloud.ibm.com/status/announcement.
+Notifications will be sent ahead of changes, including at the following times: 
+- Before the transition of multi-tenant to Shared Compute, to notify you of expected changes. 
+- After all multi-tenant instances are transitioned to Shared Compute resource allocations, to recommend that you review your database performance and adjust resources as necessary. 
+- Before final shutdown of dedicated cores and the transition to Isolated Compute in addition to the end of grandfathering of Shared Compute instances.
+You can also find all notifications at [{{site.data.keyword.Bluemix_notm}} announcements](https://cloud.ibm.com/status/announcement).
 
 Ahead of the May 2025 date, if you have a multi-tenant instance, there are a few exceptions where grandfathering would no longer apply: 
 
