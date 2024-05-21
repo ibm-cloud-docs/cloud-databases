@@ -138,8 +138,7 @@ The `host_flavor` parameter defines your Compute sizing. To provision a Shared C
 <br>
 <br>
 
-With Isolated Compute replacing *Dedicated Cores*, you cannot provision or scale instances running on Isolated Compute by submitting a CPU or memory allocation as you did prior to this change.
-{: important}
+With Isolated Compute, you cannot provision or scale instances by submitting a CPU or memory allocation.
 
 Thus, the following command does not work:
 
