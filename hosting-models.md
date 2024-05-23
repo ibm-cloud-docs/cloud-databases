@@ -18,7 +18,7 @@ keywords: isolated compute, hosting models, shared compute
 To allow for reliable resource allocation, {{site.data.keyword.databases-for}} offers two hosting models; Shared Compute and Isolated Compute. {{site.data.keyword.databases-for}} Shared Compute is a flexible option for your database deployment that preserves performance predictability. {{site.data.keyword.databases-for}} Isolated Compute is our recommendation for production enterprise applications, providing more precise control and enterprise features.
 {: shortdesc}
 
-Scaling your Shared Compute or Isolated Compute databases is currently available via the CLI, API, or Terraform. 
+Scaling your Shared Compute or Isolated Compute databases is currently available via the CLI, API, or Terraform only. 
 {: note}
 
 ## {{site.data.keyword.databases-for}} Shared Compute
