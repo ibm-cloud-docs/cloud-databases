@@ -13,13 +13,13 @@ keywords: isolated compute, hosting models
 {{site.data.keyword.attribute-definition-list}}
 
 # {{site.data.keyword.databases-for}} Hosting Models
-{: #hosting-models}
+{: #hosting-models-feb}
 
 To allow for reliable resource allocation, {{site.data.keyword.databases-for}} offers two hosting models: Shared Compute and Isolated Compute. {{site.data.keyword.databases-for}} Shared Compute is a cost-effective, flexible option for your database deployment. {{site.data.keyword.databases-for}} Isolated Compute is an appealing option for applications that require more precise control, security, or performance.
 {: shortdesc}
 
 ## {{site.data.keyword.databases-for}} Shared Compute
-{: #hosting-models-shared-compute}
+{: #hosting-models-shared-compute-feb}
 
 Shared compute is a flexible multi-tenant offering for dynamic, fine-tuned, and decoupled capacity selections.
 
@@ -31,7 +31,7 @@ Due to each service's individual requirements, {{site.data.keyword.databases-for
 {: note}
 
 ## {{site.data.keyword.databases-for}} Isolated Compute
-{: #hosting-models-iso-compute}
+{: #hosting-models-iso-compute-feb}
 
 Isolated Compute is a secure single-tenant offering for complex, highly-performant enterprise workloads. By placing your deployment and all associated user-data operations on an isolated machine, {{site.data.keyword.databases-for}} Isolated Compute provides computing resources and security.
 
@@ -48,7 +48,7 @@ CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} 
 {: note}
 
 ### Isolated Compute Sizing
-{: #hosting-models-iso-compute-sizing}
+{: #hosting-models-iso-compute-sizing-feb}
 
 Isolated Compute features 6 size selections:
 - 4 CPU x 16 RAM
@@ -61,12 +61,12 @@ Isolated Compute features 6 size selections:
 The price of CPU and RAM resources remains the same.
 
 ## Switching hosting models
-{: #hosting-models-switching}
+{: #hosting-models-switching-feb}
 
 To switch between our Shared and Isolated compute, select the model you want, review your resource selection, and switch. Switching hosting models does not cause downtime.
 
 ## Hosting model grandfathering
-{: #hosting-models-grandfathering}
+{: #hosting-models-grandfathering-feb}
 
 Current multi-tenant users that are automatically switched over to Shared Compute will begin to be charged for their CPU use starting March 2025.
 {: important}
@@ -78,16 +78,16 @@ All Dedicated Cores instances will be switched over to the nearest larger Isolat
 New Shared Compute users, or users who switch over to Shared Compute on their own, will receive Shared Compute charging.
 
 ## {{site.data.keyword.databases-for}} Provisioning
-{: #hosting-models-provisioning}
+{: #hosting-models-provisioning-feb}
 
 ### Provision through the UI
-{: #hosting-provisioning-ui}
+{: #hosting-provisioning-ui-feb}
 {: ui}
 
 To provision a {{site.data.keyword.databases-for}} service instance through the UI, select your **hosting type**. Choose either Shared Compute or Isolated Compute. Next, select the appropriate **Resource Allocation** for your workload.
 
 ### Provision through the CLI
-{: #hosting-provisioning-cli}
+{: #hosting-provisioning-cli-feb}
 {: cli}
 
 To provision a {{site.data.keyword.databases-for}} instance, use the `deployment-groups-set`. Use a command like:
@@ -98,7 +98,7 @@ ibmcloud cdb deployment-groups-set <deploymentid> <groupid> [--memory <val>] [--
 {: pre}
 
 ### Provision using the API
-{: #hosting-models-provisioning-api}
+{: #hosting-models-provisioning-api-feb}
 {: api}
 
 To provision a {{site.data.keyword.databases-for}} instance on Isolated Compute, use the {{site.data.keyword.databases-for}} API [Capability endpoint](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#capability){: external}.
