@@ -13,13 +13,13 @@ keywords: isolated compute, hosting models
 {{site.data.keyword.attribute-definition-list}}
 
 # {{site.data.keyword.databases-for}} Hosting Models
-{: #hosting-models-feb}
+{: #hosting-models}
 
 To allow for reliable resource allocation, {{site.data.keyword.databases-for}} offers two hosting models: Shared Compute and Isolated Compute. {{site.data.keyword.databases-for}} Shared Compute is a cost-effective, flexible option for your database deployment. {{site.data.keyword.databases-for}} Isolated Compute is an appealing option for applications that require more precise control, security, or performance.
 {: shortdesc}
 
 ## {{site.data.keyword.databases-for}} Shared Compute
-{: #hosting-models-shared-compute-feb}
+{: #hosting-models-shared-compute}
 
 Shared compute is a flexible multi-tenant offering for dynamic, fine-tuned, and decoupled capacity selections.
 
@@ -31,7 +31,7 @@ Due to each service's individual requirements, {{site.data.keyword.databases-for
 {: note}
 
 ## {{site.data.keyword.databases-for}} Isolated Compute
-{: #hosting-models-iso-compute-feb}
+{: #hosting-models-iso-compute}
 
 Isolated Compute is a secure single-tenant offering for complex, highly-performant enterprise workloads. By placing your deployment and all associated user-data operations on an isolated machine, {{site.data.keyword.databases-for}} Isolated Compute provides computing resources and security.
 
@@ -48,7 +48,7 @@ CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} 
 {: note}
 
 ### Isolated Compute Sizing
-{: #hosting-models-iso-compute-sizing-feb}
+{: #hosting-models-iso-compute-sizing}
 
 Isolated Compute features 6 size selections:
 - 4 CPU x 16 RAM
@@ -61,12 +61,12 @@ Isolated Compute features 6 size selections:
 The price of CPU and RAM resources remains the same.
 
 ## Switching hosting models
-{: #hosting-models-switching-feb}
+{: #hosting-models-switching}
 
 To switch between our Shared and Isolated compute, select the model you want, review your resource selection, and switch. Switching hosting models does not cause downtime.
 
 ## Hosting model grandfathering
-{: #hosting-models-grandfathering-feb}
+{: #hosting-models-grandfathering}
 
 Current multi-tenant users that are automatically switched over to Shared Compute will begin to be charged for their CPU use starting March 2025.
 {: important}
@@ -78,16 +78,16 @@ All Dedicated Cores instances will be switched over to the nearest larger Isolat
 New Shared Compute users, or users who switch over to Shared Compute on their own, will receive Shared Compute charging.
 
 ## {{site.data.keyword.databases-for}} Provisioning
-{: #hosting-models-provisioning-feb}
+{: #hosting-models-provisioning}
 
 ### Provision through the UI
-{: #hosting-provisioning-ui-feb}
+{: #hosting-provisioning-ui}
 {: ui}
 
 To provision a {{site.data.keyword.databases-for}} service instance through the UI, select your **hosting type**. Choose either Shared Compute or Isolated Compute. Next, select the appropriate **Resource Allocation** for your workload.
 
 ### Provision through the CLI
-{: #hosting-provisioning-cli-feb}
+{: #hosting-provisioning-cli}
 {: cli}
 
 To provision a {{site.data.keyword.databases-for}} instance, use the `deployment-groups-set`. Use a command like:
@@ -98,7 +98,7 @@ ibmcloud cdb deployment-groups-set <deploymentid> <groupid> [--memory <val>] [--
 {: pre}
 
 ### Provision using the API
-{: #hosting-models-provisioning-api-feb}
+{: #hosting-models-provisioning-api}
 {: api}
 
 To provision a {{site.data.keyword.databases-for}} instance on Isolated Compute, use the {{site.data.keyword.databases-for}} API [Capability endpoint](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#capability){: external}.
@@ -122,7 +122,7 @@ To provision a Shared Compute instance, specify `multitenant`.
 
 Use a command like:
 
-```
+```sh
 curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H "Authorization: Bearer <IAM token>" -H 'Content-Type: application/json' -d '{
     "type": "postgresql",
     "version": "14",
@@ -240,6 +240,7 @@ To provision a {{site.data.keyword.databases-for}} Isolated Compute instance, us
 ```sh
 ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN> <LOCATION> `{"members_host_flavor": "<host_flavor value>"}`
 ```
+{: pre}
 
 The `host_flavor value` parameter defines your Isolated Compute sizing. Input the appropriate value for your desired size. To provision a Shared Compute instance, specify `multitenant`.
 | **Host Flavor** | **host_flavor value** |
