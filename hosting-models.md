@@ -64,7 +64,7 @@ Isolated Compute is a secure single-tenant offering for complex, highly-performa
 When provisioning, choose the CPU x RAM size for the machine to set up your database. This machine will be exclusively assigned to running your database instance. Storage is still selected separately, allowing you to determine the size of disk and number of [IOPS](#x3858854){: term} your database receives. Scale your database and change your machine size using your preferred method: the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference), the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction), or using [Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: external}.
 
 ## {{site.data.keyword.databases-for}} Shared Compute
-{: #hosting-models-shared-compute}
+{: #hosting-models-shared-compute-api}
 {: api}
 
 Shared Compute is a flexible multi-tenant offering for dynamic, fine-tuned, and decoupled capacity selections.
@@ -94,7 +94,7 @@ curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H 
 
 
 ## {{site.data.keyword.databases-for}} Isolated Compute
-{: #hosting-models-iso-compute}
+{: #hosting-models-iso-compute-api}
 {: api}
 
 Isolated Compute is a secure single-tenant offering for complex, highly-performant enterprise workloads. By placing your deployment and all associated user-data management agents on an isolated machine, {{site.data.keyword.databases-for}} Isolated Compute provides dedicated computing resources, dedicated storage bandwidth, and hypervisor-level isolation.
@@ -435,7 +435,7 @@ CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} 
 
 
 ## {{site.data.keyword.databases-for}} Shared Compute
-{: #hosting-models-shared-compute}
+{: #hosting-models-shared-compute-terraform}
 {: terraform}
 
 Shared Compute is a flexible multi-tenant offering for dynamic, fine-tuned, and decoupled capacity selections.
@@ -448,7 +448,7 @@ Because of each service's individual requirements, {{site.data.keyword.databases
 {: note}
 
 ## {{site.data.keyword.databases-for}} Isolated Compute
-{: #hosting-models-iso-compute}
+{: #hosting-models-iso-compute-terraform}
 {: terraform}
 
 Isolated Compute is a secure single-tenant offering for complex, highly-performant enterprise workloads. By placing your deployment and all associated user-data management agents on an isolated machine, {{site.data.keyword.databases-for}} Isolated Compute provides dedicated computing resources, dedicated IO and network bandwidth, and hypervisor-level isolation.
