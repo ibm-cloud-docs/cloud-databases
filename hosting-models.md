@@ -301,22 +301,7 @@ To scale your instance up to 8 CPUs and `32768` megabytes of RAM, you would subm
 ```
 {: pre}
 
-You can also submit a value of `multitenant` to migrate your instance from *Isolated Compute* to *Shared Compute*. Instances running on Shared Compute can be scaled by submitting new CPU and memory values:
 
-```sh
-{
-  "host_flavor": {
-    "id": "multitenant"
-  },
-  "memory": {
-    "allocation_mb": 16384
-  },
-  "cpu": {
-    "allocation_count": 4
-  }
-}
-```
-{: pre}
 
 
 ## {{site.data.keyword.databases-for}} Shared Compute
@@ -359,6 +344,23 @@ Isolated Compute features 6 size selections:
 {: #hosting-models-switching}
 
 To switch between Shared and Isolated Compute, select the model you want, review your resource selection, and switch. Switching hosting models does not cause downtime, as this is not a backup and restore migration. Instead, the same process is applied as for updates or database instance scaling. The database processes will perform a rolling restart, causing existing connections to be dropped. Thus, the recommendation is as always to ensure that your application has retry and reconnect logic to immediately re-establish a connection.
+
+For example, submit a value of `multitenant` to switch your instance from another hosting model to *Shared Compute*. Instances running on Shared Compute can be scaled by submitting new CPU and memory values:
+
+```sh
+{
+  "host_flavor": {
+    "id": "multitenant"
+  },
+  "memory": {
+    "allocation_mb": 16384
+  },
+  "cpu": {
+    "allocation_count": 4
+  }
+}
+```
+{: pre}
 
 ## Choosing between hosting models
 {: #choosing-between-hosting-models}
