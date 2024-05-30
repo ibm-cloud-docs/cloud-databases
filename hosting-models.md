@@ -318,6 +318,7 @@ You can also submit a value of `multitenant` to migrate your instance from *Isol
 ```
 {: pre}
 
+
 ## {{site.data.keyword.databases-for}} Shared Compute
 {: #hosting-models-shared-compute}
 {: terraform}
