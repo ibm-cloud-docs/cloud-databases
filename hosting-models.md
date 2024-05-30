@@ -328,7 +328,136 @@ When provisioning, choose the CPU x RAM size for the machine to set up your data
 CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} Isolated Compute. Disk autoscaling is available. If you provisioned an isolated instance or switched over from a deployment with autoscaling, monitor your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/databases-for-mongodb?topic=databases-for-mongodb-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
 {: note}
 
-## Provisioning through Terraform (old snippets)
+
+### Isolated Compute sizing
+{: #hosting-models-iso-compute-sizing}
+
+Isolated Compute features 6 size selections:
+
+- 4 CPU x 16 RAM
+- 8 CPU x 32 RAM
+- 8 CPU x 64 RAM
+- 16 CPU x 64 RAM
+- 32 CPU x 128 RAM
+- 30 CPU x 240 RAM
+
+## Switching hosting models
+{: #hosting-models-switching}
+
+To switch between Shared and Isolated Compute, select the model you want, review your resource selection, and switch. Switching hosting models does not cause downtime, as this is not a backup and restore migration. Instead, the same process is applied as for updates or database instance scaling. The database processes will perform a rolling restart, causing existing connections to be dropped. Thus, the recommendation is as always to ensure that your application has retry and reconnect logic to immediately re-establish a connection.
+
+For example, submit a value of `multitenant` to switch your instance from another hosting model to *Shared Compute*. Instances running on Shared Compute can be scaled by submitting new CPU and memory values:
+
+```sh
+{
+  "host_flavor": {
+    "id": "multitenant"
+  },
+  "memory": {
+    "allocation_mb": 16384
+  },
+  "cpu": {
+    "allocation_count": 4
+  }
+}
+```
+{: pre}
+
+## Choosing between hosting models
+{: #choosing-between-hosting-models}
+
+| **Isolated Compute** | **Shared Compute** |
+| --- | --- |
+| Single-tenanted databases with dedicated storage bandwidth. Database management agents are placed on isolated machine. | Multi-tenanted, logically separated databases sharing bandwidth. Database management pods are also multi-tenanted. |
+| Receive all the available resources in your machine. | Transparent, deterministic CPU allocation. Know exactly what your performance will be and scale up and down as your workload requires. |
+| Some of our database offerings, such as MongoDB Enterprise and Elasticsearch Platinum, will be solely provisioned on Isolated Compute. Future enhancements, such as cross-region replication may be supported solely on Isolated Compute. | Excludes some database offerings, such as MongoDB Enterprise and Elasticsearch Platinum. |
+| Scalability is based on provided machine sizes. | Scalability is fine-grained and linear from a database-specific minimum configuration up to 28 CPU and 112 GB RAM. |
+{: caption="Table 2. Choosing between hosting models" caption-side="bottom"}
+
+## Databases availability by hosting model
+{: #hosting-models-availability}
+
+The following table shows which model is available for each database.
+
+|  | **Shared Compute** | **Isolated Compute**  |
+| --- | --- | --- |
+| PostgreSQL | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
+| EnterpriseDB |  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
+| Mongo Community | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
+| Mongo Enterprise |  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
+| Elastic Enterprise | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
+| Elastic Platinum |  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
+| etcd | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
+| MySQL | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
+| Redis | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
+| RabbitMQ | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
+{: caption="Table 3. {{site.data.keyword.databases-for}} hosting model availability" caption-side="bottom"}
+
+## Scaling through the CLI 
+{: #hosting-models-scaling-cli}
+{: cli}
+
+To scale a {{site.data.keyword.databases-for}} Isolated Compute instance, modify the `deployment-groups-set` parameter. Use a command like:
+
+```sh
+ibmcloud cdb deployment-groups-set <deploymentid> <groupid> [--disk <val>] [--hostflavor <val>]
+```
+{: pre}
+
+To scale a {{site.data.keyword.databases-for}} Shared Compute instance. Use a command like:
+
+```sh
+ibmcloud cdb deployment-groups-set <deploymentid> <groupid> [--memory <val>] [--cpu <val>] [--disk <val>] [--hostflavor multitenant]
+```
+{: pre}
+
+## Scaling through the API 
+{: #hosting-models-scaling-api}
+{: api}
+
+To scale a {{site.data.keyword.databases-for}} Isolated Compute instance, use the {{site.data.keyword.databases-for}} API [Scaling endpoint](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#setdeploymentscalinggroup){: external}.
+
+Use a command like:
+
+```sh
+curl -X PATCH https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}/groups/{group_id}
+-H 'Authorization: Bearer <>'
+-H 'Content-Type: application/json'
+-d '{"group":
+      {"host_flavor":
+        {"id": "b3c.4x16.encrypted"}
+      }
+    }' \
+```
+{: pre}
+
+To scale a {{site.data.keyword.databases-for}} Isolated Compute instance to a Shared Compute instance
+
+```sh
+curl -X PATCH https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}/groups/{group_id}
+-H 'Authorization: Bearer <>'
+-H 'Content-Type: application/json'
+-d '{"group":
+      {"host_flavor":
+        {"id": "multitenant"}
+      },
+      {"cpu":
+        {"allocation_count": 3}
+      },
+      {"memory":
+        {"allocation_mb": 2048}
+      }
+    }' \
+```
+{: pre}
+
+CPU and RAM allocation is not allowed when provisioning or scaling through Isolated Compute. You must specify `mulitenant` for the `host_flavor` parameter.
+{: note}
+
+CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} Isolated Compute. Disk autoscaling is available. If you have provisioned an Isolated instance or switched over from a deployment with autoscaling, keep an eye on your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/databases-for-mongodb?topic=databases-for-mongodb-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
+{: note}
+
+## Provisioning through Terraform 
 {: #hosting-models-iso-compute-provisioning-tf}
 {: terraform}
 
@@ -414,134 +543,6 @@ output "ICD Etcd database connection string" {
 ```
 {: codeblock}
 
-
-### Isolated Compute sizing
-{: #hosting-models-iso-compute-sizing}
-
-Isolated Compute features 6 size selections:
-
-- 4 CPU x 16 RAM
-- 8 CPU x 32 RAM
-- 8 CPU x 64 RAM
-- 16 CPU x 64 RAM
-- 32 CPU x 128 RAM
-- 30 CPU x 240 RAM
-
-## Switching hosting models
-{: #hosting-models-switching}
-
-To switch between Shared and Isolated Compute, select the model you want, review your resource selection, and switch. Switching hosting models does not cause downtime, as this is not a backup and restore migration. Instead, the same process is applied as for updates or database instance scaling. The database processes will perform a rolling restart, causing existing connections to be dropped. Thus, the recommendation is as always to ensure that your application has retry and reconnect logic to immediately re-establish a connection.
-
-For example, submit a value of `multitenant` to switch your instance from another hosting model to *Shared Compute*. Instances running on Shared Compute can be scaled by submitting new CPU and memory values:
-
-```sh
-{
-  "host_flavor": {
-    "id": "multitenant"
-  },
-  "memory": {
-    "allocation_mb": 16384
-  },
-  "cpu": {
-    "allocation_count": 4
-  }
-}
-```
-{: pre}
-
-## Choosing between hosting models
-{: #choosing-between-hosting-models}
-
-| **Isolated Compute** | **Shared Compute** |
-| --- | --- |
-| Single-tenanted databases with dedicated storage bandwidth. Database management agents are placed on isolated machine. | Multi-tenanted, logically separated databases sharing bandwidth. Database management pods are also multi-tenanted. |
-| Receive all the available resources in your machine. | Transparent, deterministic CPU allocation. Know exactly what your performance will be and scale up and down as your workload requires. |
-| Some of our database offerings, such as MongoDB Enterprise and Elasticsearch Platinum, will be solely provisioned on Isolated Compute. Future enhancements, such as cross-region replication may be supported solely on Isolated Compute. | Excludes some database offerings, such as MongoDB Enterprise and Elasticsearch Platinum. |
-| Scalability is based on provided machine sizes. | Scalability is fine-grained and linear from a database-specific minimum configuration up to 28 CPU and 112 GB RAM. |
-{: caption="Table 2. Choosing between hosting models" caption-side="bottom"}
-
-## Databases availability by hosting model
-{: #hosting-models-availability}
-
-The following table shows which model is available for each database.
-
-|  | **Shared Compute** | **Isolated Compute**  |
-| --- | --- | --- |
-| PostgreSQL | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
-| EnterpriseDB |  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
-| Mongo Community | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
-| Mongo Enterprise |  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
-| Elastic Enterprise | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
-| Elastic Platinum |  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
-| etcd | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
-| MySQL | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
-| Redis | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
-| RabbitMQ | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
-{: caption="Table 3. {{site.data.keyword.databases-for}} hosting model availability" caption-side="bottom"}
-
-## Scaling through the CLI 
-{: #hosting-models-scaling-cli}
-{: cli}
-
-To scale a {{site.data.keyword.databases-for}} Isolated Compute instance, modify the `deployment-groups-set` parameter. Use a command like:
-
-```sh
-ibmcloud cdb deployment-groups-set <deploymentid> <groupid> [--disk <val>] [--hostflavor <val>]
-```
-{: pre}
-
-To scale a {{site.data.keyword.databases-for}} Shared Compute instance. Use a command like:
-
-```sh
-ibmcloud cdb deployment-groups-set <deploymentid> <groupid> [--memory <val>] [--cpu <val>] [--disk <val>] [--hostflavor multitenant]
-```
-{: pre}
-
-## Scaling through the API (old snippets)
-{: #hosting-models-scaling-api}
-{: api}
-
-To scale a {{site.data.keyword.databases-for}} Isolated Compute instance, use the {{site.data.keyword.databases-for}} API [Scaling endpoint](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#setdeploymentscalinggroup){: external}.
-
-Use a command like:
-
-```sh
-curl -X PATCH https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}/groups/{group_id}
--H 'Authorization: Bearer <>'
--H 'Content-Type: application/json'
--d '{"group":
-      {"host_flavor":
-        {"id": "b3c.4x16.encrypted"}
-      }
-    }' \
-```
-{: pre}
-
-To scale a {{site.data.keyword.databases-for}} Isolated Compute instance to a Shared Compute instance
-
-```sh
-curl -X PATCH https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}/groups/{group_id}
--H 'Authorization: Bearer <>'
--H 'Content-Type: application/json'
--d '{"group":
-      {"host_flavor":
-        {"id": "multitenant"}
-      },
-      {"cpu":
-        {"allocation_count": 3}
-      },
-      {"memory":
-        {"allocation_mb": 2048}
-      }
-    }' \
-```
-{: pre}
-
-CPU and RAM allocation is not allowed when provisioning or scaling through Isolated Compute. You must specify `mulitenant` for the `host_flavor` parameter.
-{: note}
-
-CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} Isolated Compute. Disk autoscaling is available. If you have provisioned an Isolated instance or switched over from a deployment with autoscaling, keep an eye on your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/databases-for-mongodb?topic=databases-for-mongodb-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
-{: note}
 
 
 
