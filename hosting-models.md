@@ -43,7 +43,7 @@ CPU and RAM autoscaling is not supported on Isolated Compute. Disk autoscaling i
 {: note}
 
 ## {{site.data.keyword.databases-for}} Shared Compute
-{: #hosting-models-shared-compute}
+{: #hosting-models-shared-compute-cli}
 {: cli}
 
 Shared Compute is a flexible multi-tenant offering for dynamic, fine-tuned, and decoupled capacity selections.
@@ -56,7 +56,7 @@ Because of each service's individual requirements, {{site.data.keyword.databases
 {: note}
 
 ## {{site.data.keyword.databases-for}} Isolated Compute
-{: #hosting-models-iso-compute}
+{: #hosting-models-iso-compute-cli}
 {: cli}
 
 Isolated Compute is a secure single-tenant offering for complex, highly-performant enterprise workloads. By placing your deployment and all associated user-data management agents on an isolated machine, {{site.data.keyword.databases-for}} Isolated Compute provides dedicated computing resources, dedicated storage bandwidth, and hypervisor-level isolation.
