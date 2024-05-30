@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-05-21"
+lastupdated: "2024-05-30"
 
 subcollection: cloud-databases
 
@@ -317,6 +317,7 @@ You can also submit a value of `multitenant` to migrate your instance from *Isol
 }
 ```
 {: pre}
+
 
 ## {{site.data.keyword.databases-for}} Shared Compute
 {: #hosting-models-shared-compute}
