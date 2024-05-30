@@ -301,23 +301,6 @@ To scale your instance up to 8 CPUs and `32768` megabytes of RAM, you would subm
 ```
 {: pre}
 
-## Scaling through the CLI (old snippets)
-{: #hosting-models-scaling-cli}
-{: cli}
-
-To scale a {{site.data.keyword.databases-for}} Isolated Compute instance, modify the `deployment-groups-set` parameter. Use a command like:
-
-```sh
-ibmcloud cdb deployment-groups-set <deploymentid> <groupid> [--disk <val>] [--hostflavor <val>]
-```
-{: pre}
-
-To scale a {{site.data.keyword.databases-for}} Shared Compute instance. Use a command like:
-
-```sh
-ibmcloud cdb deployment-groups-set <deploymentid> <groupid> [--memory <val>] [--cpu <val>] [--disk <val>] [--hostflavor multitenant]
-```
-{: pre}
 
 ## Scaling through the API (old snippets)
 {: #hosting-models-scaling-api}
@@ -541,6 +524,25 @@ The following table shows which model is available for each database.
 | Redis | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
 | RabbitMQ | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
 {: caption="Table 3. {{site.data.keyword.databases-for}} hosting model availability" caption-side="bottom"}
+
+## Scaling through the CLI (old snippets)
+{: #hosting-models-scaling-cli}
+{: cli}
+
+To scale a {{site.data.keyword.databases-for}} Isolated Compute instance, modify the `deployment-groups-set` parameter. Use a command like:
+
+```sh
+ibmcloud cdb deployment-groups-set <deploymentid> <groupid> [--disk <val>] [--hostflavor <val>]
+```
+{: pre}
+
+To scale a {{site.data.keyword.databases-for}} Shared Compute instance. Use a command like:
+
+```sh
+ibmcloud cdb deployment-groups-set <deploymentid> <groupid> [--memory <val>] [--cpu <val>] [--disk <val>] [--hostflavor multitenant]
+```
+{: pre}
+
 
 ## Transition timeline from existing hosting models to Isolated and Shared Compute
 {: #hosting-model-transition-timeline}
