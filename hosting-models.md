@@ -302,52 +302,6 @@ To scale your instance up to 8 CPUs and `32768` megabytes of RAM, you would subm
 {: pre}
 
 
-## Scaling through the API (old snippets)
-{: #hosting-models-scaling-api}
-{: api}
-
-To scale a {{site.data.keyword.databases-for}} Isolated Compute instance, use the {{site.data.keyword.databases-for}} API [Scaling endpoint](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#setdeploymentscalinggroup){: external}.
-
-Use a command like:
-
-```sh
-curl -X PATCH https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}/groups/{group_id}
--H 'Authorization: Bearer <>'
--H 'Content-Type: application/json'
--d '{"group":
-      {"host_flavor":
-        {"id": "b3c.4x16.encrypted"}
-      }
-    }' \
-```
-{: pre}
-
-To scale a {{site.data.keyword.databases-for}} Isolated Compute instance to a Shared Compute instance
-
-```sh
-curl -X PATCH https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}/groups/{group_id}
--H 'Authorization: Bearer <>'
--H 'Content-Type: application/json'
--d '{"group":
-      {"host_flavor":
-        {"id": "multitenant"}
-      },
-      {"cpu":
-        {"allocation_count": 3}
-      },
-      {"memory":
-        {"allocation_mb": 2048}
-      }
-    }' \
-```
-{: pre}
-
-CPU and RAM allocation is not allowed when provisioning or scaling through Isolated Compute. You must specify `mulitenant` for the `host_flavor` parameter.
-{: note}
-
-CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} Isolated Compute. Disk autoscaling is available. If you have provisioned an Isolated instance or switched over from a deployment with autoscaling, keep an eye on your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/databases-for-mongodb?topic=databases-for-mongodb-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
-{: note}
-
 
 
 ## {{site.data.keyword.databases-for}} Shared Compute
@@ -525,7 +479,7 @@ The following table shows which model is available for each database.
 | RabbitMQ | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
 {: caption="Table 3. {{site.data.keyword.databases-for}} hosting model availability" caption-side="bottom"}
 
-## Scaling through the CLI (old snippets)
+## Scaling through the CLI 
 {: #hosting-models-scaling-cli}
 {: cli}
 
@@ -542,6 +496,53 @@ To scale a {{site.data.keyword.databases-for}} Shared Compute instance. Use a co
 ibmcloud cdb deployment-groups-set <deploymentid> <groupid> [--memory <val>] [--cpu <val>] [--disk <val>] [--hostflavor multitenant]
 ```
 {: pre}
+
+## Scaling through the API (old snippets)
+{: #hosting-models-scaling-api}
+{: api}
+
+To scale a {{site.data.keyword.databases-for}} Isolated Compute instance, use the {{site.data.keyword.databases-for}} API [Scaling endpoint](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#setdeploymentscalinggroup){: external}.
+
+Use a command like:
+
+```sh
+curl -X PATCH https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}/groups/{group_id}
+-H 'Authorization: Bearer <>'
+-H 'Content-Type: application/json'
+-d '{"group":
+      {"host_flavor":
+        {"id": "b3c.4x16.encrypted"}
+      }
+    }' \
+```
+{: pre}
+
+To scale a {{site.data.keyword.databases-for}} Isolated Compute instance to a Shared Compute instance
+
+```sh
+curl -X PATCH https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}/groups/{group_id}
+-H 'Authorization: Bearer <>'
+-H 'Content-Type: application/json'
+-d '{"group":
+      {"host_flavor":
+        {"id": "multitenant"}
+      },
+      {"cpu":
+        {"allocation_count": 3}
+      },
+      {"memory":
+        {"allocation_mb": 2048}
+      }
+    }' \
+```
+{: pre}
+
+CPU and RAM allocation is not allowed when provisioning or scaling through Isolated Compute. You must specify `mulitenant` for the `host_flavor` parameter.
+{: note}
+
+CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} Isolated Compute. Disk autoscaling is available. If you have provisioned an Isolated instance or switched over from a deployment with autoscaling, keep an eye on your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/databases-for-mongodb?topic=databases-for-mongodb-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
+{: note}
+
 
 
 ## Transition timeline from existing hosting models to Isolated and Shared Compute
