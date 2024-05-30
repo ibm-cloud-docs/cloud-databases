@@ -301,7 +301,7 @@ To scale your instance up to 8 CPUs and `32768` megabytes of RAM, you would subm
 ```
 {: pre}
 
-### Scale through the CLI (old snippets)
+## Scale through the CLI (old snippets)
 {: #hosting-models-scaling-cli}
 {: cli}
 
@@ -319,7 +319,7 @@ ibmcloud cdb deployment-groups-set <deploymentid> <groupid> [--memory <val>] [--
 ```
 {: pre}
 
-### Scale through the API (old snippets)
+## Scale through the API (old snippets)
 {: #hosting-models-scaling-api}
 {: api}
 
@@ -366,7 +366,7 @@ CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} 
 {: note}
 
 
-### Provision an instance through Shared Compute using Terraform (old snippets)
+## Provision an instance through Shared Compute using Terraform (old snippets)
 {: #hosting-models-provisioning-terraform}
 {: terraform}
 
