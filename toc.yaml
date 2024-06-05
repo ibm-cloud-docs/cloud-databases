@@ -18,7 +18,6 @@ toc:
           label: Hosting models
           topics:
           - hosting-models.md
-          - hostingmodels19feb24.md
           - hosting-pricing.md
       - cdb-notifications.md
       - cdb-logging-monitoring.md
