@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-05-06"
+lastupdated: "2024-06-05"
 
 subcollection: cloud-databases
 
@@ -15,7 +15,9 @@ keywords: backups, new deployment, source deployment, backup, back up, ondemand 
 # Managing {{site.data.keyword.databases-for}} backups
 {: #dashboard-backups}
 
-Backups for {{site.data.keyword.databases-for}} instances are accessible from the _Backups_ tab of your instance's dashboard. 
+An automatically scheduled backup is taken of your database every day. You can also do on-demand backups. Backups are encrypted either with an automatic key or your own key if you use Bring Your Own Key (BYOK). You can restore a backup to a new instance of {{site.data.keyword.databases-for}}.
+
+To access backups for {{site.data.keyword.databases-for}}, go to your database instance's Dashboard, and see the *Backups* tab. 
 
 Restore is currently available through the CLI, API, and Terraform.
 {: note}
@@ -252,6 +254,7 @@ With Point-in-Time Recovery (PITR), the instance continuously backs up increment
 - [{{site.data.keyword.databases-for-mysql_full}}](/docs/databases-for-mysql?topic=databases-for-mysql-pitr)
 - [{{site.data.keyword.databases-for-postgresql_full}}](/docs/databases-for-postgresql?topic=databases-for-postgresql-pitr)
 - [{{site.data.keyword.databases-for-enterprisedb_full}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-pitr&interface=ui)
+- [{{site.data.keyword.databases-for-mongodb_full}}](https://cloud.ibm.com/docs/databases-for-mongodb?topic=databases-for-mongodb-pitr&interface=ui)
 
 ## Backups FAQ
 {: #backup-faq-reference}
