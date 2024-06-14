@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2022
-lastupdated: "2022-10-26"
+  years: 2022, 2024
+lastupdated: "2024-03-17"
 
 keywords: cbr, context based restrictions, security, cbr scenario, cloud databases
 
