@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2021, 2022
-lastupdated: "2022-05-05"
+  years: 2021, 2024
+lastupdated: "2024-03-25"
 
 subcollection: cloud-databases
 
@@ -37,7 +37,7 @@ Virtual Private Endpoints (VPEs) are generally available in all regions.
 {: #vpes-before-begin}
 
 - You need to have an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/registration){: .external}
-- And a {{site.data.keyword.databases-for}} deployment. You can [provision](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-provisioning) one from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/services/). Give your deployment a memorable name that appears in your account's Resource List.
+- And a {{site.data.keyword.databases-for}} deployment. You can [provision](/docs/cloud-databases?topic=cloud-databases-getting-started-cdb-provision-instance) one from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/services/). Give your deployment a memorable name that appears in your account's Resource List.
 
 ### Setting up your VPE
 {: #vpes-setup}
@@ -94,8 +94,9 @@ Following the previous steps results in a database instance with private endpoin
 Database instances with private endpoints are reachable from any account within the private network and access to each instance requires authentication. To restrict this access to specific IP addresses, or ranges of IP addresses, configure [allowlisting](/docs/cloud-databases?topic=cloud-databases-allowlisting). 
 {: .important}
 
-A MongoDB deployment cannot support both [public and private endpoints simultaneously](https://cloud.ibm.com/docs/databases-for-mongodb?topic=cloud-databases-service-endpoints#provisioning-with-service-endpoints). *This cannot be changed after provisioning*.
+A MongoDB deployment cannot support both [public and private endpoints simultaneously](/docs/cloud-databases?topic=cloud-databases-service-endpoints&interface=ui). *This cannot be changed after provisioning*.
 {: .important}
+
 
 For more information, see [Secure access to services by using service endpoints](/docs/account?topic=account-service-endpoints-overview).
 {: .tip}
