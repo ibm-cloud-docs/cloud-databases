@@ -3248,7 +3248,7 @@ The following attributes are available for segmenting all of the metrics listed 
 | `Resource Type` | `ibm_resource_type` | The type of the resource being measured by the service |
 | `Scope` | `ibm_scope` | The scope is the account, organization or space GUID associated with this metric |
 | `Service name` | `ibm_service_name` | Name of the service generating this metric |
-{: caption="Table 1: WAL logs used bytes metric metadata" caption-side="top"}
+{: caption="Table 18: WAL logs used bytes metric metadata" caption-side="top"}
 
 ### Additional Attributes
 {: #additional-attributes}
@@ -3258,4 +3258,4 @@ The following attributes are available for segmenting one or more attributes as 
 | Attribute | Attribute Name | Attribute Description |
 |-----------|----------------|-----------------------|
 | `Service instance` | `ibm_service_instance` | The service instance segment identifies the instance the metric is associated with |
-{: caption="Table 1: WAL logs used bytes metric metadata" caption-side="top"}
+{: caption="Table 19: WAL logs used bytes metric metadata" caption-side="top"}
