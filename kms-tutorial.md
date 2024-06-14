@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-12-13"
+  years: 2023, 2024
+lastupdated: "2024-03-17"
 
 keywords: data location requirements, backup region, cross region buckets, backup locations
 
