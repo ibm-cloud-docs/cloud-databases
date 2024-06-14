@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2019, 2023
-lastupdated: "2023-11-07"
+  years: 2019, 2024
+lastupdated: "2024-03-17"
 
 keywords: IBM Cloud Databases, ICD, bi connector
 
