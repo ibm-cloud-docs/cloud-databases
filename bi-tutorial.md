@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2019, 2022
-lastupdated: "2022-06-22"
+  years: 2019, 2024
+lastupdated: "2024-03-17"
 
 keywords: IBM Cloud Databases, ICD, bi connector
 
@@ -11,16 +11,6 @@ content-type: tutorial
 account-plan: paid
 completion-time: 2h
 ---
-
-{:external: .external target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:step: data-tutorial-type="step"}
 
 # Mapping Global COVID-19 cases with the {{site.data.keyword.databases-for-mongodb}} EE (Enterprise Edition) Analytics Add-On and Tableau
 {: #bi-connector-tutorial-description}
@@ -145,7 +135,7 @@ Connect your {{site.data.keyword.databases-for-mongodb}} EE (Enterprise Edition)
 
 ![Choose to Connect to MongoDB](images/tableau-connect-mongodb.png){: caption="Figure 2. Choose to Connect to MongoDB" caption-side="bottom"} 
 
-The server and port values come from the printed output of [Step 4]({#create-infra).
+The server and port values come from the printed output of [Step 4](#create-infra).
 Leave the database blank.
 The username is "admin".
 The password is the one you created in [Step 2](#clone-repo).
