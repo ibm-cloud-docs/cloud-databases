@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-12-13"
+  years: 2023, 2024
+lastupdated: "2024-03-17"
 
 keywords: data location requirements, backup region, cross region buckets, backup locations
 
@@ -33,7 +33,7 @@ Before beginning this tutorial, make sure that you have created or installed the
 
 - An {{site.data.keyword.cloud_notm}} account. For more information, see [Creating an account](/docs/account?topic=account-account-getting-started){: external}.
 - The [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin) - the CLI interface to interact with the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction). For more information, see [Getting started with the {{site.data.keyword.cloud_notm}} CLI](/docs/databases-cli-plugin).
-- A {{site.data.keyword.databases-for}} deployment. For more information, see [Provisioning](/docs/cloud-databases?topic=cloud-databases-provisioning).
+- A {{site.data.keyword.databases-for}} deployment. For more information, see [Provisioning](/docs/cloud-databases?topic=cloud-databases-getting-started-cdb-provision-instance).
 
 ## Match backup region location with data location requirements
 {: #kms-tutorial-match-backup-data}
