@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2023
-lastupdated: "2023-05-18"
+  years: 2021, 2024
+lastupdated: "2024-03-17"
 
 keywords: IBM Cloud, databases, ICD
 
@@ -20,13 +20,13 @@ completion-time: 15m
 {: toc-content-type="tutorial"}
 {: toc-completion-time="15m"}
 
-Follow these steps to set up IBM Cloud™ Databases (ICD) enabled by IBM Cloud Satellite in an on-premises location.
+Follow these steps to set up {{site.data.keyword.databases-for}} enabled by IBM Cloud Satellite in an on-premises location.
 
-## Prepare a Satellite location for IBM Cloud™ Databases
+## Prepare a Satellite location for {{site.data.keyword.databases-for}}
 {: #prepare-satellite-location}
 {: step}
 
-Prepare your Satellite location before deploying the ICD enabled by IBM Cloud Satellite service.
+Prepare your Satellite location before deploying the {{site.data.keyword.databases-for}} enabled by IBM Cloud Satellite service.
 
 ### Attach extra hosts to the Satellite location
 {: #attach-additional-hosts}
@@ -34,9 +34,9 @@ Prepare your Satellite location before deploying the ICD enabled by IBM Cloud Sa
 These additional-attached worker nodes are used to create a service cluster into which the database instances will later be deployed.
 Attach to your Satellite location:
 
-- Three type **8x32** hosts for IBM Cloud™ Databases (ICD) enabled by IBM Cloud Satellite internal use. Nodes are auto-assigned to a service cluster.
+- Three type **8x32** hosts
     - On AWS, choose three hosts of type **AWS m5d.2xlarge**
-- Three type **32x128** hosts for your use. 
+- Three type **32x128** hosts
     - On AWS choose three hosts of type **AWS m5d.8xlarge**
 
 You should also attach an additional three **32x128** hosts to be kept in reserve. While optional, this step is recommended and you will see a notification in the UI until the reserve workers are attached. 
@@ -87,7 +87,7 @@ Begin by configuring IAM Authorizations:
 {: step}
 {: #aws-loc-readiness}
 
-Before provisioning your ICD Satellite Deployment, your location needs to report `Normal`. This status can be confirmed in the UI, as shown here:
+Before provisioning your {{site.data.keyword.databases-for}} Satellite Deployment, your location needs to report `Normal`. This status can be confirmed in the UI, as shown here:
 
 ![UI showing location is Normal](images/sat-normal.png){: caption="Figure 1. UI showing location is Normal" caption-side="bottom"}
 
@@ -108,11 +108,11 @@ To get to this state, attach a minimum of three 4x16 hosts to your location and 
 Attempting to provision a database instance into a location without a running Control plane (that is, `Normal` state), causes provisioning to fail.
 {: .important}
 
-## Provisioning ICD Satellite Deployment
+## Provisioning {{site.data.keyword.databases-for}} Satellite Deployment
 {: step}
 {: #provision-deployment}
 
-You can provision your ICD Satellite Deployment by selecting the Satellite location that you created in the **Location** menu of the provisioning page. For more information, see the relevant [Provisioning documentation](/docs/cloud-databases?topic=cloud-databases-provisioning) for your ICD Satellite deployment. After you create a new service instance, this instance will appear in the IBM Cloud `Resource List` as `Provisioned`.
+You can provision your {{site.data.keyword.databases-for}} Satellite Deployment by selecting the Satellite location that you created in the **Location** menu of the provisioning page. For more information, see the relevant [Provisioning documentation](/docs/cloud-databases?topic=cloud-databases-getting-started-cdb-provision-instance) for your {{site.data.keyword.databases-for}} Satellite deployment. After you create a new service instance, this instance will appear in the IBM Cloud `Resource List` as `Provisioned`.
 
 When you deploy the first database service instance, a service cluster is automatically deployed into your Satellite location. The deployment of the service cluster can take up to 1 hour.
 
