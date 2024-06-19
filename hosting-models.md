@@ -217,6 +217,8 @@ Ahead of the May 2025 date, if you have a multi-tenant instance, there are a few
 ## Shared Compute transition placement
 {: #shared-compute-placement}
 
+To determine how existing hosting models will switch over to Shared and Isolated Compute, review the tables below. In the switchover, we are assuming the starting points are old style multitenant (CPU unallocated, or 0) and dedicated cores. 
+
 | **If your current resource allocation is N CPU x M RAM <br> (Non-RabbitMQ Version):** | **You will be automatically placed on <br> (Non-RabbitMQ Version):** |
 |-------------------------|---------------------|
 | N = 0 CPU, M < 4 GB RAM | 0.5 CPU x 4 GB RAM, Shared Compute |
