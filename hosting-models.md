@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-06-10"
+lastupdated: "2024-06-19"
 
 subcollection: cloud-databases
 
@@ -27,7 +27,7 @@ Scaling your Shared Compute or Isolated Compute databases is currently available
 
 Shared Compute is a flexible multi-tenant offering for dynamic, fine-tuned, and decoupled capacity selections.
 
-If you select Shared Compute in the {{site.data.keyword.cloud_notm}} console, you then choose an initial resource allocation preset: **Small** (1 CPU and 8 GB RAM for {{site.data.keyword.rabbitmq}}, 0.5 CPU and 4 GB RAM for all other databases) or **Custom** (2 CPU and 4 GB RAM). Small has a fixed amount of CPU and RAM, but you can change disk. Custom can be completely customized. 
+When provisioning Shared Compute through the {{site.data.keyword.cloud_notm}} console, you have the option to select between the following initial resource allocation presets: **Small** (1 CPU and 8 GB RAM for {{site.data.keyword.rabbitmq}}, 0.5 CPU and 4 GB RAM for all other databases) or **Custom** (≥ 2 CPU and ≥ 4 GB RAM). Small has a fixed amount of CPU and RAM, but you can change disk. Custom can be completely customized. 
 
 With Small allocation preset, you can test out the database with the smallest resource allocation. If you have higher performance requirements, you can easily leverage the flexibility of the Shared model with the Custom allocation preset. With the ability to select the amount of CPU and RAM resources you receive, performance can be scaled to fit your workload.
 
@@ -123,7 +123,17 @@ Isolated Compute features 6 size selections:
 ## Provisioning
 {: #hosting-models-provisioning}
 
-To provision a {{site.data.keyword.databases-for}} service instance, select your **hosting type** from either Shared Compute or Isolated Compute. On the CLI, API, or Terraform, add a new `host_flavor` parameter. This parameter allows you to select either Shared Compute (`multitenant`) or Isolated Compute via assigning the parameter value for the requested Isolated instance size. Note that because Isolated Compute sizes implicitly include both CPU and RAM allocations, CPU and RAM sizes should not be provided with an Isolated Compute request. 
+To provision a {{site.data.keyword.databases-for}} service instance, select your **hosting type** from either Shared Compute or Isolated Compute.
+{: ui}
+
+To provision a {{site.data.keyword.databases-for}} service instance, add a new `host_flavor` parameter. This parameter allows you to select either Shared Compute (`multitenant`) or Isolated Compute via assigning the parameter value for the requested Isolated instance size. Note that because Isolated Compute sizes implicitly include both CPU and RAM allocations, CPU and RAM sizes should not be provided with an Isolated Compute request.
+{: cli}
+
+To provision a {{site.data.keyword.databases-for}} service instance, add a new `host_flavor` parameter. This parameter allows you to select either Shared Compute (`multitenant`) or Isolated Compute via assigning the parameter value for the requested Isolated instance size. Note that because Isolated Compute sizes implicitly include both CPU and RAM allocations, CPU and RAM sizes should not be provided with an Isolated Compute request.
+{: api}
+
+To provision a {{site.data.keyword.databases-for}} service instance, add a new `host_flavor` parameter. This parameter allows you to select either Shared Compute (`multitenant`) or Isolated Compute via assigning the parameter value for the requested Isolated instance size. Note that because Isolated Compute sizes implicitly include both CPU and RAM allocations, CPU and RAM sizes should not be provided with an Isolated Compute request.
+{: terraform}
 
 For more detailed instructions, see your [database specific page](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-getting-started-cdb-provision-instance&interface=ui). 
 
