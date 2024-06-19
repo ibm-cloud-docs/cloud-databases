@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-06-10"
+lastupdated: "2024-06-19"
 
 subcollection: cloud-databases
 
@@ -20,6 +20,7 @@ To allow for reliable resource allocation, {{site.data.keyword.databases-for}} o
 
 Scaling your Shared Compute or Isolated Compute databases is currently available via the CLI, API, or Terraform only. 
 {: note}
+{: ui}
 
 ## {{site.data.keyword.databases-for}} Shared Compute
 {: #hosting-models-shared-compute-ui}
@@ -27,7 +28,7 @@ Scaling your Shared Compute or Isolated Compute databases is currently available
 
 Shared Compute is a flexible multi-tenant offering for dynamic, fine-tuned, and decoupled capacity selections.
 
-If you select Shared Compute in the {{site.data.keyword.cloud_notm}} console, you then choose an initial resource allocation preset: **Small** (1 CPU and 8 GB RAM for {{site.data.keyword.rabbitmq}}, 0.5 CPU and 4 GB RAM for all other databases) or **Custom** (2 CPU and 4 GB RAM). Small has a fixed amount of CPU and RAM, but you can change disk. Custom can be completely customized. 
+When provisioning Shared Compute through the {{site.data.keyword.cloud_notm}} console, you have the option to select between the following initial resource allocation presets: **Small** (1 CPU and 8 GB RAM for {{site.data.keyword.rabbitmq}}, 0.5 CPU and 4 GB RAM for all other databases) or **Custom** (≥ 2 CPU and ≥ 4 GB RAM). Small has a fixed amount of CPU and RAM, but you can change disk. Custom can be completely customized. 
 
 With Small allocation preset, you can test out the database with the smallest resource allocation. If you have higher performance requirements, you can easily leverage the flexibility of the Shared model with the Custom allocation preset. With the ability to select the amount of CPU and RAM resources you receive, performance can be scaled to fit your workload.
 
@@ -123,16 +124,34 @@ Isolated Compute features 6 size selections:
 ## Provisioning
 {: #hosting-models-provisioning}
 
-To provision a {{site.data.keyword.databases-for}} service instance, select your **hosting type** from either Shared Compute or Isolated Compute. On the CLI, API, or Terraform, add a new `host_flavor` parameter. This parameter allows you to select either Shared Compute (`multitenant`) or Isolated Compute via assigning the parameter value for the requested Isolated instance size. Note that because Isolated Compute sizes implicitly include both CPU and RAM allocations, CPU and RAM sizes should not be provided with an Isolated Compute request. 
+To provision a {{site.data.keyword.databases-for}} service instance, select your **hosting type** from either Shared Compute or Isolated Compute.
+{: ui}
+
+To provision a {{site.data.keyword.databases-for}} service instance, add a new `host_flavor` parameter. This parameter allows you to select either Shared Compute (`multitenant`) or Isolated Compute via assigning the parameter value for the requested Isolated instance size. Note that because Isolated Compute sizes implicitly include both CPU and RAM allocations, CPU and RAM sizes should not be provided with an Isolated Compute request.
+{: cli}
+
+To provision a {{site.data.keyword.databases-for}} service instance, add a new `host_flavor` parameter. This parameter allows you to select either Shared Compute (`multitenant`) or Isolated Compute via assigning the parameter value for the requested Isolated instance size. Note that because Isolated Compute sizes implicitly include both CPU and RAM allocations, CPU and RAM sizes should not be provided with an Isolated Compute request.
+{: api}
+
+To provision a {{site.data.keyword.databases-for}} service instance, add a new `host_flavor` parameter. This parameter allows you to select either Shared Compute (`multitenant`) or Isolated Compute via assigning the parameter value for the requested Isolated instance size. Note that because Isolated Compute sizes implicitly include both CPU and RAM allocations, CPU and RAM sizes should not be provided with an Isolated Compute request.
+{: terraform}
 
 For more detailed instructions, see your [database specific page](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-getting-started-cdb-provision-instance&interface=ui). 
 
 ## Switching hosting models
 {: #hosting-models-switching}
 
-To switch to or between Shared and Isolated Compute, select your **hosting type** from either Shared Compute or Isolated Compute. On the CLI, API, or Terraform, add a new `host_flavor` parameter.
+To switch to or between Shared and Isolated Compute, select your **hosting type** from either Shared Compute or Isolated Compute. 
+{: ui}
 
-Then, moving to the hosting type is as simple as running a scale command with the hosting type selected. For more detailed instructions, commands, and parameters, see your database specific page.
+To switch to or between Shared and Isolated Compute, add a new `host_flavor` parameter. Then, moving to the hosting type is as simple as running a scale command with the hosting type selected. For more detailed instructions, commands, and parameters, see your database specific page.
+{: cli}
+
+To switch to or between Shared and Isolated Compute, add a new `host_flavor` parameter. Then, moving to the hosting type is as simple as running a scale command with the hosting type selected. For more detailed instructions, commands, and parameters, see your database specific page.
+{: api}
+
+To switch to or between Shared and Isolated Compute, add a new `host_flavor` parameter. Then, moving to the hosting type is as simple as running a scale command with the hosting type selected. For more detailed instructions, commands, and parameters, see your database specific page.
+{: terraform}
 
 Switching hosting models does not cause downtime, as this is not a backup and restore migration. Instead, the same process is applied as for updates or database instance scaling. The database processes will perform a rolling restart, causing existing connections to be dropped. Thus, the recommendation is as always to ensure that your application has retry and reconnect logic to immediately re-establish a connection.
 
