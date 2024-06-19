@@ -20,6 +20,7 @@ To allow for reliable resource allocation, {{site.data.keyword.databases-for}} o
 
 Scaling your Shared Compute or Isolated Compute databases is currently available via the CLI, API, or Terraform only. 
 {: note}
+{: ui}
 
 ## {{site.data.keyword.databases-for}} Shared Compute
 {: #hosting-models-shared-compute-ui}
