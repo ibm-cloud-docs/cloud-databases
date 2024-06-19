@@ -140,9 +140,17 @@ For more detailed instructions, see your [database specific page](https://cloud.
 ## Switching hosting models
 {: #hosting-models-switching}
 
-To switch to or between Shared and Isolated Compute, select your **hosting type** from either Shared Compute or Isolated Compute. On the CLI, API, or Terraform, add a new `host_flavor` parameter.
+To switch to or between Shared and Isolated Compute, select your **hosting type** from either Shared Compute or Isolated Compute. 
+{: ui}
 
-Then, moving to the hosting type is as simple as running a scale command with the hosting type selected. For more detailed instructions, commands, and parameters, see your database specific page.
+To switch to or between Shared and Isolated Compute, add a new `host_flavor` parameter. Then, moving to the hosting type is as simple as running a scale command with the hosting type selected. For more detailed instructions, commands, and parameters, see your database specific page.
+{: cli}
+
+To switch to or between Shared and Isolated Compute, add a new `host_flavor` parameter. Then, moving to the hosting type is as simple as running a scale command with the hosting type selected. For more detailed instructions, commands, and parameters, see your database specific page.
+{: api}
+
+To switch to or between Shared and Isolated Compute, add a new `host_flavor` parameter. Then, moving to the hosting type is as simple as running a scale command with the hosting type selected. For more detailed instructions, commands, and parameters, see your database specific page.
+{: terraform}
 
 Switching hosting models does not cause downtime, as this is not a backup and restore migration. Instead, the same process is applied as for updates or database instance scaling. The database processes will perform a rolling restart, causing existing connections to be dropped. Thus, the recommendation is as always to ensure that your application has retry and reconnect logic to immediately re-establish a connection.
 
