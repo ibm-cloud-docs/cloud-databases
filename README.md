@@ -43,7 +43,7 @@ All content starts from the `source` branch.
 1.  Create a pull request from your branch or fork to `source`.
 
     1.  A Jenkins job runs that commits content to the `draft` and `review` branches and opens a pull request to the `publish` branch.
-    1.  After a few minutes, you can see your changes in the IBM Cloud docs framework. Changes to `draft` are available at the internal `/docs-draft/` location (https://test.cloud.ibm.com/docs-draft/secure-infrastructure-vpc). Changes to `review` are available at the pre-production `/docs/` location (https://test.cloud.ibm.com/docs/secure-infrastructure-vpc).
+    1.  After a few minutes, you can see your changes in the IBM Cloud docs framework. Changes to `draft` are available at the internal `/docs-draft/` location (https://test.cloud.ibm.com/docs-draft/cloud-databases). Changes to `review` are available at the pre-production `/docs/` location (https://test.cloud.ibm.com/docs/cloud-databases).
 
 :information_source: **Tip:** Content that is tagged with <code>&lt;draft&gt;</code>, <code>&lt;review&gt;</code>, <code>&lt;staging&gt;</code>, or feature tags are built and promoted only to the internal location and is not included in the pull request to the `publish` branch for production.
 
@@ -55,7 +55,7 @@ The documentation team reviews your PR and might request changes.
 
 - If the changes are relatively straightforward and self-contained, such as a corrected typographical error or a rewritten sentence, we will approve and merge them after issues are addressed.
 - If the changes are more extensive, such as a significant rewrite or entirely new content, the documentation team might need to make revisions for editorial or style reasons.⁠ In this case, we might open a new PR against your branch with our proposed revisions.⁠ You can then review these revisions and incorporate the changes into your branch.⁠ After the documentation team is satisfied with the proposed changes, we merge your PR.⁠
-When changes are merged to the `production` branch, they are built and published to production at https://cloud.ibm.com/docs/secure-infrastructure-vpc.
+When changes are merged to the `production` branch, they are built and published to production at https://cloud.ibm.com/docs/cloud-databases.
 
 ### Guidelines for merging a PR
 
@@ -64,7 +64,7 @@ As someone with merge responsibilities, follow these guidelines and practices to
 
 - Make sure that the merge commit message is clear and specific.
 
-    :exclamation: **Important:** Do not expose IBM Confidential information in your commit message to `publish`. Commits made to the `publish` branch become public record. When you merge to the `publish` branch, the source is mirrored in a public GitHub repo at https://github.com/ibm-cloud-docs/secure-infrastructure-vpc so that customers can view and contribute to the source.
+    :exclamation: **Important:** Do not expose IBM Confidential information in your commit message to `publish`. Commits made to the `publish` branch become public record. When you merge to the `publish` branch, the source is mirrored in a public GitHub repo at https://github.com/ibm-cloud-docs/cloud-databases so that customers can view and contribute to the source.
 - Squash and merge
 
     - Use the **Squash and merge** option when you merge a PR. Status checks prevent the merge if the squash and merge method is not used. For more information, see [Squashing your merge commits](https://docs.github.com/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/about-merge-methods-on-github#squashing-your-merge-commits).
