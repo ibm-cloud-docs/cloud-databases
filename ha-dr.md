@@ -10,14 +10,7 @@ keywords: HA for cloud-databases, DR for cloud-databases, high availability for 
 
 ---
 
-{:external: .external target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
+{{site.data.keyword.attribute-definition-list}}
 
 # Understanding high availability and disaster recovery for {{site.data.keyword.databases-for}}
 {: #ha-dr}
@@ -38,7 +31,7 @@ In addition to the high-availability configuration, for deployments in IBM Cloud
 
 If a complete region failure occurs, the database servers in the region might not be accessible, but the backup data remains available. You can initiate a restore from these backups into an available region from the service management console. Consult your {{site.data.keyword.databases-for}} backups page for more details. 
 
-It is your responsibility to [create a new service instance](/docs/cloud-databases?topic=cloud-databases-getting-started-cdb-provision-instance) in which to restore when the {{site.data.keyword.cloud}} Databases platform is restored. You are also responsible for testing the validity and restore time of your backups. For more information, see [Disaster recovery](/docs/cloud-databases?topic=cloud-databases-responsibilities-cloud-databases#disaster-recovery-responsibilities) in the *Responsibilities for Cloud Databases* page.
+It is your responsibility to [create a new service instance](/docs/cloud-databases?topic=cloud-databases-provisioning) in which to restore when the {{site.data.keyword.cloud}} Databases platform is restored. You are also responsible for testing the validity and restore time of your backups. For more information, see [Disaster recovery](/docs/cloud-databases?topic=cloud-databases-responsibilities-cloud-databases#disaster-recovery-responsibilities) in the *Responsibilities for Cloud Databases* page.
 
 ## Application-level high availability
 {: #application-ha}
