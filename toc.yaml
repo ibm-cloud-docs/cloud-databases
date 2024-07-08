@@ -32,9 +32,6 @@ toc:
               label: Cloud Databases for Elasticsearch
               href: https://cloud.ibm.com/docs/databases-for-elasticsearch
           - link:
-              label: Cloud Databases for DataStax
-              href: https://cloud.ibm.com/docs/databases-for-cassandra
-          - link:
               label: Cloud Databases for Redis
               href: https://cloud.ibm.com/docs/databases-for-redis
           - link:
