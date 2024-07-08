@@ -219,7 +219,7 @@ Ahead of the May 2025 date, if you have a multi-tenant instance, there are a few
 
 To determine how existing hosting models will switch over to Shared and Isolated Compute, review the tables below. In the switchover, the assumption is that the starting points are old style multitenant (CPU unallocated, or 0) and dedicated cores. 
 
-| **If your current resource allocation is N CPU x M RAM <br> (Non-RabbitMQ Version):** | **You will be automatically placed on <br> (Non-RabbitMQ Version):** |
+| **If your current resource allocation is N CPU x M RAM <br> (Non-RabbitMQ Databases):** | **You will be automatically placed on <br> (Non-RabbitMQ Databases):** |
 |-------------------------|---------------------|
 | N = 0 CPU, M < 4 GB RAM | 0.5 CPU x 4 GB RAM, Shared Compute |
 | N = 0 CPU, 4 GB RAM < M ≤ 16 GB RAM | M/8 CPU x M GB RAM, Shared Compute|
@@ -236,7 +236,7 @@ To determine how existing hosting models will switch over to Shared and Isolated
 
 <br>
 
-| **If your current resource allocation is N CPU x M RAM <br> (RabbitMQ Version):** | **You will be automatically placed on <br> (RabbitMQ Version):** |
+| **If your current resource allocation is N CPU x M RAM <br> (RabbitMQ):** | **You will be automatically placed on <br> (RabbitMQ):** |
 |-------------------------|---------------------|
 | N = 0 CPU, M < 8 GB RAM | 1 CPU x 8 GB RAM, Shared Compute |
 | N = 0 CPU, 8 GB RAM < M ≤ 16 GB RAM | M/8 CPU x M GB RAM, Shared Compute |
