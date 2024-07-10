@@ -51,6 +51,8 @@ Shared Compute is a flexible multi-tenant offering for dynamic, fine-tuned, and 
 
 Each database instance receives a deterministic CPU allocation. If an instance is provisioned without selecting a CPU amount, Shared Compute automatically allocates a small amount of CPU to your database up to a 2 core max. Automatic CPU is provided at a 1:8 ratio of CPU:RAM; therefore, a user with 4 GB RAM receives 4/8th of a CPU; a user with 8 GB RAM receives 1 CPU; and an user with 20 GB RAM receives 2 CPU due to the 2 CPU limit.
 
+For this fractional, automatic vCPU allocation, simply input your RAM and disk allocation needs. Selecting `multitenant` means that our system will handle vCPU allocation at a 1/8 ratio to your RAM allocation. We recommend integer allocations when specifying vCPU allocations.
+
 If you have higher performance requirements than 2 CPU, you can easily leverage the flexibility of the Shared model. With the ability to select the amount of CPU and RAM resources you receive, performance can be scaled to fit your workload. Additionally, if you know that your instance will experience variable demand, use RAM autoscaling to set not only the expected load and duration that would initiate resource scaling, but also the resource and cost limit your database will scale to.
 
 Because of each service's individual requirements, {{site.data.keyword.databases-for}} has minimum resource requirements in place for all Shared Compute instances. When all existing multi-tenant instances are transitioned to Shared Compute, these minimum resource requirements will be applied. Current multi-tenant instances will not be charged (that is, they will be _grandfathered_) for any increase to up to these minimum resource requirements actioned by IBM until May 2025. For more information, see [Hosting model grandfathering](/docs/cloud-databases?topic=cloud-databases-hosting-models&interface=ui#hosting-models-grandfathering).
@@ -72,6 +74,8 @@ Shared Compute is a flexible multi-tenant offering for dynamic, fine-tuned, and 
 
 Each database instance receives a deterministic CPU allocation. If an instance is provisioned without selecting a CPU amount, Shared Compute automatically allocates a small amount of CPU to your database up to a 2 core max. Automatic CPU is provided at a 1:8 ratio of CPU:RAM; therefore, a user with 4 GB RAM receives 4/8th of a CPU; a user with 8 GB RAM receives 1 CPU; and an user with 20 GB RAM receives 2 CPU due to the 2 CPU limit.
 
+For this fractional, automatic vCPU allocation, simply input your RAM and disk allocation needs. Selecting `multitenant` means that our system will handle vCPU allocation at a 1/8 ratio to your RAM allocation. We recommend integer allocations when specifying vCPU allocations.
+
 If you have higher performance requirements than 2 CPU, you can easily leverage the flexibility of the Shared model. With the ability to select the amount of CPU and RAM resources you receive, performance can be scaled to fit your workload. Additionally, if you know that your instance will experience variable demand, use RAM autoscaling to set not only the expected load and duration that would initiate resource scaling, but also the resource and cost limit your database will scale to.
 
 Because of each service's individual requirements, {{site.data.keyword.databases-for}} has minimum resource requirements in place for all Shared Compute instances. When all existing multi-tenant instances are transitioned to Shared Compute, these minimum resource requirements will be applied. Current multi-tenant instances will not be charged (that is, they will be _grandfathered_) for any increase to up to these minimum resource requirements actioned by IBM until May 2025. For more information, see [Hosting model grandfathering](/docs/cloud-databases?topic=cloud-databases-hosting-models&interface=ui#hosting-models-grandfathering).
@@ -92,6 +96,8 @@ When provisioning, choose the CPU x RAM size for the machine to set up your data
 Shared Compute is a flexible multi-tenant offering for dynamic, fine-tuned, and decoupled capacity selections.
 
 Each database instance receives a deterministic CPU allocation. If an instance is provisioned without selecting a CPU amount, Shared Compute automatically allocates a small amount of CPU to your database up to a 2 core max. Automatic CPU is provided at a 1:8 ratio of CPU:RAM; therefore, a user with 4 GB RAM receives 4/8th of a CPU; a user with 8 GB RAM receives 1 CPU; and an user with 20 GB RAM receives 2 CPU due to the 2 CPU limit.
+
+For this fractional, automatic vCPU allocation, simply input your RAM and disk allocation needs. Selecting `multitenant` means that our system will handle vCPU allocation at a 1/8 ratio to your RAM allocation. We recommend integer allocations when specifying vCPU allocations.
 
 If you have higher performance requirements than 2 CPU, you can easily leverage the flexibility of the Shared model. With the ability to select the amount of CPU and RAM resources you receive, performance can be scaled to fit your workload. Additionally, if you know that your instance will experience variable demand, use RAM autoscaling to set not only the expected load and duration that would initiate resource scaling, but also the resource and cost limit your database will scale to.
 
@@ -219,7 +225,7 @@ Ahead of the May 2025 date, if you have a multi-tenant instance, there are a few
 
 To determine how existing hosting models will switch over to Shared and Isolated Compute, review the tables below. In the switchover, the assumption is that the starting points are old style multitenant (CPU unallocated, or 0) and dedicated cores. 
 
-| **If your current resource allocation is N CPU x M RAM <br> (Non-RabbitMQ Version):** | **You will be automatically placed on <br> (Non-RabbitMQ Version):** |
+| **If your current resource allocation is N CPU x M RAM <br> (Non-RabbitMQ Databases):** | **You will be automatically placed on <br> (Non-RabbitMQ Databases):** |
 |-------------------------|---------------------|
 | N = 0 CPU, M < 4 GB RAM | 0.5 CPU x 4 GB RAM, Shared Compute |
 | N = 0 CPU, 4 GB RAM < M ≤ 16 GB RAM | M/8 CPU x M GB RAM, Shared Compute|
@@ -236,7 +242,7 @@ To determine how existing hosting models will switch over to Shared and Isolated
 
 <br>
 
-| **If your current resource allocation is N CPU x M RAM <br> (RabbitMQ Version):** | **You will be automatically placed on <br> (RabbitMQ Version):** |
+| **If your current resource allocation is N CPU x M RAM <br> (RabbitMQ):** | **You will be automatically placed on <br> (RabbitMQ):** |
 |-------------------------|---------------------|
 | N = 0 CPU, M < 8 GB RAM | 1 CPU x 8 GB RAM, Shared Compute |
 | N = 0 CPU, 8 GB RAM < M ≤ 16 GB RAM | M/8 CPU x M GB RAM, Shared Compute |
