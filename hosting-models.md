@@ -131,6 +131,7 @@ Isolated Compute features 6 size selections:
 ### Isolated Compute sizing
 {: #hosting-models-iso-compute-sizing-cli}
 {: cli}
+
 Isolated Compute features 6 size selections:
 
 - 4 CPU x 16 RAM
@@ -140,8 +141,7 @@ Isolated Compute features 6 size selections:
 - 32 CPU x 128 RAM
 - 30 CPU x 240 RAM
 
-
-The `host_flavor` parameter defines your Compute sizing. Input the appropriate value for your desired size. To provision a Shared Compute instance, specify `multitenant`.  All other options place you on different Isolated Compute sizes. 
+The `host_flavor` parameter defines your Compute sizing. Input the appropriate value for your desired size. To provision a Shared Compute instance, specify `multitenant`. All other options place you on different Isolated Compute sizes. 
 
 | **Host flavor** | **host_flavor value** |
 |:-------------------------:|:---------------------:|
@@ -157,6 +157,7 @@ The `host_flavor` parameter defines your Compute sizing. Input the appropriate v
 ### Isolated Compute sizing
 {: #hosting-models-iso-compute-sizing-api}
 {: api}
+
 Isolated Compute features 6 size selections:
 
 - 4 CPU x 16 RAM
@@ -166,8 +167,7 @@ Isolated Compute features 6 size selections:
 - 32 CPU x 128 RAM
 - 30 CPU x 240 RAM
 
-
-The `host_flavor` parameter defines your Compute sizing. Input the appropriate value for your desired size. To provision a Shared Compute instance, specify `multitenant`.  All other options place you on different Isolated Compute sizes. 
+The `host_flavor` parameter defines your Compute sizing. Input the appropriate value for your desired size. To provision a Shared Compute instance, specify `multitenant`. All other options place you on different Isolated Compute sizes. 
 
 | **Host flavor** | **host_flavor value** |
 |:-------------------------:|:---------------------:|
@@ -180,11 +180,9 @@ The `host_flavor` parameter defines your Compute sizing. Input the appropriate v
 | 30 CPU x 240 RAM          | `m3c.30x240.encrypted`  |
 {: caption="Table 1. Host flavor sizing parameter" caption-side="bottom"}
 
-
 ### Isolated Compute sizing
 {: #hosting-models-iso-compute-sizing-terraform}
 {: terraform}
-
 
 Isolated Compute features 6 size selections:
 
@@ -195,8 +193,7 @@ Isolated Compute features 6 size selections:
 - 32 CPU x 128 RAM
 - 30 CPU x 240 RAM
 
-
-The `host_flavor` parameter defines your Compute sizing. Input the appropriate value for your desired size. To provision a Shared Compute instance, specify `multitenant`.  All other options place you on different Isolated Compute sizes. 
+The `host_flavor` parameter defines your Compute sizing. Input the appropriate value for your desired size. To provision a Shared Compute instance, specify `multitenant`. All other options place you on different Isolated Compute sizes. 
 
 | **Host flavor** | **host_flavor value** |
 |:-------------------------:|:---------------------:|
