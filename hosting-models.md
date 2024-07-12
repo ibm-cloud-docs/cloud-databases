@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-06-20"
+lastupdated: "2024-07-10"
 
 subcollection: cloud-databases
 
@@ -116,7 +116,8 @@ CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} 
 {: note}
 
 ### Isolated Compute sizing
-{: #hosting-models-iso-compute-sizing}
+{: #hosting-models-iso-compute-sizing-ui}
+{: ui}
 
 Isolated Compute features 6 size selections:
 
@@ -126,6 +127,84 @@ Isolated Compute features 6 size selections:
 - 16 CPU x 64 RAM
 - 32 CPU x 128 RAM
 - 30 CPU x 240 RAM
+
+### Isolated Compute sizing
+{: #hosting-models-iso-compute-sizing-cli}
+{: cli}
+
+Isolated Compute features 6 size selections:
+
+- 4 CPU x 16 RAM
+- 8 CPU x 32 RAM
+- 8 CPU x 64 RAM
+- 16 CPU x 64 RAM
+- 32 CPU x 128 RAM
+- 30 CPU x 240 RAM
+
+The `host_flavor` parameter defines your Compute sizing. Input the appropriate value for your desired size. To provision a Shared Compute instance, specify `multitenant`. All other options place you on different Isolated Compute sizes. 
+
+| **Host flavor** | **host_flavor value** |
+|:-------------------------:|:---------------------:|
+| Shared Compute            | `multitenant`    |
+| 4 CPU x 16 RAM            | `b3c.4x16.encrypted`    |
+| 8 CPU x 32 RAM            | `b3c.8x32.encrypted`    |
+| 8 CPU x 64 RAM            | `m3c.8x64.encrypted`    |
+| 16 CPU x 64 RAM           | `b3c.16x64.encrypted`   |
+| 32 CPU x 128 RAM          | `b3c.32x128.encrypted`  |
+| 30 CPU x 240 RAM          | `m3c.30x240.encrypted`  |
+{: caption="Table 1. Host flavor sizing parameter" caption-side="bottom"}
+
+### Isolated Compute sizing
+{: #hosting-models-iso-compute-sizing-api}
+{: api}
+
+Isolated Compute features 6 size selections:
+
+- 4 CPU x 16 RAM
+- 8 CPU x 32 RAM
+- 8 CPU x 64 RAM
+- 16 CPU x 64 RAM
+- 32 CPU x 128 RAM
+- 30 CPU x 240 RAM
+
+The `host_flavor` parameter defines your Compute sizing. Input the appropriate value for your desired size. To provision a Shared Compute instance, specify `multitenant`. All other options place you on different Isolated Compute sizes. 
+
+| **Host flavor** | **host_flavor value** |
+|:-------------------------:|:---------------------:|
+| Shared Compute            | `multitenant`    |
+| 4 CPU x 16 RAM            | `b3c.4x16.encrypted`    |
+| 8 CPU x 32 RAM            | `b3c.8x32.encrypted`    |
+| 8 CPU x 64 RAM            | `m3c.8x64.encrypted`    |
+| 16 CPU x 64 RAM           | `b3c.16x64.encrypted`   |
+| 32 CPU x 128 RAM          | `b3c.32x128.encrypted`  |
+| 30 CPU x 240 RAM          | `m3c.30x240.encrypted`  |
+{: caption="Table 1. Host flavor sizing parameter" caption-side="bottom"}
+
+### Isolated Compute sizing
+{: #hosting-models-iso-compute-sizing-terraform}
+{: terraform}
+
+Isolated Compute features 6 size selections:
+
+- 4 CPU x 16 RAM
+- 8 CPU x 32 RAM
+- 8 CPU x 64 RAM
+- 16 CPU x 64 RAM
+- 32 CPU x 128 RAM
+- 30 CPU x 240 RAM
+
+The `host_flavor` parameter defines your Compute sizing. Input the appropriate value for your desired size. To provision a Shared Compute instance, specify `multitenant`. All other options place you on different Isolated Compute sizes. 
+
+| **Host flavor** | **host_flavor value** |
+|:-------------------------:|:---------------------:|
+| Shared Compute            | `multitenant`    |
+| 4 CPU x 16 RAM            | `b3c.4x16.encrypted`    |
+| 8 CPU x 32 RAM            | `b3c.8x32.encrypted`    |
+| 8 CPU x 64 RAM            | `m3c.8x64.encrypted`    |
+| 16 CPU x 64 RAM           | `b3c.16x64.encrypted`   |
+| 32 CPU x 128 RAM          | `b3c.32x128.encrypted`  |
+| 30 CPU x 240 RAM          | `m3c.30x240.encrypted`  |
+{: caption="Table 1. Host flavor sizing parameter" caption-side="bottom"}
 
 ## Provisioning
 {: #hosting-models-provisioning}
