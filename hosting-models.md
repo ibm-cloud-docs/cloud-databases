@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-06-10"
+lastupdated: "2024-07-10"
 
 subcollection: cloud-databases
 
@@ -20,6 +20,7 @@ To allow for reliable resource allocation, {{site.data.keyword.databases-for}} o
 
 Scaling your Shared Compute or Isolated Compute databases is currently available via the CLI, API, or Terraform only. 
 {: note}
+{: ui}
 
 ## {{site.data.keyword.databases-for}} Shared Compute
 {: #hosting-models-shared-compute-ui}
@@ -27,7 +28,7 @@ Scaling your Shared Compute or Isolated Compute databases is currently available
 
 Shared Compute is a flexible multi-tenant offering for dynamic, fine-tuned, and decoupled capacity selections.
 
-If you select Shared Compute in the {{site.data.keyword.cloud_notm}} console, you then choose an initial resource allocation preset: **Small** (1 CPU and 8 GB RAM for {{site.data.keyword.rabbitmq}}, 0.5 CPU and 4 GB RAM for all other databases) or **Custom** (2 CPU and 4 GB RAM). Small has a fixed amount of CPU and RAM, but you can change disk. Custom can be completely customized. 
+When provisioning Shared Compute through the {{site.data.keyword.cloud_notm}} console, you have the option to select between the following initial resource allocation presets: **Small** (1 CPU and 8 GB RAM for {{site.data.keyword.rabbitmq}}, 0.5 CPU and 4 GB RAM for all other databases) or **Custom** (≥ 2 CPU and ≥ 4 GB RAM). Small has a fixed amount of CPU and RAM, but you can change disk. Custom can be completely customized. 
 
 With Small allocation preset, you can test out the database with the smallest resource allocation. If you have higher performance requirements, you can easily leverage the flexibility of the Shared model with the Custom allocation preset. With the ability to select the amount of CPU and RAM resources you receive, performance can be scaled to fit your workload.
 
@@ -50,6 +51,8 @@ Shared Compute is a flexible multi-tenant offering for dynamic, fine-tuned, and 
 
 Each database instance receives a deterministic CPU allocation. If an instance is provisioned without selecting a CPU amount, Shared Compute automatically allocates a small amount of CPU to your database up to a 2 core max. Automatic CPU is provided at a 1:8 ratio of CPU:RAM; therefore, a user with 4 GB RAM receives 4/8th of a CPU; a user with 8 GB RAM receives 1 CPU; and an user with 20 GB RAM receives 2 CPU due to the 2 CPU limit.
 
+For this fractional, automatic vCPU allocation, simply input your RAM and disk allocation needs. Selecting `multitenant` means that our system will handle vCPU allocation at a 1/8 ratio to your RAM allocation. We recommend integer allocations when specifying vCPU allocations.
+
 If you have higher performance requirements than 2 CPU, you can easily leverage the flexibility of the Shared model. With the ability to select the amount of CPU and RAM resources you receive, performance can be scaled to fit your workload. Additionally, if you know that your instance will experience variable demand, use RAM autoscaling to set not only the expected load and duration that would initiate resource scaling, but also the resource and cost limit your database will scale to.
 
 Because of each service's individual requirements, {{site.data.keyword.databases-for}} has minimum resource requirements in place for all Shared Compute instances. When all existing multi-tenant instances are transitioned to Shared Compute, these minimum resource requirements will be applied. Current multi-tenant instances will not be charged (that is, they will be _grandfathered_) for any increase to up to these minimum resource requirements actioned by IBM until May 2025. For more information, see [Hosting model grandfathering](/docs/cloud-databases?topic=cloud-databases-hosting-models&interface=ui#hosting-models-grandfathering).
@@ -70,6 +73,8 @@ When provisioning, choose the CPU x RAM size for the machine to set up your data
 Shared Compute is a flexible multi-tenant offering for dynamic, fine-tuned, and decoupled capacity selections.
 
 Each database instance receives a deterministic CPU allocation. If an instance is provisioned without selecting a CPU amount, Shared Compute automatically allocates a small amount of CPU to your database up to a 2 core max. Automatic CPU is provided at a 1:8 ratio of CPU:RAM; therefore, a user with 4 GB RAM receives 4/8th of a CPU; a user with 8 GB RAM receives 1 CPU; and an user with 20 GB RAM receives 2 CPU due to the 2 CPU limit.
+
+For this fractional, automatic vCPU allocation, simply input your RAM and disk allocation needs. Selecting `multitenant` means that our system will handle vCPU allocation at a 1/8 ratio to your RAM allocation. We recommend integer allocations when specifying vCPU allocations.
 
 If you have higher performance requirements than 2 CPU, you can easily leverage the flexibility of the Shared model. With the ability to select the amount of CPU and RAM resources you receive, performance can be scaled to fit your workload. Additionally, if you know that your instance will experience variable demand, use RAM autoscaling to set not only the expected load and duration that would initiate resource scaling, but also the resource and cost limit your database will scale to.
 
@@ -92,6 +97,8 @@ Shared Compute is a flexible multi-tenant offering for dynamic, fine-tuned, and 
 
 Each database instance receives a deterministic CPU allocation. If an instance is provisioned without selecting a CPU amount, Shared Compute automatically allocates a small amount of CPU to your database up to a 2 core max. Automatic CPU is provided at a 1:8 ratio of CPU:RAM; therefore, a user with 4 GB RAM receives 4/8th of a CPU; a user with 8 GB RAM receives 1 CPU; and an user with 20 GB RAM receives 2 CPU due to the 2 CPU limit.
 
+For this fractional, automatic vCPU allocation, simply input your RAM and disk allocation needs. Selecting `multitenant` means that our system will handle vCPU allocation at a 1/8 ratio to your RAM allocation. We recommend integer allocations when specifying vCPU allocations.
+
 If you have higher performance requirements than 2 CPU, you can easily leverage the flexibility of the Shared model. With the ability to select the amount of CPU and RAM resources you receive, performance can be scaled to fit your workload. Additionally, if you know that your instance will experience variable demand, use RAM autoscaling to set not only the expected load and duration that would initiate resource scaling, but also the resource and cost limit your database will scale to.
 
 Because of each service's individual requirements, {{site.data.keyword.databases-for}} has minimum resource requirements in place for all Shared Compute instances. When all existing multi-tenant instances are transitioned to Shared Compute, these minimum resource requirements will be applied. Current multi-tenant instances will not be charged (that is, they will be _grandfathered_) for any increase to up to these minimum resource requirements actioned by IBM until May 2025. For more information, see [Hosting model grandfathering](/docs/cloud-databases?topic=cloud-databases-hosting-models&interface=ui#hosting-models-grandfathering).
@@ -109,7 +116,8 @@ CPU and RAM autoscaling is not supported on {{site.data.keyword.databases-for}} 
 {: note}
 
 ### Isolated Compute sizing
-{: #hosting-models-iso-compute-sizing}
+{: #hosting-models-iso-compute-sizing-ui}
+{: ui}
 
 Isolated Compute features 6 size selections:
 
@@ -120,19 +128,115 @@ Isolated Compute features 6 size selections:
 - 32 CPU x 128 RAM
 - 30 CPU x 240 RAM
 
+### Isolated Compute sizing
+{: #hosting-models-iso-compute-sizing-cli}
+{: cli}
+
+Isolated Compute features 6 size selections:
+
+- 4 CPU x 16 RAM
+- 8 CPU x 32 RAM
+- 8 CPU x 64 RAM
+- 16 CPU x 64 RAM
+- 32 CPU x 128 RAM
+- 30 CPU x 240 RAM
+
+The `host_flavor` parameter defines your Compute sizing. Input the appropriate value for your desired size. To provision a Shared Compute instance, specify `multitenant`. All other options place you on different Isolated Compute sizes. 
+
+| **Host flavor** | **host_flavor value** |
+|:-------------------------:|:---------------------:|
+| Shared Compute            | `multitenant`    |
+| 4 CPU x 16 RAM            | `b3c.4x16.encrypted`    |
+| 8 CPU x 32 RAM            | `b3c.8x32.encrypted`    |
+| 8 CPU x 64 RAM            | `m3c.8x64.encrypted`    |
+| 16 CPU x 64 RAM           | `b3c.16x64.encrypted`   |
+| 32 CPU x 128 RAM          | `b3c.32x128.encrypted`  |
+| 30 CPU x 240 RAM          | `m3c.30x240.encrypted`  |
+{: caption="Table 1. Host flavor sizing parameter" caption-side="bottom"}
+
+### Isolated Compute sizing
+{: #hosting-models-iso-compute-sizing-api}
+{: api}
+
+Isolated Compute features 6 size selections:
+
+- 4 CPU x 16 RAM
+- 8 CPU x 32 RAM
+- 8 CPU x 64 RAM
+- 16 CPU x 64 RAM
+- 32 CPU x 128 RAM
+- 30 CPU x 240 RAM
+
+The `host_flavor` parameter defines your Compute sizing. Input the appropriate value for your desired size. To provision a Shared Compute instance, specify `multitenant`. All other options place you on different Isolated Compute sizes. 
+
+| **Host flavor** | **host_flavor value** |
+|:-------------------------:|:---------------------:|
+| Shared Compute            | `multitenant`    |
+| 4 CPU x 16 RAM            | `b3c.4x16.encrypted`    |
+| 8 CPU x 32 RAM            | `b3c.8x32.encrypted`    |
+| 8 CPU x 64 RAM            | `m3c.8x64.encrypted`    |
+| 16 CPU x 64 RAM           | `b3c.16x64.encrypted`   |
+| 32 CPU x 128 RAM          | `b3c.32x128.encrypted`  |
+| 30 CPU x 240 RAM          | `m3c.30x240.encrypted`  |
+{: caption="Table 1. Host flavor sizing parameter" caption-side="bottom"}
+
+### Isolated Compute sizing
+{: #hosting-models-iso-compute-sizing-terraform}
+{: terraform}
+
+Isolated Compute features 6 size selections:
+
+- 4 CPU x 16 RAM
+- 8 CPU x 32 RAM
+- 8 CPU x 64 RAM
+- 16 CPU x 64 RAM
+- 32 CPU x 128 RAM
+- 30 CPU x 240 RAM
+
+The `host_flavor` parameter defines your Compute sizing. Input the appropriate value for your desired size. To provision a Shared Compute instance, specify `multitenant`. All other options place you on different Isolated Compute sizes. 
+
+| **Host flavor** | **host_flavor value** |
+|:-------------------------:|:---------------------:|
+| Shared Compute            | `multitenant`    |
+| 4 CPU x 16 RAM            | `b3c.4x16.encrypted`    |
+| 8 CPU x 32 RAM            | `b3c.8x32.encrypted`    |
+| 8 CPU x 64 RAM            | `m3c.8x64.encrypted`    |
+| 16 CPU x 64 RAM           | `b3c.16x64.encrypted`   |
+| 32 CPU x 128 RAM          | `b3c.32x128.encrypted`  |
+| 30 CPU x 240 RAM          | `m3c.30x240.encrypted`  |
+{: caption="Table 1. Host flavor sizing parameter" caption-side="bottom"}
+
 ## Provisioning
 {: #hosting-models-provisioning}
 
-To provision a {{site.data.keyword.databases-for}} service instance, select your **hosting type** from either Shared Compute or Isolated Compute. On the CLI, API, or Terraform, add a new `host_flavor` parameter. This parameter allows you to select either Shared Compute (`multitenant`) or Isolated Compute via assigning the parameter value for the requested Isolated instance size. Note that because Isolated Compute sizes implicitly include both CPU and RAM allocations, CPU and RAM sizes should not be provided with an Isolated Compute request. 
+To provision a {{site.data.keyword.databases-for}} service instance, select your **hosting type** from either Shared Compute or Isolated Compute.
+{: ui}
+
+To provision a {{site.data.keyword.databases-for}} service instance, add a new `host_flavor` parameter. This parameter allows you to select either Shared Compute (`multitenant`) or Isolated Compute via assigning the parameter value for the requested Isolated instance size. Note that because Isolated Compute sizes implicitly include both CPU and RAM allocations, CPU and RAM sizes should not be provided with an Isolated Compute request.
+{: cli}
+
+To provision a {{site.data.keyword.databases-for}} service instance, add a new `host_flavor` parameter. This parameter allows you to select either Shared Compute (`multitenant`) or Isolated Compute via assigning the parameter value for the requested Isolated instance size. Note that because Isolated Compute sizes implicitly include both CPU and RAM allocations, CPU and RAM sizes should not be provided with an Isolated Compute request.
+{: api}
+
+To provision a {{site.data.keyword.databases-for}} service instance, add a new `host_flavor` parameter. This parameter allows you to select either Shared Compute (`multitenant`) or Isolated Compute via assigning the parameter value for the requested Isolated instance size. Note that because Isolated Compute sizes implicitly include both CPU and RAM allocations, CPU and RAM sizes should not be provided with an Isolated Compute request.
+{: terraform}
 
 For more detailed instructions, see your [database specific page](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-getting-started-cdb-provision-instance&interface=ui). 
 
 ## Switching hosting models
 {: #hosting-models-switching}
 
-To switch to or between Shared and Isolated Compute, select your **hosting type** from either Shared Compute or Isolated Compute. On the CLI, API, or Terraform, add a new `host_flavor` parameter.
+To switch to or between Shared and Isolated Compute, select your **hosting type** from either Shared Compute or Isolated Compute. 
+{: ui}
 
-Then, moving to the hosting type is as simple as running a scale command with the hosting type selected. To determine what hosting model your database is on, review deployment information and look for what the parameter `host_flavor` is set to. For more detailed instructions, commands, and parameters, see your database specific page. 
+To switch to or between Shared and Isolated Compute, add a new `host_flavor` parameter. Then, moving to the hosting type is as simple as running a scale command with the hosting type selected. For more detailed instructions, commands, and parameters, see your database specific page.
+{: cli}
+
+To switch to or between Shared and Isolated Compute, add a new `host_flavor` parameter. Then, moving to the hosting type is as simple as running a scale command with the hosting type selected. For more detailed instructions, commands, and parameters, see your database specific page.
+{: api}
+
+To switch to or between Shared and Isolated Compute, add a new `host_flavor` parameter. Then, moving to the hosting type is as simple as running a scale command with the hosting type selected. For more detailed instructions, commands, and parameters, see your database specific page.
+{: terraform}
 
 Switching hosting models does not cause downtime, as this is not a backup and restore migration. Instead, the same process is applied as for updates or database instance scaling. The database processes will perform a rolling restart, causing existing connections to be dropped. Thus, the recommendation is as always to ensure that your application has retry and reconnect logic to immediately re-establish a connection.
 
@@ -198,7 +302,9 @@ Ahead of the May 2025 date, if you have a multi-tenant instance, there are a few
 ## Shared Compute transition placement
 {: #shared-compute-placement}
 
-| **If your current resource allocation is N CPU x M RAM <br> (Non-RabbitMQ Version):** | **You will be automatically placed on <br> (Non-RabbitMQ Version):** |
+To determine how existing hosting models will switch over to Shared and Isolated Compute, review the tables below. In the switchover, the assumption is that the starting points are old style multitenant (CPU unallocated, or 0) and dedicated cores. 
+
+| **If your current resource allocation is N CPU x M RAM <br> (Non-RabbitMQ Databases):** | **You will be automatically placed on <br> (Non-RabbitMQ Databases):** |
 |-------------------------|---------------------|
 | N = 0 CPU, M < 4 GB RAM | 0.5 CPU x 4 GB RAM, Shared Compute |
 | N = 0 CPU, 4 GB RAM < M ≤ 16 GB RAM | M/8 CPU x M GB RAM, Shared Compute|
@@ -215,7 +321,7 @@ Ahead of the May 2025 date, if you have a multi-tenant instance, there are a few
 
 <br>
 
-| **If your current resource allocation is N CPU x M RAM <br> (RabbitMQ Version):** | **You will be automatically placed on <br> (RabbitMQ Version):** |
+| **If your current resource allocation is N CPU x M RAM <br> (RabbitMQ):** | **You will be automatically placed on <br> (RabbitMQ):** |
 |-------------------------|---------------------|
 | N = 0 CPU, M < 8 GB RAM | 1 CPU x 8 GB RAM, Shared Compute |
 | N = 0 CPU, 8 GB RAM < M ≤ 16 GB RAM | M/8 CPU x M GB RAM, Shared Compute |

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2024
-lastupdated: "2024-01-17"
+  years: 2021, 2022
+lastupdated: "2022-12-09"
 
 keywords: IBM Cloud, databases, ICD
 
