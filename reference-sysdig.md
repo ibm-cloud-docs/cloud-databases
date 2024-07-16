@@ -11,13 +11,13 @@ keywords: sysdig, cpu seconds, cpu cores, common metrics
 
 {{site.data.keyword.attribute-definition-list}}
 
-# {{site.data.keyword.mon_full}} with Sysdig
+# {{site.data.keyword.mon_full}}
 {: #sysdig-monitor}
 
-## Enabling {{site.data.keyword.mon_full}} with Sysdig
+## Enabling {{site.data.keyword.mon_full}}
 {: #sysdig-monitor-enabling}
 
-To enable Sysdig Monitor on {{site.data.keyword.mon_full}}, follow these steps:
+To enable {{site.data.keyword.mon_full}}, follow these steps:
 
 1. Log in to the {{site.data.keyword.cloud_notm}} console.
 1. Click the **Catalog** tab.
@@ -25,15 +25,15 @@ To enable Sysdig Monitor on {{site.data.keyword.mon_full}}, follow these steps:
 1. Click the {{site.data.keyword.mon_full}} tile.
 1. In the **Create** dialog box, do the following:
    - Select a location.
-   - Select a pricing plan. For {{site.data.keyword.mon_full}} with Sysdig Monitoring, choose **Graduated Tier - Sysdig Secure + Monitor**. For more information, see [Graduated Tier - Sysdig Secure + Monitor Pricing](/docs/monitoring?topic=monitoring-pricing_plans#graduated_secure){: external}.
+   - Select a pricing plan. For {{site.data.keyword.mon_full}}, choose **Graduated Tier - Sysdig Secure + Monitor**. For more information, see [Graduated Tier - Sysdig Secure + Monitor Pricing](/docs/monitoring?topic=monitoring-pricing_plans#graduated_secure).
    - In the **Service name** field, enter a name for your monitoring instance.
 1. Click Create.
-1. Then, follow the process found at [Working with platform metrics](/docs/monitoring?topic=monitoring-platform_metrics_working){: external} to configure your platform metrics.
+1. Then, follow the process found at [Working with platform metrics](/docs/monitoring?topic=monitoring-platform_metrics_working) to configure your platform metrics.
 
-## Sysdig dashboards
+## {{site.data.keyword.mon_full_notm}} Dashboards
 {: #sysdig-monitor-dashboards}
 
-Use dashboards to monitor your environments and applications. Sysdig dashboards are designed around time. Select your dashboard based on specific data gathered over a
+Use {{site.data.keyword.mon_full_notm}} dashboards to monitor your environments and applications. {{site.data.keyword.mon_full_notm}} dashboards are designed around time. Select your dashboard based on specific data gathered over a
 set time range.
 
 ## Common metrics
@@ -58,20 +58,20 @@ The usage that is presented in this dashboard is a percentage of total CPU being
 
 For metrics relevant to a particular {{site.data.keyword.databases-for}} service, see the appropriate Monitoring documentation:
 
-- [{{site.data.keyword.databases-for-mongodb}}](/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-mongodb){: external}.
+- [{{site.data.keyword.databases-for-mongodb}}](/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-mongodb).
 
-- [{{site.data.keyword.databases-for-elasticsearch}}](/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-elasticsearch){: external}.
+- [{{site.data.keyword.databases-for-elasticsearch}}](/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-elasticsearch).
 
-- [{{site.data.keyword.databases-for-cassandra}}](/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-datastax){: external}.
+- [{{site.data.keyword.databases-for-cassandra}}](/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-datastax).
 
-- [{{site.data.keyword.databases-for-redis}}](/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-redis){: external}.
+- [{{site.data.keyword.databases-for-redis}}](/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-redis).
 
-- [{{site.data.keyword.databases-for-postgresql}}](/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-postgresql){: external}.
+- [{{site.data.keyword.databases-for-postgresql}}](/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-postgresql).
 
-- [{{site.data.keyword.databases-for-enterprisedb}}](/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-enterprisedb){: external}.
+- [{{site.data.keyword.databases-for-enterprisedb}}](/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-enterprisedb).
 
-- [{{site.data.keyword.databases-for-mysql}}](/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-mysql){: external}.
+- [{{site.data.keyword.databases-for-mysql}}](/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-mysql).
 
-- [{{site.data.keyword.messages-for-rabbitmq}}](/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-rabbitmq){: external}.
+- [{{site.data.keyword.messages-for-rabbitmq}}](/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-rabbitmq).
 
-- [{{site.data.keyword.databases-for-etcd}}](/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-etcd){: external}.
+- [{{site.data.keyword.databases-for-etcd}}](/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-etcd).

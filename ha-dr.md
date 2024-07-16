@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-01"
+  years: 2020, 2024
+lastupdated: "2024-07-05"
 
 subcollection: cloud-databases
 
@@ -10,14 +10,7 @@ keywords: HA for cloud-databases, DR for cloud-databases, high availability for 
 
 ---
 
-{:external: .external target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:download: .download}
+{{site.data.keyword.attribute-definition-list}}
 
 # Understanding high availability and disaster recovery for {{site.data.keyword.databases-for}}
 {: #ha-dr}
