@@ -3,6 +3,7 @@ copyright:
   years: 2018, 2024
 lastupdated: "2024-07-09"
 
+
 subcollection: cloud-databases
 
 keywords: version for cloud-databases, database version, end of life, major version, minor version, deprecate, deprecation, version number, deprecated, eol
