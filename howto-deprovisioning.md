@@ -1,18 +1,18 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-03-23"
+  years: 2020, 2024
+lastupdated: "2024-07-19"
 
 subcollection: cloud-databases
 
-keywords: deprovision cloud databases, databases with terraform, deprovisioning parameters, delete cloud databases, soft delete, 
+keywords: deprovision cloud databases, databases with terraform, deprovisioning parameters, delete cloud databases, soft delete
 
 ---
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Deleting your Deployment and Removing your Data
+# Deleting your deployment and removing your data
 {: #deprovisioning}
 
 {{site.data.keyword.cloud}} Databases instances are softly deleted in production when you delete or deprovision the instance in {{site.data.keyword.cloud_notm}}. 
@@ -22,15 +22,13 @@ keywords: deprovision cloud databases, databases with terraform, deprovisioning 
 Because a soft delete is essentially a disablement, no {{site.data.keyword.databases-for-cassandra_full}} deployment can recover from a soft delete. Once an {{site.data.keyword.databases-for-cassandra_full}} deployment is deleted, that deployment must be restored from a backup.
 {: note}
 
-## Deleting your Deployment in the User Interface 
+## Deleting your deployment in the user interface 
 {: #delete-deployment-ui}
 {: ui}
 
-To delete your deployment instance from the Resource list section dashboard of the IBM Cloud dashboard, select your deployment. Next, by using the stacked three-dot menu icon ( ![Stacked three dots icon](images/stacked-three-dots.png) ), choose `Delete` from the drop list. 
+To delete your deployment instance from the Resource list section dashboard of the IBM Cloud dashboard, select your deployment. Then, in the overflow menu ( ![Stacked three dots icon](images/stacked-three-dots.png) ) click **Delete** from the drop-down list. 
 
-![List of service instances on the Resource List](images/softdelete-ui-instance.png){: caption="Figure 1. List of service instances on the Resource List" caption-side="bottom"}
-
-## Deleting your Deployment by using the CLI
+## Deleting your deployment by using the CLI
 {: #delete-deployment-cli}
 {: cli}
 
@@ -43,7 +41,7 @@ ibmcloud resource service-instance-delete my-service-instance
 Using the command `ibmcloud resource reclamation-delete` deletes a reclaimed resource so that the resource can no longer be restored.
 {: .note}
 
-## Deleting your database by using DROP DATABASE Statement
+## Deleting your database by using DROP DATABASE statement
 {: #delete-deployment-statement}
 {: cli}
 
@@ -74,7 +72,7 @@ mysqladmin [options] command [command-arg] [command [command-arg]] ...
 Cryptoshredding is a destructive action. When the key is deleted, your data is unrecoverable even from a soft delete state.
 {: .important}
 
-## Backups Removal
+## Backups removal
 {: #backup-remove}
 
 Backups cannot be manually deleted. However, if you delete your deployment, its backups are deleted automatically. 
