@@ -26,7 +26,7 @@ Because a soft delete is essentially a disablement, no {{site.data.keyword.datab
 {: #delete-deployment-ui}
 {: ui}
 
-To delete your deployment instance from the Resource list section dashboard of the IBM Cloud dashboard, select your deployment. Next, click on the kebab icon ( ![Stacked three dots icon](images/stacked-three-dots.png) ) and choose `Delete` from the drop-down list. 
+To delete your deployment instance from the Resource list section dashboard of the IBM Cloud dashboard, select your deployment. Then, in the overflow menu ( ![Stacked three dots icon](images/stacked-three-dots.png) ) click **Delete** from the drop-down list. 
 
 ## Deleting your deployment by using the CLI
 {: #delete-deployment-cli}
