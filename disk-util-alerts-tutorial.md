@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2023
-lastupdated: "2023-05-22"
+  years: 2021, 2024
+lastupdated: "2024-07-26"
 
 keywords: resource utilization, disk utilization, disk alert, notification channel, resource management, disk utilization, alert rule
 
@@ -216,7 +216,6 @@ If you receive an alert that your disk utilization exceeds 90%, scale your disk 
 
 | Service                                          | Managing Resources         | Autoscaling |
 |--------------------------------------------------|----------------------------|-------------|
-| {{site.data.keyword.databases-for-cassandra}} | [Scaling Disk, RAM, and CPU](/docs/databases-for-cassandra?topic=databases-for-cassandra-resources-scaling&interface=ui) | [Autoscaling](/docs/databases-for-cassandra?topic=databases-for-cassandra-autoscaling&interface=ui) |
 | {{site.data.keyword.databases-for-enterprisedb}} | [Scaling Disk, RAM, and CPU](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-resources-scaling&interface=ui) | [Autoscaling](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-autoscaling&interface=ui) |
 | {{site.data.keyword.databases-for-etcd}} | [Scaling Disk, RAM, and CPU](/docs/databases-for-etcd?topic=databases-for-etcd-resources-scaling&interface=ui) | [Autoscaling](/docs/databases-for-etcd?topic=databases-for-etcd-autoscaling&interface=ui) |
 | {{site.data.keyword.databases-for-mongodb}} | [Scaling Disk, RAM, and CPU](/docs/databases-for-mongodb?topic=databases-for-mongodb-resources-scaling&interface=ui) | [Autoscaling](/docs/databases-for-mongodb?topic=databases-for-mongodb-autoscaling&interface=ui) |
@@ -231,7 +230,6 @@ If you receive an alert that your disk utilization exceeds 90%, scale your disk 
 
 This tutorial uses {{site.data.keyword.databases-for-elasticsearch_full}}. However, the same process applies to other {{site.data.keyword.databases-for}} services:
 
-- [{{site.data.keyword.databases-for-cassandra_full}}](/docs/databases-for-cassandra?topic=databases-for-cassandra-monitoring#metrics-by-plan)
 - [{{site.data.keyword.databases-for-enterprisedb_full}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-monitoring#metrics-by-plan)
 - [{{site.data.keyword.databases-for-etcd_full}}](/docs/databases-for-etcd?topic=databases-for-etcd-monitoring#metrics-by-plan)
 - [{{site.data.keyword.databases-for-mongodb_full}}](/docs/databases-for-mongodb?topic=databases-for-mongodb-monitoring#metrics-by-plan)
