@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-05-07"
+lastupdated: "2024-07-26"
 
 subcollection: cloud-databases
 
@@ -24,8 +24,6 @@ Follow the outlined procedures for provisioning a {{site.data.keyword.databases-
 - [{{site.data.keyword.databases-for-elasticsearch}}](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-provisioning){: external}. 
    {{site.data.keyword.databases-for-elasticsearch}} offers two plans: Standard and Enterprise.
    {: note}
-
-- [{{site.data.keyword.databases-for-cassandra}}](/docs/databases-for-cassandra?topic=databases-for-cassandra-deprecation){: external}{: deprecated}.
 
 - [{{site.data.keyword.databases-for-redis}}](/docs/databases-for-redis?topic=databases-for-redis-provisioning){: external}.
 

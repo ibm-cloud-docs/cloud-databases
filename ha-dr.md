@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-07-05"
+lastupdated: "2024-07-26"
 
 subcollection: cloud-databases
 
@@ -15,7 +15,7 @@ keywords: HA for cloud-databases, DR for cloud-databases, high availability for 
 # Understanding high availability and disaster recovery for {{site.data.keyword.databases-for}}
 {: #ha-dr}
 
-This document covers all the {{site.data.keyword.cloud}} Databases, which include {{site.data.keyword.databases-for-cassandra}}, {{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-enterprisedb}}, {{site.data.keyword.databases-for-etcd}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-redis}}, {{site.data.keyword.messages-for-rabbitmq}}, and {{site.data.keyword.databases-for-mysql}}. 
+This document covers all the {{site.data.keyword.cloud}} Databases, which include {{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-enterprisedb}}, {{site.data.keyword.databases-for-etcd}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-redis}}, {{site.data.keyword.messages-for-rabbitmq}}, and {{site.data.keyword.databases-for-mysql}}. 
 {: .note}
 
 {{site.data.keyword.cloud}} Databases instances are deployed in either a multi-zone region (MZR) (for example, Dallas, Frankfurt, London, Sydney, Tokyo, and Washington), or a single-campus multizone region (for example, Chennai). Each instance is deployed in a highly available configuration; that is, data is replicated by each database onto one or more servers, making the data highly available during normal operations.
