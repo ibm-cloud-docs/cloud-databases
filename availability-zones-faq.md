@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2023, 2024
-lastupdated: "2024-03-17"
+lastupdated: "2024-07-26"
 
 subcollection: cloud-databases
 
@@ -21,7 +21,6 @@ You can create a {{site.data.keyword.databases-for}} instance on {{site.data.key
 
 See the documentation for provisioning a specific service {{site.data.keyword.databases-for}} instance: 
 
-- Provisioning [{{site.data.keyword.databases-for-cassandra_full}}](docs/databases-for-cassandra?topic=databases-for-cassandra-deprecation)
 - Provisioning [{{site.data.keyword.databases-for-elasticsearch_full}}](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-provisioning)
 - Provisioning [{{site.data.keyword.databases-for-enterprisedb_full}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-provisioning)
 - Provisioning [{{site.data.keyword.databases-for-etcd_full}}](/docs/databases-for-etcd?topic=databases-for-etcd-provisioning)
