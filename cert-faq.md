@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-09-29"
+  years: 2023, 2024
+lastupdated: "2023-07-26"
 
 keywords: certificate, cert, tls, ssl, mutual tls, client certificates
 
@@ -28,7 +28,6 @@ Choose the appropriate service documentation for connecting an external applicat
 
 - [{{site.data.keyword.databases-for-mongodb}}](/docs/databases-for-mongodb?topic=databases-for-mongodb-mongodb-external-app){: external}
 - [{{site.data.keyword.databases-for-elasticsearch}}](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-external-app){: external}
-- [{{site.data.keyword.databases-for-cassandra}}](/docs/databases-for-cassandra?topic=databases-for-cassandra-external-app){: external}
 - [{{site.data.keyword.databases-for-redis}}](/docs/databases-for-redis?topic=databases-for-redis-external-app){: external}
 - [{{site.data.keyword.databases-for-postgresql}}](/docs/databases-for-postgresql?topic=databases-for-postgresql-external-app){: external}
 - [{{site.data.keyword.databases-for-enterprisedb}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-external-app){: external}
@@ -41,4 +40,4 @@ Choose the appropriate service documentation for connecting an external applicat
 {: faq}
 {: support}
 
-Except for {{site.data.keyword.databases-for-cassandra}}, {{site.data.keyword.databases-for}} does not support mutual TLS for client connections. Presenting client certificates or configuring trusted root certificate authorities (CAs) for client certificates is not supported.
+Except for {{site.data.keyword.databases-for}} does not support mutual TLS for client connections. Presenting client certificates or configuring trusted root certificate authorities (CAs) for client certificates is not supported.
