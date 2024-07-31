@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2021, 2024
-lastupdated: "2024-07-26"
+lastupdated: "2024-07-31"
 
 subcollection: cloud-databases
 
@@ -9,13 +9,7 @@ keywords: pDNS, private endpoints, private networking, vpe, virtual private endp
 
 ---
 
-{:external: .external target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:note: .note}
-{:tip: .tip}
+{{site.data.keyword.mon_full}}
 
 
 # Virtual Private Endpoints 
@@ -25,7 +19,6 @@ This document covers all the IBM Cloud Databases: {{site.data.keyword.databases-
 {: .note}
 
 {{site.data.keyword.cloud}} Virtual Private Endpoint (VPE) for {{site.data.keyword.vpc_full}} provides connection points to IBM services on the IBM private network from your VPC network.
-
 
 ## Using Virtual Private Endpoints
 {: #using-vpes}
@@ -44,7 +37,8 @@ Virtual Private Endpoints (VPEs) are generally available in all regions.
 
 1. Create an {{site.data.keyword.vpc_full}}. Follow the `Getting started` [instructions here](/docs/vpc?topic=vpc-getting-started). 
 
-2. Make sure that your VPC has at least one VSI (virtual server instance), and can connect to the VSI. You can use the UI, CLI, and API to quickly provision {{site.data.keyword.vpc_full}} from the Virtual server instances page in IBM Cloud console: 
+2. Make sure that your VPC has at least one VSI (virtual server instance), and can connect to the VSI. You can use the UI, CLI, and API to quickly provision {{site.data.keyword.vpc_full}} from the Virtual server instances page in the {{site.data.keyword.cloud_notm}} console:
+3. 
    1. Use this information when you're creating [generation 1 virtual server instances](/docs/vpc-on-classic-vsi?topic=vpc-on-classic-vsi-creating-virtual-servers).
    2. Use this information when you're creating [generation 2 virtual server instances](/docs/vpc?topic=vpc-creating-virtual-servers).
 
@@ -55,6 +49,7 @@ Virtual Private Endpoints (VPEs) are generally available in all regions.
 5. After you create your VPE, it might take a few minutes for the new VPE and pDNS to complete the process and begin working for your VPC. Completion is confirmed when you see an IP address set in the [details view](/docs/vpc?topic=vpc-vpe-viewing-details-of-an-endpoint-gateway) of the VPE. 
 
 6. To make sure pDNS is functioning for your VPE, `ssh` into your VSI and run `nslookup <instance_hostname>`. The following example shows the output from running `nslookup` on instance hostnames of `host-0.private.databases.appdomain.cloud`, `host-1.private.databases.appdomain.cloud`, and `host-2.private.databases.appdomain.cloud`:
+
    ```bash
    root@test-vpc-vsi:~# nslookup host-0.private.databases.appdomain.cloud
    Server:		127.0.0.53
@@ -86,7 +81,7 @@ Virtual Private Endpoints (VPEs) are generally available in all regions.
    mongo -u $USERNAME -p $PASSWORD --tls --tlsCAFile /root/   c--authenticationDatabase admin --host replset/host-0.private.databaseappdomain.   cloud:30066,host-1.private.databases.appdomain.cloud:30066,host-private.   databases.appdomain.cloud:30066
    ```
 
-### VPE Discoverability
+### VPE discoverability
 {: #vpes-discoverability}
 
 Following the previous steps results in a database instance with private endpoints that is reachable with the Virtual Private Endpoints from your VPC network.
@@ -96,7 +91,6 @@ Database instances with private endpoints are reachable from any account within 
 
 A MongoDB deployment cannot support both [public and private endpoints simultaneously](/docs/cloud-databases?topic=cloud-databases-service-endpoints&interface=ui). *This cannot be changed after provisioning*.
 {: .important}
-
 
 For more information, see [Secure access to services by using service endpoints](/docs/account?topic=account-service-endpoints-overview).
 {: .tip}
