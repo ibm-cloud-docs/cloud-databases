@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2023-12-04"
+  years: 2019, 2024
+lastupdated: "2024-07-31"
 
 keywords: logging, monitoring, metrics
 

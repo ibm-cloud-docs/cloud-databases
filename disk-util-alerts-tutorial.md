@@ -204,12 +204,12 @@ ibmcloud monitoring alert list --name <monitoring instance name>
 
 You now receive an alert whenever your {{site.data.keyword.databases-for-elasticsearch}} instance disk utilization exceeds 90%, so you can act before the disk is too full.
 
-## Next Steps
+## Next steps
 {: #disk-alert-tut-next-steps}
 
 To modify your alert or find out more about Monitoring, see [Getting started with{{site.data.keyword.mon_full_notm}}](/docs/monitoring?topic=monitoring-getting-started).
 
-### Scaling Resources
+### Scaling resources
 {: #check-alert-scale-resources}
 
 If you receive an alert that your disk utilization exceeds 90%, scale your disk so that you do not exceed 50-70% usage. Manually manage your service's resources or autoscale.
@@ -230,10 +230,10 @@ If you receive an alert that your disk utilization exceeds 90%, scale your disk 
 
 This tutorial uses {{site.data.keyword.databases-for-elasticsearch_full}}. However, the same process applies to other {{site.data.keyword.databases-for}} services:
 
-- [{{site.data.keyword.databases-for-enterprisedb_full}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-monitoring#metrics-by-plan)
-- [{{site.data.keyword.databases-for-etcd_full}}](/docs/databases-for-etcd?topic=databases-for-etcd-monitoring#metrics-by-plan)
-- [{{site.data.keyword.databases-for-mongodb_full}}](/docs/databases-for-mongodb?topic=databases-for-mongodb-monitoring#metrics-by-plan)
-- [{{site.data.keyword.databases-for-postgresql_full}}](/docs/databases-for-postgresql?topic=databases-for-postgresql-monitoring#metrics-by-plan)
-- [{{site.data.keyword.databases-for-redis_full}}](/docs/databases-for-redis?topic=databases-for-redis-monitoring#metrics-by-plan)
-- [{{site.data.keyword.databases-for-mysql_full}}](/docs/databases-for-mysql?topic=databases-for-mysql-monitoring#metrics-by-plan)
-- [{{site.data.keyword.messages-for-rabbitmq_full}}](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-monitoring#metrics-by-plan)
+- [{{site.data.keyword.databases-for-enterprisedb_full}}](/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-enterprisedb)
+- [{{site.data.keyword.databases-for-etcd_full}}](/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-etcd)
+- [{{site.data.keyword.databases-for-mongodb_full}}](/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-mongodb)
+- [{{site.data.keyword.databases-for-postgresql_full}}](/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-postgresql)
+- [{{site.data.keyword.databases-for-redis_full}}](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-redis)
+- [{{site.data.keyword.databases-for-mysql_full}}](/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-mysql)
+- [{{site.data.keyword.messages-for-rabbitmq_full}}](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-rabbitmq)

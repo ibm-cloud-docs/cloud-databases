@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2022
-lastupdated: "2022-10-26"
+  years: 2022, 2024
+lastupdated: "2024-07-31"
 
 keywords: cbr, context based restrictions, security, cbr scenario, cloud databases
 
@@ -29,7 +29,7 @@ With context-based restrictions, account owners and administrators can define an
 ## Restrict traffic to your deployment by using {{site.data.keyword.databases-for}} Allowlisting
 {: #cbr-tutorial-scenario}
 
-In this example scenario, you use context-based restrictions to restrict traffic to your {{site.data.keyword.databases-for-mysql_full}} cluster in the `in-che` region by allowing only the set of subnets from the [{{site.data.keyword.databases-for}} Allowlist page](/docs/databases-for-mysql?topic=cloud-databases-allowlisting) to connect to your deployment.
+In this example scenario, you use context-based restrictions to restrict traffic to your {{site.data.keyword.databases-for-mysql_full}} cluster in the `in-che` region by allowing only the set of subnets from the [{{site.data.keyword.databases-for}} Allowlist page](/docs/cloud-databases?topic=cloud-databases-allowlisting&interface=ui) to connect to your deployment.
 
 In the following steps, you start by creating a network zone, or allowlist, that includes your subnets. Then, you create a context-based restrictions rule for your deployment. When you create the rule, you associate it with the network zone that contains the individual IP address.
 
@@ -48,7 +48,7 @@ Before beginning this tutorial, make sure you have created or installed the foll
 {: #cbr-tutorial-create-zone-cli}
 {: step}
 
-[Provision your service from the {{site.data.keyword.cloud_notm}} Catalog](https://cloud.ibm.com/catalog/services/databases-for-mysql) and choose your IP addresses from the [{{site.data.keyword.databases-for}} Allowlist page](/docs/databases-for-mysql?topic=cloud-databases-allowlisting). 
+[Provision your service from the {{site.data.keyword.cloud_notm}} Catalog](https://cloud.ibm.com/catalog/services/databases-for-mysql) and choose your IP addresses from the [{{site.data.keyword.databases-for}} Allowlist page](/docs/cloud-databases?topic=cloud-databases-allowlisting&interface=ui). 
 1. Run the following example command to create a network that includes a range of allowed IP addresses.
 
     ```sh
