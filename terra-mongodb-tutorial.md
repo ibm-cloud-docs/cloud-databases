@@ -1,8 +1,8 @@
 ---
 
 copyright:
-   years: 2022, 2023
-lastupdated: "2023-08-15"
+   years: 2022, 2024
+lastupdated: "2024-07-31"
 
 keywords: IBM Cloud Databases, ICD, terraform, terraform mongodbee, mongodb, mongodbee
 
@@ -158,11 +158,10 @@ output "analytics_connection" {
 - **Service** - For {{site.data.keyword.databases-for-mongodb}}, the service ID is `databases-for-mongodb`. Choose the correct Service ID for your deployment.
 - **Plan** - This tutorial uses a Standard plan. For more information, see [{{site.data.keyword.cloud}} Pricing](https://www.ibm.com/cloud/pricing).
 - **Location** - Choose a suitable region for your deployment instance.
-- **Admin Password** - You must set the admin password before you can use it to connect. For more information, see [Setting the Admin Password](/docs/databases-for-mongodtopic=databases-for-mongodb-admin-password).
+- **Admin password** - You must set the admin password before you can use it to connect. For more information, see [Setting the Admin password](/docs/databases-for-mongodb?topic=databases-for-mongodb-user-management&interface=ui#user-management-set-admin-password-ui).
 - **Group** Scaling groups represent the various resources that are allocated to a deployment. To see an example for configuring and deploying a database that uses `group` attributes, se[Sample database instance by using group attributes.](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database#sample-database-instance-by-using-group-attributes){external}
 - **Group values** - Memory, disk, and CPU values are all based on minimum requirements for provisioning a {{site.data.keyword.databases-for-mongodb}} instance.
 - **Timeouts** - Create, update, and delete values for this resource. {{site.data.keyword.databases-for}} `create` typically takes between 30-45 minutes. `delete` and `update` typically take 1 minute. Provisioning times are unpredictable. If the deployment fails due to a timeout, import the database resource once the `create` is complete.
-
 
 ## Step 4: Test your configuration
 {: #tutorial-provision-mongodb-test}
