@@ -1,8 +1,8 @@
 ---
 
 copyright:
-   years: 2022
-lastupdated: "2022-12-09"
+   years: 2022, 2024
+lastupdated: "2024-07-31"
 
 keywords: IBM Cloud Databases, ICD, terraform, postgresql terraform, postgresql
 
@@ -14,14 +14,7 @@ completion-time: 1h
 
 ---
 
-{:external: .external target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
+{{site.data.keyword.mon_full}}
 
 # Provision a {{site.data.keyword.databases-for-postgresql}} instance with Terraform
 {: #tutorial-provision-postgres-tf}
@@ -131,7 +124,7 @@ Create a Terraform configuration file that is named `postgres.tf`.
    - **Service** - For {{site.data.keyword.databases-for-postgresql}}, the service ID is `databases-for-postgresql`. Choose the correct Service ID for your deployment.
    - **Plan** - This tutorial uses a Standard plan. For more information, see [{{site.data.keyword.cloud}} Pricing](https://www.ibm.com/cloud/pricing).
    - **Location** - Choose a suitable region for your deployment instance.
-   - **Admin Password** - The {{site.data.keyword.databases-for-postgresql}} service is provisioned with an admin user, so you can manage PostgreSQL by using its command-line tool, `psql`. For more information, see [Setting the Admin Password](/docs/databases-for-postgresql?topic=databases-for-postgresql-admin-password).
+   - **Admin Password** - The {{site.data.keyword.databases-for-postgresql}} service is provisioned with an admin user, so you can manage PostgreSQL by using its command-line tool, `psql`. For more information, see [Setting the Admin password](/docs/databases-for-postgresql?topic=databases-for-postgresql-user-management&interface=ui#user-management-set-admin-password-ui).
    - **Group** Scaling groups represent the various resources that are allocated to a deployment. To see an example for configuring and deploying a database that uses `group` attributes, see [Sample database instance by using group attributes.](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database#sample-database-instance-by-using-group-attributes){: external}
    - **Group values** - Memory, disk, and CPU values are all based on minimum requirements for provisioning a {{site.data.keyword.databases-for-postgresql}} instance.
    - **Timeouts** - Create, update, and delete values for this resource. {{site.data.keyword.databases-for}} `create` typically takes in the range of 30 - 45 minutes. `delete` and `update` typically take 1 minute. Provisioning times are unpredictable. If the deployment fails due to a timeout, import the database resource once the `create` is complete.
