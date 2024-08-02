@@ -1,4 +1,4 @@
-# Cloud Databases Documentation
+# Cloud Databases documentation
 
 This repo contains documentation common to the IBM Cloud Databases services, encompassing:
 - Databases for Elasticsearch
