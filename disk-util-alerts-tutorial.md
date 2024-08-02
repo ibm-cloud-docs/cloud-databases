@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-07-26"
+lastupdated: "2024-08-02"
 
 keywords: resource utilization, disk utilization, disk alert, notification channel, resource management, disk utilization, alert rule
 
@@ -34,7 +34,7 @@ In this tutorial, you use the {{site.data.keyword.cloud_notm}} API and the [{{si
 ### Set up monitoring instance and Platform Metrics
 {: #disk-util-alert-tutorial-monitor-platform}
 
-To get started, you need access to [{{site.data.keyword.mon_full}}](https://www.ibm.com/cloud/cloud-monitoring) in your database region, and you need to have a [monitoring instance](/docs/monitoring?topic=monitoring-getting-started) available. This monitoring instance must be in the same region as the database target. 
+To get started, you need access to [{{site.data.keyword.mon_full}}](https://www.ibm.com/products/cloud-monitoring) in your database region, and you need to have a [monitoring instance](/docs/monitoring?topic=monitoring-getting-started) available. This monitoring instance must be in the same region as the database target. 
 
 You also must have [Platform Metrics](/docs/monitoring?topic=monitoring-platform_metrics_enabling) enabled.
 
@@ -73,7 +73,6 @@ ibmcloud login -sso
 {: pre}
 
 Follow the on-screen instructions to log in.
-
 
 Next, target the appropriate [region](/docs/overview?topic=overview-locations) for your instance:
 

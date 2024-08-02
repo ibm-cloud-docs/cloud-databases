@@ -12,7 +12,7 @@ keywords: DR for cloud-databases, high availability for cloud-databases, disaste
 
 {{site.data.keyword.attribute-definition-list}}
 
-<!--Name your file `bc-dr.md` and include it in the **Reference** nav group in your `toc.yaml` file.-->
+
 
 # Understanding business continuity and disaster recovery for {{site.data.keyword.databases-for}}
 {: #bc-dr}
@@ -23,10 +23,10 @@ keywords: DR for cloud-databases, high availability for cloud-databases, disaste
 ## Responsibilities
 {: #bc-dr-responsibilities}
 
-<!-- If there is specific responsibility documentation for the product, do not include the next paragraph-->
+
 To find out more about responsibility ownership for using {{site.data.keyword.cloud}} products between {{site.data.keyword.IBM_notm}} and customer see [Shared responsibilities for {{site.data.keyword.cloud_notm}} products](/docs/overview?topic=overview-shared-responsibilities).
 
-<!-- If there is a specific responsibility topic available for the product, include the next line or remove the line and include details in this section of the topic.-->
+
 
 For more information about your responsibilities when using {{site.data.keyword.databases-for}}, see [Shared responsibilities for {{site.data.keyword.databases-for}}](/docs/cloud-databases?topic=cloud-databases-responsibilities-cloud-databases).
 
