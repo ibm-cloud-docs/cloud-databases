@@ -75,7 +75,7 @@ After a build is triggered by a commit or merge, you can monitor progress.
 
 ### Monitoring builds
 
-The Slack channel [#docs-secure-infrastructure-vpc](https://ibm-cloudplatform.slack.com/archives/C04R61SEM98) displays information about builds.
+The Slack channel [#docs-cloud-databases](https://ibm.enterprise.slack.com/archives/CHQE49D9T) displays information about builds.
 
 ### Monitoring content quality
 
