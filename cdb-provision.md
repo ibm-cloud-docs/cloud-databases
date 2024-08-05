@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-07-26"
+lastupdated: "2024-08-02"
 
 subcollection: cloud-databases
 
@@ -13,31 +13,29 @@ subcollection: cloud-databases
 # Provision an instance
 {: #getting-started-cdb-provision-instance}
 
-Follow the outlined procedures for provisioning a {{site.data.keyword.databases-for}} instance of your preferred service. Provision through the [catalog](https://cloud.ibm.com/catalog/services/databases-for-mongodb){: external}, the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference){: external}, the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction){: external}, or through [Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: external}.
+Follow the steps for provisioning a {{site.data.keyword.databases-for}} instance of your preferred service. Provision through the [catalog](https://cloud.ibm.com/catalog/services/databases-for-mongodb){: external}, the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference){: external}, the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction){: external}, or through [Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: external}.
 
 {{site.data.keyword.databases-for}} offers two hosting models: Shared Compute and Isolated Compute. Shared Compute is a flexible multi-tenant offering for dynamic, fine-tuned, and decoupled capacity selections. Isolated Compute is a secure single-tenant offering for complex, highly-performant enterprise workloads. For more information, see the [Hosting models overview](/docs/cloud-databases?topic=cloud-databases-hosting-models).
 
-- [{{site.data.keyword.databases-for-mongodb}}](/docs/databases-for-mongodb?topic=databases-for-mongodb-provisioning){: external}. 
-   {{site.data.keyword.databases-for-mongodb}} offers two plans: Standard and Enterprise.
-   {: note}
+- [{{site.data.keyword.databases-for-mongodb}}](/docs/databases-for-mongodb?topic=databases-for-mongodb-provisioning){: external} offers two plans: Standard and Enterprise.
+{: note}
 
-- [{{site.data.keyword.databases-for-elasticsearch}}](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-provisioning){: external}. 
-   {{site.data.keyword.databases-for-elasticsearch}} offers two plans: Standard and Enterprise.
-   {: note}
+- [{{site.data.keyword.databases-for-elasticsearch}}](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-provisioning){: external} offers two plans: Standard and Enterprise.
+{: note}
 
-- [{{site.data.keyword.databases-for-redis}}](/docs/databases-for-redis?topic=databases-for-redis-provisioning){: external}.
+- [{{site.data.keyword.databases-for-redis}}](/docs/databases-for-redis?topic=databases-for-redis-provisioning){: external}
 
-- [{{site.data.keyword.databases-for-postgresql}}](/docs/databases-for-postgresql?topic=databases-for-postgresql-provisioning){: external}.
+- [{{site.data.keyword.databases-for-postgresql}}](/docs/databases-for-postgresql?topic=databases-for-postgresql-provisioning){: external}
 
-- [{{site.data.keyword.databases-for-enterprisedb}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-provisioning){: external}.
+- [{{site.data.keyword.databases-for-enterprisedb}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-provisioning){: external}
 
-- [{{site.data.keyword.databases-for-mysql}}](/docs/databases-for-mysql?topic=databases-for-mysql-provisioning){: external}.
+- [{{site.data.keyword.databases-for-mysql}}](/docs/databases-for-mysql?topic=databases-for-mysql-provisioning){: external}
 
-- [{{site.data.keyword.messages-for-rabbitmq}}](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-provisioning){: external}.
+- [{{site.data.keyword.messages-for-rabbitmq}}](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-provisioning){: external}
 
-- [{{site.data.keyword.databases-for-etcd}}](/docs/databases-for-etcd?topic=databases-for-etcd-provisioning){: external}.
+- [{{site.data.keyword.databases-for-etcd}}](/docs/databases-for-etcd?topic=databases-for-etcd-provisioning){: external}
 
-## Next Steps
+## Next steps
 {: #getting-started-cdb-provision-instance-next-steps}
 
-Now that you've provisioned a {{site.data.keyword.databases-for}} service intance, you should [set up notifications](/docs/cloud-databases?topic=cloud-databases-getting-started-cdb-setup-notifs).
+After provisioning a {{site.data.keyword.databases-for}} service intance, [set up notifications](/docs/cloud-databases?topic=cloud-databases-getting-started-cdb-setup-notifs).

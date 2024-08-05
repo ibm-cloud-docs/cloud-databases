@@ -12,7 +12,7 @@ keywords: HA for cloud-databases, DR for cloud-databases, high availability for 
 
 {{site.data.keyword.attribute-definition-list}}
 
-<!--Name your file `ha.md` and include it in the **Reference** nav group in your `toc.yaml` file.-->
+
 
 # Understanding high availability for {{site.data.keyword.databases-for}}
 {: #ha}

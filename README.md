@@ -1,4 +1,4 @@
-# Cloud Databases Documentation
+# Cloud Databases documentation
 
 This repo contains documentation common to the IBM Cloud Databases services, encompassing:
 - Databases for Elasticsearch
@@ -14,7 +14,6 @@ These docs do not have an attached catalog entry, and do not show up as a distin
 ## Contacts for this repo
 
 - Andrea Lang: ANDREAL, andreal@de.ibm.com
-- Karen Rodgers: karen-rodgers, karen.rodgers@uk.ibm.com
 
 ## Creating content
 
@@ -37,7 +36,7 @@ All content starts from the `source` branch.
 1.  Make your changes to the Markdown content.
 
     - Cloud docs uses Markdown with a few custom extensions to source the docs. For tips about how to structure and style your docs with IBM Cloud Markdown, see [Quick tips for authoring in IBM Cloud docs](https://test.cloud.ibm.com/docs-internal/writing?topic=writing-solution-guides#solution-guides-include-quick-tips) in "Creating solution, deployment, and migration guides".
-    - Cloud docs also supports controlling content with tagging. For example, content within the <code>&lt;staging&gt;</code>&nbsp;<code>&lt;/staging&gt;</code> tags is not displayed to the public. For more information, see [Making updates to your docs](https://test.cloud.ibm.com/docs-internal/writing?topic=writing-update-docs).
+    - Cloud docs also supports controlling content with tagging. For example, content within the staging code tags is not displayed to the public. For more information, see [Making updates to your docs](https://test.cloud.ibm.com/docs-internal/writing?topic=writing-update-docs).
 
 1.  Commit your updates.
 1.  Create a pull request from your branch or fork to `source`.
@@ -45,7 +44,7 @@ All content starts from the `source` branch.
     1.  A Jenkins job runs that commits content to the `draft` and `review` branches and opens a pull request to the `publish` branch.
     1.  After a few minutes, you can see your changes in the IBM Cloud docs framework. Changes to `draft` are available at the internal `/docs-draft/` location (https://test.cloud.ibm.com/docs-draft/cloud-databases). Changes to `review` are available at the pre-production `/docs/` location (https://test.cloud.ibm.com/docs/cloud-databases).
 
-:information_source: **Tip:** Content that is tagged with <code>&lt;draft&gt;</code>, <code>&lt;review&gt;</code>, <code>&lt;staging&gt;</code>, or feature tags are built and promoted only to the internal location and is not included in the pull request to the `publish` branch for production.
+:information_source: **Tip:** Content that is tagged with draft, review, or staging, or feature tags are built and promoted only to the internal location and is not included in the pull request to the `publish` branch for production.
 
 ## Publishing to production
 
@@ -76,7 +75,7 @@ After a build is triggered by a commit or merge, you can monitor progress.
 
 ### Monitoring builds
 
-The Slack channel [#docs-secure-infrastructure-vpc](https://ibm-cloudplatform.slack.com/archives/C04R61SEM98) displays information about builds.
+The Slack channel [#docs-cloud-databases](https://ibm.enterprise.slack.com/archives/CHQE49D9T) displays information about builds.
 
 ### Monitoring content quality
 
@@ -85,15 +84,6 @@ You can monitor your content quality on the Content Quality Dashboard (CQD): htt
 ## More information
 
 - Learn about the suggested content for each type of solution docs at https://test.cloud.ibm.com/docs-internal/writing?topic=writing-writing-solution.
-
-## Information for the mirror repo on GH.com
-</staging>
-
-<publish>Documentation source repository for the deployment guide for the "Landing zone deployable architectures". Published at https://cloud.ibm.com/docs/secure-infrastructure-vpc.
-
-:information_source: **Tip:** If you want to give feedback about the documentation, create an [issue](https://github.com/ibm-cloud-docs/secure-infrastructure-vpc/issues).
-
-</publish>
 
 ## Output
 
@@ -114,5 +104,3 @@ For general questions about IBM Cloud Databases, see the [icd-questions channel]
 ## Blog Submissions
 
 To submit a blog, go [here](https://w3.ibm.com/w3publisher/ibm-cloud-blog/submit-a-post). Ian Smalley handles everything blog-related, so any updates go through him. Use the same form to update, just make a note that it's an update, not a new post.
-
-
