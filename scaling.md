@@ -27,7 +27,7 @@ For new [hosting models](/docs/cloud-databases?topic=cloud-databases-hosting-mod
 
 - [{{site.data.keyword.databases-for-redis}}](/docs/databases-for-redis?topic=databases-for-redis-resources-scaling&interface=ui){: external}
 
-- [{{site.data.keyword.databases-for-elasticsearch}}](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-resources-scaling&interface=ui{: external} 
+- [{{site.data.keyword.databases-for-elasticsearch}}](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-resources-scaling&interface=ui){: external} 
 
 - [{{site.data.keyword.databases-for-mysql}}](/docs/databases-for-mysql?topic=databases-for-mysql-resources-scaling){: external}
 
