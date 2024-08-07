@@ -259,15 +259,15 @@ The following table shows which model is available for each database.
 |  | **Shared Compute** | **Isolated Compute**  |
 | --- | --- | --- |
 | PostgreSQL | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
-| EnterpriseDB |  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
-| Mongo Community | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
-| Mongo Enterprise |  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
-| Elastic Enterprise | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
-| Elastic Platinum |  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
-| etcd | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
-| MySQL | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
+| MongoDB Standard | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
+| MongoDB Enterprise |  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
 | Redis | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
+| Elasticsearch Enterprise | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
+| Elasticsearch Platinum |  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
+| MySQL | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
 | RabbitMQ | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
+| EnterpriseDB |  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
+| etcd | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
 {: caption="Table 3. {{site.data.keyword.databases-for}} hosting model availability" caption-side="bottom"}
 
 ## Transition timeline from existing hosting models to Isolated and Shared Compute
