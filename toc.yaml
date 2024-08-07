@@ -26,26 +26,26 @@ toc:
           label: IBM Cloud Databases Services
           topics:
           - link:
+              label: Cloud Databases for PostgreSQL
+              href: https://cloud.ibm.com/docs/databases-for-postgresql          
+          - link:
               label: Cloud Databases for MongoDB
               href: https://cloud.ibm.com/docs/databases-for-mongodb
           - link:
+              label: Cloud Databases for Redis
+              href: https://cloud.ibm.com/docs/databases-for-redis              
+          - link:
               label: Cloud Databases for Elasticsearch
               href: https://cloud.ibm.com/docs/databases-for-elasticsearch
-          - link:
-              label: Cloud Databases for Redis
-              href: https://cloud.ibm.com/docs/databases-for-redis
-          - link:
-              label: Cloud Databases for PostgreSQL
-              href: https://cloud.ibm.com/docs/databases-for-postgresql
-          - link:
-              label: Cloud Databases for EnterpriseDB
-              href: https://cloud.ibm.com/docs/databases-for-enterprisedb
           - link:
               label: Cloud Databases for MySQL
               href: https://cloud.ibm.com/docs/databases-for-mysql
           - link:
               label: Messages for RabbitMQ
               href: https://cloud.ibm.com/docs/messages-for-rabbitmq
+          - link:
+              label: Cloud Databases for EnterpriseDB
+              href: https://cloud.ibm.com/docs/databases-for-enterprisedb              
           - link:
               label: Cloud Databases for etcd
               href: https://cloud.ibm.com/docs/databases-for-etcd
