@@ -1,5 +1,4 @@
 includes:
-   - https://github.ibm.com/cloud-docs/databases-for-cassandra
    - https://github.ibm.com/cloud-docs/databases-for-elasticsearch
    - https://github.ibm.com/cloud-docs/databases-for-enterprisedb
    - https://github.ibm.com/cloud-docs/databases-for-etcd
@@ -9,3 +8,4 @@ includes:
    - https://github.ibm.com/cloud-docs/databases-for-redis
    - https://github.ibm.com/cloud-docs/messages-for-rabbitmq
    - https://github.ibm.com/cloud-docs/cloud-databases
+   - https://github.ibm.com/cloud-docs/icons 
