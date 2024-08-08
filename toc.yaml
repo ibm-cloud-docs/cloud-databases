@@ -14,7 +14,6 @@ toc:
       topics:
       - index.md
       - cdb-provision.md
-      - scaling.md
       - topicgroup:
           label: Hosting models
           topics:
@@ -73,6 +72,7 @@ toc:
           - reference-key-protect.md
           - reference-hpcs.md
           - howto-deprovisioning.md
+      - scaling.md
       - howto-manage-backups.md
       - closures.md
       - topicgroup:
