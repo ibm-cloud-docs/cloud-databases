@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-07-31"
+lastupdated: "2024-08-08"
 
 subcollection: cloud-databases
 
@@ -221,7 +221,12 @@ To provision a {{site.data.keyword.databases-for}} service instance, add a new `
 To provision a {{site.data.keyword.databases-for}} service instance, add a new `host_flavor` parameter. This parameter allows you to select either Shared Compute (`multitenant`) or Isolated Compute via assigning the parameter value for the requested Isolated instance size. Note that because Isolated Compute sizes implicitly include both CPU and RAM allocations, CPU and RAM sizes should not be provided with an Isolated Compute request.
 {: terraform}
 
-For more detailed instructions, see your [database specific page](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-getting-started-cdb-provision-instance&interface=ui). 
+For more detailed instructions, see your [database specific page](/docs/cloud-databases?topic=cloud-databases-getting-started-cdb-provision-instance&interface=ui).
+
+## Scaling
+{: #hosting-models-scaling}
+
+For new hosting models, scaling is available through the CLI, API, and Terraform. For more detailed instructions, see your [database specific page](/docs/cloud-databases?topic=cloud-databases-scale-instance).
 
 ## Switching hosting models
 {: #hosting-models-switching}
