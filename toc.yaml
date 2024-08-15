@@ -59,7 +59,6 @@ toc:
           - reference-monitoring.md
           - reference-activity-tracker.md
           - reference-logging.md
-          - reference-sysdig.md
       - topicgroup:
           label: Enhancing security
           topics:
