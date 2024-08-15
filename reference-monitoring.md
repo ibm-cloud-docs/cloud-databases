@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2023, 2024
-lastupdated: "2024-07-31"
+lastupdated: "2024-08-13"
 
 keywords: monitoring
 
@@ -15,21 +15,38 @@ subcollection: cloud-databases
 # Monitoring integration
 {: #monitoring}
 
-Monitoring for {{site.data.keyword.databases-for}} is provided through integration with the {{site.data.keyword.monitoringfull}} service. Your instances forward select information so that you can monitor instance health and resource usage. To see your dashboards in {{site.data.keyword.monitoringfull_notm}}, enable [Platform Metrics](/docs/monitoring?topic=monitoring-platform_metrics_enabling) in the same region as your instance. If you have instances in more than one region, provision {{site.data.keyword.monitoringfull_notm}} and enable platform metrics in each region.
+Monitoring for {{site.data.keyword.databases-for}} is provided through integration with the {{site.data.keyword.monitoringfull}} service. Your instances forward select information so that you can monitor instance health and resource usage. To start collecting and viewing monitoring data, follow the instructions to enable [Platform Metrics](/docs/monitoring?topic=monitoring-platform_metrics_enabling). Platform Metrics need to be enabled in the same region as your instance. If you have instances in more than one region, enable platform metrics in each region.
 
-To access {{site.data.keyword.monitoringfull_notm}} from your instance, use the _Monitoring_ link from the right menu. If you do not already have a monitoring service in the same region as your deployment, it says _Add monitoring_.
+You can then access your monitoring dashboard for each region from the {{site.data.keyword.monitoringfull_notm}} area in the [Cloud console](https://cloud.ibm.com/) (under Observability).
 
-To access your instance's monitoring dashboard from {{site.data.keyword.monitoringfull_notm}}, it's in the sidebar, under _IBM_.
+{{site.data.keyword.monitoringfull_notm}} is available for instances in every region. Instances in Multi-zone Regions (MZRs) - `eu-gb`, `eu-de`, `us-east`, `us-south`, `jp-tok`, `au-syd` - have their metrics in the same region.
+If you have instances that are in a Single-zone Region (SZR) (e.g. `che01`) then your logs are forwarded to an {{site.data.keyword.monitoringfull_notm}} instance in another region. You need to provision monitoring instances in the region where your metrics are forwarded to. Metrics for instances in `che01` go to `jp-tok`.
+{: note}
 
-## Monitoring Availability
-{: #monitoring-avail}
+Use {{site.data.keyword.mon_full_notm}} dashboards to monitor your environments and applications. {{site.data.keyword.mon_full_notm}} dashboards are designed around time. Select your dashboard based on specific data gathered over a set time range.
 
-{{site.data.keyword.monitoringfull_notm}} is available for instances in every region. Instances in Multi-zone Regions (MZRs) - `eu-gb`, `eu-de`, `us-east`, `us-south`, `jp-tok`, `au-syd` - have their metrics in the corresponding region.
 
-If you have instances that are in Single-zone Region (SZR) `che01` then your logs are forwarded to an {{site.data.keyword.monitoringfull_notm}} instance in another region. You need to provision monitoring instances in the region where your metrics are forwarded to. Metrics for instances in `che01` go to `jp-tok`.
+## Common metrics
+{: #sysdig-monitor-dashboards-common-metrics}
 
-## Metrics available by Service Plan
+Here is a detailed description about two of the common metrics across all {{site.data.keyword.databases-for}} offerings.
+
+### CPU cores used per member
+{: #sysdig-monitor-dashboards-cpu-cores-used-per-member}
+
+The usage that is presented in this dashboard is the number of CPU cores used per member, which is measured in core seconds. This metric is available for all hosting models; you can monitor this metric for both, databases that are hosted either as a single-tenant on underlying hardware and databases running on multi-tenant hosts.
+We recommend that you use this metric to track historical CPU allocation over time, which can help you to decide how many CPU cores to allocate for your database to match desired performance. 
+
+### CPU used per member (data only available with dedicated cores)
+{: #sysdig-monitor-dashboards-cpu-used-per-member}
+
+The usage that is presented in this dashboard is a percentage of total CPU being used, based on the number of cores in your {{site.data.keyword.databases-for}} instance. For example, if you have 8 cores and your usage is 12.5%, then that percentage reflects that your database member is using 1 core's worth of CPU seconds. However, this does not guarantee that your member's workload is pinned to 1 core – the workload might be distributed unevenly among your 8 cores. In the same example, 25% usage reflects that your database member is using 2 core's worth of CPU seconds out of your available 8 cores.
+
+
+## Metrics available by service plan
 {: #metrics-by-plan}
+
+In addition to the above metrics, each database service has its own set of metrics that can be monitored.
 
 ## MongoDB Metrics
 {: #metrics-by-plan-mongodb}
@@ -70,7 +87,7 @@ If you have instances that are in Single-zone Region (SZR) `che01` then your log
 #### MongoDB Average time spent acquiring locks in microseconds total W-average
 {: #ibm_databases_for_mongodb_locks_time_acquiring_microseconds_W_average}
 
-Average time spent acquiring locks in microseconds
+Average time spent acquiring exclusive (W) locks in microseconds
 
 | Metadata | Description |
 |----------|-------------|
@@ -78,7 +95,7 @@ Average time spent acquiring locks in microseconds
 | `Metric Type` | `gauge` |
 | `Value Type`  | `second` |
 | `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 2: Average time spent acquiring locks in microseconds metric metadata" caption-side="top"}
+{: caption="Table 2: Average time spent acquiring exclusive (W) locks in microseconds metric metadata" caption-side="top"}
 
 #### MongoDB Average time spent acquiring locks in microseconds total_average
 {: #ibm_databases_for_mongodb_locks_time_acquiring_microseconds_total_average}
@@ -2993,10 +3010,10 @@ How much memory is used as a percentage of total memory available
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 13: Used memory for an instance metric metadata" caption-side="top"}
 
-## Attributes for Segmentation
+## Attributes for segmentation
 {: #attributes}
 
-### Global Attributes
+### Global attributes
 {: #global-attributes}
 
 The following attributes are available for segmenting all of the metrics listed above
@@ -3009,7 +3026,7 @@ The following attributes are available for segmenting all of the metrics listed 
 | `Resource Type` | `ibm_resource_type` | The type of the resource being measured by the service |
 | `Scope` | `ibm_scope` | The scope is the account, organization or space GUID associated with this metric |
 | `Service name` | `ibm_service_name` | Name of the service generating this metric |
-{: caption="Table 1: WAL logs used bytes metric metadata" caption-side="top"}
+{: caption="Table 1: Global segmentation attributes" caption-side="top"}
 
 ### Additional Attributes
 {: #additional-attributes}
@@ -3019,4 +3036,4 @@ The following attributes are available for segmenting one or more attributes as 
 | Attribute | Attribute Name | Attribute Description |
 |-----------|----------------|-----------------------|
 | `Service instance` | `ibm_service_instance` | The service instance segment identifies the instance the metric is associated with |
-{: caption="Table 1: WAL logs used bytes metric metadata" caption-side="top"}
+{: caption="Table 2: Additional Segmentation Attributes" caption-side="top"}
