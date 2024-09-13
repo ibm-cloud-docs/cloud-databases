@@ -11,7 +11,7 @@ keywords: database logs, platform logs, platform logging, hipaa
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Log Analysis Integration
+# Log Analysis integration
 {: #logging}
 
 {{site.data.keyword.databases-for}} are integrated with [{{site.data.keyword.loganalysisfull}}](/docs/log-analysis), so you can view database platform logs.
@@ -56,7 +56,7 @@ Use caution when configuring the platform service logs, since this setting can i
 ## Using {{site.data.keyword.loganalysisfull}}
 {: #using}
 
-You can access {{site.data.keyword.loganalysisshort}} through the _Observability_ tab of your deployment's _Manage_ page. The **Manage Log Analysis** button links to the main list of all {{site.data.keyword.loganalysisshort}} instances in your IBM Cloud account. Select the instance where you set your database platform logs to be forwarded. Click **View Log Analysis** to view the logs.
+You can access {{site.data.keyword.loganalysisshort}} through the _Observability_ tab of your deployment's _Overview_ page. The **IBM Log Analysis** button links to the main list of all {{site.data.keyword.loganalysisshort}} instances in your IBM Cloud account. Select the instance where you set your database platform logs to be forwarded. Click **Open dashboard** to view the logs.
 
 Each log line can be expanded to a detailed view by clicking the arrow to the left of the timestamp. The expanded view has some handy, color-coded fields to help you parse your logs. 
 

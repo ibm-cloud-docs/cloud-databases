@@ -2,7 +2,7 @@
 
 copyright:
   years:  2022, 2024
-lastupdated: "2024-02-22"
+lastupdated: "2024-09-13"
 
 keywords: restricting access to cloud databases, restricting access to ICD, DataStax cbr, Elasticsearch cbr, EnterpriseDB cbr, etcd cbr, mongodb cbr, postgresql cbr, redis cbr, mysql cbr, rabbitmq cbr
 
@@ -14,7 +14,7 @@ subcollection: cloud-databases
 
 This document outlines the process for using context-based restrictions to protect your {{site.data.keyword.databases-for}} resources. Use this document to prepare your resources for context-based restrictions. {{site.data.keyword.databases-for}} doesn't offer scoping rules to the control plane in this current phase of implementation.{: .important}
 
-# Protecting {{site.data.keyword.databases-for}} resources with context-based restrictions
+# Context-based restrictions
 {: #cbr}
 
 Context-based restrictions give account owners and administrators the ability to define and enforce access restrictions for {{site.data.keyword.cloud}} resources based on the context of access requests. Access to {{site.data.keyword.databases-for}} resources can be controlled with context-based restrictions and Identity and Access Management (IAM) policies.
@@ -54,7 +54,7 @@ Instance
 A network zone represents an allowlist of IP addresses where an access request is created. It defines a set of one or more network locations that are specified by the following attributes:
 
 * IP addresses, which include individual addresses, ranges, or subnets.
-* VPCs
+* VPCs.
 
 ### Creating network zones in the UI
 {: #network-zone-ui}
@@ -76,7 +76,7 @@ A network zone represents an allowlist of IP addresses where an access request i
 Service references function only from {{site.data.keyword.keymanagementserviceshort}} service to {{site.data.keyword.databases-for}}.
 {: important}
 
-### Creating network zones in the CLI
+### Create network zones in the CLI
 {: #network-zone-cli}
 {: cli}
 
@@ -89,13 +89,19 @@ ibmcloud cbr zone-create --addresses=1.1.1.1,5.5.5.5 --name=<NAME>
 ```
 {: .pre}
 
+### Update network zones in the CLI
+{: #update-network-zone-cli}
+{: cli}
+
 Update a zone by using a command like:
+
 ```sh
 ibmcloud cbr zone-update <ZONE-ID> --addresses=1.2.3.4 --name=<NAME>
 ```
 {: .pre}
 
 Updating requires the `ZONE-ID`, not the zone name. Use the following command to list your zones and retrieve the relevant `ZONE-ID`:
+
 ```sh
 ibmcloud cbr zones
 ```
@@ -103,7 +109,12 @@ ibmcloud cbr zones
 
 The `zone-update` command is an overwrite. Include all of the fields that are required as if you are creating the rule from scratch. If you omit any required fields, the rule overwrites those missing fields as empty, and the rule might fail because some of those fields are required, regardless of whether they are changing the rule. {: .important}
 
+### Delete network zones in the CLI
+{: #delete-network-zone-cli}
+{: cli}
+
 Delete a zone by using a command like:
+
 ```sh
 ibmcloud cbr zone-delete <ZONE-ID>
 ```
@@ -116,7 +127,7 @@ Rules restrict access to specific cloud resources based on resource attributes a
 
 {{site.data.keyword.databases-for}} does not support IPv6 addresses. If an IPv6 address is included, it will be ignored.
 
-Full Closure of Access to Non-Allowlisted Endpoints: To provide a more robust security framework, we have implemented a significant change in access control for public and private endpoints. Going forward, access to both public and private endpoints that are not explicitly allowlisted will be fully closed. This restriction ensures only authorized access to your endpoints, minimizing the risk of unauthorized access.
+Full closure of access to non-allowlisted endpoints: To provide a more robust security framework, we have implemented a significant change in access control for public and private endpoints. Going forward, access to both public and private endpoints that are not explicitly allowlisted will be fully closed. This restriction ensures only authorized access to your endpoints, minimizing the risk of unauthorized access.
 {: important}
 
 ### Creating rules in the UI
@@ -150,22 +161,22 @@ Full Closure of Access to Non-Allowlisted Endpoints: To provide a more robust se
    *Report-only* is not available for {{site.data.keyword.databases-for}}.
    {: important}
 
-### Creating rules in the CLI
+### Create rules in the CLI
 {: #rules-cli}
 {: cli}
 
 To create rules in the CLI, [install the context-based restrictions CLI plug-in](/docs/account?topic=account-cbr-plugin).
 
 To create a rule in the CLI, you need the appropriate {{site.data.keyword.databases-for}} `service_name`:
-* `databases-for-etcd`
-* `databases-for-elasticsearch`
-* `databases-for-mongodb`
+
 * `databases-for-postgresql`
+* `databases-for-mongodb`
 * `databases-for-redis`
-* `messages-for-rabbitmq`
-* `databases-for-cassandra`
-* `databases-for-enterprisedb`
+* `databases-for-elasticsearch`
 * `database-for-mysql`
+* `messages-for-rabbitmq`
+* `databases-for-enterprisedb`
+* `databases-for-etcd`
 
 Create a rule by using a command like:
 
@@ -180,8 +191,11 @@ ibmcloud cbr rule-create --enforcement-mode enabled --context-attributes "networ
 *Report-only* is not available for {{site.data.keyword.databases-for}}.
 {: .important}
 
-Update a rule by using a command like:
+### Update rules in the CLI
+{: #update-rules-cli}
+{: cli}
 
+Update a rule by using a command like:
 ```sh
 ibmcloud cbr rule-update <RULE-ID> --enforcement-mode disabled --context-attributes="networkZoneId=<ZONE-ID>" --resource-group-id   <RESOURCE_GROUP_ID> --service-name <SERVICE_NAME> --api-types crn:v1:bluemix:public:context-based-restrictions::::api-type:data-plane --description    <DESCRIPTION>
 ```
@@ -191,12 +205,18 @@ The `rule-update` command is an overwrite. Include all of the fields that are re
 {: .important}
 
 Updating requires the `RULE-ID`, not the rule name. Use the following command to list your rules and retrieve the relevant `RULE-ID`:
+
 ```sh
 ibmcloud cbr rules
 ```
 {: .pre}
 
+### Delete rules in the CLI
+{: #delete-rules-cli}
+{: cli}
+
 Delete a rule by using a command like:
+
 ```sh
 ibmcloud cbr rule-delete <RULE-ID>
 ```
@@ -212,19 +232,20 @@ Use `ibmcloud cbr <command> — help` for a full list of options and parameters.
 To create rules using Terraform, see [IBM Cloud Provider](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs){: external} in the [Terraform Registry](https://registry.terraform.io/){: external}.
 
 To create a rule, you need the appropriate {{site.data.keyword.databases-for}} `service_name`:
-* `databases-for-etcd`
-* `databases-for-elasticsearch`
-* `databases-for-mongodb`
+
 * `databases-for-postgresql`
+* `databases-for-mongodb`
 * `databases-for-redis`
-* `messages-for-rabbitmq`
-* `databases-for-cassandra`
-* `databases-for-enterprisedb`
+* `databases-for-elasticsearch`
 * `database-for-mysql`
+* `messages-for-rabbitmq`
+* `databases-for-enterprisedb`
+* `databases-for-etcd`
 
 The `ibm_cbr_rule` provides a resource for `cbr_rule` and allows a `cbr_rule` to be created, updated, and deleted.
 
 Create a rule by using a command like:
+
 ```sh
 resource "ibm_cbr_rule" "cbr_rule" {
   contexts {
@@ -262,7 +283,12 @@ resource "ibm_cbr_rule" "cbr_rule" {
 ```
 {: pre}
 
+### Import rules in Terraform
+{: #import-rules-tf}
+{: terraform}
+
 You can import the `ibm_cbr_rule` resource by using `id`, the globally unique ID of the rule.
+
 ```sh
 terraform import ibm_cbr_rule.cbr_rule
 ```
@@ -273,4 +299,5 @@ terraform import ibm_cbr_rule.cbr_rule
 
 To verify that your rule is applied, go to the {{site.data.keyword.cloud}} Dashboard and select the relevant instance from your *Resource List*. Within **Recent Tasks**, you see your rule's status.
 
-The task of creating or modifying a rule goes into your instance's task queue. Depending on workload, it might take some time for your rule enforcement to complete.{: .note}
+The task of creating or modifying a rule goes into your instance's task queue. Depending on workload, it might take some time for your rule enforcement to complete.
+{: .note}

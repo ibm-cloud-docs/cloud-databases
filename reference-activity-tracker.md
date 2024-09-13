@@ -11,7 +11,7 @@ keywords: events, auditing, activity tracker, auditing
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Activity Tracker Integration
+# Activity Tracker integration
 {: #activity-tracker}
 
 {{site.data.keyword.cloud_notm}} Databases instances are integrated with Activity Tracker events in [{{site.data.keyword.at_full}}](/docs/activity-tracker?topic=activity-tracker-getting-started), so you can view service-level events.
@@ -47,7 +47,7 @@ The {{site.data.keyword.at_short}} service has a lite plan that is free to use, 
 ### Using the Activity Tracker
 {: #using-activity-tracker}
 
-You can access {{site.data.keyword.at_short}} through the _Observability_ tab of your instance's _Manage_ page. The **Manage Activity Tracker** button links to the main list of all {{site.data.keyword.at_short}} instances in your {{site.data.keyword.cloud_notm}} account. Select the instance where you set your database logs to be forwarded. Click **View Activity Tracker** to view the events.
+You can access {{site.data.keyword.at_short}} through the _Observability_ tab of your instance's _Overview_ page. The **IBM Cloud Activity Tracker** button links to the main list of all {{site.data.keyword.at_short}} instances in your {{site.data.keyword.cloud_notm}} account. Select the instance where you set your database logs to be forwarded. Click **Open dashboard** to view the events.
 
 After event activity is being forwarded to the service, each event can be expanded to a detailed view by clicking the arrow to the left of the timestamp.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-07-26"
+lastupdated: "2024-09-13"
 
 subcollection: cloud-databases
 
@@ -16,15 +16,15 @@ subcollection: cloud-databases
 {:note: .note} 
 {:tip: .tip}
 
-# Identity and Access Management Integration
+# Identity and Access Management integration
 {: #iam}
 
-Access to {{site.data.keyword.cloud}} Databases service instances for users in your account is controlled by {{site.data.keyword.cloud_notm}} [Identity and Access Management (IAM)](/docs/account?topic=account-access-getstarted). 
+Access to {{site.data.keyword.cloud}} Databases service instances for users in your account is controlled by {{site.data.keyword.cloud_notm}} [Identity and Access Management (IAM)](/docs/account?topic=account-cloudaccess). 
 
-This document covers the integration of IAM with Cloud Databases, which includes {{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-enterprisedb}}, {{site.data.keyword.databases-for-etcd}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-redis}}, {{site.data.keyword.databases-for-mysql_full}}, and {{site.data.keyword.messages-for-rabbitmq}}.
+This document covers the integration of IAM with Cloud Databases: {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-redis}}, {{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-mysql_full}}, {{site.data.keyword.messages-for-rabbitmq}}, {{site.data.keyword.databases-for-enterprisedb}} and {{site.data.keyword.databases-for-etcd}}. 
 {: .note}
 
-IAM is only integrated with high-level service access, which governs privileges and operations available in the Cloud Databases API and the Cloud Databases CLI plug-in. It does not govern database-level users and privileges. Database access is governed by the standard access controls provided by the database. IAM does not control database users.
+IAM is only integrated with high-level service access, which governs privileges and operations available in the [Cloud Databases API](/apidocs/cloud-databases-api/cloud-databases-api-v5) and the [Cloud Databases CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference). It does not govern database-level users and privileges. Database access is governed by the standard access controls provided by the database. IAM does not control database users.
 
 For more information about assigning user roles in {{site.data.keyword.cloud_notm}}, see [Managing IAM access](/docs/account?topic=account-assign-access-resources).
 
@@ -32,10 +32,10 @@ The following table provides a general overview of actions that are mapped to se
 
 | Service management role | Description of actions | Example actions |
 | ----------------- | ----------------- | ----------------- |
-| Viewer | As a viewer, you can view database instances but you can't make configuration changes. | View Service Overview and View Alerts |
-| Editor | As an editor, you can perform all platform actions (including making configuration changes and managing credentials) except for managing the account and assigning | access policies. | Scale a Deployment and Change a Deployment's Password |
-| Operator | As an operator, you can view database instances and make configuration changes that include managing database credentials. | Scale a Deployment and Change a | Deployment's Password |
-| Administrator | As an administrator, you can perform all platform actions, including assigning access policies to other users. | Scale a Deployment, Change a Deployment's | Password, and Assign Access Policies |
+| Viewer | As a viewer, you can view database instances but you can't make configuration changes. | View service overview and view alerts. |
+| Operator | As an operator, you can view database instances and make configuration changes that include managing database credentials. | Scale a deployment and change a deployment's password. |
+| Editor | As an editor, you can perform all platform actions (including making configuration changes and managing credentials) except for managing the account and assigning access policies. | Scale a deployment and change a deployment's password. |
+| Administrator | As an administrator, you can perform all platform actions, including assigning access policies to other users. | Scale a deployment, change a deployment's password, and assign access policies. |
 {: caption="Table 1. IAM user roles and actions" caption-side="top"}
 
 ## Actions for {{site.data.keyword.databases-for}} API
@@ -47,6 +47,7 @@ Access to certain API endpoints and requests is governed by role. The following 
 {: #viewer}
 
 The allowed actions for the Viewer role.
+
 ```sh
 GET /v5/ibm/deployables
 Read Deployables
@@ -98,6 +99,7 @@ Read Allowlisted IP Addresses
 {: #operator}
 
 The Operator and Editor roles are functionally the same for {{site.data.keyword.databases-for}}. This list contains allowed actions for the Operator and the Editor roles.
+
 ```sh
 GET /v5/ibm/deployables
 Read Deployables
@@ -182,6 +184,7 @@ Create elasticsearch file sync
 {: #admin}
 
 The allowed actions for the Administrator role.
+
 ```sh
 GET /v5/ibm/deployables
 Read Deployables
