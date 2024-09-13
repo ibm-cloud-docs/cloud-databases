@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-07-09"
+lastupdated: "2024-09-13"
 
 subcollection: cloud-databases
 
@@ -15,7 +15,7 @@ keywords: version for cloud-databases, database version, end of life, major vers
 # Versioning policy
 {: #versioning-policy}
 
-When you provision a {{site.data.keyword.databases-for}} instance, you can choose from the versions currently available on {{site.data.keyword.cloud_notm}}. Find the latest versions from the [catalog pages](https://cloud.ibm.com/catalog?category=databases){: external}, the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployables-show){: external}, or the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api#get-all-deployable-databases){: external}.
+When you provision a {{site.data.keyword.databases-for}} instance, you can choose from the versions currently available on {{site.data.keyword.cloud_notm}}. Find the latest versions from the [catalog pages](https://cloud.ibm.com/catalog?category=databases){: external}, the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployables-show){: external}, or the [{{site.data.keyword.databases-for}} API](/apidocs/cloud-databases-api/cloud-databases-api-v5#listdeployables){: external}.
 
 ## Major versions defined
 {: #version-definitions}
@@ -35,9 +35,9 @@ When you provision a {{site.data.keyword.databases-for}} instance, you can choos
 ## Subscribe for version updates
 {: #version-updates-subscribe}
 
-{{site.data.keyword.databases-for}} major version updates are posted in each service's Release Notes. To stay up to date with major version announcements, go to the [{{site.data.keyword.cloud_notm}} status page](https://cloud.ibm.com/status){: external} and sign up for notifications. Service release notes are included in these status notifications.
+{{site.data.keyword.databases-for}} major version updates are posted in each service's Release Notes. To stay up to date with major version announcements, go to the [{{site.data.keyword.cloud_notm}} Status page](https://cloud.ibm.com/status){: external} and sign up for notifications. Service release notes are included in these status notifications.
 
-## Deprecation of Major Versions
+## Deprecation of major versions
 {: #version-deprecation}
 
 {{site.data.keyword.databases-for}} tries to support a major version for 3 years from its release. If a version is deprecated or marked end of life by the open source project owners, {{site.data.keyword.databases-for}} takes steps to deprecate that version.
@@ -51,10 +51,10 @@ At the end of the transition window, deprecated major versions cannot be deploye
 Failure to act can result in compatibility issues with your apps when IBM upgrades in-place. On rare occasions, failure can result, impacting your availability. If a failure occurs, the instance is disabled, and you need to restore from backup. We recommend self-migrating before the end of support date.
 {: .important}
 
-## Version Tags
+## Version tags
 {: #version-tags}
 
-| Version Tag | Description|
+| Version tag | Description|
 |-------------|-------------|
 | **Preferred** | The recommended and default version for all new instances. It's the most stable, up-to-date version from both an instance-level and service-level perspective.|
 | **Preview** | A preview version is released for a limited time to try available functions. Often it is the newest available version available from the project maintainers in preparation for making it the "Preferred" version. While deployable, preview versions are not suitable for production, as they are excluded from service-level agreements and support. Also, a preview version isn't guaranteed to become a production-level release. IBM reserves the right to ask a customer to delete an instance that uses a preview version. |
@@ -71,27 +71,26 @@ Failure to act can result in compatibility issues with your apps when IBM upgrad
 ### Minor version upgrades and Terraform
 {: #minor-versions-tf}
 
-In the event of a minor version update, Terraform
+In the event of a minor version update, Terraform destroys the resource and re-creates it (to match the expected configuration).
 
-Terraform destroys the resource and re-create it (to match the expected configuration). To prevent Terraform from deleting your instance,
-
-## Major versioning End of Life
+## Major versioning end of life
 {: #-major-version-eol}
 
-You receive multiple notifications when a major version reaches its End of life. You can typically expect:
-* A blog post, for example: [Messages for RabbitMQ 3.8 End of Life in July 2022](https://www.ibm.com/cloud/blog/announcements/messages-for-rabbitmq-38-end-of-life-in-july-2022){: external}
-* An announcement in your service's Release Notes, for example: [IBM Cloud® Messages for RabbitMQ 3.8 End of Life in July 2022](https://cloud.ibm.com/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-rabbitmq-relnotes#messages-for-rabbitmq-25jan2022){: external}
-* A notification by email through the {{site.data.keyword.IBM_notm}} API. This email contains a *Notifications* link that takes you to a Notifications Management page. **Make sure that these announcements are not being caught by your email service's spam filter.** For more information, see [Setting up Distribution Lists for IBM Cloud Notifications](https://www.ibm.com/cloud/blog/announcements/setting-up-distribution-lists-for-ibm-cloud-notifications){: external}.
+You receive multiple notifications when a major version reaches its end of life. You can typically expect:
 
-For more information, see [Programmatic Methods for Checking Version Status](#-major-version-eol-check-version-status).
+* A blog post, for example: [IBM Cloud Databases version end of life announcement](https://www.ibm.com/blog/announcement/ibm-cloud-databases-version-end-of-life-announcement/){: external}.
+* An announcement in your service's Release Notes, for example: [IBM Cloud® Databases for PostgreSQL version 12 end of life on January 22, 2025](https://cloud.ibm.com/docs/databases-for-postgresql?topic=databases-for-postgresql-postgresql-relnotes#databases-for-postgresql-18jan2023){: external}.
+* A notification by email through the {{site.data.keyword.IBM_notm}} API. This email contains a *Notifications* link that takes you to a Notifications Management page. **Make sure that these announcements are not being caught by your email service's spam filter.** For more information, see [Setting up distribution lists for IBM Cloud notifications](https://www.ibm.com/blog/announcement/setting-up-distribution-lists-for-ibm-cloud-notifications/){: external}.
+
+For more information, see [Programmatic methods for checking version status](#-major-version-eol-check-version-status).
 
 Any actions taken after an EOL date happen over several days after the EOL date. We try, but cannot guarantee, to make these upgrades outside of business hours in the local regions. If you want more control over the upgrade process of your instance, we recommend that you upgrade following our [backup and restore process](/docs/cloud-databases?topic=cloud-databases-dashboard-backups) before the EOL date of your version.
 {: .note}
 
-### Programmatic Methods for Checking Version Status
+### Programmatic methods for checking version status
 {: #-major-version-eol-check-version-status}
 
-The following [{{site.data.keyword.databases-for}} `deployables` command](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployables-show) shows deployable service types, specifically the available versions and their `preferred` or `stable` status.
+**On the CLI** the following [{{site.data.keyword.databases-for}} `deployables-show` command](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployables-show) shows deployable service types, specifically the available versions and their `preferred` or `stable` status.
 
 ```sh
 ibmcloud cdb deployables-show [--stable] [--preferred] [--json]
@@ -107,7 +106,8 @@ Version   Status       Preferred
 4.2       deprecated   false
 ```
 
-The {{site.data.keyword.databases-for}} API `deployables` endpoint returns all deployable services. Use the `version` parameter to return the version number.
+**On the {{site.data.keyword.databases-for}} API** the [`deployables` endpoint](/apidocs/cloud-databases-api/cloud-databases-api-v5#get-all-deployable-databases) returns all deployable services. Use the `version` parameter to return the version number.
+
 ```sh
 GET /v5/ibm/deployables
 ```

@@ -44,9 +44,9 @@ subcollection: cloud-databases
 {: #satellite-get-started}
 
 With {{site.data.keyword.databases-for}} enabled by {{site.data.keyword.cloud_notm}} Satellite, you can deploy {{site.data.keyword.databases-for}} instances into a Satellite location. {{site.data.keyword.databases-for}} enabled by {{site.data.keyword.cloud_notm}} Satellite currently supports the following {{site.data.keyword.databases-for}} managed database services:
-- [{{site.data.keyword.databases-for-etcd}}](/docs/databases-for-etcd)
 - [{{site.data.keyword.databases-for-postgresql}}](/docs/databases-for-postgresql)
 - [{{site.data.keyword.databases-for-redis}}](/docs/databases-for-redis)
+- [{{site.data.keyword.databases-for-etcd}}](/docs/databases-for-etcd)
 - [{{site.data.keyword.messages-for-rabbitmq}}](/docs/messages-for-rabbitmq)
 
  After your Satellite location instance is deployed, {{site.data.keyword.databases-for}} will install a {{site.data.keyword.databases-for}} Satellite service cluster in your Satellite location into which your database instances will be deployed. 
@@ -72,8 +72,8 @@ The service cluster name is based on the first database instance, even if multip
 {: .important}
 
 - Refer to the [Satellite Usage requirements](/docs/satellite?topic=satellite-requirements).
-- Be sure you install and set up the [{{site.data.keyword.cloud_notm}} CLI](/docs/satellite?topic=satellite-cli-install), the plug-in for Satellite commands, and other related CLIs.
-- If you did not create a Satellite location, see [Setting up Satellite locations](/docs/satellite?topic=satellite-locations). Follow the steps in the [Manually creating Satellite locations](/docs/satellite?topic=satellite-locations#location-create) documentation.
+- Be sure you install and set up the [{{site.data.keyword.cloud_notm}} CLI](/docs/satellite?topic=satellite-cli-install), [the plug-in for Satellite commands](/docs/satellite?topic=satellite-icsat_map), and other related CLIs.
+- If you did not create a Satellite location, see [Setting up Satellite locations](/docs/satellite?topic=satellite-locations). Follow the steps in the [Manually creating Satellite locations](/docs/satellite?topic=satellite-loc-manual-create) documentation.
     - For the management location, choose **Washington DC**. If you are creating your Satellite location on AWS, adjust the **host zones** to AWS-default zone names, for example: **us-east-1a**, **us-east-1b**, **us-east-1c**.
 
 As {{site.data.keyword.databases-for}} enabled by {{site.data.keyword.cloud_notm}} Satellite solely supports resource deployment in the `us-east` region, you must choose the **Washington DC** location when provisioning. 

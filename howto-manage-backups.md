@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-07-26"
+lastupdated: "2024-09-13"
 
 subcollection: cloud-databases
 
@@ -17,7 +17,7 @@ keywords: backups, new deployment, source deployment, backup, back up, ondemand 
 
 An automatically scheduled backup is taken of your database every day. You can also do on-demand backups. Backups are encrypted either with an automatic key or your own key if you use Bring Your Own Key (BYOK). You can restore a backup to a new instance of {{site.data.keyword.databases-for}}.
 
-To access backups for {{site.data.keyword.databases-for}}, go to your database instance's Dashboard, and see the *Backups* tab. 
+To access backups for {{site.data.keyword.databases-for}}, go to your database instance's Dashboard, and see the *Backups and restore* tab. 
 
 Restore is currently available through the CLI, API, and Terraform.
 {: note}
@@ -39,9 +39,12 @@ For information on taking an on-demand backup, see [Taking an on-demand backup](
 {: #backup-ui}
 {: ui}
 
-The backup types have their respective tabs, either _On-demand_ or _Automatic_. Each backup is listed with its type and when the backup was taken. Click the timestamp to change its format between elapsed time, local time, and Coordinated Universal Time.
+The backup types can be either _On-demand_ or _Automatic_. Each backup is listed with its type and when the backup was taken.
 
 Click the backup to reveal information for that specific backup, including its full ID. A **Restore** button, or pre-formatted CLI command, is there for restore options.
+
+For new hosting models, restoring a backup is currently available through the [CLI](/docs/cloud-databases?topic=cloud-databases-dashboard-backups&interface=cli#restore-backup-cli), [API](/docs/cloud-databases?topic=cloud-databases-dashboard-backups&interface=api#restore-backup-api) and [Terraform](/docs/cloud-databases?topic=cloud-databases-dashboard-backups&interface=terraform#restore-backup-tf).
+{: .tip}
 
 ## Backups in the CLI
 {: #backup-ui-cli}
@@ -69,10 +72,21 @@ ibmcloud cdb backup-show crn:v1:staging:public:cloud-databases:us-south:a/628401
 {: #backup-ui-api}
 {: api}
 
-For backups information in the {{site.data.keyword.databases-for}} API, use the [`/deployments/{id}/backups`](https://cloud.ibm.com/apidocs/cloud-databases-api#get-currently-available-backups-from-a-deployment) endpoint to list the instance's backups. To get information about a specific backup, use the [`/backups/{backup_id}`](https://{DomainName}/apidocs/cloud-databases-api#get-information-about-a-backup) endpoint.
+For backups information in the {{site.data.keyword.databases-for}} API, use the [`/deployments/{id}/backups`](/apidocs/cloud-databases-api/cloud-databases-api-v5#listdeploymentbackups) endpoint to list the instance's backups. To get information about a specific backup, use the [`/backups/{backup_id}`](/apidocs/cloud-databases-api/cloud-databases-api-v5#getbackupinfo) endpoint.
 
-## Taking an on-demand backup
-{: #ondemand-backup}
+### Taking an on-demand backup in the UI
+{: #ondemand-backup-ui}
+{: ui}
+
+If you plan to make major changes to your instance, like scaling or removing databases, tables, collections, on-demand backups are useful. It can also be useful if you need to back up on a schedule. On-demand backups are kept for 30 days.
+
+Instances come with backup storage equal to their total disk space at no cost. If your backup storage usage is greater than total disk space, each gigabyte is charged at an overage of $0.03/month. Backups are compressed, so even if you use on-demand backups, most instances do not exceed the allotted credit.
+{: .tip}
+
+To create a manual backup in the UI, go to the _Backups and restore_ tab of your instance then click **Create backup**. A message is displayed that a backup is in progress, and an on-demand backup is added to the list of available backups.
+
+### Taking an on-demand backup in the CLI
+{: #ondemand-backup-cli}
 {: cli}
 
 If you plan to make major changes to your instance, like scaling or removing databases, tables, collections, on-demand backups are useful. It can also be useful if you need to back up on a schedule. On-demand backups are kept for 30 days.
@@ -80,15 +94,23 @@ If you plan to make major changes to your instance, like scaling or removing dat
 Instances come with backup storage equal to their total disk space at no cost. If your backup storage usage is greater than total disk space, each gigabyte is charged at an overage of $0.03/month. Backups are compressed, so even if you use on-demand backups, most instances do not exceed the allotted credit.
 {: .tip}
 
-To create a manual backup in the UI, go to the _Backups_ tab of your instance then click **Back up now**. A message is displayed that a backup is in progress, and an on-demand backup is added to the list of available backups.
-
 In the CLI, an on-demand backup is triggered with the [`cdb deployment-backup-now`](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-backup-now) command.
+
 ```sh
 ibmcloud cdb deployment-backup-now example-deployment
 ```
 {: .pre}
 
-In the API, sending a POST to the [`/deployments/{id}/backups`](https://cloud.ibm.com/apidocs/cloud-databases-api#initiate-an-on-demand-backup) endpoint triggers an on-demand backup.
+### Taking an on-demand backup in the API
+{: #ondemand-backup-api}
+{: api}
+
+If you plan to make major changes to your instance, like scaling or removing databases, tables, collections, on-demand backups are useful. It can also be useful if you need to back up on a schedule. On-demand backups are kept for 30 days.
+
+Instances come with backup storage equal to their total disk space at no cost. If your backup storage usage is greater than total disk space, each gigabyte is charged at an overage of $0.03/month. Backups are compressed, so even if you use on-demand backups, most instances do not exceed the allotted credit.
+{: .tip}
+
+In the API, sending a POST to the [`/deployments/{id}/backups`](/apidocs/cloud-databases-api/cloud-databases-api-v5#startondemandbackup) endpoint triggers an on-demand backup.
 
 ## Restoring a backup
 {: #restore-backup}
@@ -108,11 +130,11 @@ To restore a backup to a new service instance,
 
 1. Click in the corresponding row to expand the options for the backup that you want to restore.
 2. Click **Restore**.
-3. Use the dialog box to select from some available options.
+3. On the **Provisioning** page, select from some available options.
     - The new instance is automatically named `<name>-restore-[timestamp]`, but you can rename it.
     - You can also select the region where the new instance is located. Cross-region restores are supported, except for restoring into or out of the `eu-de` region.
     - You can choose the initial resource allocation, either to expand or shrink the resources on the new instance. You can also enable or disable dedicated cores.
-4. Click **Restore**. A "restore from backup started" message appears. Clicking **Your new instance is available now.** takes you to your _Resources List_.
+4. Click **Restore backup**. A "restore from backup started" message appears. Clicking **Your new instance is available now** takes you to your _Resources List_.
 
 ### Restoring a backup in the CLI
 {: #restore-backup-cli}
@@ -125,16 +147,20 @@ ibmcloud resource service-instance-create <SERVICE_INSTANCE_NAME> <service-id> s
 ```
 {: .pre}
 
-Change the value of `SERVICE_INSTANCE_NAME` to the name that you want for your new instance. The `service-id` is the type of instance, such as `databases-for-postgresql` or `messages-for-rabbitmq`. The `region` is where you want the new instance to be located, which can be a different region from the source instance. Cross-region restores are supported, except for restoring to or from `eu-de` by using another region. `BACKUP_ID` is the backup that you want to restore.
+* Change the value of `SERVICE_INSTANCE_NAME` to the name that you want for your new instance.
+* The `service-id` is the type of instance, such as _databases-for-postgresql_ or _messages-for-rabbitmq_. 
+* The `region` is where you want the new instance to be located, which can be a different region from the source instance. Cross-region restores are supported, except for restoring to or from `eu-de` by using another region.
+* `BACKUP_ID` is the backup that you want to restore.
 
 Optional parameters are available through the CLI. Use them if you need to customize resources, or use a Key Protect key for BYOK encryption on the new instance.
+
 ```sh
 ibmcloud resource service-instance-create <SERVICE_INSTANCE_NAME> <service-id> standard <region> -p
 '{"backup_id":"BACKUP_ID","key_protect_key":"KEY_PROTECT_KEY_CRN", "members_disk_allocation_mb":"DESIRED_DISK_IN_MB", "members_memory_allocation_mb":"DESIRED_MEMORY_IN_MB", "members_cpu_allocation_count":"NUMBER_OF_CORES"}'
 ```
 {: .pre}
 
-A pre-formatted command for a specific backup is available in detailed view of the backup on the _Backups_ tab of your instance's dashboard.
+A pre-formatted command for a specific backup is available in detailed view of the backup on the _Backups and restore_ tab of your instance's dashboard.
 {: .tip}
 
 By default, restoring from a backup provisions an instance with the preferred version of the database type, not the version of the instance you restore from. You can specify a version by adding the version in the parameters object, as in the following example. 
@@ -149,7 +175,7 @@ To see a list of versions available, run `ibmcloud cdb deployables`.
 {: #restore-backup-api}
 {: api}
 
-The [Resource Controller API](https://cloud.ibm.com/apidocs/resource-controller/resource-controller#create-resource-instance){: external} supports provisioning and restoring database instances. The create request is a `POST` to the [`/resource_instances`](https://{DomainName}/apidocs/resource-controller#create-provision-a-new-resource-instance) endpoint.
+The [Resource Controller API](/apidocs/resource-controller/resource-controller){: external} supports provisioning and restoring database instances. The create request is a `POST` to the [`/resource_instances`](/apidocs/resource-controller/resource-controller#create-resource-instance) endpoint.
 
 ```sh
 curl -X POST \
@@ -191,7 +217,7 @@ To see a list of versions available, run `ibmcloud cdb deployables`.
 Use Terraform to restore to a backup from an older version to a new version.
 
 1. Set your `backup_id`. For more information, see [`backup_id`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database#backup_id){: external}.
-1. Set your `version` in the version attribute. For more information, see [`version`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database#backup_id){: external}.
+1. Set your `version` in the version attribute. For more information, see [`version`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database#version){: external}.
 
 The code looks like:
 
@@ -207,53 +233,53 @@ resource "ibm_database" "<your-instance>" {
 ```
 {: codeblock}
 
-For more information, see the [{{site.data.keyword.databases-for}} Terraform Registry](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database#backup_id){: external}.
+For more information, see the [{{site.data.keyword.databases-for}} Terraform Registry](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/data-sources/database_backups){: external}.
 
 ## Backups and Restoration
 {: #backup-restoration}
 
 * {{site.data.keyword.databases-for}} are not responsible for restoration, timeliness, or validity of said backups.
-* Actions that you take as a user can compromise the integrity of backups, such as under-allocating memory and disk. Users can monitor that backups are successful by using the API, and periodically restore a backup to ensure validity and integrity. Users can retrieve the most recent-scheduled backup details from the [{{site.data.keyword.databases-for}} CLI plug-in](#backups-in-the-cli) and the [{{site.data.keyword.databases-for}} API](#restoring-a-backup-through-the-api).
+* Actions that you take as a user can compromise the integrity of backups, such as under-allocating memory and disk. Users can monitor that backups are successful by using the API, and periodically restore a backup to ensure validity and integrity. Users can retrieve the most recent-scheduled backup details from the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#backup-show) and the [{{site.data.keyword.databases-for}} API](/apidocs/cloud-databases-api/cloud-databases-api-v5#getbackupinfo).
 * As a managed service, {{site.data.keyword.databases-for}} monitors the state of your backups and can attempt to remediate when possible. If you encounter issues from which you cannot recover, contact support for more help.
 
-## Backup Locations
+## Backup locations
 {: #backup-locations}
 
 Backup location differs per database region. Ensure that the backup region location matches your data location requirements.
 
-| Instance Region | Backup Region |
+| Instance region | Backup region |
 |----------|---------|
-| Dallas | US Cross Regional Object Storage |
-| Washington D.C. | US Cross Regional Object Storage |
-| London |	EU Cross Regional Object Storage |
-| Frankfurt |	EU Cross Regional Object Storage |
-| Tokyo	| AP Cross Regional Object Storage |
-| Osaka	| AP Cross Regional Object Storage |
-| Sydney	| AP Cross Regional Object Storage |
+| Dallas | US cross regional Object Storage |
+| Washington D.C. | US cross regional Object Storage |
+| London |	EU cross regional Object Storage |
+| Frankfurt |	EU cross regional Object Storage |
+| Tokyo	| AP cross regional Object Storage |
+| Osaka	| AP cross regional Object Storage |
+| Sydney	| AP cross regional Object Storage |
 | Toronto |	Montreal Object Storage |
 | Chennai |	Chennai Object Storage |
 | Sao Paolo | Sao Paolo Object Storage |
-| Madrid | EU Cross Regional Object Storage |
-{: caption="Table 1. Instance and Backup Regions" caption-side="bottom"}
+| Madrid | EU cross regional Object Storage |
+{: caption="Table 1. Instance and backup regions" caption-side="bottom"}
 
 For more details about {{site.data.keyword.databases-for}} Object Storage locations, review the location's [documentation](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-geo).
 
-## Business Continuity and disaster
+## Business continuity and disaster recovery
 {: #backup-locations}
 
-{{site.data.keyword.databases-for}} provides mechanisms to protect your data and restore service functions. For more information (including [Backup Storage Regions](/docs/cloud-databases?topic=cloud-databases-bc-dr#bc-dr-single-region-backups){: external}, see [Understanding business continuity and disaster recovery for {{site.data.keyword.databases-for}}](/docs/cloud-databases?topic=cloud-databases-bc-dr){: external}.
+{{site.data.keyword.databases-for}} provides mechanisms to protect your data and restore service functions. For more information (including [Backup Storage Regions](/docs/cloud-databases?topic=cloud-databases-bc-dr#bc-dr-single-region-backups){: external}), see [Understanding business continuity and disaster recovery for {{site.data.keyword.databases-for}}](/docs/cloud-databases?topic=cloud-databases-bc-dr){: external}.
 
 ## Point-in-Time Recovery
 {: #pitr-recovery-options}
 
 With Point-in-Time Recovery (PITR), the instance continuously backs up incrementally and can replay transactions to bring a new instance that is restored from a backup to any point in the last 7 days. {{site.data.keyword.databases-for}} offers Point-In-Time Recovery (PITR) for the following services:
 
-- [{{site.data.keyword.databases-for-mysql_full}}](/docs/databases-for-mysql?topic=databases-for-mysql-pitr)
 - [{{site.data.keyword.databases-for-postgresql_full}}](/docs/databases-for-postgresql?topic=databases-for-postgresql-pitr)
-- [{{site.data.keyword.databases-for-enterprisedb_full}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-pitr&interface=ui)
 - [{{site.data.keyword.databases-for-mongodb_full}}](https://cloud.ibm.com/docs/databases-for-mongodb?topic=databases-for-mongodb-pitr&interface=ui)
+- [{{site.data.keyword.databases-for-mysql_full}}](/docs/databases-for-mysql?topic=databases-for-mysql-pitr)
+- [{{site.data.keyword.databases-for-enterprisedb_full}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-pitr&interface=ui)
 
 ## Backups FAQ
 {: #backup-faq-reference}
 
-For frequently asked questions about backups, check out [Backups FAQ](/docs/cloud-databases?topic=cloud-databases-faq-backups){: external}.
+For frequently asked questions about backups, see the [Backups FAQ](/docs/cloud-databases?topic=cloud-databases-faq-backups){: external}.

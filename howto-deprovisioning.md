@@ -19,14 +19,14 @@ keywords: deprovision cloud databases, databases with terraform, deprovisioning 
 
 {{site.data.keyword.cloud_notm}} keeps the deployment in the soft delete state for three days before it issues a delete. The soft delete state addresses use cases when you accidentally delete an instance. You can re-enable an existing soft-deleted instance on your own.
 
-Because a soft delete is essentially a disablement, no {{site.data.keyword.databases-for}} deployment can recover from a soft delete. Once an {{site.data.keyword.databases-for} deployment is deleted, that deployment must be restored from a backup.
+Because a soft delete is essentially a disablement, no {{site.data.keyword.databases-for}} deployment can recover from a soft delete. Once an {{site.data.keyword.databases-for}} deployment is deleted, that deployment must be restored from a backup.
 {: note}
 
 ## Deleting your deployment in the user interface 
 {: #delete-deployment-ui}
 {: ui}
 
-To delete your deployment instance from the Resource list section dashboard of the IBM Cloud dashboard, select your deployment. Then, in the overflow menu ( ![Stacked three dots icon](images/stacked-three-dots.png) ) click **Delete** from the drop-down list. 
+To delete your deployment instance from the Resource list section dashboard of the IBM Cloud dashboard, select your deployment. Then, in the overflow menu ( ![Stacked three dots icon](images/stacked-three-dots.png) ) click **Delete service** from the drop-down list. 
 
 ## Deleting your deployment by using the CLI
 {: #delete-deployment-cli}
@@ -41,7 +41,7 @@ ibmcloud resource service-instance-delete my-service-instance
 Using the command `ibmcloud resource reclamation-delete` deletes a reclaimed resource so that the resource can no longer be restored.
 {: .note}
 
-## Deleting your database by using DROP DATABASE statement
+### Deleting your database by using DROP DATABASE statement
 {: #delete-deployment-statement}
 {: cli}
 
@@ -52,7 +52,7 @@ DROP {DATABASE | SCHEMA} [IF EXISTS] db_name
 ```
 {: .pre}
 
-## Deleting your database by using `mysqladmin`
+### Deleting your database by using `mysqladmin`
 {: #delete-deployment-mysqladmin}
 {: cli}
 
