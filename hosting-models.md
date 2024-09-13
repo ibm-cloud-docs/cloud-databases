@@ -2,7 +2,8 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-08-12"
+
+lastupdated: "2024-09-13"
 
 subcollection: cloud-databases
 
@@ -223,25 +224,23 @@ To provision a {{site.data.keyword.databases-for}} service instance, add a new `
 
 For more detailed instructions, see your [database specific page](/docs/cloud-databases?topic=cloud-databases-getting-started-cdb-provision-instance&interface=ui).
 
-## Scaling
+## Scaling and switching between hosting models
 {: #hosting-models-scaling}
 
-For new hosting models, scaling is available through the CLI, API, and Terraform. For more detailed instructions, see your [database specific page](/docs/cloud-databases?topic=cloud-databases-scale-instance).
-
-## Switching hosting models
-{: #hosting-models-switching}
-
-To switch to or between Shared and Isolated Compute, select your **hosting type** from either Shared Compute or Isolated Compute. 
+For new hosting models, scaling and switching are similar operations. While scaling your database as you normally would, select a different **hosting type** from what your database instance is currently placed on to switch to and between Shared and Isolated Compute. 
 {: ui}
 
-To switch to or between Shared and Isolated Compute, add a new `host_flavor` parameter. Then, moving to the hosting type is as simple as running a scale command with the hosting type selected. For more detailed instructions, commands, and parameters, see your [database-specific page](/docs/cloud-databases?topic=cloud-databases-getting-started-cdb-provision-instance&interface=ui).
+For new hosting models, scaling and switching are similar operations. While scaling your database as you normally would, switch to and between hosting models by adding a new `host_flavor` parameter set to the hosting model you wish to scale to. Then, moving to the hosting type is as simple as running a scale command with this hosting flavor targeted. 
 {: cli}
 
-To switch to or between Shared and Isolated Compute, add a new `host_flavor` parameter. Then, moving to the hosting type is as simple as running a scale command with the hosting type selected. For more detailed instructions, commands, and parameters, see your [database-specific page](/docs/cloud-databases?topic=cloud-databases-getting-started-cdb-provision-instance&interface=ui).
+
+For new hosting models, scaling and switching are similar operations. While scaling your database as you normally would, switch to and between hosting models by adding a new `host_flavor` parameter set to the hosting model you wish to scale to. Then, moving to the hosting type is as simple as running a scale command with this hosting flavor targeted. 
 {: api}
 
-To switch to or between Shared and Isolated Compute, add a new `host_flavor` parameter. Then, moving to the hosting type is as simple as running a scale command with the hosting type selected. For more detailed instructions, commands, and parameters, see your [database-specific page](/docs/cloud-databases?topic=cloud-databases-getting-started-cdb-provision-instance&interface=ui).
+For new hosting models, scaling and switching are similar operations. While scaling your database as you normally would, switch to and between hosting models by adding a new `host_flavor` parameter set to the hosting model you wish to scale to. Then, moving to the hosting type is as simple as running a scale command with this hosting flavor targeted. 
 {: terraform}
+
+For more detailed instructions, commands, and parameters, see your [database-specific page](/docs/cloud-databases?topic=cloud-databases-scale-instance).
 
 Note that switching hosting models does not cause downtime, as this is not a backup and restore migration. Instead, the same process is applied as for updates or database instance scaling, where database processes will perform a rolling restart. We recommend ensuring that your application has retry and reconnect login in place to immediately re-establish a connection, as existing connections will be dropped during this time.
 
