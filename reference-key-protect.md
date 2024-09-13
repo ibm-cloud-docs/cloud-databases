@@ -16,7 +16,7 @@ keywords: bring your own key, byok, cryptoshredding, key rotation, key rotation 
 
 The data that you store in {{site.data.keyword.cloud}} Databases is encrypted by default by using randomly generated keys. To control the encryption keys, you can Bring Your Own Key (BYOK) through [{{site.data.keyword.keymanagementservicelong_notm}}](/docs/key-protect?topic=key-protect-integrate-services) and use one of your own keys to encrypt your databases and backups.
 
-This document covers the integration of Key Protect with Cloud Databases, which includes {{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-enterprisedb}}, {{site.data.keyword.databases-for-etcd}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-redis}}, {{site.data.keyword.messages-for-rabbitmq}}, {{site.data.keyword.databases-for-mysql_full}}, and {{site.data.keyword.databases-for-mysql_full}}.
+This document covers the integration of Key Protect with Cloud Databases, which includes {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-redis}}, {{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-mysql_full}}, {{site.data.keyword.messages-for-rabbitmq}}, {{site.data.keyword.databases-for-enterprisedb}} and {{site.data.keyword.databases-for-etcd}}.
 {: .note}
 
 To get started, you need [{{site.data.keyword.keymanagementserviceshort}}](https://{DomainName}/catalog/key-protect) provisioned on your {{site.data.keyword.cloud_notm}} account.
@@ -37,7 +37,7 @@ Authorize {{site.data.keyword.keymanagementserviceshort}} for use with {{site.da
 3. In the side navigation, click **Authorizations**.
 4. Click **Create**.
 5. In the **Source service** menu, select the service of the deployment. For example, **Databases for PostgreSQL** or **Messages for RabbitMQ**
-6. In the **Source service instance** menu, select **All instances**.
+6. In the **Source service resources** menu, select **All resources**.
 7. In the **Target service** menu, select **Key Protect**.
 8. Select or retain the default value **Account** as the resource group for the **Target Service**
 9. In the Target service **Instance ID** menu, select the service instances to authorize.
