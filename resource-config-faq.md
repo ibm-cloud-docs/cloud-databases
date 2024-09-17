@@ -27,7 +27,7 @@ keywords: resource config, resource configuration
 {: support}
 {: ui}
 
-In the {{site.data.keyword.cloud_notm}} Dashboard, select **Resources**, which displays your current resource configuration.
+After you have selected the specific IBM Cloud Databases instance from the Resource List, navigate to the **Resources** tab, which displays your current resource configuration.
 
 ### Retrieving resource configuration through the CLI
 {: #faq-resource-config-retrieve-cli}
@@ -71,4 +71,4 @@ Count   3
 ```
 {: pre}
 
-For more information, see [ibmcloud cdb deployment-groups](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference){: external}.
+For more information, see [ibmcloud cdb deployment-groups](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-groups){: external}.

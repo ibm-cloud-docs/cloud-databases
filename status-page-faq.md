@@ -29,4 +29,4 @@ Stay up to date with events by subscribing to the RSS feed for the Status page. 
 {: #ibm-cloud-status-incident reports}
 {: faq}
 
-The {{site.data.keyword.cloud}} [Incident reports page](/docs/get-support?topic=get-support-viewing-cloud-status#status-incident-report) provides a way for you to review technical details of major outages for IBM Cloud services. For more information, see [Checking incident reports](/docs/get-support?topic=get-support-viewing-cloud-status#status-incident-report){: external}.
+The {{site.data.keyword.cloud}} [Incident reports page](https://cloud.ibm.com/status/incident-reports) provides a way for you to review technical details of major outages for IBM Cloud services. For more information, see [Checking incident reports](/docs/get-support?topic=get-support-viewing-cloud-status#status-incident-report){: external}.

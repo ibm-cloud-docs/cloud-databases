@@ -22,7 +22,7 @@ subcollection: cloud-databases
 {: faq}
 {: support}
 
-If an instance is deleted, the backup is deleted as well. However, {{site.data.keyword.databases-for}} waits for 3 days before it is deleted internally. Within those 3 days, you can either re-enable the instance or create a new service instance from the backup. For more information, see [Deleting your Deployment and Removing your Data](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-deprovisioning){: external}. You can also use {{site.data.keyword.cloud_notm}} to restore a deleted resource. For more information, see [Using resource reclamations](/docs/account?topic=account-resource-reclamation){: external}.
+If an instance is deleted, the backup is deleted as well. However, {{site.data.keyword.databases-for}} waits for 3 days before it is deleted internally. Within those 3 days, you can either re-enable the instance or create a new service instance from the backup. For more information, see [Deleting your Deployment and Removing your Data](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-deprovisioning){: external}. You can also use {{site.data.keyword.cloud_notm}} CLI or API to restore a deleted resource. For more information, see [Using resource reclamations](/docs/account?topic=account-resource-reclamation){: external}.
 
 ## Is it possible to restore an instance from a backup in a different instance?
 {: #faq-backups-restore-new-instance}
