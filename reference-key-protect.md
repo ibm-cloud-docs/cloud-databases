@@ -11,7 +11,7 @@ keywords: bring your own key, byok, cryptoshredding, key rotation, key rotation 
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Key Protect Integration
+# Key Protect integration
 {: #key-protect}
 
 The data that you store in {{site.data.keyword.cloud}} Databases is encrypted by default by using randomly generated keys. To control the encryption keys, you can Bring Your Own Key (BYOK) through [{{site.data.keyword.keymanagementservicelong_notm}}](/docs/key-protect?topic=key-protect-integrate-services) and use one of your own keys to encrypt your databases and backups.
@@ -47,24 +47,24 @@ Authorize {{site.data.keyword.keymanagementserviceshort}} for use with {{site.da
 
 If the service authorization is not present before provisioning your deployment with a key, the provision fails.
 
-## Using the Key Protect Key
+## Using the Key Protect key
 {: #key-using}
 
 After you grant your {{site.data.keyword.databases-for}} deployments permission to use your keys, you supply the [key name or CRN](/docs/key-protect?topic=key-protect-view-keys) when you provision a deployment. The deployment uses your encryption key to encrypt your data.
 
-## Using the Key Protect Key in the UI
+## Using the Key Protect key in the UI
 {: #key-using-ui}
 {: ui}
 
 If provisioning from the catalog page, select the Key Protect instance and key from the dropdown menus.
 
-## Using the Key Protect Key in the CLI
+## Using the Key Protect key in the CLI
 {: #key-using-cli}
 {: cli}
 
 In the CLI, use the `disk_encryption_key_crn` parameter in the parameters JSON object.
 ```sh
-ibmcloud resource service-instance-create example-database <service-name> standard us-south \
+ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE-NAME> standard us-south \
 -p \ '{
   "disk_encryption_key_crn": "crn:v1:<...>:key:<id>"
 }'
@@ -73,7 +73,7 @@ ibmcloud resource service-instance-create example-database <service-name> standa
 The Key Protect key needs to be identified by its full CRN, not just its ID. A key protect CRN is in the format `crn:v1:<...>:key:<id>`.
 {: .tip}
 
-## Using the Key Protect Key in the API
+## Using the Key Protect key in the API
 {: #key-using-api}
 {: api}
 
@@ -95,14 +95,14 @@ curl -X POST \
 The Key Protect key needs to be identified by its full CRN, not just its ID. A key protect CRN is in the format `crn:v1:<...>:key:<id>`.
 {: .tip}
 
-## Key Rotation
+## Key rotation
 {: #keyrotation}
 
 Key Protect offers manual and automatic [key rotation](/docs/key-protect?topic=key-protect-rotate-keys) and key rotation is supported by Cloud Databases deployments. When you rotate a key, the process initiates a _syncing KMS state_ task, and your deployment is reencrypted with the new key. The task is displayed on the _Tasks_ page on your deployment's _Overview_ and the associated Key Protect and Cloud Databases events are sent to Activity Tracker.
 
 For more information, see [Rotating manually or automatically](/docs/key-protect?topic=key-protect-key-rotation#compare-key-rotation-options).
 
-## Deleting the Deployment
+## Deleting the deployment
 {: #key-protect-deleting-deployment}
 
 If you delete a deployment that is protected with a Key Protect key, the deployment remains registered against the key during the soft-deletion period (up to 9 days). To delete the key in the soft-deletion period, [force delete](/docs/key-protect?topic=key-protect-delete-keys) the key. After the soft-deletion period, the key can be deleted without the force. To determine when you can delete the key, check the [association between the key and your deployment](/docs/key-protect?topic=key-protect-view-protected-resources).
@@ -131,7 +131,7 @@ Only keys in the `us-south` and `eu-de` are durable to region failures. To ensur
 
 To enable your deployment to use the Key Protect key, you need to [Enable authorization to be delegated](/docs/account?topic=account-serviceauth) when granting the service authorizations. If the delegation authorization is not present before provisioning your deployment with a key, the provision fails.
 
-### Using the Key at Provision in the CLI
+### Using the key at provision in the CLI
 {: #key-provision-cli}
 {: cli}
 
@@ -139,13 +139,13 @@ After the appropriate authorization and delegation is granted, you supply the [k
 
 In the CLI, use the `backup_encryption_key_crn` parameter in the parameters JSON object.
 ```sh
-ibmcloud resource service-instance-create example-database <service-name> standard us-south \
+ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE-NAME> standard us-south \
 -p \ '{
   "backup_encryption_key_crn": "crn:v1:<...>:key:<id>"
 }'
 ```
 
-### Using the Key at Provision in the API
+### Using the key at provision in the API
 {: #key-provision-api}
 {: api}
 
@@ -178,7 +178,7 @@ And one for the Cloud Object Storage bucket for its backups, where the deploymen
 | Reader | Cloud Object Storage service | Key Protect Service | Created by `<cloud-databases-crn>` |
 {: caption="Table 2. Example Key Protect Authorization for Cloud Object Storage from Cloud Databases " caption-side="bottom"}
 
-### Removing Keys
+### Removing keys
 {: #key-remove}
 
 IAM/Key Protect does not stop you from removing the policy between the key and Cloud Object Storage (the second example), but doing so can make your backups unrestorable. To prevent this, if you delete the Cloud Object Storage policy that governs the ability of Cloud Databases to use the key for Cloud Object Storage, the policy is re-created to continue backing up your deployment.

@@ -63,7 +63,7 @@ A MongoDB deployment cannot support both [public and private endpoints simultane
 Service endpoints are specified using a required flag when you provision through the CLI. Provisioning is handled by the Resource Controller. You can change the endpoints by passing the `--service-endpoints` flag with one of the following values: `public`, `private`, or `public-and-private`. It is recommended to use *private* endpoints.
 
 ```sh
-ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN_NAME> <LOCATION> <SERVICE_ENDPOINTS_TYPE> <RESOURCE_GROUP> -p '{"members_host_flavor": "<host_flavor value>"}' --service-endpoints=<endpoint>
+ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN_NAME> <LOCATION> <SERVICE_ENDPOINTS_TYPE> <RESOURCE_GROUP> -p '{"members_host_flavor": "<host_flavor value>"}' --service-endpoints=<ENDPOINT>
 ```
 {: pre}
 
@@ -112,7 +112,7 @@ Changing the type of endpoints available on your deployment does not cause any d
 Use the [`ibmcloud resource service-instance-update`](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_update) command in the CLI, specifying the endpoint with the `--service-endpoints` flag.
 
 ```sh
-ibmcloud resource service-instance-update <service-name> --service-endpoints <endpoint-type>
+ibmcloud resource service-instance-update <INSTANCE_NAME_OR_CRN> --service-endpoints <ENDPOINT-TYPE>
 ```
 {: pre}
 

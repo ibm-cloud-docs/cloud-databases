@@ -57,7 +57,7 @@ Use the [`cdb deployment-backups-list`](/docs/databases-cli-plugin?topic=databas
 For example, to view the backups for an instance named "example-instance", use the following command:
 
 ```sh
-ibmcloud cdb deployment-backups-list example-instance
+ibmcloud cdb deployment-backups-list <INSTANCE_NAME_OR_CRN>
 ```
 {: .pre}
 
@@ -97,7 +97,7 @@ Instances come with backup storage equal to their total disk space at no cost. I
 In the CLI, an on-demand backup is triggered with the [`cdb deployment-backup-now`](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-backup-now) command.
 
 ```sh
-ibmcloud cdb deployment-backup-now example-deployment
+ibmcloud cdb deployment-backup-now <INSTANCE_NAME_OR_CRN>
 ```
 {: .pre}
 
@@ -143,19 +143,19 @@ To restore a backup to a new service instance,
 The Resource Controller supports provisioning of database instances, and provisioning and restoring are the responsibility of the Resource Controller CLI. Use the [`resource service-instance-create`](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_create) command.
 
 ```sh
-ibmcloud resource service-instance-create <SERVICE_INSTANCE_NAME> <service-id> standard <region> -p '{"backup_id":"BACKUP_ID"}'
+ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE-ID> standard <REGION> -p '{"backup_id":"BACKUP_ID"}'
 ```
 {: .pre}
 
-* Change the value of `SERVICE_INSTANCE_NAME` to the name that you want for your new instance.
+* Change the value of `instance_name` to the name that you want for your new instance.
 * The `service-id` is the type of instance, such as _databases-for-postgresql_ or _messages-for-rabbitmq_. 
 * The `region` is where you want the new instance to be located, which can be a different region from the source instance. Cross-region restores are supported, except for restoring to or from `eu-de` by using another region.
-* `BACKUP_ID` is the backup that you want to restore.
+* `backup_id` is the backup that you want to restore.
 
 Optional parameters are available through the CLI. Use them if you need to customize resources, or use a Key Protect key for BYOK encryption on the new instance.
 
 ```sh
-ibmcloud resource service-instance-create <SERVICE_INSTANCE_NAME> <service-id> standard <region> -p
+ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE-ID> standard <REGION> -p
 '{"backup_id":"BACKUP_ID","key_protect_key":"KEY_PROTECT_KEY_CRN", "members_disk_allocation_mb":"DESIRED_DISK_IN_MB", "members_memory_allocation_mb":"DESIRED_MEMORY_IN_MB", "members_cpu_allocation_count":"NUMBER_OF_CORES"}'
 ```
 {: .pre}
@@ -166,7 +166,7 @@ A pre-formatted command for a specific backup is available in detailed view of t
 By default, restoring from a backup provisions an instance with the preferred version of the database type, not the version of the instance you restore from. You can specify a version by adding the version in the parameters object, as in the following example. 
 
 ```sh
-`ibmcloud resource service-instance-create SERVICE_INSTANCE_NAME databases-for-mysql standard us-south -p '{"backup_id":"<BACKUP_ID>", "version": "<VERSION>"}'
+`ibmcloud resource service-instance-create <INSTANCE_NAME> databases-for-mysql standard us-south -p '{"backup_id":"<BACKUP_ID>", "version": "<VERSION>"}'
 ```
 
 To see a list of versions available, run `ibmcloud cdb deployables`.
@@ -183,12 +183,12 @@ curl -X POST \
   -H 'Authorization: Bearer <>' \
   -H 'Content-Type: application/json' \
     -d '{
-    "name": "<SERVICE_INSTANCE_NAME>",
-    "target": "<region>",
-    "resource_group": "<your-resource-group>",
-    "resource_plan_id": "<service-id>",
+    "name": "<INSTANCE_NAME>",
+    "target": "<REGION>",
+    "resource_group": "<YOUR-RESOURCE-GROUP>",
+    "resource_plan_id": "<SERVICE-ID>",
     "parameters":{
-      "backup_id": "<backup_id>"
+      "backup_id": "<BACKUP_ID>"
     }
   }'
 ```
@@ -204,7 +204,7 @@ If you need to adjust resources or use a Key Protect key, add any of the optiona
 By default, restoring from a backup provisions an instance with the preferred version of the database type, not the version of the instance you restore from. You can specify a version by adding the version in the parameters object, as in the following example. 
 
 ```sh
-`ibmcloud resource service-instance-create SERVICE_INSTANCE_NAME databases-for-mysql standard us-south -p '{"backup_id":"<BACKUP_ID>", "version": "<VERSION>"}'
+`ibmcloud resource service-instance-create <INSTANCE_NAME> databases-for-mysql standard us-south -p '{"backup_id":"<BACKUP_ID>", "version": "<VERSION>"}'
 ```
 
 To see a list of versions available, run `ibmcloud cdb deployables`.

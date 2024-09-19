@@ -59,7 +59,7 @@ Follow the steps at [Install Terraform](https://learn.hashicorp.com/tutorials/te
    **Example `terraform.tfvars` file**
 
    ```terraform
-   ibmcloud_api_key = "<ibmcloud_api_key>"
+   ibmcloud_api_key = "<IBMCLOUD_API_KEY>"
    region = "us-east"
    ```
    {: codeblock}

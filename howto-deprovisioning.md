@@ -34,7 +34,7 @@ To delete your deployment instance from the Resource list section dashboard of t
 
 By using the CLI, you can delete your existing {{site.data.keyword.cloud}} Databases instance with the [`ibmcloud resource service-instance-delete`](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_delete) command:
 ```sh
-ibmcloud resource service-instance-delete my-service-instance
+ibmcloud resource service-instance-delete <INSTANCE_NAME_OR_CRN>
 ```
 {: .pre}
 

@@ -38,7 +38,7 @@ After you have selected the specific IBM Cloud Databases instance from the Resou
 The [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference){: external} can retrieve your instance's current resource configuration, by using the `ibmcloud cdb deployment-groups` command. The `ibmcloud cdb deployment-groups` displays the scaling group values for a deployment's members. The scaling groups relate to Memory, CPU, and Disk. The default group is named "member". Use a command like:
 
 ```sh
-ibmcloud cdb deployment-groups <DEPLOYMENT NAME>
+ibmcloud cdb deployment-groups <INSTANCE_NAME_OR_CRN>
 ```
 {: pre}
 

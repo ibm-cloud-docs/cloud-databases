@@ -64,14 +64,14 @@ The {{site.data.keyword.databases-for}} CLI plug-in offers a set of commands for
 To add a single IP address, use a command like:
 
 ```sh
-ibmcloud cdb deployment-whitelist-add example-deployment 198.51.100.1 "Allowlisted for testing"
+ibmcloud cdb deployment-whitelist-add <INSTANCE_NAME_OR_CRN> 198.51.100.1 "Allowlisted for testing"
 ```
 {: .pre}
 
 To add an IP address range, use a command like:
 
 ```sh
-ibmcloud cdb deployment-whitelist-add example-deployment 198.51.100.0/24 "Testing range is now open"
+ibmcloud cdb deployment-whitelist-add <INSTANCE_NAME_OR_CRN> 198.51.100.0/24 "Testing range is now open"
 ```
 {: .pre}
 
@@ -80,7 +80,7 @@ The [`cdb deployment-whitelist-list`](/docs/databases-cli-plugin?topic=databases
 Use a command like:
 
 ```sh
-ibmcloud cdb deployment-whitelist-list <deployment name or CRN>
+ibmcloud cdb deployment-whitelist-list <INSTANCE_NAME_OR_CRN>
 ```
 {: .pre}
 
@@ -116,7 +116,7 @@ The `cdb deployment-whitelist-delete` command removes an IP address or range fro
 The command looks like:
 
 ```sh
-ibmcloud cdb deployment-allowlist-delete <deployment name or CRN> <allowlist address or range> [--nowait] [--json]
+ibmcloud cdb deployment-allowlist-delete <INSTANCE_NAME_OR_CRN> <ALLOWLIST ADDRESS OR RANGE> [--nowait] [--json]
 ```
 {: pre}
 
