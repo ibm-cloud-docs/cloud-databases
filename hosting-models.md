@@ -233,7 +233,6 @@ For new hosting models, scaling and switching are similar operations. While scal
 For new hosting models, scaling and switching are similar operations. While scaling your database as you normally would, switch to and between hosting models by adding a new `host_flavor` parameter set to the hosting model you wish to scale to. Then, moving to the hosting type is as simple as running a scale command with this hosting flavor targeted. 
 {: cli}
 
-
 For new hosting models, scaling and switching are similar operations. While scaling your database as you normally would, switch to and between hosting models by adding a new `host_flavor` parameter set to the hosting model you wish to scale to. Then, moving to the hosting type is as simple as running a scale command with this hosting flavor targeted. 
 {: api}
 
@@ -363,7 +362,7 @@ If an instance A requests 0.5 cores or 500 millicores, assuming for simplicity t
 
 **I want to scale my database's resources, but they don't seem to be scaling?**
 
-For Shared Compute instances, make sure to set the host flavor to `multitenant` and separately set your CPU and RAM values. For automatically scaling CPU (capped at 2 CPU), set the CPU to 0. To scale Isolated Compute, set the host flavor to your desired size; do not set CPU and RAM values since the Isolated size already includes allocations for both. For more, see [Scaling docs](/docs/cloud-databases?topic=cloud-databases-scale-instance).
+For Shared Compute instances, make sure to set the host flavor to `multitenant` and separately set your CPU and RAM values. For automatically scaling CPU (capped at 2 CPU), set the CPU to 0. To scale Isolated Compute, set the host flavor to your desired size; do not set CPU and RAM values since the Isolated size already includes allocations for both. For more information, see the [Scaling documentation](/docs/cloud-databases?topic=cloud-databases-scale-instance).
 
 **My database is on a hosting model, even though my Terraform configuration didn't specify it.**
 
