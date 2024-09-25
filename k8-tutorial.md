@@ -92,7 +92,7 @@ This process creates a standard database instance in the service that you specif
 1. You must target a resource group, by using the following command:
 
    ```sh
-   ibmcloud target -g RESOURCE_GROUP
+   ibmcloud target -g <RESOURCE_GROUP>
    ```
 
 For more information, see [Working with resources and resource groups (ibmcloud resource).](/docs/cli?topic=cli-ibmcloud_commands_resource)
@@ -103,14 +103,14 @@ For more information, see [Working with resources and resource groups (ibmcloud 
 1. The service name is one of the {{site.data.keyword.databases-for}} services, `databases-for-elasticsearch`, `databases-for-enterprisedb`, `databases-for-etcd`, `databases-for-mongodb`, `databases-for-postgresql`, `databases-for-redis`, `messages-for-rabbitmq`, or `databases-for-mysql`.
    
    ```sh
-   ibmcloud resource service-instance-create <your_deployment_name> <service_name> standard <region>
+   ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> standard <REGION>
    ```
    {: pre}
 
-Remember the database deployment name. Find your [region identifier here](/docs/cloud-databases?topic=cloud-databases-allowlisting#allowlist-ips).
+Remember the database instance name. Find your [region identifier here](/docs/cloud-databases?topic=cloud-databases-allowlisting#allowlist-ips).
 {: tip}
 
-## Configuring the Kubernetes App
+## Configuring the Kubernetes app
 {: #config-kubernetes}
 
 1. [Create a {{site.data.keyword.containershort_notm}}](/docs/containers?topic=containers-getting-started#getting-started). Choose the location and resource group in which you'd like to set up your cluster. Select the cluster type that you want to use. This example requires only the lite plan, which comes with one worker node. After a cluster is provisioned, you are given a list of steps to access your cluster and set the environment variables under the _Access_ tab. You are also able to verify that your deployment is provisioned and running normally.
@@ -120,7 +120,7 @@ Remember the database deployment name. Find your [region identifier here](/docs/
    If your resource group is named anything other than `default`, use the following command to target your cluster resource group:
 
    ```sh
-   ibmcloud target -g <resource_group_name>
+   ibmcloud target -g <RESOURCE_GROUP_NAME>
    ```
    {: pre}
 
@@ -129,14 +129,14 @@ Remember the database deployment name. Find your [region identifier here](/docs/
 3. Create your own private image repository in [{{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-getting-started) to store your application's Docker image. Since we want the images to be private, we need to create a namespace, which creates a unique URL to your image repository.  
 
    ```sh
-   ibmcloud cr namespace-add <your_namespace>
+   ibmcloud cr namespace-add <YOUR_NAMESPACE>
    ```
    {: pre}
 
 4. Add the Cloud Databases deployment to your cluster.
 
    ```sh
-   ibmcloud ks cluster service bind --cluster <your_cluster_name> --namespace default    --service <your_database_deployment>
+   ibmcloud ks cluster service bind --cluster <YOUR_CLUSTER_NAME> --namespace default    --service <INSTANCE_NAME_OR_CRN>
    ```
    {: pre}
 
@@ -144,21 +144,21 @@ Remember the database deployment name. Find your [region identifier here](/docs/
    {: note}
 
    ```sh
-   ibmcloud resource service-key-create <your-private-key> --instance-name    <your_database_deployment> --service-endpoint private  
+   ibmcloud resource service-key-create <YOUR-PRIVATE-KEY> --instance-name    <INSTANCE_NAME_OR_CRN> --service-endpoint private  
    ```
    {: pre}
       
    The private service endpoint is selected with `--service-endpoint private`. After that, you bind the database to the Kubernetes cluster through the private endpoint by using the command
 
    ```sh
-   ibmcloud ks cluster service bind <your_cluster_name> default    <your_database_deployment> --key example-private-key
+   ibmcloud ks cluster service bind <YOUR_CLUSTER_NAME> default    <INSTANCE_NAME_OR_CRN> --key <YOUR-PRIVATE-KEY>
    ```
    {: pre}
 
 5. Verify that the Kubernetes secret was created in your cluster namespace. Kubernetes uses secrets to store confidential information like the {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IAM) API key and the URL that the container uses to gain access. To set the cluster as the context for this session and then get the API key for accessing the instance of your deployment, run the following commands
 
    ```sh
-   ibmcloud ks cluster config --cluster <cluster_name_or_ID>
+   ibmcloud ks cluster config --cluster <CLUSTER_NAME_OR_ID>
    ```
    {: pre}
 
@@ -175,7 +175,7 @@ Remember the database deployment name. Find your [region identifier here](/docs/
 6. If you haven't already, clone the app in one of the available languages to your local environment from your console by using the following command
 
    ```sh
-   git clone -b <language> git@github.com:IBM-Cloud/clouddatabases-helloworld-kubernetes-examples.git
+   git clone -b <LANGUAGE> git@github.com:IBM-Cloud/clouddatabases-helloworld-kubernetes-examples.git
    ```
    {: pre}
 
@@ -184,7 +184,7 @@ Remember the database deployment name. Find your [region identifier here](/docs/
 8. Build and push the application's Docker image to your {{site.data.keyword.registryshort_notm}}. Specify the appropriate region and give the container a name.
 
    ```sh
-   ibmcloud cr build -t <region>.icr.io/<namespace>/<container_name> .
+   ibmcloud cr build -t <REGION>.icr.io/<NAMESPACE>/<CONTAINER_NAME> .
    ```
    {: pre}
 
@@ -208,7 +208,7 @@ Remember the database deployment name. Find your [region identifier here](/docs/
    Change the `image` name to the repository name that you got from the previous step:
 
    ```yaml
-   image: "<region>.icr.io/mynamespace/<container_name>" # Edit me
+   image: "<REGION>.icr.io/mynamespace/<container_name>" # Edit me
    ```
    {: pre}
 
@@ -216,13 +216,13 @@ Remember the database deployment name. Find your [region identifier here](/docs/
 
    ```yaml
    secretKeyRef:
-      name: <db-secret-name> # Edit me
+      name: <DB-SECRET-NAME> # Edit me
    ```
    {: pre}
 
    As for the `service` configuration at the end of the file, [`nodePort`](/docs/containers?topic=containers-nodeport) indicates the port that the application can be accessed from. You have ports in the range 30000 - 32767 that you can use, but we chose 30081. The TCP port is set to 8080, which is the port the Node.js application runs on in the container.
 
-## Deploying your Kubernetes App
+## Deploying your Kubernetes app
 {: #deploy-kubernetes}
 
 1. Deploy the application to {{site.data.keyword.containershort_notm}}. When you deploy the application, it is automatically bound to your Kubernetes cluster.
@@ -235,7 +235,7 @@ Remember the database deployment name. Find your [region identifier here](/docs/
 2. Get the IP for the application.
 
    ```sh
-   ibmcloud ks workers -c <cluster_name>
+   ibmcloud ks workers -c <CLUSTER_NAME>
    ```
    {: pre}
 
@@ -251,7 +251,7 @@ Remember the database deployment name. Find your [region identifier here](/docs/
 
    The clouddatabases-helloworld app displays the contents of an _examples_ database. To demonstrate that the app is connected to your service, add some words to the database. The words are displayed as you add them, with the most recently added words displayed first.
 
-## Code Structure
+## Code structure
 {: #code-structures}
 
 | File | Description |

@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2024
-lastupdated: "2024-09-12"
+lastupdated: "2024-09-18"
 
 subcollection: cloud-databases
 
@@ -63,7 +63,7 @@ A MongoDB deployment cannot support both [public and private endpoints simultane
 Service endpoints are specified using a required flag when you provision through the CLI. Provisioning is handled by the Resource Controller. You can change the endpoints by passing the `--service-endpoints` flag with one of the following values: `public`, `private`, or `public-and-private`. It is recommended to use *private* endpoints.
 
 ```sh
-ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN_NAME> <LOCATION> <SERVICE_ENDPOINTS_TYPE> <RESOURCE_GROUP> -p '{"members_host_flavor": "<host_flavor value>"}' --service-endpoints=<endpoint>
+ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN_NAME> <LOCATION> <SERVICE_ENDPOINTS_TYPE> <RESOURCE_GROUP> -p '{"members_host_flavor": "<host_flavor value>"}' --service-endpoints=<ENDPOINT>
 ```
 {: pre}
 
@@ -112,7 +112,7 @@ Changing the type of endpoints available on your deployment does not cause any d
 Use the [`ibmcloud resource service-instance-update`](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_update) command in the CLI, specifying the endpoint with the `--service-endpoints` flag.
 
 ```sh
-ibmcloud resource service-instance-update <service-name> --service-endpoints <endpoint-type>
+ibmcloud resource service-instance-update <INSTANCE_NAME_OR_CRN> --service-endpoints <ENDPOINT-TYPE>
 ```
 {: pre}
 
@@ -131,7 +131,7 @@ Changing the type of endpoints available on your deployment does not cause any d
 
 Use either public or private connection strings with any set of credentials that you make on your deployment. By default, the connection strings for a set of credentials are filled with strings for connecting over a public endpoint. If you are using private endpoints, specify connection strings that contain the private endpoint to be generated instead.
 
-When you create credentials in the *Service credentials* UI, use either the `{ "service-endpoints": "public" }` or the `{ "service-endpoints": "private" }` parameter to specify which endpoint gets filled into the connection strings. 
+When you create credentials in the *Service credentials* UI, use either the `{ "service-endpoints": "public" }` or the `{ "service-endpoints": "private" }` parameter to specify which endpoint gets filled into the connection strings. For the steps to follow to create credentials, see the topic *Managing users and roles* in the documentation for your chosen service.
 
 In the API, use the [`/deployments/{id}/users/{userid}/connections/{endpoint_type}`](https://{DomainName}/apidocs/cloud-databases-api#discover-connection-information-for-a-deployment-f-e81026) to retrieve connection strings for both public or private endpoints.
 

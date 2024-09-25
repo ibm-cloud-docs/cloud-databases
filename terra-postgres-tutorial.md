@@ -33,13 +33,13 @@ In this tutorial, you provision your database by using Terraform, which enables 
 
 To support a multi-cloud approach, Terraform works with providers. A provider is responsible for understanding API interactions and exposing resources. {{site.data.keyword.cloud}} has its provider for Terraform, enabling users of {{site.data.keyword.cloud}} to manage resources with Terraform. Although Terraform is categorized as infrastructure as code, it is not limited to Infrastructure-As-A-Service resources. For more information, see [ibm_database](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database).
 
-## Step 1: Install Terraform
+## Install Terraform
 {: #tutorial-provision-postgres-install-cli}
 {: step}
 
 1. Follow the steps at [Install Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli?in=terraform/docker-get-started){: external} to install Terraform.
 
-## Step 2: Configure the {{site.data.keyword.cloud}} Provider plug-in
+## Configure the {{site.data.keyword.cloud}} Provider plug-in
 {: #tutorial-provision-postgres-config-provider}
 {: step}
 
@@ -59,7 +59,7 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
    **Example of `terraform.tfvars` file**
 
    ```terraform
-     ibmcloud_api_key = "<ibmcloud_api_key>"
+     ibmcloud_api_key = "<IBMCLOUD_API_KEY>"
      region = "us-east"
    ```
    {: codeblock}
@@ -81,7 +81,7 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
     ```
     {: codeblock}
 
-## Step 3: Provision a {{site.data.keyword.databases-for-postgresql}} instance
+## Provision a {{site.data.keyword.databases-for-postgresql}} instance
 {: #tutorial-provision-postgres-provision-instance}
 {: step}
 
@@ -129,7 +129,7 @@ Create a Terraform configuration file that is named `postgres.tf`.
    - **Group values** - Memory, disk, and CPU values are all based on minimum requirements for provisioning a {{site.data.keyword.databases-for-postgresql}} instance.
    - **Timeouts** - Create, update, and delete values for this resource. {{site.data.keyword.databases-for}} `create` typically takes in the range of 30 - 45 minutes. `delete` and `update` typically take 1 minute. Provisioning times are unpredictable. If the deployment fails due to a timeout, import the database resource once the `create` is complete.
 
-## Step 4: Test your configuration
+## Test your configuration
 {: #tutorial-provision-postgres-test}
 {: step}
 

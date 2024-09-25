@@ -72,9 +72,9 @@ cd mongo-bi-tools-tutorial/terraform
 Using the following command, create a document that is named `terraform.tfvars`:
 
 ```sh
-ibmcloud_api_key = "<your_api_key_from_step_1>"
+ibmcloud_api_key = "<YOUR_API_KEY_FROM_STEP_1>"
 region = "eu-gb" #Choose a suitable region for your deployment instance.
-admin_password = "<create_10_character_password>"
+admin_password = "<CREATE_15_CHARACTER_PASSWORD>"
 ```
 
 The `terraform.tfvars` document contains variables that you might [want to keep secret](https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files){: .external}.{: .important}

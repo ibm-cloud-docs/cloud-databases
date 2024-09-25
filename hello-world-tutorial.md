@@ -57,9 +57,9 @@ In this step, you deploy an instance of the database service you want to use. Th
 1. On your machine, create a document that is named `terraform.tfvars`, with the following fields:
 
    ```sh
-   ibmcloud_api_key = "<your_api_key_from_step_1>"
-   region = "<your_region>"
-   admin_password  = "<make_up_a_password>"
+   ibmcloud_api_key = "<YOUR_API_KEY_FROM_STEP_1>"
+   region = "<YOUR_REGION>"
+   admin_password  = "<CREATE_15_CHARACTER_PASSWORD>"
    ```
    {: pre}
    

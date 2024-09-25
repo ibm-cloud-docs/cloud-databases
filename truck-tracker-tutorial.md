@@ -96,9 +96,9 @@ cd truck-tracker/terraform
 Create a document called `terraform.tfvars` with the following fields: 
 
 ```sh
-ibmcloud_api_key = "<your_api_key_from_step_1>"
+ibmcloud_api_key = "<YOUR_API_KEY_FROM_STEP_1>"
 region = "eu-gb"
-redis_password  = "<make_up_a_password>"
+redis_password  = "<MAKE_UP_A_PASSWORD>"
 ```
 
 The `terraform.tfvars` document contains variables that you may want to keep secret so it is ignored by the GitHub repository.

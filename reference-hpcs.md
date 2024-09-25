@@ -11,7 +11,7 @@ subcollection: cloud-databases
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Hyper Protect Crypto Services Integration
+# Hyper Protect Crypto Services integration
 {: #hpcs}
 
 The data that you store in {{site.data.keyword.cloud}} Databases is encrypted by default by using randomly generated keys. If you need to control the encryption keys, you can Bring Your Own Key (BYOK) through [{{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-get-started), and use one of your own keys to encrypt your databases. Take note that {{site.data.keyword.hscrypto}} for {{site.data.keyword.cloud}} Databases backups is currently not supported for the majority of regions and not recommended to be used without careful considerations of the impact to disaster recovery. 
@@ -55,7 +55,7 @@ If provisioning from the catalog page, select the HPCS instance and key from the
 In the CLI, use the `disk_encryption_key_crn` parameter in the parameter's JSON object.
 
 ```bash
-ibmcloud resource service-instance-create example-database <service-name> standard us-south \
+ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE-NAME> standard us-south \
 -p \ '{
   "disk_encryption_key_crn": "crn:v1:<...>:key:<id>"
 }'
@@ -98,7 +98,7 @@ If you provision from the Catalog, select the HPCS instance and key from the dro
 In the CLI, use the `backup_encryption_key_crn` parameter in the parameter's JSON object.
 
 ```bash
-ibmcloud resource service-instance-create example-database <service-name> standard eu-es \
+ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE-NAME> standard eu-es \
 -p \ '{
   "backup_encryption_key_crn": "crn:v1:<...>:key:<id>"
 }'
@@ -142,5 +142,3 @@ Cryptoshredding is a destructive action. When the key is deleted, your data is u
 {: .important}
 
 {{site.data.keyword.hscrypto}} enables [initiation of a force delete](/docs/hs-crypto?topic=hs-crypto-delete-keys) of a key that is in use by {{site.data.keyword.cloud}} services, including your {{site.data.keyword.databases-for}} deployments. This action is called cryptoshredding. Deleting a key that is in use on your deployment locks the disks that contain your data and disables your deployment. You are still able to access the UI and some metadata such as security settings in the UI, CLI, and API but you are not able to access any of the databases or data that is contained within them. Key deletion is [sent to the {{site.data.keyword.at_short}}](/docs/hs-crypto?topic=hs-crypto-at-events) as `hs-crypto.secrets.delete`.
-
-
