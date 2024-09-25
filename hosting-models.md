@@ -337,3 +337,44 @@ To determine how existing hosting models will switch over to Shared and Isolated
 | 16 CPU < N ≤ 32 CPU OR 64 GB RAM < M < 128 GB RAM | 32 CPU x 128 RAM, Isolated Compute |
 | 16 CPU < N ≤ 30 CPU OR 64 GB RAM < M < 240 GB RAM | 30 CPU x 240 RA, Isolated Compute |
 {: caption="Table 5. Automatic transition placement RabbitMQ" caption-side="bottom"}
+
+
+## Hosting Models FAQ
+{: #hosting-models-faq}
+
+**Q: My Shared Compute databases has 0 CPU. What does this mean?** 
+A: Shared Compute automatically allocates CPU for customers that do not specify their CPU amount. On API v5, this automatically allocated setting shows as CPU = 0. We also return an "Allocation as Fraction" result that specifies what specific CPU value you have.  CPU is allocated at 1/8th of a RAM, starting from each databases' minimum CPU amount up to 2 CPU. This CPU value will continue to scale as the RAM value scales. 
+
+**Q: Per the [Shared Compute transition placement](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-hosting-models&interface=cli#shared-compute-placement), my understanding is that because this instance has 8 GB of RAM, it should have 1 CPU allocated per member, but the cloud-databases CLI show 0 CPUs allocated.**
+A: See above. 
+
+**Q: I want fractional CPU. How do I do that?**
+A: Scale your database to the `multitenant` hosting model, and its CPU to 0. This turns on the Shared Compute automatic CPU allocation, where CPU is 1/8th of the database's RAM allocation, up to 2 CPU. 
+
+**Q: What does it mean to have fractional CPU?**
+CPU time is divided into units called periods or time slices. In each time slice you get a duration of cpu run time. 
+
+In general, the number of cores you specify decides how much cpu time you get. The default kernel run time is 50ms; therefore, with one core of CPU available, there is 20 time slices of 50ms run times.
+
+If an instance A requests 0.5 cores or 500 millicores, assuming for simplicity that there is only one core of CPU on a node or server, instance A will get 10 time slices of 50ms run time each to complete the task. If it cannot complete the task within 10 time slices, kernel throttles the instance's process after the 10 runs. The remaining 10 time slices for this cpu (since 1 core can have 20 time slices using default run time duration) is then scheduled for other processes while A waits. Once that is done, instance A gets the cpu for another 10 time slices. 
+
+
+**Q: I want to scale my database's resources, but they don't seem to be scaling?**
+A: For Shared Compute instances, make sure to set the host flavor to `multitenant` and separately set your CPU and RAM values. For automatically scaling CPU (capped at 2 CPU), set the CPU to 0. To scale Isolated Compute, set the host flavor to your desired size; do not set CPU and RAM values since the Isolated size already includes allocations for both. For more, see [Scaling docs](/docs/cloud-databases?topic=cloud-databases-scale-instance). 
+
+**Q: My database is on a hosting model, even though my Terraform configuration didn't specify it.**
+A: Starting August, we begun to switchover customer instances to the new hosting models. This can lead to Terraform scripts that do not reflect the actualstate of the database, since these scripts would not have the new `host_flavor` parameter. Your database will still function as normal, though we recommend adding the `host_flavor` parameter for future ease of use. 
+
+**Q: What does it mean to switch / migrate between hosting models? Will there be downtime?**
+A: Switching between databases is not a large migration, but a standard operation similar to our maintenance work. Therefore, it does not involve downtime, though [we recommend](/docs/cloud-databases?topic=cloud-databases-responsibilities-cloud-databases) your application to have retry and reconnect logic. 
+
+**Q: If we switch to a hosting model, or switch between hosting models, will the disk size be retained as per the current configuration?**
+A: Yes. Your disk will not be impacted due to hosting model changes. 
+
+**Q: Does autoscaling work?**
+A: Autoscaling continues to work for new hosting models! For Shared Compute, RAM and Disk autoscaling remains available. For Isolated Compute, Disk autoscaling is available. 
+
+Note: Due to the size jumps across Isolated Compute, we have currently dis-allowed RAM/CPU autoscaling on Isolated Compute. If there is interest in this feature, please let our team know! 
+
+**Q: I’m getting a CLI failed status error or a 403 forbidden error, but on the UI and CLI it looks like my scale operation completed?**
+A: This is due to CLI token expiry. The CLI expires tokens to quickly to preserve the security of your system, meaning any operations in progress will show a fail state. We recommend refreshing your session, and checking the database for the results of the task. 
