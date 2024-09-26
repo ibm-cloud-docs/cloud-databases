@@ -14,7 +14,7 @@ completion-time: 1h
 
 ---
 
-{{site.data.keyword.mon_full}}
+{{site.data.keyword.attribute-definition-list}}
 
 # Provision a {{site.data.keyword.databases-for-postgresql}} instance with Terraform
 {: #tutorial-provision-postgres-tf}
