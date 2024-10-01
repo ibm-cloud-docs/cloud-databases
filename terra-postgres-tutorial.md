@@ -2,7 +2,7 @@
 
 copyright:
    years: 2022, 2024
-lastupdated: "2024-07-31"
+lastupdated: "2024-09-30"
 
 keywords: IBM Cloud Databases, ICD, terraform, postgresql terraform, postgresql
 
@@ -71,6 +71,15 @@ To support a multi-cloud approach, Terraform works with providers. A provider is
     **Example `provider.tf` file**
 
     ```terraform
+    terraform {
+      required_providers {
+        ibm = {
+          source  = "IBM-Cloud/ibm"
+          version = ">= 1.28.0"
+        }
+      }
+    }
+
     variable "ibmcloud_api_key" {}
     variable "region" {}
 
@@ -89,45 +98,60 @@ Create a Terraform configuration file that is named `postgres.tf`.
 
    **Example of `postgres.tf` file**
 
-   ```terraform
-   data "ibm_resource_group" "postgres_tutorial" {
-     name = "terraform_postgres"
-   }
-   
-   resource "ibm_database" "postgresql_db" {
-     resource_group_id = data.ibm_resource_group.postgres_tutorial.id
-     name              = "terraform_postgres"
-     service           = "databases-for-postgresql"
-     plan              = "standard"
-     location          = "us-east"
-     adminpassword     = "password123"
-     
-     group {
-       group_id = "member"
-       memory {
-         allocation_mb = 1024
-       }
-       disk {
-         allocation_mb = 5120
-       }
-     }
+    ```terraform
+    resource "ibm_resource_group" "resource_group" {
+      name = "tutorialRG"
+    }
+
+    resource "ibm_database" "postgresql_db" {
+      resource_group_id = ibm_resource_group.resource_group.id
+      name              = "terraform_postgres"
+      service           = "databases-for-postgresql"
+      plan              = "standard"
+      location          = "us-east"
+      service_endpoints = "public"
+      adminpassword     = "password123456789"
+
+      group {
+        group_id = "member"
+        host_flavor {
+          id = "multitenant"
+        }
+        cpu {
+          allocation_count = 2
+        }
+        memory {
+          allocation_mb = 4096
+        }
+        disk {
+          allocation_mb = 5120
+        }
+      }
+    }
+
+    data "ibm_database_connection" "icd_conn" {
+      deployment_id = ibm_database.postgresql_db.id
+      user_type     = "database"
+      user_id       = "admin"
+      endpoint_type = "public"
     }
 
     output "Postgresql" {
-      value = "http://${ibm_database.postgresql_db.connectionstrings[0].composed}"
+      value = data.ibm_database_connection.icd_conn
     }
-   ```
-   {: codeblock}
+    ```
+    {: codeblock}
 
-   - **Resource group** - the Resource Group value you declare.
-   - **Name** - The service name can be any string and is the name that is used on the web and in the CLI to identify the new deployment.
-   - **Service** - For {{site.data.keyword.databases-for-postgresql}}, the service ID is `databases-for-postgresql`. Choose the correct Service ID for your deployment.
-   - **Plan** - This tutorial uses a Standard plan. For more information, see [{{site.data.keyword.cloud}} Pricing](https://www.ibm.com/cloud/pricing).
-   - **Location** - Choose a suitable region for your deployment instance.
-   - **Admin Password** - The {{site.data.keyword.databases-for-postgresql}} service is provisioned with an admin user, so you can manage PostgreSQL by using its command-line tool, `psql`. For more information, see [Setting the Admin password](/docs/databases-for-postgresql?topic=databases-for-postgresql-user-management&interface=ui#user-management-set-admin-password-ui).
-   - **Group** Scaling groups represent the various resources that are allocated to a deployment. To see an example for configuring and deploying a database that uses `group` attributes, see [Sample database instance by using group attributes.](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database#sample-database-instance-by-using-group-attributes){: external}
-   - **Group values** - Memory, disk, and CPU values are all based on minimum requirements for provisioning a {{site.data.keyword.databases-for-postgresql}} instance.
-   - **Timeouts** - Create, update, and delete values for this resource. {{site.data.keyword.databases-for}} `create` typically takes in the range of 30 - 45 minutes. `delete` and `update` typically take 1 minute. Provisioning times are unpredictable. If the deployment fails due to a timeout, import the database resource once the `create` is complete.
+   - **resource_group_id** - The Resource Group value you declare.
+   - **name** - The service name can be any string and is the name that is used on the web and in the CLI to identify the new deployment.
+   - **service** - For {{site.data.keyword.databases-for-postgresql}}, the service ID is `databases-for-postgresql`. Choose the correct Service ID for your deployment.
+   - **plan** - This tutorial uses a Standard plan. For more information, see [{{site.data.keyword.cloud}} Pricing](https://www.ibm.com/cloud/pricing).
+   - **location** - Choose a suitable region for your deployment instance.
+   - **service_endpoint** - The service endpoints of your deployment. `public` is used in the tutorial, however it is recommended that only `private` endpoints are used in production.
+   - **adminpassword** - The {{site.data.keyword.databases-for-postgresql}} service is provisioned with an admin user, so you can manage PostgreSQL by using its command-line tool, `psql`. For more information, see [Setting the Admin password](/docs/databases-for-postgresql?topic=databases-for-postgresql-user-management&interface=ui#user-management-set-admin-password-ui).
+   - **group** - Scaling groups represent the various resources that are allocated to a deployment. To see an example for configuring and deploying a database that uses `group` attributes, see [Sample database instance by using group attributes.](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database#sample-database-instance-by-using-group-attributes){: external}
+   - **group values** - Memory, disk, and CPU values are all based on minimum requirements for provisioning a {{site.data.keyword.databases-for-postgresql}} shared compute instance.
+   - **output** - When the terraform process finished the connection information for the new database will be shown in the terminal.
 
 ## Test your configuration
 {: #tutorial-provision-postgres-test}
