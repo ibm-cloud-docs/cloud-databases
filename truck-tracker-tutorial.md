@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2019, 2021
-lastupdated: "2022-03-03"
+  years: 2019, 2024
+lastupdated: "2024-10-02"
 
 keywords: IBM Cloud Databases, ICD, truck tracker, terraform, docker
 
@@ -12,23 +12,17 @@ account-plan: paid
 completion-time: 2h
 ---
 
-{:external: .external target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:tip: .tip}
-{:note: .note}
+{{site.data.keyword.attribute-definition-list}}
 
-# Truck Tracker: An IoT Pattern Using OpenShift and other IBM Cloud Services
+# Truck Tracker: An IoT pattern using OpenShift and other IBM Cloud services
 {: #truck-tracker-ibmcloud}
 {: toc-completion-time="2h"}
 {: toc-content-type="tutorial"}
 
-## Combining IBM Cloud services to produce a variety of insights.
+## Combining IBM Cloud services to produce a variety of insights
 {: #truck-tracker-use-case}
 
-**Truck Tracker** is a service that receives data from a fleet of trucks as they travel across the country. It could be any data (e.g., fuel consumption, driver details, ambient temperature, or anything else that can be measured as you cruise). For the purposes of this post, it will be the truck's ID and position (lat/long coordinates). Truck Tracker will store the data in various data stores and also show you the current position of the trucks on a map.
+**Truck Tracker** is a service that receives data from a fleet of trucks as they travel across the country. It could be any data (for example, fuel consumption, driver details, ambient temperature, or anything else that can be measured as you cruise). For the purposes of this post, it will be the truck's ID and position (lat/long coordinates). Truck Tracker will store the data in various data stores and also show you the current position of the trucks on a map.
 
 Some app users need this data to run analytics. For example, to find out how many miles the fleet has traveled in the last 24 hours or how much fuel it has consumed. For that, all data points can be stored in a reliable document store like [{{site.data.keyword.cloudant}}](https://www.ibm.com/cloud/cloudant), as well as searched and aggregated at will. {{site.data.keyword.cloudant}} is a fully managed, distributed database optimized for heavy workloads and fast-growing web and mobile apps. 
 
@@ -43,8 +37,6 @@ So your trucks are flying around the country and data is pouring out of them. Ho
 Event Streams can take in the data from the trucks (data producers) and then serve it to the various applications that will use it (data consumers).
 
 Finally, you will need to run your Truck Tracker service somewhere, and for that we will use [{{site.data.keyword.openshiftlong_notm}}](https://www.ibm.com/cloud/openshift), a fast and secure way to containerize and deploy enterprise workloads in Kubernetes clusters. We will provision an {{site.data.keyword.openshiftlong_notm}} cluster, deploy our applications to it and make them available to the database services that need access to it. We will also make a public-facing application to view the positions of trucks on a map. Read more about [{{site.data.keyword.openshiftlong_notm}}.](https://cloud.redhat.com/learn/what-is-openshift) 
-
-
 
 ## What you will build
 {: #truck-tracker-solution}
@@ -143,7 +135,6 @@ Go into the root of the project and type the following:
 ./build.sh
 ```
 
-
 ### Step 5: Watch your trucks truckin'
 {: #truck-tracker-trucking}
 {: step}
@@ -197,7 +188,6 @@ There are five main files:
 1. `producer.js`: This takes in a location file and a truck_id from the script invocation and then loops through all the data points in the location file. Each data point is turned into a message with the truck ID and lat/long and posted once a second to Event Streams. For added fun, it picks a random starting point along the route and turns around and comes back when it reaches the end of the location file.
 1. `cloudantConsumer.js`: This script creates a trucktracker database in Cloudant if it does not already exist and then polls Event Streams at regular intervals for more data. When data comes in, it gets written in bulk to Cloudant.
 1. `redisConsumer.js`: This script polls Event Streams at regular intervals for data. When data comes in, it gets written into a Redis "hash" where the hash key is the truck ID and the value is the truck data (lat/long). This hash arrangement allows all the truck data to be pulled down by the server.js script in one go. The great thing is that if for some reason one of your consumers crashes, it will pick up where it left off without losing any data, because Event Streams knows the last data point it served to each consumer. Decoupling data-producing systems from data-consuming systems in this way is a good design practice that increases resilience and fault tolerance.
-
 
 ### Summary
 {: #truck-tracker-summary}
