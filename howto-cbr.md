@@ -48,6 +48,11 @@ Resource groups
 Instance
 :   Protects a specific instance. If you include an instance in your context-based restrictions rule, resources in the network zones that you associate with the rule can interact only with resources in that instance. Scoping a rule to a specific instance is available only for rules that protect the cluster API type. If you use the CLI, you can specify the `--service-instance` option to protect instances in a specific resource group. If you use the UI, you can specify the *Service instance* in the resource attributes.
 
+### Using the Command Line Interface (CLI)
+{: cli}
+
+You can create and manage context-based restrictions with the IBM Cloud CLI by [installing the context-based restrictions CLI plug-in](/docs/cli?topic=cli-cbr-plugin).
+
 ## Creating network zones
 {: #network-zone}
 
@@ -80,7 +85,7 @@ Service references function only from {{site.data.keyword.keymanagementservicesh
 {: #network-zone-cli}
 {: cli}
 
-To create network zones in the CLI, [install the context-based restrictions CLI plug-in](/docs/cli?topic=cli-cbr-plugin). Use the `cbr-zone-create` command to add resources to network zones. For more information, see the [context-based restrictions CLI reference](/docs/account?topic=account-cbr-plugin#cbr-zones-cli).
+To create network zones in the CLI, use the `cbr-zone-create` command to add resources to network zones. For more information, see the [context-based restrictions CLI reference](/docs/account?topic=account-cbr-plugin#cbr-zones-cli).
 
 Create a zone by using a command like:
 
@@ -137,13 +142,13 @@ Full closure of access to non-allowlisted endpoints: To provide a more robust se
 1. Go to **Manage** > **Context-based restrictions** in the {{site.data.keyword.cloud}} console.
 1. Select **Rules**.
 1. Click **Create**.
-1. Select **Specific APIs** and then select `Data plane`. Any other selection results in an error.
+1. Under **Service**, select the service you want to target with your rule.
+1. Under **APIs**, select `Data plane`. Currently any other selection results in an error. 
 
    {{site.data.keyword.databases-for}} does not currently support **Control plane** as an option.
    {: .note}
 
-1. Click **Next**.
-1. Scope the rule to **All resources** or **Specific resources**. For more information, see [Protecting {{site.data.keyword.databases-for}} resources](/docs/cloud-databases?topic=cloud-databases-cbr#cbr-overview-protect-services).
+1. Under **Resources**, scope the rule to **All resources** or **Specific resources**. For more information, see [Protecting {{site.data.keyword.databases-for}} resources](/docs/cloud-databases?topic=cloud-databases-cbr#cbr-overview-protect-services).
 1. Click **Continue**.
 1. Define the allowed endpoint types.
    - Keep the toggle set to **No** to allow all endpoint types.
@@ -165,8 +170,6 @@ Full closure of access to non-allowlisted endpoints: To provide a more robust se
 {: #rules-cli}
 {: cli}
 
-To create rules in the CLI, [install the context-based restrictions CLI plug-in](/docs/account?topic=account-cbr-plugin).
-
 To create a rule in the CLI, you need the appropriate {{site.data.keyword.databases-for}} `service_name`:
 
 * `databases-for-postgresql`
@@ -178,14 +181,16 @@ To create a rule in the CLI, you need the appropriate {{site.data.keyword.databa
 * `databases-for-enterprisedb`
 * `databases-for-etcd`
 
-Create a rule by using a command like:
+All the other parameters that follow are explained in the [CBR plugin reference guide](https://cloud.ibm.com/docs/account?topic=account-cbr-plugin#cbr-rules-cli).
+
+Example command for creating a CBR Rule:
 
 ```sh
 ibmcloud cbr rule-create --enforcement-mode enabled --context-attributes "networkZoneId=<ZONE-ID>" --resource-group-id <RESOURCE_GROUP_ID> --service-name <SERVICE-NAME> --service-instance <SERVICE-INSTANCE> --api-types crn:v1:bluemix:public:context-based-restrictions::::api-type:data-plane --description <DESCRIPTION>
 ```
 {: .pre}
 
-{{site.data.keyword.databases-for}} does not currently support **Control plane** as an option.
+The only `api-type` option currently supported by {{site.data.keyword.databases-for}} is  **Data plane**.
 {: .note}
 
 *Report-only* is not available for {{site.data.keyword.databases-for}}.
@@ -195,7 +200,8 @@ ibmcloud cbr rule-create --enforcement-mode enabled --context-attributes "networ
 {: #update-rules-cli}
 {: cli}
 
-Update a rule by using a command like:
+Example command for updating a CBR rule:
+
 ```sh
 ibmcloud cbr rule-update <RULE-ID> --enforcement-mode disabled --context-attributes="networkZoneId=<ZONE-ID>" --resource-group-id   <RESOURCE_GROUP_ID> --service-name <SERVICE_NAME> --api-types crn:v1:bluemix:public:context-based-restrictions::::api-type:data-plane --description    <DESCRIPTION>
 ```
@@ -225,11 +231,47 @@ ibmcloud cbr rule-delete <RULE-ID>
 Use `ibmcloud cbr <command> — help` for a full list of options and parameters. For example, `ibmcloud cbr rule-create — help` outputs parameters for rule creation.
 {: .tip}
 
+### Creating zones in Terraform
+{: #zones-tf}
+{: terraform}
+
+To create zones in Terraform, follow the instructions in the [IBM Cloud Terraform provider documentation](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cbr_zone){: external}.
+
+Example Terraform script to create a CBR zone:
+
+```sh
+resource "ibm_cbr_zone" "cbr_zone" {
+  account_id = "12ab34cd56ef78ab90cd12ef34ab56cd"
+  addresses {
+    type = "ipAddress"
+    value = "169.23.56.234"
+  }
+  addresses {
+    type = "ipRange"
+    value = "169.23.22.0-169.23.22.255"
+  }
+  excluded {
+    type  = "ipAddress"
+    value = "169.23.22.10"
+  }
+  excluded {
+    type  = "ipAddress"
+    value = "169.23.22.11"
+  }
+  description = "this is an example of zone"
+  excluded {
+        type = "ipAddress"
+        value = "value"
+  }
+  name = "an example of zone"
+}
+```
+
 ### Creating rules in Terraform
 {: #rules-tf}
 {: terraform}
 
-To create rules using Terraform, see [IBM Cloud Provider](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs){: external} in the [Terraform Registry](https://registry.terraform.io/){: external}.
+To create rules in Terraform, follow the instructions in the [IBM Cloud Terraform provider documentation](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cbr_rule){: external}.
 
 To create a rule, you need the appropriate {{site.data.keyword.databases-for}} `service_name`:
 
@@ -241,8 +283,6 @@ To create a rule, you need the appropriate {{site.data.keyword.databases-for}} `
 * `messages-for-rabbitmq`
 * `databases-for-enterprisedb`
 * `databases-for-etcd`
-
-The `ibm_cbr_rule` provides a resource for `cbr_rule` and allows a `cbr_rule` to be created, updated, and deleted.
 
 Create a rule by using a command like:
 
@@ -283,16 +323,6 @@ resource "ibm_cbr_rule" "cbr_rule" {
 ```
 {: pre}
 
-### Import rules in Terraform
-{: #import-rules-tf}
-{: terraform}
-
-You can import the `ibm_cbr_rule` resource by using `id`, the globally unique ID of the rule.
-
-```sh
-terraform import ibm_cbr_rule.cbr_rule
-```
-{: pre}
 
 ### Verifying your rule
 {: #rules-ui-verify}

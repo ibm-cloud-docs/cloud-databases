@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2024
-lastupdated: "2024-07-31"
+lastupdated: "2024-10-04"
 
 keywords: guidance, recommendations, best practices, initial steps, setup
 
@@ -17,7 +17,7 @@ subcollection: cloud-databases
 ## Prework
 {: #before-starting}
 
-- [ ] To ensure cloud-native alignment, complete your data modeling and architectural reviews. For help with data modeling and architecture, contact the [IBM Garage](https://cloud.ibm.com/catalog/services/consult-with-ibm-garage){: .external}.
+- [ ] To ensure cloud-native alignment, complete your data modeling and architectural reviews. For help with data modeling and architecture, contact the [IBM Garage](https://www.ibm.com/garage){: .external}.
 - [ ] Determine the best method for your initial setup, including [Terraform, API, CLI, or UI methods](/docs/cloud-databases?topic=cloud-databases-getting-started-cdb-provision-instance).
 - [ ] To manage your database's encryption key for data-at-rest, you must [Bring Your Own encryption Key (BYOK)](/docs/cloud-databases?topic=cloud-databases-key-protect) when creating your database. This setup cannot be changed after your instance is provisioned.
 - [ ] Make sure that [IAM access policies and resource groups](/docs/account?topic=account-iamoverview) are set up correctly for your business protocols.
@@ -30,7 +30,7 @@ subcollection: cloud-databases
 {: #sample-checklist}
 
 - [ ] Create a database with the required disk, RAM, and virtual CPUs. While these scaling parameters can be changed after the initial provisioning, disks *cannot be scaled down*.
-- [ ] If you would like hypervisor level isolation, or if you want to guarantee a number of vCPUs, ensure that your [database CPU allocation](/docs/cloud-databases?topic=cloud-databases-getting-started-cdb-provision-instance) is provisioned to use `dedicated cores`.
+- [ ] If you would like hypervisor level isolation, or if you want to guarantee a number of vCPUs, ensure that you [provision Isolated Compute instances](/docs/cloud-databases?topic=cloud-databases-getting-started-cdb-provision-instance).
 - [ ] Add users. See the related documentation for your {{site.data.keyword.databases-for}} instance.
 - [ ] Change the `Admin` Password.
 - [ ] Set up auto scaling policies, if appropriate.
@@ -47,7 +47,7 @@ subcollection: cloud-databases
 - [ ] Make sure that your application uses TLS for connecting to the database. Insecure connections to {{site.data.keyword.databases-for}} are not allowed.
 - [ ] Thoroughly load test, and then load test again.
 - [ ] Validate the application's reconnect logic. For some applications retry is not enough and you must reconnect. Review the article, ["Unresponsive Redis Service"](https://developer.ibm.com/articles/error-detection-and-handling-with-redis/) for an example of implementation on {{site.data.keyword.databases-for-redis_full}}.
-- [ ] Set up development and testing environments as separate instances, then work through this checklist again. Depending on your requirements, you might not want to use dedicated cores for these test environments. Not using dedicated cores helps to keep costs lower.
+- [ ] Set up development and testing environments as separate instances, then work through this checklist again. Depending on your requirements, you might not want to use Isolated Compute for these test environments. Not using Isolated Compute helps to keep costs lower.
 - [ ] Complete [Disaster Recovery](/docs/cloud-databases?topic=cloud-databases-ha-dr) testing. Test restoring your application to a different IBM Cloud region. Ensure you are able to connect to a "restored" database with new connection details.
     * Understand your Recovery Point Objective (RPO) and Recovery Time Objective (RTO) requirements and ensure that you can meet them with your database's configuration.
 

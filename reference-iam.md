@@ -55,10 +55,10 @@ Read Deployables
 GET /v5/ibm/regions
 Read Discover available regions
 ---
-GET /v4/ibm/tasks/:task_id
+GET /v5/ibm/tasks/:task_id
 Read a Task
 ---
-GET /v5/ibm/tasks/:task_id
+GET /v5/ibm/backups/:backup_id
 Read a Backup
 ---
 GET /v5/ibm/deployments/:deployment_id
