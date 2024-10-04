@@ -2,7 +2,7 @@
 
 copyright:
    years: 2022, 2024
-lastupdated: "2024-07-31"
+lastupdated: "2024-10-04"
 
 keywords: IBM Cloud Databases, ICD, terraform, terraform mongodbee, mongodb, mongodbee
 
@@ -71,12 +71,21 @@ Follow the steps at [Install Terraform](https://learn.hashicorp.com/tutorials/te
     **Example `provider.tf` file**
 
     ```terraform
+    terraform {
+      required_providers {
+        ibm = {
+          source  = "IBM-Cloud/ibm"
+          version = ">= 1.28.0"
+        }
+      }
+    }
+
     variable "ibmcloud_api_key" {}
     variable "region" {}
 
     provider "ibm" {
-        ibmcloud_api_key = var.ibmcloud_api_key
-        region           = var.region
+      ibmcloud_api_key = var.ibmcloud_api_key
+      region           = var.region
     }
     ```
     {: codeblock}
@@ -99,37 +108,34 @@ resource "ibm_database" "mongodbee_db" {
   service           = "databases-for-mongodb"
   plan              = "enterprise"
   location          = "us-east"
+  service_endpoints = "public"
   adminpassword     = "password123changeme"
   group {
     group_id = "member"
-    
-    memory {
-      allocation_mb = 14336
+    host_flavor {
+      id = "b3c.4x16.encrypted"
     }
     disk {
       allocation_mb = 20480
     }
-    cpu {
-      allocation_count = 6
-    }
   }
-  
+
   group {
     group_id = "analytics"
-    
+
     members {
       allocation_count = 1
     }
   }
-  
+
   group {
     group_id = "bi_connector"
-    
+
     members {
       allocation_count = 1
     }
   }
-  
+
   timeouts {
     create = "120m"
     update = "120m"
@@ -138,7 +144,7 @@ resource "ibm_database" "mongodbee_db" {
 }
 data "ibm_database_connection" "mongodbee_conn" {
   deployment_id = resource.ibm_database.mongodbee_db.id
-  user_id       = resource.ibm_database.mongodbee_db.adminuser  
+  user_id       = resource.ibm_database.mongodbee_db.adminuser
   user_type     = "database"
   endpoint_type = "public"
 }
@@ -158,6 +164,7 @@ output "analytics_connection" {
 - **Service** - For {{site.data.keyword.databases-for-mongodb}}, the service ID is `databases-for-mongodb`. Choose the correct Service ID for your deployment.
 - **Plan** - This tutorial uses a Standard plan. For more information, see [{{site.data.keyword.cloud}} Pricing](https://www.ibm.com/cloud/pricing).
 - **Location** - Choose a suitable region for your deployment instance.
+- **Service endpoints** - Choose the service endpoints for your deployment instance. _"private"_ is recommended for production use.
 - **Admin password** - You must set the admin password before you can use it to connect. For more information, see [Setting the Admin password](/docs/databases-for-mongodb?topic=databases-for-mongodb-user-management&interface=ui#user-management-set-admin-password-ui).
 - **Group** Scaling groups represent the various resources that are allocated to a deployment. To see an example for configuring and deploying a database that uses `group` attributes, se[Sample database instance by using group attributes.](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database#sample-database-instance-by-using-group-attributes){external}
 - **Group values** - Memory, disk, and CPU values are all based on minimum requirements for provisioning a {{site.data.keyword.databases-for-mongodb}} instance.
