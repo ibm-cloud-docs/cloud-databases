@@ -30,7 +30,7 @@ For information on data center closures, see [Data center migrations](/docs/get-
 To identify your impacted resources, take advantage of special offers, or learn about recommended configurations, use one of the following options to contact the {{site.data.keyword.IBM_notm}} 24x7 Client Success team:
 
 - [Live chat](https://www.ibm.com/cloud/data-centers/?focusArea=WCP%20-%20Pooled%20CSM&contactmodule){: external}
-- Phone: (US) 866-597-9687; (EMEA) +31 20 308 0540; (APAC) +65 6622 2231
+- Phone: (US) 866-597-9687
 
 To avoid any disruption to your service, please complete the following steps to migrate your resources from your current data center to your new location: 
 
