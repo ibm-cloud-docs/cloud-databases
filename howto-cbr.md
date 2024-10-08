@@ -94,6 +94,42 @@ ibmcloud cbr zone-create --addresses=1.1.1.1,5.5.5.5 --name=<NAME>
 ```
 {: .pre}
 
+### Creating network zones in Terraform
+{: #zones-tf}
+{: terraform}
+
+To create zones in Terraform, follow the instructions in the [IBM Cloud Terraform provider documentation](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cbr_zone){: external}.
+
+Example Terraform script to create a CBR zone:
+
+```sh
+resource "ibm_cbr_zone" "cbr_zone" {
+  account_id = "12ab34cd56ef78ab90cd12ef34ab56cd"
+  addresses {
+    type = "ipAddress"
+    value = "169.23.56.234"
+  }
+  addresses {
+    type = "ipRange"
+    value = "169.23.22.0-169.23.22.255"
+  }
+  excluded {
+    type  = "ipAddress"
+    value = "169.23.22.10"
+  }
+  excluded {
+    type  = "ipAddress"
+    value = "169.23.22.11"
+  }
+  description = "this is an example of zone"
+  excluded {
+        type = "ipAddress"
+        value = "value"
+  }
+  name = "an example of zone"
+}
+```
+
 ### Update network zones in the CLI
 {: #update-network-zone-cli}
 {: cli}
@@ -231,41 +267,7 @@ ibmcloud cbr rule-delete <RULE-ID>
 Use `ibmcloud cbr <command> — help` for a full list of options and parameters. For example, `ibmcloud cbr rule-create — help` outputs parameters for rule creation.
 {: .tip}
 
-### Creating zones in Terraform
-{: #zones-tf}
-{: terraform}
 
-To create zones in Terraform, follow the instructions in the [IBM Cloud Terraform provider documentation](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cbr_zone){: external}.
-
-Example Terraform script to create a CBR zone:
-
-```sh
-resource "ibm_cbr_zone" "cbr_zone" {
-  account_id = "12ab34cd56ef78ab90cd12ef34ab56cd"
-  addresses {
-    type = "ipAddress"
-    value = "169.23.56.234"
-  }
-  addresses {
-    type = "ipRange"
-    value = "169.23.22.0-169.23.22.255"
-  }
-  excluded {
-    type  = "ipAddress"
-    value = "169.23.22.10"
-  }
-  excluded {
-    type  = "ipAddress"
-    value = "169.23.22.11"
-  }
-  description = "this is an example of zone"
-  excluded {
-        type = "ipAddress"
-        value = "value"
-  }
-  name = "an example of zone"
-}
-```
 
 ### Creating rules in Terraform
 {: #rules-tf}
