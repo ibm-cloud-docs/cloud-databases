@@ -28,6 +28,7 @@ When you provision a {{site.data.keyword.databases-for}} instance, you can choos
 | {{site.data.keyword.databases-for-postgresql}} | The major version is defined by the first number in the version number. | v12, 22 January 2025, v13, 22 October 2025 |   v16   | Backup taken and access removed |
 | {{site.data.keyword.databases-for-mysql}} | Major versions are the first two numbers in a `major.x.patch` version number. | v8.0, April 2026 |  v8.0 | Backup taken and access removed |
 | {{site.data.keyword.messages-for-rabbitmq}} | Major versions are the first two numbers in a `major.x.patch` version number. | v3.12, 30 April 2025 |   v3.12   | Backup taken and access removed |
+| {{site.data.keyword.databases-for-enterprisedb}} | The major version is defined by the first number in the version number. | v12, TBD |  v12  | Backup is taken and access is removed |
 | {{site.data.keyword.databases-for-etcd}} | Major versions are the first number in a `major.minor.patch` version number. | End of Service/Full deprecation on 15 October 2025 |   v3.5   | Permanently disabled and deprovisioned |
 {: caption="Table 1. Major versions for {{site.data.keyword.databases-for}}" caption-side="top"}
 
