@@ -260,7 +260,7 @@ Backup location differs per database region. Ensure that the backup region locat
 | Chennai |	Chennai Object Storage |
 | Sao Paolo | Sao Paolo Object Storage |
 | Madrid | EU cross regional Object Storage |
-{: caption="Table 1. Instance and backup regions" caption-side="bottom"}
+{: caption="Instance and backup regions" caption-side="bottom"}
 
 For more details about {{site.data.keyword.databases-for}} Object Storage locations, review the location's [documentation](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-geo).
 

@@ -43,7 +43,7 @@ Finally, you will need to run your Truck Tracker service somewhere, and for that
 
 This is the high-level system that we are going to build:
 
-![The Truck Tracker Solution](images/TruckTrackerOS.png){: caption="Figure 1. The Truck Tracker Solution" caption-side="bottom"}
+![The Truck Tracker Solution](images/TruckTrackerOS.png){: caption="The Truck Tracker Solution" caption-side="bottom"}
 
 In a real-life scenario, your data generators (the truck's IoT devices) would have to find a way to communicate with the Event Streams application, probably using the MQTT protocol. We will simulate our trucks traveling around the country and sending data by using a script (`producer.js`) that will be generating a truck location every second by reading from a predefined set of lat/long pairs of a couple of "road trips" (`LAToDallas.json` and `boulderToNYC.json`) and feeding it into Event Streams. 
 
@@ -143,11 +143,11 @@ The end of the script will output a URL — something like _https:// some.thing.
 
 If you visit the URL that has been generated, you should be able to see a map of the US and, after a few seconds, several markers on the map that represent your trucks:
 
-![The Truck Tracker Wide View](images/trucktrackerwide.png){: caption="Figure 3. All-Truck View" caption-side="bottom"}
+![The Truck Tracker Wide View](images/trucktrackerwide.png){: caption="All-Truck View" caption-side="bottom"}
 
 If you zoom in on one of these markers you will see it moving along the road. As the fleet manager, you now know where all your trucks are.
 
-![The Truck Tracker Zoom View](images/trucktrackerzoom.png){: caption="Figure 4. Single-Truck View" caption-side="bottom"}
+![The Truck Tracker Zoom View](images/trucktrackerzoom.png){: caption="Single-Truck View" caption-side="bottom"}
 
 ## What you just did
 {: #truck-tracker-what-happened}

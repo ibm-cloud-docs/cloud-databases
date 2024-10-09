@@ -30,7 +30,7 @@ When you provision a {{site.data.keyword.databases-for}} instance, you can choos
 | {{site.data.keyword.messages-for-rabbitmq}} | Major versions are the first two numbers in a `major.x.patch` version number. | v3.12, 30 April 2025 |   v3.12   | Backup taken and access removed |
 | {{site.data.keyword.databases-for-enterprisedb}} | The major version is defined by the first number in the version number. | v12, TBD |  v12  | Backup is taken and access is removed |
 | {{site.data.keyword.databases-for-etcd}} | Major versions are the first number in a `major.minor.patch` version number. | End of Service/Full deprecation on 15 October 2025 |   v3.5   | Permanently disabled and deprovisioned |
-{: caption="Table 1. Major versions for {{site.data.keyword.databases-for}}" caption-side="top"}
+{: caption="Major versions for {{site.data.keyword.databases-for}}" caption-side="top"}
 
 ## Subscribe for version updates
 {: #version-updates-subscribe}
@@ -61,7 +61,7 @@ Failure to act can result in compatibility issues with your apps when IBM upgrad
 | **Deprecated** | Old versions and versions near their end of life dates are marked as "Deprecated". Provisions and restores of instances that run a deprecated version are still available and instances that run a deprecated version continue to be supported. However, you are encouraged to upgrade to the new "Preferred" version as deprecated versions are eventually removed from {{site.data.keyword.cloud_notm}} and are no longer provisionable, restorable, or supported.                                                              |
 | **Untagged** | Untagged versions are fully supported and deployable versions. They are usually slightly older than the current preferred version, but they are still supported by the project maintainers. They continue to be supported on {{site.data.keyword.databases-for}} instances until their deprecation is announced.|
 | **Hidden** | A hidden version cannot be provisioned. Existing instances that are using a version marked as hidden are still able to be restored to the hidden version. |
-{: caption="Table 1. {{site.data.keyword.databases-for}} Version Tags" caption-side="bottom"}
+{: caption="{{site.data.keyword.databases-for}} Version Tags" caption-side="bottom"}
 
 ## Minor versions
 {: #minor-versions}

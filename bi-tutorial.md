@@ -131,20 +131,20 @@ It takes only a few seconds to upload all of your data. You are now ready to vis
 
 Connect your {{site.data.keyword.databases-for-mongodb}} EE (Enterprise Edition) Analytics Add-On instance to Tableau. In the "Connect" tab, choose the MongoDB BI Connector and enter your connection information:
 
-![Connect to Tableau](images/tableau-connect.png){: caption="Figure 1. Connect to Tableau" caption-side="bottom"}
+![Connect to Tableau](images/tableau-connect.png){: caption="Connect to Tableau" caption-side="bottom"}
 
-![Choose to Connect to MongoDB](images/tableau-connect-mongodb.png){: caption="Figure 2. Choose to Connect to MongoDB" caption-side="bottom"} 
+![Choose to Connect to MongoDB](images/tableau-connect-mongodb.png){: caption="Choose to Connect to MongoDB" caption-side="bottom"} 
 
 The server and port values come from the printed output of [Step 4](#create-infra).
 Leave the database blank.
 The username is "admin".
 The password is the one you created in [Step 2](#clone-repo).
 
-![MongoDB Connector Values](images/tableau-connect-variables.png){: caption="Figure 3. Enter your MongoDB Connector Values" caption-side="bottom"} 
+![MongoDB Connector Values](images/tableau-connect-variables.png){: caption="Enter your MongoDB Connector Values" caption-side="bottom"} 
 
 In the Initial SQL tab, enter "FLUSH SAMPLE" and click "Sign In"
 
-![Type FLUSH SAMPLE](images/tableau-flush-sample.png){: caption="Figure 4. Type FLUSH SAMPLE" caption-side="bottom"} 
+![Type FLUSH SAMPLE](images/tableau-flush-sample.png){: caption="Type FLUSH SAMPLE" caption-side="bottom"} 
 
 The `FLUSH SAMPLE` command tells the BI Connector to re-create the necessary tabular schema from a sample of the collection documents. Whenever your document structure changes, you need to reexecute the `FLUSH SAMPLE` command to re-create the BI Connector schema.
 
@@ -155,11 +155,11 @@ If your database has many documents, schema creation is a time-consuming process
 
 You can now select the WHO database on the right. Next, press "Update Now" to see the data in tabular format.
 
-![Visualize your data in tabular format](images/tableau-connect-view-data.png){: caption="Figure 5. Visualize your data in tabular format" caption-side="bottom"} 
+![Visualize your data in tabular format](images/tableau-connect-view-data.png){: caption="Visualize your data in tabular format" caption-side="bottom"} 
 
 If you select the map view from the right menu, you can also see your data in a nice map, with the columns containing country codes and the rows containing cumulative cases.
 
-![Visualize your data in map view](images/tableau-connect-map-view.png){: caption="Figure 6. Visualize your data in map view" caption-side="bottom"} 
+![Visualize your data in map view](images/tableau-connect-map-view.png){: caption="Visualize your data in map view" caption-side="bottom"} 
 
 ### Step 8: Deprovision your infrastructure
 {: #deprovision-infra}

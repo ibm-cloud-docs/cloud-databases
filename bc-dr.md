@@ -39,7 +39,7 @@ keywords: DR for cloud-databases, high availability for cloud-databases, disaste
 |---|---|
 |  RPO | < 24 hours |
 |  RTO | <24 hours - for Regional failure (0 hours for Zone Failure) |
-{: caption="Table 1. RPO and RTO for {{site.data.keyword.databases-for}}" caption-side="bottom"}
+{: caption="RPO and RTO for {{site.data.keyword.databases-for}}" caption-side="bottom"}
 
 ## Locations
 {: #ha-locations}
@@ -65,7 +65,7 @@ The purpose of the {{site.data.keyword.databases-for}} regional Disaster Recover
 | `eu-de`      | Europe cross regional endpoint     | Yes                   |
 | `par01`      | Europe cross regional endpoint    | Yes                   |
 | `eu-es`      | Europe cross regional endpoint     | Yes                   |
-{: caption="Table 2. Single region backups for {{site.data.keyword.databases-for}}" caption-side="bottom"}
+{: caption="Single region backups for {{site.data.keyword.databases-for}}" caption-side="bottom"}
 
 Keep a local copy of your data.
 {: important}
