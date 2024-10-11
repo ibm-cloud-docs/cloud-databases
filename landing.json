@@ -1,58 +1,62 @@
 {
-    "title": "IBM Cloud® Databases",
-    "lastupdated": "2023-08-02",
-    "introduction": "The IBM Cloud® Databases portfolio contains database-as-a-service offerings on IBM Cloud®. In addition to the comprehensive information in the IBM Cloud® Databases documentation, links to additional sources of information are provided below.",
-    "section_devtools": {
-      "api": "/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction", 
-      "cli": "/docs/databases-cli-plugin", 
-      "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database"
-    },
-    "section_recommended": [
+  "version": 2,
+  "title": "IBM Cloud Databases",
+  "introduction": "The IBM Cloud® Databases portfolio contains database-as-a-service offerings on IBM Cloud®. In addition to the comprehensive information in the IBM Cloud® Databases documentation, links to additional sources of information are provided below.",
+  "product_page": "https://www.ibm.com/cloud/databases",
+  "deployment_url": "https://cloud.ibm.com/databases-overview/overview",
+  "section_topics": {
+    "links": [
       {
         "title": "IBM Cloud® Databases for PostgreSQL",
-        "description": "PostgreSQL is a powerful, open source object-relational database that is highly customizable.",
         "href": "https://cloud.ibm.com/docs/databases-for-postgresql"
       },
       {
         "title": "IBM Cloud® Databases for MongoDB",
-        "description": "MongoDB is a JSON document store with a rich query and aggregation framework.",
         "href": "https://cloud.ibm.com/docs/databases-for-mongodb"
       },
       {
         "title": "IBM Cloud® Databases for Redis",
-        "description": "Redis is a blazingly fast, in-memory data structure store.",
         "href": "https://cloud.ibm.com/docs/databases-for-redis"
       },
       {
         "title": "IBM Cloud® Databases for Elasticsearch",
-        "description": "Elasticsearch combines the power of a full text search engine with the indexing strengths of a JSON document database.",
         "href": "https://cloud.ibm.com/docs/databases-for-elasticsearch"
       },
       {
         "title": "IBM Cloud® Databases for MySQL",
-        "description": "IBM Cloud® Databases for MySQL is a serverless, cloud database service that is fully integrated into the IBM Cloud environment.",
         "href": "https://cloud.ibm.com/docs/databases-for-mysql"
       },
       {
         "title": "IBM Cloud® Messages for RabbitMQ",
-        "description": "RabbitMQ is an open source multi-protocol messaging broker.",
         "href": "https://cloud.ibm.com/docs/messages-for-rabbitmq"
       },
       {
         "title": "IBM Cloud® Databases for EnterpriseDB",
-        "description": "EnterpriseDB is a PostgreSQL-based database engine optimized for performance, developer productivity, and compatibility with Oracle.",
         "href": "https://cloud.ibm.com/docs/databases-for-enterprisedb"
       },
       {
         "title": "IBM Cloud® Databases for etcd",
-        "description": "etcd is a distributed, reliable key-value store for the most critical data of a distributed system.",
         "href": "https://cloud.ibm.com/docs/databases-for-etcd"
       }
-    ],
-    "section_learn": {
-      "developer": "https://developer.ibm.com/depmodels/cloud/",
-      "architecture": "https://www.ibm.com/cloud/architecture",
-      "training": "https://www.ibm.com/training/cloud",
-      "community": "https://community.ibm.com/community/user/publiccloud/home"
+    ]
+  },
+  "section_highlights": [
+    {
+      "title": "IBM named a leader for cloud database management systems",
+      "description": "Gartner named IBM a leader in Gartner Magic Quadrant for 2021 Cloud Database Management Systems.",
+      "href": "https://www.ibm.com/blog/ibm-is-named-a-leader-in-the-2021-gartner-magic-quadrant-for-cloud-database-management-systems-dbms/",
+      "type": "blog"
+    },
+    {
+      "title": "IBM Training - Cloud",
+      "description": "Includes Power Virtual Server, SAP, VMware, Advocate, Architect, Developer, and Site Reliability Engineer, and more",
+      "href": "https://www.ibm.com/training/cloud",
+      "type": "training"
     }
+  ],
+  "section_devtools": {
+    "api": "/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction", 
+    "cli": "/docs/databases-cli-plugin", 
+    "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database"
   }
+}
