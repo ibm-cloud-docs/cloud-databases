@@ -13,7 +13,6 @@ toc:
   - navgroup:
       id: overview
       topics:
-      - index.md
       - cdb-provision.md
       - topicgroup:
           label: Hosting models
