@@ -5,6 +5,7 @@ toc:
     version: 2
     audience: solution
     category: solution_docs
+    content-type: solution
     href: /docs/cloud-databases
     path: cloud-databases
     label: IBM Cloud Databases
