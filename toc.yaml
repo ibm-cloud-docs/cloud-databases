@@ -3,14 +3,14 @@ toc:
   properties:
     subcollection: cloud-databases
     version: 2
-    category: database
-    audience: service
+    audience: solution
+    category: solution_docs
     href: /docs/cloud-databases
     path: cloud-databases
     label: IBM Cloud Databases
   entries:
   - navgroup:
-      id: learn
+      id: overview
       topics:
       - index.md
       - cdb-provision.md
