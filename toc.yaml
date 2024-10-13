@@ -3,56 +3,33 @@ toc:
   properties:
     subcollection: cloud-databases
     version: 2
-    category: database
-    audience: service
+    audience: solution
+    category: solution_docs
+    content-type: solution
     href: /docs/cloud-databases
     path: cloud-databases
     label: IBM Cloud Databases
   entries:
   - navgroup:
-      id: learn
+      id: overview
       topics:
-      - index.md
       - cdb-provision.md
       - topicgroup:
           label: Hosting models
           topics:
           - hosting-models.md
           - hosting-pricing.md
-      - cdb-notifications.md
-      - cdb-logging-monitoring.md
-      - cdb-secure.md
-      - topicgroup:
-          label: IBM Cloud Databases Services
-          topics:
-          - link:
-              label: Cloud Databases for PostgreSQL
-              href: https://cloud.ibm.com/docs/databases-for-postgresql          
-          - link:
-              label: Cloud Databases for MongoDB
-              href: https://cloud.ibm.com/docs/databases-for-mongodb
-          - link:
-              label: Cloud Databases for Redis
-              href: https://cloud.ibm.com/docs/databases-for-redis              
-          - link:
-              label: Cloud Databases for Elasticsearch
-              href: https://cloud.ibm.com/docs/databases-for-elasticsearch
-          - link:
-              label: Cloud Databases for MySQL
-              href: https://cloud.ibm.com/docs/databases-for-mysql
-          - link:
-              label: Messages for RabbitMQ
-              href: https://cloud.ibm.com/docs/messages-for-rabbitmq
-          - link:
-              label: Cloud Databases for EnterpriseDB
-              href: https://cloud.ibm.com/docs/databases-for-enterprisedb              
-          - link:
-              label: Cloud Databases for etcd
-              href: https://cloud.ibm.com/docs/databases-for-etcd
+  - navgroup:
+      id: plan
+      topics:
+      - index.md
   - navgroup:
       id: howto
       topics:
       - learn-getting-to-production.md
+      - cdb-notifications.md
+      - cdb-logging-monitoring.md
+      - cdb-secure.md
       - topicgroup:
           label: Logging and monitoring
           topics:
@@ -104,6 +81,33 @@ toc:
           - bc-dr.md
       - db-version-policy.md
       - reference-responsibilities.md
+      - topicgroup:
+          label: IBM Cloud Databases services documentation
+          topics:
+          - link:
+              label: Cloud Databases for PostgreSQL
+              href: https://cloud.ibm.com/docs/databases-for-postgresql          
+          - link:
+              label: Cloud Databases for MongoDB
+              href: https://cloud.ibm.com/docs/databases-for-mongodb
+          - link:
+              label: Cloud Databases for Redis
+              href: https://cloud.ibm.com/docs/databases-for-redis              
+          - link:
+              label: Cloud Databases for Elasticsearch
+              href: https://cloud.ibm.com/docs/databases-for-elasticsearch
+          - link:
+              label: Cloud Databases for MySQL
+              href: https://cloud.ibm.com/docs/databases-for-mysql
+          - link:
+              label: Messages for RabbitMQ
+              href: https://cloud.ibm.com/docs/messages-for-rabbitmq
+          - link:
+              label: Cloud Databases for EnterpriseDB
+              href: https://cloud.ibm.com/docs/databases-for-enterprisedb              
+          - link:
+              label: Cloud Databases for etcd
+              href: https://cloud.ibm.com/docs/databases-for-etcd
   - navgroup:
       id: help
       topics:

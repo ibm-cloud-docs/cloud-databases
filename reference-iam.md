@@ -36,7 +36,7 @@ The following table provides a general overview of actions that are mapped to se
 | Operator | As an operator, you can view database instances and make configuration changes that include managing database credentials. | Scale a deployment and change a deployment's password. |
 | Editor | As an editor, you can perform all platform actions (including making configuration changes and managing credentials) except for managing the account and assigning access policies. | Scale a deployment and change a deployment's password. |
 | Administrator | As an administrator, you can perform all platform actions, including assigning access policies to other users. | Scale a deployment, change a deployment's password, and assign access policies. |
-{: caption="Table 1. IAM user roles and actions" caption-side="top"}
+{: caption="IAM user roles and actions" caption-side="top"}
 
 ## Actions for {{site.data.keyword.databases-for}} API
 {: #actions}

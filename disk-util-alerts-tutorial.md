@@ -222,7 +222,7 @@ If you receive an alert that your disk utilization exceeds 90%, scale your disk 
 | {{site.data.keyword.databases-for-redis}} | [Scaling Disk, RAM, and CPU](/docs/databases-for-redis?topic=databases-for-redis-resources-scaling&interface=ui) | [Autoscaling](/docs/databases-for-redis?topic=databases-for-redis-autoscaling&interface=ui) |
 | {{site.data.keyword.databases-for-mysql}} | [Scaling Disk, RAM, and CPU](/docs/databases-for-mysql?topic=databases-for-mysql-resources-scaling) | [Autoscaling](/docs/databases-for-redis?topic=databases-for-redis-autoscaling&interface=ui) |
 | {{site.data.keyword.messages-for-rabbitmq}} | [Scaling Disk, RAM, and CPU](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-resources-scaling&interface=ui) | [Autoscaling](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-autoscaling&interface=ui) |
-{: caption="Table 1. Scaling Resources" caption-side="bottom"}
+{: caption="Scaling Resources" caption-side="bottom"}
 
 ## {{site.data.keyword.databases-for}} service metrics
 {: #icd-service-metrics}

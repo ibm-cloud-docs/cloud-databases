@@ -49,7 +49,7 @@ Before beginning this tutorial, make sure that you have created or installed the
    | `us-south`          | `us-south`             |
    | `eu-fr2`            | `eu-de`, `eu-fr2`        |
    | `eu-de`             | `eu-de`                |
-   {: caption="Table 1. {{site.data.keyword.databases-for}} instance location and key region support" caption-side="top"}
+   {: caption="{{site.data.keyword.databases-for}} instance location and key region support" caption-side="top"}
 
 ## Configure failover
 {: #kms-tutorial-config-failover}

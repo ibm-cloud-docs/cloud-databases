@@ -32,7 +32,7 @@ Currently, {{site.data.keyword.loganalysisfull}} integration is available for {{
 | `br-sao` | `br-sao` |
 | `par01` | `eu-de` |
 | `eu-es` | `eu-de` |
-{: caption="Table 1. Log Analysis regions" caption-side="top"}
+{: caption="Log Analysis regions" caption-side="top"}
 
 Platform logs from your instances appear in a Log Analysis instance in the same region, except for `jp-osa` and `eu-es`. Instances in `jp-osa` have their logs forwarded to `jp-tok`. Instances in `eu-es` have their logs forwarded to `eu-de` If you have instances in multiple regions, you must set up Log Analysis in multiple regions.  
 

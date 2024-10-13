@@ -89,7 +89,7 @@ Begin by configuring IAM Authorizations:
 
 Before provisioning your {{site.data.keyword.databases-for}} {{site.data.keyword.satelliteshort}} deployment, your location needs to report `Normal`. This status can be confirmed in the UI, as shown in the following image:
 
-![UI showing location is normal](images/sat-normal.png){: caption="Figure 1. UI showing location is normal" caption-side="bottom"}
+![UI showing location is normal](images/sat-normal.png){: caption="UI showing location is normal" caption-side="bottom"}
 
 The `normal` status can also be confirmed by using the CLI, with a command like:
 
@@ -105,7 +105,7 @@ If successful, the command output reports `normal`.
 
 To get to this state, attach a minimum of three 4x16 hosts to your location and assign them to the Control plane. After that step is complete, provisioning of the Control plane begins. Upon successful completion, the location state is going to report as `Normal`, as shown: 
 
-![Control plane in normal state](images/cp-normal.png){: caption="Figure 1. Control plane in normal state" caption-side="bottom"}
+![Control plane in normal state](images/cp-normal.png){: caption="Control plane in normal state" caption-side="bottom"}
 
 Attempting to provision a database instance into a location without a running Control plane (that is, `Normal` state), causes provisioning to fail.
 {: .important}

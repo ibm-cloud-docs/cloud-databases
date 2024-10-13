@@ -104,7 +104,7 @@ The `host_flavor` parameter defines your Compute sizing. Input the appropriate v
 | 16 CPU x 64 RAM           | `b3c.16x64.encrypted`   |
 | 32 CPU x 128 RAM          | `b3c.32x128.encrypted`  |
 | 30 CPU x 240 RAM          | `m3c.30x240.encrypted`  |
-{: caption="Table 1. Host flavor sizing parameter" caption-side="bottom"}
+{: caption="Host flavor sizing parameter" caption-side="bottom"}
 
 ## {{site.data.keyword.databases-for}} Shared Compute
 {: #hosting-models-shared-compute-api}
@@ -153,7 +153,7 @@ The `host_flavor` parameter defines your Compute sizing. Input the appropriate v
 | 16 CPU x 64 RAM           | `b3c.16x64.encrypted`   |
 | 32 CPU x 128 RAM          | `b3c.32x128.encrypted`  |
 | 30 CPU x 240 RAM          | `m3c.30x240.encrypted`  |
-{: caption="Table 1. Host flavor sizing parameter" caption-side="bottom"}
+{: caption="Host flavor sizing parameter" caption-side="bottom"}
 
 ## {{site.data.keyword.databases-for}} Shared Compute
 {: #hosting-models-shared-compute-terraform}
@@ -205,7 +205,7 @@ The `host_flavor` parameter defines your Compute sizing. Input the appropriate v
 | 16 CPU x 64 RAM           | `b3c.16x64.encrypted`   |
 | 32 CPU x 128 RAM          | `b3c.32x128.encrypted`  |
 | 30 CPU x 240 RAM          | `m3c.30x240.encrypted`  |
-{: caption="Table 1. Host flavor sizing parameter" caption-side="bottom"}
+{: caption="Host flavor sizing parameter" caption-side="bottom"}
 
 ## Provisioning
 {: #hosting-models-provisioning}
@@ -252,7 +252,7 @@ Note that switching hosting models does not cause downtime, as this is not a bac
 | Receive all the available resources in your machine. | Transparent, deterministic CPU allocation. Know exactly what your performance will be and scale up and down as your workload requires. |
 | Some of our database offerings, such as MongoDB Enterprise and Elasticsearch Platinum, will be solely provisioned on Isolated Compute. Future enhancements, such as cross-region replication may be supported solely on Isolated Compute. | Excludes some database offerings, such as MongoDB Enterprise and Elasticsearch Platinum. |
 | Scalability is based on provided machine sizes. | Scalability is fine-grained and linear from a database-specific minimum configuration up to 28 CPU and 112 GB RAM. |
-{: caption="Table 2. Choosing between hosting models" caption-side="bottom"}
+{: caption="Choosing between hosting models" caption-side="bottom"}
 
 ## Databases availability by hosting model
 {: #hosting-models-availability}
@@ -271,7 +271,7 @@ The following table shows which model is available for each database.
 | RabbitMQ | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
 | EnterpriseDB |  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
 | etcd | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
-{: caption="Table 3. {{site.data.keyword.databases-for}} hosting model availability" caption-side="bottom"}
+{: caption="{{site.data.keyword.databases-for}} hosting model availability" caption-side="bottom"}
 
 ## Transition timeline from existing hosting models to Isolated and Shared Compute
 {: #hosting-model-transition-timeline}
@@ -281,7 +281,7 @@ Multi-tenant users that are automatically transitioned to Shared Compute will be
 
 Starting August 2024, existing multi-tenant instances will begin the transition to Shared Compute; this means that first, RAM minimum allocation on multi-tenant instances will be applied (8 GB RAM for RabbitMQ, 4 GB RAM for all other databases), lifting the RAM of existing instances that fall below these minimums. All new provisioning requests will also have to abide to the minimum resource requirements (1 CPU and 8 GB RAM for RabbitMQ, 0.5 CPU and 4 GB RAM for all other databases). Existing dedicated core users will not be impacted by minimum resource requirements unless a scale or provision action is invoked on an instance that is currently below these minimums.
 
-Following this, multi-tenant databases will be gradually transitioned from non-determinstic CPU allocation to the deterministic Shared Compute CPU allocation. Ahead of this transition, [monitor your database's CPU usage](/docs/cloud-databases?topic=cloud-databases-sysdig-monitor#sysdig-monitor-dashboards-cpu-cores-used-per-member) to determine what allocation is required to maintain your current performance level.
+Following this, multi-tenant databases will be gradually transitioned from non-determinstic CPU allocation to the deterministic Shared Compute CPU allocation. Ahead of this transition, [monitor your database's CPU usage](/docs/cloud-databases?topic=cloud-databases-monitoring#sysdig-monitor-dashboards-cpu-cores-used-per-member) to determine what allocation is required to maintain your current performance level.
 
 Existing multi-tenant users will be grandfathered through to May 2025 for both CPU and minimum RAM resource allocations that are automatically added. 
 
@@ -318,7 +318,7 @@ To determine how existing hosting models will switch over to Shared and Isolated
 | 8 CPU < N ≤ 16 CPU OR 32 GB RAM, < M < 64 GB RAM | 16 CPU x 64 GB RAM, Isolated Compute |
 | 16 CPU < N ≤ 32 CPU OR 64 GB RAM, < M < 128 GB RAM | 32 CPU x 128 RAM, Isolated Compute |
 | 16 CPU < N ≤ 30 CPU OR 64 GB RAM, < M < 240 GB RAM | 30 CPU x 240 RAM, Isolated Compute |
-{: caption="Table 4. Automatic transition placement" caption-side="bottom"}
+{: caption="Automatic transition placement" caption-side="bottom"}
 
 <br>
 
@@ -335,7 +335,7 @@ To determine how existing hosting models will switch over to Shared and Isolated
 | 8 CPU < N ≤ 16 CPU OR 32 GB RAM < M < 64 GB RAM | 16 CPU x 64 GB RAM, Isolated Compute |
 | 16 CPU < N ≤ 32 CPU OR 64 GB RAM < M < 128 GB RAM | 32 CPU x 128 RAM, Isolated Compute |
 | 16 CPU < N ≤ 30 CPU OR 64 GB RAM < M < 240 GB RAM | 30 CPU x 240 RA, Isolated Compute |
-{: caption="Table 5. Automatic transition placement RabbitMQ" caption-side="bottom"}
+{: caption="Automatic transition placement RabbitMQ" caption-side="bottom"}
 
 ## Hosting models FAQ
 {: #hosting-models-faq}

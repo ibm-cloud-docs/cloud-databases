@@ -31,7 +31,7 @@ Currently, {{site.data.keyword.at_short}} integration is available for {{site.da
 | `ca-tor` | `ca-tor` |
 | `par01` | `eu-de` |
 | `eu-es` | `eu-de` |
-{: caption="Table 1. Activity Tracker regions" caption-side="bottom"}
+{: caption="Activity Tracker regions" caption-side="bottom"}
 
 Events from your instances appear in an Activity Tracker instance in the same region, except for `jp-osa` and `eu-es`. Events for instances in `jp-osa` are forwarded to `jp-tok` and events for `eu-es` are forwarded to `eu-de`. If you have instances in multiple regions, you must set up the {{site.data.keyword.at_short}} in multiple regions. 
 
@@ -86,7 +86,7 @@ A new auditing message format has been released and the legacy format for events
 |`<service_id>.deployment.update`|`<service_id>.serviceendpoints.update` | A change was made to the service endpoints configuration. If the operation failed, a "-failure" flag is included in the message. |
 |`<service_id>.deployment-group-autoscaling.update` | `<service_id>.autoscaling.update` | An autoscaling configuration change or an autoscaling operation was performed. If an autoscaling operation was performed the message includes `autoscale resources for instance <deployment-id>`. If the autoscaling operation or the configuration change failed, a "-failure" flag is included in the message. |
 |`<service_id>.deployment-volumes.update`|`<service_id>.volumes.update` | An activity was performed on the encryption key that is used by the database, such as rotation or shredding. Details of the action are in the event. |
-{: caption="Table 2. List of Events and Event Descriptions" caption-side="bottom"}
+{: caption="List of Events and Event Descriptions" caption-side="bottom"}
 
 The `service_id` field indicates the type of {{site.data.keyword.databases-for}} instance. For example, `databases-for-postgresql` or `messages-for-rabbitmq`.
 
