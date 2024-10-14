@@ -17,14 +17,23 @@ keywords: isolated compute, hosting models, shared compute, transition
 {: #hosting-model-transition}
 
 
-# Transition timeline from existing hosting models to Isolated and Shared Compute
+## Transition timeline from existing hosting models to Isolated and Shared Compute
 {: #hosting-model-transition-timeline}
 
 Multi-tenant users that are automatically transitioned to Shared Compute will be *grandfathered*, meaning that they get RAM and CPU increased to the Shared Compute minimum resource allocations, if required. These increases will not be charged until May 2025.
 {: important}
 
-## September 2024 - Transition of multi-tenant instances to Shared Compute
+### August 2024 - RAM minimum allocation applied for multi-tenant instances
 {: #hosting-model-transition-timeline-aug24}
+
+- Existing multi-tenant instances will begin the transition to Shared Compute; this means that first, RAM minimum allocation on multi-tenant instances will be applied (8 GB RAM for RabbitMQ, 4 GB RAM for all other databases), lifting the RAM of existing instances that fall below these minimums. 
+- All new provisioning requests will also have to abide to the minimum resource requirements (1 CPU and 8 GB RAM for RabbitMQ, 0.5 CPU and 4 GB RAM for all other databases). 
+- Existing dedicated core users will not be impacted by minimum resource requirements unless a scale or provision action is invoked on an instance that is currently below these minimums.
+- Following this, multi-tenant databases will be gradually transitioned from non-determinstic CPU allocation to the deterministic Shared Compute CPU allocation. Ahead of this transition, monitor your database's CPU usage to determine what allocation is required to maintain your current performance level.
+- Existing multi-tenant users will be grandfathered through to May 2025 for both CPU and minimum RAM resource allocations that are automatically added.
+
+### September 2024 - Transition of multi-tenant instances to Shared Compute
+{: #hosting-model-transition-timeline-sept24}
 
 - All new multi-tenant provisions will use Shared Compute.
 - Existing multi-tenant instances will begin the transition to Shared Compute. First, RAM minimum allocation on multi-tenant instances will be applied (8 GB RAM for RabbitMQ, 4 GB RAM for all other databases), lifting the RAM of existing instances that fall below these minimums. 
@@ -35,7 +44,7 @@ Multi-tenant users that are automatically transitioned to Shared Compute will be
 - Existing multi-tenant users will be grandfathered through to May 2025 for both CPU and minimum RAM resource allocations that are automatically added. 
 - Dedicated cores provisioning remains available.
 
-## May 2025 - End of grandfathering for multi-tenant users
+### May 2025 - End of grandfathering for multi-tenant users
 {: #hosting-model-transition-timeline-may25}
 
 - All existing multi-tenant users will be grandfathered for CPU and minimum RAM allocations until this time.
@@ -57,7 +66,7 @@ Ahead of the May 2025 date, if you have a multi-tenant instance, there are a few
 - If you create a new Shared Compute instance, you will be charged for all CPU and RAM allocated to your database. 
 - If you transition your multi-tenant instance yourself to Shared Compute, you will be charged for all CPU and RAM allocated to your database.  
 
-# Shared Compute transition placement
+## Shared Compute transition placement
 {: #shared-compute-placement}
 
 To determine how existing hosting models will switch over to Shared and Isolated Compute, review the tables below. In the switchover, the assumption is that the starting points are old style multitenant (CPU unallocated, or 0) and dedicated cores. 
