@@ -29,10 +29,10 @@ toc:
       id: plan
       topics:
       - index.md
+      - learn-getting-to-production.md
   - navgroup:
       id: howto
       topics:
-      - learn-getting-to-production.md
       - cdb-notifications.md
       - cdb-logging-monitoring.md
       - cdb-secure.md
@@ -88,7 +88,7 @@ toc:
       - db-version-policy.md
       - reference-responsibilities.md
       - topicgroup:
-          label: IBM Cloud Databases services documentation
+          label: Related product guides
           topics:
           - link:
               label: Cloud Databases for PostgreSQL
