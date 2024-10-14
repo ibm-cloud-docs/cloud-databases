@@ -13,7 +13,7 @@ keywords: isolated compute, hosting models, shared compute, transition
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Transition timeline and transition placement for hosting models
+# Hosting models transition timeline and transition placement
 {: #hosting-model-transition}
 
 
