@@ -17,10 +17,14 @@ toc:
       - topicgroup:
           label: Hosting models
           topics:
-          - hosting-models.md
-          - hosting-models-transition.md
-          - hosting-models-faq.md
-          - hosting-pricing.md
+          - topic: hosting-models.md
+            navtitle: Overview
+          - topic: hosting-models-transition.md
+            navtitle: Transition timeline and placement
+          - topic: hosting-models-faq.md
+            navtitle: FAQ
+          - topic: hosting-pricing.md
+            navtitle: Pricing
   - navgroup:
       id: plan
       topics:
