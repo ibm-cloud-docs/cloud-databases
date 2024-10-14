@@ -279,17 +279,28 @@ The following table shows which model is available for each database.
 Multi-tenant users that are automatically transitioned to Shared Compute will be *grandfathered*, meaning that they get RAM and CPU increased to the Shared Compute minimum resource allocations, if required. These increases will not be charged until May 2025.
 {: important}
 
-Starting August 2024, existing multi-tenant instances will begin the transition to Shared Compute; this means that first, RAM minimum allocation on multi-tenant instances will be applied (8 GB RAM for RabbitMQ, 4 GB RAM for all other databases), lifting the RAM of existing instances that fall below these minimums. All new provisioning requests will also have to abide to the minimum resource requirements (1 CPU and 8 GB RAM for RabbitMQ, 0.5 CPU and 4 GB RAM for all other databases). Existing dedicated core users will not be impacted by minimum resource requirements unless a scale or provision action is invoked on an instance that is currently below these minimums.
+### September 2024 - Transition of multi-tenant instances to Shared Compute
+{: #hosting-model-transition-timeline-aug24}
 
-Following this, multi-tenant databases will be gradually transitioned from non-determinstic CPU allocation to the deterministic Shared Compute CPU allocation. Ahead of this transition, [monitor your database's CPU usage](/docs/cloud-databases?topic=cloud-databases-monitoring#sysdig-monitor-dashboards-cpu-cores-used-per-member) to determine what allocation is required to maintain your current performance level.
+- All new multi-tenant provisions will use Shared Compute.
+- Existing multi-tenant instances will begin the transition to Shared Compute. First, RAM minimum allocation on multi-tenant instances will be applied (8 GB RAM for RabbitMQ, 4 GB RAM for all other databases), lifting the RAM of existing instances that fall below these minimums. 
+- All new provisioning requests will also have to abide to the minimum resource requirements (1 CPU and 8 GB RAM for RabbitMQ, 0.5 CPU and 4 GB RAM for all other databases). 
+- Existing dedicated core users will not be impacted by minimum resource requirements unless a scale or provision action is invoked on an instance that is currently below these minimums.
+- Following this, multi-tenant databases will be gradually transitioned from non-determinstic CPU allocation to the deterministic Shared Compute CPU allocation. 
+- **Action:** Ahead of this transition, [monitor your database's CPU usage](/docs/cloud-databases?topic=cloud-databases-monitoring#sysdig-monitor-dashboards-cpu-cores-used-per-member) to determine what allocation is required to maintain your current performance level.
+- Existing multi-tenant users will be grandfathered through to May 2025 for both CPU and minimum RAM resource allocations that are automatically added. 
+- Dedicated cores provisioning remains available.
 
-Existing multi-tenant users will be grandfathered through to May 2025 for both CPU and minimum RAM resource allocations that are automatically added. 
+### May 2025 - End of grandfathering for multi-tenant users
+{: #hosting-model-transition-timeline-may25}
 
-From September 2024, the transition of multi-tenant instance to shared compute will be complete. All new multi-tenant provisions are placed on Shared Compute. Dedicated cores provisioning remain available at this time.
+- All existing multi-tenant users will be grandfathered for CPU and minimum RAM allocations until this time.
+- At this date, multi-tenant instances will need to comply with the Shared Compute resource allocations.
 
 In May 2025, we will transition dedicated core users to Isolated Compute and remove grandfathering for Shared Compute instances. All Dedicated Cores instances will be transitioned to the nearest larger Isolated Compute size. Dedicated Core instances can follow the simple switchover steps to transition to Isolated Compute at any time by using the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference){: external}, the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction){: external}, or through [Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: external}.
 
-Notifications will be sent ahead of changes, including at the following times: 
+Notifications will be sent ahead of changes, including at the following times:
+
 - Before the transition of multi-tenant to Shared Compute, to notify you of expected changes. 
 - After all multi-tenant instances are transitioned to Shared Compute resource allocations, to recommend that you review your database performance and adjust resources as necessary. 
 - Before final shutdown of dedicated cores and the transition to Isolated Compute. Additionally, before the end of grandfathering of Shared Compute instances.
