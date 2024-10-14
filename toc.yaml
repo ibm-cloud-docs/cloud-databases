@@ -18,9 +18,9 @@ toc:
           label: Hosting models
           topics:
           - hosting-models.md
-          - hosting-pricing.md
           - hosting-models-transition.md
           - hosting-models-faq.md
+          - hosting-pricing.md
   - navgroup:
       id: plan
       topics:
