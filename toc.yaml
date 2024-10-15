@@ -17,16 +17,22 @@ toc:
       - topicgroup:
           label: Hosting models
           topics:
-          - hosting-models.md
-          - hosting-pricing.md
+          - topic: hosting-models.md
+            navtitle: Overview
+          - topic: hosting-models-transition.md
+            navtitle: Transition timeline and placement
+          - topic: hosting-models-faq.md
+            navtitle: FAQ
+          - topic: hosting-pricing.md
+            navtitle: Pricing
   - navgroup:
       id: plan
       topics:
       - index.md
+      - learn-getting-to-production.md
   - navgroup:
       id: howto
       topics:
-      - learn-getting-to-production.md
       - cdb-notifications.md
       - cdb-logging-monitoring.md
       - cdb-secure.md
@@ -82,7 +88,7 @@ toc:
       - db-version-policy.md
       - reference-responsibilities.md
       - topicgroup:
-          label: IBM Cloud Databases services documentation
+          label: Related product guides
           topics:
           - link:
               label: Cloud Databases for PostgreSQL
