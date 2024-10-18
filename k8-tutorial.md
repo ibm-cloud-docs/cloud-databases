@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2024
-lastupdated: "2024-07-26"
+lastupdated: "2024-10-18"
 
 keywords: kubernetes, tutorial, setup
 
@@ -109,6 +109,9 @@ For more information, see [Working with resources and resource groups (ibmcloud 
 
 Remember the database instance name. Find your [region identifier here](/docs/cloud-databases?topic=cloud-databases-allowlisting#allowlist-ips).
 {: tip}
+
+The previous example provisions a Shared Compute instance. For more information, see the [Hosting models overview](/docs/cloud-databases?topic=cloud-databases-hosting-models&interface=ui).
+{: note}
 
 ## Configuring the Kubernetes app
 {: #config-kubernetes}
