@@ -27,9 +27,10 @@ When you provision a {{site.data.keyword.databases-for}} instance, you can choos
 | {{site.data.keyword.databases-for-redis}} | Major versions are the first number in a `major.minor.patch` version number. | v6.0, 25 October 2024 |   v7.2   | Automatically upgraded in place to next Major version 6.2 |
 | {{site.data.keyword.databases-for-postgresql}} | The major version is defined by the first number in the version number. | v12, 22 January 2025, v13, 22 October 2025 |   v16   | Backup taken and access removed |
 | {{site.data.keyword.databases-for-mysql}} | Major versions are the first two numbers in a `major.x.patch` version number. | v8.0, April 2026 |  v8.0 | Backup taken and access removed |
-| {{site.data.keyword.messages-for-rabbitmq}} | Major versions are the first two numbers in a `major.x.patch` version number. | v3.12, 30 April 2025 |   v3.12   | Backup taken and access removed |
+| {{site.data.keyword.messages-for-rabbitmq}} | Major versions are the first two numbers in a `major.x.patch` version number. | v3.12, 30 April 2025 |   v3.13   | Backup taken and access removed |
 | {{site.data.keyword.databases-for-enterprisedb}} | The major version is defined by the first number in the version number. | v12, TBD |  v12  | Backup is taken and access is removed |
-| {{site.data.keyword.databases-for-etcd}} | Major versions are the first number in a `major.minor.patch` version number. | End of Service/Full deprecation on 15 October 2025 |   v3.5   | Permanently disabled and deprovisioned |
+| {{site.data.keyword.databases-for-etcd}} | Major versions are the first number in a `major.minor.patch` version number. | End of Service/Full deprecation on 15 October 2025 |   v3.5   | Permanently disabled and deprovisioned. [Refer to critical timelines](https://cloud.ibm.com/docs/databases-for-etcd?topic=databases-for-etcd-deprecation&interface=ui){: external}.
+ |
 {: caption="Major versions for {{site.data.keyword.databases-for}}" caption-side="top"}
 
 ## Subscribe for version updates
@@ -78,7 +79,7 @@ In the event of a minor version update, Terraform destroys the resource and re-c
 
 You receive multiple notifications when a major version reaches its end of life. You can typically expect:
 
-* A blog post, for example: [IBM Cloud Databases version end of life announcement](https://www.ibm.com/blog/announcement/ibm-cloud-databases-version-end-of-life-announcement/){: external}.
+* A Cloud status page announcement, for example: [End of support notices](https://cloud.ibm.com/status/announcement?query=End+of+Support+Notices){: external}.
 * An announcement in your service's Release Notes, for example: [IBM Cloud® Databases for PostgreSQL version 12 end of life on January 22, 2025](https://cloud.ibm.com/docs/databases-for-postgresql?topic=databases-for-postgresql-postgresql-relnotes#databases-for-postgresql-18jan2023){: external}.
 * A notification by email through the {{site.data.keyword.IBM_notm}} API. This email contains a *Notifications* link that takes you to a Notifications Management page. **Make sure that these announcements are not being caught by your email service's spam filter.** For more information, see [Setting up distribution lists for IBM Cloud notifications](https://www.ibm.com/blog/announcement/setting-up-distribution-lists-for-ibm-cloud-notifications/){: external}.
 
