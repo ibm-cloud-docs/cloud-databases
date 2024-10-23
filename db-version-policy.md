@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-10-08"
+lastupdated: "2024-10-23"
 
 subcollection: cloud-databases
 
@@ -69,11 +69,6 @@ Failure to act can result in compatibility issues with your apps when IBM upgrad
 
 {{site.data.keyword.cloud_notm}} is committed to providing secure, up-to-date versions of services. As updates are released by project maintainers, they are tested, evaluated, and released to {{site.data.keyword.databases-for}} instances. Your instance's minor version and patch updates are handled automatically and are not user configurable.
 
-### Minor version upgrades and Terraform
-{: #minor-versions-tf}
-
-In the event of a minor version update, Terraform destroys the resource and re-creates it (to match the expected configuration).
-
 ## Major versioning end of life
 {: #-major-version-eol}
 
@@ -107,9 +102,15 @@ Version   Status       Preferred
 4.2       deprecated   false
 ```
 
-**On the {{site.data.keyword.databases-for}} API** the [`deployables` endpoint](/apidocs/cloud-databases-api/cloud-databases-api-v5#get-all-deployable-databases) returns all deployable services. Use the `version` parameter to return the version number.
+**On the {{site.data.keyword.databases-for}} API** the [`deployables` endpoint](/apidocs/cloud-databases-api/cloud-databases-api-v5#listdeployables){: external} returns all deployable services. Use the `version` parameter to return the version number.
 
 ```sh
 GET /v5/ibm/deployables
 ```
 {: pre}
+
+### Major versions and Terraform
+{: #-major-version-eol-terraform}
+
+Note that you cannot currently upgrade to a new major version using Terraform. Changing the version number on a Terraform script could lead to your data being destroyed. The recommended method of version upgrade is restoring a backup into a new deployment with the latest version. For more information, see [Restoring a backup](/docs/cloud-databases?topic=cloud-databases-dashboard-backups&interface=ui#restore-backup).
+{: important}
