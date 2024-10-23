@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-09-13"
+lastupdated: "2024-10-23"
 
 subcollection: cloud-databases
 
@@ -152,13 +152,22 @@ ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE-ID> standard 
 * The `region` is where you want the new instance to be located, which can be a different region from the source instance. Cross-region restores are supported, except for restoring to or from `eu-de` by using another region.
 * `backup_id` is the backup that you want to restore.
 
-Optional parameters are available through the CLI. Use them if you need to customize resources, or use a Key Protect key for BYOK encryption on the new instance.
+The previous command will restore a backup to a machine of the same configuration and on the same [hosting model](/docs/databases-for-mongodb?topic=databases-for-mongodb-hosting-models&interface=cli) as your original deployment.
+
+#### Optional parameters 
+{: #hosting-model-cli}
+{: cli}
+
+Optional parameters are available through the CLI. Use them if you need to customize resources, change the hosting model, or use a Key Protect key for BYOK encryption on the new instance. See the following example:
 
 ```sh
 ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE-ID> standard <REGION> -p
-'{"backup_id":"BACKUP_ID","key_protect_key":"KEY_PROTECT_KEY_CRN", "members_disk_allocation_mb":"DESIRED_DISK_IN_MB", "members_memory_allocation_mb":"DESIRED_MEMORY_IN_MB", "members_cpu_allocation_count":"NUMBER_OF_CORES"}'
+'{"backup_id":"BACKUP_ID","key_protect_key":"KEY_PROTECT_KEY_CRN", "members_disk_allocation_mb":"DESIRED_DISK_IN_MB", "members_host_flavor": "<VALUE>", "members_memory_allocation_mb":"DESIRED_MEMORY_IN_MB", "members_cpu_allocation_count":"NUMBER_OF_CORES"}'
 ```
 {: .pre}
+
+The `members_host_flavor` value can be either "multitenant" or an appropriate-sized Isolated Compute host (see [the list of available values](/docs/databases-for-mongodb?topic=databases-for-mongodb-hosting-models&interface=cli#hosting-models-iso-compute-sizing-cli)). Only specify `members_memory_allocation_mb` or `members_cpu_allocation_count` if you use "multitenant" hosting.
+{: note}
 
 A pre-formatted command for a specific backup is available in detailed view of the backup on the _Backups and restore_ tab of your instance's dashboard.
 {: .tip}
@@ -197,18 +206,45 @@ curl -X POST \
 The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are all required, and `backup_id` is the backup that you want to restore.
 {: important}
 
-The `target` is the region where you want the new instance to be located, which can be a different region from the source instance. Cross-region restores are supported, except for restoring into or out of the `eu-de` region.
+* Change the value of `name` to the name that you want for your new instance.
+* The `resource_plan_id` is the type of instance, such as _databases-for-postgresql_ or _messages-for-rabbitmq_. 
+* The `target` is the region where you want the new instance to be located, which can be a different region from the source instance. Cross-region restores are supported, except for restoring into or out of the `eu-de` region.
+* `backup_id` is the backup that you want to restore.
 
-If you need to adjust resources or use a Key Protect key, add any of the optional parameters `key_protect_key`, `members_disk_allocation_mb`, `members_memory_allocation_mb`, and `members_cpu_allocation_count`, and their preferred values to the body of the request.
+The above command will restore a backup to a machine of the same configuration and on the same [hosting model](/docs/databases-for-mongodb?topic=databases-for-mongodb-hosting-models&interface=cli) as your original deployment.
 
-By default, restoring from a backup provisions an instance with the preferred version of the database type, not the version of the instance you restore from. You can specify a version by adding the version in the parameters object, as in the following example. 
+#### Optional parameters 
+{: #hosting-model-api}
+{: api}
+
+Optional parameters are available through the API. Use them if you need to customize resources, change the hosting model, deploy to a specific version, or use a Key Protect key for BYOK encryption on the new instance.
+
+If you need to adjust resources, add any of the optional parameters `key_protect_key`, `members_disk_allocation_mb`, `members_host_flavor`,  `members_memory_allocation_mb`, `members_cpu_allocation_count`, or `version` and their preferred values to the body of the request. See the following example:
 
 ```sh
-`ibmcloud resource service-instance-create <INSTANCE_NAME> databases-for-mysql standard us-south -p '{"backup_id":"<BACKUP_ID>", "version": "<VERSION>"}'
+curl -X POST \
+  https://resource-controller.cloud.ibm.com/v2/resource_instances \
+  -H 'Authorization: Bearer <>' \
+  -H 'Content-Type: application/json' \
+    -d '{
+    "name": "<INSTANCE_NAME>",
+    "target": "<REGION>",
+    "resource_group": "<YOUR-RESOURCE-GROUP>",
+    "resource_plan_id": "<SERVICE-ID>",
+    "parameters":{
+      "backup_id": "<BACKUP_ID>",
+      "members_host_flavor": "<members_host_flavor_value>",
+      "version": "<VERSION_NUMBER>"
+    }
+  }'
 ```
+{: .pre}
 
-To see a list of versions available, run `ibmcloud cdb deployables`.
+The `members_host_flavor` value can be either "multitenant" or an appropriate-sized Isolated Compute host (see [the list of available values](/docs/databases-for-mongodb?topic=databases-for-mongodb-hosting-models&interface=cli#hosting-models-iso-compute-sizing-cli)). Only specify `members_memory_allocation_mb` or `members_cpu_allocation_count` if you use "multitenant" hosting.
+{: note}
 
+By default, restoring from a backup provisions an instance with the preferred version of the database type, not the version of the instance you restore from. You can specify a version by adding a `version` value in the parameters object.
+{: note}
 
 ### Restoring a backup through Terraform
 {: #restore-backup-tf}
@@ -235,7 +271,7 @@ resource "ibm_database" "<your-instance>" {
 
 For more information, see the [{{site.data.keyword.databases-for}} Terraform Registry](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/data-sources/database_backups){: external}.
 
-## Backups and Restoration
+## Backups and restoration
 {: #backup-restoration}
 
 * {{site.data.keyword.databases-for}} are not responsible for restoration, timeliness, or validity of said backups.
