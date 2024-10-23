@@ -3,7 +3,7 @@
 copyright:
   years: 2023, 2024
 
-lastupdated: "2024-10-14"
+lastupdated: "2024-10-23"
 
 subcollection: cloud-databases
 
@@ -66,8 +66,8 @@ Ahead of the May 2025 date, if you have a multi-tenant instance, there are a few
 - If you create a new Shared Compute instance, you will be charged for all CPU and RAM allocated to your database. 
 - If you transition your multi-tenant instance yourself to Shared Compute, you will be charged for all CPU and RAM allocated to your database.  
 
-## Shared Compute transition placement
-{: #shared-compute-placement}
+## Shared and Isolated Compute transition placement
+{: #shared-isolated-placement}
 
 To determine how existing hosting models will switch over to Shared and Isolated Compute, review the tables below. In the switchover, the assumption is that the starting points are old style multitenant (CPU unallocated, or 0) and dedicated cores. 
 
@@ -76,12 +76,12 @@ To determine how existing hosting models will switch over to Shared and Isolated
 | N = 0 CPU, M < 4 GB RAM | 0.5 CPU x 4 GB RAM, Shared Compute |
 | N = 0 CPU, 4 GB RAM < M ≤ 16 GB RAM | M/8 CPU x M GB RAM, Shared Compute|
 | N = 0 CPU, M > 16 GB RAM | 2 CPU x M GB RAM, Shared Compute |
-| 0 CPU < N ≤ 4 CPU, M < 16 GB RAM | 4 CPU x 16 GB RAM, Isolated Compute |
-| 4 CPU < N ≤ 8 CPU OR 16 GB RAM, < M < 32 GB RAM | 8 CPU x 32 GB RAM, Isolated Compute |
-| 4 CPU < N ≤ 8 CPU OR 32 GB RAM, < M < 64 GB RAM | 8 CPU x 64 GB RAM, Isolated Compute |
-| 8 CPU < N ≤ 16 CPU OR 32 GB RAM, < M < 64 GB RAM | 16 CPU x 64 GB RAM, Isolated Compute |
-| 16 CPU < N ≤ 32 CPU OR 64 GB RAM, < M < 128 GB RAM | 32 CPU x 128 RAM, Isolated Compute |
-| 16 CPU < N ≤ 30 CPU OR 64 GB RAM, < M < 240 GB RAM | 30 CPU x 240 RAM, Isolated Compute |
+| 0 CPU < N ≤ 4 CPU, M ≤ 16 GB RAM | 4 CPU x 16 GB RAM, Isolated Compute |
+| 4 CPU < N ≤ 8 CPU OR 16 GB RAM, < M ≤ 32 GB RAM | 8 CPU x 32 GB RAM, Isolated Compute |
+| 4 CPU < N ≤ 8 CPU OR 32 GB RAM, < M ≤ 64 GB RAM | 8 CPU x 64 GB RAM, Isolated Compute |
+| 8 CPU < N ≤ 16 CPU OR 32 GB RAM, < M ≤ 64 GB RAM | 16 CPU x 64 GB RAM, Isolated Compute |
+| 16 CPU < N ≤ 32 CPU OR 64 GB RAM, < M ≤ 128 GB RAM | 32 CPU x 128 RAM, Isolated Compute |
+| 16 CPU < N ≤ 30 CPU OR 64 GB RAM, < M ≤ 240 GB RAM | 30 CPU x 240 RAM, Isolated Compute |
 {: caption="Automatic transition placement" caption-side="bottom"}
 
 <br>
@@ -93,10 +93,10 @@ To determine how existing hosting models will switch over to Shared and Isolated
 | N = 0 CPU, M < 8 GB RAM | 1 CPU x 8 GB RAM, Shared Compute |
 | N = 0 CPU, 8 GB RAM < M ≤ 16 GB RAM | M/8 CPU x M GB RAM, Shared Compute |
 | N = 0 CPU, M > 16 GB RAM | 2 CPU x M GB RAM, Shared Compute |
-| 0 CPU < N ≤ 4 CPU , M < 16 GB RAM | 4 CPU x 16 GB RAM, Isolated Compute |
-| 4 CPU < N ≤ 8 CPU OR 16 GB RAM < M < 32 GB RAM | 8 CPU x 32 GB RAM, Isolated Compute |
-| 4 CPU < N ≤ 8 CPU OR 32 GB RAM < M < 64 GB RAM | 8 CPU x 64 GB RAM, Isolated Compute |
-| 8 CPU < N ≤ 16 CPU OR 32 GB RAM < M < 64 GB RAM | 16 CPU x 64 GB RAM, Isolated Compute |
-| 16 CPU < N ≤ 32 CPU OR 64 GB RAM < M < 128 GB RAM | 32 CPU x 128 RAM, Isolated Compute |
-| 16 CPU < N ≤ 30 CPU OR 64 GB RAM < M < 240 GB RAM | 30 CPU x 240 RA, Isolated Compute |
+| 0 CPU < N ≤ 4 CPU, M ≤ 16 GB RAM | 4 CPU x 16 GB RAM, Isolated Compute |
+| 4 CPU < N ≤ 8 CPU OR 16 GB RAM, < M ≤ 32 GB RAM | 8 CPU x 32 GB RAM, Isolated Compute |
+| 4 CPU < N ≤ 8 CPU OR 32 GB RAM, < M ≤ 64 GB RAM | 8 CPU x 64 GB RAM, Isolated Compute |
+| 8 CPU < N ≤ 16 CPU OR 32 GB RAM, < M ≤ 64 GB RAM | 16 CPU x 64 GB RAM, Isolated Compute |
+| 16 CPU < N ≤ 32 CPU OR 64 GB RAM, < M ≤ 128 GB RAM | 32 CPU x 128 RAM, Isolated Compute |
+| 16 CPU < N ≤ 30 CPU OR 64 GB RAM, < M ≤ 240 GB RAM | 30 CPU x 240 RAM, Isolated Compute |
 {: caption="Automatic transition placement RabbitMQ" caption-side="bottom"}
