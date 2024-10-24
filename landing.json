@@ -8,31 +8,31 @@
     "links": [
       {
         "title": "IBM Cloud® Databases for PostgreSQL",
-        "href": "https://cloud.ibm.com/docs/databases-for-postgresql"
+        "href": "/docs/databases-for-postgresql"
       },
       {
         "title": "IBM Cloud® Databases for MongoDB",
-        "href": "https://cloud.ibm.com/docs/databases-for-mongodb"
+        "href": "/docs/databases-for-mongodb"
       },
       {
         "title": "IBM Cloud® Databases for Redis",
-        "href": "https://cloud.ibm.com/docs/databases-for-redis"
+        "href": "/docs/databases-for-redis"
       },
       {
         "title": "IBM Cloud® Databases for Elasticsearch",
-        "href": "https://cloud.ibm.com/docs/databases-for-elasticsearch"
+        "href": "/docs/databases-for-elasticsearch"
       },
       {
         "title": "IBM Cloud® Databases for MySQL",
-        "href": "https://cloud.ibm.com/docs/databases-for-mysql"
+        "href": "/docs/databases-for-mysql"
       },
       {
         "title": "IBM Cloud® Messages for RabbitMQ",
-        "href": "https://cloud.ibm.com/docs/messages-for-rabbitmq"
+        "href": "/docs/messages-for-rabbitmq"
       },
       {
         "title": "IBM Cloud® Databases for EnterpriseDB",
-        "href": "https://cloud.ibm.com/docs/databases-for-enterprisedb"
+        "href": "/docs/databases-for-enterprisedb"
       }
     ]
   },
