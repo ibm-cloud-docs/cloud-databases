@@ -44,8 +44,7 @@ toc:
       - topicgroup:
           label: Enhancing security
           topics:
-          - topic: cdb-secure.md
-            navtitle: Managing security and compliance
+          - cdb-secure.md
           - manage-scc.md
           - howto-cbr.md
           - howto-allowlists.md
