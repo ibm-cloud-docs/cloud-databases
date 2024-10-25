@@ -34,17 +34,17 @@ toc:
       id: howto
       topics:
       - cdb-notifications.md
-      - cdb-logging-monitoring.md
-      - cdb-secure.md
       - topicgroup:
           label: Logging and monitoring
           topics:
+          - cdb-logging-monitoring.md
           - reference-monitoring.md
           - reference-activity-tracker.md
           - reference-logging.md
       - topicgroup:
           label: Enhancing security
           topics:
+          - cdb-secure.md
           - manage-scc.md
           - howto-cbr.md
           - howto-allowlists.md
