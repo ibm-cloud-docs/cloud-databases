@@ -40,9 +40,7 @@ toc:
           - cdb-logging-monitoring.md
           - reference-monitoring.md
           - reference-activity-tracker.md
-          - at-events.md
-          - reference-logging.md
-          - logging.md
+          - reference-logging.md 
       - topicgroup:
           label: Enhancing security
           topics:
