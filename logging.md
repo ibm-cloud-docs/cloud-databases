@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-10-25"
+lastupdated: "2024-11-08"
 
 keywords:
 
@@ -16,10 +16,10 @@ _Include your logging topic in an Observability topic group in the How to nav gr
 
 
 
-# Logging for _service-name_
+# Logging for {{site.data.keyword.databases-for}}
 {: #logging}
 
-{{site.data.keyword.cloud_notm}} services, such as _service-name_, generate platform logs that you can use to investigate abnormal activity and critical actions in your account, and troubleshoot problems.
+{{site.data.keyword.cloud_notm}} services, such as {{site.data.keyword.databases-for}}, generate platform logs that you can use to investigate abnormal activity and critical actions in your account, and troubleshoot problems.
 {: shortdesc}
 
 You can use {{site.data.keyword.logs_routing_full_notm}}, a platform service, to route platform logs in your account to a destination of your choice by configuring a tenant that defines where platform logs are sent. For more information, see [About Logs Routing](/docs/logs-router?topic=logs-router-about).
@@ -41,11 +41,11 @@ As of 28 March 2024, the {{site.data.keyword.la_full_notm}} service is deprecate
 
 
 
-_service-name_ sends platform logs to {{site.data.keyword.la_full_notm}} in the regions indicated in the following table.
+{{site.data.keyword.databases-for}} sends platform logs to {{site.data.keyword.la_full_notm}} in the regions indicated in the following table.
 
 | Dallas (`us-south`) | Washington (`us-east`)  | Toronto (`ca-tor`) | Sao Paulo (`br-sao`) |
 |---------------------|-------------------------|-------------------|----------------------|
-| [No]{: tag-red} | [No]{: tag-red} | [No]{: tag-red} | [No]{: tag-red} |
+| [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
 {: caption="Regions where platform logs are sent in Americas locations" caption-side="top"}
 {: #la-table-1}
 {: tab-title="Americas"}
@@ -55,7 +55,7 @@ _service-name_ sends platform logs to {{site.data.keyword.la_full_notm}} in the 
 
 | Tokyo (`jp-tok`)    | Sydney (`au-syd`) |  Osaka (`jp-osa`) | Chennai (`in-che`) |
 |---------------------|------------------|------------------|--------------------|
-| [No]{: tag-red} | [No]{: tag-red} | [No]{: tag-red} | [No]{: tag-red} |
+| [Yes]{: tag-green} | [Yes]{: tag-green} | [No]{: tag-red} | [Yes]{: tag-green} |
 {: caption="Regions where platform logs are sent in Asia Pacific locations" caption-side="top"}
 {: #la-table-2}
 {: tab-title="Asia Pacific"}
@@ -65,7 +65,7 @@ _service-name_ sends platform logs to {{site.data.keyword.la_full_notm}} in the 
 
 | Frankfurt (`eu-de`)  | London (`eu-gb`) | Madrid (`eu-es`) |
 |---------------------------------------------------------------|---------------------|------------------|
-| [Yes]{: tag-green} | [No]{: tag-red} | [No]{: tag-red} |
+| [Yes]{: tag-green} | [Yes]{: tag-green} | [No]{: tag-red} |
 {: caption="Regions where platform logs are sent in Europe locations" caption-side="top"}
 {: #la-table-3}
 {: tab-title="Europe"}
@@ -78,11 +78,11 @@ _service-name_ sends platform logs to {{site.data.keyword.la_full_notm}} in the 
 
 
 
-_service-name_ sends logs by {{site.data.keyword.logs_routing_full_notm}} in the regions that are indicated in the following table.
+{{site.data.keyword.cloud_notm}} Databases sends logs by {{site.data.keyword.logs_routing_full_notm}} in the regions that are indicated in the following table.
 
 | Dallas (`us-south`) | Washington (`us-east`)  | Toronto (`ca-tor`) | Sao Paulo (`br-sao`) |
 |---------------------|-------------------------|-------------------|----------------------|
-| [No]{: tag-red} | [No]{: tag-red} | [No]{: tag-red} | [No]{: tag-red} |
+| [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
 {: caption="Regions where platform logs are sent in Americas locations" caption-side="top"}
 {: #lr-table-1}
 {: tab-title="Americas"}
@@ -92,7 +92,7 @@ _service-name_ sends logs by {{site.data.keyword.logs_routing_full_notm}} in the
 
 | Tokyo (`jp-tok`)    | Sydney (`au-syd`) |  Osaka (`jp-osa`) | Chennai (`in-che`) |
 |---------------------|------------------|------------------|--------------------|
-| [No]{: tag-red} | [No]{: tag-red} | [No]{: tag-red} | [No]{: tag-red} |
+| [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [No]{: tag-red} |
 {: caption="Regions where platform logs are sent in Asia Pacific locations" caption-side="top"}
 {: #lr-table-2}
 {: tab-title="Asia Pacific"}
@@ -102,7 +102,7 @@ _service-name_ sends logs by {{site.data.keyword.logs_routing_full_notm}} in the
 
 | Frankfurt (`eu-de`)  | London (`eu-gb`) | Madrid (`eu-es`) |
 |---------------------------------------------------------------|---------------------|------------------|
-| [Yes]{: tag-green} | [No]{: tag-red} | [No]{: tag-red} |
+| [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
 {: caption="Regions where platform logs are sent in Europe locations" caption-side="top"}
 {: #lr-table-3}
 {: tab-title="Europe"}
@@ -114,6 +114,8 @@ _service-name_ sends logs by {{site.data.keyword.logs_routing_full_notm}} in the
 {: #log-platform}
 
 
+
+Platform logs from your instances can be routed to any region supported as per the table above. Logs from Chennai (`in-che`) is routed to Tokyo (`jp-tok`).
 
 
 
@@ -129,15 +131,21 @@ _service-name_ sends logs by {{site.data.keyword.logs_routing_full_notm}} in the
 
 
 
+Create {{site.data.keyword.logs_full_notm}} and configure routing by setting the target between source location to target instance.
+
 ## Viewing logs
 {: #log-viewing}
 
 
 
-### Launching {{site.data.keyword.logs_full_notm}} from the _service-name_ dashboard
+{{site.data.keyword.cloud_notm}} Databases logs can be viewed in on the {{site.data.keyword.logs_full_notm}} instance created. Go to Instance and _Open Dashboard._
+
+### Launching {{site.data.keyword.logs_full_notm}} from the {{site.data.keyword.cloud_notm}} Databases page
 {: #log-launch-integrated}
 
 
+
+Users can visit {{site.data.keyword.cloud_notm}} Databases instance. Click on _Overview_ and scroll to _Observability_ section. Click on {{site.data.keyword.logs_full_notm}} to view your logging instances. Click on _Open Dashboard_ to access the logs.
 
 ### Launching {{site.data.keyword.logs_full_notm}} from the Observability page
 {: #log-launch-standalone}
@@ -175,7 +183,5 @@ The following tables list the message IDs that are generated and additional info
 {: caption="Additional information about message IDs" caption-side="top"}
 
 
-## Analyzing _service-name_ logs
+## Analyzing {{site.data.keyword.databases-for}} logs
 {: #cloud-logs}
-
-
