@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-10-25"
+lastupdated: "2024-11-08"
 
 keywords:
 
@@ -16,12 +16,12 @@ _Include your activity tracking events file in an Observability topic group in t
 
 
 
-# Activity tracking events for _service-name_
+# Activity tracking events for {{site.data.keyword.databases-for}}
 {: #at_events}
 
 
 
-{{site.data.keyword.cloud_notm}} services, such as _service-name_, generate activity tracking events.
+{{site.data.keyword.cloud_notm}} services, such as {{site.data.keyword.databases-for}}, generate activity tracking events.
 {: shortdesc}
 
 Activity tracking events report on activities that change the state of a service in {{site.data.keyword.cloud_notm}}. You can use the events to investigate abnormal activity and critical actions and to comply with regulatory audit requirements.
@@ -45,7 +45,7 @@ As of 28 March 2024, the {{site.data.keyword.at_full_notm}} service is deprecate
 
 
 
-_Service-name_ sends activity tracking events to {{site.data.keyword.at_full_notm}} hosted event search in the regions that are indicated in the following table.
+{{site.data.keyword.databases-for}} send activity tracking events to {{site.data.keyword.at_full_notm}} hosted event search in the regions that are indicated in the following table.
 
 | Dallas (`us-south`) | Washington (`us-east`)  | Toronto (`ca-tor`) | Sao Paulo (`br-sao`) |
 |---------------------|-------------------------|-------------------|----------------------|
@@ -82,7 +82,7 @@ _Service-name_ sends activity tracking events to {{site.data.keyword.at_full_not
 
 
 
-_service-name_ sends activity tracking events by {{site.data.keyword.atracker_full_notm}} in the regions that are indicated in the following table.
+{{site.data.keyword.databases-for}} send activity tracking events by {{site.data.keyword.atracker_full_notm}} in the regions that are indicated in the following table.
 
 | Dallas (`us-south`) | Washington (`us-east`)  | Toronto (`ca-tor`) | Sao Paulo (`br-sao`) |
 |---------------------|-------------------------|-------------------|----------------------|
@@ -114,7 +114,7 @@ _service-name_ sends activity tracking events by {{site.data.keyword.atracker_fu
 {: class="simple-tab-table"}
 {: row-headers}
 
-## Enabling activity tracking events for _service-name_
+## Enabling activity tracking events for {{site.data.keyword.databases-for}}
 {: #at-enable}
 
 
@@ -123,14 +123,14 @@ _service-name_ sends activity tracking events by {{site.data.keyword.atracker_fu
 
 
 
-## Viewing activity tracking events for _service-name_
+## Viewing activity tracking events for {{site.data.keyword.databases-for}}
 {: #at-viewing}
 
 
 
 You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on events that are generated in your account and routed by {{site.data.keyword.atracker_full_notm}} to an {{site.data.keyword.logs_full_notm}} instance.
 
-### Launching {{site.data.keyword.logs_full_notm}} from the _service-name_ dashboard
+### Launching {{site.data.keyword.logs_full_notm}} from the {{site.data.keyword.databases-for}} dashboard
 {: #log-launch-integrated}
 
 
@@ -148,7 +148,7 @@ For information on launching the {{site.data.keyword.logs_full_notm}} UI, see [L
 
 
 
-The following table lists the activity tracking event actions that the {{site.data.keyword.cloud_notm}} platform generates _service-name_ instances are processed.
+The following table lists the activity tracking event actions that the {{site.data.keyword.cloud_notm}} platform generates {{site.data.keyword.databases-for}} instances are processed.
 
 | Action                                   | Description |
 |------------------------------------------|---------|
@@ -244,7 +244,5 @@ The following table lists the actions that generate an event for managing servic
 {: row-headers}
 
 
-## Analyzing _service-name_ activity tracking events
+## Analyzing {{site.data.keyword.databases-for}} activity tracking events
 {: #at_events_iam_analyze}
-
-
