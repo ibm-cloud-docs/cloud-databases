@@ -19,6 +19,7 @@ subcollection: cloud-databases
 
 - [ ] To ensure cloud-native alignment, complete your data modeling and architectural reviews. For help with data modeling and architecture, contact the [IBM Garage](https://www.ibm.com/garage){: .external}.
 - [ ] Determine the best method for your initial setup, including [Terraform, API, CLI, or UI methods](/docs/cloud-databases?topic=cloud-databases-getting-started-cdb-provision-instance).
+- [ ] Determine the [hosting model](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-hosting-models&interface=ui) and therefore the single- or multi-tenancy of your database. 
 - [ ] To manage your database's encryption key for data-at-rest, you must [Bring Your Own encryption Key (BYOK)](/docs/cloud-databases?topic=cloud-databases-key-protect) when creating your database. This setup cannot be changed after your instance is provisioned.
 - [ ] Make sure that [IAM access policies and resource groups](/docs/account?topic=account-iamoverview) are set up correctly for your business protocols.
 - [ ] Ensure that your account is [VRF-enabled](/docs/account?topic=account-vrf-service-endpoint#before-service-endpoint-enablement).
@@ -29,7 +30,7 @@ subcollection: cloud-databases
 ## Sample "Getting to production" checklist
 {: #sample-checklist}
 
-- [ ] Create a database with the required disk, RAM, and virtual CPUs. While these scaling parameters can be changed after the initial provisioning, disks *cannot be scaled down*.
+- [ ] Create a database with the required hosting model, disk, RAM, and virtual CPUs. While these scaling parameters can be changed after the initial provisioning, disks *cannot be scaled down*.
 - [ ] If you would like hypervisor level isolation, or if you want to guarantee a number of vCPUs, ensure that you [provision Isolated Compute instances](/docs/cloud-databases?topic=cloud-databases-getting-started-cdb-provision-instance).
 - [ ] Add users. See the related documentation for your {{site.data.keyword.databases-for}} instance.
 - [ ] Change the `Admin` Password.
