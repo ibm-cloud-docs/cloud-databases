@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-10-23"
+lastupdated: "2024-11-12"
 
 subcollection: cloud-databases
 
@@ -19,8 +19,6 @@ An automatically scheduled backup is taken of your database every day. You can a
 
 To access backups for {{site.data.keyword.databases-for}}, go to your database instance's Dashboard, and see the *Backups and restore* tab. 
 
-Restore is currently available through the CLI, API, and Terraform.
-{: note}
 
 Here is some additional general information about backups:
 
@@ -39,12 +37,11 @@ For information on taking an on-demand backup, see [Taking an on-demand backup](
 {: #backup-ui}
 {: ui}
 
+In the UI, navigate to the *Backups and restore* tab where you see a table with all available backups for your database. 
+
 The backup types can be either _On-demand_ or _Automatic_. Each backup is listed with its type and when the backup was taken.
 
-Click the backup to reveal information for that specific backup, including its full ID. A **Restore** button, or pre-formatted CLI command, is there for restore options.
-
-For new hosting models, restoring a backup is currently available through the [CLI](/docs/cloud-databases?topic=cloud-databases-dashboard-backups&interface=cli#restore-backup-cli), [API](/docs/cloud-databases?topic=cloud-databases-dashboard-backups&interface=api#restore-backup-api) and [Terraform](/docs/cloud-databases?topic=cloud-databases-dashboard-backups&interface=terraform#restore-backup-tf).
-{: .tip}
+Click the backup to reveal information for that specific backup, including its full ID. A **Restore** button or a pre-formatted CLI command is there for restore options. 
 
 ## Backups in the CLI
 {: #backup-ui-cli}
@@ -133,7 +130,7 @@ To restore a backup to a new service instance,
 3. On the **Provisioning** page, select from some available options.
     - The new instance is automatically named `<name>-restore-[timestamp]`, but you can rename it.
     - You can also select the region where the new instance is located. Cross-region restores are supported, except for restoring into or out of the `eu-de` region.
-    - You can choose the initial resource allocation, either to expand or shrink the resources on the new instance. You can also enable or disable dedicated cores.
+    - You can choose the initial resource allocation, either to expand or shrink the resources on the new instance. You can also enable or disable dedicated cores. Note that if you decrease your resource amount, it may lead to provision failure or your database not functioning properly. 
 4. Click **Restore backup**. A "restore from backup started" message appears. Clicking **Your new instance is available now** takes you to your _Resources List_.
 
 ### Restoring a backup in the CLI

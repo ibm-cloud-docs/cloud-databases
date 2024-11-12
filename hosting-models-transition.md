@@ -3,7 +3,7 @@
 copyright:
   years: 2023, 2024
 
-lastupdated: "2024-10-23"
+lastupdated: "2024-11-12"
 
 subcollection: cloud-databases
 
@@ -77,11 +77,11 @@ To determine how existing hosting models will switch over to Shared and Isolated
 | N = 0 CPU, 4 GB RAM < M ≤ 16 GB RAM | M/8 CPU x M GB RAM, Shared Compute|
 | N = 0 CPU, M > 16 GB RAM | 2 CPU x M GB RAM, Shared Compute |
 | 0 CPU < N ≤ 4 CPU, M ≤ 16 GB RAM | 4 CPU x 16 GB RAM, Isolated Compute |
-| 4 CPU < N ≤ 8 CPU OR 16 GB RAM, < M ≤ 32 GB RAM | 8 CPU x 32 GB RAM, Isolated Compute |
-| 4 CPU < N ≤ 8 CPU OR 32 GB RAM, < M ≤ 64 GB RAM | 8 CPU x 64 GB RAM, Isolated Compute |
-| 8 CPU < N ≤ 16 CPU OR 32 GB RAM, < M ≤ 64 GB RAM | 16 CPU x 64 GB RAM, Isolated Compute |
-| 16 CPU < N ≤ 32 CPU OR 64 GB RAM, < M ≤ 128 GB RAM | 32 CPU x 128 RAM, Isolated Compute |
-| 16 CPU < N ≤ 30 CPU OR 64 GB RAM, < M ≤ 240 GB RAM | 30 CPU x 240 RAM, Isolated Compute |
+| 4 CPU < N ≤ 8 CPU OR 16 GB RAM < M ≤ 32 GB RAM | 8 CPU x 32 GB RAM, Isolated Compute |
+| 4 CPU < N ≤ 8 CPU OR 32 GB RAM < M ≤ 64 GB RAM | 8 CPU x 64 GB RAM, Isolated Compute |
+| 8 CPU < N ≤ 16 CPU OR 32 GB RAM < M ≤ 64 GB RAM | 16 CPU x 64 GB RAM, Isolated Compute |
+| 16 CPU < N ≤ 32 CPU OR 64 GB RAM < M ≤ 128 GB RAM | 32 CPU x 128 RAM, Isolated Compute |
+| 16 CPU < N ≤ 30 CPU OR 64 GB RAM < M ≤ 240 GB RAM | 30 CPU x 240 RAM, Isolated Compute |
 {: caption="Automatic transition placement" caption-side="bottom"}
 
 <br>
@@ -94,9 +94,9 @@ To determine how existing hosting models will switch over to Shared and Isolated
 | N = 0 CPU, 8 GB RAM < M ≤ 16 GB RAM | M/8 CPU x M GB RAM, Shared Compute |
 | N = 0 CPU, M > 16 GB RAM | 2 CPU x M GB RAM, Shared Compute |
 | 0 CPU < N ≤ 4 CPU, M ≤ 16 GB RAM | 4 CPU x 16 GB RAM, Isolated Compute |
-| 4 CPU < N ≤ 8 CPU OR 16 GB RAM, < M ≤ 32 GB RAM | 8 CPU x 32 GB RAM, Isolated Compute |
-| 4 CPU < N ≤ 8 CPU OR 32 GB RAM, < M ≤ 64 GB RAM | 8 CPU x 64 GB RAM, Isolated Compute |
-| 8 CPU < N ≤ 16 CPU OR 32 GB RAM, < M ≤ 64 GB RAM | 16 CPU x 64 GB RAM, Isolated Compute |
-| 16 CPU < N ≤ 32 CPU OR 64 GB RAM, < M ≤ 128 GB RAM | 32 CPU x 128 RAM, Isolated Compute |
-| 16 CPU < N ≤ 30 CPU OR 64 GB RAM, < M ≤ 240 GB RAM | 30 CPU x 240 RAM, Isolated Compute |
+| 4 CPU < N ≤ 8 CPU OR 16 GB RAM < M ≤ 32 GB RAM | 8 CPU x 32 GB RAM, Isolated Compute |
+| 4 CPU < N ≤ 8 CPU OR 32 GB RAM < M ≤ 64 GB RAM | 8 CPU x 64 GB RAM, Isolated Compute |
+| 8 CPU < N ≤ 16 CPU OR 32 GB RAM < M ≤ 64 GB RAM | 16 CPU x 64 GB RAM, Isolated Compute |
+| 16 CPU < N ≤ 32 CPU OR 64 GB RAM < M ≤ 128 GB RAM | 32 CPU x 128 RAM, Isolated Compute |
+| 16 CPU < N ≤ 30 CPU OR 64 GB RAM < M ≤ 240 GB RAM | 30 CPU x 240 RAM, Isolated Compute |
 {: caption="Automatic transition placement RabbitMQ" caption-side="bottom"}
