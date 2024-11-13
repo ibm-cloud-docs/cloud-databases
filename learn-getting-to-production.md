@@ -40,7 +40,7 @@ subcollection: cloud-databases
    For more information, see your {{site.data.keyword.databases-for}} instance.
 - [ ] Set up monitoring with {{site.data.keyword.monitoringfull}}, {{site.data.keyword.atracker_full}}, and {{site.data.keyword.logs_full}}. At minimum, set alerts on:
    * [{{site.data.keyword.monitoringlong_notm}}](/docs/monitoring) - when disk usage is greater than 80% of provisioned capacity (we encourage you to use auto scaling for disk capacity). We also encourage you to use, understand, and alert on all provided metrics like disk I/O or CPU usage.
-   * [{{site.data.keyword.atracker_full}_notm}](/docs/cloud-databases?topic=cloud-databases-at_events) audit events for control plane actions, such as failed backups, IP allowlist updates, and auto scaling.
+   * [{{site.data.keyword.atracker_full_notm}}](/docs/cloud-databases?topic=cloud-databases-at_events) audit events for control plane actions, such as failed backups, IP allowlist updates, and auto scaling.
    * [{{site.data.keyword.logs_full_notm}}](/docs/cloud-databases?topic=cloud-databases-logging) - any particular database-specific logs you want to be notified about, such as slow query logs.
    * If available, turn on granular in-database auditing (only available for {{site.data.keyword.databases-for-postgresql}} and {{site.data.keyword.databases-for-mongodb}} Enterprise Edition).
 - [ ] Set up context-based restrictions, which give account owners and administrators the ability to define and enforce access restrictions for {{site.data.keyword.cloud}} resources based on the context of access requests. For more information, see [Protecting Cloud Databases resources with context-based restrictions](/docs/cloud-databases?topic=cloud-databases-cbr).
