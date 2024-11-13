@@ -35,12 +35,12 @@ toc:
       topics:
       - cdb-notifications.md
       - topicgroup:
-          label: Logging and monitoring
+          label: Observability
           topics:
           - cdb-logging-monitoring.md
-          - reference-monitoring.md
-          - reference-activity-tracker.md
-          - reference-logging.md 
+          - logging.md
+          - reference-monitoring.md 
+          - at-events.md
       - topicgroup:
           label: Enhancing security
           topics:
