@@ -38,9 +38,12 @@ toc:
           label: Observability
           topics:
           - cdb-logging-monitoring.md
-          - logging.md
-          - reference-monitoring.md 
-          - at-events.md
+          - topic: logging.md
+            navtitle: Logging
+          - topic: reference-monitoring.md
+            navtitle: Monitoring
+          - topic: at-events.md
+            navtitle: Activity tracking events
       - topicgroup:
           label: Enhancing security
           topics:
