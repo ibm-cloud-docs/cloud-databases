@@ -15,12 +15,12 @@ subcollection: cloud-databases
 # Logging for {{site.data.keyword.databases-for}}
 {: #logging}
 
-{{site.data.keyword.cloud_notm}} services, such as {{site.data.keyword.databases-for}}, generate platform logs that you can use to investigate abnormal activity and critical actions in your account, and troubleshoot problems.
+{{site.data.keyword.cloud}} services, such as {{site.data.keyword.databases-for}}, generate platform logs that you can use to investigate abnormal activity and critical actions in your account, and troubleshoot problems.
 {: shortdesc}
 
-You can use **{{site.data.keyword.logs_routing_full_notm}}**, a platform service, to route platform logs in your account to a destination of your choice by configuring a tenant that defines where platform logs are sent. For more information, see [About logs routing](/docs/logs-router?topic=logs-router-about).
+You can use **{{site.data.keyword.logs_routing_full}}**, a platform service, to route platform logs in your account to a destination of your choice by configuring a tenant that defines where platform logs are sent. For more information, see [About logs routing](/docs/logs-router?topic=logs-router-about).
 
-You can use **{{site.data.keyword.logs_full_notm}}** to visualize and alert on platform logs that are generated in your account and routed by {{site.data.keyword.logs_routing_full_notm}} to an {{site.data.keyword.logs_full_notm}} instance.
+You can use **{{site.data.keyword.logs_full}}** to visualize and alert on platform logs that are generated in your account and routed by {{site.data.keyword.logs_routing_full_notm}} to an {{site.data.keyword.logs_full_notm}} instance.
 
 
 

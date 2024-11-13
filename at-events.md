@@ -19,14 +19,14 @@ subcollection: cloud-databases
 
 
 
-{{site.data.keyword.cloud_notm}} services, such as {{site.data.keyword.databases-for}}, generate activity tracking events.
+{{site.data.keyword.cloud}} services, such as {{site.data.keyword.databases-for}}, generate activity tracking events.
 {: shortdesc}
 
 Activity tracking events report on activities that change the state of a service in {{site.data.keyword.cloud_notm}}. You can use the events to investigate abnormal activity and critical actions and to comply with regulatory audit requirements.
 
-You can use **{{site.data.keyword.atracker_full_notm}}**, a platform service, to route auditing events in your account to destinations of your choice by configuring targets and routes that define where activity tracking events are sent. For more information, see [About {{site.data.keyword.atracker_full_notm}}](/docs/atracker?topic=atracker-about).
+You can use **{{site.data.keyword.atracker_full}}**, a platform service, to route auditing events in your account to destinations of your choice by configuring targets and routes that define where activity tracking events are sent. For more information, see [About {{site.data.keyword.atracker_full_notm}}](/docs/atracker?topic=atracker-about).
 
-You can use **{{site.data.keyword.logs_full_notm}}** to visualize and alert on events that are generated in your account and routed by {{site.data.keyword.atracker_full_notm}} to an {{site.data.keyword.logs_full_notm}} instance.
+You can use **{{site.data.keyword.logs_full}}** to visualize and alert on events that are generated in your account and routed by {{site.data.keyword.atracker_full_notm}} to an {{site.data.keyword.logs_full_notm}} instance.
 
 
 
@@ -167,14 +167,3 @@ The following table lists the activity tracking event actions that {{site.data.k
 The `service_name` field indicates the type of {{site.data.keyword.databases-for}} instance. For example, `databases-for-postgresql` or `messages-for-rabbitmq`.
 
 Auditing of global events, such as `<service_name>.instance.create`, is covered by the {{site.data.keyword.cloud_notm}} global event. For more resource-related global events, see [Auditing events for service instances](/docs/atracker?topic=atracker-at_events_rc).
-
-
-
-
-
-
-
-
-
-
-
