@@ -877,6 +877,7 @@ If you use allowlists to control connections in your environment, use the follow
 | Dallas | us-south | dal10 | 150.239.46.255/24  | 150.239.46.1 |
 | Dallas | us-south | dal10 | 150.239.63.255/24  | 150.239.63.1 |
 | Dallas | us-south | dal10 | 150.240.131.255/24 | 150.240.131.1 |
+| Dallas | us-south | dal10 | 150.240.158.255/24 | 150.240.158.1 |
 | Dallas | us-south | dal10 |  169.46.57.31/27   | 169.46.57.1 |
 | Dallas | us-south | dal10 | 169.47.212.191/27  | 169.47.212.161 |
 | Dallas | us-south | dal10 | 169.48.177.159/28  | 169.48.177.145 |
@@ -999,6 +1000,7 @@ If you use allowlists to control connections in your environment, use the follow
 | Dallas | us-south | dal12 |  169.61.169.63/28  | 169.61.169.49 |
 | Dallas | us-south | dal12 |  169.63.57.127/26  | 169.63.57.65 |
 | Dallas | us-south | dal12 |  50.22.153.191/29  | 50.22.153.185 |
+| Dallas | us-south | dal12 |  50.22.175.255/24  | 50.22.175.1 |
 | Dallas | us-south | dal12 | 52.116.234.199/29  | 52.116.234.193 |
 | Dallas | us-south | dal12 | 52.116.244.119/29  | 52.116.244.113 |
 | Dallas | us-south | dal12 |  52.116.254.31/29  | 52.116.254.25 |
@@ -1069,7 +1071,6 @@ If you use allowlists to control connections in your environment, use the follow
 | Dallas | us-south | dal13 |  169.59.14.255/24  | 169.59.14.1 |
 | Dallas | us-south | dal13 |  169.59.16.255/24  | 169.59.16.1 |
 | Dallas | us-south | dal13 |  169.59.22.255/24  | 169.59.22.1 |
-| Dallas | us-south | dal13 |  169.61.32.159/29  | 169.61.32.153 |
 | Dallas | us-south | dal13 | 169.62.218.223/28  | 169.62.218.209 |
 | Dallas | us-south | dal13 |  169.62.237.63/26  | 169.62.237.1 |
 | Dallas | us-south | dal13 |  52.116.17.159/29  | 52.116.17.153 |
