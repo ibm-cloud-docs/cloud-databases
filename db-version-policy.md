@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-10-23"
+lastupdated: "2024-11-19"
 
 subcollection: cloud-databases
 
@@ -25,7 +25,7 @@ When you provision a {{site.data.keyword.databases-for}} instance, you can choos
 | {{site.data.keyword.databases-for-mongodb}} | Major versions are the first two numbers in a `major.x.patch` version number. In cases where `x` is even, it is a stable release suitable for production. Even `x` versions are the only ones available on {{site.data.keyword.databases-for}}. | v6, TBD |   v6.0   | Automatically upgraded in place to next Major version |
 | {{site.data.keyword.databases-for-elasticsearch}} | Major versions are the first two numbers in a `release.version.maintenance` version number. |  v8.7, TBD |   v8.12   | Automatically upgraded in place to next Major version |
 | {{site.data.keyword.databases-for-redis}} | Major versions are the first number in a `major.minor.patch` version number. | v6.0, 25 October 2024 |   v7.2   | Automatically upgraded in place to next Major version 6.2 |
-| {{site.data.keyword.databases-for-postgresql}} | The major version is defined by the first number in the version number. | v12, 22 January 2025, v13, 22 October 2025 |   v16   | Backup taken and access removed |
+| {{site.data.keyword.databases-for-postgresql}} | The major version is defined by the first number in the version number. | v12, 22 January 2025, v13, 22 October 2025 |   v16   | Automatically upgraded in place to next major version 13 |
 | {{site.data.keyword.databases-for-mysql}} | Major versions are the first two numbers in a `major.x.patch` version number. | v8.0, April 2026 |  v8.0 | Backup taken and access removed |
 | {{site.data.keyword.messages-for-rabbitmq}} | Major versions are the first two numbers in a `major.x.patch` version number. | v3.12, 30 April 2025 |   v3.13   | Backup taken and access removed |
 | {{site.data.keyword.databases-for-enterprisedb}} | The major version is defined by the first number in the version number. | v12, TBD |  v12  | Backup is taken and access is removed |
