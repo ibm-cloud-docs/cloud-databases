@@ -3,7 +3,7 @@
 copyright:
   years: 2023, 2024
 
-lastupdated: "2024-10-14"
+lastupdated: "2024-11-22"
 
 subcollection: cloud-databases
 
@@ -206,6 +206,21 @@ The `host_flavor` parameter defines your Compute sizing. Input the appropriate v
 | 32 CPU x 128 RAM          | `b3c.32x128.encrypted`  |
 | 30 CPU x 240 RAM          | `m3c.30x240.encrypted`  |
 {: caption="Host flavor sizing parameter" caption-side="bottom"}
+
+## Isolated Compute capacity
+{: isolated-compute-capacity}
+
+Isolated Compute fully isolates your database, including database management pods (which touch user data). These management pods take up some overhead in your isolated compute instance, consuming a portion of the machine's compute. The following table shows the estimated remaining compute for each Isolated Compute size.
+
+| **Host flavor** | **CPU remaining** | **RAM remaining** |
+|:-------------------------:|:---------------------:|:---------------------:|
+| 4 CPU x 16 RAM            | 2.865    | 12.193    |
+| 8 CPU x 32 RAM            | 6.855    | 26.952    |
+| 8 CPU x 64 RAM            | 6.855    | 56.519    |
+| 16 CPU x 64 RAM           | 14.835   | 56.519    |
+| 32 CPU x 128 RAM          | 30.795  | 115.738    |
+| 30 CPU x 240 RAM          | 28.8  | 223.596    |
+{: caption="Isolated Compute capacity" caption-side="bottom"}
 
 ## Provisioning
 {: #hosting-models-provisioning}
