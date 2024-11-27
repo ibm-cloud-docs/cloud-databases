@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2024
-lastupdated: "2024-11-14"
+lastupdated: "2024-11-27"
 
 keywords: guidance, recommendations, best practices, initial steps, setup
 
@@ -12,7 +12,7 @@ subcollection: cloud-databases
 {{site.data.keyword.attribute-definition-list}}
 
 # Getting to production for {{site.data.keyword.databases-for}}
-{: #best-practices}
+{: #getting-to-production}
 
 ## Prework
 {: #before-starting}
