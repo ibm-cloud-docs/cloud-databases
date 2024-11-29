@@ -22,7 +22,7 @@ keywords: migrating cloud-databases, data center cloud-databases
 For a current list of data centers, see [Locations for resource deployment
 ](/docs/overview?topic=overview-locations){: external}. 
 
-For information on data center closures, see [Data center migrations](/docs/get-support?topic=get-support-dc-closure){: external}.
+For information on data center closures, see [Data center migrations](/docs/account?topic=account-dc-closure){: external}.
 
 ## Migrating your resources
 {: #migrating-your-resources}
