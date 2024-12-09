@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2024
-lastupdated: "2024-07-26"
+lastupdated: "2024-12-09"
 
 subcollection: cloud-databases
 
@@ -19,7 +19,7 @@ The data that you store in {{site.data.keyword.cloud}} Databases is encrypted by
 This document covers the integration of Key Protect with Cloud Databases, which includes {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-redis}}, {{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-mysql_full}}, {{site.data.keyword.messages-for-rabbitmq}}, {{site.data.keyword.databases-for-enterprisedb}} and {{site.data.keyword.databases-for-etcd}}.
 {: .note}
 
-To get started, you need [{{site.data.keyword.keymanagementserviceshort}}](https://{DomainName}/catalog/key-protect) provisioned on your {{site.data.keyword.cloud_notm}} account.
+To get started, you need [{{site.data.keyword.keymanagementserviceshort}}](https://cloud.ibm.com/catalog/services/key-protect) provisioned on your {{site.data.keyword.cloud_notm}} account.
 
 ## Creating or adding a key in {{site.data.keyword.keymanagementserviceshort}}
 {: #key-create}
