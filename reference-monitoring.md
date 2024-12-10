@@ -2654,7 +2654,7 @@ How much memory is used as a percentage of total memory available
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 15: Used memory for an instance metric metadata" caption-side="top"}
 
-## Redis Metrics
+## Redis metrics
 {: #metrics-by-plan-redis}
 
 | Metric Name |
@@ -2664,16 +2664,21 @@ How much memory is used as a percentage of total memory available
 | [Redis IO utilization in percent 5-minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_5m) |
 | [Redis IO utilization in percent 60-minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_60m) |
 | [Redis IOPS read & write total count for an instance](#ibm_databases_for_redis_disk_iops_read_write_total) |
-| [Redis Maximum allowed memory for an instance](#ibm_databases_for_redis_memory_limit_bytes) |
-| [Redis Total disk space for an instance](#ibm_databases_for_redis_disk_total_bytes) |
-| [Redis Used CPU for an instance](#ibm_databases_for_redis_cpu_used_percent) |
-| [Redis Used disk space for an instance](#ibm_databases_for_redis_disk_used_bytes) |
-| [Redis Used disk space for an instance](#ibm_databases_for_redis_disk_used_percent) |
-| [Redis Used memory for an instance](#ibm_databases_for_redis_memory_used_bytes) |
-| [Redis Used memory for an instance](#ibm_databases_for_redis_memory_used_percent) |
+| [Redis maximum allowed memory for an instance](#ibm_databases_for_redis_memory_limit_bytes) |
+| [Redis total disk space for an instance](#ibm_databases_for_redis_disk_total_bytes) |
+| [Redis used CPU for an instance](#ibm_databases_for_redis_cpu_used_percent) |
+| [Redis used disk space for an instance](#ibm_databases_for_redis_disk_used_bytes) |
+| [Redis used disk space for an instance](#ibm_databases_for_redis_disk_used_percent) |
+| [Redis used memory for an instance](#ibm_databases_for_redis_memory_used_bytes) |
+| [Redis used memory for an instance](#ibm_databases_for_redis_memory_used_percent) |
+| [Redis blocked clients](#ibm_databases_for_redis_blocked_cleints) |
+| [Redis connected clients](#ibm_databases_for_redis_connected_clients) |
+| [Redis rejected connections](#ibm_databases_for_redis_rejected_connections) |
+| [Redis instantaneous ops](#ibm_databases_for_redis_instantaneous_ops_sec) |
+| [Redis total commands processed](#ibm_databases_for_redis_total_commands_processed) |
 {: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
 
-### Redis Metrics Descriptions
+### Redis metrics descriptions
 {: #metrics-by-plan-redis-desc}
 
 #### Redis IO utilization in percent 15-minute average
@@ -2741,7 +2746,7 @@ How many input-output operations per second your instance is performing
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 6: IOPS read & write total count for an instance metric metadata" caption-side="top"}
 
-#### Redis Maximum allowed memory for an instance
+#### Redis maximum allowed memory for an instance
 {: #ibm_databases_for_redis_memory_limit_bytes}
 
 The maximum amount of memory available to your instance
@@ -2754,7 +2759,7 @@ The maximum amount of memory available to your instance
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 7: Maximum allowed memory for an instance metric metadata" caption-side="top"}
 
-#### Redis Total disk space for an instance
+#### Redis total disk space for an instance
 {: #ibm_databases_for_redis_disk_total_bytes}
 
 Represents the total amount of disk space available to your deployment
@@ -2767,7 +2772,7 @@ Represents the total amount of disk space available to your deployment
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 8: Total disk space for an instance metric metadata" caption-side="top"}
 
-#### Redis Used CPU for an instance
+#### Redis used CPU for an instance
 {: #ibm_databases_for_redis_cpu_used_percent}
 
 How much CPU is used as a percentage of total CPU available. Only for deployments that have dedicated CPU
@@ -2780,7 +2785,7 @@ How much CPU is used as a percentage of total CPU available. Only for deployment
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 9: Used CPU for an instance metric metadata" caption-side="top"}
 
-#### Redis Used disk space for an instance
+#### Redis used disk space for an instance
 {: #ibm_databases_for_redis_disk_used_bytes}
 
 How much disk space your instance is using
@@ -2793,7 +2798,7 @@ How much disk space your instance is using
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 10: Used disk space for an instance metric metadata" caption-side="top"}
 
-#### Redis Used disk space for an instance percent
+#### Redis used disk space for an instance percent
 {: #ibm_databases_for_redis_disk_used_percent}
 
 How much disk space is used as a percentage of total disk available
@@ -2806,7 +2811,7 @@ How much disk space is used as a percentage of total disk available
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 11: Used disk space for an instance metric metadata" caption-side="top"}
 
-#### Redis Used memory for an instance bytes
+#### Redis used memory for an instance bytes
 {: #ibm_databases_for_redis_memory_used_bytes}
 
 How much memory your instance is using
@@ -2819,10 +2824,10 @@ How much memory your instance is using
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 12: Used memory for an instance metric metadata" caption-side="top"}
 
-#### Redis Used memory for an instance percent
+#### Redis used memory for an instance percent
 {: #ibm_databases_for_redis_memory_used_percent}
 
-How much memory is used as a percentage of total memory available
+Memory used as a percentage of total memory available.
 
 | Metadata | Description |
 |----------|-------------|
@@ -2831,6 +2836,76 @@ How much memory is used as a percentage of total memory available
 | `Value Type`  | `percent` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 13: Used memory for an instance metric metadata" caption-side="top"}
+
+#### Redis blocked clients
+{: #ibm_databases_for_redis_blocked_cleints}
+
+Number of clients pending on a blocking call.
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_redis_blocked_clients`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `count` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 14: Redis blocked clients" caption-side="top"}
+
+#### Redis connected clients
+{: #ibm_databases_for_redis_connected_clients}
+
+Number of client connections.
+
+Higher number of client connections can impact performance of the Redis instance, as aggregate memory consumption can be extremely high, leading to out-of-memory errors. It is recommended to use [Connection pooling](/docs/databases-for-redis?topic=databases-for-redis-managing-redis-connections#managing-redis-connection-pooling).
+{: note}
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_redis_connected_clients`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `count` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 15: Redis connected clients" caption-side="top"}
+
+#### Redis rejected connections
+{: #ibm_databases_for_redis_rejected_connections}
+
+Number of connections rejected because of maxclients limit. Read more about [Managing connections](https://cloud.ibm.com/docs/databases-for-redis?topic=databases-for-redis-managing-redis-connections).
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_redis_rejected_connections`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `count` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 16: Redis rejected connections" caption-side="top"}
+
+#### Redis Instantaneous Ops
+{: #ibm_databases_for_redis_instantaneous_ops_sec}
+
+Number of commands processed per second. Note: Operations per second is averaged over a minute scale, and is disaplyed in metrics.
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_redis_instantaneous_ops`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `count` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 17: Commands proceesed by Redis per second caption-side="top"}
+
+#### Redis Total Commands Processed
+{: #ibm_databases_for_redis_total_commands_processed}
+
+Total number of commands processed by the server. Note: This is an incremental number which resets when your Redis instance restarts. 
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_redis_total_commands_processed`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `count` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 18: Total commands proceesed by Redis caption-side="top"}
+
+
 
 ## Messages for RabbitMQ Metrics
 {: #metrics-by-plan-rabbitmq}
