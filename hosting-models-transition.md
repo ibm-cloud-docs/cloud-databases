@@ -1,9 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2024
-
-lastupdated: "2024-11-12"
+  years: 2023, 2025
+lastupdated: "2025-01-13"
 
 subcollection: cloud-databases
 
@@ -44,7 +43,7 @@ Multi-tenant users that are automatically transitioned to Shared Compute will be
 - Existing multi-tenant users will be grandfathered through to May 2025 for both CPU and minimum RAM resource allocations that are automatically added. 
 - Dedicated cores provisioning remains available.
 
-### May 2025 - End of grandfathering for multi-tenant users
+### May 2025 - End of grandfathering for multi-tenant users, transitioning dedicated cores to Isolated Compute
 {: #hosting-model-transition-timeline-may25}
 
 - All existing multi-tenant users will be grandfathered for CPU and minimum RAM allocations until this time.
