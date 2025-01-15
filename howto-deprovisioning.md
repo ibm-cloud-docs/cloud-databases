@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-07-26"
+  years: 2020, 2025
+lastupdated: "2025-01-15"
 
 subcollection: cloud-databases
 
@@ -15,59 +15,64 @@ keywords: deprovision cloud databases, databases with terraform, deprovisioning 
 # Deleting your deployment and removing your data
 {: #deprovisioning}
 
-{{site.data.keyword.cloud}} Databases instances are softly deleted in production when you delete or deprovision the instance in {{site.data.keyword.cloud_notm}}. 
+When an {{site.data.keyword.cloud}} Databases deployment is deleted, it is put in a soft-deleted state for 3 days after which it is removed. Soft-deleted deployments can be recovered by following the steps below.
 
-{{site.data.keyword.cloud_notm}} keeps the deployment in the soft delete state for three days before it issues a delete. The soft delete state addresses use cases when you accidentally delete an instance. You can re-enable an existing soft-deleted instance on your own.
-
-Because a soft delete is essentially a disablement, no {{site.data.keyword.databases-for}} deployment can recover from a soft delete. Once an {{site.data.keyword.databases-for}} deployment is deleted, that deployment must be restored from a backup.
+After the 3-day soft-deletion period has ended, or if a hard deletion is issued, deployments are no longer recoverable.
 {: note}
 
 ## Deleting your deployment in the user interface 
 {: #delete-deployment-ui}
 {: ui}
 
-To delete your deployment instance from the Resource list section dashboard of the IBM Cloud dashboard, select your deployment. Then, in the overflow menu ( ![Stacked three dots icon](images/stacked-three-dots.png) ) click **Delete service** from the drop-down list. 
+To delete your deployment from the Resource list section dashboard of the {{site.data.keyword.cloud}} dashboard, select your deployment. Then, in the overflow menu ![Stacked three dots icon](images/stacked-three-dots.png) click **Delete service** from the drop-down list.
 
-## Deleting your deployment by using the CLI
+## Restoring a soft-deleted instance using the UI
+{: #restore-deployment-ui}
+{: ui}
+
+Soft-deleted instances must be restored using the [CLI](/docs/databases-for-mysql?topic=databases-for-mysql-dashboard-backups&interface=cli#restore-backup-cli).
+
+## Deleting your deployment using the CLI
 {: #delete-deployment-cli}
 {: cli}
 
-By using the CLI, you can delete your existing {{site.data.keyword.cloud}} Databases instance with the [`ibmcloud resource service-instance-delete`](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_delete) command:
+By using the CLI, you can delete your existing {{site.data.keyword.cloud}} Databases deployment with the [`ibmcloud resource service-instance-delete`](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_delete) command:
+
 ```sh
 ibmcloud resource service-instance-delete <INSTANCE_NAME_OR_CRN>
 ```
 {: .pre}
 
-Using the command `ibmcloud resource reclamation-delete` deletes a reclaimed resource so that the resource can no longer be restored.
+You can further hard-delete an instance by using `ibmcloud resource reclamations` to list soft-deleted instances, followed by `ibmcloud resource reclamation-delete <RECLAMATION ID>` to hard-delete it.
+
+Instances hard-deleted by `ibmcloud resource reclamation-delete` are unrecoverable and cannot be restored.
+{: .important}
+
+## Restoring a soft-deleted instance using the CLI
+{: #restore-deployment-cli}
+{: cli}
+
+You can use the following command to list the soft-deleted instances that are available for reclamation:
+
+```sh
+ibmcloud resource reclamations
+```
+{: .pre}
+
+Then, use the following command to recover them:
+
+```sh
+ibmcloud resource reclamation-restore <RECLAMATION ID>
+```
+{: .pre}
+
+Restoring an {{site.data.keyword.cloud}} Databases deployment from a soft-deleted state may take several hours.
 {: .note}
-
-### Deleting your database by using DROP DATABASE statement
-{: #delete-deployment-statement}
-{: cli}
-
-[`DROP DATABASE`](https://dev.mysql.com/doc/refman/5.7/en/drop-database.html) drops all tables in the database and deletes the database. 
-
-```sh
-DROP {DATABASE | SCHEMA} [IF EXISTS] db_name
-```
-{: .pre}
-
-### Deleting your database by using `mysqladmin`
-{: #delete-deployment-mysqladmin}
-{: cli}
-
-You can also drop databases with [`mysqladmin`, a MySQL Server Administration Program](https://dev.mysql.com/doc/refman/5.7/en/mysqladmin.html).
-Launch `mysqladmin` like this: 
-
-```sh
-mysqladmin [options] command [command-arg] [command [command-arg]] ...
-```
-{: .pre}
 
 ## Cryptoshredding keys
 {: #cryptoshred}
 
-{{site.data.keyword.keymanagementserviceshort}} provides for a [force delete](/docs/key-protect?topic=key-protect-delete-keys) of a key that is in use by {{site.data.keyword.cloud}} services, including your {{site.data.keyword.databases-for}} deployments. This action is called cryptoshredding. 
+{{site.data.keyword.keymanagementserviceshort}} provides cryptoshredding, which is [deletion](/docs/key-protect?topic=key-protect-delete-keys) of a key that is in use by {{site.data.keyword.cloud}} services, including your {{site.data.keyword.databases-for}} deployments.
 
 Cryptoshredding is a destructive action. When the key is deleted, your data is unrecoverable even from a soft delete state.
 {: .important}
@@ -75,16 +80,4 @@ Cryptoshredding is a destructive action. When the key is deleted, your data is u
 ## Backups removal
 {: #backup-remove}
 
-Backups cannot be manually deleted. However, if you delete your deployment, its backups are deleted automatically. 
-
-## Reenabling from a soft delete
-{: #reclamation}
-{: cli}
-
-You are able to discover available soft-deleted instances by using the {{site.data.keyword.cloud_notm}} CLI [`ibmcloud resource reclamations`](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_reclamations) command.
-
-You can then "undelete", recover, or reclaim an available soft-deleted instance by using the {{site.data.keyword.cloud_notm}} CLI [`ibmcloud resource reclamation-restore`](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_reclamation_restore) command:
-```sh
-ibmcloud resource reclamation-restore resource_ID
-```
-{: .pre}
+Backups cannot be manually deleted or removed. However, if you delete your deployment, its backups are deleted automatically. 
