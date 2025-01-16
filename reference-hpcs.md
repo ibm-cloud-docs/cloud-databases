@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-07-26"
+  years: 2020, 2025
+lastupdated: "2025-01-16"
 
 keywords: bring your own key, byok, cryptoshredding, hpcs, hyper protect crypto services
 
@@ -85,7 +85,7 @@ If you provision a deployment through the CLI or API, the HPCS key must be ident
 ## Using the HPCS Key for Backup encryption
 {: #use-hpcs-backups}
 
-This feature is only supported in the region eu-es. Encrypting backups with HPCS in a single region renders the backups inaccessible, if availability of HPCS is disrupted in this region. Taking a backup and restoring from backups will fail for the period that HPCS is unavailable. Therefore, encrypting backups with HPCS is not recommended. Use {{site.data.keyword.keymanagementservicelong}} to encrypt backups.
+This feature is only supported in the eu-es and br-sao regions. Encrypting backups with HPCS in a single region renders the backups inaccessible, if availability of HPCS is disrupted in this region. Taking a backup and restoring from backups will fail for the period that HPCS is unavailable. Therefore, encrypting backups with HPCS is not recommended. Use {{site.data.keyword.keymanagementservicelong}} to encrypt backups.
 {: .note}
 
 If you encrypted the backup with HPCS, encrypt the disk also with HPCS.
@@ -117,7 +117,9 @@ curl -X POST \
     "target": "blue-us-south",
     "resource_group": "5g9f447903254bb58972a2f3f5a4c711",
     "resource_plan_id": "databases-for-x-standard",
-    "backup_encryption_key_crn": "crn:v1:<...>:key:<id>"
+    "parameters": {
+      "backup_encryption_key_crn": "crn:v1:<...>:key:<id>"
+    }
   }'
 ```
 {: codeblock}
