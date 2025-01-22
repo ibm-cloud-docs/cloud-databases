@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-12-29"
+  years: 2020, 2025
+lastupdated: "2025-01-22"
 
 subcollection: cloud-databases
 
@@ -56,6 +56,6 @@ If you have deployments in more than one region, you must provision {{site.data.
 ## SLAs
 {: #sla}
 
-- See [How IBM Cloud ensures high availability and disaster recovery](docs/resiliency?topic=resiliency-ha-redundancy) to learn more about the high availability and disaster recovery standards in {{site.data.keyword.cloud_notm}}.
+- See [How IBM Cloud ensures high availability and disaster recovery](/docs/resiliency?topic=resiliency-ha-redundancy) to learn more about the high availability and disaster recovery standards in {{site.data.keyword.cloud_notm}}.
 - All {{site.data.keyword.cloud}} Databases general availability (GA) offerings conform to the {{site.data.keyword.cloud}} [Service Level Agreement](/docs/overview?topic=overview-slas) (SLA) terms.
 - For more information, see the [Responsibilities for Cloud Databases](/docs/cloud-databases?topic=cloud-databases-responsibilities-cloud-databases) page.
