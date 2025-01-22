@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-07-26"
+  years: 2023, 2025
+lastupdated: "2025-01-22"
 
 subcollection: cloud-databases
 
@@ -53,7 +53,7 @@ ibmcloud cdb help [<command>]
 |---------------------------------------------------| :----------------------------------------------------------------------------: |
 | [{{site.data.keyword.databases-for-mongodb}}](/docs/databases-for-mongodb){: external}       | [The mongo Shell](https://www.mongodb.com/docs/v4.4/mongo/){: external}    |
 | [{{site.data.keyword.databases-for-elasticsearch}}](/docs/databases-for-elasticsearch){: external} |                                                                            |
-| [{{site.data.keyword.databases-for-redis}}](/docs/databases-for-redis){: external}         | [The Redis CLI](https://redis.io/docs/ui/cli/){: external}                 |
+| [{{site.data.keyword.databases-for-redis}}](/docs/databases-for-redis){: external}         | [The Redis CLI](https://redis.io/docs/latest/integrate/write-behind/reference/cli/){: external}      |
 | [{{site.data.keyword.databases-for-postgresql}}](/docs/databases-for-postgresql){: external}    | [psql](https://www.postgresql.org/docs/14/app-psql.html){: external}        |
 | [{{site.data.keyword.databases-for-enterprisedb}}](/docs/databases-for-enterprisedb){: external}  |                                                                            |
 | [{{site.data.keyword.databases-for-mysql}}](/docs/databases-for-mysql){: external}         | [mysql](https://dev.mysql.com/doc/refman/8.0/en/mysql.html){: external}    |
