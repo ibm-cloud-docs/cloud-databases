@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2019, 2023
-lastupdated: "2023-11-07"
+  years: 2019, 2025
+lastupdated: "2025-01-29"
 
 keywords: IBM Cloud Databases, ICD, bi connector
 
@@ -12,17 +12,17 @@ account-plan: paid
 completion-time: 2h
 ---
 
-# Mapping Global COVID-19 cases with the {{site.data.keyword.databases-for-mongodb}} EE (Enterprise Edition) Analytics Add-On and Tableau
+# Mapping global COVID-19 cases with the {{site.data.keyword.databases-for-mongodb}} EE (Enterprise Edition) Analytics add-on and Tableau
 {: #bi-connector-tutorial-description}
 {: toc-completion-time="2h"}
 {: toc-content-type="tutorial"}
 
-The {{site.data.keyword.databases-for-mongodb}} EE (Enterprise Edition) Analytics Add-On allows you to run long-running analytical queries or provision a [MongoDB Connector for business intelligence(BI)](https://docs.mongodb.com/bi-connector/current/){: .external} to make your query data compatible with BI tools, such as [Tableau](https://www.tableau.com/){: .external}.
+The {{site.data.keyword.databases-for-mongodb}} EE (Enterprise Edition) Analytics add-on allows you to run long-running analytical queries or provision a [MongoDB Connector for business intelligence(BI)](https://docs.mongodb.com/bi-connector/current/){: .external} to make your query data compatible with BI tools, such as [Tableau](https://www.tableau.com/){: .external}.
 
-For more information, see [{{site.data.keyword.databases-for-mongodb}} EE (Enterprise Edition) Analytics Add-On](/docs/databases-for-mongodb?topic=databases-for-mongodb-mongodbee-analytics). 
+For more information, see [{{site.data.keyword.databases-for-mongodb}} EE (Enterprise Edition) Analytics add-on](/docs/databases-for-mongodb?topic=databases-for-mongodb-mongodbee-analytics). 
 
-This tutorial familiarizes you with the Analytics Add-On using Tableau to visualize data in your MongoDB instance. In summary, you will:
-- Install an instance of {{site.data.keyword.databases-for-mongodb}} EE with the Analytics Add-On using [Terraform](https://www.terraform.io/intro){: .external}, a popular Infrastructure-as-Code tool.
+This tutorial familiarizes you with the Analytics add-on using Tableau to visualize data in your MongoDB instance. In summary, you will:
+- Install an instance of {{site.data.keyword.databases-for-mongodb}} EE with the Analytics add-on using [Terraform](https://www.terraform.io/intro){: .external}, a popular Infrastructure-as-Code tool.
 - Upload data to your MongoDB database instance (COVID-19 data from the World Health Organization), by using basic [Node.js](https://nodejs.org/en/about/){: .external} scripting.
 - Connect your database instance to Tableau.
 - Generate a map visualization of COVID-19 cases around the world.
@@ -95,7 +95,7 @@ terraform output -json > ../import-covid-data/output.json
 The Terraform folder contains a number of simple scripts:
 - `main.tf` tells Terraform to use {{site.data.keyword.cloud_notm}}.
 - `variables.tf` contains the variable definitions whose values are populated from the `terraform.tfvars` file.
-- `mongo.tf` creates a {{site.data.keyword.databases-for-mongodb}} EE instance with the Analytics Add-On with the following options: 
+- `mongo.tf` creates a {{site.data.keyword.databases-for-mongodb}} EE instance with the Analytics add-on with the following options: 
    - 6 CPU cores 
    - 14 GB RAM
    - 20 GB memory.
@@ -129,7 +129,7 @@ It takes only a few seconds to upload all of your data. You are now ready to vis
 ### Step 6: Connect your database instance to Tableau
 {: #connect-instance-tableau}
 
-Connect your {{site.data.keyword.databases-for-mongodb}} EE (Enterprise Edition) Analytics Add-On instance to Tableau. In the "Connect" tab, choose the MongoDB BI Connector and enter your connection information:
+Connect your {{site.data.keyword.databases-for-mongodb}} EE (Enterprise Edition) Analytics add-on instance to Tableau. In the "Connect" tab, choose the MongoDB BI Connector and enter your connection information:
 
 ![Connect to Tableau](images/tableau-connect.png){: caption="Connect to Tableau" caption-side="bottom"}
 
@@ -177,6 +177,6 @@ To confirm that your instance is deprovisioned, check the Resources section in t
 ## Summary
 {: #summary}
 
-In this tutorial, you used Terraform to provision a {{site.data.keyword.databases-for-mongodb}} EE (Enterprise Edition) instance and then used the Analytics Add-On BI Connector to visualize your data in Tableau. 
+In this tutorial, you used Terraform to provision a {{site.data.keyword.databases-for-mongodb}} EE (Enterprise Edition) instance and then used the Analytics add-on BI Connector to visualize your data in Tableau. 
 
 Remember, there are [offers available](https://www.ibm.com/cloud/free) to help you continue your IBM Cloud journey of discovery!{: .important}
