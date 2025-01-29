@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2022
-lastupdated: "2022-12-09"
+  years: 2021, 2025
+lastupdated: "2025-01-29"
 
 keywords: instance tutorial, provision tutorial, docker
 
@@ -12,7 +12,7 @@ subcollection: cloud-databases
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Deploying and Connecting a {{site.data.keyword.databases-for}} Instance 
+# Deploying and connecting a {{site.data.keyword.databases-for}} instance 
 {: #create-instance-tutorial}
 
 ## Objectives
@@ -30,15 +30,17 @@ To begin the deployment process, install some must-have productivity tools:
 * [Terraform](https://www.terraform.io/){: external} - to codify and deploy infrastructure
 * *Optional* [Docker](https://www.docker.com/){: external} - to run your application nonlocally
 
-## Step 1: Obtain an API key to deploy infrastructure to your account
+## Obtain an API key to deploy infrastructure to your account
 {: #create-instance-tutorial-step-1}
+{: step}
 
 Follow [these steps](https://cloud.ibm.com/docs/account?topic=account-userapikey&interface=ui#create_user_key) to create an {{site.data.keyword.cloud_notm}} API key that enables Terraform to provision infrastructure into your account. You can create up to 20 API keys.
 
 For security reasons, the API key is only available to be copied or downloaded at the time of creation. If the API key is lost, you must create a new API key.{: .important}
 
-## Step 2: Clone the project
+## Clone the project
 {: #create-instance-tutorial-step-2}
+{: step}
 
 Clone the project from the {{site.data.keyword.databases-for}} [Hello World project GitHub repository](https://github.com/IBM-Cloud/clouddatabases-helloworld-examples){: external}.
 
@@ -47,8 +49,9 @@ git clone https://github.com/IBM-Cloud/clouddatabases-helloworld-examples.git
 ```
 {: pre}
 
-## Step 3: Install the infrastructure
+## Install the infrastructure
 {: #create-instance-tutorial-step-3}
+{: step}
 
 In this step, you deploy an instance of the database service you want to use. The GitHub repository contains folders for various {{site.data.keyword.databases-for}} resources.
 
@@ -80,8 +83,9 @@ In this step, you deploy an instance of the database service you want to use. Th
    ```
    {: pre}
 
-## Step 4: Run your app locally
+## Run your app locally
 {: #create-instance-tutorial-step-4}
+{: step}
 
 1. To connect to the database from your local machine, ensure that you are in your service folder, then install the node dependencies and run the service with the following commands:
 
@@ -107,8 +111,9 @@ In this step, you deploy an instance of the database service you want to use. Th
 
 1. To test the interface, enter a word and its definition. The data pair is added to the database and appears in a list at the bottom of the page.
 
-## Step 5 (optional): Run the app from a Docker container
+## Run the app from a Docker container (optional)
 {: #create-instance-tutorial-step-5}
+{: step}
 
 The first step toward hosting your application from a service like [Code Engine](https://www.ibm.com/cloud/code-engine){: .external} is to containerize the app code inside a Docker container and run it from there.
 
