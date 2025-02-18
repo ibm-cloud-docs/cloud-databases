@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2023-07-26"
+  years: 2023, 2025
+lastupdated: "2025-02-18"
 
 keywords: certificate, cert, tls, ssl, mutual tls, client certificates
 
@@ -40,4 +40,4 @@ Choose the appropriate service documentation for connecting an external applicat
 {: faq}
 {: support}
 
-Except for {{site.data.keyword.databases-for}} does not support mutual TLS for client connections. Presenting client certificates or configuring trusted root certificate authorities (CAs) for client certificates is not supported.
+{{site.data.keyword.databases-for}} does not support mutual TLS for client connections. Presenting client certificates or configuring trusted root certificate authorities (CAs) for client certificates is not supported.
