@@ -14,6 +14,7 @@ These docs do not have an attached catalog entry, and do not show up as a distin
 ## Contacts for this repo
 
 - Andrea Lang: ANDREAL, andreal@de.ibm.com
+- Slack channel: #icd-docs
 
 ## Creating content
 
