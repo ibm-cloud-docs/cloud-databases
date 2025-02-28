@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-12-10"
+  years: 2023, 2025
+lastupdated: "2025-02-28"
 
 keywords: monitoring
 
@@ -1590,10 +1590,39 @@ How much WAL log file uses, in bytes
 | [MySQL Used memory for an instance](#ibm_databases_for_mysql_memory_used_bytes) |
 | [MySQL Used memory for an instance](#ibm_databases_for_mysql_memory_used_percent) |
 | [MySQL Total active connections to the database](#ibm_databases_for_mysql_total_connections) |
+| [MySQL Replica lag](#ibm_databases_for_mysql_replica_lag) | 
+| [MySQL Replica state](#ibm_databases_for_mysql_replica_state) | 
 {: caption="Metrics Available by Plan Names" caption-side="top"}
 
 ### MySQL Metrics Descriptions
 {: #metrics-by-plan-mysql-desc}
+
+
+#### Replica state
+{: #ibm_databases_for_mysql_replica_state}
+
+Represents the state of the replicas.
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_mysql_replica_state`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `count` |
+| `Segment By` | `Service instance, Resource Id, Service instance name` |
+{: caption="Replica state metric metadata" caption-side="top"}
+
+#### Replica lag
+{: #ibm_databases_for_mysql_replica_lag}
+
+Represents the delay of a replica relative to the leader.
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_mysql_replica_lag`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `count` |
+| `Segment By` | `Service instance, Resource Id, Service instance name` |
+{: caption="Replica lag metric metadata" caption-side="top"}
 
 #### MySQLCache hit ratio
 {: #ibm_databases_for_mysql_cache_hit_ratio}
