@@ -60,13 +60,6 @@ toc:
       - scaling.md
       - howto-manage-backups.md
       - closures.md
-      - topicgroup:
-          label: IBM Cloud Databases enabled by IBM Cloud Satellite
-          topics:
-          - howto-sat-loc.md
-          - howto-sat-loc-aws.md
-          - howto-sat-loc-onprem.md
-          - howto-sat-loc-scs.md
   - navgroup:
       id: tutorial
       topics:
