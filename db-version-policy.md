@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-01-31"
+lastupdated: "2025-03-13"
 
 subcollection: cloud-databases
 
@@ -22,7 +22,7 @@ When you provision a {{site.data.keyword.databases-for}} instance, you can choos
 
 | Service | Versioning schema| Next known end of life version and date | Preferred major version | End of life procedure |
 |----|----|----|----|----|
-| {{site.data.keyword.databases-for-mongodb}} | Major versions are the first two numbers in a `major.x.patch` version number. In cases where `x` is even, it is a stable release suitable for production. Even `x` versions are the only ones available on {{site.data.keyword.databases-for}}. | v6, 30 July 2025 |   v7.0   | Automatically upgraded in place to next Major version |
+| {{site.data.keyword.databases-for-mongodb}} | Major versions are the first two numbers in a `major.x.patch` version number. In cases where `x` is even, it is a stable release suitable for production. Even `x` versions are the only ones available on {{site.data.keyword.databases-for}}. | v6, 30 July 2025, <br> v7  , 26 Aug 2026 |   v7.0   | Automatically upgraded in place to next Major version |
 | {{site.data.keyword.databases-for-elasticsearch}} | Major versions are the first two numbers in a `release.version.maintenance` version number. |  v8.7, TBD |   v8.15   | Automatically upgraded in place to next Major version |
 | {{site.data.keyword.databases-for-redis}} | Major versions are the first number in a `major.minor.patch` version number. | v6.2, 30 July 2025 |   v7.2   | Automatically upgraded in place to next Major version |
 | {{site.data.keyword.databases-for-postgresql}} | The major version is defined by the first number in the version number. | v13, 22 October 2025 |   v16, v17 (Preview) | Automatically upgraded in place to next major version |
@@ -49,8 +49,11 @@ Restoration of existing instances into new instances of the deprecated major ver
 
 At the end of the transition window, deprecated major versions cannot be deployed on {{site.data.keyword.databases-for}}. A backup of the instance is taken and access to instances that are running a deprecated version is removed or instances are automatically upgraded to the next major version. The backup is available to be restored into a new supported version.
 
+Backups are retained for 30 days only. Requests to reenable disabled formations of end-of-life versions are not accommodated.
+
 Failure to act can result in compatibility issues with your apps when IBM upgrades in-place. On rare occasions, failure can result, impacting your availability. If a failure occurs, the instance is disabled, and you need to restore from backup. We recommend self-migrating before the end of support date.
-{: .important}
+{: important}
+
 
 ## Version tags
 {: #version-tags}
