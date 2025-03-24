@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years:  2022, 2024
-lastupdated: "2024-09-13"
+  years:  2022, 2025
+lastupdated: "2025-03-24"
 
 keywords: restricting access to cloud databases, restricting access to ICD, DataStax cbr, Elasticsearch cbr, EnterpriseDB cbr, etcd cbr, mongodb cbr, postgresql cbr, redis cbr, mysql cbr, rabbitmq cbr
 
@@ -180,6 +180,9 @@ Full closure of access to non-allowlisted endpoints: To provide a more robust se
 1. Click **Create**.
 1. Under **Service**, select the service you want to target with your rule.
 1. Under **APIs**, select `Data plane`. Currently any other selection results in an error. 
+
+   0 actions are expected for the Data Plane API type.
+   {: .note}
 
    {{site.data.keyword.databases-for}} does not currently support **Control plane** as an option.
    {: .note}
