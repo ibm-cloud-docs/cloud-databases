@@ -83,6 +83,7 @@ toc:
           - bc-dr.md
       - db-version-policy.md
       - reference-responsibilities.md
+      - service-dependency.md
       - topicgroup:
           label: Related product guides
           topics:
