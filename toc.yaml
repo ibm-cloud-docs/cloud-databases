@@ -69,7 +69,6 @@ toc:
       - terra-mongodb-tutorial.md
       - k8-tutorial.md
       - truck-tracker-tutorial.md
-      - bi-tutorial.md
       - disk-util-alerts-tutorial.md
       - kms-tutorial.md
   - navgroup:
