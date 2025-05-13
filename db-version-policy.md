@@ -79,7 +79,7 @@ You receive multiple notifications when a major version reaches its end of life.
 
 * A Cloud status page announcement, for example: [End of support notices](https://cloud.ibm.com/status/announcement?query=End+of+Support+Notices){: external}.
 * An announcement in your service's Release Notes, for example: [IBM Cloud® Databases for PostgreSQL version 12 end of life on January 22, 2025](https://cloud.ibm.com/docs/databases-for-postgresql?topic=databases-for-postgresql-postgresql-relnotes#databases-for-postgresql-18jan2023){: external}.
-* A notification by email through the {{site.data.keyword.IBM_notm}} API. This email contains a *Notifications* link that takes you to a Notifications Management page. **Make sure that these announcements are not being caught by your email service's spam filter.** For more information, see [Setting up distribution lists for IBM Cloud notifications](https://www.ibm.com/blog/announcement/setting-up-distribution-lists-for-ibm-cloud-notifications/){: external}.
+* A notification by email through the {{site.data.keyword.IBM_notm}} API. This email contains a *Notifications* link that takes you to a Notifications Management page. **Make sure that these announcements are not being caught by your email service's spam filter.** For more information, see [Setting up distribution lists for IBM Cloud notifications](https://cloud.ibm.com/docs/account?topic=account-add-users-distribution-list){: external}.
 
 For more information, see [Programmatic methods for checking version status](#-major-version-eol-check-version-status).
 
