@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-05-13"
+lastupdated: "2025-05-15"
 
 subcollection: cloud-databases
 
@@ -25,7 +25,7 @@ When you provision a {{site.data.keyword.databases-for}} instance, you can choos
 | {{site.data.keyword.databases-for-mongodb}} | Major versions are the first two numbers in a `major.x.patch` version number. In cases where `x` is even, it is a stable release suitable for production. Even `x` versions are the only ones available on {{site.data.keyword.databases-for}}. | v6, 30 July 2025, <br> v7  , 26 Aug 2026 |   v7.0   | Automatically upgraded in place to next Major version |
 | {{site.data.keyword.databases-for-elasticsearch}} | Major versions are the first two numbers in a `release.version.maintenance` version number. |  v8.7, TBD |   v8.15   | Automatically upgraded in place to next Major version |
 | {{site.data.keyword.databases-for-redis}} | Major versions are the first number in a `major.minor.patch` version number. | v6.2, 30 July 2025 |   v7.2   | Automatically upgraded in place to next Major version |
-| {{site.data.keyword.databases-for-postgresql}} | The major version is defined by the first number in the version number. | v13, 22 October 2025 |   v16, v17 (Preview) | Automatically upgraded in place to next major version |
+| {{site.data.keyword.databases-for-postgresql}} | The major version is defined by the first number in the version number. | v13, 22 October 2025 |   v17 | Automatically upgraded in place to next major version |
 | {{site.data.keyword.databases-for-mysql}} | Major versions are the first two numbers in a `major.x.patch` version number. | v8.0, April 2026 |  v8.0 | Backup taken and access removed |
 | {{site.data.keyword.messages-for-rabbitmq}} | Major versions are the first two numbers in a `major.x.patch` version number. | v3.12, 30 April 2025 |   v3.13   | Backup taken and access removed |
 | {{site.data.keyword.databases-for-enterprisedb}} | The major version is defined by the first number in the version number. | End of service/full deprecation on 15 October 2025. |  v12  | Permanently disabled and de-provisioned. [Refer to critical timelines](https://cloud.ibm.com/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-deprecation){: external}. |
@@ -79,7 +79,7 @@ You receive multiple notifications when a major version reaches its end of life.
 
 * A Cloud status page announcement, for example: [End of support notices](https://cloud.ibm.com/status/announcement?query=End+of+Support+Notices){: external}.
 * An announcement in your service's Release Notes, for example: [IBM Cloud® Databases for PostgreSQL version 12 end of life on January 22, 2025](https://cloud.ibm.com/docs/databases-for-postgresql?topic=databases-for-postgresql-postgresql-relnotes#databases-for-postgresql-18jan2023){: external}.
-* A notification by email through the {{site.data.keyword.IBM_notm}} API. This email contains a *Notifications* link that takes you to a Notifications Management page. **Make sure that these announcements are not being caught by your email service's spam filter.** For more information, see [Setting up distribution lists for IBM Cloud notifications](https://cloud.ibm.com/docs/account?topic=account-add-users-distribution-list)){: external}.
+* A notification by email through the {{site.data.keyword.IBM_notm}} API. This email contains a *Notifications* link that takes you to a Notifications Management page. **Make sure that these announcements are not being caught by your email service's spam filter.** For more information, see [Setting up distribution lists for IBM Cloud notifications](https://cloud.ibm.com/docs/account?topic=account-add-users-distribution-list){: external}.
 
 For more information, see [Programmatic methods for checking version status](#-major-version-eol-check-version-status).
 
