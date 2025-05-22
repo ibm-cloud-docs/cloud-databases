@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-05-15"
+lastupdated: "2025-05-22"
 
 subcollection: cloud-databases
 
@@ -72,16 +72,17 @@ Failure to act can result in compatibility issues with your apps when IBM upgrad
 
 {{site.data.keyword.cloud_notm}} is committed to providing secure, up-to-date versions of services. As updates are released by project maintainers, they are tested, evaluated, and released to {{site.data.keyword.databases-for}} instances. Your instance's minor version and patch updates are handled automatically and are not user configurable.
 
-## Major versioning end of life
+## Major versioning end of life notifications
 {: #-major-version-eol}
 
 You receive multiple notifications when a major version reaches its end of life. You can typically expect:
 
 * A Cloud status page announcement, for example: [End of support notices](https://cloud.ibm.com/status/announcement?query=End+of+Support+Notices){: external}.
 * An announcement in your service's Release Notes, for example: [IBM Cloud® Databases for PostgreSQL version 12 end of life on January 22, 2025](https://cloud.ibm.com/docs/databases-for-postgresql?topic=databases-for-postgresql-postgresql-relnotes#databases-for-postgresql-18jan2023){: external}.
-* A notification by email through the {{site.data.keyword.IBM_notm}} API. This email contains a *Notifications* link that takes you to a Notifications Management page. **Make sure that these announcements are not being caught by your email service's spam filter.** For more information, see [Setting up distribution lists for IBM Cloud notifications](https://cloud.ibm.com/docs/account?topic=account-add-users-distribution-list){: external}.
+* * A notification by email through the {{site.data.keyword.IBM_notm}} API. This email contains a *Notifications* link that takes you to a Notifications Management page. **Make sure that these announcements are not being caught by your email service's spam filter.** For more information, see [Setting up distribution lists for IBM Cloud notifications](https://cloud.ibm.com/docs/account?topic=account-add-users-distribution-list)){:external}.
+* Ensure that your account is enabled to receive notifications and announcements. You **must** enable toggle to receive platform and resource updates. Turn on major and minor toggle under the Platform tab > Announcements > Major and Minor, and service updates under the Resource tab > Resource Activity > Service Updates. For more information, see [Setting email preferences for notifications](https://cloud.ibm.com/docs/account?topic=account-email-prefs).
 
-For more information, see [Programmatic methods for checking version status](#-major-version-eol-check-version-status).
+For more information, see [Programmatic methods for checking version status](#-major-version-eol-check-version-status). Customers are encouraged to use **programatic ways**, via CLI or API, to get updated about database version status. For more information, see [Programmatic methods for checking version status](#-major-version-eol-check-version-status).
 
 Any actions taken after an EOL date happen over several days after the EOL date. We try, but cannot guarantee, to make these upgrades outside of business hours in the local regions. If you want more control over the upgrade process of your instance, we recommend that you upgrade following our [backup and restore process](/docs/cloud-databases?topic=cloud-databases-dashboard-backups) before the EOL date of your version.
 {: .note}
@@ -96,13 +97,13 @@ ibmcloud cdb deployables-show [--stable] [--preferred] [--json]
 ```
 {: pre}
 
-Check the status of a major version by reviewing the output of the `deployable` command, specifically *Status* and *Preferred*. The following output example shows that version 4.4 is the `Preferred` version and version 4.2's *Status* is `deprecated`.
+Check the status of a major version by reviewing the output of the `deployable` command, specifically *Status* and *Preferred*. The following output example shows that version 7 is the `Preferred` version and version 6 *Status* is `deprecated`.
 
 ```text
 Service Type:  mongodb
 Version   Status       Preferred
-4.4       stable       true
-4.2       deprecated   false
+7       stable       true
+6       deprecated   false
 ```
 
 **On the {{site.data.keyword.databases-for}} API** the [`deployables` endpoint](/apidocs/cloud-databases-api/cloud-databases-api-v5#listdeployables){: external} returns all deployable services. Use the `version` parameter to return the version number.
