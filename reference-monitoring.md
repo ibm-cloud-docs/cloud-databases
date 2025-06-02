@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2023, 2025
-lastupdated: "2025-04-25"
+lastupdated: "2025-06-02"
 
 keywords: monitoring
 
@@ -15,7 +15,7 @@ subcollection: cloud-databases
 # Monitoring integration
 {: #monitoring}
 
-Monitoring for {{site.data.keyword.databases-for}} is provided through integration with the {{site.data.keyword.monitoringfull}} service. Your instances forward select information so that you can monitor instance health and resource usage. To start collecting and viewing monitoring data, follow the instructions to enable [Platform Metrics](/docs/monitoring?topic=monitoring-platform_metrics_enabling). Platform Metrics need to be enabled in the same region as your instance. If you have instances in more than one region, enable platform metrics in each region.
+Monitoring for {{site.data.keyword.databases-for}} is provided through integration with the {{site.data.keyword.monitoringfull}} service. Your instances forward select information so that you can monitor instance health and resource usage. To start collecting and viewing monitoring data, follow the instructions to enable [Platform Metrics](/docs/monitoring?topic=monitoring-platform_metrics_enabling). Platform Metrics need to be enabled in the same region as your instance. Use the Metrics Router to configure which Sysdig instance your platform metrics flows to. For more information, see [IBM Cloud Metrics Routing](https://cloud.ibm.com/docs/metrics-router).
 
 You can then access your monitoring dashboard for each region from the {{site.data.keyword.monitoringfull_notm}} area in the [Cloud console](https://cloud.ibm.com/) (under Observability).
 
