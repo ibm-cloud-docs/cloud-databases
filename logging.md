@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2024
-lastupdated: "2024-11-13"
+  years: 2018, 2025
+lastupdated: "2025-06-03"
 
 keywords: logging
 
@@ -21,11 +21,6 @@ subcollection: cloud-databases
 You can use **{{site.data.keyword.logs_routing_full}}**, a platform service, to route platform logs in your account to a destination of your choice by configuring a tenant that defines where platform logs are sent. For more information, see [About logs routing](/docs/logs-router?topic=logs-router-about).
 
 You can use **{{site.data.keyword.logs_full}}** to visualize and alert on platform logs that are generated in your account and routed by {{site.data.keyword.logs_routing_full_notm}} to an {{site.data.keyword.logs_full_notm}} instance.
-
-
-
-As of 28 March 2024, the {{site.data.keyword.la_full_notm}} service is deprecated and will no longer be supported as of 30 March 2025. Customers will need to migrate to {{site.data.keyword.logs_full_notm}} before 30 March 2025. During the migration period, customers can use {{site.data.keyword.la_full_notm}} along with {{site.data.keyword.logs_full_notm}}. Logging is the same for both services. For information about migrating from {{site.data.keyword.la_full_notm}} to {{site.data.keyword.logs_full_notm}} and running the services in parallel, see [migration planning](/docs/cloud-logs?topic=cloud-logs-migration-intro).
-{: important}
 
 ## Locations where platform logs are generated
 {: #log-locations}
@@ -176,7 +171,7 @@ For information about fields included in every platform log, see [Fields for pla
 | `messageID`       | Required   | ID of the log that is generated. |
 {: caption="Log record fields" caption-side="bottom"}
 
-{{site.data.keyword.databases-for}} sends audit events as platform logs. For more information, see [Activity tracking for Cloud Databases](/cloud-databases?topic=cloud-databases-at_events).
+{{site.data.keyword.databases-for}} sends audit events as platform logs. For more information, see [Activity tracking for Cloud Databases](/docs/cloud-databases?topic=cloud-databases-at_events).
 
 
 
