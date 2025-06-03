@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2024
-lastupdated: "2024-11-13"
+  years: 2018, 2025
+lastupdated: "2025-06-03"
 
 keywords: logging
 
@@ -176,7 +176,7 @@ For information about fields included in every platform log, see [Fields for pla
 | `messageID`       | Required   | ID of the log that is generated. |
 {: caption="Log record fields" caption-side="bottom"}
 
-{{site.data.keyword.databases-for}} sends audit events as platform logs. For more information, see [Activity tracking for Cloud Databases](/cloud-databases?topic=cloud-databases-at_events).
+{{site.data.keyword.databases-for}} sends audit events as platform logs. For more information, see [Activity tracking for Cloud Databases](/docs/cloud-databases?topic=cloud-databases-at_events).
 
 
 
