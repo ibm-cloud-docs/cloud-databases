@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-06-03"
+lastupdated: "2025-06-05"
 
 keywords: logging
 
@@ -26,43 +26,6 @@ You can use **{{site.data.keyword.logs_full}}** to visualize and alert on platfo
 {: #log-locations}
 
 
-
-### Locations where logs are sent to {{site.data.keyword.la_full_notm}}
-{: #la-legacy-locations}
-
-
-
-{{site.data.keyword.databases-for}} sends platform logs to {{site.data.keyword.la_full_notm}} in the regions indicated in the following table.
-
-| Dallas (`us-south`) | Washington (`us-east`)  | Toronto (`ca-tor`) | Sao Paulo (`br-sao`) |
-|---------------------|-------------------------|-------------------|----------------------|
-| [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
-{: caption="Regions where platform logs are sent in Americas locations" caption-side="top"}
-{: #la-table-1}
-{: tab-title="Americas"}
-{: tab-group="la"}
-{: class="simple-tab-table"}
-{: row-headers}
-
-| Tokyo (`jp-tok`)    | Sydney (`au-syd`) |  Osaka (`jp-osa`) | Chennai (`in-che`) |
-|---------------------|------------------|------------------|--------------------|
-| [Yes]{: tag-green} | [Yes]{: tag-green} | [No]{: tag-red} | [Yes]{: tag-green} |
-{: caption="Regions where platform logs are sent in Asia Pacific locations" caption-side="top"}
-{: #la-table-2}
-{: tab-title="Asia Pacific"}
-{: tab-group="la"}
-{: class="simple-tab-table"}
-{: row-headers}
-
-| Frankfurt (`eu-de`)  | London (`eu-gb`) | Madrid (`eu-es`) | Paris (`eu-par01`) |
-|---------------------------------------------------------------|---------------------|------------------|-----|
-| [Yes]{: tag-green} | [Yes]{: tag-green} | [No]{: tag-red} |  [No]{: tag-red} |
-{: caption="Regions where platform logs are sent in Europe locations" caption-side="top"}
-{: #la-table-3}
-{: tab-title="Europe"}
-{: tab-group="la"}
-{: class="simple-tab-table"}
-{: row-headers}
 
 ### Locations where logs are sent by {{site.data.keyword.logs_routing_full_notm}}
 {: #lr-locations}
