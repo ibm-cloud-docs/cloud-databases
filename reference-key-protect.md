@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2019, 2024
-lastupdated: "2024-12-09"
+  years: 2019, 2025
+lastupdated: "2025-06-05"
 
 subcollection: cloud-databases
 
@@ -113,7 +113,7 @@ If you delete a deployment that is protected with a Key Protect key, the deploym
 Cryptoshredding is a destructive action. When the key is deleted, your data is unrecoverable.
 {: .important}
 
-{{site.data.keyword.keymanagementserviceshort}} allows you to [initiate a force delete](/docs/key-protect?topic=key-protect-delete-keys) of a key that is in use by {{site.data.keyword.cloud}} services, including your {{site.data.keyword.databases-for}} deployments. This action is called cryptoshredding. Deleting a key that is in use on your deployment locks the disks that contain your data and disables your deployment. You are still able to access the UI and some metadata such as security settings in the UI, CLI, and API but you are not able to access any of the databases or data that is contained within them. Key deletion is [sent to the {{site.data.keyword.at_short}}](/docs/key-protect?topic=key-protect-at-events) as `kms.secrets.delete`.
+{{site.data.keyword.keymanagementserviceshort}} allows you to [initiate a force delete](/docs/key-protect?topic=key-protect-delete-keys) of a key that is in use by {{site.data.keyword.cloud}} services, including your {{site.data.keyword.databases-for}} deployments. This action is called cryptoshredding. Deleting a key that is in use on your deployment locks the disks that contain your data and disables your deployment. You are still able to access the UI and some metadata such as security settings in the UI, CLI, and API but you are not able to access any of the databases or data that is contained within them. Key deletion is [sent to the {{site.data.keyword.atracker_short}}](/docs/key-protect?topic=key-protect-at-events) as `kms.secrets.delete`.
 
 ## Bring your own key for backups
 {: #key-byok}
