@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2023, 2025
-lastupdated: "2025-06-25"
+lastupdated: "2025-06-26"
 
 keywords: monitoring
 
@@ -2685,7 +2685,7 @@ How much memory is used as a percentage of total memory available
 ## Redis metrics
 {: #metrics-by-plan-redis}
 
-| Metric Name |
+| Metric name |
 |-----------|
 | [Redis IO utilization in percent 15-minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_15m) |
 | [Redis IO utilization in percent 30-minute average](#ibm_databases_for_redis_disk_io_utilization_percent_average_30m) |
@@ -2704,18 +2704,18 @@ How much memory is used as a percentage of total memory available
 | [Redis rejected connections](#ibm_databases_for_redis_rejected_connections) |
 | [Redis instantaneous ops](#ibm_databases_for_redis_instantaneous_ops_sec) |
 | [Redis total commands processed](#ibm_databases_for_redis_total_commands_processed) |
-| [AOF current file size](#ibm_databases_for_redis_aof_current_size) |
-| [RDB current file size](#ibm_databases_for_redis_rdb_current_size) |
-| [Changes since last snapshot](#ibm_databases_for_redis_rdb_changes_since_last_save) |
-| [Last RDB save duration (sec)](#ibm_databases_for_redis_rdb_last_bgsave_time_sec) |
-| [Last AOF rewrite duration (sec)](#ibm_databases_for_redis_aof_last_rewrite_time_sec) |
-| [Cache hit ratio](#ibm_databases_for_redis_cache_hit_ratio)  |
-| [Total reads processed](#ibm_databases_for_redis_total_reads_processed) |
-| [Total writes processed](#ibm_databases_for_redis_total_writes_processed) |
-| [Total evicted keys](#ibm_databases_for_redis_evicted_keys) |
-| [Reads per second](#ibm_databases_for_redis_reads_per_second) |
-| [Writes per second](#ibm_databases_for_redis_writes_per_second) |
-| [Operations per second](#ibm_databases_for_redis_operations_per_second) |
+| [Redis AOF current file size](#ibm_databases_for_redis_aof_current_size) |
+| [Redis RDB current file size](#ibm_databases_for_redis_rdb_current_size) |
+| [Redis changes since last snapshot](#ibm_databases_for_redis_rdb_changes_since_last_save) |
+| [Redis last RDB save duration (sec)](#ibm_databases_for_redis_rdb_last_bgsave_time_sec) |
+| [Redis last AOF rewrite duration (sec)](#ibm_databases_for_redis_aof_last_rewrite_time_sec) |
+| [Redis cache hit ratio](#ibm_databases_for_redis_cache_hit_ratio)  |
+| [Redis total reads processed](#ibm_databases_for_redis_total_reads_processed) |
+| [Redis total writes processed](#ibm_databases_for_redis_total_writes_processed) |
+| [Redis total evicted keys](#ibm_databases_for_redis_evicted_keys) |
+| [Redis reads per second](#ibm_databases_for_redis_reads_per_second) |
+| [Redis writes per second](#ibm_databases_for_redis_writes_per_second) |
+| [Redis operations per second](#ibm_databases_for_redis_operations_per_second) |
 {: caption="Metrics available by plan names" caption-side="top"}
 
 ### Redis metrics descriptions
@@ -2945,7 +2945,7 @@ Total number of commands processed by the server. Note: This is an incremental n
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Total commands processed by Redis" caption-side="top"}
 
-#### AOF current file size
+#### Redis AOF current file size
 {: #ibm_databases_for_redis_aof_current_size}
 
 Shows the AOF current file size.
@@ -2958,7 +2958,7 @@ Shows the AOF current file size.
 | `Segment By` | `Service instance` |
 {: caption="AOF current file size" caption-side="top"}
 
-#### RDB current file size
+#### Redis RDB current file size
 {: #ibm_databases_for_redis_rdb_current_size}
 
 Shows the RDB current file size.
@@ -2971,7 +2971,7 @@ Shows the RDB current file size.
 | `Segment By` | `Service instance` |
 {: caption="RDB current file size" caption-side="top"}
 
-#### Changes since last snapshot
+#### Redis changes since last snapshot
 {: #ibm_databases_for_redis_rdb_changes_since_last_save}
 
 Shows the number of write operations performed since the last RDB snapshot was saved.
@@ -2984,7 +2984,7 @@ Shows the number of write operations performed since the last RDB snapshot was s
 | `Segment By` | `Service instance` |
 {: caption="Changes since last snapshot" caption-side="top"}
 
-#### Last RDB save duration (sec)
+#### Redis last RDB save duration (sec)
 {: #ibm_databases_for_redis_rdb_last_bgsave_time_sec}
 
 Represents the duration in seconds taken by the last background RDB save operation. A higher value may indicate performance issues during snapshotting.
@@ -2997,7 +2997,7 @@ Represents the duration in seconds taken by the last background RDB save operati
 | `Segment By` | `Service instance` |
 {: caption="Last RDB save duration (sec)" caption-side="top"}
 
-#### Last AOF rewrite duration (sec)
+#### Redis last AOF rewrite duration (sec)
 {: #ibm_databases_for_redis_aof_last_rewrite_time_sec}
 
 Shows the duration in seconds taken by the last AOF (Append-Only File) rewrite operation. Longer durations may indicate performance bottlenecks during log rewriting.
@@ -3010,7 +3010,7 @@ Shows the duration in seconds taken by the last AOF (Append-Only File) rewrite o
 | `Segment By` | `Service instance` |
 {: caption="Last AOF rewrite duration (sec)" caption-side="top"}
 
-#### Cache hit ratio
+#### Redis cache hit ratio
 {: #ibm_databases_for_redis_cache_hit_ratio}
 
 Indicates the efficiency of key lookups by showing the ratio of successful key hits to total lookups in Redis. A higher ratio reflects better cache performance.
@@ -3023,7 +3023,7 @@ Indicates the efficiency of key lookups by showing the ratio of successful key h
 | `Segment By` | `Service instance` |
 {: caption="Cache hit ratio" caption-side="top"}
 
-#### Total reads processed
+#### Redis total reads processed
 {: #ibm_databases_for_redis_total_reads_processed}
 
 Shows the total number of successful key lookups in the main Redis dictionary, representing all read operations processed over time.
@@ -3036,7 +3036,7 @@ Shows the total number of successful key lookups in the main Redis dictionary, r
 | `Segment By` | `Service instance` |
 {: caption="Total reads processed" caption-side="top"}
 
-#### Total writes processed
+#### Redis total writes processed
 {: #ibm_databases_for_redis_total_writes_processed}
 
 Shows the total number of successful key modifications in the main Redis dictionary, indicating the number of write operations processed over time.
@@ -3049,7 +3049,7 @@ Shows the total number of successful key modifications in the main Redis diction
 | `Segment By` | `Service instance` |
 {: caption="Total writes processed" caption-side="top"}
 
-#### Total Evicted Keys
+#### Redis total Evicted Keys
 {: #ibm_databases_for_redis_evicted_keys}
 
 Represents the total number of keys evicted from Redis due to memory constraints, typically when the max memory limit is reached and keys are removed based on the eviction policy.
@@ -3062,7 +3062,7 @@ Represents the total number of keys evicted from Redis due to memory constraints
 | `Segment By` | `Service instance` |
 {: caption="Total evicted keys" caption-side="top"}
 
-#### Reads Per Second
+#### Redis reads Per Second
 {: #ibm_databases_for_redis_reads_per_second}
 
 Shows the rate of read operations processed by Redis each second, indicating the current read workload and query throughput.
@@ -3075,7 +3075,7 @@ Shows the rate of read operations processed by Redis each second, indicating the
 | `Segment By` | `Service instance` |
 {: caption="Reads per second" caption-side="top"}
 
-#### Writes Per Second
+#### Redis writes Per Second
 {: #ibm_databases_for_redis_writes_per_second}
 
 Shows the rate of write operations processed by Redis each second, indicating the current write workload and data modification throughput.
@@ -3088,7 +3088,7 @@ Shows the rate of write operations processed by Redis each second, indicating th
 | `Segment By` | `Service instance` |
 {: caption="Writes per second" caption-side="top"}
 
-#### Operations Per Second
+#### Redis operations Per Second
 {: #ibm_databases_for_redis_operations_per_second}
 
 Shows the rate of read and write operations processed by Redis each second, reflecting the overall command throughput and server workload.
