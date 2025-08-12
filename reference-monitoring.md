@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2023, 2025
-lastupdated: "2025-06-26"
+lastupdated: "2025-08-01"
 
 keywords: monitoring
 
@@ -38,10 +38,17 @@ The usage that is presented in this dashboard is the number of CPU cores used pe
 We recommend that you use this metric to track historical CPU allocation over time, which can help you to decide how many CPU cores to allocate for your database to match desired performance. 
 
 ### CPU used per member (data only available with dedicated cores)
-{: #sysdig-monitor-dashboards-cpu-used-per-member}
+{: #sysdig-monitor-dashboards-cpu-used-per-member-dedicated}
 
 The usage that is presented in this dashboard is a percentage of total CPU being used, based on the number of cores in your {{site.data.keyword.databases-for}} instance. For example, if you have 8 cores and your usage is 12.5%, then that percentage reflects that your database member is using 1 core's worth of CPU seconds. However, this does not guarantee that your member's workload is pinned to 1 core – the workload might be distributed unevenly among your 8 cores. In the same example, 25% usage reflects that your database member is using 2 core's worth of CPU seconds out of your available 8 cores.
 
+The title of this metric specifies "data only available with dedicated cores," which is an anachronism. This panel now displays information about instances using the [Isolated Compute](/docs/cloud-databases?topic=cloud-databases-hosting-models&interface=ui#hosting-models-iso-compute-ui) hosting model; however, it will not display information about any instances on the legacy hosting model once referred to as "dedicated cores." Dedicated cores were deprecated during the hosting model transition outlined [here](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-hosting-model-transition), so there should be no instances using the hosting model anymore. This panel contains a subset of the metrics that are visible in the newer panel, [**CPU used per member (all instance types)**](#cpu-used-per-member-all-instance-types).
+{: note}
+
+### CPU used per member (all instance types)
+{: #sysdig-monitor-dashboards-cpu-used-per-member-all}
+
+The metrics in this panel cover instances of both the [Isolated Compute and Shared Compute hosting models](/docs/cloud-databases?topic=cloud-databases-hosting-models&interface=ui). The usage that is presented in this dashboard is a percentage of total CPU being used, based on the number of cores in your {{site.data.keyword.databases-for}} instance. For example, if you have 8 cores and your usage is 12.5%, then that percentage reflects that your database member is using 1 core's worth of CPU seconds. However, this does not guarantee that your member's workload is pinned to 1 core – the workload might be distributed unevenly among your 8 cores. In the same example, 25% usage reflects that your database member is using 2 core's worth of CPU seconds out of your available 8 cores.
 
 ## Metrics available by service plan
 {: #metrics-by-plan}
