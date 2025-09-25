@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2024
-lastupdated: "2024-11-13"
+  years: 2019, 2025
+lastupdated: "2025-09-24"
 
 keywords: logging, monitoring, metrics
 
@@ -17,7 +17,7 @@ subcollection: cloud-databases
 
 1. Use **{{site.data.keyword.mon_full}}** to gain operational visibility into the performance and health of your applications, services, and platforms. For more information, see {{site.data.keyword.databases-for}} [{{site.data.keyword.mon_full}} integration](/docs/cloud-databases?topic=cloud-databases-monitoring).
 
-1. Use the **{{site.data.keyword.atracker_full}}** service to capture a record of your {{site.data.keyword.databases-for}} activities and monitor the activity of your {{site.data.keyword.cloud_notm}} account. For more information, see {{site.data.keyword.databases-for}} [{{site.data.keyword.atracker_full}}](/docs/cloud-databases?topic=cloud-databases-at_events).
+1. Use the **{{site.data.keyword.logs_full}}** service to capture a record of your {{site.data.keyword.databases-for}} activities and manage logs including audit and operational events. For more information, see {{site.data.keyword.databases-for}} [{{site.data.keyword.atracker_full}}](/docs/cloud-databases?topic=cloud-databases-at_events).
 
 1. Use **{{site.data.keyword.logs_full}}** to add log management capabilities to your {{site.data.keyword.databases-for}} architecture. For more information, see {{site.data.keyword.databases-for}} [{{site.data.keyword.logs_full}}](/docs/cloud-databases?topic=cloud-databases-logging).
 
