@@ -29,8 +29,7 @@ When you provision a {{site.data.keyword.databases-for}} instance, you can choos
 | {{site.data.keyword.databases-for-mysql}} | Major versions are the first two numbers in a `major.x.patch` version number. | v8.0, July 2026 |  v8.0 | Backup taken and access removed |
 | {{site.data.keyword.messages-for-rabbitmq}} | Major versions are the first two numbers in a `major.x.patch` version number. | v3.12, 30 April 2025 |   v3.13   | Backup taken and access removed |
 | {{site.data.keyword.databases-for-enterprisedb}} | The major version is defined by the first number in the version number. | End of service/full deprecation on 15 October 2025. |  v12  | Permanently disabled and de-provisioned. [Refer to critical timelines](https://cloud.ibm.com/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-deprecation){: external}. |
-| {{site.data.keyword.databases-for-etcd}} | Major versions are the first number in a `major.minor.patch` version number. | End of Service/Full deprecation on 15 October 2025 |   v3.5   | Permanently disabled and de-provisioned. [Refer to critical timelines](https://cloud.ibm.com/docs/databases-for-etcd?topic=databases-for-etcd-deprecation&interface=ui){: external}.
- |
+| {{site.data.keyword.databases-for-etcd}} | Major versions are the first number in a `major.minor.patch` version number. | End of Service/Full deprecation on 15 October 2025 |   v3.5   | Permanently disabled and de-provisioned. [Refer to critical timelines](https://cloud.ibm.com/docs/databases-for-etcd?topic=databases-for-etcd-deprecation&interface=ui){: external}.  |
 {: caption="Major versions for {{site.data.keyword.databases-for}}" caption-side="top"}
 
 ## Subscribe for version updates
