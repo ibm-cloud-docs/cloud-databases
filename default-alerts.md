@@ -83,10 +83,10 @@ For more information, see [{{site.data.keyword.databases-for}}{{site.data.keywor
 
 | Alert | Condition | Explanation |
 |-------|-----------|-------------|
-| avg by(ibm_service_instance_name,ibm_service_instance,ibm_scope) (ibm_databases_for_elasticsearch_cpu_used_percent) | > 0.95 | {{site.data.keyword.databases-for-elasticsearch}} CPU usage above 95% affects indexing, queries, and cluster responsiveness. Sustained overload risks node instability. Optimize queries, reduce shard counts, or scale compute resources. |
-| avg by (ibm_service_instance_name,ibm_service_instance,ibm_scope) (ibm_databases_for_elasticsearch_cluster_status) | = 0 | Cluster status = 0 indicates that {{site.data.keyword.databases-for-elasticsearch}} is red, meaning primary shards are missing or unassigned. This poses a risk of data loss. Check node health, ensure sufficient disk space, and reallocate shards. |
+| avg by \\n (ibm_service_instance_name,ibm_service_instance,ibm_scope) (ibm_databases_for_elasticsearch_cpu_used_percent) | > 0.95 | {{site.data.keyword.databases-for-elasticsearch}} CPU usage above 95% affects indexing, queries, and cluster responsiveness. Sustained overload risks node instability. Optimize queries, reduce shard counts, or scale compute resources. |
+| avg by \\n (ibm_service_instance_name,ibm_service_instance,ibm_scope) (ibm_databases_for_elasticsearch_cluster_status) | = 0 | Cluster status = 0 indicates that {{site.data.keyword.databases-for-elasticsearch}} is red, meaning primary shards are missing or unassigned. This poses a risk of data loss. Check node health, ensure sufficient disk space, and reallocate shards. |
 | avg(avg(ibm_databases_for_elasticsearch_disk_used_percent)) | > 0.85 | {{site.data.keyword.databases-for-elasticsearch}} disk above 85% prevents new indices or replicas and risks cluster instability. Free space is vital for shard balancing and merging. Expand storage, delete or archive old indices. |
-| avg by(ibm_service_instance_name,ibm_service_instance,ibm_scope) (ibm_databases_for_elasticsearch_jvm_heap_percent) | > 95 | JVM heap above 95% in {{site.data.keyword.databases-for-elasticsearch}} indicates garbage collection pressure and risk of node crashes. Increase heap size cautiously, optimize queries, or scale the cluster to distribute load. |
+| avg by \\n (ibm_service_instance_name,ibm_service_instance,ibm_scope) (ibm_databases_for_elasticsearch_jvm_heap_percent) | > 95 | JVM heap above 95% in {{site.data.keyword.databases-for-elasticsearch}} indicates garbage collection pressure and risk of node crashes. Increase heap size cautiously, optimize queries, or scale the cluster to distribute load. |
 {: caption="Elasticsearch alerts" caption-side="top"}
 
 ---
@@ -96,9 +96,9 @@ For more information, see [{{site.data.keyword.databases-for}}{{site.data.keywor
 
 | Alert | Condition | Explanation |
 |-------|-----------|-------------|
-| avg(avg_over_time(ibm_databases_for_redis_memory_used_percent)) | > 0.85 | {{site.data.keyword.databases-for-redis}} is memory-driven, and usage above 85% risks forced key evictions or OOM errors. High memory pressure can cause unpredictable data loss if eviction policies are triggered. Scale the memory allocation or enforce TTL/eviction policies aligned with application needs. |
-| avg(avg_over_time(ibm_databases_for_redis_disk_used_percent)) | > 0.85 | {{site.data.keyword.databases-for-redis}} persistence relies on disk space for snapshots and AOF logs. At &gt;85% usage, data persistence may fail, risking durability. Expand storage capacity or clean up unnecessary keys and backups. |
-| topk(50,avg(max_over_time(ibm_databases_for_redis_connected_clients{$__scope}[$__interval])) by (ibm_resource)) | > 9500 | This metric measures the number of connected {{site.data.keyword.databases-for-redis}} clients. Surpassing 9,500 can overwhelm networking resources, slow responses, or cause dropped connections. Ensure efficient client pooling and scale {{site.data.keyword.databases-for-redis}} instances if the workload requires more connections. |
+| avg(avg_over_time \\n (ibm_databases_for_redis_memory_used_percent)) | > 0.85 | {{site.data.keyword.databases-for-redis}} is memory-driven, and usage above 85% risks forced key evictions or OOM errors. High memory pressure can cause unpredictable data loss if eviction policies are triggered. Scale the memory allocation or enforce TTL/eviction policies aligned with application needs. |
+| avg(avg_over_time \\n (ibm_databases_for_redis_disk_used_percent)) | > 0.85 | {{site.data.keyword.databases-for-redis}} persistence relies on disk space for snapshots and AOF logs. At &gt;85% usage, data persistence may fail, risking durability. Expand storage capacity or clean up unnecessary keys and backups. |
+| topk(50,avg(max_over_time \\n (ibm_databases_for_redis_connected_clients{$__scope} \\n [$__interval])) by (ibm_resource)) | > 9500 | This metric measures the number of connected {{site.data.keyword.databases-for-redis}} clients. Surpassing 9,500 can overwhelm networking resources, slow responses, or cause dropped connections. Ensure efficient client pooling and scale {{site.data.keyword.databases-for-redis}} instances if the workload requires more connections. |
 {: caption="Redis alerts" caption-side="top"}
 
 ---
@@ -108,10 +108,10 @@ For more information, see [{{site.data.keyword.databases-for}}{{site.data.keywor
 
 | Alert | Condition | Explanation |
 |-------|-----------|-------------|
-| avg by(ibm_service_instance_name,ibm_service_instance,ibm_scope) (ibm_messages_for_rabbitmq_cpu_used_percent) | > 0.95 | {{site.data.keyword.messages-for-rabbitmq}} CPU above 95% suggests the broker is overloaded by message throughput or routing. Sustained CPU saturation risks slowdowns or dropped messages. Scale compute or optimize routing/queues. |
+| avg by \\n (ibm_service_instance_name,ibm_service_instance,ibm_scope) (ibm_messages_for_rabbitmq_cpu_used_percent) | > 0.95 | {{site.data.keyword.messages-for-rabbitmq}} CPU above 95% suggests the broker is overloaded by message throughput or routing. Sustained CPU saturation risks slowdowns or dropped messages. Scale compute or optimize routing/queues. |
 | avg(avg(ibm_messages_for_rabbitmq_disk_used_percent)) | > 0.85 | {{site.data.keyword.messages-for-rabbitmq}} relies on disk for message durability. Above 85% usage, queues may block publishers or lose messages. Expand disk capacity or clear unused queues. |
 | max(min(ibm_messages_for_rabbitmq_disk_used_percent)) | > 0.90 | Maximum {{site.data.keyword.messages-for-rabbitmq}} disk usage over 90% indicates some nodes are nearly full, risking message persistence failures. Add disk capacity or purge old/unconsumed queues immediately. |
-| avg by(ibm_service_instance_name,ibm_service_instance,ibm_scope) (ibm_messages_for_rabbitmq_cpu_used_percent) | > 0.95 | {{site.data.keyword.messages-for-rabbitmq}} CPU above 95% suggests the broker is overloaded by message throughput or routing. Sustained CPU saturation risks slowdowns or dropped messages. Scale compute or optimize routing/queues. |
+| avg by \\n (ibm_service_instance_name,ibm_service_instance,ibm_scope) (ibm_messages_for_rabbitmq_cpu_used_percent) | > 0.95 | {{site.data.keyword.messages-for-rabbitmq}} CPU above 95% suggests the broker is overloaded by message throughput or routing. Sustained CPU saturation risks slowdowns or dropped messages. Scale compute or optimize routing/queues. |
 {: caption="RabbitMQ alerts" caption-side="top"}
 
 ## Configure alerts
