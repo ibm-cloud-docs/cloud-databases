@@ -42,6 +42,7 @@ toc:
             navtitle: Logging
           - topic: reference-monitoring.md
             navtitle: Monitoring
+          - default-alerts.md
           - topic: at-events.md
             navtitle: Activity tracking events
       - topicgroup:
