@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-01-22"
+lastupdated: "2025-10-07"
 
 subcollection: cloud-databases
 
@@ -26,14 +26,14 @@ The {{site.data.keyword.cloud}} CLI provides commands for managing resources in 
 ## Installing the {{site.data.keyword.databases-for}} CLI plug-in
 {: #icd-cli-install}
 
-After you install the {{site.data.keyword.cloud_notm}} CLI, [log in](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login) and install the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference), using a command like:
+After you install the {{site.data.keyword.cloud_notm}} CLI, [log in](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login) and install the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/cloud-databases?topic=cloud-databases-cdb-reference), using a command like:
 
 ```sh
 ibmcloud plugin install cloud-databases
 ```
 {: .pre}
- 
-For a list of commands and usage information, use a command like: 
+
+For a list of commands and usage information, use a command like:
 ```sh
 ibmcloud cdb help
 ```

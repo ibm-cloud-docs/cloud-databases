@@ -13,18 +13,18 @@ subcollection: cloud-databases
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:screen: .screen}
-{:note: .note} 
+{:note: .note}
 {:tip: .tip}
 
 # Identity and Access Management integration
 {: #iam}
 
-Access to {{site.data.keyword.cloud}} Databases service instances for users in your account is controlled by {{site.data.keyword.cloud_notm}} [Identity and Access Management (IAM)](/docs/account?topic=account-cloudaccess). 
+Access to {{site.data.keyword.cloud}} Databases service instances for users in your account is controlled by {{site.data.keyword.cloud_notm}} [Identity and Access Management (IAM)](/docs/account?topic=account-cloudaccess).
 
-This document covers the integration of IAM with Cloud Databases: {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-redis}}, {{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-mysql_full}}, {{site.data.keyword.messages-for-rabbitmq}}, {{site.data.keyword.databases-for-enterprisedb}} and {{site.data.keyword.databases-for-etcd}}. 
+This document covers the integration of IAM with Cloud Databases: {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-redis}}, {{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-mysql_full}}, {{site.data.keyword.messages-for-rabbitmq}}, {{site.data.keyword.databases-for-enterprisedb}} and {{site.data.keyword.databases-for-etcd}}.
 {: .note}
 
-IAM is only integrated with high-level service access, which governs privileges and operations available in the [Cloud Databases API](/apidocs/cloud-databases-api/cloud-databases-api-v5) and the [Cloud Databases CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference). It does not govern database-level users and privileges. Database access is governed by the standard access controls provided by the database. IAM does not control database users.
+IAM is only integrated with high-level service access, which governs privileges and operations available in the [Cloud Databases API](/apidocs/cloud-databases-api/cloud-databases-api-v5) and the [Cloud Databases CLI plug-in](/docs/cloud-databases?topic=cloud-databases-cdb-reference). It does not govern database-level users and privileges. Database access is governed by the standard access controls provided by the database. IAM does not control database users.
 
 For more information about assigning user roles in {{site.data.keyword.cloud_notm}}, see [Managing IAM access](/docs/account?topic=account-assign-access-resources).
 
@@ -41,9 +41,9 @@ The following table provides a general overview of actions that are mapped to se
 ## Actions for {{site.data.keyword.databases-for}} API
 {: #actions}
 
-Access to certain API endpoints and requests is governed by role. The following lists the access policy for each role for {{site.data.keyword.cloud}} Databases. 
+Access to certain API endpoints and requests is governed by role. The following lists the access policy for each role for {{site.data.keyword.cloud}} Databases.
 
-### Viewer 
+### Viewer
 {: #viewer}
 
 The allowed actions for the Viewer role.

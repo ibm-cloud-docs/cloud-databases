@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-09-25"
+lastupdated: "2025-10-07"
 
 subcollection: cloud-databases
 
@@ -15,7 +15,7 @@ keywords: version for cloud-databases, database version, end of life, major vers
 # Versioning policy
 {: #versioning-policy}
 
-When you provision a {{site.data.keyword.databases-for}} instance, you can choose from the versions currently available on {{site.data.keyword.cloud_notm}}. Find the latest versions from the [catalog pages](https://cloud.ibm.com/catalog?category=databases){: external}, the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployables-show){: external}, or the [{{site.data.keyword.databases-for}} API](/apidocs/cloud-databases-api/cloud-databases-api-v5#listdeployables){: external}.
+When you provision a {{site.data.keyword.databases-for}} instance, you can choose from the versions currently available on {{site.data.keyword.cloud_notm}}. Find the latest versions from the [catalog pages](https://cloud.ibm.com/catalog?category=databases){: external}, the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/cloud-databases?topic=cloud-databases-cdb-reference#deployables-show){: external}, or the [{{site.data.keyword.databases-for}} API](/apidocs/cloud-databases-api/cloud-databases-api-v5#listdeployables){: external}.
 
 ## Major versions defined
 {: #version-definitions}
@@ -89,7 +89,7 @@ Any actions taken after an EOL date happen over several days after the EOL date.
 ### Programmatic methods for checking version status
 {: #-major-version-eol-check-version-status}
 
-**On the CLI** the following [{{site.data.keyword.databases-for}} `deployables-show` command](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployables-show) shows deployable service types, specifically the available versions and their `preferred` or `stable` status.
+**On the CLI** the following [{{site.data.keyword.databases-for}} `deployables-show` command](/docs/cloud-databases?topic=cloud-databases-cdb-reference#deployables-show) shows deployable service types, specifically the available versions and their `preferred` or `stable` status.
 
 ```sh
 ibmcloud cdb deployables-show [--stable] [--preferred] [--json]
