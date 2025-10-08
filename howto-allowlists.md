@@ -59,7 +59,7 @@ The _Description_ can be any user-significant text for identifying the allowlist
 {: #set-allowlist-cli}
 {: cli}
 
-The {{site.data.keyword.databases-for}} CLI plug-in offers a set of commands for managing allowlists. Use [`cdb deployment-whitelist-add`](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-allowlist-add) to add an allowlist.
+The {{site.data.keyword.databases-for}} CLI plug-in offers a set of commands for managing allowlists. Use [`cdb deployment-whitelist-add`](/docs/cloud-databases?topic=cloud-databases-cdb-reference#deployment-allowlist-add) to add an allowlist.
 
 To add a single IP address, use a command like:
 
@@ -75,7 +75,7 @@ ibmcloud cdb deployment-whitelist-add <INSTANCE_NAME_OR_CRN> 198.51.100.0/24 "Te
 ```
 {: .pre}
 
-The [`cdb deployment-whitelist-list`](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-allowlist-list) command allows you to view the current allowlist.
+The [`cdb deployment-whitelist-list`](/docs/cloud-databases?topic=cloud-databases-cdb-reference#deployment-allowlist-list) command allows you to view the current allowlist.
 
 Use a command like:
 
@@ -84,7 +84,7 @@ ibmcloud cdb deployment-whitelist-list <INSTANCE_NAME_OR_CRN>
 ```
 {: .pre}
 
-For more information, see the [{{site.data.keyword.databases-for}} CLI plug-in reference page](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference).
+For more information, see the [{{site.data.keyword.databases-for}} CLI plug-in reference page](/docs/cloud-databases?topic=cloud-databases-cdb-reference).
 
 ### Setting an allowlist through the API
 {: #set-allowlist-api}

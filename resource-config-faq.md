@@ -35,7 +35,7 @@ After you have selected the specific IBM Cloud Databases instance from the Resou
 {: support}
 {: cli}
 
-The [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference){: external} can retrieve your instance's current resource configuration, by using the `ibmcloud cdb deployment-groups` command. The `ibmcloud cdb deployment-groups` displays the scaling group values for a deployment's members. The scaling groups relate to Memory, CPU, and Disk. The default group is named "member". Use a command like:
+The [{{site.data.keyword.databases-for}} CLI plug-in](/docs/cloud-databases?topic=cloud-databases-cdb-reference){: external} can retrieve your instance's current resource configuration, by using the `ibmcloud cdb deployment-groups` command. The `ibmcloud cdb deployment-groups` displays the scaling group values for a deployment's members. The scaling groups relate to Memory, CPU, and Disk. The default group is named "member". Use a command like:
 
 ```sh
 ibmcloud cdb deployment-groups <INSTANCE_NAME_OR_CRN>
@@ -47,22 +47,22 @@ The command will return a value that looks like:
 ```text
 Group   member
 Count   3
-|       
-+   Memory                  
+|
++   Memory
 |   Allocation              3072mb
 |   Allocation per member   1024mb
 |   Minimum                 3072mb
 |   Step Size               384mb
 |   Adjustable              true
-|                           
-+   CPU                     
+|
++   CPU
 |   Allocation              0
 |   Allocation per member   0
 |   Minimum                 9
 |   Step Size               3
 |   Adjustable              true
-|                           
-+   Disk                    
+|
++   Disk
 |   Allocation              30720mb
 |   Allocation per member   10240mb
 |   Minimum                 30720mb
@@ -71,4 +71,4 @@ Count   3
 ```
 {: pre}
 
-For more information, see [ibmcloud cdb deployment-groups](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-groups){: external}.
+For more information, see [ibmcloud cdb deployment-groups](/docs/cloud-databases?topic=cloud-databases-cdb-reference#deployment-groups){: external}.

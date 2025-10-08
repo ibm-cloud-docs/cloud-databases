@@ -39,7 +39,7 @@ In the following steps, you start by creating a network zone, or allowlist, that
 Before beginning this tutorial, make sure you have created or installed the following resources and tools.
 
 - An {{site.data.keyword.cloud_notm}} account. For more information, see [Creating an account](/docs/account?topic=account-account-getting-started).
-- The [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin) - the CLI interface to interact with the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction). For more information, see [Getting started with the {{site.data.keyword.cloud_notm}} CLI](/docs/databases-cli-plugin).
+- The [{{site.data.keyword.databases-for}} CLI plug-in/docs/cloud-databases?topic=cloud-databases-cdb-reference) - the CLI interface to interact with the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction). For more information, see [Getting started with the {{site.data.keyword.cloud_notm}} CLI](/docs/cloud-databases?topic=cloud-databases-cdb-reference).
 - A {{site.data.keyword.databases-for}} deployment. For more information, see [Provisioning](/docs/cloud-databases?topic=cloud-databases-getting-started-cdb-provision-instance).
 - Review the [What are context-based restrictions](/docs/account?topic=account-context-restrictions-whatis) docs to get an understanding of concepts of network zones and rules.
 - Review the [Protecting {{site.data.keyword.databases-for}} resources with context-based restrictions](/docs/cloud-databases?topic=cloud-databases-cbr) docs to understand how you can leverage CBR for your {{site.data.keyword.databases-for}} resources.
@@ -48,14 +48,14 @@ Before beginning this tutorial, make sure you have created or installed the foll
 {: #cbr-tutorial-create-zone-cli}
 {: step}
 
-[Provision your service from the {{site.data.keyword.cloud_notm}} Catalog](https://cloud.ibm.com/catalog/services/databases-for-mysql) and choose your IP addresses from the [{{site.data.keyword.databases-for}} Allowlist page](/docs/cloud-databases?topic=cloud-databases-allowlisting&interface=ui). 
+[Provision your service from the {{site.data.keyword.cloud_notm}} Catalog](https://cloud.ibm.com/catalog/services/databases-for-mysql) and choose your IP addresses from the [{{site.data.keyword.databases-for}} Allowlist page](/docs/cloud-databases?topic=cloud-databases-allowlisting&interface=ui).
 1. Run the following example command to create a network that includes a range of allowed IP addresses.
 
     ```sh
     ibmcloud cbr zone-create --addresses=169.38.95.127/27,169.38.121.159/28,169.38.132.127/25,169.38.136.255/26,169.38.73.151/29,169.38.105.79/29,10.162.8.127/26,10.163.20.127/25,10.162.115.103/29,10.162.132.79/29 --name=tutorial_zone
     ```
     {: pre}
-    
+
 1. Verify the network zone was created.
     ```sh
     ibmcloud cbr zones
@@ -72,37 +72,37 @@ Before beginning this tutorial, make sure you have created or installed the foll
     ibmcloud cbr rule-create --enforcement-mode enabled --context-attributes networkZoneId=<ZONE-ID> --resource-group-id <RESOURCE_GROUP_ID> --service-name databases-for-mysql --service-instance <SERVICE-INSTANCE> --api-types crn:v1:bluemix:public:context-based-restrictions::::api-type:data-plane --description <DESCRIPTION>
     ```
     {: pre}
-    
+
     Understanding the command options.
-    
+
     `--context-attributes (string)`
-    :   Contexts to add to the rule. Can only pass in one `networkZoneId` field at a time. This option can be repeated to add multiple network zones. Please use this if you need to specify the `endpointType` with the `networkZoneId`. 
-    
+    :   Contexts to add to the rule. Can only pass in one `networkZoneId` field at a time. This option can be repeated to add multiple network zones. Please use this if you need to specify the `endpointType` with the `networkZoneId`.
+
     `--zone-id (string)`
-    :   Shorthand for adding context attribute `networkZoneId` to the context without specifying endpoint. 
-    
+    :   Shorthand for adding context attribute `networkZoneId` to the context without specifying endpoint.
+
     `--resource-attributes (string)`
-    :   Resources to add to the rule. 
-    
+    :   Resources to add to the rule.
+
     `--resource-group-id (string)`
     :   Shorthand for creating {{site.data.keyword.cloud_notm}} resource attribute `resourceGroupId`. Used to restrict the rule to a single resource group.
-    
+
     `--region (string)`
-    :   Shorthand for creating {{site.data.keyword.cloud_notm}} resource attribute `region`. Used to restrict the rule to a single region. 
+    :   Shorthand for creating {{site.data.keyword.cloud_notm}} resource attribute `region`. Used to restrict the rule to a single region.
 
     `--service-name (string)`
     :   Shorthand for creating {{site.data.keyword.cloud_notm}} resource attribute `serviceName`.
-    
+
     `--service-instance (string)`
     :   GUID of the service instance to scope the context to. This option can be omitted if the context applies to more than one of you service instances. This option is exclusive with the `--file` option.
-    
-    
+
+
 1. Verify the rule was created.
     ```sh
     ibmcloud cbr rules
     ```
     {: pre}
-    
+
 ## Testing your context-based restrictions
 {: #cbr-tutorial-create-test}
 {: step}

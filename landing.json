@@ -1,37 +1,37 @@
 {
   "version": 2,
   "title": "IBM Cloud Databases",
-  "introduction": "The IBM Cloud® Databases portfolio contains database-as-a-service offerings on IBM Cloud®. In addition to the comprehensive information in the IBM Cloud® Databases documentation, links to additional sources of information are provided below.",
+  "introduction": "The IBM Cloud\u00ae Databases portfolio contains database-as-a-service offerings on IBM Cloud\u00ae. In addition to the comprehensive information in the IBM Cloud\u00ae Databases documentation, links to additional sources of information are provided below.",
   "product_page": "https://www.ibm.com/cloud/databases",
   "deployment_url": "https://cloud.ibm.com/databases-overview/overview",
   "section_topics": {
     "links": [
       {
-        "title": "IBM Cloud® Databases for PostgreSQL",
+        "title": "IBM Cloud\u00ae Databases for PostgreSQL",
         "href": "/docs/databases-for-postgresql"
       },
       {
-        "title": "IBM Cloud® Databases for MongoDB",
+        "title": "IBM Cloud\u00ae Databases for MongoDB",
         "href": "/docs/databases-for-mongodb"
       },
       {
-        "title": "IBM Cloud® Databases for Redis",
+        "title": "IBM Cloud\u00ae Databases for Redis",
         "href": "/docs/databases-for-redis"
       },
       {
-        "title": "IBM Cloud® Databases for Elasticsearch",
+        "title": "IBM Cloud\u00ae Databases for Elasticsearch",
         "href": "/docs/databases-for-elasticsearch"
       },
       {
-        "title": "IBM Cloud® Databases for MySQL",
+        "title": "IBM Cloud\u00ae Databases for MySQL",
         "href": "/docs/databases-for-mysql"
       },
       {
-        "title": "IBM Cloud® Messages for RabbitMQ",
+        "title": "IBM Cloud\u00ae Messages for RabbitMQ",
         "href": "/docs/messages-for-rabbitmq"
       },
       {
-        "title": "IBM Cloud® Databases for EnterpriseDB",
+        "title": "IBM Cloud\u00ae Databases for EnterpriseDB",
         "href": "/docs/databases-for-enterprisedb"
       }
     ]
@@ -51,8 +51,8 @@
     }
   ],
   "section_devtools": {
-    "api": "/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction", 
-    "cli": "/docs/databases-cli-plugin", 
+    "api": "/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction",
+    "cli": "/docs/cloud-databases?topic=cloud-databases-cdb-reference",
     "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database"
   }
 }

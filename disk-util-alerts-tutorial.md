@@ -28,20 +28,20 @@ Getting timely alerts about resource utilization is key to managing your databas
 
 In this tutorial, you use the {{site.data.keyword.cloud_notm}} API and the [{{site.data.keyword.cloud_notm}} CLI](https://cloud.ibm.com/docs/cli?topic=cli-getting-started){: external} to set up an alert that emails you whenever the disk utilization of your database exceeds 90%. This specific example creates an alert on a {{site.data.keyword.databases-for-elasticsearch}} deployment, but it is applicable to all the databases in the IBM {{site.data.keyword.databases-for}} catalog.
 
-## Getting productive 
+## Getting productive
 {: #disk-util-alert-tutorial-getting-started}
 
 ### Set up monitoring instance and Platform Metrics
 {: #disk-util-alert-tutorial-monitor-platform}
 
-To get started, you need access to [{{site.data.keyword.mon_full}}](https://www.ibm.com/products/cloud-monitoring) in your database region, and you need to have a [monitoring instance](/docs/monitoring?topic=monitoring-getting-started) available. This monitoring instance must be in the same region as the database target. 
+To get started, you need access to [{{site.data.keyword.mon_full}}](https://www.ibm.com/products/cloud-monitoring) in your database region, and you need to have a [monitoring instance](/docs/monitoring?topic=monitoring-getting-started) available. This monitoring instance must be in the same region as the database target.
 
 You also must have [Platform Metrics](/docs/monitoring?topic=monitoring-platform_metrics_enabling) enabled.
 
 ### Install Command Line Interface tools
 {: #disk-util-alert-tutorial-cli-tools}
 
-Next, you need the [{{site.data.keyword.cloud_notm}} Monitoring CLI]((https://cloud.ibm.com/docs/cli?topic=cli-monitor-cli)) and [{{site.data.keyword.databases-for}} CLI plug-in](https://cloud.ibm.com/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#installing-cli-plugin).
+Next, you need the [{{site.data.keyword.cloud_notm}} Monitoring CLI]((https://cloud.ibm.com/docs/cli?topic=cli-monitor-cli)) and [{{site.data.keyword.databases-for}} CLI plug-in](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-cdb-reference#installing-cli-plugin).
 
 Install the {{site.data.keyword.cloud_notm}} Monitoring CLI by running the following command:
 
