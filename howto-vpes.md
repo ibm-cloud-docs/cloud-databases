@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2021, 2024
-lastupdated: "2024-09-13"
+  years: 2021, 2025
+lastupdated: "2025-10-10"
 
 subcollection: cloud-databases
 
@@ -9,7 +9,7 @@ keywords: pDNS, private endpoints, private networking, vpe, virtual private endp
 
 ---
 
-{{site.data.keyword.mon_full}}
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Virtual Private Endpoints 
@@ -80,7 +80,7 @@ Virtual Private Endpoints (VPEs) are generally available in all regions.
    Address: 10.240.64.6    < ---- your VPE IP address
    ```
 
-7. You can now use your instance in the VSI. See the following example:
+7. You can now use your instance in the VSI. See the following example of a command for a {{site.data.keyword.databases-for-mongodb}} instance:
 
    ```bash
    mongo -u $USERNAME -p $PASSWORD --tls --tlsCAFile /root/   c--authenticationDatabase admin --host replset/host-0.private.databaseappdomain.   cloud:30066,host-1.private.databases.appdomain.cloud:30066,host-private.   databases.appdomain.cloud:30066
