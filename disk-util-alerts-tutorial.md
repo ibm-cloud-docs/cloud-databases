@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2024
-lastupdated: "2024-08-02"
+  years: 2021, 2025
+lastupdated: "2025-10-23"
 
 keywords: resource utilization, disk utilization, disk alert, notification channel, resource management, disk utilization, alert rule
 
@@ -213,15 +213,14 @@ To modify your alert or find out more about Monitoring, see [Getting started wit
 
 If you receive an alert that your disk utilization exceeds 90%, scale your disk so that you do not exceed 50-70% usage. Manually manage your service's resources or autoscale.
 
-| Service                                          | Managing Resources         | Autoscaling |
+| Service                                          | Managing resources         | Autoscaling |
 |--------------------------------------------------|----------------------------|-------------|
-| {{site.data.keyword.databases-for-enterprisedb}} | [Scaling Disk, RAM, and CPU](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-resources-scaling&interface=ui) | [Autoscaling](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-autoscaling&interface=ui) |
-| {{site.data.keyword.databases-for-etcd}} | [Scaling Disk, RAM, and CPU](/docs/databases-for-etcd?topic=databases-for-etcd-resources-scaling&interface=ui) | [Autoscaling](/docs/databases-for-etcd?topic=databases-for-etcd-autoscaling&interface=ui) |
-| {{site.data.keyword.databases-for-mongodb}} | [Scaling Disk, RAM, and CPU](/docs/databases-for-mongodb?topic=databases-for-mongodb-resources-scaling&interface=ui) | [Autoscaling](/docs/databases-for-mongodb?topic=databases-for-mongodb-autoscaling&interface=ui) |
-| {{site.data.keyword.databases-for-postgresql}} | [Scaling Disk, RAM, and CPU](/docs/databases-for-postgresql?topic=databases-for-postgresql-resources-scaling&interface=ui) | [Autoscaling](/docs/databases-for-postgresql?topic=databases-for-postgresql-autoscaling&interface=ui) |
-| {{site.data.keyword.databases-for-redis}} | [Scaling Disk, RAM, and CPU](/docs/databases-for-redis?topic=databases-for-redis-resources-scaling&interface=ui) | [Autoscaling](/docs/databases-for-redis?topic=databases-for-redis-autoscaling&interface=ui) |
-| {{site.data.keyword.databases-for-mysql}} | [Scaling Disk, RAM, and CPU](/docs/databases-for-mysql?topic=databases-for-mysql-resources-scaling) | [Autoscaling](/docs/databases-for-redis?topic=databases-for-redis-autoscaling&interface=ui) |
-| {{site.data.keyword.messages-for-rabbitmq}} | [Scaling Disk, RAM, and CPU](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-resources-scaling&interface=ui) | [Autoscaling](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-autoscaling&interface=ui) |
+| {{site.data.keyword.databases-for-etcd_full}} | [Scaling Disk, RAM, and CPU](/docs/databases-for-etcd?topic=databases-for-etcd-resources-scaling&interface=ui) | [Autoscaling](/docs/databases-for-etcd?topic=databases-for-etcd-autoscaling&interface=ui) |
+| {{site.data.keyword.databases-for-mongodb_full}} | [Scaling Disk, RAM, and CPU](/docs/databases-for-mongodb?topic=databases-for-mongodb-resources-scaling&interface=ui) | [Autoscaling](/docs/databases-for-mongodb?topic=databases-for-mongodb-autoscaling&interface=ui) |
+| {{site.data.keyword.databases-for-postgresql_full}} | [Scaling Disk, RAM, and CPU](/docs/databases-for-postgresql?topic=databases-for-postgresql-resources-scaling&interface=ui) | [Autoscaling](/docs/databases-for-postgresql?topic=databases-for-postgresql-autoscaling&interface=ui) |
+| {{site.data.keyword.databases-for-redis_full}} | [Scaling Disk, RAM, and CPU](/docs/databases-for-redis?topic=databases-for-redis-resources-scaling&interface=ui) | [Autoscaling](/docs/databases-for-redis?topic=databases-for-redis-autoscaling&interface=ui) |
+| {{site.data.keyword.databases-for-mysql_full}} | [Scaling Disk, RAM, and CPU](/docs/databases-for-mysql?topic=databases-for-mysql-resources-scaling) | [Autoscaling](/docs/databases-for-redis?topic=databases-for-redis-autoscaling&interface=ui) |
+| {{site.data.keyword.messages-for-rabbitmq_full}} | [Scaling Disk, RAM, and CPU](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-resources-scaling&interface=ui) | [Autoscaling](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-autoscaling&interface=ui) |
 {: caption="Scaling Resources" caption-side="bottom"}
 
 ## {{site.data.keyword.databases-for}} service metrics
@@ -229,10 +228,9 @@ If you receive an alert that your disk utilization exceeds 90%, scale your disk 
 
 This tutorial uses {{site.data.keyword.databases-for-elasticsearch_full}}. However, the same process applies to other {{site.data.keyword.databases-for}} services:
 
-- [{{site.data.keyword.databases-for-enterprisedb_full}}](/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-enterprisedb)
-- [{{site.data.keyword.databases-for-etcd_full}}](/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-etcd)
-- [{{site.data.keyword.databases-for-mongodb_full}}](/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-mongodb)
-- [{{site.data.keyword.databases-for-postgresql_full}}](/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-postgresql)
-- [{{site.data.keyword.databases-for-redis_full}}](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-redis)
-- [{{site.data.keyword.databases-for-mysql_full}}](/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-mysql)
-- [{{site.data.keyword.messages-for-rabbitmq_full}}](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-rabbitmq)
+- [{{site.data.keyword.databases-for-etcd}}](/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-etcd)
+- [{{site.data.keyword.databases-for-mongodb}}](/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-mongodb)
+- [{{site.data.keyword.databases-for-postgresql}}](/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-postgresql)
+- [{{site.data.keyword.databases-for-redis}}](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-redis)
+- [{{site.data.keyword.databases-for-mysql}}](/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-mysql)
+- [{{site.data.keyword.messages-for-rabbitmq}}](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-rabbitmq)
