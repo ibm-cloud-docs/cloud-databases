@@ -1,7 +1,9 @@
 ---
+
 copyright:
   years: 2023, 2025
 lastupdated: "2025-10-23"
+
 subcollection: cloud-databases
 
 keywords: data center, multizone regions, cloud status, viewing cloud status, incident
