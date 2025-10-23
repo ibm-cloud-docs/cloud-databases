@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-08-07"
+  years: 2023, 2025
+lastupdated: "2025-10-23"
 
-keywords: 
+keywords: context-based restrictions, allowlist, disaster recovery
 
 subcollection: cloud-databases
 
@@ -35,7 +35,5 @@ You've now provisioned a {{site.data.keyword.databases-for}} service instance, s
 - [{{site.data.keyword.databases-for-mysql}}](/docs/databases-for-mysql?topic=databases-for-mysql-getting-started){: external}
 
 - [{{site.data.keyword.messages-for-rabbitmq}}](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-getting-started){: external}
-
-- [{{site.data.keyword.databases-for-enterprisedb}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-getting-started){: external}
 
 - [{{site.data.keyword.databases-for-etcd}}](/docs/databases-for-etcd?topic=databases-for-etcd-getting-started){: external}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2024
-lastupdated: "2024-08-02"
+  years: 2019, 2025
+lastupdated: "2025-10-23"
 
 subcollection: cloud-databases
 
@@ -30,8 +30,6 @@ Follow the steps for provisioning a {{site.data.keyword.databases-for}} instance
 - [{{site.data.keyword.databases-for-mysql}}](/docs/databases-for-mysql?topic=databases-for-mysql-provisioning){: external}
 
 - [{{site.data.keyword.messages-for-rabbitmq}}](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-provisioning){: external}
-
-- [{{site.data.keyword.databases-for-enterprisedb}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-provisioning){: external}
 
 - [{{site.data.keyword.databases-for-etcd}}](/docs/databases-for-etcd?topic=databases-for-etcd-provisioning){: external}
 

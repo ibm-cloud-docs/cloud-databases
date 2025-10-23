@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-08-07"
+  years: 2024, 2025
+lastupdated: "2025-10-22"
 
 subcollection: cloud-databases
 
@@ -18,7 +18,7 @@ the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/clou
 or through [Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: external}.
 
 
-- [{{site.data.keyword.databases-for-postgresql}}](/docs/databases-for-postgresql?topic=databases-for-postgresql-resources-scaling&interface=u){: external}
+- [{{site.data.keyword.databases-for-postgresql}}](/docs/databases-for-postgresql?topic=databases-for-postgresql-resources-scaling&interface=u){: external}f
 
 - [{{site.data.keyword.databases-for-mongodb}}](/docs/databases-for-mongodb?topic=databases-for-mongodb-resources-scaling&interface=ui){: external}
 
@@ -29,7 +29,5 @@ or through [Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/lat
 - [{{site.data.keyword.databases-for-mysql}}](/docs/databases-for-mysql?topic=databases-for-mysql-resources-scaling){: external}
 
 - [{{site.data.keyword.messages-for-rabbitmq}}](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-resources-scaling&interface=ui){: external}
-
-- [{{site.data.keyword.databases-for-enterprisedb}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-resources-scaling&interface=ui){: external}
 
 - [{{site.data.keyword.databases-for-etcd}}](/docs/databases-for-etcd?topic=databases-for-etcd-resources-scaling&interface=ui){: external}
