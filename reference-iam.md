@@ -1,27 +1,21 @@
 ---
 
 copyright:
-  years: 2019, 2024
-lastupdated: "2024-09-13"
+  years: 2019, 2025
+lastupdated: "2025-11-07"
 
 subcollection: cloud-databases
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: .external target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:note: .note}
-{:tip: .tip}
+{{site.data.keyword.attribute-definition-list}}
 
 # Identity and Access Management integration
 {: #iam}
 
 Access to {{site.data.keyword.cloud}} Databases service instances for users in your account is controlled by {{site.data.keyword.cloud_notm}} [Identity and Access Management (IAM)](/docs/account?topic=account-cloudaccess).
 
-This document covers the integration of IAM with Cloud Databases: {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-redis}}, {{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-mysql_full}}, {{site.data.keyword.messages-for-rabbitmq}}, {{site.data.keyword.databases-for-enterprisedb}} and {{site.data.keyword.databases-for-etcd}}.
+This document covers the integration of IAM with Cloud Databases: {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-redis}}, {{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-mysql_full}}, {{site.data.keyword.messages-for-rabbitmq}}, and {{site.data.keyword.databases-for-etcd}}.
 {: .note}
 
 IAM is only integrated with high-level service access, which governs privileges and operations available in the [Cloud Databases API](/apidocs/cloud-databases-api/cloud-databases-api-v5) and the [Cloud Databases CLI plug-in](/docs/cloud-databases?topic=cloud-databases-cdb-reference). It does not govern database-level users and privileges. Database access is governed by the standard access controls provided by the database. IAM does not control database users.
@@ -144,7 +138,7 @@ PATCH /v5/ibm/deployments/:deployment_id/groups/:group_id
 Set scaling values on a specified group.
 ---
 DELETE /v5/ibm/deployments/:deployment_id/management/database_connections
-Closes all the connections on a deployment. Available for PostgreSQL and EnterpriseDB ONLY.
+Closes all the connections on a deployment. Available for PostgreSQL ONLY.
 ---
 PATCH /v5/ibm/deployments/:deployment_id/configuration
 Update deployment configuration

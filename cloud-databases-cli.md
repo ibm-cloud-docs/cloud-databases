@@ -1,8 +1,8 @@
 ---
  
 copyright:
-  years: 2018, 2024
-lastupdated: "2024-10-17"
+  years: 2018, 2025
+lastupdated: "2025-11-07"
 
 keywords: cloud databases, migrating, disk size, memory size, CPU size, resources, cli, postgresql administrator, cloud database cli
 
@@ -16,9 +16,9 @@ subcollection: cloud-databases
 {: #cdb-reference}
 
 The {{site.data.keyword.databases-for}} CLI plug-in offers extra methods of accessing the capabilities of the {{site.data.keyword.databases-for}} services. You can use the {{site.data.keyword.databases-for}} CLI to manage and connect to the following services:
+
 - [{{site.data.keyword.databases-for-postgresql_full}}](/docs/databases-for-postgresql)
 - [{{site.data.keyword.databases-for-mysql_full}}](/docs/databases-for-mysql)
-- [{{site.data.keyword.databases-for-enterprisedb_full}}](/docs/databases-for-enterprisedb)
 - [{{site.data.keyword.databases-for-redis_full}}](/docs/databases-for-redis) 
 - [{{site.data.keyword.databases-for-elasticsearch_full}}](/docs/databases-for-elasticsearch)
 - [{{site.data.keyword.databases-for-etcd_full}}](/docs/databases-for-etcd)
@@ -43,12 +43,14 @@ Access to services via {{site.data.keyword.cloud_notm}} CLI is governed through 
 {: #installing-cli-plugin}
 
 Once you have the {{site.data.keyword.cloud_notm}} CLI, [log in](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login) and install the {{site.data.keyword.databases-for}} plug-in, using a command like:
+
 ```sh
 ibmcloud plugin install cloud-databases
 ```
 {: .pre}
  
-For a list of commands and usage information, use a command like: 
+For a list of commands and usage information, use a command like:
+
 ```sh
 ibmcloud cdb help
 ```
@@ -73,12 +75,38 @@ No command-specific options.
 {: #ibmcloud-cdb-help-examples}
 
 Get help on the task-show command.
+
 ```sh
 ibmcloud cdb help task-show
 ```
 {: .pre}
 
-## Deployments and Deployables
+## Getting started - Create an instance
+{: #ibmcloud-cdb-help-create}
+
+You can create an instance by using the following command: 
+
+```sh
+ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN_NAME> <LOCATION> -g <RESOURCE_GROUP> -p '{"members_host_flavor": "<members_host_flavor value>"}' --service-endpoints="<endpoint>"
+```
+{: .pre}
+
+### Command options
+{: #ibmcloud-cdb-help-cmd-options}
+
+Set the resource group if you want to use another group instead of the default group. You can also omit this flag.
+ 
+### Examples 
+{: #ibmcloud-cdb-help-examples}
+
+Create a MongoDB instance.
+
+```sh
+ibmcloud resource service-instance-create test-database databases-for-mongodb standard us-south -p '{"members_host_flavor": "multitenant", "members_memory_allocation_mb": "12288"}' --service-endpoints="private"
+```
+{: .pre}
+
+## Deployments and deployables
 {: #deployments-and-deployables}
 
 Get information about the deployable databases and database versions on the {{site.data.keyword.databases-for}} platform. Also, get a list of all of the {{site.data.keyword.databases-for}} on your {{site.data.keyword.cloud_notm}} account.
@@ -110,6 +138,7 @@ Short version - `deployables`
 {: #deployments-and-deployables-examples}
 
 Show all the stable versions of databases available.
+
 ```sh
 ibmcloud cdb deployables-show --stable
 ```
@@ -139,6 +168,7 @@ ibmcloud cdb deployments [--all] [--json]
 {: #deployments-examples}
 
 List all current deployments with an account.
+
 ```sh
 ibmcloud cdb ls
 ```
@@ -168,6 +198,7 @@ ibmcloud cdb deployment-about <deployment name or CRN> [--all] [--json]
 {: #deployment-about-examples}
 
 List details of a deployment named "RedisDBOne".
+
 ```sh
 ibmcloud cdb about RedisDBOne
 ```
@@ -217,6 +248,7 @@ ibmcloud cdb deployment-connections [--user <userid>] [--password <password>] [-
 {: #connections-examples}
 
 Display how to connect to a deployment.
+
 ```sh
 ibmcloud cdb deployment-connections MyPSQL
 ```
@@ -225,6 +257,7 @@ ibmcloud cdb deployment-connections MyPSQL
 (Shows a connection string and a CLI command string)
 
 Connect to a deployment as admin.
+
 ```sh
 ibmcloud cdb deployment-connections MyPSQL --start
 ```
@@ -233,6 +266,7 @@ ibmcloud cdb deployment-connections MyPSQL --start
 When run, the plug-in prompts for the admin password, then runs the CLI command string. The command that is used in the CLI command string must be installed.
 
 Show all details of how to make a connection to a deployment for a particular user and password combination.
+
 ```sh
 ibmcloud cdb cxn MyPSQL -a -u auser -p auserpassword
 ```
@@ -266,11 +300,13 @@ ibmcloud cdb deployment-cacert <deployment name or CRN> [--user <userid>] [--sav
 {: #deployment-cacert-examples}
 
 Display the certificate for a deployment named MyPostgreSQL.
+
 ```sh
 ibmcloud cdb deployment-cacert MyPostgreSQL
 ```
 
-Save a certificate for the same deployment in the current directory. 
+Save a certificate for the same deployment in the current directory.
+
 ```sh
 ibmcloud cdb deployment-cacert MyPostgreSQL --save --certroot .
 ```
@@ -285,6 +321,7 @@ Note: The file name is based on the certificate name.
 Short version - `kill-connections`
 
 Closes all the connections on a deployment. Available for PostgreSQL ONLY.
+
 ```sh
 ibmcloud cdb deployment-kill-connections <deployment name or CRN> [--nowait] [--json]
 ```
@@ -303,6 +340,7 @@ ibmcloud cdb deployment-kill-connections <deployment name or CRN> [--nowait] [--
 {: #deployment-kill-connections-examples}
 
 This command kills all of the external connections to a deployment named `postgresq-preproduction`.
+
 ```sh
 ibmcloud cdb deployment-kill-connections postgresq-preproduction
 ```
@@ -312,6 +350,7 @@ ibmcloud cdb deployment-kill-connections postgresq-preproduction
 {: #capability}
 
 The capability commands help you to identify which features are available and supported for your databases and backups.
+
 ```sh
 ibmcloud cdb capability
 ```
@@ -473,8 +512,6 @@ The `newusername` needs to be a correctly formatted username for use on the depl
    Do not wait for the user creation task to complete. Display the user creation task details and exit.
 - `--json` or `-j`
    Display results as JSON.
-
-
  
 #### Examples
 {: #deployment-user-create-examples}
@@ -509,7 +546,8 @@ ibmcloud cdb deployment-user-delete <deployment name or CRN> <username> [--nowai
 #### Examples
 {: #deployment-user-delete-examples}
 
-Remove the database user called "fred" from the "MyPSQL" deployment
+Remove the database user called "fred" from the "MyPSQL" deployment.
+
 ```sh
 ibmcloud cdb deployment-user-delete MyPSQL fred
 ```
@@ -539,7 +577,8 @@ ibmcloud cdb deployment-user-password <deployment name or CRN> <username> <newpa
 #### Examples
 {: #deployment-user-password-examples}
 
-Change the password of user "fred" on the database deployment "MyPSQL" to "A9876B5432"
+Change the password of user "fred" on the database deployment "MyPSQL" to "A9876B5432".
+
 ```sh
 ibmcloud cdb deployment-password MyPSQL fred A9876B5432
 ```
@@ -556,6 +595,7 @@ List or change configurable settings on a deployment. The new configuration is s
 Short version - `config-schema`
 
 Gets the default configuration of the specified deployment.
+
 ```sh
 ibmcloud cdb deployment-configuration-schema <deployment name or CRN> [--description] [--json]
 ```
@@ -605,6 +645,7 @@ ibmcloud cdb deployment-configuration <deployment name or CRN> [@JSON_FILE | JSO
 {: #deployment-configuration-examples}
 
 Change the max_connections for a PostgreSQL deployment named "PGSettings4" to 150.
+
 ```sh
 ibmcloud cdb deployment-configuration PGSettings4 '{"configuration":{"max_connections":150}}'
 ```
@@ -635,7 +676,8 @@ ibmcloud cdb deployables-groups-show <deployable type> [--json]
 #### Examples
 {: #deployables-groups-show-examples}
 
-Show the default group settings for a PostgreSQL database deployment
+Show the default group settings for a PostgreSQL database deployment.
+
 ```sh
 ibmcloud cdb deployables-groups-show postgresql
 ```
@@ -646,10 +688,11 @@ ibmcloud cdb deployables-groups-show postgresql
 
 Short version - `groups`
 
-Displays the scaling group values for a deployment's members. The scaling groups relate to Memory, CPU, and Disk. The default group is named "member". For each group, the number of nodes in the group are shown followed by
-* **Memory** The total memory allocation, the allocation per member, the minimum allocation and the increments the total memory can be varied by.
-* **CPU** The number of CPUs dedicated to the group. The CPU section shows 0 values in all the fields when no dedicated CPUs are configured. The CPU group is only displayed when it is adjustable.
-* **Disk** The total disk allocation, the allocation per member, the minimum allocation and the increments the total disk can be varied by.
+Displays the scaling group values for a deployment's members. The scaling groups relate to Memory, CPU, and Disk. The default group is named "member". For each group, the number of nodes in the group are shown followed by:
+
+* **Memory** - The total memory allocation, the allocation per member, the minimum allocation and the increments the total memory can be varied by.
+* **CPU** - The number of CPUs dedicated to the group. The CPU section shows 0 values in all the fields when no dedicated CPUs are configured. The CPU group is only displayed when it is adjustable.
+* **Disk** - The total disk allocation, the allocation per member, the minimum allocation and the increments the total disk can be varied by.
 
 ```sh
 ibmcloud cdb deployment-groups <deployment name or CRN> [--json]
@@ -666,7 +709,8 @@ ibmcloud cdb deployment-groups <deployment name or CRN> [--json]
 #### Examples
 {: #deployment-groups-examples}
 
-Display the scaling group settings for a database deployment named "MyRedis"
+Display the scaling group settings for a database deployment named "MyRedis".
+
 ```sh
 ibmcloud cdb deployment-groups MyRedis
 ```
@@ -707,6 +751,7 @@ The `memberid` is the name of the group for which these values are to be set. Th
 {: #deployment-groups-set-examples}
 
 Set a PostgreSQL deployment named "MyPGSQL" with a "member" group to have a total memory to 4096 MB.
+
 ```sh
 ibmcloud cdb deployment-groups-set MyPGSQL member --memory 4096
 ```
@@ -734,6 +779,7 @@ ibmcloud cdb regions [--json] [--api-version]
 {: #regions-examples}
 
 Return a JSON of all the regions that deployments can be provisioned into from the current region.
+
 ```sh
 ibmcloud cdb regions --json
 ```
@@ -749,7 +795,8 @@ The Autoscaling configuration represents the various conditions that control aut
 
 Short version - `autoscaling`
 
-Retrieve of all autoscaling conditions for a particular deployment. 
+Retrieve of all autoscaling conditions for a particular deployment.
+
 ```sh
 ibmcloud cdb deployment-autoscaling <deployment name or CRN> GROUP_ID [--json]
 ```
@@ -778,6 +825,7 @@ ibmcloud cdb deployment-autoscaling elasticsearch-preproduction member
 Short version - `autoscaling-set`
 
 Enable, disable, or set the conditions for autoscaling on your deployment.
+
 ```sh
 ibmcloud cdb deployment-autoscaling-set (NAME|ID) GROUP_ID (@JSON_FILE|JSON_STRING) [--json] [--nowait]
 ```
@@ -798,6 +846,7 @@ Autoscaling currently only applies to the data members on your deployment, so th
 {: #deployment-autoscaling-set-examples}
 
 This command sets memory to autoscale when I/O utilization hits a certain threshold for a deployment named `elasticsearch-preproduction`.
+
 ```sh
 ibmcloud cdb deployment-autoscaling-set elasticsearch-preproduction member '{"autoscaling": { "memory": {"scalers": {"io_utilization": {"enabled": true, "over_period": "5m","above_percent": 90}},"rate": {"increase_percent": 10.0, "period_seconds": 300,"limit_mb_per_member": 125952,"units": "mb"}}}}'
 ```
@@ -833,6 +882,7 @@ ibmcloud cdb deployment-read-replicas <deployment name or CRN> [--long] [--json]
 {: #deployment-read-replicas-examples}
 
 List the read-only replicas for a PostgreSQL deployment named "MyPGSQL".
+
 ```sh
 ibmcloud cdb deployment-read-replicas MyPGSQL
 ```
@@ -863,6 +913,7 @@ ibmcloud cdb read-replica-leader <deployment name or CRN> [--long] [--json]
 {: #read-replica-leader-examples}
 
 List the leader for a PostgreSQL read-only replica deployment named "MyPGSQL-replica".
+
 ```sh
 ibmcloud cdb read-replica-leader MyPGSQL-replica
 ```
@@ -895,6 +946,7 @@ ibmcloud cdb read-replica-promote <deployment name or CRN> [--json] [--nowait] [
 {: #read-replica-promote-examples}
 
 Promotes a PostgreSQL read-only replica deployment named "MyPGSQL-replica" to a stand-alone deployment.
+
 ```sh
 ibmcloud cdb read-replica-promote MyPGSQL-replica
 ```
@@ -925,6 +977,7 @@ ibmcloud cdb read-replica-resync <deployment name or CRN> [--json] [--nowait]
 {: #read-replica-resync-examples}
 
 Resyncs a PostgreSQL read-only replica deployment named "MyPGSQL-replica".
+
 ```sh
 ibmcloud cdb read-replica-resync MyPGSQL-replica
 ```
@@ -960,7 +1013,8 @@ ibmcloud cdb deployment-backups-list <deployment name or CRN> [--scheduled] [--f
 #### Examples
 {: #deployment-backups-list-examples}
 
-Display the backups available on a deployment named "Postgres2000"
+Display the backups available on a deployment named "Postgres2000".
+
 ```sh
 ibmcloud cdb backups Postgres2000
 ```
@@ -987,6 +1041,7 @@ ibmcloud cdb backup-show <CRN> [--json]
 {: #backup-show-examples}
 
 Show details of a particular backup.
+
 ```sh
 ibmcloud cdb backup-show crn:v1:bluemix:public:databases-for-postgresql:us-south:a/54e8ffe85dcedf470db5b5ee6ac4a8d8:1b8f53db-fc2d-4e24-8470-f82b15c71717:backup:ebcea542-8d8c-4b6e-a7d4-922ffd08eb50
 ```
@@ -1015,7 +1070,8 @@ ibmcloud cdb deployment-backup-now <deployment name or CRN> [--nowait] [--json]
 #### Examples
 {: #deployment-backup-now-examples}
 
-Create a backup of a deployment called "PgTips"
+Create a backup of a deployment called "PgTips".
+
 ```sh
 ibmcloud cdb deployment-backup-now PgTips
 ```
@@ -1048,7 +1104,8 @@ ibmcloud cdb deployment-allowlist-list <deployment name or CRN> [--json]
 #### Examples
 {: #deployment-allowlist-list-examples}
 
-List the current allowlist for the "MyPSQL" deployment
+List the current allowlist for the "MyPSQL" deployment.
+
 ```sh
 ibmcloud cdb deployment-whitelist-list MyPSQL
 ```
@@ -1077,13 +1134,15 @@ ibmcloud cdb deployment-allowlist-add <deployment name or CRN> <allowlist addres
 #### Examples
 {: #deployment-allowlist-add-examples}
 
-Add the IP address 198.51.100.1 to the current allowlist for the "MyPSQL" deployment
+Add the IP address 198.51.100.1 to the current allowlist for the "MyPSQL" deployment.
+
 ```sh
 ibmcloud cdb deployment-whitelist-add MyPSQL 198.51.100.1 "allowlisted for testing"
 ```
 {: .pre}
 
-Add the IP range 198.51.100.0 to 198.51.100.255 to the current allowlist for the "MyPSQL" deployment
+Add the IP range 198.51.100.0 to 198.51.100.255 to the current allowlist for the "MyPSQL" deployment.
+
 ```sh
 ibmcloud cdb deployment-whitelist-add MyPSQL 198.51.100.0/24 "Testing range is now open"
 ```
@@ -1094,7 +1153,8 @@ ibmcloud cdb deployment-whitelist-add MyPSQL 198.51.100.0/24 "Testing range is n
 
 Short version - `wl-del`
 
-Removes an IP address or range from the current allowlist for a deployment. An IP address is an IPv4 or IPv6 address while a range is a masked IPv4 address, for example, 1.2.3.0/24. 
+Removes an IP address or range from the current allowlist for a deployment. An IP address is an IPv4 or IPv6 address while a range is a masked IPv4 address, for example, 1.2.3.0/24.
+
 ```sh
 ibmcloud cdb deployment-allowlist-delete <deployment name or CRN> <allowlist address or range> [--nowait] [--json]
 ```
@@ -1111,13 +1171,15 @@ ibmcloud cdb deployment-allowlist-delete <deployment name or CRN> <allowlist add
 #### Examples
 {: #deployment-allowlist-delete-examples}
 
-Remove the IP address 198.51.100.1 from the current allowlist for the "MyPSQL" deployment
+Remove the IP address 198.51.100.1 from the current allowlist for the "MyPSQL" deployment.
+
 ```sh
 ibmcloud cdb deployment-whitelist-delete MyPSQL 198.51.100.1 "allowlisted for testing"
 ```
 {: .pre}
 
-Remove the IP range 198.51.100.0 to 198.51.100.255 from the current allowlist for the "MyPSQL" deployment
+Remove the IP range 198.51.100.0 to 198.51.100.255 from the current allowlist for the "MyPSQL" deployment.
+
 ```sh
 ibmcloud cdb deployment-whitelist-delete MyPSQL 198.51.100.0/24 "Testing range is now open"
 ```
@@ -1149,7 +1211,8 @@ ibmcloud cdb deployment-tasks-list <deployment name or CRN> [--json]
 #### Examples
 {: #deployment-tasks-list-examples}
 
-Display a list of the tasks that have been run against a deployment named "NewRedis"
+Display a list of the tasks that have been run against a deployment named "NewRedis".
+
 ```sh
 ibmcloud cdb deployment-tasks-list NewRedis
 ```
@@ -1179,6 +1242,7 @@ ibmcloud cdb task-show <CRN> [--nowait] [--json]
 {: #task-show-examples}
 
 Show details of a particular backup task.
+
 ```sh
 ibmcloud cdb task-show crn:v1:bluemix:public:databases-for-postgresql:us-south:a/54e8ffe85dcedf470db5b5ee6ac4a8d8:1b8f53db-fc2d-4e24-8470-f82b15c71717:task:0faea465-de5a-4f14-a5ff-b402fefbd652
 ```
@@ -1213,6 +1277,7 @@ ibmcloud cdb elasticsearch file-sync <deployment name or CRN> [--json] [--nowait
 {: #elasticsearch-file-sync-examples}
 
 Sync a file to disk on a deployment named "MyElasticsearch".
+
 ```sh
 ibmcloud cdb elasticsearch file-sync MyElasticsearch
 ```
@@ -1244,6 +1309,7 @@ ibmcloud cdb elasticsearch user-list (NAME|ID) (ADMIN_PASSWORD) [--json] [-c DIR
 {: #elasticsearch-file-sync-examples}
 
 The `user-list` command outputs various options for your account's user list.
+
 ```sh
 ibmcloud cdb elasticsearch user-list
 ```
@@ -1308,6 +1374,7 @@ The plug-in type is required to be "wal2json".
 {: #postgresql-replication-slot-create-examples}
 
 Create a replication slot on a deployment named "MyPostgres", database named "testdb", and slot named "slot1".
+
 ```sh
 ibmcloud cdb postgresql replication-slot-create MyPostgres testdb slot1 wal2json
 ```
@@ -1337,43 +1404,9 @@ ibmcloud cdb postgresql replication-slot-delete <deployment name or CRN> <slotna
 {: #postgresql-replication-slot-delete-examples}
 
 Deletes a replication slot on a deployment named "MyPostgres"  and slot named "slot1".
+
 ```sh
 ibmcloud cdb postgresql replication-slot-delete MyPostgres slot1
-```
-{: .pre}
-
-## EnterpriseDB
-{: #enterprisedb}
-
-Perform tasks specific to EnterpriseDB deployments.
-
-### `ibmcloud cdb enterprisedb earliest-pitr-timestamp`
-{: #enterprisedb-earliest-pitr-timestamp}
-
-Short version - `ept`
-
-Returns the earliest available time for point-in-time-recovery in ISO8601 UTC format. For more information, see [Point in Time Recovery](/docs/databases-for-postgresql?topic=databases-for-postgresql-pitr).
-
-```sh
-ibmcloud cdb enterprisedb earliest-pitr-timestamp <deployment name or CRN> [--json] [--nowait]
-```
-{: .pre}
-
-#### Command options
-{: #enterprisedb-earliest-pitr-timestamp-command-options}
-
-- `--nowait` or `-n`
-   Do not wait for the group setting task to complete. Display the scaling task's details and exit.
-- `--json` or `-j`
-   Return the results as JSON.
-- `api-version value`
-   API Version used for request.
-
-#### Examples
-{: #enterprisedb-earliest-pitr-timestamp-examples}
-
-```sh
-ibmcloud cdb enterprisedb earliest-pitr-timestamp enterprisedb-preproduction
 ```
 {: .pre}
 

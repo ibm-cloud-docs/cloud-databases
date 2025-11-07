@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-10-22"
+lastupdated: "2025-11-07"
 
 subcollection: cloud-databases
 
@@ -109,10 +109,10 @@ Use the iformation in the following tables to estimate the monthly charge for co
 
 <br>
 
-| | Redis | etcd | MySQL | EnterpriseDB | RabbitMQ |
-| --- | --- | --- | --- | --- | --- |
-| Members/instance | 2 | 3 | 3 | 3 | 3 |
-| 1 vCPU/month/member | $32.35 | $32.35 | $43.06 | $107.15 | $32.35 |
-| 1 GB RAM/month/member | $5.39 | $5.39 | $8.08 | $12.36 | $5.39 |
-| 1 GB disk/month/member | $0.63 | $0.63 | $0.63| $0.63 | $0.63 |
+| | Redis | etcd | MySQL | RabbitMQ |
+| --- | --- | --- | --- | --- |
+| Members/instance | 2 | 3 | 3 | 3 |
+| 1 vCPU/month/member | $32.35 | $32.35 | $43.06 | $32.35 |
+| 1 GB RAM/month/member | $5.39 | $5.39 | $8.08 | $5.39 |
+| 1 GB disk/month/member | $0.63 | $0.63 | $0.63| $0.63 |
 {: caption="Estimated monthly charges for other configurations" caption-side="bottom"}
