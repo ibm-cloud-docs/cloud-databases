@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2025-10-07"
+lastupdated: "2025-11-07"
 
 subcollection: cloud-databases
 
@@ -310,7 +310,6 @@ With Point-in-Time Recovery (PITR), the instance continuously backs up increment
 - [{{site.data.keyword.databases-for-postgresql_full}}](/docs/databases-for-postgresql?topic=databases-for-postgresql-pitr)
 - [{{site.data.keyword.databases-for-mongodb_full}}](https://cloud.ibm.com/docs/databases-for-mongodb?topic=databases-for-mongodb-pitr&interface=ui)
 - [{{site.data.keyword.databases-for-mysql_full}}](/docs/databases-for-mysql?topic=databases-for-mysql-pitr)
-- [{{site.data.keyword.databases-for-enterprisedb_full}}](/docs/databases-for-enterprisedb?topic=databases-for-enterprisedb-pitr&interface=ui)
 
 ## Backups FAQ
 {: #backup-faq-reference}

@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2023, 2025
-lastupdated: 2025-09-30
+lastupdated: 2025-11-07
 
 subcollection: cloud-databases
 

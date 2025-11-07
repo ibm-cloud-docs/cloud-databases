@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2025-06-02"
+lastupdated: "2025-11-07"
 
 subcollection: cloud-databases
 
@@ -57,5 +57,5 @@ For new hosting models, PITR is currently available through the CLI, API, and Te
 | Task | {{site.data.keyword.IBM_notm}} responsibilities | Your responsibilities |
 |----------|-----------------------|--------|
 |Backups and restore| {{site.data.keyword.databases-for}} is responsible for automatic daily backups, as well as monitoring the state of client backups.| The Client is responsible for restoration, timeliness, validity of backups, and alerting of failed backups via [{{site.data.keyword.atracker_full}}](/docs/cloud-databases?topic=cloud-databases-at_events). For more information, see [Managing Cloud Databases backups](/docs/cloud-databases?topic=cloud-databases-dashboard-backups).|
-|Read-only replicas (_{{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-enterprisedb}}, and {{site.data.keyword.databases-for-mysql}} ONLY_)| {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-enterprisedb}}, and {{site.data.keyword.databases-for-mysql}} are responsible for providing the capability of deploying read-only replicas across regions (except for replicating data into or outside of `eu-de`). | The Client is responsible for provisioning, configuring, monitoring, and promoting read-only replicas. |
+|Read-only replicas (_{{site.data.keyword.databases-for-postgresql}} and {{site.data.keyword.databases-for-mysql}} ONLY_)| {{site.data.keyword.databases-for-postgresql}} and {{site.data.keyword.databases-for-mysql}} are responsible for providing the capability of deploying read-only replicas across regions (except for replicating data into or outside of `eu-de`). | The Client is responsible for provisioning, configuring, monitoring, and promoting read-only replicas. |
 {: caption="Responsibilities for disaster recovery" caption-side="top"}

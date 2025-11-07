@@ -2,9 +2,9 @@
 
 copyright:
   years:  2022, 2025
-lastupdated: "2025-03-24"
+lastupdated: "2025-11-07"
 
-keywords: restricting access to cloud databases, restricting access to ICD, DataStax cbr, Elasticsearch cbr, EnterpriseDB cbr, etcd cbr, mongodb cbr, postgresql cbr, redis cbr, mysql cbr, rabbitmq cbr
+keywords: restricting access to cloud databases, restricting access to ICD, DataStax cbr, Elasticsearch cbr, etcd cbr, mongodb cbr, postgresql cbr, redis cbr, mysql cbr, rabbitmq cbr
 
 subcollection: cloud-databases
 
@@ -217,7 +217,6 @@ To create a rule in the CLI, you need the appropriate {{site.data.keyword.databa
 * `databases-for-elasticsearch`
 * `database-for-mysql`
 * `messages-for-rabbitmq`
-* `databases-for-enterprisedb`
 * `databases-for-etcd`
 
 All the other parameters that follow are explained in the [CBR plugin reference guide](https://cloud.ibm.com/docs/account?topic=account-cbr-plugin#cbr-rules-cli).
@@ -286,7 +285,6 @@ To create a rule, you need the appropriate {{site.data.keyword.databases-for}} `
 * `databases-for-elasticsearch`
 * `database-for-mysql`
 * `messages-for-rabbitmq`
-* `databases-for-enterprisedb`
 * `databases-for-etcd`
 
 Create a rule by using a command like:
