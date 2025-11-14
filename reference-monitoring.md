@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2023, 2025
-lastupdated: "2025-10-22"
+lastupdated: "2025-11-14"
 
 keywords: monitoring
 
@@ -914,7 +914,7 @@ Tuples updated rate
 #### PostgreSQL Used CPU for an instance
 {: #ibm_databases_for_postgresql_cpu_used_percent}
 
-How much CPU is used as a percentage of total CPU available. Only for deployments that have dedicated CPU
+How much CPU is used as a percentage of total CPU available. This metric is available only for the Dedicated Hosting Model. For deployments on the Shared Hosting Model, use the `ibm_databases_forcpu_usage_seconds` metric to assess database CPU utilization. Applying the `average_over_time` function to this metric can provide meaningful insights.
 
 | Metadata | Description |
 |----------|-------------|
