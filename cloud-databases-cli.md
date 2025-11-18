@@ -152,7 +152,7 @@ Short version - `ls`
 Use this command to list the deployments associated with the account.
 
 ```sh
-ibmcloud cdb deployments [--all] [—output json]
+ibmcloud cdb deployments [--all] [--output json]
 ```
 {: .pre}
 
