@@ -2,7 +2,7 @@
  
 copyright:
   years: 2018, 2025
-lastupdated: "2025-11-07"
+lastupdated: "2025-11-18"
 
 keywords: cloud databases, migrating, disk size, memory size, CPU size, resources, cli, postgresql administrator, cloud database cli
 
@@ -152,7 +152,7 @@ Short version - `ls`
 Use this command to list the deployments associated with the account.
 
 ```sh
-ibmcloud cdb deployments [--all] [--json]
+ibmcloud cdb deployments [--all] [—output json]
 ```
 {: .pre}
 
