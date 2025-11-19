@@ -73,11 +73,11 @@ toc:
   - navgroup:
       id: reference
       topics:
-      - topicgroup:
-          label: CLI reference
-          topics:
-          - icd-cli.md
-          - cloud-databases-cli.md
+      - icd-cli.md
+      - cloud-databases-cli.md
+      - link:
+          label: Cloud Databases API
+          href: https://cloud.ibm.com/apidocs/cloud-databases-api
       - topicgroup:
           label: High availability and disaster recovery
           topics:
@@ -107,9 +107,6 @@ toc:
           - link:
               label: Messages for RabbitMQ
               href: https://cloud.ibm.com/docs/messages-for-rabbitmq
-          - link:
-              label: Cloud Databases for etcd
-              href: https://cloud.ibm.com/docs/databases-for-etcd
   - navgroup:
       id: help
       topics:

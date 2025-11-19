@@ -2,7 +2,7 @@
  
 copyright:
   years: 2018, 2025
-lastupdated: "2025-11-07"
+lastupdated: "2025-11-19"
 
 keywords: cloud databases, migrating, disk size, memory size, CPU size, resources, cli, postgresql administrator, cloud database cli
 
@@ -117,7 +117,7 @@ Get information about the deployable databases and database versions on the {{si
 The `deployables` are the templates available for new database deployments. This command shows deployable database types, specifically the available versions of databases, and their preferred or stable status.
 
 ```sh
-ibmcloud cdb deployables-show [--stable] [--preferred] [--json]
+ibmcloud cdb deployables-show [--stable] [--preferred] [--output, -o FORMAT]
 ```
 {: .pre}
 
@@ -130,8 +130,8 @@ Short version - `deployables`
    Only list stable versions of databases.
 - `--preferred` or `-p`
    Only list preferred versions of databases.
-- `--json` or `-j`
-   Display results as JSON.
+- `--output` or `-o` FORMAT
+   Specify an output format. Only JSON is supported.
 
  
 #### Examples
@@ -152,7 +152,7 @@ Short version - `ls`
 Use this command to list the deployments associated with the account.
 
 ```sh
-ibmcloud cdb deployments [--all] [--json]
+ibmcloud cdb deployments [--all] [--output json]
 ```
 {: .pre}
 
@@ -161,8 +161,8 @@ ibmcloud cdb deployments [--all] [--json]
 
 - `--all` or `-a`
    Display instance name and CRN.
-- `--json` or `-j`
-   Display results as JSON.
+- `--output` or `-o` FORMAT
+   Specify an output format. Only JSON is supported.
  
 #### Examples
 {: #deployments-examples}
@@ -182,7 +182,7 @@ Short version - `about`
 Use this command to get details of which database is deployed within the instance, which version, and any options applied. Also displayed are the ID and GUID for the resource controller, resource plans, current state, type, and last known operation.
 
 ```sh
-ibmcloud cdb deployment-about <deployment name or CRN> [--all] [--json]
+ibmcloud cdb deployment-about <deployment name or CRN> [--all] [--output, -o FORMAT]
 ```
 {: .pre}
 
@@ -191,8 +191,8 @@ ibmcloud cdb deployment-about <deployment name or CRN> [--all] [--json]
 
 - `--all` or `-a`
    Display all the available data from the resource controller's records.
-- `--json` or `-j`
-   Display results as JSON.
+- `--output` or `-o` FORMAT
+   Specify an output format. Only JSON is supported.
  
 #### Examples
 {: #deployment-about-examples}
@@ -217,7 +217,7 @@ Short version - `cxn`
 Displays connection strings and other connection details for a deployment with or without user credentials inserted. 
 
 ```sh
-ibmcloud cdb deployment-connections [--user <userid>] [--password <password>] [--endpoint-type <endpoint type>] [--all] [--only] [--start] [--certroot <path>] [--json]
+ibmcloud cdb deployment-connections [--user <userid>] [--password <password>] [--endpoint-type <endpoint type>] [--all] [--only] [--start] [--certroot <path>] [--output, -o FORMAT]
 ```
 {: .pre}
 
@@ -238,8 +238,8 @@ ibmcloud cdb deployment-connections [--user <userid>] [--password <password>] [-
    Use the path as the certificate root. If the path doesn't exist, it is created automatically. Works with the `--save` flag. The certificate root value can also be set in the `$CERTROOT` environment variable.
 - `--only [app or cli]` or `-o`
    Show only the settings that are relevant to `app` connections or `cli` connections.
-- `--json` or `-j`
-   Display results as JSON.
+- `--output` or `-o` FORMAT
+   Specify an output format. Only JSON is supported.
 - `--endpoint-type` or `-e`
    Endpoint type for returned connection strings, either `public` or `private`. Default is `public`.
    As the default is `public`, if there are no `public` endpoints then none will be found and you will receive an error: `{"errors":"not_found"}`. Use the `-e private` flag to use `private` endpoints. 
@@ -280,7 +280,7 @@ Short version - `cacert`
 Display the self-signed certificate that is used for verifying TLS/SSL connections to the deployment. The result is, by default, output to the console but can be saved to a file too.
 
 ```sh
-ibmcloud cdb deployment-cacert <deployment name or CRN> [--user <userid>] [--save] [--certroot <path>] [--json]
+ibmcloud cdb deployment-cacert <deployment name or CRN> [--user <userid>] [--save] [--certroot <path>] [--output, -o FORMAT]
 ```
 {: .pre}
 
@@ -293,8 +293,8 @@ ibmcloud cdb deployment-cacert <deployment name or CRN> [--user <userid>] [--sav
    Save the decoded certificate into the certificate root directory. The default is $HOME/.cloud/plugins/cdb/cdbcerts/.
 - `--certroot <path>` or `-c`
    Use the path as the certificate root directory. If the path doesn't exist, it is created automatically. Works with the `--save` flag. The certificate root value can also be set in the `$CERTROOT` environment variable.
-- `--json` or `-j`
-   Display results as JSON.
+- `--output` or `-o` FORMAT
+   Specify an output format. Only JSON is supported.
 
 #### Examples
 {: #deployment-cacert-examples}
@@ -323,7 +323,7 @@ Short version - `kill-connections`
 Closes all the connections on a deployment. Available for PostgreSQL ONLY.
 
 ```sh
-ibmcloud cdb deployment-kill-connections <deployment name or CRN> [--nowait] [--json]
+ibmcloud cdb deployment-kill-connections <deployment name or CRN> [--nowait] [--output, -o FORMAT]
 ```
 {: .pre}
 
@@ -332,8 +332,8 @@ ibmcloud cdb deployment-kill-connections <deployment name or CRN> [--nowait] [--
 
 - `--nowait` or `-n`
    Do not wait for the user creation task to complete. Display the user creation task details and exit.
-- `--json` or `-j`
-   Display results as JSON.
+- `--output` or `-o` FORMAT
+   Specify an output format. Only JSON is supported.
 
 
 #### Examples
@@ -364,15 +364,15 @@ This command discovers if a capability is supported for a particular database ty
 Short version - `cs`
 
 ```sh
-ibmcloud cdb capability-show CAPABILITY_ID TYPE VERSION PLATFORM LOCATION TARGET_PLATFORM TARGET_LOCATION [--json] [--api-version]
+ibmcloud cdb capability-show CAPABILITY_ID TYPE VERSION PLATFORM LOCATION TARGET_PLATFORM TARGET_LOCATION [--output, -o FORMAT] [--api-version]
 ```
 {: pre}
 
 #### Command options  
 {: #capability-show-command-options}
 
-- `--json` or `-j`
-   Display results as JSON.
+- `--output` or `-o` FORMAT
+   Specify an output format. Only JSON is supported.
 - `--api-version` or `-v`
    API Version used for request.
 - `--hostflavor`
@@ -417,15 +417,15 @@ This command discovers if a database type can be restored from a particular inst
 Short version - `bcs`
 
 ```sh
-ibmcloud cdb discover-capability-information-from-backup (BACKUP_ID) (CAPABILITY_ID) (TARGET_PLATFORM) (TARGET_LOCATION) [--json] [--api-version] [--nowait]
+ibmcloud cdb discover-capability-information-from-backup (BACKUP_ID) (CAPABILITY_ID) (TARGET_PLATFORM) (TARGET_LOCATION) [--output, -o FORMAT] [--api-version] [--nowait]
 ```
 {: pre}
 
 #### Command options  
 {: #capability-backup-show-command-options}
 
-- `--json` or `-j`
-   Display results as JSON.
+- `--output` or `-o` FORMAT
+   Specify an output format. Only JSON is supported.
 - `--api-version` or `-v`   
    API Version used for request.
 
@@ -438,7 +438,7 @@ ibmcloud cdb discover-capability-information-from-backup (BACKUP_ID) (CAPABILITY
 {: #capability-backup-show-examples}
 
 ```sh
-  ibmcloud cdb discover-capability-information-from-backup f7d318b6-6d4e-4d2a-9be4-7c1efbc94a52 5f2d37a0-40a5-4a39-bf6a-0dbb1249ac5e IBMCloud us-south --json --api-version 2021-09-30 --nowait
+  ibmcloud cdb discover-capability-information-from-backup f7d318b6-6d4e-4d2a-9be4-7c1efbc94a52 5f2d37a0-40a5-4a39-bf6a-0dbb1249ac5e IBMCloud us-south --output, -o FORMAT --api-version 2021-09-30 --nowait
 ```
 {: pre}
 
@@ -450,15 +450,15 @@ This command discovers if a particular deployment or formation supports a partic
 Short version - `dcs`
 
 ```sh
-ibmcloud cdb deployment-capability-show (NAME|ID) (CAPABILITY_ID) [--target-platform] [--target-location] [--json] [--api-version] [--nowait]
+ibmcloud cdb deployment-capability-show (NAME|ID) (CAPABILITY_ID) [--target-platform] [--target-location] [--output, -o FORMAT] [--api-version] [--nowait]
 ```
 {: pre}
 
 #### Command options  
 {: #deployment-capability-show-command-options}
 
-- `--json` or `-j`
-   Display results as JSON.
+- `--output` or `-o` FORMAT
+   Specify an output format. Only JSON is supported.
 - `--api-version` or `-v`   
    API Version used for request.
 - `--target-platform` or `-p`
@@ -482,7 +482,7 @@ ibmcloud cdb deployment-capability-show (NAME|ID) (CAPABILITY_ID) [--target-plat
 {: #deployment-capability-show-examples}
 
 ```sh
-ibmcloud cdb deployment-capability-show my-deployment 5f2d37a0-40a5-4a39-bf6a-0dbb1249ac5e --target-location us-south --json --api-version 2021-09-30 --nowait
+ibmcloud cdb deployment-capability-show my-deployment 5f2d37a0-40a5-4a39-bf6a-0dbb1249ac5e --target-location us-south --output, -o FORMAT --api-version 2021-09-30 --nowait
 ```
 {: pre}
 
@@ -499,7 +499,7 @@ Short version - `user-create`
 Create a user on the deployment database.
 
 ```sh
-ibmcloud cdb deployment-user-create <deployment name or CRN> <newusername> <newpassword> [--nowait] [--json] 
+ibmcloud cdb deployment-user-create <deployment name or CRN> <newusername> <newpassword> [--nowait] [--output, -o FORMAT] 
 ```
 {: .pre}
 
@@ -510,8 +510,8 @@ The `newusername` needs to be a correctly formatted username for use on the depl
 
 - `--nowait` or `-n`
    Do not wait for the user creation task to complete. Display the user creation task details and exit.
-- `--json` or `-j`
-   Display results as JSON.
+- `--output` or `-o` FORMAT
+   Specify an output format. Only JSON is supported.
  
 #### Examples
 {: #deployment-user-create-examples}
@@ -531,7 +531,7 @@ Short version - `user-delete`
 Removes an existing user from the specified database deployment.
 
 ```sh
-ibmcloud cdb deployment-user-delete <deployment name or CRN> <username> [--nowait] [--json]
+ibmcloud cdb deployment-user-delete <deployment name or CRN> <username> [--nowait] [--output, -o FORMAT]
 ```
 {: .pre}
 
@@ -540,8 +540,8 @@ ibmcloud cdb deployment-user-delete <deployment name or CRN> <username> [--nowai
 
 - `--nowait` or `-n`
    Do not wait for the user deletion task to complete. Display the user deletion task details and exit.
-- `--json` or `-j`
-   Display results as JSON.
+- `--output` or `-o` FORMAT
+   Specify an output format. Only JSON is supported.
  
 #### Examples
 {: #deployment-user-delete-examples}
@@ -561,7 +561,7 @@ Short version - `user-password`
 Changes the password for a named user on a specified database deployment.
 
 ```sh
-ibmcloud cdb deployment-user-password <deployment name or CRN> <username> <newpassword> [--nowait] [--json]
+ibmcloud cdb deployment-user-password <deployment name or CRN> <username> <newpassword> [--nowait] [--output, -o FORMAT]
 ```
 {: .pre}
 
@@ -570,8 +570,8 @@ ibmcloud cdb deployment-user-password <deployment name or CRN> <username> <newpa
 
 - `--nowait` or `-n`
    Do not wait for the user password change task to complete. Display the user password change task details and exit.
-- `--json` or `-j`
-   Display results as JSON.
+- `--output` or `-o` FORMAT
+   Specify an output format. Only JSON is supported.
 
 
 #### Examples
@@ -597,7 +597,7 @@ Short version - `config-schema`
 Gets the default configuration of the specified deployment.
 
 ```sh
-ibmcloud cdb deployment-configuration-schema <deployment name or CRN> [--description] [--json]
+ibmcloud cdb deployment-configuration-schema <deployment name or CRN> [--description] [--output, -o FORMAT]
 ```
 {: .pre}
 
@@ -606,8 +606,8 @@ The `ibmcloud cdb deployment-configuration-schema` shows the default configurati
 #### Command options
 {: #deployment-configuration-schema-command-options}
 
-- `--json` or `-j`
-   Display results as JSON.
+- `--output` or `-o` FORMAT
+   Specify an output format. Only JSON is supported.
 - `--description` or `-d`
    Show settings description.
 
@@ -628,15 +628,15 @@ Short version - `configuration`
 Changes the configuration of the specified deployment.
 
 ```sh
-ibmcloud cdb deployment-configuration <deployment name or CRN> [@JSON_FILE | JSON_STRING] [--json] [--nowait]
+ibmcloud cdb deployment-configuration <deployment name or CRN> [@JSON_FILE | JSON_STRING] [--output, -o FORMAT] [--nowait]
 ```
 {: .pre}
 
 #### Command options
 {: #deployment-configuration-command-options}
 
-- `--json` or `-j`
-   Display results as JSON.
+- `--output` or `-o` FORMAT
+   Specify an output format. Only JSON is supported.
 - `--nowait` or `-n`
    Do not wait for the group setting task to complete. Display the scaling task's details and exit.
 
@@ -662,15 +662,15 @@ Retrieve and configure the resources that are allocated to your deployment.
 Each deployment is created from a deployable template. The `deployables-groups-show` command shows the initial or default scaling group for a particular type of database. The type names can be discovered through the `deployables-show` command.
 
 ```sh
-ibmcloud cdb deployables-groups-show <deployable type> [--json]
+ibmcloud cdb deployables-groups-show <deployable type> [--output, -o FORMAT]
 ```
 {: .pre}
 
 #### Command options  
 {: #deployables-groups-show-command-options}
 
-- `--json` or `-j`
-   Display results as JSON.
+- `--output` or `-o` FORMAT
+   Specify an output format. Only JSON is supported.
    
 
 #### Examples
@@ -695,15 +695,15 @@ Displays the scaling group values for a deployment's members. The scaling groups
 * **Disk** - The total disk allocation, the allocation per member, the minimum allocation and the increments the total disk can be varied by.
 
 ```sh
-ibmcloud cdb deployment-groups <deployment name or CRN> [--json]
+ibmcloud cdb deployment-groups <deployment name or CRN> [--output, -o FORMAT]
 ```
 {: .pre}
 
 #### Command options  
 {: #deployment-groups-command-options}
 
-- `--json` or `-j`
-   Display results as JSON.
+- `--output` or `-o` FORMAT
+   Specify an output format. Only JSON is supported.
 
 
 #### Examples
@@ -724,7 +724,7 @@ Short version - `groups-set`
 Sets the values for scaling groups (see deployment-groups). The user is able to set the total memory size in MB or total disk storage in MB, both of which are which is evenly divided between the members. Where available, the number of allocated CPUs can also be set.
 
 ```sh
-ibmcloud cdb deployment-groups-set <deployment name or CRN> <memberid> [--memory <memory size>] [--disk <disk size>] [--cpu <value>] [--hostflavor <val>] [--nowait] [--json]
+ibmcloud cdb deployment-groups-set <deployment name or CRN> <memberid> [--memory <memory size>] [--disk <disk size>] [--cpu <value>] [--hostflavor <val>] [--nowait] [--output, -o FORMAT]
 ```
 {: .pre}
 
@@ -743,7 +743,7 @@ The `memberid` is the name of the group for which these values are to be set. Th
    Set the hosting flavor of the database: select from `multitenant` for Shared Compute or the individual size selections for Isolated Compute. 
 - `--nowait` or `-n`
    Do not wait for the group setting task to complete. Display the scaling task's details and exit.
-- `--json` or `-j`
+- `--output` or `-o` FORMAT
    Results as JSON.
 
 
@@ -763,15 +763,15 @@ ibmcloud cdb deployment-groups-set MyPGSQL member --memory 4096
 Lists all of the regions that deployments can be provisioned into from the current region.
 
 ```sh
-ibmcloud cdb regions [--json] [--api-version]
+ibmcloud cdb regions [--output, -o FORMAT] [--api-version]
 ```
 {: .pre}
 
 ### Command options
 {: #regions-command-options}
 
-- `--json` or `-j`
-   Return the results as JSON.
+- `--output` or `-o` FORMAT
+   Specify an output format. Only JSON is supported.
 - `api-version value`
    API Version used for request.
 
@@ -781,7 +781,7 @@ ibmcloud cdb regions [--json] [--api-version]
 Return a JSON of all the regions that deployments can be provisioned into from the current region.
 
 ```sh
-ibmcloud cdb regions --json
+ibmcloud cdb regions --output, -o FORMAT
 ```
 {: .pre}
 
@@ -798,7 +798,7 @@ Short version - `autoscaling`
 Retrieve of all autoscaling conditions for a particular deployment.
 
 ```sh
-ibmcloud cdb deployment-autoscaling <deployment name or CRN> GROUP_ID [--json]
+ibmcloud cdb deployment-autoscaling <deployment name or CRN> GROUP_ID [--output, -o FORMAT]
 ```
 {: .pre}
 
@@ -807,8 +807,8 @@ Autoscaling currently only applies to the data members on your deployment, so th
 #### Command options  
 {: #deployment-autoscaling-command-options}
 
-- `--json` or `-j`
-   Return the results as JSON.
+- `--output` or `-o` FORMAT
+   Specify an output format. Only JSON is supported.
 
 
 #### Examples
@@ -827,7 +827,7 @@ Short version - `autoscaling-set`
 Enable, disable, or set the conditions for autoscaling on your deployment.
 
 ```sh
-ibmcloud cdb deployment-autoscaling-set (NAME|ID) GROUP_ID (@JSON_FILE|JSON_STRING) [--json] [--nowait]
+ibmcloud cdb deployment-autoscaling-set (NAME|ID) GROUP_ID (@JSON_FILE|JSON_STRING) [--output, -o FORMAT] [--nowait]
 ```
 {: .pre}
 
@@ -836,8 +836,8 @@ Autoscaling currently only applies to the data members on your deployment, so th
 #### Command options  
 {: #deployment-autoscaling-set-command-options}
 
-- `--json` or `-j`
-   Return the results as JSON.
+- `--output` or `-o` FORMAT
+   Specify an output format. Only JSON is supported.
 - `--nowait` or `-n`
    Do not wait for command completion.
 
@@ -865,15 +865,15 @@ Short version - `read-replicas`
 Lists all the read-only replicas for the specified deployment. 
 
 ```sh
-ibmcloud cdb deployment-read-replicas <deployment name or CRN> [--long] [--json]
+ibmcloud cdb deployment-read-replicas <deployment name or CRN> [--long] [--output, -o FORMAT]
 ```
 {: .pre}
 
 #### Command options  
 {: #deployment-read-replicas-command-options}
 
-- `--json` or `-j`
-   Return the results as JSON.
+- `--output` or `-o` FORMAT
+   Specify an output format. Only JSON is supported.
 - `--long` or `-l`
    Shows additional fields in the output.
 
@@ -896,15 +896,15 @@ Short version - `rr-leader`
 Returns the leader for the specified read-only replica deployment.
 
 ```sh
-ibmcloud cdb read-replica-leader <deployment name or CRN> [--long] [--json]
+ibmcloud cdb read-replica-leader <deployment name or CRN> [--long] [--output, -o FORMAT]
 ```
 {: .pre}
 
 #### Command options  
 {: #read-replica-leader-command-options}
 
-- `--json` or `-j`
-   Return the results as JSON.
+- `--output` or `-o` FORMAT
+   Specify an output format. Only JSON is supported.
 - `--long` or `-l`
    Shows additional fields in the output.
 
@@ -927,15 +927,15 @@ Short version - `rr-promote`
 Promotes the read-only replica to a stand-alone instance.
 
 ```sh
-ibmcloud cdb read-replica-promote <deployment name or CRN> [--json] [--nowait] [--skip-initial-backup]
+ibmcloud cdb read-replica-promote <deployment name or CRN> [--output, -o FORMAT] [--nowait] [--skip-initial-backup]
 ```
 {: .pre}
 
 #### Command options  
 {: #read-replica-promote-command-options}
 
-- `--json` or `-j`
-   Return the results as JSON.
+- `--output` or `-o` FORMAT
+   Specify an output format. Only JSON is supported.
 - `--nowait` or `-n`
    Do not wait for command completion.
 - `--skip-initial-backup` or `s`
@@ -960,15 +960,15 @@ Short version - `rr-resync`
 Resyncs the read-only replica.
 
 ```sh
-ibmcloud cdb read-replica-resync <deployment name or CRN> [--json] [--nowait]
+ibmcloud cdb read-replica-resync <deployment name or CRN> [--output, -o FORMAT] [--nowait]
 ```
 {: .pre}
 
 #### Command options  
 {: #read-replica-resync-command-options}
 
-- `--json` or `-j`
-   Return the results as JSON.
+- `--output` or `-o` FORMAT
+   Specify an output format. Only JSON is supported.
 - `--nowait` or `-n`
    Do not wait for command completion.
 
@@ -995,7 +995,7 @@ Short version - `backups`
 Displays a list of backups that are associated with a deployment. The result is a table that is composed of the backups ID, type, status, and date of creation. The results are sorted with most recent backups first.
 
 ```sh
-ibmcloud cdb deployment-backups-list <deployment name or CRN> [--scheduled] [--first] [--json]
+ibmcloud cdb deployment-backups-list <deployment name or CRN> [--scheduled] [--first] [--output, -o FORMAT]
 ```
 {: .pre}
 
@@ -1006,8 +1006,8 @@ ibmcloud cdb deployment-backups-list <deployment name or CRN> [--scheduled] [--f
    Output only scheduled backups.
 - `--first` or `-f`
    Output only the first (or most recent) backup found.
-- `--json` or `-j`
-   Display results as JSON.
+- `--output` or `-o` FORMAT
+   Specify an output format. Only JSON is supported.
 
 
 #### Examples
@@ -1026,15 +1026,15 @@ ibmcloud cdb backups Postgres2000
 Show details about a backup. The backup is identified by its CRN ID as shown with the `deployment-backups-list` command.
 
 ```sh
-ibmcloud cdb backup-show <CRN> [--json]
+ibmcloud cdb backup-show <CRN> [--output, -o FORMAT]
 ```
 {: .pre}
 
 #### Command options
 {: #backup-show-command-options}
 
-- `--json` or `-j`
-   Display results as JSON.
+- `--output` or `-o` FORMAT
+   Specify an output format. Only JSON is supported.
 
  
 #### Examples
@@ -1055,7 +1055,7 @@ Short version - `backup-now`
 Initiates an on-demand backup on the deployment. The command polls the running backup and exits when it is completed.
 
 ```sh
-ibmcloud cdb deployment-backup-now <deployment name or CRN> [--nowait] [--json]
+ibmcloud cdb deployment-backup-now <deployment name or CRN> [--nowait] [--output, -o FORMAT]
 ```
 {: .pre}
 
@@ -1064,8 +1064,8 @@ ibmcloud cdb deployment-backup-now <deployment name or CRN> [--nowait] [--json]
 
 - `--nowait` or `-n`
    Do not wait for the backup task to complete. Display the backup task details and exit.
-- `--json` or `-j`
-   Display results as JSON.
+- `--output` or `-o` FORMAT
+   Specify an output format. Only JSON is supported.
 
 #### Examples
 {: #deployment-backup-now-examples}
@@ -1090,15 +1090,15 @@ Short version - `wl-ls`
 Displays the current allowlist for a deployment.
 
 ```sh
-ibmcloud cdb deployment-allowlist-list <deployment name or CRN> [--json]
+ibmcloud cdb deployment-allowlist-list <deployment name or CRN> [--output, -o FORMAT]
 ```
 {: .pre}
 
 #### Command options  
 {: #deployment-allowlist-list-command-options}
 
-- `--json` or `-j`
-   Display results as JSON.
+- `--output` or `-o` FORMAT
+   Specify an output format. Only JSON is supported.
 
  
 #### Examples
@@ -1119,7 +1119,7 @@ Short version - `wl-add`
 Add an IP address or range to the current allowlist for a deployment. An IP address is an IPv4 or IPv6 address while a range is a masked IPv4 address, for example, 1.2.3.0/24. The description is required to be a human readable string that describes the allowlisted address or range.
 
 ```sh
-ibmcloud cdb deployment-allowlist-add <deployment name or CRN> <allowlist address or range> <description> [--nowait] [--json]
+ibmcloud cdb deployment-allowlist-add <deployment name or CRN> <allowlist address or range> <description> [--nowait] [--output, -o FORMAT]
 ```
 {: .pre}
 
@@ -1128,8 +1128,8 @@ ibmcloud cdb deployment-allowlist-add <deployment name or CRN> <allowlist addres
 
 - `--nowait` or `-n`
    Do not wait for the allowlist add task to complete. Display the allowlist add task details and exit.
-- `--json` or `-j`
-   Display results as JSON.
+- `--output` or `-o` FORMAT
+   Specify an output format. Only JSON is supported.
 
 #### Examples
 {: #deployment-allowlist-add-examples}
@@ -1156,7 +1156,7 @@ Short version - `wl-del`
 Removes an IP address or range from the current allowlist for a deployment. An IP address is an IPv4 or IPv6 address while a range is a masked IPv4 address, for example, 1.2.3.0/24.
 
 ```sh
-ibmcloud cdb deployment-allowlist-delete <deployment name or CRN> <allowlist address or range> [--nowait] [--json]
+ibmcloud cdb deployment-allowlist-delete <deployment name or CRN> <allowlist address or range> [--nowait] [--output, -o FORMAT]
 ```
 {: .pre}
 
@@ -1165,8 +1165,8 @@ ibmcloud cdb deployment-allowlist-delete <deployment name or CRN> <allowlist add
 
 - `--nowait` or `-n`
    Do not wait for the allowlist delete task to complete. Display the allowlist delete task details and exit.
-- `--json` or `-j`
-   Display results as JSON.
+- `--output` or `-o` FORMAT
+   Specify an output format. Only JSON is supported.
 
 #### Examples
 {: #deployment-allowlist-delete-examples}
@@ -1198,15 +1198,15 @@ Short version - `tasks`
 Displays a list of all tasks that have been run on a specified deployment since it was created. Each task is displayed with its CRN, readable description, percentage completeness, status, and date of creation.
 
 ```sh
-ibmcloud cdb deployment-tasks-list <deployment name or CRN> [--json]
+ibmcloud cdb deployment-tasks-list <deployment name or CRN> [--output, -o FORMAT]
 ```
 {: .pre}
 
 #### Command options  
 {: #deployment-tasks-list-command-options}
 
-- `--json` or `-j`
-   Display results as JSON.
+- `--output` or `-o` FORMAT
+   Specify an output format. Only JSON is supported.
 
 #### Examples
 {: #deployment-tasks-list-examples}
@@ -1226,7 +1226,7 @@ Short version - `task`
 Show the status of a particular task. The task is identified by its CRN ID as shown with the `deployment-tasks-list` command. If the task is running, the command waits for the task to complete, reporting status changes as it regularly polls.
 
 ```sh
-ibmcloud cdb task-show <CRN> [--nowait] [--json]
+ibmcloud cdb task-show <CRN> [--nowait] [--output, -o FORMAT]
 ```
 {: .pre}
 
@@ -1235,8 +1235,8 @@ ibmcloud cdb task-show <CRN> [--nowait] [--json]
 
 - `--nowait` or `-n`
    Do not wait for the task to complete. Display the user password change task details and exit.
-- `--json` or `-j`
-   Display results as JSON.
+- `--output` or `-o` FORMAT
+   Specify an output format. Only JSON is supported.
 
 #### Examples
 {: #task-show-examples}
@@ -1261,7 +1261,7 @@ Short version - `fs`
 Synchronizes files from the `ibm_file_sync` index to disk. For more information, see the [Uploading Files to Elasticsearch](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-uploading-files) documentation for more information.
 
 ```sh
-ibmcloud cdb elasticsearch file-sync <deployment name or CRN> [--json] [--nowait]
+ibmcloud cdb elasticsearch file-sync <deployment name or CRN> [--output, -o FORMAT] [--nowait]
 ```
 {: .pre}
 
@@ -1270,8 +1270,8 @@ ibmcloud cdb elasticsearch file-sync <deployment name or CRN> [--json] [--nowait
 
 - `--nowait` or `-n`
    Do not wait for the group setting task to complete. Display the scaling task's details and exit.
-- `--json` or `-j`
-   Return the results as JSON.
+- `--output` or `-o` FORMAT
+   Specify an output format. Only JSON is supported.
 
 #### Examples
 {: #elasticsearch-file-sync-examples}
@@ -1291,15 +1291,15 @@ Short version - `ul`
 Lists all users from the database internal credential store. For more information, see [Retrieve and update user passwords](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-upgrading&interface=cli#esupgrade-retrieve-update-user-passwords).
 
 ```sh
-ibmcloud cdb elasticsearch user-list (NAME|ID) (ADMIN_PASSWORD) [--json] [-c DIRECTORY] [--api-version]
+ibmcloud cdb elasticsearch user-list (NAME|ID) (ADMIN_PASSWORD) [--output, -o FORMAT] [-c DIRECTORY] [--api-version]
 ```
 {: .pre}
 
 #### Command options  
 {: #elasticsearch-file-sync-command-options}
 
-- `--json` or `-j`
-   Return the results as JSON.
+- `--output` or `-o` FORMAT
+   Specify an output format. Only JSON is supported.
 - `-c DIRECTORY`
    Certificate Root
 - `--api-version`
@@ -1328,7 +1328,7 @@ Short version - `ept`
 Returns the earliest available time for point-in-time-recovery in ISO8601 UTC format. For more information, see the [Point in Time Recovery](/docs/databases-for-postgresql?topic=databases-for-postgresql-pitr) documentation for more information.
 
 ```sh
-ibmcloud cdb postgresql earliest-pitr-timestamp <deployment name or CRN> [--json] [--nowait]
+ibmcloud cdb postgresql earliest-pitr-timestamp <deployment name or CRN> [--output, -o FORMAT] [--nowait]
 ```
 {: .pre}
 
@@ -1337,8 +1337,8 @@ ibmcloud cdb postgresql earliest-pitr-timestamp <deployment name or CRN> [--json
 
 - `--nowait` or `-n`
    Do not wait for the group setting task to complete. Display the scaling task's details and exit.
-- `--json` or `-j`
-   Return the results as JSON.
+- `--output` or `-o` FORMAT
+   Specify an output format. Only JSON is supported.
 
 #### Examples
 {: #postgresql-earliest-pitr-timestamp-examples}
@@ -1356,7 +1356,7 @@ Short version - `rsc`
 Creates a new PostgreSQL replication slot. For more information, see the [Wal2json](/docs/databases-for-postgresql?topic=databases-for-postgresql-wal2json) documentation for more information.
 
 ```sh
-ibmcloud cdb postgresql replication-slot-create <deployment name or CRN> <databasename> <slotname> <plugintype> [--json] [--nowait]
+ibmcloud cdb postgresql replication-slot-create <deployment name or CRN> <databasename> <slotname> <plugintype> [--output, -o FORMAT] [--nowait]
 ```
 {: .pre}
 
@@ -1367,8 +1367,8 @@ The plug-in type is required to be "wal2json".
 
 - `--nowait` or `-n`
    Do not wait for the group setting task to complete. Display the scaling task's details and exit.
-- `--json` or `-j`
-   Return the results as JSON.
+- `--output` or `-o` FORMAT
+   Specify an output format. Only JSON is supported.
 
 #### Examples
 {: #postgresql-replication-slot-create-examples}
@@ -1388,7 +1388,7 @@ Short version - `rsd`
 Deletes the specified PostgreSQL replication slot. See the [Wal2json](/docs/databases-for-postgresql?topic=databases-for-postgresql-wal2json) documentation for more information.
 
 ```sh
-ibmcloud cdb postgresql replication-slot-delete <deployment name or CRN> <slotname> [--json] [--nowait]
+ibmcloud cdb postgresql replication-slot-delete <deployment name or CRN> <slotname> [--output, -o FORMAT] [--nowait]
 ```
 {: .pre}
 
@@ -1397,8 +1397,8 @@ ibmcloud cdb postgresql replication-slot-delete <deployment name or CRN> <slotna
 
 - `--nowait` or `-n`
    Do not wait for the group setting task to complete. Display the scaling task's details and exit.
-- `--json` or `-j`
-   Return the results as JSON.
+- `--output` or `-o` FORMAT
+   Specify an output format. Only JSON is supported.
 
 #### Examples
 {: #postgresql-replication-slot-delete-examples}
@@ -1423,7 +1423,7 @@ Short version - `ept`
 Returns the earliest available time for point-in-time-recovery in ISO8601 UTC format. For more information, [Point in Time Recovery](https://cloud.ibm.com/docs/databases-for-mongodb?topic=databases-for-mongodb-pitr&interface=ui).
 
 ```sh
-ibmcloud cdb mongodb-enterprise earliest-pitr-timestamp <deployment name or CRN> [--json] [--nowait]
+ibmcloud cdb mongodb-enterprise earliest-pitr-timestamp <deployment name or CRN> [--output, -o FORMAT] [--nowait]
 ```
 {: .pre}
 
@@ -1432,8 +1432,8 @@ ibmcloud cdb mongodb-enterprise earliest-pitr-timestamp <deployment name or CRN>
 
 - `--nowait` or `-n`
    Do not wait for the group setting task to complete. Display the scaling task's details and exit.
-- `--json` or `-j`
-   Return the results as JSON.
+- `--output` or `-o` FORMAT
+   Specify an output format. Only JSON is supported.
 - `api-version value`
    API Version used for request.
 
