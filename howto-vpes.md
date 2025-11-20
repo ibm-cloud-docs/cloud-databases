@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2021, 2025
-lastupdated: "2025-11-07"
+lastupdated: "2025-11-20"
 
 subcollection: cloud-databases
 
@@ -80,10 +80,12 @@ Virtual Private Endpoints (VPEs) are generally available in all regions.
    Address: 10.240.64.6    < ---- your VPE IP address
    ```
 
-7. You can now use your instance in the VSI. See the following example of a command for a {{site.data.keyword.databases-for-mongodb}} instance:
+7. You can now use your {{site.data.keyword.databases-for}} instance in the virtual server instance (VSI). See [Connecting an external application](/docs/cloud-databases?topic=cloud-databases-faq-cert#faq-cert-external-app) to choose the appropriate service documentation for viewing example commands.
 
-   ```bash
-   mongo -u $USERNAME -p $PASSWORD --tls --tlsCAFile /root/   c--authenticationDatabase admin --host replset/host-0.private.databaseappdomain.   cloud:30066,host-1.private.databases.appdomain.cloud:30066,host-private.   databases.appdomain.cloud:30066
+   For example, if you have a {{site.data.keyword.databases-for-mongodb}} instance, refer to the documentation topic [Connecting with the MongoDB Shell](/docs/databases-for-mongodb?topic=databases-for-mongodb-connecting-cli-client) and use a command like the following:
+
+   ```sh
+   mongosh -u $USERNAME -p $PASSWORD --tls --tlsCAFile /root/ c--authenticationDatabase admin --host replset host-0.private.databaseappdomain.cloud:30066,host-1.private.databases.appdomain.cloud:30066,host-private.databases.appdomain.cloud:30066
    ```
 
 ### VPE discoverability
