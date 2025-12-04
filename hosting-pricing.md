@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-11-07"
+lastupdated: "2025-12-04"
 
 subcollection: cloud-databases
 
@@ -22,16 +22,16 @@ The estimated charges are for information purposes only and are subject to chang
 
 The following table shows the approximate **monthly** charges for {{site.data.keyword.databases-for}} instances with the lowest charge configurations available:
 
-| PostgreSQL | MongoDB Standard Edition | Elasticsearch Enterprise Edition| Redis | etcd | MySQL | RabbitMQ |
+| PostgreSQL | MongoDB Standard Edition | Elasticsearch Enterprise Edition| Redis | MySQL | RabbitMQ |
 | --- | --- | --- | --- | --- | --- | --- |
-| $82 <br><br> 0.5 vCPU <br> 4 GB RAM <br> 5 GB disk <br> 2 members | $202 <br><br> 0.5 vCPU <br> 4 GB RAM <br> 10 GB disk <br> 3 members | $252 <br><br> 0.5 vCPU <br> 4 GB RAM <br> 5 GB disk <br> 3 members | $77 <br><br> 0.5 vCPU <br> 4 GB RAM <br> 1 GB disk <br> 2 members | $151 <br><br> 0.5 vCPU <br> 4 GB RAM <br> 20 GB disk <br> 3 members | $181 <br><br> 0.5 vCPU <br> 4 GB RAM <br> 10 GB disk <br> 3 members | $229 <br><br>  1 vCPU <br> 8 GB RAM <br> 1 GB disk <br> 3 members |
+| $82 <br><br> 0.5 vCPU <br> 4 GB RAM <br> 5 GB disk <br> 2 members | $202 <br><br> 0.5 vCPU <br> 4 GB RAM <br> 10 GB disk <br> 3 members | $252 <br><br> 0.5 vCPU <br> 4 GB RAM <br> 5 GB disk <br> 3 members | $77 <br><br> 0.5 vCPU <br> 4 GB RAM <br> 1 GB disk <br> 2 members | $181 <br><br> 0.5 vCPU <br> 4 GB RAM <br> 10 GB disk <br> 3 members | $229 <br><br>  1 vCPU <br> 8 GB RAM <br> 1 GB disk <br> 3 members |
 {: caption="{{site.data.keyword.databases-for}} approximate monthly charges" caption-side="bottom"}
 
 <br>
 
 The charge for an {{site.data.keyword.databases-for}} instance is determined by the following five factors:
 
-- Database type: PostgreSQL, MongoDB, Elasticsearch, Redis, etcd, MySQL, and RabbitMQ
+- Database type: PostgreSQL, MongoDB, Elasticsearch, Redis, MySQL, and RabbitMQ
 - Database edition when applicable: MongoDB Standard versus Enterprise and Elasticsearch Enterprise versus Platinum
 - Quantity of vCPU allocated per database instance member
 - GB of RAM allocated per database instance member
@@ -60,13 +60,13 @@ The following tables provide estimated monthly charges for a range of configurat
 
 <br>
 
-| vCPUs | GB RAM | GB disk | Redis |etcd | MySQL | RabbitMQ |
+| vCPUs | GB RAM | GB disk | Redis | MySQL | RabbitMQ |
 | --- | --- | --- | --- | --- | --- | --- |
-| 0.5 | 4 | 40 | $126 | $189 | $237 | N/A |
-| 1 | 8 | 80 | $252 | $378 | $474 | $378 |
-| 2 | 8 | 80 | $317 | $475 | $603 | $475 |
-| 2 | 16 | 160 | $503 | $755 | $948 |$755 |
-| 4 | 16 | 160 | $633 | $949 | $1,206 | $949 |
+| 0.5 | 4 | 40 | $126 | $237 | N/A |
+| 1 | 8 | 80 | $252 | $474 | $378 |
+| 2 | 8 | 80 | $317 | $603 | $475 |
+| 2 | 16 | 160 | $503 | $948 |$755 |
+| 4 | 16 | 160 | $633 | $1,206 | $949 |
 {: caption="Estimated monthly charges - Shared Compute" caption-side="bottom"}
 
 ## Estimated monthly charges - Isolated Compute
@@ -84,14 +84,14 @@ The following tables provide estimated monthly charges for a range of configurat
 
 <br>
 
-| vCPUs | GB RAM | GB disk | Redis | etcd | MySQL | RabbitMQ |
+| vCPUs | GB RAM | GB disk | Redis | MySQL | RabbitMQ |
 | --- | --- | --- | --- | --- | --- | --- |
-| 4 | 16 | 530 | $1,098 | $1,646 | $1,904 | $1,646 |
-| 8 | 32 | 320 | $1,265 | $1,897 | $2,412 | $1,897 |
-| 8 | 64 | 640 | $2,012 | $3,017 | $3,791 | $3,017 |
-| 16 | 64 | 640 | $2,529 | $3,794 | $4,824 | $3,794 |
-| 32 | 128 | 1280 | $5,058 | $7,587 | $9,647 | $7,587 |
-| 30 | 240 | 2400 | $7,543 | $11,314 | $14,213 | $11,314 |
+| 4 | 16 | 530 | $1,098  | $1,904 | $1,646 |
+| 8 | 32 | 320 | $1,265  | $2,412 | $1,897 |
+| 8 | 64 | 640 | $2,012  | $3,791 | $3,017 |
+| 16 | 64 | 640 | $2,529 | $4,824 | $3,794 |
+| 32 | 128 | 1280 | $5,058  | $9,647 | $7,587 |
+| 30 | 240 | 2400 | $7,543 | $14,213 | $11,314 |
 {: caption="Estimated monthly charges - Isolated Compute" caption-side="bottom"}
 
 ## Estimated monthly charges for other configurations
@@ -109,10 +109,10 @@ Use the iformation in the following tables to estimate the monthly charge for co
 
 <br>
 
-| | Redis | etcd | MySQL | RabbitMQ |
+| | Redis | MySQL | RabbitMQ |
 | --- | --- | --- | --- | --- |
-| Members/instance | 2 | 3 | 3 | 3 |
-| 1 vCPU/month/member | $32.35 | $32.35 | $43.06 | $32.35 |
-| 1 GB RAM/month/member | $5.39 | $5.39 | $8.08 | $5.39 |
-| 1 GB disk/month/member | $0.63 | $0.63 | $0.63| $0.63 |
+| Members/instance | 2 | 3 | 3 |
+| 1 vCPU/month/member | $32.35 | $43.06 | $32.35 |
+| 1 GB RAM/month/member | $5.39 | $8.08 | $5.39 |
+| 1 GB disk/month/member | $0.63 | $0.63| $0.63 |
 {: caption="Estimated monthly charges for other configurations" caption-side="bottom"}

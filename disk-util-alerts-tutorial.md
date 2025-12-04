@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-10-23"
+lastupdated: "2025-12-04"
 
 keywords: resource utilization, disk utilization, disk alert, notification channel, resource management, disk utilization, alert rule
 
@@ -215,7 +215,6 @@ If you receive an alert that your disk utilization exceeds 90%, scale your disk 
 
 | Service                                          | Managing resources         | Autoscaling |
 |--------------------------------------------------|----------------------------|-------------|
-| {{site.data.keyword.databases-for-etcd_full}} | [Scaling Disk, RAM, and CPU](/docs/databases-for-etcd?topic=databases-for-etcd-resources-scaling&interface=ui) | [Autoscaling](/docs/databases-for-etcd?topic=databases-for-etcd-autoscaling&interface=ui) |
 | {{site.data.keyword.databases-for-mongodb_full}} | [Scaling Disk, RAM, and CPU](/docs/databases-for-mongodb?topic=databases-for-mongodb-resources-scaling&interface=ui) | [Autoscaling](/docs/databases-for-mongodb?topic=databases-for-mongodb-autoscaling&interface=ui) |
 | {{site.data.keyword.databases-for-postgresql_full}} | [Scaling Disk, RAM, and CPU](/docs/databases-for-postgresql?topic=databases-for-postgresql-resources-scaling&interface=ui) | [Autoscaling](/docs/databases-for-postgresql?topic=databases-for-postgresql-autoscaling&interface=ui) |
 | {{site.data.keyword.databases-for-redis_full}} | [Scaling Disk, RAM, and CPU](/docs/databases-for-redis?topic=databases-for-redis-resources-scaling&interface=ui) | [Autoscaling](/docs/databases-for-redis?topic=databases-for-redis-autoscaling&interface=ui) |
@@ -228,7 +227,6 @@ If you receive an alert that your disk utilization exceeds 90%, scale your disk 
 
 This tutorial uses {{site.data.keyword.databases-for-elasticsearch_full}}. However, the same process applies to other {{site.data.keyword.databases-for}} services:
 
-- [{{site.data.keyword.databases-for-etcd}}](/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-etcd)
 - [{{site.data.keyword.databases-for-mongodb}}](/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-mongodb)
 - [{{site.data.keyword.databases-for-postgresql}}](/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-postgresql)
 - [{{site.data.keyword.databases-for-redis}}](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-monitoring#metrics-by-plan-redis)

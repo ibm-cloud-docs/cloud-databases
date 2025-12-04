@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-10-23"
+lastupdated: "2025-12-04"
 
 subcollection: cloud-databases
 
@@ -28,7 +28,6 @@ See the documentation for provisioning a specific service {{site.data.keyword.da
 - Provisioning [{{site.data.keyword.databases-for-elasticsearch_full}}](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-provisioning)
 - Provisioning [{{site.data.keyword.databases-for-mysql_full}}](/docs/databases-for-mysql?topic=databases-for-mysql-provisioning)
 - Provisioning [{{site.data.keyword.messages-for-rabbitmq_full}}](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-provisioning)
-- Provisioning [{{site.data.keyword.databases-for-etcd_full}}](/docs/databases-for-etcd?topic=databases-for-etcd-provisioning)
 
 ## What is an availability zone?
 {: #what-availability-zone}
