@@ -2,7 +2,7 @@
  
 copyright:
   years: 2018, 2025
-lastupdated: "2025-11-19"
+lastupdated: "2025-12-04"
 
 keywords: cloud databases, migrating, disk size, memory size, CPU size, resources, cli, postgresql administrator, cloud database cli
 
@@ -21,7 +21,6 @@ The {{site.data.keyword.databases-for}} CLI plug-in offers extra methods of acce
 - [{{site.data.keyword.databases-for-mysql_full}}](/docs/databases-for-mysql)
 - [{{site.data.keyword.databases-for-redis_full}}](/docs/databases-for-redis) 
 - [{{site.data.keyword.databases-for-elasticsearch_full}}](/docs/databases-for-elasticsearch)
-- [{{site.data.keyword.databases-for-etcd_full}}](/docs/databases-for-etcd)
 - [{{site.data.keyword.messages-for-rabbitmq_full}}](/docs/messages-for-rabbitmq)
 - [{{site.data.keyword.databases-for-mongodb_full}}](/docs/databases-for-mongodb)
 
