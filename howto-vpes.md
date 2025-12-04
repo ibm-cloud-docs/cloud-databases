@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2021, 2025
-lastupdated: "2025-11-20"
+lastupdated: "2025-12-04"
 
 subcollection: cloud-databases
 
@@ -15,7 +15,7 @@ keywords: pDNS, private endpoints, private networking, vpe, virtual private endp
 # Virtual Private Endpoints 
 {: #vpes}
 
-This document covers all the {{site.data.keyword.databases-for}}: {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-redis}}, {{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-mysql_full}}, {{site.data.keyword.messages-for-rabbitmq}}, and {{site.data.keyword.databases-for-etcd}}. 
+This document covers all the {{site.data.keyword.databases-for}}: {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-redis}}, {{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-mysql_full}}, and {{site.data.keyword.messages-for-rabbitmq}}.
 {: .note}
 
 {{site.data.keyword.cloud}} Virtual Private Endpoint (VPE) provides connection points to IBM services on the IBM private network from your VPC network.
