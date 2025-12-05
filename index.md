@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2025-10-23"
+lastupdated: "2025-12-04"
 
 subcollection: cloud-databases
 
@@ -22,7 +22,6 @@ subcollection: cloud-databases
 - **{{site.data.keyword.databases-for-elasticsearch}}** combines the power of a full text search engine with the indexing strengths of a JSON document database. For more information, see [{{site.data.keyword.databases-for-elasticsearch}}](/docs/databases-for-elasticsearch){: external}. {{site.data.keyword.databases-for-elasticsearch}} offers two plans: **Enterprise** and **Platinum**.
 - **{{site.data.keyword.databases-for-mysql}}** is fully managed MySQL relational database service. For more information, see [{{site.data.keyword.databases-for-mysql}}](/docs/databases-for-mysql){: external}.
 - **{{site.data.keyword.messages-for-rabbitmq}}** is an open source multi-protocol messaging broker. For more information, see [{{site.data.keyword.messages-for-rabbitmq}}](/docs/messages-for-rabbitmq){: external}.
-- **{{site.data.keyword.databases-for-etcd}}** is a distributed reliable key-value store for the most critical data of a distributed system. For more information, see [{{site.data.keyword.databases-for-etcd}}](/docs/databases-for-etcd){: external}.
 
 ## Next steps
 {: #cdb-offerings-next-steps}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2025-11-07"
+lastupdated: "2025-12-04"
 
 subcollection: cloud-databases
 
@@ -15,7 +15,7 @@ subcollection: cloud-databases
 
 Access to {{site.data.keyword.cloud}} Databases service instances for users in your account is controlled by {{site.data.keyword.cloud_notm}} [Identity and Access Management (IAM)](/docs/account?topic=account-cloudaccess).
 
-This document covers the integration of IAM with Cloud Databases: {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-redis}}, {{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-mysql_full}}, {{site.data.keyword.messages-for-rabbitmq}}, and {{site.data.keyword.databases-for-etcd}}.
+This document covers the integration of IAM with Cloud Databases: {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-redis}}, {{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-mysql_full}}, and {{site.data.keyword.messages-for-rabbitmq}}.
 {: .note}
 
 IAM is only integrated with high-level service access, which governs privileges and operations available in the [Cloud Databases API](/apidocs/cloud-databases-api/cloud-databases-api-v5) and the [Cloud Databases CLI plug-in](/docs/cloud-databases?topic=cloud-databases-cdb-reference). It does not govern database-level users and privileges. Database access is governed by the standard access controls provided by the database. IAM does not control database users.

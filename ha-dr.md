@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-11-07"
+lastupdated: "2025-12-04"
 
 subcollection: cloud-databases
 
@@ -15,7 +15,7 @@ keywords: HA for cloud-databases, DR for cloud-databases, high availability for 
 # Understanding high availability for {{site.data.keyword.databases-for}}
 {: #ha-dr}
 
-This document covers all the {{site.data.keyword.cloud}} Databases, which include {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-redis}}, {{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-mysql_full}}, {{site.data.keyword.messages-for-rabbitmq}} and {{site.data.keyword.databases-for-etcd}}. 
+This document covers all the {{site.data.keyword.cloud}} Databases, which include {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-redis}}, {{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-mysql_full}}, and {{site.data.keyword.messages-for-rabbitmq}}.
 {: .note}
 
 ## Regions

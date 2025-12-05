@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-11-07"
+lastupdated: "2025-12-04"
 
 subcollection: cloud-databases
 
@@ -283,5 +283,4 @@ The following table shows which model is available for each database.
 | Elasticsearch Platinum |  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
 | MySQL | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
 | RabbitMQ | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
-| etcd | ![Checkmark icon](../icons/checkmark-icon.svg)  | ![Checkmark icon](../icons/checkmark-icon.svg)  |
 {: caption="{{site.data.keyword.databases-for}} hosting model availability" caption-side="bottom"}

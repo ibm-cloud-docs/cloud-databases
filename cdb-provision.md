@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2025-10-23"
+lastupdated: "2025-12-04"
 
 subcollection: cloud-databases
 
@@ -30,8 +30,6 @@ Follow the steps for provisioning a {{site.data.keyword.databases-for}} instance
 - [{{site.data.keyword.databases-for-mysql}}](/docs/databases-for-mysql?topic=databases-for-mysql-provisioning){: external}
 
 - [{{site.data.keyword.messages-for-rabbitmq}}](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-provisioning){: external}
-
-- [{{site.data.keyword.databases-for-etcd}}](/docs/databases-for-etcd?topic=databases-for-etcd-provisioning){: external}
 
 ## Next steps
 {: #getting-started-cdb-provision-instance-next-steps}

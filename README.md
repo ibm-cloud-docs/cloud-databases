@@ -2,7 +2,6 @@
 
 This repo contains documentation common to the IBM Cloud Databases services, encompassing:
 - Databases for Elasticsearch
-- Databases for etcd
 - Databases for MongoDB
 - Databases for PostgreSQL
 - Databases for Redis

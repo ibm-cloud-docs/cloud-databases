@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-10-22"
+lastupdated: "2025-12-04"
 
 subcollection: cloud-databases
 
@@ -29,5 +29,3 @@ or through [Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/lat
 - [{{site.data.keyword.databases-for-mysql}}](/docs/databases-for-mysql?topic=databases-for-mysql-resources-scaling){: external}
 
 - [{{site.data.keyword.messages-for-rabbitmq}}](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-resources-scaling&interface=ui){: external}
-
-- [{{site.data.keyword.databases-for-etcd}}](/docs/databases-for-etcd?topic=databases-for-etcd-resources-scaling&interface=ui){: external}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-11-07"
+lastupdated: "2025-12-04"
 
 subcollection: cloud-databases
 
@@ -57,5 +57,4 @@ ibmcloud cdb help [<command>]
 | [{{site.data.keyword.databases-for-postgresql}}](/docs/databases-for-postgresql){: external}    | [psql](https://www.postgresql.org/docs/14/app-psql.html){: external}        |
 | [{{site.data.keyword.databases-for-mysql}}](/docs/databases-for-mysql){: external}         | [mysql](https://dev.mysql.com/doc/refman/8.0/en/mysql.html){: external}    |
 | [{{site.data.keyword.messages-for-rabbitmq}}](/docs/messages-for-rabbitmq){: external}       |                                                                            |
-| [{{site.data.keyword.databases-for-etcd}}](/docs/databases-for-etcd){: external}          | [etcdctl](https://etcd.io/docs/v3.4/dev-guide/interacting_v3/){: external} |
 {: caption="{{site.data.keyword.databases-for}} service-specific CLI clients" caption-side="bottom"}
