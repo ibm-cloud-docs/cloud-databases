@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-12-05"
+lastupdated: "2025-12-08"
 
 keywords: alerts, critical alerts, configure alerts
 
@@ -80,8 +80,8 @@ For more information, see [{{site.data.keyword.databases-for}}{{site.data.keywor
 
 | Alert | Condition | Explanation |
 |-------|-----------|-------------|
-| Elasticsearch CPU Usage is greater than 95%  \n `avg by (ibm_service_instance_name, ibm_service_instance,  \n ibm_scope,  ibm_resource) (avg_over_time  \n (ibm_databases_for_elasticsearch_cpu_used_percent[10m])) > 0.95` | &amp;gt; 0.95 | {{site.data.keyword.databases-for-elasticsearch}} CPU usage above 95% affects indexing, queries, and cluster responsiveness. Sustained overload risks node instability. Optimize queries, reduce shard counts, or scale compute resources. |
-| Elasticsearch cluster status is red  \n `avg by (ibm_service_instance_name,  \n ibm_service_instance, ibm_scope) \n (avg_over_time  \n (ibm_databases_for_elasticsearch_cluster_status[10m])) == 0` | = 0 | Cluster status = 0 indicates that {{site.data.keyword.databases-for-elasticsearch}} is red, meaning primary shards are missing or unassigned. This poses a risk of data loss. Check node health, ensure sufficient disk space, and reallocate shards. |
+| Elasticsearch CPU Usage is greater than 95%  \n `avg by (ibm_service_instance_name, ibm_service_instance,  \n ibm_scope, ibm_resource) (avg_over_time  \n (ibm_databases_for_elasticsearch_cpu_used_percent[10m])) > 0.95` | &amp;gt; 0.95 | {{site.data.keyword.databases-for-elasticsearch}} CPU usage above 95% affects indexing, queries, and cluster responsiveness. Sustained overload risks node instability. Optimize queries, reduce shard counts, or scale compute resources. |
+| Elasticsearch cluster status is red  \n `avg by (ibm_service_instance_name,  \n ibm_service_instance, ibm_scope) \n (avg_over_time  \n ibm_databases_for_elasticsearch_cluster_status[10m])) == 0` | = 0 | Cluster status = 0 indicates that {{site.data.keyword.databases-for-elasticsearch}} is red, meaning primary shards are missing or unassigned. This poses a risk of data loss. Check node health, ensure sufficient disk space, and reallocate shards. |
 | Elasticsearch disk usage is greater than 80%  \n `max by (ibm_service_instance_name,  \n ibm_service_instance, ibm_scope) (avg_over_time  \n (ibm_databases_for_elasticsearch_disk_used_percent[10m])) > 0.8` | &amp;gt; 0.80 | {{site.data.keyword.databases-for-elasticsearch}} disk above 80% prevents new indices or replicas and risks cluster instability. Free space is vital for shard balancing and merging. Expand storage, delete or archive old indices. |
 | Elasticsearch JVM heap usage is greater than 95%  \n `avg by (ibm_service_instance_name,  \n ibm_service_instance, ibm_scope, ibm_resource)  \n (avg_over_time  \n (ibm_databases_for_elasticsearch_jvm_heap_percent[10m])) > 95` | &amp;gt; 95 | JVM heap above 95% in {{site.data.keyword.databases-for-elasticsearch}} indicates garbage collection pressure and risk of node crashes. Increase heap size cautiously, optimize queries, or scale the cluster to distribute load. |
 {: caption="Elasticsearch alerts" caption-side="top"}
