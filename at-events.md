@@ -120,6 +120,7 @@ The following table lists the activity tracking event actions that {{site.data.k
 |`<service_name>.deployment.update`|`<service_id>.serviceendpoints.update` | A change was made to the service endpoints configuration. If the operation failed, a "-failure" flag is included in the message. |
 |`<service_name>.deployment-group-autoscaling.update` | `<service_id>.autoscaling.update` | An autoscaling configuration change or an autoscaling operation was performed. If an autoscaling operation was performed the message includes `autoscale resources for instance <deployment-id>`. If the autoscaling operation or the configuration change failed, a "-failure" flag is included in the message. |
 |`<service_name>.deployment-volumes.update`|`<service_id>.volumes.update` | An activity was performed on the encryption key that is used by the database, such as rotation or shredding. Details of the action are in the event. |
+|`<service_name>.deployment-version.update`|`<service_id>.version.update` | A version update operation was performed on your instance. If the update failed, a "-failure" flag is included in the message. |
 {: caption="List of events and event descriptions by {{site.data.keyword.databases-for}}" caption-side="bottom"}
 
 The `service_name` field indicates the type of {{site.data.keyword.databases-for}} instance. For example, `databases-for-postgresql` or `messages-for-rabbitmq`.
