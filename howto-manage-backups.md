@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2025-11-07"
+lastupdated: "2025-12-09"
 
 subcollection: cloud-databases
 
@@ -18,7 +18,6 @@ keywords: backups, new deployment, source deployment, backup, back up, ondemand 
 An automatically scheduled backup is taken of your database every day. You can also do on-demand backups. Backups are encrypted either with an automatic key or your own key if you use Bring Your Own Key (BYOK). You can restore a backup to a new instance of {{site.data.keyword.databases-for}}.
 
 To access backups for {{site.data.keyword.databases-for}}, go to your database instance's Dashboard, and see the *Backups and restore* tab.
-
 
 Here is some additional general information about backups:
 
@@ -177,6 +176,31 @@ By default, restoring from a backup provisions an instance with the preferred ve
 
 To see a list of versions available, run `ibmcloud cdb deployables`.
 
+
+### Add `async_restore` parameter (new) - PostgreSQL only
+{: #async_restore-pg}
+{: cli}
+
+A new optional parameter, `async_restore` was added to the restore `parameters` block.
+
+`async_restore` (boolean) — default: false.
+When set to true, the restore is initiated as an asynchronous operation, which helps to reduce end-to-end restore time.
+
+```sh
+`ibmcloud resource service-instance-create <INSTANCE_NAME> databases-for-postgresql standard us-south -p '{"point_in_time_recovery_deployment_id":"<SOURCE_CRN>", "point_in_time_recovery_time":"<PITR_TIME>", version": "<VERSION>", "async_restore": true }'
+```
+{: .pre}
+
+
+Example:
+
+```sh
+`ibmcloud resource service-instance-create <INSTANCE_NAME> databases-for-postgresql standard us-south -p '{"point_in_time_recovery_deployment_id":"test_crn", "point_in_time_recovery_time":"2025-12-08T17:08:32Z", version": "17", "async_restore": true }'
+```
+{: .pre}
+
+An asynchronous restore can only be requested when the source and target PostgreSQL databases are running the same major version. Restores across different major versions are not supported. If the `async_restore` parameter is not specified, the service defaults to performing the restore synchronously, which is the current behavior.
+
 ### Restoring a backup through the API
 {: #restore-backup-api}
 {: api}
@@ -242,6 +266,37 @@ The `members_host_flavor` value can be either "multitenant" or an appropriate-si
 
 By default, restoring from a backup provisions an instance with the preferred version of the database type, not the version of the instance you restore from. You can specify a version by adding a `version` value in the parameters object.
 {: note}
+
+### Add async_restore parameter (new) - PostgreSQL only
+{: #async_restore}
+{: api}
+
+A new optional parameter, `async_restore` was added to the restore `parameters` block.
+
+`async_restore` (boolean) — default: false.
+When set to true, the restore is initiated as an asynchronous operation, which helps to reduce end-to-end restore time.
+
+```sh
+curl -X POST \
+  https://resource-controller.cloud.ibm.com/v2/resource_instances \
+  -H 'Authorization: Bearer <>' \
+  -H 'Content-Type: application/json' \
+    -d '{
+    "name": "<INSTANCE_NAME>",
+    "target": "<REGION>",
+    "resource_group": "<YOUR-RESOURCE-GROUP>",
+    "resource_plan_id": "<SERVICE-ID>",
+    "parameters":{
+      "point_in_time_recovery_deployment_id": "<SOURCE_CRN>",
+      "point_in_time_recovery_time": "<PITR_TIME>",
+      "version": "<VERSION_NUMBER>",
+      "async_restore": true
+    }
+  }'
+```
+{: .pre}
+
+An asynchronous restore can only be requested when the source and target PostgreSQL databases are running the same major version. Restores across different major versions are not supported. If the `async_restore` parameter is not specified, the service defaults to performing the restore synchronously, which is the current behavior.
 
 ### Restoring a backup through Terraform
 {: #restore-backup-tf}
