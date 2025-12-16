@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2025-12-09"
+lastupdated: "2025-12-16"
 
 subcollection: cloud-databases
 
@@ -15,7 +15,7 @@ keywords: backups, new deployment, source deployment, backup, back up, ondemand 
 # Managing {{site.data.keyword.databases-for}} backups
 {: #dashboard-backups}
 
-An automatically scheduled backup is taken of your database every day. You can also do on-demand backups. Backups are encrypted either with an automatic key or your own key if you use Bring Your Own Key (BYOK). You can restore a backup to a new instance of {{site.data.keyword.databases-for}}.
+An automatically scheduled backup is taken of your database every day. You can also trigger on-demand backups at any time. Backups are encrypted either with an automatic key or your own key if you use Bring Your Own Key (BYOK). You can restore a backup to a new instance of {{site.data.keyword.databases-for}}.
 
 To access backups for {{site.data.keyword.databases-for}}, go to your database instance's Dashboard, and see the *Backups and restore* tab.
 
@@ -139,7 +139,7 @@ To restore a backup to a new service instance,
 The Resource Controller supports provisioning of database instances, and provisioning and restoring are the responsibility of the Resource Controller CLI. Use the [`resource service-instance-create`](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_create) command.
 
 ```sh
-ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE-ID> standard <REGION> -p '{"backup_id":"BACKUP_ID"}'
+ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE-ID> standard <REGION> --service-endpoints <ENDPOINT-TYPE> -p '{"backup_id":"BACKUP_ID"}'
 ```
 {: .pre}
 

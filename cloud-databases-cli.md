@@ -2,7 +2,7 @@
  
 copyright:
   years: 2018, 2025
-lastupdated: "2025-12-04"
+lastupdated: "2025-12-16"
 
 keywords: cloud databases, migrating, disk size, memory size, CPU size, resources, cli, postgresql administrator, cloud database cli
 
@@ -25,6 +25,9 @@ The {{site.data.keyword.databases-for}} CLI plug-in offers extra methods of acce
 - [{{site.data.keyword.databases-for-mongodb_full}}](/docs/databases-for-mongodb)
 
 The {{site.data.keyword.databases-for}} CLI plug-in requires [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started) to be installed.
+{: .note}
+
+The {{site.data.keyword.databases-for}} CLI plugin (cdb) supports only Gen 1 instances. To manage Gen 2 instances, see the [{{site.data.keyword.databases-for}} Gen 2 CLI reference](docs-draft/cloud-databases-gen2?topic=cloud-databases-gen2-cdb-reference).
 {: .note}
 
 ## The {{site.data.keyword.cloud_notm}} CLI
