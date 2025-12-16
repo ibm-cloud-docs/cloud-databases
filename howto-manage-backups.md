@@ -139,7 +139,7 @@ To restore a backup to a new service instance,
 The Resource Controller supports provisioning of database instances, and provisioning and restoring are the responsibility of the Resource Controller CLI. Use the [`resource service-instance-create`](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_create) command.
 
 ```sh
-ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE-ID> standard <REGION> -p '{"backup_id":"BACKUP_ID"}'
+ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE-ID> standard <REGION> --service-endpoints <ENDPOINT-TYPE> -p '{"backup_id":"BACKUP_ID"}'
 ```
 {: .pre}
 
