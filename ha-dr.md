@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-12-04"
+  years: 2020, 2026
+lastupdated: "2026-01-07"
 
 subcollection: cloud-databases
 
@@ -43,11 +43,11 @@ It is your responsibility to [create a new service instance](/docs/cloud-databas
 ## Application-level high availability
 {: #application-ha}
 
-Applications that communicate over networks and cloud services are subject to transient connection failures. You want to design your applications to retry connections when errors are caused by a temporary loss in connectivity to your deployment or to {{site.data.keyword.cloud_notm}}.
+Applications that communicate over networks and cloud services are subject to transient connection failures. You want to design your applications to reconnect (not just retry) when errors are caused by a temporary loss in connectivity to your deployment or to {{site.data.keyword.cloud_notm}}.
 
 Because {{site.data.keyword.databases-for}} is a managed service, regular updates and database maintenance occur as part of normal operations. Such maintenance can occasionally cause short intervals where your database is disabled.
 
-Your applications must be designed to handle temporary interruptions to the database, implement error handling for failed database commands, and implement retry logic to recover from a temporary interruption.
+Your applications must be designed to handle temporary interruptions to the database, implement error handling for failed database commands, and implement reconnect logic to recover from a temporary interruption.
 
 Several minutes of database unavailability or connection interruptions are not expected. Open a [support ticket](https://cloud.ibm.com/unifiedsupport/cases/add) with details if you have time periods longer than a minute with no connectivity so we can investigate.
 
