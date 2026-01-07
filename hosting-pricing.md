@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024, 2025
-lastupdated: "2025-12-04"
+  years: 2024, 2026
+lastupdated: "2026-01-07"
 
 subcollection: cloud-databases
 
@@ -22,8 +22,8 @@ The estimated charges are for information purposes only and are subject to chang
 
 The following table shows the approximate **monthly** charges for {{site.data.keyword.databases-for}} instances with the lowest charge configurations available:
 
-| PostgreSQL | MongoDB Standard Edition | Elasticsearch Enterprise Edition| Redis | MySQL | RabbitMQ |
-| --- | --- | --- | --- | --- | --- | --- |
+| PostgreSQL | MongoDB Standard Edition | Elasticsearch Enterprise Edition | Redis | MySQL | RabbitMQ |
+| --- | --- | --- | --- | --- | --- |
 | $82 <br><br> 0.5 vCPU <br> 4 GB RAM <br> 5 GB disk <br> 2 members | $202 <br><br> 0.5 vCPU <br> 4 GB RAM <br> 10 GB disk <br> 3 members | $252 <br><br> 0.5 vCPU <br> 4 GB RAM <br> 5 GB disk <br> 3 members | $77 <br><br> 0.5 vCPU <br> 4 GB RAM <br> 1 GB disk <br> 2 members | $181 <br><br> 0.5 vCPU <br> 4 GB RAM <br> 10 GB disk <br> 3 members | $229 <br><br>  1 vCPU <br> 8 GB RAM <br> 1 GB disk <br> 3 members |
 {: caption="{{site.data.keyword.databases-for}} approximate monthly charges" caption-side="bottom"}
 
@@ -61,7 +61,7 @@ The following tables provide estimated monthly charges for a range of configurat
 <br>
 
 | vCPUs | GB RAM | GB disk | Redis | MySQL | RabbitMQ |
-| --- | --- | --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | 0.5 | 4 | 40 | $126 | $237 | N/A |
 | 1 | 8 | 80 | $252 | $474 | $378 |
 | 2 | 8 | 80 | $317 | $603 | $475 |
@@ -85,7 +85,7 @@ The following tables provide estimated monthly charges for a range of configurat
 <br>
 
 | vCPUs | GB RAM | GB disk | Redis | MySQL | RabbitMQ |
-| --- | --- | --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | 4 | 16 | 530 | $1,098  | $1,904 | $1,646 |
 | 8 | 32 | 320 | $1,265  | $2,412 | $1,897 |
 | 8 | 64 | 640 | $2,012  | $3,791 | $3,017 |
@@ -110,7 +110,7 @@ Use the iformation in the following tables to estimate the monthly charge for co
 <br>
 
 | | Redis | MySQL | RabbitMQ |
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- |
 | Members/instance | 2 | 3 | 3 |
 | 1 vCPU/month/member | $32.35 | $43.06 | $32.35 |
 | 1 GB RAM/month/member | $5.39 | $8.08 | $5.39 |
