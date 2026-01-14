@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024, 2025
-lastupdated: "2025-11-07"
+  years: 2024, 2026
+lastupdated: "2026-01-13"
 
 keywords:
 
@@ -34,6 +34,25 @@ Minimal
 :   When the dependency is down, the main service features are not impacted.
 
 
+
+## IBM Cloud Databases on CDP
+{: #ibm-cloud-databases-on-cdp}
+
+The following dependencies apply to the following deployment locations: Montreal (ca-mon).
+
+
+|Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
+|:---|:---|:---|:---|:---|
+| {{site.data.keyword.iamlong}} | Availability | No | ngdc-data-plane |  Same region  |
+| Common Data Platform | Access management, Availability, Change management, configuration-management, Disaster recovery, Instance control, Operations, Security compliance | No | ngdc-data-plane |  Same zone  |
+| {{site.data.keyword.vpc_full}} | Access management, Availability, Change management, configuration-management, Disaster recovery, Instance control, Operations, Security compliance | No | ngdc-data-plane |  Same region  |
+{: row-headers}
+{: caption="IBM Cloud Databases - IBM Cloud Databases on CDP service dependency information - Critical dependencies" caption-side="top"}
+{: tab-title="Critical dependencies"}
+{: tab-group="service-dependency-data-for-ibm-cloud-databases-IBM-Cloud-Databases-on-CDP"}
+{: class="comparison-tab-table"}
+{: #critical-deps-ibm-cloud-databases-on-cdp}
+{: summary="Use the buttons for the dependency level to change the context of the table. This table has row and column headers. The row headers detail the specific dependent service. The column headers identify the details about the dependency and its impact. To understand the details about each dependency, navigate to the row to find the dependency that you need more information about interested in."}
 
 
 ## Understanding service dependency data
