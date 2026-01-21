@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-01-13"
+lastupdated: "2026-01-21"
 
 subcollection: cloud-databases
 
@@ -19,6 +19,14 @@ When you provision a {{site.data.keyword.databases-for}} instance, you can choos
 
 ## Major versions defined
 {: #version-definitions}
+
+### {{site.data.keyword.databases-for-mongodb}}
+{: #version-definitions-mongodb}
+
+| {{site.data.keyword.databases-for}} versioning schema| Next known end of life version | Next known end of life date | Preferred major version | End of life procedure [^tabletext1] |
+|----|----|----|----|----|
+| {{site.data.keyword.databases-for}} major versions are the first two numbers in a `major.x.patch` version number. In cases where `x` is even, it is a stable release suitable for production. Even `x` versions are the only ones available on {{site.data.keyword.databases-for}}. | v7 | 25 Aug 2027 | v8.0 || Automatically upgraded in place to next Major version |
+{: caption="Major versions for {{site.data.keyword.databases-for-mongodb}}" caption-side="top"}
 
 | Service | {{site.data.keyword.databases-for}} versioning schema| Next known end of life version and date | Preferred major version | End of life procedure [^tabletext1] |
 |----|----|----|----|----|
