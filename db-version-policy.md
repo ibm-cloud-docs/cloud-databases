@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-01-26"
+lastupdated: "2026-01-27"
 
 subcollection: cloud-databases
 
@@ -19,6 +19,7 @@ When you provision a {{site.data.keyword.databases-for}} instance, you can choos
 
 ## Major versions defined
 {: #version-definitions}
+
 
 
 
