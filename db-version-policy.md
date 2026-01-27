@@ -24,7 +24,7 @@ When you provision a {{site.data.keyword.databases-for}} instance, you can choos
 
 
 
-| Service | {{site.data.keyword.databases-for}} versioning schema| Next known end of life version and date | Preferred major version | End of life procedure [^tabletext1] |
+| Service | {{site.data.keyword.databases-for}} versioning schema| Next known end of life version and date | Preferred major version | End of life procedure [^tabletext4] |
 |----|----|----|----|----|
 | {{site.data.keyword.databases-for-mongodb}} | {{site.data.keyword.databases-for}} major versions are the first two numbers in a `major.x.patch` version number. In cases where `x` is even, it is a stable release suitable for production. Even `x` versions are the only ones available on {{site.data.keyword.databases-for}}. |  v7, 25 Aug 2027 |   v8.0   | Automatically upgraded in place to next Major version |
 | {{site.data.keyword.databases-for-elasticsearch}} | {{site.data.keyword.databases-for}} major versions are the first two numbers in a `release.version`.maintenance version number. |  v8.7, v8.10, v8.12, v8.15, 30 June 2026|   v8.19   | Automatically upgraded in-place to next major version. |
@@ -34,7 +34,7 @@ When you provision a {{site.data.keyword.databases-for}} instance, you can choos
 | {{site.data.keyword.messages-for-rabbitmq}} | {{site.data.keyword.databases-for}} Major versions are the first two numbers in a `major.x.patch` version number. | v3.13, 20 May 2026, <br> v4.0(preview), 20 May 2026 <br> v4.1, (tentative 31 March 2026) |   v4.1   | Backup taken and access removed until v3.13, <br> Automatically upgraded in place to next Major version starting v4.x |
 {: caption="Major versions for {{site.data.keyword.databases-for}}" caption-side="top"}
 
-[^tabletext1]: This column describes the actions that will be taken by the {{site.data.keyword.cloud}} team on database instances that have not been upgraded to a new version prior to the version EoL date. This approach is not recommended. For more information, see [End of life procedure](#version-EOL).
+[^tabletext4]: This column describes the actions that will be taken by the {{site.data.keyword.cloud}} team on database instances that have not been upgraded to a new version prior to the version EoL date. This approach is not recommended. For more information, see [End of life procedure](#version-EOL).
 
 ### End of life procedure
 {: #version-EOL}
