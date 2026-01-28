@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-01-27"
+lastupdated: "2026-01-28"
 
 subcollection: cloud-databases
 
@@ -323,37 +323,38 @@ resource "ibm_database" "<your-instance>" {
 
 For more information, see the [{{site.data.keyword.databases-for}} Terraform Registry](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/data-sources/database_backups){: external}.
 
-### ??? Add async_restore parameter (new) - PostgreSQL only???
+
+### Fast PG Restore(async_restore) through Terraform
 {: #async_restore}
 {: terraform}
 
-A new optional parameter, `async_restore` was added to the restore `parameters` block.
+1. A new optional parameter, `async_restore` was added to the block.
+2. `async_restore` (boolean) — default: false. When set to true, the restore is initiated as an asynchronous operation, which helps to reduce end-to-end restore time. 
+3. Only applicable when restoring a PostgreSQL instance.
 
-`async_restore` (boolean) — default: false.
-When set to true, the restore is initiated as an asynchronous operation, which helps to reduce end-to-end restore time.
+The code looks like:
 
-```sh
-curl -X POST \
-  https://resource-controller.cloud.ibm.com/v2/resource_instances \
-  -H 'Authorization: Bearer <>' \
-  -H 'Content-Type: application/json' \
-    -d '{
-    "name": "<INSTANCE_NAME>",
-    "target": "<REGION>",
-    "resource_group": "<YOUR-RESOURCE-GROUP>",
-    "resource_plan_id": "<SERVICE-ID>",
-    "parameters":{
-      "point_in_time_recovery_deployment_id": "<SOURCE_CRN>",
-      "point_in_time_recovery_time": "<PITR_TIME>",
-      "version": "<VERSION_NUMBER>",
-      "async_restore": true
-    }
-  }'
+```tf
+data "ibm_resource_group" "group" {
+  name = "<your_group>"
+}
+ 
+resource "ibm_database" "<your-instance>" {
+  name                                 = "<your_database_name>"
+  location                             = "<region>"
+  plan                                 = "<plan>"
+  service                              = "databases-for-postgresql"
+  resource_group_id                    = data.ibm_resource_group.group.id
+  service_endpoints                    = "private"
+  async_restore                        = true
+  point_in_time_recovery_time          = <PITR_TIME>
+  point_in_time_recovery_deployment_id = "<SOURCE_CRN>"
+  version                              = "<VERSION_NUMBER>"
+}
 ```
-{: .pre}
+{: codeblock}
 
 An asynchronous restore can only be requested when the source and target PostgreSQL databases are running the same major version. Restores across different major versions are not supported. If the `async_restore` parameter is not specified, the service defaults to performing the restore synchronously, which is the current behavior.
-
 
 
 ## Backups and restoration
