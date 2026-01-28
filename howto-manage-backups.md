@@ -328,11 +328,11 @@ For more information, see the [{{site.data.keyword.databases-for}} Terraform Reg
 {: #async_restore_terraform}
 {: terraform}
 
-A new optional parameter, `async_restore` was added to the block.
+* A new optional parameter, `async_restore` was added to the block.
 
-`async_restore` (boolean) — default: false. When set to true, the restore is initiated as an asynchronous operation, which helps to reduce end-to-end restore time.
+* `async_restore` (boolean) — default: false. When set to true, the restore is initiated as an asynchronous operation, which helps to reduce end-to-end restore time.
 
-This parameter is only applicable when restoring a PostgreSQL instance.
+* This parameter is only applicable when restoring a PostgreSQL instance.
 
 The code looks like the following:
 
