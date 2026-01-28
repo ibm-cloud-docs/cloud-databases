@@ -324,21 +324,23 @@ resource "ibm_database" "<your-instance>" {
 For more information, see the [{{site.data.keyword.databases-for}} Terraform Registry](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/data-sources/database_backups){: external}.
 
 
-### Fast PG Restore(async_restore) through Terraform
-{: #async_restore}
+### Fast PG Restore(async_restore) through Terraform - PostgreSQL only
+{: #async_restore_terraform}
 {: terraform}
 
-1. A new optional parameter, `async_restore` was added to the block.
-2. `async_restore` (boolean) — default: false. When set to true, the restore is initiated as an asynchronous operation, which helps to reduce end-to-end restore time. 
-3. Only applicable when restoring a PostgreSQL instance.
+A new optional parameter, `async_restore` was added to the block.
 
-The code looks like:
+`async_restore` (boolean) — default: false. When set to true, the restore is initiated as an asynchronous operation, which helps to reduce end-to-end restore time.
+
+This parameter is only applicable when restoring a PostgreSQL instance.
+
+The code looks like the following:
 
 ```tf
 data "ibm_resource_group" "group" {
   name = "<your_group>"
 }
- 
+
 resource "ibm_database" "<your-instance>" {
   name                                 = "<your_database_name>"
   location                             = "<region>"
@@ -347,7 +349,7 @@ resource "ibm_database" "<your-instance>" {
   resource_group_id                    = data.ibm_resource_group.group.id
   service_endpoints                    = "private"
   async_restore                        = true
-  point_in_time_recovery_time          = <PITR_TIME>
+  point_in_time_recovery_time          = "<PITR_TIME>"
   point_in_time_recovery_deployment_id = "<SOURCE_CRN>"
   version                              = "<VERSION_NUMBER>"
 }
