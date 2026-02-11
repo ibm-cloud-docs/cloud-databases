@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-02-10"
+lastupdated: "2026-02-11"
 
 subcollection: cloud-databases
 
@@ -53,29 +53,29 @@ Additional information on upgrade methods for each database type:
 - [Upgrading {{site.data.keyword.databases-for-elasticsearch}} major versions](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-upgrading&interface=ui)
 - [Upgrading {{site.data.keyword.databases-for-redis}} major versions](/docs/databases-for-redis?topic=databases-for-redis-upgrading&interface=ui)
 - [Upgrading {{site.data.keyword.databases-for-postgresql}} major versions](/docs/databases-for-postgresql?topic=databases-for-postgresql-upgrading&interface=ui)
-- [Upgrading {{site.data.keyword.databases-for-mysql}} major versions](/docs/databases-for-mysql?topic=databases-for-mysql-mysql-upgrading&interface=cli) 
+- [Upgrading {{site.data.keyword.databases-for-mysql}} major versions](/docs/databases-for-mysql?topic=databases-for-mysql-mysql-upgrading&interface=cli)
 - [Upgrading {{site.data.keyword.messages-for-rabbitmq}} major versions](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-upgrading&interface=ui))
 
 ## Subscribe for version updates
 {: #version-updates-subscribe}
 
-Availability of a new major database version in {{site.data.keyword.cloud_notm}} is communicated via the release notes and [{{site.data.keyword.cloud_notm}} status page](https://cloud.ibm.com/status){: external}. Set up {{site.data.keyword.cloud_notm}} status notifications, as described in the [documentation](/docs/cloud-databases?topic=cloud-databases-getting-started-cdb-setup-notifs), in order to receive a notification when new release notes are published. 
+Availability of a new major database version in {{site.data.keyword.cloud_notm}} is communicated via the release notes and [{{site.data.keyword.cloud_notm}} status page](https://cloud.ibm.com/status){: external}. Set up {{site.data.keyword.cloud_notm}} status notifications, as described in the [documentation](/docs/cloud-databases?topic=cloud-databases-getting-started-cdb-setup-notifs), in order to receive a notification when new release notes are published.
 
 ## Major version end of life procedures
 {: #version-deprecation}
 
-End of life dates for major database versions in {{site.data.keyword.databases-for}} are determined after considering two primary factors. 
+End of life dates for major database versions in {{site.data.keyword.databases-for}} are determined after considering two primary factors.
 
 1. The date when the open-source community or vendor that provides the database stops maintaining that version.
 2. Industry best practices for security that generally prohibit the use of software that is no longer maintained because bugs and security vulnerabilities are unlikely to be addressed in such a version.
 
-Because the frequency of major releases and the maintenance lifecycle policies associated with each database offered in the {{site.data.keyword.cloud_notm}} portfolio is different, the time between general availability of a major release in {{site.data.keyword.cloud_notm}} and the end of life for that version in {{site.data.keyword.cloud_notm}} varies across different databases and over time.  
+Because the frequency of major releases and the maintenance lifecycle policies associated with each database offered in the {{site.data.keyword.cloud_notm}} portfolio is different, the time between general availability of a major release in {{site.data.keyword.cloud_notm}} and the end of life for that version in {{site.data.keyword.cloud_notm}} varies across different databases and over time.
 
-When the {{site.data.keyword.cloud_notm}} end of life date for a major version is defined, a notification is provided via the {{site.data.keyword.cloud_notm}} status announcements page. During the time between notification and the end of life date for a major version, you are strongly advised to initiate an upgrade to the most recent major version. 
+When the {{site.data.keyword.cloud_notm}} end of life date for a major version is defined, a notification is provided via the {{site.data.keyword.cloud_notm}} status announcements page. During the time between notification and the end of life date for a major version, you are strongly advised to initiate an upgrade to the most recent major version.
 
 At the end of life date, any database instances that remain on the deprecated major version are handled as described in the end of life procedure column in Table 1. If the end of life procedure includes taking a backup of the instance, the backup is available to be restored into a new supported version for 30 days, after which the backup is deleted.
 
-Requests to re-enable disabled formations of end-of-life versions are not accommodated. 
+Requests to re-enable disabled formations of end-of-life versions are not accommodated.
 
 End of life procedures and related actions happen over several days following the end of life date. We try, but cannot guarantee, to complete these actions outside of business hours in the local region. If you want more control over the upgrade process of your instance, we recommend that you upgrade before the EOL date of your version.
 {: note}
@@ -101,7 +101,7 @@ End of life procedures and related actions happen over several days following th
 ## Major versioning end of life notification
 {: #-major-version-eol}
 
-The ability to provide advance notification of the end of lifedate for major database versions to IBM Cloud Database users is limited by the advance notice provided by the associated open-source community or vendor with respect to the date that maintenance of a version will end. 
+The ability to provide advance notification of the end of life date for major database versions to IBM Cloud Database users is limited by the advance notice provided by the associated open-source community or vendor with respect to the date that maintenance of a version will end.
 
 For those databases where the open-source community or vendor provides advance notice of the end of maintenance date for major versions, multiple notifications will be sent to inform users of upcoming end of life dates. You can typically expect:
 
@@ -109,25 +109,25 @@ For those databases where the open-source community or vendor provides advance n
 2. An announcement in your service's Release Notes, for example: [IBM Cloud® Databases for PostgreSQL version 12 end of life on January 22, 2025](https://cloud.ibm.com/docs/databases-for-postgresql?topic=databases-for-postgresql-postgresql-relnotes#databases-for-postgresql-18jan2023){: external}.
 3. A notification by email if account notification have been correctly configured to include email addresses. This email contains a *Notifications* link that takes you to a Notifications Management page. **Make sure that these announcements are not being caught by your email service's spam filter.** For more information, see [Setting up distribution lists for IBM Cloud notifications](https://cloud.ibm.com/docs/account?topic=account-add-users-distribution-list)){:external} and [Setting email preferences for notifications](https://cloud.ibm.com/user/notifications).
 
-Ensure that your account is enabled to receive notifications and announcements. You must enable receipt of both platform and resource updates.  
+Ensure that your account is enabled to receive notifications and announcements. You must enable receipt of both platform and resource updates.
 
 * Turn on major and minor toggle under the **Platform tab > Announcements > Major and minor**.
-* Turn on service updates under the **Resource tab > Resource activity > Service updates**.  
+* Turn on service updates under the **Resource tab > Resource activity > Service updates**.
 
-Customers are also encouraged to proactively check the database version status of all IBM Cloud Database instances programmatically via either the CLI or API. For more information, see [Programmatic methods for checking version status](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-versioning-policy#-major-version-eol-check-version-status). 
+Customers are also encouraged to proactively check the database version status of all IBM Cloud Database instances programmatically via either the CLI or API. For more information, see [Programmatic methods for checking version status](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-versioning-policy#-major-version-eol-check-version-status).
 
 ### Database pecific information
 {: #-database-specific-information}
 
 **[IBM Cloud Databases for Elasticsearch]**
 
-Elastic publishes the maintenance policy for Elasticsearch versions [here](https://www.elastic.co/support/eol). According to this policy, three versions are maintained by Elastic at any point in time, the most recent release (X.Y), the previous release (X.Y-1), and the last release for the previous major version (X-1.last, 8.19 for example). When a new release is made (X.Y+1), maintenance for release X.Y-1 ends immediately.  
-Customers can choose between two approaches to upgrading the Elasticsearch versions they use. The first approach is to always upgrade to the latest Elasticsearch version soon after it is released, making the frequency of upgrades equal to the frequency of releases by Elastic. The second approach is to stay on the last release of the previous major version as long as it continues to be maintained by Elastic in order to reduce the frequency of required version upgrades during that period. 
-An IBM Cloud notification will be sent shortly after each Elasticsearch major version release communicating that Elastic maintenance has ended for an additional major version and that this major version will reach end of life in IBM Cloud Databases in 5 weeks. 
+Elastic publishes the maintenance policy for Elasticsearch versions [here](https://www.elastic.co/support/eol). According to this policy, three versions are maintained by Elastic at any point in time, the most recent release (X.Y), the previous release (X.Y-1), and the last release for the previous major version (X-1.last, 8.19 for example). When a new release is made (X.Y+1), maintenance for release X.Y-1 ends immediately.
+Customers can choose between two approaches to upgrading the Elasticsearch versions they use. The first approach is to always upgrade to the latest Elasticsearch version soon after it is released, making the frequency of upgrades equal to the frequency of releases by Elastic. The second approach is to stay on the last release of the previous major version as long as it continues to be maintained by Elastic in order to reduce the frequency of required version upgrades during that period.
+An IBM Cloud notification will be sent shortly after each Elasticsearch major version release communicating that Elastic maintenance has ended for an additional major version and that this major version will reach end of life in IBM Cloud Databases in 5 weeks.
 
 **[IBM Cloud Messages for RabbitMQ]**
 
-Only the latest major version of RabbitMQ is maintained by the community. When a new release happens, maintenance of the previous release ends. When maintenance of a RabbitMQ version ends, a single notification will be sent soon after communicating that that version will reach end of life in IBM Cloud Messages for RabbitMQ in 2 months. 
+Only the latest major version of RabbitMQ is maintained by the community. When a new release happens, maintenance of the previous release ends. When maintenance of a RabbitMQ version ends, a single notification will be sent soon after communicating that that version will reach end of life in IBM Cloud Messages for RabbitMQ in 2 months.
 
 
 ### Programmatic methods for checking version status
