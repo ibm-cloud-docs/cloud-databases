@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2023
-lastupdated: "2023-08-02"
+  years: 2023, [{CURRENT_YEAR}]
+lastupdated: "[{LAST_UPDATED_DATE}]"
 
 subcollection: cloud-databases
 
@@ -11,7 +11,7 @@ keywords: resource config, resource configuration
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Resource Configuration FAQ
+# Resource configuration FAQ
 {: #faq-resource-config}
 {: faq}
 {: support}
