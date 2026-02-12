@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-02-11"
+lastupdated: "2026-02-12"
 
 subcollection: cloud-databases
 
@@ -26,8 +26,8 @@ When you provision a {{site.data.keyword.databases-for}} instance, you can choos
 | {{site.data.keyword.databases-for-elasticsearch}} | {{site.data.keyword.databases-for}} major versions are the first two numbers in a `release.version`.maintenance version number. |  v8.7, v8.10, v8.12, v8.15, 30 June 2026|   v8.19   | Automatically upgraded in-place to next major version. |
 | {{site.data.keyword.databases-for-redis}} | {{site.data.keyword.databases-for}} major versions are the first number in a `major.minor.patch` version number. | v7.2, 19 August 2026 |   v8.2   | Automatically upgraded in place to next Major version |
 | {{site.data.keyword.databases-for-postgresql}} | {{site.data.keyword.databases-for}} major version is defined by the first number in the version number. |  v14, 21 October 2026 |   v18 | Automatically upgraded in place to next major version, [Customer-initiated in-place upgrade from v14 to v15 supported](/docs/databases-for-postgresql?topic=databases-for-postgresql-upgrading&interface=ui) |
-| {{site.data.keyword.databases-for-mysql}} | {{site.data.keyword.databases-for}} major versions are the first two numbers in a `major.x.patch` version number. | v8.0, July 2026 |  v8.0, v8.4 (Preview) | Backup taken and access removed |
-| {{site.data.keyword.messages-for-rabbitmq}} | {{site.data.keyword.databases-for}} Major versions are the first two numbers in a `major.x.patch` version number. | v3.13, 20 May 2026, <br> v4.0(preview), 20 May 2026 <br> v4.1, (tentative 31 March 2026) |   v4.1   | Backup taken and access removed until v3.13, <br> Automatically upgraded in place to next Major version starting v4.x |
+| {{site.data.keyword.databases-for-mysql}} | {{site.data.keyword.databases-for}} major versions are the first two numbers in a `major.x.patch` version number. | v8.0, 20 July 2026 |  v8.0, v8.4 (Preview) | Backup taken and access removed |
+| {{site.data.keyword.messages-for-rabbitmq}} | {{site.data.keyword.databases-for}} Major versions are the first two numbers in a `major.x.patch` version number. | v3.13, 20 May 2026, <br> v4.1, 12 August 2026) |   v4.2   | Backup taken and access removed until v3.13, <br> Automatically upgraded in place to next Major version starting v4.x |
 {: caption="Major versions for {{site.data.keyword.databases-for}}" caption-side="top"}
 
 [^tabletext4]: This column describes the actions that will be taken by the {{site.data.keyword.cloud}} team on database instances that have not been upgraded to a new version prior to the version EoL date. This approach is not recommended. For more information, see [End of life procedure](#version-EOL).
@@ -124,10 +124,6 @@ Customers are also encouraged to proactively check the database version status o
 Elastic publishes the maintenance policy for Elasticsearch versions [here](https://www.elastic.co/support/eol). According to this policy, three versions are maintained by Elastic at any point in time, the most recent release (X.Y), the previous release (X.Y-1), and the last release for the previous major version (X-1.last, 8.19 for example). When a new release is made (X.Y+1), maintenance for release X.Y-1 ends immediately.
 Customers can choose between two approaches to upgrading the Elasticsearch versions they use. The first approach is to always upgrade to the latest Elasticsearch version soon after it is released, making the frequency of upgrades equal to the frequency of releases by Elastic. The second approach is to stay on the last release of the previous major version as long as it continues to be maintained by Elastic in order to reduce the frequency of required version upgrades during that period.
 An IBM Cloud notification will be sent shortly after each Elasticsearch major version release communicating that Elastic maintenance has ended for an additional major version and that this major version will reach end of life in IBM Cloud Databases in 5 weeks.
-
-**[IBM Cloud Messages for RabbitMQ]**
-
-Only the latest major version of RabbitMQ is maintained by the community. When a new release happens, maintenance of the previous release ends. When maintenance of a RabbitMQ version ends, a single notification will be sent soon after communicating that that version will reach end of life in IBM Cloud Messages for RabbitMQ in 2 months.
 
 
 ### Programmatic methods for checking version status
