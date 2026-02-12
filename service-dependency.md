@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-02-10"
+lastupdated: "2026-02-12"
 
 keywords:
 
@@ -35,6 +35,70 @@ Minimal
 :   When the dependency is down, the main service features are not impacted.
 
 
+
+## IBM Cloud Databases deployment
+{: #ibm-cloud-databases-deployment}
+
+The following dependencies apply to the following deployment locations: Dallas (us-south), Frankfurt (eu-de), London (eu-gb), Madrid (eu-es), Osaka (jp-osa), Sao Paulo (br-sao), Sydney (au-syd), Tokyo (jp-tok), Toronto (ca-tor), Washington DC (us-east).
+
+
+|Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
+|:---|:---|:---|:---|:---|
+| IBM Cloud Block Storage | Availability, Change management, Disaster recovery, Instance control | No | Both |  Same zone  |
+| IBM Cloud Classic DNS Servers | Availability, Change management, Instance control | No | Both |  Same data center  |
+| {{site.data.keyword.cis_full}} | Availability, Change management, Disaster recovery, Instance control, Security compliance | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
+| IBM Cloud Business Support Services | Availability, Change management | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
+| IBM Cloud Service Endpoints | Availability, Change management, Disaster recovery, Instance control, Security compliance | No | Both |  Same region  |
+| {{site.data.keyword.iamlong}} | Access management, Availability, Change management, Instance control, Security compliance | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
+| {{site.data.keyword.keymanagementservicefull}} | Availability, Change management, Disaster recovery, Instance control, Security compliance | No | Both |  Same region  |
+| IBM Cloud Hyper Protect Crypto | Availability, Change management, Customer responsibility, Instance control, Security compliance | No | Both |  Same region  |
+| {{site.data.keyword.iamlong}} | Availability | No | ngdc-data-plane |  Same region  |
+| Common Data Platform | Access management, Availability, Change management, configuration-management, Disaster recovery, Instance control, Operations, Security compliance | No | ngdc-data-plane |  Same zone  |
+| {{site.data.keyword.vpc_full}} | Access management, Availability, Change management, configuration-management, Disaster recovery, Instance control, Operations, Security compliance | No | ngdc-data-plane |  Same region  |
+{: row-headers}
+{: caption="IBM Cloud Databases - IBM Cloud Databases deployment service dependency information - Critical dependencies" caption-side="top"}
+{: tab-title="Critical dependencies"}
+{: tab-group="service-dependency-data-for-ibm-cloud-databases-IBM-Cloud-Databases-deployment"}
+{: class="comparison-tab-table"}
+{: #critical-deps-ibm-cloud-databases-deployment}
+{: summary="Use the buttons for the dependency level to change the context of the table. This table has row and column headers. The row headers detail the specific dependent service. The column headers identify the details about the dependency and its impact. To understand the details about each dependency, navigate to the row to find the dependency that you need more information about interested in."}
+
+|Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
+|:---|:---|:---|:---|:---|
+| IBM Log Analysis Log Routing| Change management, Operations, Security compliance | No | Both |  Same region  |
+| IBM Cloud Classic NTP Servers| Change management | No | Both |  Same data center  |
+| TaaS Artifactory| Change management | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
+| TaaS Jenkins| Change management, Operations | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
+| SOS SIEM| Change management, Security compliance | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
+| IBM GitHub Enterprise| Change management | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
+| {{site.data.keyword.atracker_full}}| Change management, Operations, Security compliance | No | Both |  Same region  |
+| IBM Travis| Change management | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
+| {{site.data.keyword.cos_full}}| Change management, Disaster recovery | No | Both |  Same region  |
+| ServiceNow| Change management, Operations | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
+{: row-headers}
+{: caption="IBM Cloud Databases - IBM Cloud Databases deployment service dependency information - Medium dependencies" caption-side="top"}
+{: tab-title="Medium dependencies"}
+{: tab-group="service-dependency-data-for-ibm-cloud-databases-IBM-Cloud-Databases-deployment"}
+{: class="comparison-tab-table"}
+{: #medium-deps-ibm-cloud-databases-deployment}
+{: summary="Use the buttons for the dependency level to change the context of the table. This table has row and column headers. The row headers detail the specific dependent service. The column headers identify the details about the dependency and its impact. To understand the details about each dependency, navigate to the row to find the dependency that you need more information about interested in."}
+
+|Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
+|:---|:---|:---|:---|:---|
+| {{site.data.keyword.pag_full}}| Operations | No | Both |  ibm-intranet  |
+| PagerDuty| Operations | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
+| OSS Platform| Operations | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
+| Slack| Operations | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
+| IBM Cloud Global Search and Tagging| none | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
+| AccessHub| Access management, Security compliance | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
+| {{site.data.keyword.monitoringlong}}| Operations | No | Both |  Same region  |
+{: row-headers}
+{: caption="IBM Cloud Databases - IBM Cloud Databases deployment service dependency information - Minimal dependencies" caption-side="top"}
+{: tab-title="Minimal dependencies"}
+{: tab-group="service-dependency-data-for-ibm-cloud-databases-IBM-Cloud-Databases-deployment"}
+{: class="comparison-tab-table"}
+{: #minimal-deps-ibm-cloud-databases-deployment}
+{: summary="Use the buttons for the dependency level to change the context of the table. This table has row and column headers. The row headers detail the specific dependent service. The column headers identify the details about the dependency and its impact. To understand the details about each dependency, navigate to the row to find the dependency that you need more information about interested in."}
 
 ## IBM Cloud Databases on CDP
 {: #ibm-cloud-databases-on-cdp}
