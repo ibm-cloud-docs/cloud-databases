@@ -36,6 +36,6 @@ You've now provisioned a {{site.data.keyword.databases-for}} service instance, s
 
 - [{{site.data.keyword.messages-for-rabbitmq}}](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-getting-started){: external}
 
-Alternatively, you can provision a specific a {{site.data.keyword.databases-for}} service instance by using a pre-built, open-source, enterprise-ready [Terraform IBM Modules (TIM)](https://cloud.ibm.com/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-about-tim), which are curated collections of Terraform modules that simplify creating, managing, and versioning complex, compliant environments on IBM Cloud. Explore all related modules :
+Alternatively, you can provision a specific a {{site.data.keyword.databases-for}} service instance by using pre-built, open-source, enterprise-ready [Terraform IBM Modules (TIM)](https://cloud.ibm.com/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-about-tim), which are curated collections of Terraform modules that simplify creating, managing, and versioning complex, compliant environments on IBM Cloud. You can explore all related modules:
 - [Terraform IBM Modules (TIM) GitHub Repository](https://github.com/terraform-ibm-modules){: external}
 - [Terraform IBM Modules (TIM) Registry](https://registry.terraform.io/search/modules?namespace=terraform-ibm-modules&q=icd-){: external}

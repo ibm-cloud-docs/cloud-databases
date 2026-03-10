@@ -130,9 +130,9 @@ resource "ibm_cbr_zone" "cbr_zone" {
 }
 ```
 
-Alternatively, you can also use [Terraform IBM Modules (TIM) for CBR Zone](https://registry.terraform.io/modules/terraform-ibm-modules/cbr/ibm/latest/submodules/cbr-zone-module){: external} for creating a zone for context based restrictions or updates addresses in an existing zone.
+Alternatively, you can also use [Terraform IBM Modules (TIM) for CBR Zone](https://registry.terraform.io/modules/terraform-ibm-modules/cbr/ibm/latest/submodules/cbr-zone-module){: external} for creating a zone for context-based restrictions or updating addresses in an existing zone.
 
-Example for creating a CBR zone using [Terraform IBM Modules (TIM)](https://registry.terraform.io/modules/terraform-ibm-modules/cbr/ibm/latest){: external}
+An example for creating a CBR zone using [Terraform IBM Modules (TIM)](https://registry.terraform.io/modules/terraform-ibm-modules/cbr/ibm/latest){: external}:
 
 ```terraform
 module "ibm_cbr" "zone" {
@@ -195,7 +195,7 @@ Full closure of access to non-allowlisted endpoints: To provide a more robust se
 1. Select **Rules**.
 1. Click **Create**.
 1. Under **Service**, select the service you want to target with your rule.
-1. Under **APIs**, select `Data plane`. Currently any other selection results in an error. 
+1. Under **APIs**, select `Data plane`. Currently any other selection results in an error.
 
    0 actions are expected for the Data Plane API type.
    {: .note}

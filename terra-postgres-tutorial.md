@@ -153,10 +153,10 @@ Create a Terraform configuration file that is named `postgres.tf`.
    - **group values** - Memory, disk, and CPU values are all based on minimum requirements for provisioning a {{site.data.keyword.databases-for-postgresql}} shared compute instance.
    - **output** - When the terraform process finished the connection information for the new database will be shown in the terminal.
 
-Alternatively, you can use [Terraform IBM Modules (TIM) for {{site.data.keyword.databases-for-postgresql}}](https://registry.terraform.io/modules/terraform-ibm-modules/icd-postgresql/ibm/latest){: external} which is the recommended approach for production environments. Unlike the raw resource, this module provides the following capabilities:
+Alternatively, you can use [Terraform IBM Modules (TIM) for {{site.data.keyword.databases-for-postgresql}}](https://registry.terraform.io/modules/terraform-ibm-modules/icd-postgresql/ibm/latest){: external}, which is the recommended approach for production environments. Unlike the raw resource, this module provides the following capabilities:
 
 - Comprehensive documentation with README files and examples
-- Multiple deployment scenarios through different examples
+- Multiple deployment scenarios using different examples
 - Controlled versioning for safe updates and easier dependency management
 - Enterprise-ready configurations that are secure, scalable, and compliant
 
