@@ -1,8 +1,8 @@
 ---
 
 copyright:
-   years: 2022, 2024
-lastupdated: "2024-09-30"
+  years: 2022, 2026
+lastupdated: "2026-03-10"
 
 keywords: IBM Cloud Databases, ICD, terraform, postgresql terraform, postgresql
 
