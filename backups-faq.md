@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2025
-lastupdated: "2025-10-23"
+  years: 2023, 2026
+lastupdated: "2026-03-10"
 
 keywords: backups, new service instance, deleted resource, undelete, pending backup
 
@@ -31,7 +31,7 @@ If an instance is deleted, the backup is deleted as well. However, {{site.data.k
 
 {{site.data.keyword.databases-for}} backups are restored in a new service instance. For more information, see [Managing {{site.data.keyword.databases-for}} backups](/docs/cloud-databases?topic=cloud-databases-dashboard-backups).
 
-Point-in-Time Recovery (PITR) is available for [{{site.data.keyword.databases-for-mysql}}](/docs/databases-for-mysql?topic=databases-for-mysql-pitr){: external}, [{{site.data.keyword.databases-for-postgresql}}](/docs/databases-for-postgresql?topic=databases-for-postgresql-pitr){: external}, [{{site.data.keyword.databases-for-mongodb}}](/docs/databases-for-mongodb?topic=databases-for-mongodb-pitr){: external} and 
+Point-in-Time Recovery (PITR) is available for [{{site.data.keyword.databases-for-mysql}}](/docs/databases-for-mysql?topic=databases-for-mysql-pitr){: external}, [{{site.data.keyword.databases-for-postgresql}}](/docs/databases-for-postgresql?topic=databases-for-postgresql-pitr){: external}, [{{site.data.keyword.databases-for-mongodb}}](/docs/databases-for-mongodb?topic=databases-for-mongodb-pitr){: external} and
 
 ## Can I create a backup while another backup is pending?
 {: #faq-backups-pending-backup}
@@ -39,3 +39,11 @@ Point-in-Time Recovery (PITR) is available for [{{site.data.keyword.databases-fo
 {: support}
 
 {{site.data.keyword.databases-for}} does not create additional backups if there is already a pending backup in the queue, ensuring efficiency and avoiding redundancy in our backup processes. {{site.data.keyword.databases-for}} automatically schedules a new daily backup if none is currently set up. You have the flexibility to initiate manual backups at your preferred cadence.
+
+
+## Can I use Terraform IBM Modules to provision a new database instance from a backup instance ?
+{: #use-terraform-ibm-modules}
+{: faq}
+{: support}
+
+Yes, you can use [Terraform IBM Modules (TIM)](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-about-tim) to create a new database instance from a backup instance. Terraform IBM Modules are pre-built, validated, and enterprise-ready modules that follow IBM Cloud best practices. For more information, see [Restore from backup example](https://registry.terraform.io/modules/terraform-ibm-modules/icd-postgresql/ibm/latest/examples/backup){: external}.

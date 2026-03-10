@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years:  2022, 2025
-lastupdated: "2025-12-04"
+  years:  2022, 2026
+lastupdated: "2026-03-10"
 
 keywords: restricting access to cloud databases, restricting access to ICD, Elasticsearch cbr, mongodb cbr, postgresql cbr, redis cbr, mysql cbr, rabbitmq cbr
 
@@ -130,6 +130,22 @@ resource "ibm_cbr_zone" "cbr_zone" {
 }
 ```
 
+Alternatively, you can also use [Terraform IBM Modules (TIM) for CBR Zone](https://registry.terraform.io/modules/terraform-ibm-modules/cbr/ibm/latest/submodules/cbr-zone-module){: external} to create a zone for context-based restrictions or update addresses in an existing zone.
+
+An example for creating a CBR zone using [Terraform IBM Modules (TIM)](https://registry.terraform.io/modules/terraform-ibm-modules/cbr/ibm/latest){: external}:
+
+```terraform
+module "ibm_cbr" "zone" {
+  source           = "terraform-ibm-modules/cbr/ibm//modules/cbr-zone-module"
+  version          = "X.X.X" # Replace "X.X.X" with a release version to lock into a specific release
+  name             = "zone_for_pg_access"
+  account_id       = "defc0df06b644a9cabc6e44f55b3880s"
+  zone_description = "Zone created from terraform"
+  addresses        = [{type  = "vpc",value = "vpc_crn"}]
+}
+```
+{: codeblock}
+
 ### Update network zones in the CLI
 {: #update-network-zone-cli}
 {: cli}
@@ -179,7 +195,7 @@ Full closure of access to non-allowlisted endpoints: To provide a more robust se
 1. Select **Rules**.
 1. Click **Create**.
 1. Under **Service**, select the service you want to target with your rule.
-1. Under **APIs**, select `Data plane`. Currently any other selection results in an error. 
+1. Under **APIs**, select `Data plane`. Currently any other selection results in an error.
 
    0 actions are expected for the Data Plane API type.
    {: .note}
