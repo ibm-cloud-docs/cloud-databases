@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2025
-lastupdated: "2025-12-04"
+  years: 2019, 2026
+lastupdated: "2026-03-10"
 
 subcollection: cloud-databases
 
@@ -13,7 +13,7 @@ subcollection: cloud-databases
 # Provision an instance
 {: #getting-started-cdb-provision-instance}
 
-Follow the steps for provisioning a {{site.data.keyword.databases-for}} instance of your preferred service. Provision through the [catalog](https://cloud.ibm.com/catalog){: external}, the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/cloud-databases?topic=cloud-databases-cdb-reference){: external}, the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction){: external}, or through [Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: external}.
+Follow the steps for provisioning a {{site.data.keyword.databases-for}} instance of your preferred service. Provision through the [catalog](https://cloud.ibm.com/catalog){: external}, the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/cloud-databases?topic=cloud-databases-cdb-reference){: external}, the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction){: external}, through [Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: external} or through pre-built, open-source and enterprise-ready [Terraform IBM Modules (TIM)](https://registry.terraform.io/search/modules?q=terraform-ibm-modules%2Ficd){: external}.
 
 {{site.data.keyword.databases-for}} offers two hosting models: Shared Compute and Isolated Compute. Shared Compute is a flexible multi-tenant offering for dynamic, fine-tuned, and decoupled capacity selections. Isolated Compute is a secure single-tenant offering for complex, highly-performant enterprise workloads. For more information, see the [Hosting models overview](/docs/cloud-databases?topic=cloud-databases-hosting-models).
 

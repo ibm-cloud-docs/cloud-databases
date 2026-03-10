@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years:  2022, 2025
-lastupdated: "2025-12-04"
+  years:  2022, 2026
+lastupdated: "2026-03-10"
 
 keywords: restricting access to cloud databases, restricting access to ICD, Elasticsearch cbr, mongodb cbr, postgresql cbr, redis cbr, mysql cbr, rabbitmq cbr
 
@@ -129,6 +129,22 @@ resource "ibm_cbr_zone" "cbr_zone" {
   name = "an example of zone"
 }
 ```
+
+Alternatively, you can also use [Terraform IBM Modules (TIM) for CBR Zone](https://registry.terraform.io/modules/terraform-ibm-modules/cbr/ibm/latest/submodules/cbr-zone-module){: external} for creating a zone for context based restrictions or updates addresses in an existing zone.
+
+Example for creating a CBR zone using [Terraform IBM Modules (TIM)](https://registry.terraform.io/modules/terraform-ibm-modules/cbr/ibm/latest){: external}
+
+```terraform
+module "ibm_cbr" "zone" {
+  source           = "terraform-ibm-modules/cbr/ibm//modules/cbr-zone-module"
+  version          = "X.X.X" # Replace "X.X.X" with a release version to lock into a specific release
+  name             = "zone_for_pg_access"
+  account_id       = "defc0df06b644a9cabc6e44f55b3880s"
+  zone_description = "Zone created from terraform"
+  addresses        = [{type  = "vpc",value = "vpc_crn"}]
+}
+```
+{: codeblock}
 
 ### Update network zones in the CLI
 {: #update-network-zone-cli}

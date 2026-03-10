@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2025
-lastupdated: "2025-10-23"
+  years: 2023, 2026
+lastupdated: "2026-03-10"
 
 keywords: backups, new service instance, deleted resource, undelete, pending backup
 
@@ -39,3 +39,11 @@ Point-in-Time Recovery (PITR) is available for [{{site.data.keyword.databases-fo
 {: support}
 
 {{site.data.keyword.databases-for}} does not create additional backups if there is already a pending backup in the queue, ensuring efficiency and avoiding redundancy in our backup processes. {{site.data.keyword.databases-for}} automatically schedules a new daily backup if none is currently set up. You have the flexibility to initiate manual backups at your preferred cadence.
+
+
+## Can I use Terraform IBM Module to provision new database instance from a backup instance ?
+{: #use-terraform-ibm-modules}
+{: faq}
+{: support}
+
+Yes, you can use [Terraform IBM Modules (TIM)](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-about-tim) to create a new database instance from a backup instance.Terraform IBM Modules are pre-built, validated, and enterprise-ready modules that follow IBM Cloud best practices, [see how a {{site.data.keyword.databases-for-postgresql}} can be created from a backup instance](https://registry.terraform.io/modules/terraform-ibm-modules/icd-postgresql/ibm/latest/examples/backup){: external}.
