@@ -160,9 +160,10 @@ Alternatively, you can use [Terraform IBM Modules (TIM) for {{site.data.keyword.
 - Controlled versioning for safe updates and easier dependency management
 - Enterprise-ready configurations that are secure, scalable, and compliant
 
-Create a Terraform configuration file that is named `postgres.tf`.
+To create a Terraform configuration file that is named `postgres.tf`:
 
-**Example of `postgres.tf` file**
+### Example of `postgres.tf` file
+{: #tutorial-provision-postgres-file}
 
 ```terraform
 resource "ibm_resource_group" "resource_group" {

@@ -130,7 +130,7 @@ resource "ibm_cbr_zone" "cbr_zone" {
 }
 ```
 
-Alternatively, you can also use [Terraform IBM Modules (TIM) for CBR Zone](https://registry.terraform.io/modules/terraform-ibm-modules/cbr/ibm/latest/submodules/cbr-zone-module){: external} for creating a zone for context-based restrictions or updating addresses in an existing zone.
+Alternatively, you can also use [Terraform IBM Modules (TIM) for CBR Zone](https://registry.terraform.io/modules/terraform-ibm-modules/cbr/ibm/latest/submodules/cbr-zone-module){: external} to create a zone for context-based restrictions or update addresses in an existing zone.
 
 An example for creating a CBR zone using [Terraform IBM Modules (TIM)](https://registry.terraform.io/modules/terraform-ibm-modules/cbr/ibm/latest){: external}:
 
