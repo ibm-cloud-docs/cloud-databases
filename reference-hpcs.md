@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-12-04"
+  years: 2020, 2026
+lastupdated: "2026-03-19"
 
 keywords: bring your own key, byok, cryptoshredding, hpcs, hyper protect crypto services
 
@@ -11,15 +11,15 @@ subcollection: cloud-databases
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Hyper Protect Crypto Services integration
+# {{site.data.keyword.hscrypto}} integration
 {: #hpcs}
 
-The data that you store in {{site.data.keyword.cloud}} Databases is encrypted by default by using randomly generated keys. If you need to control the encryption keys, you can Bring Your Own Key (BYOK) through [{{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-get-started), and use one of your own keys to encrypt your databases. Take note that {{site.data.keyword.hscrypto}} for {{site.data.keyword.cloud}} Databases backups is currently not supported for the majority of regions and not recommended to be used without careful considerations of the impact to disaster recovery. 
+{{site.data.keyword.cloud}} is changing dedicated key management services from {{site.data.keyword.hscrypto}} to {{site.data.keyword.keymanagementservicelong}} Dedicated. As part of this change, {{site.data.keyword.hscrypto}} (HPCS) will reach End of Life (EOL) in Q1 2027 and will no longer be supported for use with this service after that time. You must migrate all existing HPCS root keys to   {{site.data.keyword.keymanagementservicelong_notm}} Dedicated (Single Tenant) before HPCS reaches End of Life to ensure continued service availability and support. [Learn how to migrate your root keys](#migrating_hpcs_to_kp).
+{: deprecated}
 
-This document covers the integration of {{site.data.keyword.hscrypto}} (HPCS) with Cloud Databases, which includes {{site.data.keyword.databases-for-elasticsearch}}, {{site.data.keyword.databases-for-mongodb}}, {{site.data.keyword.databases-for-postgresql}}, {{site.data.keyword.databases-for-redis}}, {{site.data.keyword.databases-for-mysql_full}}, and {{site.data.keyword.messages-for-rabbitmq}}.
-{: .note}
+The data that you store in {{site.data.keyword.databases-for}} is encrypted by default by using randomly generated keys. If you need to control the encryption keys, you can Bring Your Own Key (BYOK) through [{{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-get-started), and use one of your own keys to encrypt your databases. Take note that {{site.data.keyword.hscrypto}} for {{site.data.keyword.cloud}} Databases backups is currently not supported for the majority of regions and not recommended to be used without careful considerations of the impact to disaster recovery.
 
-To get started, you need [{{site.data.keyword.hscrypto}}](/catalog/services/hyper-protect-crypto-services) provisioned on your {{site.data.keyword.cloud_notm}} account. 
+To get started, you need [{{site.data.keyword.hscrypto}}](/catalog/services/hyper-protect-crypto-services) provisioned on your {{site.data.keyword.cloud_notm}} account.
 
 ## Creating or adding a key in {{site.data.keyword.hscrypto}}
 {: #create-key}
@@ -144,3 +144,31 @@ Cryptoshredding is a destructive action. When the key is deleted, your data is u
 {: .important}
 
 {{site.data.keyword.hscrypto}} enables [initiation of a force delete](/docs/hs-crypto?topic=hs-crypto-delete-keys) of a key that is in use by {{site.data.keyword.cloud}} services, including your {{site.data.keyword.databases-for}} deployments. This action is called cryptoshredding. Deleting a key that is in use on your deployment locks the disks that contain your data and disables your deployment. You are still able to access the UI and some metadata such as security settings in the UI, CLI, and API but you are not able to access any of the databases or data that is contained within them. Key deletion is [sent to the {{site.data.keyword.atracker_short}}](/docs/hs-crypto?topic=hs-crypto-at-events) as `hs-crypto.secrets.delete`.
+
+## Migrating from {{site.data.keyword.hscrypto}} (HPCS) to {{site.data.keyword.keymanagementserviceshort}} Dedicated (KP-ST)
+{: #migrating_hpcs_to_kp}
+
+During the migration from {{site.data.keyword.hscrypto}} (HPCS) to {{site.data.keyword.keymanagementserviceshort}} Dedicated (KP‑ST), the following occurs:
+
+- Your root key moves from {{site.data.keyword.hscrypto}} to {{site.data.keyword.keymanagementserviceshort}} Dedicated.
+- Existing data encryption keys (DEKs) are securely re‑wrapped.
+- Encrypted data is not re‑encrypted or moved.
+- Service availability is maintained.
+
+### Pre-requisites
+{: #migrating_hpcs_to_kp_prereqs}
+
+Before starting the migration, ensure you have:
+
+- A {{site.data.keyword.keymanagementserviceshort}} Dedicated (Single Tenant) instance in the same region.
+- A root key created in that instance.
+- Permissions to manage keys and service access policies.
+
+### Migration steps
+{: #migrating_hpcs_to_kp_steps}
+
+1. Create or select a {{site.data.keyword.hscrypto}} root key. The key must exist in a {{site.data.keyword.hscrypto}} instance and the service must already have access to it.
+1. Create or select a {{site.data.keyword.keymanagementserviceshort}} Dedicated root key. The key must be in a {{site.data.keyword.keymanagementserviceshort}} Dedicated (Single Tenant) instance in the same region and accessible to the service.
+1. Create a migration intent linking the two keys. The migration intent specifies the {{site.data.keyword.hscrypto}} key as the source and the {{site.data.keyword.keymanagementserviceshort}} Dedicated key as the target.
+1. Allow one to two business days for the migration to be executed. {{site.data.keyword.databases-for}} securely re‑associates the service with the {{site.data.keyword.keymanagementserviceshort}} Dedicated key without re‑encrypting data.
+1. Verify migration completion. The service must now reference the {{site.data.keyword.keymanagementserviceshort}} Dedicated key and the {{site.data.keyword.hscrypto}} key is no longer in use.
