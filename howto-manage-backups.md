@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-01-28"
+lastupdated: "2026-03-19"
 
 subcollection: cloud-databases
 
@@ -28,7 +28,7 @@ Here is some additional general information about backups:
 - Backups are restorable to other regions, except for `eu-de`, `eu-es`, and `par-01`, which can restore backups only between each other. For example, `par-01` backups can be restored to and between `eu-de` and `eu-es`.
 - Backup storage is encrypted. To manage the encryption keys, see [Key Protect integration](/docs/cloud-databases?topic=cloud-databases-key-protect#byok-for-backups). Otherwise, backups are encrypted with a key that is automatically generated for your instance.
 - Backups are restorable across accounts, but only through the API and only if the user that is running the restore has access to both the source and destination accounts.
-- {{site.data.keyword.databases-for}} backups are not downloadable. If you need a local backup, use the appropriate software. For example, [pg_dump](https://www.postgresql.org/docs/9.6/static/backup-dump.html){: .external} is an effective tool for managing PostgreSQL backups.
+- {{site.data.keyword.databases-for}} backups are not downloadable. If you need a local backup, use the appropriate software. For example, [pg_dump](https://www.postgresql.org/docs/9.6/static/backup-dump.html){: .external} is an effective tool for managing PostgreSQL backups. And for MySQL, you can use [mysqldump](https://dev.mysql.com/doc/refman/8.4/en/mysqldump.html).
 
 For information on taking an on-demand backup, see [Taking an on-demand backup](/docs/cloud-databases?topic=cloud-databases-dashboard-backups&interface=cli#ondemand-backup).
 
