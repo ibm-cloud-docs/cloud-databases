@@ -22,8 +22,8 @@ When you provision a {{site.data.keyword.databases-for}} instance, you can choos
 
 | Service | {{site.data.keyword.databases-for}} versioning schema| Next known end of life version and date | Preferred major version | End of life procedure [^tabletext4] |
 |----|----|----|----|----|
-| {{site.data.keyword.databases-for-mongodb}} | {{site.data.keyword.databases-for}} major versions are the first two numbers in a `major.x.patch` version number. In cases where `x` is even, it is a stable release suitable for production. Even `x` versions are the only ones available on {{site.data.keyword.databases-for}}. |  v7, 25 Aug 2027 |   v8.0   | Automatically upgraded in place to next Major version, [Customer-initiated in-place upgrade to the next major version is supported for Standard and Enterprise plans](https://cloud.ibm.com/docs/databases-for-mongodb?topic=databases-for-mongodb-upgrading&interface=ui#upgrading-in-place) |
-| {{site.data.keyword.databases-for-elasticsearch}} | {{site.data.keyword.databases-for}} major versions are the first two numbers in a `release.version`.maintenance version number. |  v8.7, v8.10, v8.12, v8.15, 30 June 2026|   v8.19   | Automatically upgraded in-place to next major version, [Customer-initiated in-place upgrade to the version 19 is supported](https://cloud.ibm.com/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-upgrading&interface=ui#upgrading-in-place)  |
+| {{site.data.keyword.databases-for-mongodb}} | {{site.data.keyword.databases-for}} major versions are the first two numbers in a `major.x.patch` version number. In cases where `x` is even, it is a stable release suitable for production. Even `x` versions are the only ones available on {{site.data.keyword.databases-for}}. |  v7, 25 Aug 2027 |   v8.0   | Automatically upgraded in place to next Major version, [Customer-initiated in-place upgrade to the next major version is supported for Standard and Enterprise plans](/docs/databases-for-mongodb?topic=databases-for-mongodb-upgrading&interface=ui#upgrading-in-place) |
+| {{site.data.keyword.databases-for-elasticsearch}} | {{site.data.keyword.databases-for}} major versions are the first two numbers in a `release.version`.maintenance version number. |  v8.7, v8.10, v8.12, v8.15, 30 June 2026|   v8.19   | Automatically upgraded in-place to next major version, [Customer-initiated in-place upgrade to the version 19 is supported](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-upgrading&interface=ui#upgrading-in-place)  |
 | {{site.data.keyword.databases-for-redis}} | {{site.data.keyword.databases-for}} major versions are the first number in a `major.minor.patch` version number. | v7.2, 19 August 2026 |   v8.2   | Automatically upgraded in place to next Major version|
 | {{site.data.keyword.databases-for-postgresql}} | {{site.data.keyword.databases-for}} major version is defined by the first number in the version number. |  v14, 21 October 2026 |   v18 | Automatically upgraded in place to next major version, [Customer-initiated in-place upgrade from v14 to v15 supported](/docs/databases-for-postgresql?topic=databases-for-postgresql-upgrading&interface=ui) |
 | {{site.data.keyword.databases-for-mysql}} | {{site.data.keyword.databases-for}} major versions are the first two numbers in a `major.x.patch` version number. | v8.0, 29 July 2026 |  v8.4 | Backup taken and access removed |
@@ -39,21 +39,20 @@ When you provision a {{site.data.keyword.databases-for}} instance, you can choos
 
 End-of-life handling depends on the service and versioning model. The following approaches apply:
 
-**1. Access removal after end-of-life date:**
-      For MySQL v8.0 and RabbitMQ v3.13, after the end-of-life date, access to deployments is removed. Backups will be retained as per policy, but instances are no longer accessible.
+1. Access removal after end-of-life date
+:   For MySQL v8.0 and RabbitMQ v3.13, after the end-of-life date, access to deployments is removed. Backups will be retained as per policy, but instances are no longer accessible.
 
-**2. Forced upgrade to next supported version:**
-      For all other database versions, after the end-of-life date, all active deployments running on a deprecated version are forcibly upgraded to the next supported version. For example, PostgreSQL version 14 is automatically upgraded to version 15.
-   
-    This approach is not recommended for the following reasons:
+2. Forced upgrade to next supported version:
+:   For all other database versions, after the end-of-life date, all active deployments running on a deprecated version are forcibly upgraded to the next supported version. For example, PostgreSQL version 14 is automatically upgraded to version 15.
 
-      * We provide no SLAs for this type of forced upgrade.
-      * Data loss may occur.
-      * Applications may experience downtime.
-      * Applications may stop working if they have any incompatibilities with the new database version.
-      * You cannot control the timing of the forced upgrade of your instances.
-      * There is no rollback process for forced upgrades.
-      * We strongly recommend upgrading {{site.data.keyword.databases-for}} instances to the latest version available as soon as possible after that version is made available.
+This approach is not recommended for the following reasons:
+* We provide no SLAs for this type of forced upgrade.
+* Data loss might occur.
+* Applications might experience downtime.
+* Applications might stop working if they have any incompatibilities with the new database version.
+* You cannot control the timing of the forced upgrade of your instances.
+* There is no rollback process for forced upgrades.
+* We strongly recommend upgrading {{site.data.keyword.databases-for}} instances to the latest version available as soon as possible after that version is made available.
 
 Additional information on upgrade methods for each database type:
 
