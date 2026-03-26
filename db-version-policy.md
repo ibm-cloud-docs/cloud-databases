@@ -37,27 +37,6 @@ When you provision a {{site.data.keyword.databases-for}} instance, you can choos
 ### End of life procedure
 {: #version-EOL}
 
-1. Step one {: #step-1}
-
-    Nested paragraph
-
-    1. Nested Step One
-
-        Nested sub paragraph
-
-        1. Nested step 1 more level down
-        1. Nested step 1 more level down
-        1. Nested step 1 more level down
-   1. Nested Step Two
-   1. Nested Step Three
-1. Step two
-
-    ```
-    ibmcloud nest-codeblock
-    ```
-    {: pre}
-
-```
 
 End-of-life handling depends on the service and versioning model. The following approaches apply:
 
