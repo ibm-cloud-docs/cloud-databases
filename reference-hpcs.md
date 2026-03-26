@@ -1,9 +1,9 @@
 ---
 copyright:
   years: 2020, 2026
-lastupdated: "2026-03-19"
+lastupdated: "2026-03-24"
 
-keywords: bring your own key, byok, cryptoshredding,
+keywords: bring your own key, byok, cryptoshredding, hpcs, hyper protect crypto services, deprecation of hpcs, key protect dedicated
 
 subcollection: cloud-databases
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-02-12"
+lastupdated: "2026-03-26"
 
 subcollection: cloud-databases
 
@@ -22,11 +22,11 @@ When you provision a {{site.data.keyword.databases-for}} instance, you can choos
 
 | Service | {{site.data.keyword.databases-for}} versioning schema| Next known end of life version and date | Preferred major version | End of life procedure [^tabletext4] |
 |----|----|----|----|----|
-| {{site.data.keyword.databases-for-mongodb}} | {{site.data.keyword.databases-for}} major versions are the first two numbers in a `major.x.patch` version number. In cases where `x` is even, it is a stable release suitable for production. Even `x` versions are the only ones available on {{site.data.keyword.databases-for}}. |  v7, 25 Aug 2027 |   v8.0   | Automatically upgraded in place to next Major version |
-| {{site.data.keyword.databases-for-elasticsearch}} | {{site.data.keyword.databases-for}} major versions are the first two numbers in a `release.version`.maintenance version number. |  v8.7, v8.10, v8.12, v8.15, 30 June 2026|   v8.19   | Automatically upgraded in-place to next major version. |
-| {{site.data.keyword.databases-for-redis}} | {{site.data.keyword.databases-for}} major versions are the first number in a `major.minor.patch` version number. | v7.2, 19 August 2026 |   v8.2   | Automatically upgraded in place to next Major version |
+| {{site.data.keyword.databases-for-mongodb}} | {{site.data.keyword.databases-for}} major versions are the first two numbers in a `major.x.patch` version number. In cases where `x` is even, it is a stable release suitable for production. Even `x` versions are the only ones available on {{site.data.keyword.databases-for}}. |  v7, 25 Aug 2027 |   v8.0   | Automatically upgraded in place to next Major version, [Customer-initiated in-place upgrade to the next major version is supported for Standard and Enterprise plans](/docs/databases-for-mongodb?topic=databases-for-mongodb-upgrading&interface=ui#upgrading-in-place) |
+| {{site.data.keyword.databases-for-elasticsearch}} | {{site.data.keyword.databases-for}} major versions are the first two numbers in a `release.version`.maintenance version number. |  v8.7, v8.10, v8.12, v8.15, 30 June 2026|   v8.19   | Automatically upgraded in-place to next major version, [Customer-initiated in-place upgrade to the version 19 is supported](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-upgrading&interface=ui#upgrading-in-place)  |
+| {{site.data.keyword.databases-for-redis}} | {{site.data.keyword.databases-for}} major versions are the first number in a `major.minor.patch` version number. | v7.2, 19 August 2026 |   v8.2   | Automatically upgraded in place to next Major version|
 | {{site.data.keyword.databases-for-postgresql}} | {{site.data.keyword.databases-for}} major version is defined by the first number in the version number. |  v14, 21 October 2026 |   v18 | Automatically upgraded in place to next major version, [Customer-initiated in-place upgrade from v14 to v15 supported](/docs/databases-for-postgresql?topic=databases-for-postgresql-upgrading&interface=ui) |
-| {{site.data.keyword.databases-for-mysql}} | {{site.data.keyword.databases-for}} major versions are the first two numbers in a `major.x.patch` version number. | v8.0, 29 July 2026 |  v8.0, v8.4 (Preview) | Backup taken and access removed |
+| {{site.data.keyword.databases-for-mysql}} | {{site.data.keyword.databases-for}} major versions are the first two numbers in a `major.x.patch` version number. | v8.0, 29 July 2026 |  v8.4 | Backup taken and access removed |
 | {{site.data.keyword.messages-for-rabbitmq}} | {{site.data.keyword.databases-for}} Major versions are the first two numbers in a `major.x.patch` version number. | v3.13, 20 May 2026, <br> v4.1, 12 August 2026 |   v4.2   | Backup taken and access removed until v3.13, <br> Automatically upgraded in place to next Major version starting v4.x |
 {: caption="Major versions for {{site.data.keyword.databases-for}}" caption-side="top"}
 
@@ -37,15 +37,26 @@ When you provision a {{site.data.keyword.databases-for}} instance, you can choos
 ### End of life procedure
 {: #version-EOL}
 
-This approach is not recommended for the following reasons:
 
-* We provide no SLAs for this type of forced upgrade.
-* Data loss may occur.
-* Applications may experience downtime.
-* Applications may stop working if they have any incompatibilities with the new database version.
-* You cannot control the timing of the forced upgrade of your instances.
-* There is no rollback process for forced upgrades.
-* We strongly recommend upgrading {{site.data.keyword.databases-for}} instances to the latest version available as soon as possible after that version is made available.
+End-of-life handling depends on the service and versioning model. The following approaches apply:
+
+1.  **Access removal after end-of-life date**
+
+    For MySQL v8.0 and RabbitMQ v3.13, after the end-of-life date, access to deployments is removed. Backups will be retained as per policy, but instances are no longer accessible.
+
+2.  **Forced upgrade to next supported version:**
+
+    For all other database versions, after the end-of-life date, all active deployments running on a deprecated version are forcibly upgraded to the next supported version. For example, PostgreSQL version 14 is automatically upgraded to version 15.
+
+    This approach is not recommended for the following reasons:
+
+    * We provide no SLAs for this type of forced upgrade.
+    * Data loss might occur.
+    * Applications might experience downtime.
+    * Applications might stop working if they have any incompatibilities with the new database version.
+    * You cannot control the timing of the forced upgrade of your instances.
+    * There is no rollback process for forced upgrades.
+    * We strongly recommend upgrading {{site.data.keyword.databases-for}} instances to the latest version available as soon as possible after that version is made available.
 
 Additional information on upgrade methods for each database type:
 
@@ -54,7 +65,7 @@ Additional information on upgrade methods for each database type:
 - [Upgrading {{site.data.keyword.databases-for-redis}} major versions](/docs/databases-for-redis?topic=databases-for-redis-upgrading&interface=ui)
 - [Upgrading {{site.data.keyword.databases-for-postgresql}} major versions](/docs/databases-for-postgresql?topic=databases-for-postgresql-upgrading&interface=ui)
 - [Upgrading {{site.data.keyword.databases-for-mysql}} major versions](/docs/databases-for-mysql?topic=databases-for-mysql-mysql-upgrading&interface=cli)
-- [Upgrading {{site.data.keyword.messages-for-rabbitmq}} major versions](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-upgrading&interface=ui))
+- [Upgrading {{site.data.keyword.messages-for-rabbitmq}} major versions](/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-upgrading&interface=ui)
 
 ## Subscribe for version updates
 {: #version-updates-subscribe}
@@ -106,7 +117,7 @@ The ability to provide advance notification of the end of life date for major da
 For those databases where the open-source community or vendor provides advance notice of the end of maintenance date for major versions, multiple notifications will be sent to inform users of upcoming end of life dates. You can typically expect:
 
 1. A Cloud status page announcement, for example: [End of support notices](https://cloud.ibm.com/status/announcement?query=End+of+Support+Notices){: external}.
-2. An announcement in your service's Release Notes, for example: [IBM Cloud® Databases for PostgreSQL version 12 end of life on January 22, 2025](https://cloud.ibm.com/docs/databases-for-postgresql?topic=databases-for-postgresql-postgresql-relnotes#databases-for-postgresql-18jan2023){: external}.
+2. An announcement in your service's Release Notes, for example: [IBM Cloud® Databases for PostgreSQL version 12 end of life on January 22, 2025](https://cloud.ibm.com/docs/databases-for-postgresql?topic=databases-for-postgresql-postgresql-relnotes#databases-for-postgresql-18jan2023){: external}
 3. A notification by email if account notification have been correctly configured to include email addresses. This email contains a *Notifications* link that takes you to a Notifications Management page. **Make sure that these announcements are not being caught by your email service's spam filter.** For more information, see [Setting up distribution lists for IBM Cloud notifications](https://cloud.ibm.com/docs/account?topic=account-add-users-distribution-list)){:external} and [Setting email preferences for notifications](https://cloud.ibm.com/user/notifications).
 
 Ensure that your account is enabled to receive notifications and announcements. You must enable receipt of both platform and resource updates.
@@ -116,10 +127,10 @@ Ensure that your account is enabled to receive notifications and announcements. 
 
 Customers are also encouraged to proactively check the database version status of all IBM Cloud Database instances programmatically via either the CLI or API. For more information, see [Programmatic methods for checking version status](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-versioning-policy#-major-version-eol-check-version-status).
 
-### Database pecific information
+### Database specific information
 {: #-database-specific-information}
 
-**[IBM Cloud Databases for Elasticsearch]**
+**IBM Cloud Databases for Elasticsearch**
 
 Elastic publishes the maintenance policy for Elasticsearch versions [here](https://www.elastic.co/support/eol). According to this policy, three versions are maintained by Elastic at any point in time, the most recent release (X.Y), the previous release (X.Y-1), and the last release for the previous major version (X-1.last, 8.19 for example). When a new release is made (X.Y+1), maintenance for release X.Y-1 ends immediately.
 Customers can choose between two approaches to upgrading the Elasticsearch versions they use. The first approach is to always upgrade to the latest Elasticsearch version soon after it is released, making the frequency of upgrades equal to the frequency of releases by Elastic. The second approach is to stay on the last release of the previous major version as long as it continues to be maintained by Elastic in order to reduce the frequency of required version upgrades during that period.
