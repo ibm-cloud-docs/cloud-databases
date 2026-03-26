@@ -40,11 +40,11 @@ When you provision a {{site.data.keyword.databases-for}} instance, you can choos
 
 End-of-life handling depends on the service and versioning model. The following approaches apply:
 
-1.  Access removal after end-of-life date
+1.  **Access removal after end-of-life date**
 
     For MySQL v8.0 and RabbitMQ v3.13, after the end-of-life date, access to deployments is removed. Backups will be retained as per policy, but instances are no longer accessible.
 
-2.  Forced upgrade to next supported version:
+2.  **Forced upgrade to next supported version:**
 
     For all other database versions, after the end-of-life date, all active deployments running on a deprecated version are forcibly upgraded to the next supported version. For example, PostgreSQL version 14 is automatically upgraded to version 15.
     This approach is not recommended for the following reasons:
