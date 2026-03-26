@@ -39,20 +39,20 @@ When you provision a {{site.data.keyword.databases-for}} instance, you can choos
 
 End-of-life handling depends on the service and versioning model. The following approaches apply:
 
-1. Access removal after end-of-life date
-:   For MySQL v8.0 and RabbitMQ v3.13, after the end-of-life date, access to deployments is removed. Backups will be retained as per policy, but instances are no longer accessible.
+**1. Access removal after end-of-life date**
+For MySQL v8.0 and RabbitMQ v3.13, after the end-of-life date, access to deployments is removed. Backups will be retained as per policy, but instances are no longer accessible.
 
-2. Forced upgrade to next supported version:
-:   For all other database versions, after the end-of-life date, all active deployments running on a deprecated version are forcibly upgraded to the next supported version. For example, PostgreSQL version 14 is automatically upgraded to version 15.
+**2. Forced upgrade to next supported version:**
+For all other database versions, after the end-of-life date, all active deployments running on a deprecated version are forcibly upgraded to the next supported version. For example, PostgreSQL version 14 is automatically upgraded to version 15.
 
-This approach is not recommended for the following reasons:
-* We provide no SLAs for this type of forced upgrade.
-* Data loss might occur.
-* Applications might experience downtime.
-* Applications might stop working if they have any incompatibilities with the new database version.
-* You cannot control the timing of the forced upgrade of your instances.
-* There is no rollback process for forced upgrades.
-* We strongly recommend upgrading {{site.data.keyword.databases-for}} instances to the latest version available as soon as possible after that version is made available.
+    This approach is not recommended for the following reasons:
+    * We provide no SLAs for this type of forced upgrade.
+    * Data loss might occur.
+    * Applications might experience downtime.
+    * Applications might stop working if they have any incompatibilities with the new database version.
+    * You cannot control the timing of the forced upgrade of your instances.
+    * There is no rollback process for forced upgrades.
+    * We strongly recommend upgrading {{site.data.keyword.databases-for}} instances to the latest version available as soon as possible after that version is made available.
 
 Additional information on upgrade methods for each database type:
 
@@ -123,10 +123,10 @@ Ensure that your account is enabled to receive notifications and announcements. 
 
 Customers are also encouraged to proactively check the database version status of all IBM Cloud Database instances programmatically via either the CLI or API. For more information, see [Programmatic methods for checking version status](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-versioning-policy#-major-version-eol-check-version-status).
 
-### Database pecific information
+### Database specific information
 {: #-database-specific-information}
 
-**[IBM Cloud Databases for Elasticsearch]**
+**IBM Cloud Databases for Elasticsearch**
 
 Elastic publishes the maintenance policy for Elasticsearch versions [here](https://www.elastic.co/support/eol). According to this policy, three versions are maintained by Elastic at any point in time, the most recent release (X.Y), the previous release (X.Y-1), and the last release for the previous major version (X-1.last, 8.19 for example). When a new release is made (X.Y+1), maintenance for release X.Y-1 ends immediately.
 Customers can choose between two approaches to upgrading the Elasticsearch versions they use. The first approach is to always upgrade to the latest Elasticsearch version soon after it is released, making the frequency of upgrades equal to the frequency of releases by Elastic. The second approach is to stay on the last release of the previous major version as long as it continues to be maintained by Elastic in order to reduce the frequency of required version upgrades during that period.
