@@ -47,6 +47,7 @@ End-of-life handling depends on the service and versioning model. The following 
 2.  **Forced upgrade to next supported version:**
 
     For all other database versions, after the end-of-life date, all active deployments running on a deprecated version are forcibly upgraded to the next supported version. For example, PostgreSQL version 14 is automatically upgraded to version 15.
+
     This approach is not recommended for the following reasons:
 
     * We provide no SLAs for this type of forced upgrade.
