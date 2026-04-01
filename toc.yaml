@@ -7,7 +7,7 @@ toc:
     content-type: solution
     href: /docs/cloud-databases
     path: cloud-databases
-    label: IBM Cloud Databases
+    label: IBM Cloud Databases Gen 1
   entries:
   - navgroup:
       id: overview
