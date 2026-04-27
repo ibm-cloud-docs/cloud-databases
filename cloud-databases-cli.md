@@ -1,8 +1,8 @@
 ---
- 
+
 copyright:
-  years: 2018, 2025
-lastupdated: "2025-12-16"
+  years: 2018, 2026
+lastupdated: "2026-04-27"
 
 keywords: cloud databases, migrating, disk size, memory size, CPU size, resources, cli, postgresql administrator, cloud database cli
 
@@ -19,7 +19,7 @@ The {{site.data.keyword.databases-for}} CLI plug-in offers extra methods of acce
 
 - [{{site.data.keyword.databases-for-postgresql_full}}](/docs/databases-for-postgresql)
 - [{{site.data.keyword.databases-for-mysql_full}}](/docs/databases-for-mysql)
-- [{{site.data.keyword.databases-for-redis_full}}](/docs/databases-for-redis) 
+- [{{site.data.keyword.databases-for-redis_full}}](/docs/databases-for-redis)
 - [{{site.data.keyword.databases-for-elasticsearch_full}}](/docs/databases-for-elasticsearch)
 - [{{site.data.keyword.messages-for-rabbitmq_full}}](/docs/messages-for-rabbitmq)
 - [{{site.data.keyword.databases-for-mongodb_full}}](/docs/databases-for-mongodb)
@@ -27,7 +27,7 @@ The {{site.data.keyword.databases-for}} CLI plug-in offers extra methods of acce
 The {{site.data.keyword.databases-for}} CLI plug-in requires [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started) to be installed.
 {: .note}
 
-The {{site.data.keyword.databases-for}} CLI plugin (cdb) supports only Gen 1 instances. To manage Gen 2 instances, see the [{{site.data.keyword.databases-for}} Gen 2 CLI reference](docs-draft/cloud-databases-gen2?topic=cloud-databases-gen2-cdb-reference).
+The {{site.data.keyword.databases-for}} CLI plugin (cdb) supports only Gen 1 instances. To manage Gen 2 instances, see the [{{site.data.keyword.databases-for}} Gen 2 CLI reference](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-cdb-reference).
 {: .note}
 
 ## The {{site.data.keyword.cloud_notm}} CLI
@@ -36,10 +36,10 @@ The {{site.data.keyword.databases-for}} CLI plugin (cdb) supports only Gen 1 ins
 The {{site.data.keyword.cloud_notm}} CLI is a general-purpose developer tool that provides access to your {{site.data.keyword.cloud_notm}} account and services through a command-line interface.
 
 An introduction and installation instructions are available on the [{{site.data.keyword.cloud_notm}} CLI Getting Started page](/docs/cli?topic=cli-getting-started){: .external}. If you install the CLI from the cURL command that is provided, you get a selection of extra plug-ins and extensions for multiple IDEs.
- 
-Install the stand-alone package from the [Installing the stand-alone IBM Cloud CLI](/docs/cli?topic=cli-install-ibmcloud-cli) page. 
 
-Access to services via {{site.data.keyword.cloud_notm}} CLI is governed through Identity and Access Management. In order to use the CLI to view or manage a service (or to grant privileges to another user on your account), you must set the correct permissions. For more information about IAM management, see the [IAM Getting Started tutorial](/docs/account?topic=account-access-getstarted)
+Install the stand-alone package from the [Installing the stand-alone IBM Cloud CLI](/docs/cli?topic=cli-install-ibmcloud-cli) page.
+
+Access to services via {{site.data.keyword.cloud_notm}} CLI is governed through Identity and Access Management. In order to use the CLI to view or manage a service (or to grant privileges to another user on your account), you must set the correct permissions. For more information about IAM management, see the [IAM Getting Started tutorial](/docs/iam?topic=iam-access-getstarted)
 
 ## Installing the {{site.data.keyword.databases-for}} CLI plug-in
 {: #installing-cli-plugin}
@@ -50,7 +50,7 @@ Once you have the {{site.data.keyword.cloud_notm}} CLI, [log in](/docs/cli?topic
 ibmcloud plugin install cloud-databases
 ```
 {: .pre}
- 
+
 For a list of commands and usage information, use a command like:
 
 ```sh
@@ -72,8 +72,8 @@ ibmcloud cdb help [<command>]
 {: #ibmcloud-cdb-help-cmd-options}
 
 No command-specific options.
- 
-### Examples 
+
+### Examples
 {: #ibmcloud-cdb-help-examples}
 
 Get help on the task-show command.
@@ -86,7 +86,7 @@ ibmcloud cdb help task-show
 ## Getting started - Create an instance
 {: #ibmcloud-cdb-help-create}
 
-You can create an instance by using the following command: 
+You can create an instance by using the following command:
 
 ```sh
 ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN_NAME> <LOCATION> -g <RESOURCE_GROUP> -p '{"members_host_flavor": "<members_host_flavor value>"}' --service-endpoints="<endpoint>"
@@ -97,8 +97,8 @@ ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVIC
 {: #ibmcloud-cdb-help-cmd-options}
 
 Set the resource group if you want to use another group instead of the default group. You can also omit this flag.
- 
-### Examples 
+
+### Examples
 {: #ibmcloud-cdb-help-examples}
 
 Create a MongoDB instance.
@@ -125,7 +125,7 @@ ibmcloud cdb deployables-show [--stable] [--preferred] [--output, -o FORMAT]
 
 Short version - `deployables`
 
-#### Command options  
+#### Command options
 {: #deployments-and-deployables-cmd-options}
 
 - `--stable` or `-s`
@@ -135,7 +135,7 @@ Short version - `deployables`
 - `--output` or `-o` FORMAT
    Specify an output format. Only JSON is supported.
 
- 
+
 #### Examples
 {: #deployments-and-deployables-examples}
 
@@ -165,7 +165,7 @@ ibmcloud cdb deployments [--all] [--output json]
    Display instance name and CRN.
 - `--output` or `-o` FORMAT
    Specify an output format. Only JSON is supported.
- 
+
 #### Examples
 {: #deployments-examples}
 
@@ -195,7 +195,7 @@ ibmcloud cdb deployment-about <deployment name or CRN> [--all] [--output, -o FOR
    Display all the available data from the resource controller's records.
 - `--output` or `-o` FORMAT
    Specify an output format. Only JSON is supported.
- 
+
 #### Examples
 {: #deployment-about-examples}
 
@@ -216,7 +216,7 @@ Get connection strings and certificate information to use when you connect to yo
 
 Short version - `cxn`
 
-Displays connection strings and other connection details for a deployment with or without user credentials inserted. 
+Displays connection strings and other connection details for a deployment with or without user credentials inserted.
 
 ```sh
 ibmcloud cdb deployment-connections [--user <userid>] [--password <password>] [--endpoint-type <endpoint type>] [--all] [--only] [--start] [--certroot <path>] [--output, -o FORMAT]
@@ -244,7 +244,7 @@ ibmcloud cdb deployment-connections [--user <userid>] [--password <password>] [-
    Specify an output format. Only JSON is supported.
 - `--endpoint-type` or `-e`
    Endpoint type for returned connection strings, either `public` or `private`. Default is `public`.
-   As the default is `public`, if there are no `public` endpoints then none will be found and you will receive an error: `{"errors":"not_found"}`. Use the `-e private` flag to use `private` endpoints. 
+   As the default is `public`, if there are no `public` endpoints then none will be found and you will receive an error: `{"errors":"not_found"}`. Use the `-e private` flag to use `private` endpoints.
 
 #### Examples
 {: #connections-examples}
@@ -329,7 +329,7 @@ ibmcloud cdb deployment-kill-connections <deployment name or CRN> [--nowait] [--
 ```
 {: .pre}
 
-#### Command options  
+#### Command options
 {: #deployment-kill-connections-command-options}
 
 - `--nowait` or `-n`
@@ -370,7 +370,7 @@ ibmcloud cdb capability-show CAPABILITY_ID TYPE VERSION PLATFORM LOCATION TARGET
 ```
 {: pre}
 
-#### Command options  
+#### Command options
 {: #capability-show-command-options}
 
 - `--output` or `-o` FORMAT
@@ -423,12 +423,12 @@ ibmcloud cdb discover-capability-information-from-backup (BACKUP_ID) (CAPABILITY
 ```
 {: pre}
 
-#### Command options  
+#### Command options
 {: #capability-backup-show-command-options}
 
 - `--output` or `-o` FORMAT
    Specify an output format. Only JSON is supported.
-- `--api-version` or `-v`   
+- `--api-version` or `-v`
    API Version used for request.
 
 #### Capability ID options
@@ -456,12 +456,12 @@ ibmcloud cdb deployment-capability-show (NAME|ID) (CAPABILITY_ID) [--target-plat
 ```
 {: pre}
 
-#### Command options  
+#### Command options
 {: #deployment-capability-show-command-options}
 
 - `--output` or `-o` FORMAT
    Specify an output format. Only JSON is supported.
-- `--api-version` or `-v`   
+- `--api-version` or `-v`
    API Version used for request.
 - `--target-platform` or `-p`
    Target platform for request
@@ -501,20 +501,20 @@ Short version - `user-create`
 Create a user on the deployment database.
 
 ```sh
-ibmcloud cdb deployment-user-create <deployment name or CRN> <newusername> <newpassword> [--nowait] [--output, -o FORMAT] 
+ibmcloud cdb deployment-user-create <deployment name or CRN> <newusername> <newpassword> [--nowait] [--output, -o FORMAT]
 ```
 {: .pre}
 
 The `newusername` needs to be a correctly formatted username for use on the deployment's database. The `newpassword` needs to comply with the database's password rules and must be at least 10 characters long.
 
-#### Command options  
+#### Command options
 {: #deployment-user-create-command-options}
 
 - `--nowait` or `-n`
    Do not wait for the user creation task to complete. Display the user creation task details and exit.
 - `--output` or `-o` FORMAT
    Specify an output format. Only JSON is supported.
- 
+
 #### Examples
 {: #deployment-user-create-examples}
 
@@ -537,14 +537,14 @@ ibmcloud cdb deployment-user-delete <deployment name or CRN> <username> [--nowai
 ```
 {: .pre}
 
-#### Command options  
+#### Command options
 {: #deployment-user-delete-command-options}
 
 - `--nowait` or `-n`
    Do not wait for the user deletion task to complete. Display the user deletion task details and exit.
 - `--output` or `-o` FORMAT
    Specify an output format. Only JSON is supported.
- 
+
 #### Examples
 {: #deployment-user-delete-examples}
 
@@ -567,7 +567,7 @@ ibmcloud cdb deployment-user-password <deployment name or CRN> <username> <newpa
 ```
 {: .pre}
 
-#### Command options  
+#### Command options
 {: #deployment-user-password-command-options}
 
 - `--nowait` or `-n`
@@ -656,7 +656,7 @@ ibmcloud cdb deployment-configuration PGSettings4 '{"configuration":{"max_connec
 ## Scaling
 {: #scaling}
 
-Retrieve and configure the resources that are allocated to your deployment. 
+Retrieve and configure the resources that are allocated to your deployment.
 
 ### `ibmcloud cdb deployables-groups-show`
 {: #deployables-groups-show}
@@ -668,12 +668,12 @@ ibmcloud cdb deployables-groups-show <deployable type> [--output, -o FORMAT]
 ```
 {: .pre}
 
-#### Command options  
+#### Command options
 {: #deployables-groups-show-command-options}
 
 - `--output` or `-o` FORMAT
    Specify an output format. Only JSON is supported.
-   
+
 
 #### Examples
 {: #deployables-groups-show-examples}
@@ -701,7 +701,7 @@ ibmcloud cdb deployment-groups <deployment name or CRN> [--output, -o FORMAT]
 ```
 {: .pre}
 
-#### Command options  
+#### Command options
 {: #deployment-groups-command-options}
 
 - `--output` or `-o` FORMAT
@@ -732,7 +732,7 @@ ibmcloud cdb deployment-groups-set <deployment name or CRN> <memberid> [--memory
 
 The `memberid` is the name of the group for which these values are to be set. The name can be found through the `deployment-groups` command. Typically, it is "member".
 
-#### Command options  
+#### Command options
 {: #deployment-groups-set-command-options}
 
 - `--memory <memory size>` or `-m`
@@ -741,8 +741,8 @@ The `memberid` is the name of the group for which these values are to be set. Th
    Set the specified deployment group's total disk size, a value in MB.
 - `--cpu <value>` or `-c`
    Set number of dedicated CPU cores.
-- `--hostflavor <val>` 
-   Set the hosting flavor of the database: select from `multitenant` for Shared Compute or the individual size selections for Isolated Compute. 
+- `--hostflavor <val>`
+   Set the hosting flavor of the database: select from `multitenant` for Shared Compute or the individual size selections for Isolated Compute.
 - `--nowait` or `-n`
    Do not wait for the group setting task to complete. Display the scaling task's details and exit.
 - `--output` or `-o` FORMAT
@@ -790,7 +790,7 @@ ibmcloud cdb regions --output, -o FORMAT
 ## Autoscaling
 {: #autoscaling-config}
 
-The Autoscaling configuration represents the various conditions that control autoscaling for a deployment. 
+The Autoscaling configuration represents the various conditions that control autoscaling for a deployment.
 
 ### `ibmcloud cdb deployment-autoscaling`
 {: #deployment-autoscaling}
@@ -806,7 +806,7 @@ ibmcloud cdb deployment-autoscaling <deployment name or CRN> GROUP_ID [--output,
 
 Autoscaling currently only applies to the data members on your deployment, so the `GROUP_ID` is `member`.
 
-#### Command options  
+#### Command options
 {: #deployment-autoscaling-command-options}
 
 - `--output` or `-o` FORMAT
@@ -835,7 +835,7 @@ ibmcloud cdb deployment-autoscaling-set (NAME|ID) GROUP_ID (@JSON_FILE|JSON_STRI
 
 Autoscaling currently only applies to the data members on your deployment, so the `GROUP_ID` is `member`. The autoscaling parameters that you would like to be set or unset are defined in a JSON object.
 
-#### Command options  
+#### Command options
 {: #deployment-autoscaling-set-command-options}
 
 - `--output` or `-o` FORMAT
@@ -864,14 +864,14 @@ Retrieve and configure read-only replicas. Currently, only PostgreSQL deployment
 
 Short version - `read-replicas`
 
-Lists all the read-only replicas for the specified deployment. 
+Lists all the read-only replicas for the specified deployment.
 
 ```sh
 ibmcloud cdb deployment-read-replicas <deployment name or CRN> [--long] [--output, -o FORMAT]
 ```
 {: .pre}
 
-#### Command options  
+#### Command options
 {: #deployment-read-replicas-command-options}
 
 - `--output` or `-o` FORMAT
@@ -902,7 +902,7 @@ ibmcloud cdb read-replica-leader <deployment name or CRN> [--long] [--output, -o
 ```
 {: .pre}
 
-#### Command options  
+#### Command options
 {: #read-replica-leader-command-options}
 
 - `--output` or `-o` FORMAT
@@ -933,7 +933,7 @@ ibmcloud cdb read-replica-promote <deployment name or CRN> [--output, -o FORMAT]
 ```
 {: .pre}
 
-#### Command options  
+#### Command options
 {: #read-replica-promote-command-options}
 
 - `--output` or `-o` FORMAT
@@ -966,7 +966,7 @@ ibmcloud cdb read-replica-resync <deployment name or CRN> [--output, -o FORMAT] 
 ```
 {: .pre}
 
-#### Command options  
+#### Command options
 {: #read-replica-resync-command-options}
 
 - `--output` or `-o` FORMAT
@@ -1001,7 +1001,7 @@ ibmcloud cdb deployment-backups-list <deployment name or CRN> [--scheduled] [--f
 ```
 {: .pre}
 
-#### Command options  
+#### Command options
 {: #deployment-backups-list-command-options}
 
 - `--scheduled` or `-s`
@@ -1038,7 +1038,7 @@ ibmcloud cdb backup-show <CRN> [--output, -o FORMAT]
 - `--output` or `-o` FORMAT
    Specify an output format. Only JSON is supported.
 
- 
+
 #### Examples
 {: #backup-show-examples}
 
@@ -1096,13 +1096,13 @@ ibmcloud cdb deployment-allowlist-list <deployment name or CRN> [--output, -o FO
 ```
 {: .pre}
 
-#### Command options  
+#### Command options
 {: #deployment-allowlist-list-command-options}
 
 - `--output` or `-o` FORMAT
    Specify an output format. Only JSON is supported.
 
- 
+
 #### Examples
 {: #deployment-allowlist-list-examples}
 
@@ -1125,7 +1125,7 @@ ibmcloud cdb deployment-allowlist-add <deployment name or CRN> <allowlist addres
 ```
 {: .pre}
 
-#### Command options  
+#### Command options
 {: #deployment-allowlist-add-command-options}
 
 - `--nowait` or `-n`
@@ -1162,7 +1162,7 @@ ibmcloud cdb deployment-allowlist-delete <deployment name or CRN> <allowlist add
 ```
 {: .pre}
 
-#### Command options  
+#### Command options
 {: #deployment-allowlist-delete-command-options}
 
 - `--nowait` or `-n`
@@ -1204,7 +1204,7 @@ ibmcloud cdb deployment-tasks-list <deployment name or CRN> [--output, -o FORMAT
 ```
 {: .pre}
 
-#### Command options  
+#### Command options
 {: #deployment-tasks-list-command-options}
 
 - `--output` or `-o` FORMAT
@@ -1267,7 +1267,7 @@ ibmcloud cdb elasticsearch file-sync <deployment name or CRN> [--output, -o FORM
 ```
 {: .pre}
 
-#### Command options  
+#### Command options
 {: #elasticsearch-file-sync-command-options}
 
 - `--nowait` or `-n`
@@ -1297,7 +1297,7 @@ ibmcloud cdb elasticsearch user-list (NAME|ID) (ADMIN_PASSWORD) [--output, -o FO
 ```
 {: .pre}
 
-#### Command options  
+#### Command options
 {: #elasticsearch-file-sync-command-options}
 
 - `--output` or `-o` FORMAT
@@ -1364,7 +1364,7 @@ ibmcloud cdb postgresql replication-slot-create <deployment name or CRN> <databa
 
 The plug-in type is required to be "wal2json".
 
-#### Command options  
+#### Command options
 {: #postgresql-replication-slot-create-command-options}
 
 - `--nowait` or `-n`
@@ -1394,7 +1394,7 @@ ibmcloud cdb postgresql replication-slot-delete <deployment name or CRN> <slotna
 ```
 {: .pre}
 
-#### Command options  
+#### Command options
 {: #postgresql-replication-slot-delete-command-options}
 
 - `--nowait` or `-n`
