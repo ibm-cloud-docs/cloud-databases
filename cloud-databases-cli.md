@@ -1,8 +1,8 @@
 ---
  
 copyright:
-  years: 2018, 2025
-lastupdated: "2025-12-16"
+  years: 2018, 2026
+lastupdated: "2026-04-27"
 
 keywords: cloud databases, migrating, disk size, memory size, CPU size, resources, cli, postgresql administrator, cloud database cli
 
@@ -27,7 +27,7 @@ The {{site.data.keyword.databases-for}} CLI plug-in offers extra methods of acce
 The {{site.data.keyword.databases-for}} CLI plug-in requires [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started) to be installed.
 {: .note}
 
-The {{site.data.keyword.databases-for}} CLI plugin (cdb) supports only Gen 1 instances. To manage Gen 2 instances, see the [{{site.data.keyword.databases-for}} Gen 2 CLI reference](docs-draft/cloud-databases-gen2?topic=cloud-databases-gen2-cdb-reference).
+The {{site.data.keyword.databases-for}} CLI plugin (cdb) supports only Gen 1 instances. To manage Gen 2 instances, see the [{{site.data.keyword.databases-for}} Gen 2 CLI reference](/docs-draft/cloud-databases-gen2?topic=cloud-databases-gen2-cdb-reference).
 {: .note}
 
 ## The {{site.data.keyword.cloud_notm}} CLI
@@ -39,7 +39,7 @@ An introduction and installation instructions are available on the [{{site.data.
  
 Install the stand-alone package from the [Installing the stand-alone IBM Cloud CLI](/docs/cli?topic=cli-install-ibmcloud-cli) page. 
 
-Access to services via {{site.data.keyword.cloud_notm}} CLI is governed through Identity and Access Management. In order to use the CLI to view or manage a service (or to grant privileges to another user on your account), you must set the correct permissions. For more information about IAM management, see the [IAM Getting Started tutorial](/docs/account?topic=account-access-getstarted)
+Access to services via {{site.data.keyword.cloud_notm}} CLI is governed through Identity and Access Management. In order to use the CLI to view or manage a service (or to grant privileges to another user on your account), you must set the correct permissions. For more information about IAM management, see the [IAM Getting Started tutorial](/docs/iam?topic=iam-access-getstarted)
 
 ## Installing the {{site.data.keyword.databases-for}} CLI plug-in
 {: #installing-cli-plugin}
