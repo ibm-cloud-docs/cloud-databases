@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-03-19"
+lastupdated: "2026-05-13"
 
 subcollection: cloud-databases
 
@@ -64,6 +64,22 @@ ibmcloud cdb backup-show crn:v1:staging:public:cloud-databases:us-south:a/628401
 ```
 {: .pre}
 
+### Taking an on-demand backup in the CLI
+{: #ondemand-backup-cli}
+{: cli}
+
+If you plan to make major changes to your instance, like scaling or removing databases, tables, collections, on-demand backups are useful. It can also be useful if you need to back up on a schedule. On-demand backups are kept for 30 days.
+
+Instances come with backup storage equal to their total disk space at no cost. If your backup storage usage is greater than total disk space, each gigabyte is charged at an overage of $0.03/month. Backups are compressed, so even if you use on-demand backups, most instances do not exceed the allotted credit.
+{: .tip}
+
+In the CLI, an on-demand backup is triggered with the [`cdb deployment-backup-now`](/docs/cloud-databases?topic=cloud-databases-cdb-reference#deployment-backup-now) command.
+
+```sh
+ibmcloud cdb deployment-backup-now <INSTANCE_NAME_OR_CRN>
+```
+{: .pre}
+
 ## Backups in the {{site.data.keyword.databases-for}} API
 {: #backup-ui-api}
 {: api}
@@ -81,21 +97,7 @@ Instances come with backup storage equal to their total disk space at no cost. I
 
 To create a manual backup in the UI, go to the _Backups and restore_ tab of your instance then click **Create backup**. A message is displayed that a backup is in progress, and an on-demand backup is added to the list of available backups.
 
-### Taking an on-demand backup in the CLI
-{: #ondemand-backup-cli}
-{: cli}
 
-If you plan to make major changes to your instance, like scaling or removing databases, tables, collections, on-demand backups are useful. It can also be useful if you need to back up on a schedule. On-demand backups are kept for 30 days.
-
-Instances come with backup storage equal to their total disk space at no cost. If your backup storage usage is greater than total disk space, each gigabyte is charged at an overage of $0.03/month. Backups are compressed, so even if you use on-demand backups, most instances do not exceed the allotted credit.
-{: .tip}
-
-In the CLI, an on-demand backup is triggered with the [`cdb deployment-backup-now`](/docs/cloud-databases?topic=cloud-databases-cdb-reference#deployment-backup-now) command.
-
-```sh
-ibmcloud cdb deployment-backup-now <INSTANCE_NAME_OR_CRN>
-```
-{: .pre}
 
 ### Taking an on-demand backup in the API
 {: #ondemand-backup-api}
