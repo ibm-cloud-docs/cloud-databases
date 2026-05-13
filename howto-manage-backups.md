@@ -19,7 +19,7 @@ An automatically scheduled backup is taken of your database every day. You can a
 
 To access backups for {{site.data.keyword.databases-for}}, go to your database instance's Dashboard, and see the *Backups and restore* tab.
 
-Here is some additional general information about backups:
+Some additional general information about backups:
 
 - Automatic backups are performed daily and kept with a simple retention schedule of 30 days.
 - Backups cannot be deleted.
