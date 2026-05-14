@@ -30,14 +30,15 @@ Some additional general information about backups:
 - Backups are restorable across accounts, but only through the API and only if the user that is running the restore has access to both the source and destination accounts.
 - {{site.data.keyword.databases-for}} backups are not downloadable. If you need a local backup, use the appropriate software. For example, [pg_dump](https://www.postgresql.org/docs/9.6/static/backup-dump.html){: .external} is an effective tool for managing PostgreSQL backups. And for MySQL, you can use [mysqldump](https://dev.mysql.com/doc/refman/8.4/en/mysqldump.html).
 
-For information on taking an on-demand backup, see [Taking an on-demand backup](/docs/cloud-databases?topic=cloud-databases-dashboard-backups&interface=ui#ondemand-backup).
+For information on taking an on-demand backup, see [Taking an on-demand backup](docs/cloud-databases?topic=cloud-databases-dashboard-backups&interface=ui#ondemand-backup-ui).
 {: ui}
 
-For information on taking an on-demand backup, see [Taking an on-demand backup](/docs/cloud-databases?topic=cloud-databases-dashboard-backups&interface=cli#ondemand-backup).
+For information on taking an on-demand backup, see [Taking an on-demand backup](/docs/cloud-databases?topic=cloud-databases-dashboard-backups&interface=cli#ondemand-backup-cli).
 {: cli}
 
-For information on taking an on-demand backup, see [Taking an on-demand backup](/docs/cloud-databases?topic=cloud-databases-dashboard-backups&interface=api#ondemand-backup).
+For information on taking an on-demand backup, see [Taking an on-demand backup](/docs/cloud-databases?topic=cloud-databases-dashboard-backups&interface=api#ondemand-backup-api).
 {: api}
+
 
 ## Backups in the UI
 {: #backup-ui}
