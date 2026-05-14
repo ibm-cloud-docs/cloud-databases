@@ -93,7 +93,7 @@ If you plan to make major changes to your instance, like scaling or removing dat
 Instances come with backup storage equal to their total disk space at no cost. If your backup storage usage is greater than total disk space, each gigabyte is charged at an overage of $0.03/month. Backups are compressed, so even if you use on-demand backups, most instances do not exceed the allotted credit.
 {: .tip}
 
-In the CLI, an on-demand backup is triggered with the [`cdb deployment-backup-now`](/docs/cloud-databases?topic=cloud-databases-cdb-reference#deployment-backup-now) command. To check the backup status, use the ibmcloud cdb backup-show command.
+In the CLI, an on-demand backup is triggered with the [`cdb deployment-backup-now`](/docs/cloud-databases?topic=cloud-databases-cdb-reference#deployment-backup-now) command. To check the backup status, use the `ibmcloud cdb backup-show` command. For example:
 
 ```sh
 ibmcloud cdb deployment-backup-now <INSTANCE_NAME_OR_CRN>
