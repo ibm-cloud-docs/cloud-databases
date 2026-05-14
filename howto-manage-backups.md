@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-05-13"
+lastupdated: "2026-05-14"
 
 subcollection: cloud-databases
 
@@ -30,7 +30,14 @@ Some additional general information about backups:
 - Backups are restorable across accounts, but only through the API and only if the user that is running the restore has access to both the source and destination accounts.
 - {{site.data.keyword.databases-for}} backups are not downloadable. If you need a local backup, use the appropriate software. For example, [pg_dump](https://www.postgresql.org/docs/9.6/static/backup-dump.html){: .external} is an effective tool for managing PostgreSQL backups. And for MySQL, you can use [mysqldump](https://dev.mysql.com/doc/refman/8.4/en/mysqldump.html).
 
+For information on taking an on-demand backup, see [Taking an on-demand backup](/docs/cloud-databases?topic=cloud-databases-dashboard-backups&interface=ui#ondemand-backup).
+{: ui}
+
 For information on taking an on-demand backup, see [Taking an on-demand backup](/docs/cloud-databases?topic=cloud-databases-dashboard-backups&interface=cli#ondemand-backup).
+{: cli}
+
+For information on taking an on-demand backup, see [Taking an on-demand backup](/docs/cloud-databases?topic=cloud-databases-dashboard-backups&interface=api#ondemand-backup).
+{: api}
 
 ## Backups in the UI
 {: #backup-ui}
@@ -41,6 +48,18 @@ In the UI, navigate to the *Backups and restore* tab where you see a table with 
 The backup types can be either _On-demand_ or _Automatic_. Each backup is listed with its type and when the backup was taken.
 
 Click the backup to reveal information for that specific backup, including its full ID. A **Restore** button or a pre-formatted CLI command is there for restore options.
+
+### Taking an on-demand backup in the UI
+{: #ondemand-backup-ui}
+{: ui}
+
+If you plan to make major changes to your instance, like scaling or removing databases, tables, collections, on-demand backups are useful. It can also be useful if you need to back up on a schedule. On-demand backups are kept for 30 days.
+
+Instances come with backup storage equal to their total disk space at no cost. If your backup storage usage is greater than total disk space, each gigabyte is charged at an overage of $0.03/month. Backups are compressed, so even if you use on-demand backups, most instances do not exceed the allotted credit.
+{: .tip}
+
+To create a manual backup in the UI, go to the _Backups and restore_ tab of your instance then click **Create backup**. A message is displayed that a backup is in progress, and an on-demand backup is added to the list of available backups.
+
 
 ## Backups in the CLI
 {: #backup-ui-cli}
@@ -86,19 +105,6 @@ ibmcloud cdb deployment-backup-now <INSTANCE_NAME_OR_CRN>
 
 For backups information in the {{site.data.keyword.databases-for}} API, use the [`/deployments/{id}/backups`](/apidocs/cloud-databases-api/cloud-databases-api-v5#listdeploymentbackups) endpoint to list the instance's backups. To get information about a specific backup, use the [`/backups/{backup_id}`](/apidocs/cloud-databases-api/cloud-databases-api-v5#getbackupinfo) endpoint.
 
-### Taking an on-demand backup in the UI
-{: #ondemand-backup-ui}
-{: ui}
-
-If you plan to make major changes to your instance, like scaling or removing databases, tables, collections, on-demand backups are useful. It can also be useful if you need to back up on a schedule. On-demand backups are kept for 30 days.
-
-Instances come with backup storage equal to their total disk space at no cost. If your backup storage usage is greater than total disk space, each gigabyte is charged at an overage of $0.03/month. Backups are compressed, so even if you use on-demand backups, most instances do not exceed the allotted credit.
-{: .tip}
-
-To create a manual backup in the UI, go to the _Backups and restore_ tab of your instance then click **Create backup**. A message is displayed that a backup is in progress, and an on-demand backup is added to the list of available backups.
-
-
-
 ### Taking an on-demand backup in the API
 {: #ondemand-backup-api}
 {: api}
@@ -109,6 +115,10 @@ Instances come with backup storage equal to their total disk space at no cost. I
 {: .tip}
 
 In the API, sending a POST to the [`/deployments/{id}/backups`](/apidocs/cloud-databases-api/cloud-databases-api-v5#startondemandbackup) endpoint triggers an on-demand backup.
+
+
+
+
 
 ## Restoring a backup
 {: #restore-backup}
