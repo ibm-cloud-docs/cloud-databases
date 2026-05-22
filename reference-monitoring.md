@@ -681,7 +681,7 @@ The maximum amount of memory available to your instance
 ### Out-Of-Memory rate
 {: #ibm_databases_for_postgresql_out_of_memory_rate}
 
-The rate of Out-Of-Memory (OOM) events detected for database member containers over a rolling 5-minute window. This metric is derived from Kubernetes `container_oom_events_total` and helps identify memory pressure or instability events. A sustained or increasing value may indicate memory exhaustion, workload pressure, inefficient queries, or insufficient scaling causing container restarts or degraded stability.
+The rate of Out-Of-Memory (OOM) events detected for database member containers over a rolling 5-minute window. This metric is derived from the Kubernetes `container_oom_events_total` metric and helps identify memory pressure or instability events. A sustained or increasing value can indicate memory exhaustion, workload pressure, inefficient queries, or insufficient scaling causing container restarts or degraded stability.
 
 | Metadata | Description |
 |----------|-------------|
@@ -691,14 +691,14 @@ The rate of Out-Of-Memory (OOM) events detected for database member containers o
 | `Segment By` | `Service instance, Service instance name, Resource group name` |
 {: caption="Table 39: Out-Of-Memory rate metric metadata" caption-side="top"}
 
-**Usage Example 1: Basic OOM Detection**
+#### Usage example 1: basic OOM detection**
 
-Alert when OOM events occur in the last 5 minutes:
+Alert when OOM events occured in the last 5 minutes:
 ```promql
 avg_over_time(ibm_databases_for_postgresql_out_of_memory_rate[5m]) > 0
 ```
 
-**Usage Example 2: Instance-specific monitoring**
+#### Usage example 2: instance-specific monitoring**
 
 Monitor a specific PostgreSQL instance with tiered severity:
 
