@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2023, 2025
-lastupdated: "2025-12-16"
+  years: 2023, 2026
+lastupdated: "2026-05-22"
 
 keywords: monitoring
 
@@ -35,7 +35,7 @@ Here is a detailed description about two of the common metrics across all {{site
 {: #sysdig-monitor-dashboards-cpu-cores-used-per-member}
 
 The usage that is presented in this dashboard is the number of CPU cores used per member, which is measured in core seconds. This metric is available for all hosting models; you can monitor this metric for both, databases that are hosted either as a single-tenant on underlying hardware and databases running on multi-tenant hosts.
-We recommend that you use this metric to track historical CPU allocation over time, which can help you to decide how many CPU cores to allocate for your database to match desired performance. 
+We recommend that you use this metric to track historical CPU allocation over time, which can help you to decide how many CPU cores to allocate for your database to match desired performance.
 
 ### CPU used per member (data only available with dedicated cores)
 {: #sysdig-monitor-dashboards-cpu-used-per-member-dedicated}
@@ -445,6 +445,7 @@ How much memory is used as a percentage of total memory available
 | [PostgreSQL IO utilization in percent 60-minute average](#ibm_databases_for_postgresql_disk_io_utilization_percent_average_60m) |
 | [PostgreSQL IOPS read & write total count for an instance](#ibm_databases_for_postgresql_disk_iops_read_write_total) |
 | [PostgreSQL Maximum allowed memory for an instance](#ibm_databases_for_postgresql_memory_limit_bytes) |
+| [PostgreSQL Out-of-memory rate](#ibm_databases_for_postgresql_out_of_memory_rate) |
 | [PostgreSQL Read replica replication lag](#ibm_databases_for_postgresql_read_replica_replication_lag_bytes) |
 | [PostgreSQL Successful archive rate](#ibm_databases_for_postgresql_successful_archive_rate) |
 | [PostgreSQL Temporary files size in bytes](#ibm_databases_for_postgresql_temp_bytes_count) |
@@ -676,6 +677,53 @@ The maximum amount of memory available to your instance
 | `Value Type`  | `byte` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Maximum allowed memory for an instance metric metadata" caption-side="top"}
+
+### Out-Of-Memory rate
+{: #ibm_databases_for_postgresql_out_of_memory_rate}
+
+The rate of Out-Of-Memory (OOM) events detected for database member containers over a rolling 5-minute window. This metric is derived from Kubernetes `container_oom_events_total` and helps identify memory pressure or instability events. A sustained or increasing value may indicate memory exhaustion, workload pressure, inefficient queries, or insufficient scaling causing container restarts or degraded stability.
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_databases_for_postgresql_out_of_memory_rate`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `rate` |
+| `Segment By` | `Service instance, Service instance name, Resource group name` |
+{: caption="Table 39: Out-Of-Memory rate metric metadata" caption-side="top"}
+
+**Usage Example 1: Basic OOM Detection**
+
+Alert when OOM events occur in the last 5 minutes:
+```promql
+avg_over_time(ibm_databases_for_postgresql_out_of_memory_rate[5m]) > 0
+```
+
+**Usage Example 2: Instance-specific monitoring**
+
+Monitor a specific PostgreSQL instance with tiered severity:
+
+Warning alert (10-minute window):
+```promql
+avg_over_time(ibm_databases_for_postgresql_out_of_memory_rate[10m]) > 0
+```
+
+Critical alert (15-minute window with higher threshold):
+```promql
+avg_over_time(ibm_databases_for_postgresql_out_of_memory_rate[15m]) > 0.1
+```
+
+Scope to specific instance:
+```promql
+avg_over_time(
+  ibm_databases_for_postgresql_out_of_memory_rate{
+    ibm_service_instance_name="my-postgres"
+  }[10m]
+) > 0
+```
+
+Alert on sustained non-zero values rather than single spikes. Combine with memory utilization metrics for better signal quality. Repeated OOM activity indicates scaling or workload tuning may be required.
+{: note}
+
 
 #### PostgreSQL Read replica replication lag
 {: #ibm_databases_for_postgresql_read_replica_replication_lag_bytes}
@@ -995,7 +1043,7 @@ How much WAL log file uses, in bytes
 | Metric Name |
 |-----------|
 | [MySQL Cache hit ratio](#ibm_databases_for_mysql_cache_hit_ratio) |
-| [MySQL Connection usage for an instance](#ibm_databases_for_mysql_connection_used_percent) | 
+| [MySQL Connection usage for an instance](#ibm_databases_for_mysql_connection_used_percent) |
 | [MySQL Disk read latency mean](#ibm_databases_for_mysql_disk_read_latency_mean) |
 | [MySQL Disk write latency mean](#ibm_databases_for_mysql_disk_write_latency_mean) |
 | [MySQL IO utilization in percent 15-minute average](#ibm_databases_for_mysql_disk_io_utilization_percent_average_15m) |
@@ -1004,7 +1052,7 @@ How much WAL log file uses, in bytes
 | [MySQL IO utilization in percent 60-minute average](#ibm_databases_for_mysql_disk_io_utilization_percent_average_60m) |
 | [MySQL IOPS read & write total count for an instance](#ibm_databases_for_mysql_disk_iops_read_write_total) |
 | [MySQL Maximum allowed memory for an instance](#ibm_databases_for_mysql_memory_limit_bytes) |
-| [MySQL The maximum permitted number of simultaneous client connections.](#ibm_databases_for_mysql_max_connections) | 
+| [MySQL The maximum permitted number of simultaneous client connections.](#ibm_databases_for_mysql_max_connections) |
 | [MySQL Percent of threads connected](#ibm_databases_for_mysql_threads_connected_usage) |
 | [MySQL Percent of threads running](#ibm_databases_for_mysql_threads_running_usage) |
 | [MySQL The number of connections that were aborted because the client died without closing the connection properly](#ibm_databases_for_mysql_aborted_clients_rate) |
@@ -1039,8 +1087,8 @@ How much WAL log file uses, in bytes
 | [MySQL Used memory for an instance](#ibm_databases_for_mysql_memory_used_bytes) |
 | [MySQL Used memory for an instance](#ibm_databases_for_mysql_memory_used_percent) |
 | [MySQL Total active connections to the database](#ibm_databases_for_mysql_total_connections) |
-| [MySQL Replica lag](#ibm_databases_for_mysql_replica_lag) | 
-| [MySQL Replica state](#ibm_databases_for_mysql_replica_state) | 
+| [MySQL Replica lag](#ibm_databases_for_mysql_replica_lag) |
+| [MySQL Replica state](#ibm_databases_for_mysql_replica_state) |
 {: caption="Metrics Available by Plan Names" caption-side="top"}
 
 ### MySQL Metrics Descriptions
@@ -2176,7 +2224,7 @@ Number of commands processed per second. Note: Operations per second is averaged
 #### Redis total commands processed
 {: #ibm_databases_for_redis_total_commands_processed}
 
-Total number of commands processed by the server. Note: This is an incremental number which resets when your Redis instance restarts. 
+Total number of commands processed by the server. Note: This is an incremental number which resets when your Redis instance restarts.
 
 | Metadata | Description |
 |----------|-------------|
