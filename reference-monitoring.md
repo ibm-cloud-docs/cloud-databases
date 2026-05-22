@@ -678,10 +678,10 @@ The maximum amount of memory available to your instance
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Maximum allowed memory for an instance metric metadata" caption-side="top"}
 
-### Out-Of-Memory rate
+### Out-of-memory rate
 {: #ibm_databases_for_postgresql_out_of_memory_rate}
 
-The rate of Out-Of-Memory (OOM) events detected for database member containers over a rolling 5-minute window. This metric is derived from the Kubernetes `container_oom_events_total` metric and helps identify memory pressure or instability events. A sustained or increasing value can indicate memory exhaustion, workload pressure, inefficient queries, or insufficient scaling causing container restarts or degraded stability.
+The rate of Out-of-memory (OOM) events detected for database member containers over a rolling 5-minute window. This metric is derived from the Kubernetes `container_oom_events_total` metric and helps identify memory pressure or instability events. A sustained or increasing value can indicate memory exhaustion, workload pressure, inefficient queries, or insufficient scaling causing container restarts or degraded stability.
 
 | Metadata | Description |
 |----------|-------------|
@@ -689,7 +689,7 @@ The rate of Out-Of-Memory (OOM) events detected for database member containers o
 | `Metric Type` | `gauge` |
 | `Value Type`  | `rate` |
 | `Segment By` | `Service instance, Service instance name, Resource group name` |
-{: caption="Table 39: Out-Of-Memory rate metric metadata" caption-side="top"}
+{: caption="Out-of-memory rate metric metadata" caption-side="top"}
 
 #### Usage example 1: basic OOM detection
 {: #ibm_databases_for_postgresql_out_of_memory_rate_ex1}
@@ -723,7 +723,7 @@ avg_over_time(
 ) > 0
 ```
 
-Alert on sustained non-zero values rather than single spikes. Combine with memory utilization metrics for better signal quality. Repeated OOM activity indicates scaling or workload tuning may be required.
+Alert on sustained non-zero values rather than single spikes. Combine with memory utilization metrics for better signal quality. Repeated OOM activity indicates scaling or workload tuning might be required.
 {: note}
 
 
