@@ -691,14 +691,16 @@ The rate of Out-Of-Memory (OOM) events detected for database member containers o
 | `Segment By` | `Service instance, Service instance name, Resource group name` |
 {: caption="Table 39: Out-Of-Memory rate metric metadata" caption-side="top"}
 
-#### Usage example 1: basic OOM detection**
+#### Usage example 1: basic OOM detection
+{: #ibm_databases_for_postgresql_out_of_memory_rate_ex1}
 
 Alert when OOM events occured in the last 5 minutes:
 ```promql
 avg_over_time(ibm_databases_for_postgresql_out_of_memory_rate[5m]) > 0
 ```
 
-#### Usage example 2: instance-specific monitoring**
+#### Usage example 2: instance-specific monitoring
+{: #ibm_databases_for_postgresql_out_of_memory_rate_ex2}
 
 Monitor a specific PostgreSQL instance with tiered severity:
 
