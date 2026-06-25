@@ -1,9 +1,9 @@
 ---
 copyright:
   years: 2021, 2026
-lastupdated: "2026-06-23"
+lastupdated: "2026-06-25"
 
-keywords: security and compliance for cloud databases, security for cloud databases, compliance for cloud databases, redis, elasticsearch, postresgql, mongodb, rabbitmq, mysql, test-downstream
+keywords: security and compliance for cloud databases, security for cloud databases, compliance for cloud databases, redis, elasticsearch, postresgql, mongodb, rabbitmq, mysql
 
 subcollection: cloud-databases
 
