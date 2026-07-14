@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-06-25"
+lastupdated: "2026-07-14"
 
 keywords:
 
@@ -39,7 +39,7 @@ Minimal
 ## IBM Cloud Databases deployment
 {: #ibm-cloud-databases-deployment}
 
-The following dependencies apply to the following deployment locations: Chennai - Airtel (in-che), Dallas (us-south), Frankfurt (eu-de), London (eu-gb), Madrid (eu-es), Osaka (jp-osa), Sao Paulo (br-sao), Sydney (au-syd), Tokyo (jp-tok), Toronto (ca-tor), Washington DC (us-east).
+The following dependencies apply to the following deployment locations: Chennai 01, Dallas (us-south), Frankfurt (eu-de), London (eu-gb), Madrid (eu-es), Osaka (jp-osa), Sao Paulo (br-sao), Sydney (au-syd), Tokyo (jp-tok), Toronto (ca-tor), Washington DC (us-east).
 
 
 |Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
@@ -122,7 +122,7 @@ The following dependencies apply to the following deployment locations: Chennai 
 ## IBM Cloud Databases Gen 2
 {: #ibm-cloud-databases-gen-2}
 
-The following dependencies apply to the following deployment locations: Chennai - Airtel (in-che), Montreal (ca-mon).
+The following dependencies apply to the following deployment locations: Chennai - Airtel (in-che), Frankfurt (eu-de), Montreal (ca-mon).
 
 
 |Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
