@@ -3,7 +3,7 @@
 copyright:
   years: 2023, 2024
 
-lastupdated: "2024-10-14"
+lastupdated: "2026-06-29"
 
 subcollection: cloud-databases
 
@@ -16,9 +16,9 @@ keywords: isolated compute, hosting models, shared compute
 # Hosting models FAQ
 {: #hosting-models-faq}
 
-**My Shared Compute database has 0 CPU. What does this mean?**
+**My Shared Compute database has 0 CPU. What does this mean?** 
 
-Shared Compute automatically allocates CPU for customers that do not specify their CPU amount. On API v5, this automatically allocated setting shows as CPU = 0. We also return an "Allocation as Fraction" result that shows what specific CPU value you have. CPU is allocated at 1/8th of a RAM, starting from each databases' minimum CPU amount up to 2 CPU. This CPU value will continue to scale as the RAM value scales.
+Shared Compute automatically allocates CPU for customers that do not specify their CPU amount. On API v5, this automatically allocated setting shows as CPU = 0. We also return an "Allocation as Fraction" result that shows what specific CPU value you have. CPU is allocated at 1/8th of a RAM, starting from each databases' minimum CPU amount up to 2 CPU. This CPU value will continue to scale as the RAM value scales. 
 
 **Per the [Shared Compute transition placement](/docs/cloud-databases?topic=cloud-databases-hosting-models&interface=cli#shared-compute-placement), my understanding is that because this instance has 8 GB of RAM, it should have 1 CPU allocated per member, but the cloud-databases CLI show 0 CPUs allocated.**
 
