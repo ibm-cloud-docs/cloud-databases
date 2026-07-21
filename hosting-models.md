@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-03-10"
+lastupdated: "2026-07-21"
 
 subcollection: cloud-databases
 
@@ -211,7 +211,7 @@ The `host_flavor` parameter defines your Compute sizing. Input the appropriate v
 ## Isolated Compute capacity
 {: isolated-compute-capacity}
 
-Isolated Compute fully isolates your database, including database management pods (which touch user data). These management pods take up some overhead in your isolated compute instance, consuming a portion of the machine's compute. The following table shows the estimated remaining compute for each Isolated Compute size.
+Isolated Compute fully isolates your database, including database management pods (which touch user data). These management pods take up some overhead in your isolated compute instance, consuming a portion of the machine's compute (10-12%). The following table shows the estimated remaining compute for each Isolated Compute size.
 
 | **Host flavor** | **CPU remaining** | **RAM remaining** |
 |:-------------------------:|:---------------------:|:---------------------:|
