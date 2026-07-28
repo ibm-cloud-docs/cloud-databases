@@ -71,7 +71,7 @@ You can use **{{site.data.keyword.logs_full}}** to visualize and alert on platfo
 
 {{site.data.keyword.databases-for}} generates platform logs for the severity types debug, error, info, warning, and critical.
 
-Platform logs from your database instances can be routed to any region supported as per the table above. Logs from Chennai (`in-che`) and Osaka (`jp-osa`) are routed to Tokyo (`jp-tok`) and logs from Paris (`eu-par01`) are routed to Frankfurt (`eu-de`).
+Platform logs from your database instances can be routed to any region supported as per the previous table. Logs from Chennai (`in-che`) and Osaka (`jp-osa`) are routed to Tokyo (`jp-tok`) and logs from Paris (`eu-par01`) are routed to Frankfurt (`eu-de`).
 
 
 

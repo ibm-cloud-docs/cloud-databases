@@ -54,7 +54,7 @@ The metrics in this panel cover instances of both the [Isolated Compute and Shar
 ## Metrics available by service plan
 {: #metrics-by-plan}
 
-In addition to the above metrics, each database service has its own set of metrics that can be monitored.
+In addition to the previous metrics, each database service has its own set of metrics that can be monitored.
 
 ## MongoDB metrics
 {: #metrics-by-plan-mongodb}
@@ -2577,7 +2577,7 @@ How much memory is used as a percentage of total memory available
 ### Global attributes
 {: #global-attributes}
 
-The following attributes are available for segmenting all of the metrics listed above
+The following attributes are available for segmenting all of the metrics listed previously.
 
 | Attribute | Attribute Name | Attribute Description |
 |-----------|----------------|-----------------------|
@@ -2592,7 +2592,7 @@ The following attributes are available for segmenting all of the metrics listed 
 ### Additional Attributes
 {: #additional-attributes}
 
-The following attributes are available for segmenting one or more attributes as described in the reference above.  Please see the individual metrics for segmentation options.
+The following attributes are available for segmenting one or more attributes as described in the reference previously. See the individual metrics for segmentation options.
 
 | Attribute | Attribute Name | Attribute Description |
 |-----------|----------------|-----------------------|
