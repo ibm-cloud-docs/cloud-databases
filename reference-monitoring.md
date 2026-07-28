@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2023, 2026
-lastupdated: "2026-07-23"
+lastupdated: "2026-07-28"
 
 keywords: monitoring
 
@@ -15,7 +15,8 @@ subcollection: cloud-databases
 # Monitoring integration
 {: #monitoring}
 
-Monitoring for {{site.data.keyword.databases-for}} is provided through integration with the {{site.data.keyword.monitoringfull}} service. Your instances forward select information so that you can monitor instance health and resource usage. To start collecting and viewing monitoring data, follow the instructions to enable [Platform Metrics](/docs/monitoring?topic=monitoring-platform_metrics_enabling). Platform Metrics need to be enabled in the same region as your instance. Use the Metrics Router to configure which Sysdig instance your platform metrics flows to. For more information, see [IBM Cloud Metrics Routing](https://cloud.ibm.com/docs/metrics-router).
+Monitoring for {{site.data.keyword.databases-for}} is provided through integration with the {{site.data.keyword.monitoringfull}} service. Your instances forward select information so that you can monitor instance health and resource usage. To start collecting and viewing monitoring data, follow the instructions to enable [Platform Metrics](/docs/metrics-router?topic=metrics-router-platform-metrics).
+Platform Metrics need to be enabled in the same region as your instance. Use the Metrics Router to configure which Sysdig instance your platform metrics flows to. For more information, see [IBM Cloud Metrics Routing](/docs/metrics-router).
 
 You can then access your monitoring dashboard for each region from the {{site.data.keyword.monitoringfull_notm}} area in the [Cloud console](https://cloud.ibm.com/) (under Observability).
 
@@ -42,7 +43,7 @@ We recommend that you use this metric to track historical CPU allocation over ti
 
 The usage that is presented in this dashboard is a percentage of total CPU being used, based on the number of cores in your {{site.data.keyword.databases-for}} instance. For example, if you have 8 cores and your usage is 12.5%, then that percentage reflects that your database member is using 1 core's worth of CPU seconds. However, this does not guarantee that your member's workload is pinned to 1 core – the workload might be distributed unevenly among your 8 cores. In the same example, 25% usage reflects that your database member is using 2 core's worth of CPU seconds out of your available 8 cores.
 
-The title of this metric specifies "data only available with dedicated cores," which is an anachronism. This panel now displays information about instances using the [Isolated Compute](/docs/cloud-databases?topic=cloud-databases-hosting-models&interface=ui#hosting-models-iso-compute-ui) hosting model; however, it will not display information about any instances on the legacy hosting model once referred to as "dedicated cores." Dedicated cores were deprecated during the hosting model transition outlined [here](https://cloud.ibm.com/docs/cloud-databases?topic=cloud-databases-hosting-model-transition), so there should be no instances using the hosting model anymore. This panel contains a subset of the metrics that are visible in the newer panel, [**CPU used per member (all instance types)**](#cpu-used-per-member-all-instance-types).
+The title of this metric specifies "data only available with dedicated cores," which is an anachronism. This panel now displays information about instances using the [Isolated Compute](/docs/cloud-databases?topic=cloud-databases-hosting-models&interface=ui#hosting-models-iso-compute-ui) hosting model; however, it will not display information about any instances on the legacy hosting model once referred to as "dedicated cores." Dedicated cores were deprecated during the hosting model transition outlined [here](/docs/cloud-databases?topic=cloud-databases-hosting-model-transition), so there should be no instances using the hosting model anymore. This panel contains a subset of the metrics that are visible in the newer panel, [**CPU used per member (all instance types)**](#cpu-used-per-member-all-instance-types).
 {: note}
 
 ### CPU used per member (all instance types)
@@ -2200,7 +2201,7 @@ Higher number of client connections can impact performance of the Redis instance
 #### Redis rejected connections
 {: #ibm_databases_for_redis_rejected_connections}
 
-Number of connections rejected because of maxclients limit. Read more about [Managing connections](https://cloud.ibm.com/docs/databases-for-redis?topic=databases-for-redis-managing-redis-connections).
+Number of connections rejected because of maxclients limit. Read more about [Managing connections](/docs/databases-for-redis?topic=databases-for-redis-managing-redis-connections).
 
 | Metadata | Description |
 |----------|-------------|
