@@ -114,7 +114,7 @@ For more information about launching the {{site.data.keyword.logs_full_notm}} UI
 
 
 
-For information about fields included in every platform log, see [Fields for platform logs](/docs/logs-router?topic=logs-router-about-platform-logs#platform_reqd).
+For information about fields included in every platform log, see [Fields for platform logs](/docs/logs-router?topic=logs-router-about-platform-logs#about-platform-logs-2).
 
 
 
