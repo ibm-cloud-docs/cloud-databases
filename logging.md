@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-03-27"
+lastupdated: "2026-07-28"
 
 keywords: logging
 
@@ -54,7 +54,7 @@ You can use **{{site.data.keyword.logs_full}}** to visualize and alert on platfo
 {: class="simple-tab-table"}
 {: row-headers}
 
-| Frankfurt (`eu-de`)  | London (`eu-gb`) | Madrid (`eu-es`) |  Paris (`eu-par01`) | 
+| Frankfurt (`eu-de`)  | London (`eu-gb`) | Madrid (`eu-es`) |  Paris (`eu-par01`) |
 |---------------------------------------------------------------|---------------------|------------------|-------|
 | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |  [No]{: tag-red}  |
 {: caption="Regions where platform logs are sent in Europe locations" caption-side="top"}
@@ -71,7 +71,7 @@ You can use **{{site.data.keyword.logs_full}}** to visualize and alert on platfo
 
 {{site.data.keyword.databases-for}} generates platform logs for the severity types debug, error, info, warning, and critical.
 
-Platform logs from your database instances can be routed to any region supported as per the table above. Logs from Chennai (`in-che`) and Osaka (`jp-osa`) are routed to Tokyo (`jp-tok`) and logs from Paris (`eu-par01`) are routed to Frankfurt (`eu-de`).
+Platform logs from your database instances can be routed to any region supported as per the previous table. Logs from Chennai (`in-che`) and Osaka (`jp-osa`) are routed to Tokyo (`jp-tok`) and logs from Paris (`eu-par01`) are routed to Frankfurt (`eu-de`).
 
 
 
@@ -114,7 +114,8 @@ For more information about launching the {{site.data.keyword.logs_full_notm}} UI
 
 
 
-For information about fields included in every platform log, see [Fields for platform logs](/docs/logs-router?topic=logs-router-about-platform-logs#platform_reqd).
+For information about fields included in every platform log, see [Fields for platform logs](/docs/logs-router?topic=logs-router-about-platform-logs#about-platform-logs-2).
+
 
 
 

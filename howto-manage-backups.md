@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-05-14"
+lastupdated: "2026-07-28"
 
 subcollection: cloud-databases
 
@@ -246,7 +246,7 @@ The parameters `name`, `target`, `resource_group`, and `resource_plan_id` are al
 * The `target` is the region where you want the new instance to be located, which can be a different region from the source instance. Cross-region restores are supported, except for restoring into or out of the `eu-de` region.
 * `backup_id` is the backup that you want to restore.
 
-The above command will restore a backup to a machine of the same configuration and on the same [hosting model](/docs/databases-for-mongodb?topic=databases-for-mongodb-hosting-models&interface=cli) as your original deployment.
+The previous command restores a backup to a machine of the same configuration and on the same [hosting model](/docs/databases-for-mongodb?topic=databases-for-mongodb-hosting-models&interface=cli) as your original deployment.
 
 #### Optional parameters
 {: #hosting-model-api}
