@@ -16,7 +16,7 @@ keywords: isolated compute, hosting models, shared compute
 # Hosting models FAQ
 {: #hosting-models-faq}
 
-**My Shared Compute database has 0 CPU. What does this mean?** 
+**My Shared Compute database has 0 CPU. What does this mean?**     
 
 Shared Compute automatically allocates CPU for customers that do not specify their CPU amount. On API v5, this automatically allocated setting shows as CPU = 0. We also return an "Allocation as Fraction" result that shows what specific CPU value you have. CPU is allocated at 1/8th of a RAM, starting from each databases' minimum CPU amount up to 2 CPU. This CPU value will continue to scale as the RAM value scales. 
 
