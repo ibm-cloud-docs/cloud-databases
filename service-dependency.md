@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-07-14"
+lastupdated: "2026-08-25"
 
 keywords:
 
@@ -49,15 +49,15 @@ The following dependencies apply to the following deployment locations: Chennai 
 | IBM Cloud Classic DNS Servers | Availability, Change management, Instance control | No | Both |  Same data center  |
 | {{site.data.keyword.cis_full}} | Availability, Change management, Disaster recovery, Instance control, Security compliance | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | IBM Cloud Business Support Services | Availability, Change management | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
-| IBM Cloud Kubernetes Service and Red Hat OpenShift on IBM Cloud | Availability, Change management, Disaster recovery, Instance control, Security compliance | No | Both |  Same region  |
-| IBM Cloud Kubernetes Service and Red Hat OpenShift on IBM Cloud | Availability, Change management, Disaster recovery, Instance control, Security compliance | No | Both |  Same region  |
+| IBM Cloud Kubernetes Service and Red Hat OpenShift on IBM Cloud and ROVS | Availability, Change management, Disaster recovery, Instance control, Security compliance | No | Both |  Same region  |
+| IBM Cloud Kubernetes Service and Red Hat OpenShift on IBM Cloud and ROVS | Availability, Change management, Disaster recovery, Instance control, Security compliance | No | Both |  Same region  |
 | IBM Cloud Service Endpoints | Availability, Change management, Disaster recovery, Instance control, Security compliance | No | Both |  Same region  |
 | {{site.data.keyword.iamlong}} | Access management, Availability, Change management, Instance control, Security compliance | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | {{site.data.keyword.iamlong}} | Access management, Availability, Change management, Instance control, Security compliance | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | {{site.data.keyword.keymanagementservicefull}} | Availability, Change management, Disaster recovery, Instance control, Security compliance | No | Both |  Same region  |
-| IBM Cloud Hyper Protect Crypto | Availability, Change management, Customer responsibility, Instance control, Security compliance | No | Both |  Same region  |
+| IBM Cloud Hyper Protect Crypto Services | Availability, Change management, Customer responsibility, Instance control, Security compliance | No | Both |  Same region  |
 | {{site.data.keyword.iamlong}} | Availability | No | ngdc-data-plane |  Same region  |
-| Common Data Platform | Access management, Availability, Change management, configuration-management, Disaster recovery, Instance control, Operations, Security compliance | No | ngdc-data-plane |  Same zone  |
+| Cloud Data Platform | Access management, Availability, Change management, configuration-management, Disaster recovery, Instance control, Operations, Security compliance | No | ngdc-data-plane |  Same zone  |
 | {{site.data.keyword.vpc_full}} | Access management, Availability, Change management, configuration-management, Disaster recovery, Instance control, Operations, Security compliance | No | ngdc-data-plane |  Same region  |
 {: row-headers}
 {: caption="IBM Cloud Databases - IBM Cloud Databases deployment service dependency information - Critical dependencies" caption-side="top"}
@@ -69,7 +69,7 @@ The following dependencies apply to the following deployment locations: Chennai 
 
 |Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
 |:---|:---|:---|:---|:---|
-| IBM Log Analysis Log Routing| Change management, Operations, Security compliance | No | Both |  Same region  |
+| IBM Cloud Log Routing| Change management, Operations, Security compliance | No | Both |  Same region  |
 | IBM Cloud Classic NTP Servers| Change management | No | Both |  Same data center  |
 | IBM Cloud Classic NTP Servers| Change management | No | Both |  Same data center  |
 | TaaS Artifactory| Change management | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
@@ -128,7 +128,7 @@ The following dependencies apply to the following deployment locations: Chennai 
 |Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
 |:---|:---|:---|:---|:---|
 | {{site.data.keyword.iamlong}} | Availability | No | ngdc-data-plane |  Same region  |
-| Common Data Platform | Access management, Availability, Change management, configuration-management, Disaster recovery, Instance control, Operations, Security compliance | No | ngdc-data-plane |  Same zone  |
+| Cloud Data Platform | Access management, Availability, Change management, configuration-management, Disaster recovery, Instance control, Operations, Security compliance | No | ngdc-data-plane |  Same zone  |
 | {{site.data.keyword.vpc_full}} | Access management, Availability, Change management, configuration-management, Disaster recovery, Instance control, Operations, Security compliance | No | ngdc-data-plane |  Same region  |
 {: row-headers}
 {: caption="IBM Cloud Databases - IBM Cloud Databases Gen 2 service dependency information - Critical dependencies" caption-side="top"}
