@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-03-10"
+lastupdated: "2026-09-06"
 
 keywords: backups, new service instance, deleted resource, undelete, pending backup
 
@@ -31,7 +31,7 @@ If an instance is deleted, the backup is deleted as well. However, {{site.data.k
 
 {{site.data.keyword.databases-for}} backups are restored in a new service instance. For more information, see [Managing {{site.data.keyword.databases-for}} backups](/docs/cloud-databases?topic=cloud-databases-dashboard-backups).
 
-Point-in-Time Recovery (PITR) is available for [{{site.data.keyword.databases-for-mysql}}](/docs/databases-for-mysql?topic=databases-for-mysql-pitr){: external}, [{{site.data.keyword.databases-for-postgresql}}](/docs/databases-for-postgresql?topic=databases-for-postgresql-pitr){: external}, [{{site.data.keyword.databases-for-mongodb}}](/docs/databases-for-mongodb?topic=databases-for-mongodb-pitr){: external} and
+Point-in-Time Recovery (PITR) is available for [{{site.data.keyword.databases-for-mysql}}](/docs/databases-for-mysql?topic=databases-for-mysql-pitr){: external}, [{{site.data.keyword.databases-for-postgresql}}](/docs/databases-for-postgresql?topic=databases-for-postgresql-pitr){: external}, and [{{site.data.keyword.databases-for-mongodb}}](/docs/databases-for-mongodb?topic=databases-for-mongodb-pitr){: external}.
 
 ## Can I create a backup while another backup is pending?
 {: #faq-backups-pending-backup}
